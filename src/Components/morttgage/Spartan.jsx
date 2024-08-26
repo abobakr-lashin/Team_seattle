@@ -53,7 +53,7 @@ export default function Mortgage() {
         <div className="h-5vh"></div>
 
         <div className="display3">
-          <div className="img-jnj"><img src="/uploads/Finish/Finish/Companies/SpartanTourism/1/RequestQuoteNw.PNG" alt="" /></div>
+          <div className="img-jnj"><img src="/uploads/Finish/Finish/Companies/SpartanTourism/1/RequestQuoteNw.png" alt="" /></div>
           <div className="text-jnj">Spartan Tourism is a premier travel agency, where we redefine the art of travel. With a passion for exploration and a commitment to excellence, we are dedicated to curating extraordinary journeys that exceed your expectations. As a leader in the industry, we offer a wide range of services designed to cater to your every travel need. From meticulously planned itineraries to luxurious accommodations, seamless transportation, international visas and immersive experiences, we leave no stone unturned in ensuring that your travel experience is nothing short of exceptional. Trust us to deliver unparalleled service and unforgettable memories as we take you on a journey of a lifetime.
 
 
