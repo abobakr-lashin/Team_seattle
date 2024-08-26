@@ -1,0 +1,11 @@
+.categoryFlex{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.categoryimg{
+    margin: 10px 0;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}

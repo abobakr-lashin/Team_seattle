@@ -1,0 +1,166 @@
+.OurProjects {
+  background-image: url("/public/uploads/img/iconbackpattern.png");
+  width: 100% !important;
+}
+
+.title-dis7 {
+  margin: 10px;
+  color: white;
+  font-size: 45px;
+}
+
+.title-dis7 h3 {
+  font-weight: 700;
+  color: white;
+}
+
+.img-jnj {
+  width: 300px;
+}
+
+.display3 {
+  width: 90%;
+  display: flex;
+  margin: auto;
+  align-items: center !important;
+}
+
+.display3 .text-jnj {
+  margin: auto 50px;
+  display: flex;
+  justify-content: end;
+  color: white;
+  font-size: 25px;
+  width: 95%;
+}
+
+.img-jnj img {
+  width: 300px;
+  height: 300px;
+}
+
+.img-Sevrvices1 {
+  width: 300px;
+  /* height: auto; */
+  transition: 0.3s;
+}
+
+.img-Sevrvices1:hover {
+  transform: scale(1.1);
+}
+
+.overfull {
+  overflow: hidden;
+}
+
+.resgister {
+  position: absolute;
+  bottom: 5px;
+}
+
+/* الوسائط الإعلامية لتجاوب أفضل */
+@media screen and (max-width: 1580px) {
+  .img-Sevrvices1 {
+    width: 350px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .display3 {
+    flex-direction: column;
+  }
+
+  .img-Sevrvices1 {
+    width: 300px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .display3 {
+    flex-direction: column;
+  }
+
+  .img-Sevrvices1 {
+    width: 250px;
+    height: auto;
+  }
+  .img-Sevrvices1 {
+    width: 327px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title-dis7 {
+    font-size: 30px;
+  }
+
+  .text-jnj {
+    font-size: 20px;
+  }
+  .img-Sevrvices1 {
+    width: 327px;
+  }
+
+  .img-jnj,
+  .img-jnj img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .img-Sevrvices1 {
+    width: 300px;
+  }
+  .btn-RE1 {
+    font-size: 10px;
+    width: 260px;
+    border-radius: 20px;
+    top: -10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title-dis7 {
+    font-size: 25px;
+  }
+
+  .text-jnj {
+    font-size: 16px;
+  }
+
+  .img-Sevrvices1 {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn-RE1 {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .resgister {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .btn-RE1 {
+    width: 230px;
+    top: -10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .img-Sevrvices1 {
+    width: 300px;
+  }
+  .btn-RE1 {
+    font-size: 10px;
+    width: 260px;
+    border-radius: 20px;
+    top: -10px;
+  }
+}

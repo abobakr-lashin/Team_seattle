@@ -1,0 +1,240 @@
+
+  .img-smal{
+    width: 440px;
+    margin-right: 25px;
+  }
+  .OurPartners{
+    overflow: hidden;
+  }
+  .title-dis6{
+    color: white !important;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+    margin-left: 10px;
+  }
+  .title-dis6 h2{
+    color: white !important;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    width: 190px;
+    margin-left: 10px;
+    font-size: 40px;
+  }
+  .title-dis6 h3{
+    color: white !important;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    width: 450px;
+    margin-left: 10px;
+    font-size: 40px;
+
+  }
+  .grop-title22 h2{
+    font-size: 40px;   
+   margin: 15px;
+   color: white;
+
+
+  }
+  .grop-title22 h3 {
+    font-size: 40px;
+    margin: 15px;
+    color: white;
+
+
+  }
+  .grop-title22 p {
+    width: 800px; 
+       margin: 15px;
+    line-height: 2.0;
+    font-size: 20px;
+    color: white;
+
+  }
+
+  .css-mhc70k-MuiGrid-root{
+display: flex;
+justify-content: center;
+margin: 0;
+align-items: center;
+  }
+
+.team-img-title{
+
+
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-top: 30px;
+
+}
+
+
+
+
+
+  @media screen and (max-width:1440px) {
+
+    .team-img-title{
+
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      text-align: center;
+    
+    }
+    
+.img-smal{
+width: 300px;
+margin: auto;
+}
+ 
+.grop-title22 p{
+text-align: center;
+width: 90%;
+margin: auto;
+}
+ 
+
+  }
+
+
+  
+  @media screen and (max-width:800px) {
+
+
+
+    .grop-title h3{
+      width: 150px;
+    }
+
+    .grop-title22 p{
+width: 700px;
+text-align: center;
+    }
+
+  }
+  
+  @media screen and (max-width:500px) {
+
+    .team-img-title{
+
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      text-align: center;
+    
+    }
+    
+.img-smal{
+width: 300px;
+}
+ 
+.OurPartners{
+  min-height: auto !important;
+}
+.grop-title22 p{
+  width: 400px;
+  text-align: center;
+      }
+  
+  
+
+    .grop-title h3{
+      width: 150px;
+    }
+
+
+
+  }
+  
+  @media screen and (max-width:400px) {
+
+    .team-img-title{
+
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      text-align: center;
+    
+    }
+    
+.img-smal{
+width: 300px;
+}
+ 
+.OurPartners{
+  min-height: auto !important;
+}
+.grop-title22 p{
+  width: 350px;
+  text-align: center;
+      }
+  
+  
+
+    .grop-title h3{
+      width: 150px;
+    }
+
+
+
+  }
+  @media screen and (max-width:320px) {
+
+    .team-img-title{
+
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      text-align: center;
+    
+    }
+    
+.img-smal{
+width: 300px;
+}
+ 
+.OurPartners{
+  min-height: auto !important;
+}
+.grop-title22 p{
+  width: 300px;
+  text-align: center;
+      }
+.grop-title22 h2{
+  font-size: 30px;
+  width: 300px;
+  text-align: center;
+      }
+.grop-title22 h3  {
+  font-size: 30px;
+  width: 300px;
+  text-align: center;
+      }
+  
+  
+
+    .grop-title h3{
+      width: 150px;
+    }
+
+
+
+  }

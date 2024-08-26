@@ -1,0 +1,344 @@
+.Discover {
+  width:100%;
+  overflow: hidden;
+  height: auto;
+  margin: auto;
+}
+.css-1t82mkw-MuiGrid-root>.MuiGrid-item {
+padding-top: 0px !important;
+width: auto;
+
+}
+/* Discover.css */
+.counter-box {
+  width: 22rem;
+  height: 13rem;
+  background-color: #D6C48B;
+  border-radius: 0 0 50px 50px;
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  margin: auto;
+  text-align: center;
+  box-shadow: inset 3px 19px 40px 0px rgba(75, 72, 72, 0.397) !important;
+ 
+
+}
+.css-1tfnuay > .MuiGrid-item {
+  padding-top: 0px !important;
+}
+.btn-RE {
+  width: 350px;
+  margin: 20px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: #D6C48B;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid rgb(107, 109, 1);
+}
+
+.btn-RE:hover {
+  background-color: #ad9a5a;
+}
+.h-6vh{
+  height: 16vh;
+}
+/* تأكد من ضبط الحاويات والمكونات الأخرى بشكل مناسب */
+.body-img {
+  width: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-image: url("./../../../public/uploads/img/back-photo.png");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.h-10vh {
+  height: 35vh;
+}
+
+.h-5vh {
+  height: 8vh;
+}
+
+.grop-title {
+  align-items: center;
+
+  display: flex;
+  margin: 20px 0px;
+  flex-wrap: wrap;
+  padding: 0px !important;
+}
+
+.title-dis h2 {
+  color: white;
+  font-size: 3vw; /* Responsive font size */
+  margin: 0 !important;
+
+}
+
+.title-dis h3 {
+  color: #d3b76d;
+  font-size: 2.5vw; /* Responsive font size */
+  width: 80%;
+}
+
+.prgraf {
+  padding: 0 20px;
+  font-size: 1.4rem;
+  color: white;
+  max-width: 40%;
+  margin-left: 20px;
+}
+
+.prgraf p {
+  text-transform: uppercase;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.btn-RE {
+  width: 270px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: #D6C48B;
+  color: white;
+  font-weight: bold;
+  border: 1px solid rgb(107, 109, 1);
+  margin: 10rem 0rem 10rem 10rem;
+  display: block;
+}
+
+.btn-RE:hover {
+  background-color: #ad9a5a;
+}
+
+@media screen and (max-width: 1500px) {
+  .counter-box {
+    width: 16rem;
+    height: 10rem;
+  }
+ .counter-box .title{
+  width: 100% !important;
+  font-size: 22px !important;
+
+}
+  .h-10vh {
+    height: 25vh;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .counter-box {
+    width: 15rem;
+    height: 10rem;
+    font-size: 35px;
+    text-align: center;
+  }
+  .title-dis3 h2 {
+    font-size: 30px !important;
+}
+.title-dis3 h3 {
+  font-size: 3vw !important;
+}
+   .h-10vh {
+    height: 20vh;
+  }
+  .prgraf {
+    padding: 0 20px;
+    font-size: 2.2rem;
+    color: white;
+    max-width: 80%;
+  }
+  .title{
+    font-size: 15px !important;
+    width: 300px;
+    font-weight: 900px !important;
+    margin-bottom: 25px !important;
+
+  }
+  .btn-RE {
+    width: 270px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #D6C48B;
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgb(107, 109, 1);
+    margin: 50px auto;
+    display: block;
+  }
+}   .title-dis2{
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .counter-box {
+    width: 13rem;
+    height: 10rem !important;
+    font-size: 40px !important;
+    border-radius: 0 0 30px 30px !important;
+    margin:5px ;
+
+  }
+  .counter-box .title{
+    font-size: 18px !important;
+    font-weight: 600;
+  }
+  .btn-RE {
+    width: 270px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #D6C48B;
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgb(107, 109, 1);
+    display: block;
+  }
+  .grop-title {
+    align-items: center;
+  
+  }
+  .prgraf {
+    margin: 30px auto;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    color: white;
+    max-width: 80%;
+    text-align: center !important;
+  }
+   .title-dis2{
+    width: 100%;
+  }
+  .title-dis h2 {
+    width: 100% !important;
+    font-size: 3rem; /* Adjust font size for smaller screens */
+  }
+  .title-dis1 h3 {
+    width: 100% !important;
+    font-size:35px; /* Adjust font size for smaller screens */
+  }
+  .title-dis3 h2 {
+    font-size: 46px !important;
+}
+.title-dis3 h3 {
+  font-size: 3vw !important;
+  width: 100% !important  ;
+}
+}
+@media screen and (max-width: 435px) {
+  .counter-box {
+    width: 14rem;
+    height: 10rem !important;
+    font-size: 40px !important;
+    border-radius: 0 0 30px 30px !important;
+
+  }
+  .counter-box .title{
+    font-size: 18px !important;
+    font-weight: 600;
+  }
+  .btn-RE {
+    width: 270px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #D6C48B;
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgb(107, 109, 1);
+    display: block;
+  }
+  .grop-title {
+    align-items: center;
+  
+  }
+  .prgraf {
+    margin: 30px auto;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    color: white;
+    max-width: 80%;
+    text-align: center !important;
+  }
+   .title-dis2{
+    width: 80%;
+  }
+  .title-dis h2 {
+    width: 100% !important;
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+  }
+  .title-dis1 h3 {
+    width: 100% !important;
+    font-size:35px; /* Adjust font size for smaller screens */
+  }
+  .title-dis3 h2 {
+    font-size: 26px !important;
+}
+.title-dis3 h3 {
+  font-size: 1rem !important;
+  width: 90% !important  ;
+}
+.img-dis img {
+  max-width: 100% !important;
+  height: auto;
+}
+
+}
+
+
+
+
+@media screen and (max-width: 350px) {
+ 
+  .prgraf p{
+    font-size:14px;
+    color: white;
+    max-width: 100%;
+    text-align: center !important;
+  }
+  .title-dis3 h2{
+    font-size:320px !important;
+    width: 90% !important  ;
+  }  
+  .title-dis3 h3 {
+    font-size: 1rem !important;
+    width: 90% !important  ;
+  }  
+  .img-dis3 img {
+    max-width: 100% !important;
+    height: auto;
+}
+
+}
+.bg-color{
+  background:linear-gradient(rgba(0, 0, 0, 0.082),rgba(255, 255, 255, 0.068));
+  height: 30px;
+}
+/* Discover.css */
+.counter-box {  
+  width: 100%;
+  height: 150px; /* يمكنك تغيير الارتفاع حسب الحاجة */
+  background-color: #D6C48B;
+  border-radius: 0 0 30px 30px;
+  overflow: hidden;
+display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  font-size: 60px;
+  font-weight: 600;
+  color: white;
+  padding: 0px !important;
+}
+
+.counter-box .title {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* تأكد من ضبط الحاويات والمكونات الأخرى بشكل مناسب */

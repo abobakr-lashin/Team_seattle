@@ -1,0 +1,368 @@
+/* CSS الأساسي لشريط التنقل */
+.custom-navbar-brand {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding-top: 15px;
+  margin-left: 10px;
+}
+
+.number{
+  color: #e2bc10 !important;
+}
+
+.custom-navbar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between;
+  background-color: transparent;
+  color: #ffffff00;
+  padding-top: 10px;
+  z-index: 99; /* تأكد من أنه فوق العناصر الأخرى */
+  transition: background-color 0.3s ease; /* انتقال ناعم لتغيير اللون الخلفي */
+}
+.custom-navbar-brand a {
+  text-decoration: none;
+  flex-wrap: wrap;
+}
+
+.custom-navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
+.custom-bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fffb00;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar-menu {
+  display: flex;
+  list-style: none;
+  align-items: center !important;
+  margin: 0;
+  max-height: 0; /* يتم تحديده في الوضع الافتراضي للإخفاء */
+}
+
+.custom-navbar-item {
+  margin-left: 10px;
+  position: relative;
+}
+
+.custom-navbar-link {
+  color: #fff1f1;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 5px;
+}
+.custom-navbar-link::after {
+  content: ""; /* Insert an empty content */
+  position: absolute; /* Ensure the parent has a relative position */
+  bottom: 0px;
+  left: 0px;
+  width: 0%; /* Width of the pseudo-element */
+  height: 3px; /* Correct height unit */
+  background-color: #ffe600; /* Background color */
+  /* Additional styling might be needed for positioning */
+  transition: .5s;
+}
+
+.custom-navbar-link:hover::after {
+  width: 100%;
+  color: #e2bc10;
+}
+.custom-navbar-link:hover {
+  color: #e2bc10;
+}
+
+.custom-dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #9b6501;
+  list-style: none;
+  padding: 10px 0;
+  opacity: 0;
+  min-width: 160px;
+  z-index: 1000;
+  border-radius: 4px;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+.custom-dropdown-item {
+  padding: 8px 16px;
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.custom-dropdown-item:hover {
+  background-color: #a5890d;
+  color: #fff;
+}
+
+.custom-dropdown-toggle::after {
+  content: '\25BC';
+  margin-left: 5px;
+  color: #180202;
+  font-size: 0.8rem;
+}
+
+.custom-dropdown-menu.show {
+  display: block; /* عرض القائمة */
+  opacity: 1; /* جعل القائمة مرئية */
+  transform: translateY(0); /* إعادة القائمة لمكانها الطبيعي */
+}
+
+.custom-mr {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: absolute;
+  right: 0px;
+}
+
+/* التنسيق المتجاوب لشاشات أصغر */
+@media (max-width: 1440px) {
+  .custom-navbar-link{
+    font-size: 12px;
+  }
+}
+@media (max-width: 1024px) {
+  .custom-navbar-link{
+    font-size: 20px;
+  }
+  .custom-navbar-menu {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(17, 34, 51);
+    height: auto;
+    position: absolute;
+    top: 100%; /* توسيط القائمة تحت شريط التنقل */
+    left: 0;
+    margin: auto;
+    overflow-Y: scroll !important;
+    z-index: 100;
+  }
+
+  .custom-navbar-toggle {
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    background-color: #123;
+    transition: all 0.3s ease;
+  }
+
+  .custom-navbar-toggle:hover {
+    transform: scale(1.1); /* تكبير العنصر قليلاً عند المرور */
+  }
+
+  .custom-navbar-item {
+    margin: 5px 0;
+    width: 100%;
+    color: white !important;
+  }
+
+  .custom-dropdown-menu {
+    position: static;
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .custom-dropdown-menu.show {
+    display: block;
+    opacity: 1;
+  }
+
+  .custom-navbar-link {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+  }
+  .custom-navbar-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    transition: max-height 0.3s ease-in-out; /* لإضافة الأنيميشن */
+    overflow: hidden;
+    max-height: 0; /* يتم تحديده في الوضع الافتراضي للإخفاء */
+  }
+  .custom-navbar-toggle {
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    background-color: #123;
+    transition: all 0.3s ease; /* إضافة انتقال سلس لتأثيرات التغيير */
+  }
+
+  .custom-navbar-toggle:hover {
+    transform: scale(1.1); /* تكبير العنصر قليلاً عند المرور */
+  }
+
+  .custom-navbar-menu {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(17, 34, 51);
+    height: auto;
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    margin: auto;
+    overflow-Y: scroll !important;
+    z-index: 100;
+  }
+
+  .custom-navbar-menu.active {
+    max-height: 95%; /* يتم تحديد الحد الأقصى للطول عند الفتح */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .custom-navbar-item {
+    margin: 5px 0;
+    width: 100%;
+    color: white !important;
+  }
+
+  .custom-dropdown-menu {
+    position: static;
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 10s ease, background-color 5s; /* إضافة أنيميشن */
+  }
+  .custom-dropdown-menu.show {
+    display: block;
+    opacity: 1;
+  }
+
+  .custom-dropdown-item {
+    padding: 12px 20px;
+    text-align: center;
+    color: white;
+    transition: display 10.5s;
+  }
+
+  .custom-navbar-link {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+  }
+  .custom-en-ar{
+    flex:content;
+    position: relative;
+  }
+}
+
+
+/* Navbar.css */
+
+/* NavbarCustom.css */
+
+/* قائمة تحديد اللغة */
+.language-selector-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  left: 23px;
+}
+
+.language-selector-item {
+  position: relative;
+  cursor: pointer;
+
+}
+.selected-language{
+  position: relative;
+  left: 23px;
+  font-size: 12px;
+}
+/* تنسيق عنوان اللغة المحددة */
+.language-selector-title {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+  width: 100px;
+  height: 22px;
+  border-radius: 20px;
+  background-color: #bfb78f;
+  background-image: url("/public/uploads/img/em.png");
+  background-repeat: no-repeat;
+  background-position: 0%;
+  background-size: 50% 100%;
+  cursor: pointer;
+  margin: 2px;
+  position: relative;
+  left: 10px;
+}
+
+/* القائمة المنسدلة للغات */
+.language-dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #ccad00;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  top: 100%;
+  left: 2px;
+  width: 150px;
+  z-index: 1000;
+
+  color: white;
+}
+
+.language-dropdown-menu.show {
+  display: block;
+
+}
+
+/* تنسيق لكل خيار لغة */
+.language-option {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+
+}
+
+.language-option:hover {
+  background-color: #123;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+/* تنسيق لعلم اللغة */
+.language-flag {
+  width: 30px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: cover;
+  background-position: center;
+
+}

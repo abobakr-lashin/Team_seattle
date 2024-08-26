@@ -1,0 +1,955 @@
+
+
+
+
+.center1 h2 {
+    color: white;
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+
+}
+.Careers .center1  {
+    color: white;
+    font-size: 30px;
+    width: 1000px !important;
+    text-align: center;
+    margin: auto;
+}
+.hr1{
+    width: 360px;
+    height: 2px;
+    background-color: #ffda76;
+    margin:20px auto;
+}
+
+h6{
+    color: white;
+    font-size: 20px;
+}
+.form10{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 600px;
+    background-color: #025e73;
+    margin: 0; 
+    padding: 0;
+    border-radius: 20px;
+}
+.form10 input{
+    width: 600px;
+    background-color: #ffffff;
+    padding:18px;
+    border-radius: 20px !important;
+}
+.form10 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+    width: 600px;
+    background-color: #ffffff;
+    margin: auto;
+
+    border-radius: 20px !important;
+}
+.center10{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.btn-files{
+    width: 600px;
+    height: 100px;
+    background-color: #ffffff !important;
+    border-radius: 20px;
+
+}
+.img-file{
+    width: 650px;
+    z-index: 1;
+}
+.serviceD2-submit{
+    width: 250px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #d3b76d;
+    color: white;
+    text-transform: uppercase !important;
+    font-weight: 700;
+
+}
+
+/* contact us */
+
+
+.address{
+    display: flex;
+    justify-content: space-evenly;
+flex-direction: column;
+}
+.address .name{
+font-size: 30px;
+color: white;
+margin: 5px auto;
+
+}
+.address .pragraf{
+font-size: 20px;
+color: white;
+width: 350px;
+margin: 5px auto;
+text-align: center;
+
+}
+
+
+
+
+.address img{
+width: 100px;
+margin: 5px auto;
+
+}
+
+.hr2{
+    width: 2px;
+    height: 360px ;
+    background-color: #ffda76;
+    margin:20px auto;
+}
+
+.display5{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.form5{
+    display: flex;
+margin: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 700PX   !important;
+    height: 500px !important;
+    background-color: #025e73 !important;
+    border-radius: 20px;
+}
+
+.form5 input{
+    width: 500px !important;
+border-radius:20px ;
+padding: 20px 0px;
+
+}
+
+
+
+.display5 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+    width: 500px !important;
+    padding:  0px !important;
+    background-color: white !important;
+    border-radius: 50px !important;
+
+  }
+
+  .display5 textarea{
+margin: 10px auto;
+    width: 500px;
+height: 130px;
+border-radius: 20px;
+  }
+  .center h2 {
+    width: 100%;
+    color: white;
+    margin: auto !important;
+    text-align: center !important;
+ 
+}
+
+.center {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin: auto !important;
+}
+  @media screen and (max-width:1225px) {
+    .center h2 {
+        width:100%;
+        color: white;
+        margin: auto !important;
+        text-align: center !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .center {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        margin: auto !important;
+    }
+.address{
+    display: flex;
+    justify-content: space-evenly;
+flex-direction: column;
+}
+.address .name{
+font-size: 30px;
+color: white;
+margin: 5px auto;
+
+}
+.address .pragraf{
+font-size: 20px;
+color: white;
+width: 350px;
+margin: 5px auto;
+text-align: center;
+
+}
+
+
+
+
+.address img{
+width: 100px;
+margin: 5px auto;
+
+}
+    .hr2{
+        width:  360px;
+        height:2px ;
+        background-color: #ffda76;
+        margin: auto;
+    }
+    .display5{
+        text-align: center;
+
+        width: 100%;
+        display: flex;
+
+flex-direction: column;     
+   justify-content: space-evenly;
+        align-items: center;
+
+    }
+    .form5{
+    margin: 20px auto !important;    
+    display: inline-block;
+ 
+        width: 600PX   !important;
+        height: 500px !important;
+        background-color: #025e73 !important;
+        border-radius: 20px;
+    }
+    
+    .form5 input{
+        width: 350px !important;
+    border-radius:20px ; 
+    margin: auto;
+    }
+    
+    
+    
+    .display5 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+        width: 350px !important;
+        padding:  0px !important;
+        background-color: white !important;
+        border-radius: 50px !important;
+    
+      }
+    
+      .display5 textarea{
+    margin: 10px auto;
+        width: 400px;
+    height: 130px;
+    border-radius: 20px;
+      }
+
+
+
+
+  }  
+  @media screen and (max-width:800px) {
+   
+.address{
+    display: flex;
+    justify-content: space-evenly;
+flex-direction: column;
+}
+.address .name{
+font-size: 30px;
+color: white;
+margin: 5px auto;
+
+}
+.address .pragraf{
+font-size: 20px;
+color: white;
+width: 350px;
+margin: 5px auto;
+text-align: center;
+
+}
+
+
+
+
+.address img{
+width: 100px;
+margin: 5px auto;
+
+}
+    .hr2{
+        width:  360px;
+        height:2px ;
+        background-color: #ffda76;
+        text-align: start !important;
+    }
+    .display5 h2{
+        text-align: start;
+margin-left: 150px !important;   
+}
+
+    .display5{
+        width: 100%;
+        display: flex;
+flex-direction: column;     
+   justify-content: space-evenly;
+        align-items: center;
+
+    }
+    .form5{
+    margin: 20px auto !important;    
+ text-align: center !important;
+        width: 600PX   !important;
+        height: 500px !important;
+        background-color: #025e73 !important;
+        border-radius: 20px;
+    }
+    
+    .form5 input{
+        width: 350px !important;
+    border-radius:20px ; 
+    margin: auto;
+    }
+    
+    
+    
+    .display5 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+        width: 350px !important;
+        padding:  0px !important;
+        background-color: white !important;
+        border-radius: 50px !important;
+    
+      }
+    
+      .display5 textarea{
+    margin: 10px auto;
+        width: 400px;
+    height: 130px;
+    border-radius: 20px;
+      }
+
+
+
+
+  }  
+  @media screen and (max-width:500px) {
+   
+.address{
+    display: flex;
+    justify-content: space-evenly;
+flex-direction: column;
+}
+.address .name{
+font-size: 30px;
+color: white;
+margin: 5px auto;
+
+}
+.address .pragraf{
+font-size: 20px;
+color: white;
+width: 350px;
+margin: 5px auto;
+text-align: center;
+
+}
+
+
+
+
+.address img{
+width: 100px;
+margin: 5px auto;
+
+}
+    .hr2{
+        width:  360px;
+        height:2px ;
+        background-color: #ffda76;
+        text-align: center !important
+    }
+    .display5 h2{
+        text-align: start;
+margin-left: 0 !important;   
+}
+
+    .display5{
+        width: 100%;
+        display: flex;
+flex-direction: column;     
+   justify-content: space-evenly;
+        align-items: center;
+
+    }
+    .form5{
+    margin: 20px auto !important;    
+ text-align: center !important;
+        width: 350PX   !important;
+        height: 500px !important;
+        background-color: #025e73 !important;
+        border-radius: 20px;
+    }
+    
+    .form5 input{
+        width: 250px !important;
+    border-radius:20px ; 
+    margin: auto;
+    }
+    
+    
+    
+    .display5 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+        width: 250px !important;
+        padding:  0px !important;
+        background-color: white !important;
+        border-radius: 50px !important;
+    
+      }
+    
+      .display5 textarea{
+    margin: 10px auto;
+        width: 300px;
+    height: 130px;
+    border-radius: 20px;
+      }
+.left{
+    width:400px ;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+  }  
+  @media screen and (max-width:400px) {
+   
+ h2 {
+    color: white;
+    font-size: 25px !important;
+    width: 200px;
+}
+.address{
+    display: flex;
+    justify-content: space-evenly;
+flex-direction: column;
+}
+.address .name{
+font-size: 20px;
+color: white;
+margin: 5px auto;
+
+}
+.address .pragraf{
+font-size: 15px;
+color: white;
+width: 200px;
+margin: 5px auto;
+text-align: center;
+
+}
+
+
+
+
+.address img{
+width: 100px;
+margin: 5px auto;
+
+}
+    .hr2{
+        width:  360px;
+        height:2px ;
+        background-color: #ffda76;
+        text-align: center !important
+    }
+    .display5 h2{
+        text-align: center;
+        font-size: 20px !important;
+        margin-left: 20px !important;
+}
+
+    .display5{
+        width: 100%;
+        display: flex;
+flex-direction: column;     
+   justify-content: space-evenly;
+        align-items: center;
+
+    }
+    .form5{
+    margin: 20px auto !important;    
+ text-align: center !important;
+        width: 290PX   !important;
+        height: 500px !important;
+        background-color: #025e73 !important;
+        border-radius: 20px;
+    }
+    
+    .form5 input{
+        width: 240px !important;
+    border-radius:20px ; 
+    margin: auto;
+    }
+    
+    
+    
+    .display5 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+        width: 240px !important;
+        padding:  0px !important;
+        background-color: white !important;
+        border-radius: 50px !important;
+    
+      }
+    
+      .display5 textarea{
+    margin: 10px auto !important;
+        width: 290px;
+    height: 130px;
+    border-radius: 20px;
+      }
+.left{
+    width:290px ;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center h2 {
+    width: 50%;
+    color: white;
+    margin: auto !important;
+    text-align: center !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.center {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin: auto !important;
+}
+
+  }  
+
+/* contact us */
+
+@media screen and (max-width: 800px) {
+   
+
+
+
+    .center1  {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        margin: auto !important;
+    }
+    .center1 h2 {
+        width: 50%;
+        color: white;
+        margin: auto !important;
+        text-align: center !important;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .center h2 {
+        width: 50%;
+        color: white;
+        margin: auto !important;
+        text-align: center !important;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .center {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        margin: auto !important;
+    }
+    .Careers .center1 {
+        width: 483px !important
+
+    }
+    .hr1{
+        width: 100% !important;
+        height: 2px;
+        background-color: #ffda76;
+        margin:20px auto;
+    }
+    
+    h6{
+        color: white !important;
+        font-size: 20px !important;
+    }
+    .form10{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+        height: 600px;
+        background-color: #025e73;
+        margin: 0; 
+        padding: 0;
+        border-radius: 20px;
+    }
+    .form10 input{
+        width: 400px;
+        background-color: #ffffff;
+        padding:18px;
+        border-radius: 20px !important;
+    }
+    .form10 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+        width: 400px;
+        background-color: #ffffff;
+        margin: auto;
+    
+        border-radius: 20px !important;
+    }
+    .center10{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .btn-files{
+        width: 3    00px;
+        height: 100px;
+        background-color: #ffffff !important;
+        border-radius: 20px;
+    
+    }
+    .img-file{
+        width: 625px;
+        z-index: 1;
+    }
+    .serviceD2-submit{
+        width: 250px;
+        height: 50px;
+        border-radius: 20px;
+        background-color: #d3b76d;
+        color: white;
+        text-transform: uppercase !important;
+        font-weight: 700;
+    
+    }
+    
+    .center h2 {
+        width: 50%;
+        color: white;
+        margin: auto !important;
+        text-align: center !important;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .center {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        margin: auto !important;
+    }   
+
+
+  }  
+  
+
+@media screen and (max-width: 500px) {
+   
+
+
+    .Careers .center1 {
+        width: 403px !important
+
+    }
+
+    .center1 h2 {
+     text-align: center;
+
+     margin-left: 10px;
+    }
+
+    
+    h6{
+        color: white !important;
+        font-size: 20px !important;
+    }
+    .form10{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 600px;
+        background-color: #025e73;
+        margin: 0; 
+        padding: 0;
+        border-radius: 20px;
+    }
+    .form10 input{
+        width: 280px;
+        background-color: #ffffff;
+        padding:18px;
+        border-radius: 20px !important;
+    }
+    .form10 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+        width: 280px;
+        background-color: #ffffff;
+        margin: auto;
+    
+        border-radius: 20px !important;
+    }
+    .center10{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .btn-files{
+        width: 300px;
+        height: 100px;
+        background-color: #ffffff !important;
+        border-radius: 20px;
+    
+    }
+    .img-file{
+        width: 415px;
+        height: 140px;
+        z-index: 1;
+    }
+    .serviceD2-submit{
+        width: 250px;
+        height: 50px;
+        border-radius: 20px;
+        background-color: #d3b76d;
+        color: white;
+        text-transform: uppercase !important;
+        font-weight: 700;
+    
+    }
+    
+    
+
+
+  }  
+  
+@media screen and (max-width: 400px) {
+   
+
+    .Careers .center1 {
+        width: 353px !important
+
+    }
+
+
+
+
+    .center h2 {
+     text-align: left;
+     margin-left: 10px;
+    }
+    .center  {
+        color: white;
+        font-size: 25px;
+        width: 300px !important;
+        text-align: left !important;
+    }
+    .hr1{
+        width: 360px;
+        height: 2px;
+        background-color: #ffda76;
+        margin:20px 0px;
+        text-align: left !important;
+
+    }
+    
+    h6{
+        color: white !important;
+        font-size: 20px !important;
+    }
+    .form10{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 600px;
+        background-color: #025e73;
+        margin: 0; 
+        padding: 0;
+        border-radius: 20px;
+    }
+    .form10 input{
+        width: 280px;
+        background-color: #ffffff;
+        padding:18px;
+        border-radius: 20px !important;
+    }
+    .form10 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+        width: 280px;
+        background-color: #ffffff;
+        margin: auto;
+    
+        border-radius: 20px !important;
+    }
+    .center10{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .btn-files{
+        width: 300px;
+        height: 100px;
+        background-color: #ffffff !important;
+        border-radius: 20px;
+    
+    }
+    .img-file{
+        width: 415px;
+        height: 140px;
+        z-index: 1;
+    }
+    .serviceD2-submit{
+        width: 250px;
+        height: 50px;
+        border-radius: 20px;
+        background-color: #d3b76d;
+        color: white;
+        text-transform: uppercase !important;
+        font-weight: 700;
+    
+    }
+    
+    
+
+
+  }  
+  
+@media screen and (max-width: 325px) {
+   
+
+
+    .Careers .center1 {
+        width: 303px !important
+
+    }
+
+
+
+    .center h2 {
+     text-align: left;
+     margin-left: 10px;
+    }
+    .center  {
+        color: white;
+        font-size: 25px;
+        width: 300px !important;
+        text-align: left !important;
+    }
+    .hr1{
+        width: 260px;
+        height: 2px;
+        background-color: #ffda76;
+        margin:20px 0px;
+        text-align: left !important;
+
+    }
+    
+    h6{
+        color: white !important;
+        font-size: 20px !important;
+    }
+    .form10{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 600px;
+        background-color: #025e73;
+        margin: 0; 
+        padding: 0;
+        border-radius: 20px;
+    }
+    .form10 input{
+        width: 280px;
+        background-color: #ffffff;
+        padding:18px;
+        border-radius: 20px !important;
+    }
+    .form10 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+        width: 280px;
+        background-color: #ffffff;
+        margin: auto;
+    
+        border-radius: 20px !important;
+    }
+    .center10{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .btn-files{
+        width: 300px;
+        height: 100px;
+        background-color: #ffffff !important;
+        border-radius: 20px;
+    
+    }
+    .img-file{
+        width: 415px;
+        height: 140px;
+        z-index: 1;
+    }
+    .serviceD2-submit{
+        width: 250px;
+        height: 50px;
+        border-radius: 20px;
+        background-color: #d3b76d;
+        color: white;
+        text-transform: uppercase !important;
+        font-weight: 700;
+    
+    }
+    
+    
+
+    .display5 textarea {
+        margin: 10px auto !important;
+        width: 240px;
+        height: 130px;
+        border-radius: 20px;
+    }
+  }  
+  

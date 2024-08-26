@@ -1,0 +1,51 @@
+
+body{
+  background-color: #011f26;
+  font-family:ssa !important;
+  padding: 0px ;
+  margin: 0px ;
+}
+@font-face {
+  font-family:ssa;
+  src: url('./../public/uploads/font/alfont_com_AlFont_com_SST-Arabic-Medium.ttf');
+  font-weight: 500; /* الوزن المناسب للخط */
+  font-style: normal; /* إذا كان الخط مائلًا يمكنك تعيينه إلى italic */
+}
+
+@font-face {
+  font-family: ssa;
+  src: url('./../public/uploads/font/sst-arabic-medium.ttf');
+  font-weight: 500; /* الوزن المناسب للخط */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: ssa;
+  src: url('./../public/uploads/font/SSTArabic-Bold.ttf');
+  font-weight: 700; /* الوزن المناسب للخط */
+  font-style: normal;
+}
+
+@font-face {
+  font-family:ssa;
+  src: url('./../public/uploads/font/SSTArabic-Light.ttf');
+  font-weight: 300; /* الوزن المناسب للخط */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: ssa;
+  src: url('./../public/uploads/font/SSTArabic-Medium.ttf');
+  font-weight: 500; /* الوزن المناسب للخط */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: ssa;
+  src: url('./../public/uploads/font/SSTArabic-Roman.ttf');
+  font-weight: 400; /* الوزن المناسب للخط */
+  font-style: normal;
+}
+.blog-content25 {
+  white-space: pre-wrap;
+}

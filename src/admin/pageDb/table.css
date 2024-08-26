@@ -1,0 +1,102 @@
+.table-container {
+    max-height: 600px; /* يمكنك تعديل الارتفاع حسب حاجتك */
+    overflow-y: auto;
+    border: 1px solid #3d2929;
+    margin: 20px 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 4px solid #020000;
+    padding: 8px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #020000;
+  }
+  
+  th {
+    background-color: #ffffff;
+    color: #020000;
+  }
+  
+  .table-cell {
+    white-space: pre-wrap; /* يسمح بتغليف النص */
+    word-wrap: break-word; /* يسمح بفصل الكلمات الطويلة */
+ width: 200px; /* تحديد العرض الأقصى */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .outdDS{
+    background-color: rgb(139, 34, 34);
+    margin-top: 20px;
+    color: white;
+    width: 100%;
+    border-radius: 10px;
+    transition: .3s;
+  }
+  
+  .outdDS:hover{
+    background-color: rgb(230, 17, 17);
+    margin-top: 20px;
+    color: white;
+  
+  }
+  .cardcreat{
+    display: flex;
+    flex-direction: column !important;
+    text-align: center;
+    align-items: center !important;
+    margin: auto;
+  }
+
+.cardcreat input,.cardcreat input::placeholder{
+    display: flex;
+justify-content: center;
+align-items: center;
+    width: 100%;
+margin: 7px;
+padding: 15px;
+text-align: center;
+background-color: #123;
+color: #ffffff;
+font-weight: 600;
+
+  }
+  .cardcreat input{
+    width: 100% !important;
+  }
+
+  .cardcreat button[type="submit"]{
+    width: 150px !important;
+    height: 50px;
+    background-color: rgb(69, 21, 124);
+    color: white;
+    font-weight: 600;
+  }
+  .blog-content25 {
+    white-space: pre-wrap !important;
+  }
+
+.form-group{
+  width: 100%;
+}
+
+  @media screen and (max-width: 600px) {
+    table, th, td {
+      display: block;
+    }
+    th, td {
+      text-align: right;
+    }
+    th::before, td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+    }
+  }
+  
