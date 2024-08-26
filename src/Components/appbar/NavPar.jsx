@@ -154,7 +154,7 @@ const Navbar = () => {
           <ul>
             <li className="custom-navbar-item">
               <div className="click-button">
-                <FormN name={"Book Your Free Consultation"} />
+                <FormN name={"Free consultation"} />
               </div>
             </li>
           </ul>
