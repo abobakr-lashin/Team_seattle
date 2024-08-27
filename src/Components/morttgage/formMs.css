@@ -531,12 +531,12 @@ align-items: center;
 
 }
 
-#FormMS.css-1ufn0jl {
+.css-1ufn0jl {
 overflow-x: hidden !important;
 
 
 }
-#FormMS.css-197gwjx .MuiPaper-root {
+  .css-197gwjx .MuiPaper-root {
   width: 100% !important;
   max-width: 100% !important;
   height: auto !important;
@@ -549,13 +549,13 @@ overflow-x: hidden !important;
   justify-content: center !important;
   align-items: center !important;
 }
-#FormMS.css-1s3v6u5{
+  .css-1s3v6u5{
   background-color: white !important;
 }
-#FormMS.css-1ufn0jl {
+  .css-1ufn0jl {
 
 width: 100% !important;
 }
-#FormMS.css-1vovazs{
+  .css-1vovazs{
   color: white !important;
 }
