@@ -194,7 +194,7 @@ export default function FormMS() {
   }, []);
 
   return (
-    <div>
+    <div className='FormMS'>
       <Button className="btn-RE1" onClick={handleClickOpen}>
         Register your interest
       </Button>
