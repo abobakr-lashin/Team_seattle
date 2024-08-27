@@ -62,8 +62,8 @@ export default function Careers() {
         if (formData.name.trim() === "") {
             setNameError(
                 language === "ar"
-                    ? "الاسم لا يمكن أن يكون فارغاً"
-                    : "Name cannot be empty"
+                    ? "لا يمكن أن يكون فارغا"
+                    : " cannot be empty"
             );
             return;
         } else {
@@ -209,7 +209,7 @@ export default function Careers() {
                                     justifyContent: "center",
                                     alignItems: "center",
                                     outline: "none",
-                                    maxWidth:"455px",
+                                    maxWidth:"auto",
 
                                     boxShadow: "none",
                                     '& .MuiOutlinedInput-root': {
