@@ -284,7 +284,7 @@ export default function FormN({name}) {
                   alignItems: "center",
                   padding: "20px",
                   justifyContent: "center",
-                  maxWidth: '200px !important', // الحد الأقصى للعرض
+                  maxWidth: '305px !important', // الحد الأقصى للعرض
                   height: '50px', // تحديد الطول
                   boxShadow: 'none !important', // إزالة أي تأثيرات ظل
                   "& .MuiOutlinedInput-root": {
