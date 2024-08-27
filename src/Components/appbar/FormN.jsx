@@ -278,7 +278,7 @@ export default function FormN({name}) {
                   backgroundColor: "white  !important",
                   border: "none !important", // إزالة الحدود الافتراضية
                   outline: "none !important", // إزالة الـ outline
-                  borderRadius: "20px", // الاحتفاظ بالزوايا المستديرة
+                  borderRadius: "20px !important", // الاحتفاظ بالزوايا المستديرة
                   margin: "auto",
                   display: "flex",
                   alignItems: "center",
@@ -292,16 +292,16 @@ export default function FormN({name}) {
                     outline: "none", // إزالة الـ outline من مكون داخلي
                   },
                   "& .MuiInputBase-root": {
-                    border: "none", // إزالة الحدود من مكون داخلي آخر
-                    outline: "none", // إزالة الـ outline من مكون داخلي آخر
+                    border: "none !important", // إزالة الحدود من مكون داخلي آخر
+                    outline: "none !important", // إزالة الـ outline من مكون داخلي آخر
                   },
                   "& .Mui-focused": {
-                    outline: "none", // إزالة الـ outline عند التركيز
+                    outline: "none !important", // إزالة الـ outline عند التركيز
                     border: "none !important", // إزالة أي حدود محتملة عند التركيز
                     boxShadow: "none !important", // إزالة أي تأثير ظل عند التركيز
                   },
                   "& .Mui-error": {
-                    border: "none", // إزالة الحدود عند حدوث خطأ
+                    border: "none !important", // إزالة الحدود عند حدوث خطأ
                   },
                   "& .MuiFormHelperText-root.Mui-error": {
                     color: "red", // تغيير لون نص المساعدة إلى الأحمر عند الخطأ
