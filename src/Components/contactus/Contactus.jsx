@@ -272,7 +272,7 @@ export default function Contactus() {
                                         backgroundColor: "white",
                                         borderRadius: "21px",
                                         border: "none",
-                                        maxWidth: "450px",
+                                        maxWidth:"510px",
                                         display: "flex",
                                         justifyContent: "center",
                                         alignItems: "center",
