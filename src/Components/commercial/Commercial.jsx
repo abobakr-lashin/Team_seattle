@@ -5,6 +5,9 @@ import "./Commercial.css";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import FormN from "../appbar/FormN";
 import SaleIn from "./SaleIn";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import Footer from "../footer/Footer";
 
 export default function Commercial() {
   return (
@@ -25,14 +28,16 @@ export default function Commercial() {
                 sx={{ color: "#d3b76d", fontSize: "65px" }}
               />
             </Link>
-            <div style={{ textTransform: "uppercase",}}>Commercial</div>
+            <div style={{ textTransform: "uppercase" }}>Commercial</div>
           </h2>
         </div>
       </div>
       <br />
 
       <div className="img-Commercial">
-        <h2 style={{ textTransform: "uppercase" }}>Developers in uae</h2>
+        <h2 style={{ textTransform: "uppercase" }}>
+          COMMERCIAL PROPERTIES SEND A REQUEST
+        </h2>
         <h3 style={{ textTransform: "uppercase" }}>
           <FormN name={"SEND A REQUEST"} />
         </h3>
@@ -44,7 +49,7 @@ export default function Commercial() {
         </div>
         <div className="title-dis7" style={{ display: "flex" }}>
           <h2>
-            <div style={{ textTransform: "uppercase", }}>WHO WE ARE</div>
+            <div style={{ textTransform: "uppercase" }}>WHO WE ARE</div>
           </h2>
         </div>
       </div>
@@ -57,8 +62,7 @@ export default function Commercial() {
             alt="benefits"
           />
           <div className="pragraf">
-            Office 1306, Dusit Thani Al Muroor St Abu Dhabi, United Arab
-            Emirates
+            <h1>15</h1> YEARS OF EXCELLENCE
           </div>
         </div>
         <div className="hr2"></div>
@@ -68,7 +72,7 @@ export default function Commercial() {
             src="/uploads/commercial/export/icon/expert.png"
             alt="benefits"
           />
-          <div className="pragraf">+971502135701</div>
+          <div className="pragraf">A TEAM OF NEARLY 100 EMPLOYEES</div>
         </div>
         <div className="hr2"></div>
         <div className="address1">
@@ -77,7 +81,7 @@ export default function Commercial() {
             src="/uploads/commercial/export/icon/multilingual.png"
             alt="benefits"
           />
-          <div className="pragraf">info@seattle-me.com</div>
+          <div className="pragraf">EXPERTISE IN 6 LANGUAGES</div>
         </div>
         <div className="hr2"></div>
 
@@ -87,7 +91,7 @@ export default function Commercial() {
             src="/uploads/commercial/export/icon/increase.png"
             alt="benefits"
           />
-          <div className="pragraf">info@seattle-me.com</div>
+          <div className="pragraf">AED 4 BILLION IN SALES IN 2023</div>
         </div>
       </div>
       <div className="h-5vh"></div>
@@ -95,71 +99,61 @@ export default function Commercial() {
       <div className="title-imags1">
         <div className="title-Commercial1">
           <h3>
-           <span style={{fontWeight:"bolder",listStyle:"inside"}}> Lorem ipsum dolor sit amet, </span>consectetur adipisicing elit. Illum,
-            doloremque in quibusdam a, ipsam incidunt voluptatem molestias, quae
-            eligendi fuga saepeeos dicta harum magnam sunt! Dolorem assumenda
-            non nam!Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Illum, doloremque in quibusdam a, ipsam incidunt voluptatem
-            molestias, quae eligendi fuga saepeeos dicta harum magnam sunt!
-            Dolorem Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Illum, quae eligendi fuga saepeeos dicta harum magnam sunt! Dolorem
-            quae eligendi fuga saepeeos dicta harum magnam sunt! Dolorem
+            <span style={{ fontWeight: "bolder", listStyle: "inside" }}>
+              {" "}
+              At Seattle & Middle East,{" "}
+            </span>
+            we pride ourselves on being a fundamental support for landlords,
+            tenants, and buyers. Our commercial property department offers
+            comprehensive services encompassing various commercial assets
+            including office spaces, retail units, shops, warehouses, commercial
+            villas, entire buildings, factories, showrooms, land plots, labor
+            camps, and staff accommodation.
           </h3>
+          <div className="imags1">
+            <img src="/uploads/commercial/export/photo2.png" alt="asdasd" />
+          </div>
+   
         </div>
-
-        <div className="imags1">
-          <img  src="/uploads/commercial/export/photo2.png" alt="asdasd" />
-        </div>
-      </div>
-      <div className="title-imags1">
-        <div className="title-Commercial1">
+        <div className="title-Commercial2">
           <h3>
-           <span style={{fontWeight:"bolder",listStyle:"inside"}}> Lorem ipsum dolor sit amet, </span>consectetur adipisicing elit. Illum,
-            doloremque in quibusdam a, ipsam incidunt voluptatem molestias, quae
-            eligendi fuga saepeeos dicta harum magnam sunt! Dolorem assumenda
-            non nam!Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Illum, doloremque in quibusdam a, ipsam incidunt voluptatem
-            molestias, quae eligendi fuga saepeeos dicta harum magnam sunt!
-            Dolorem Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Illum, quae eligendi fuga saepeeos dicta harum magnam sunt! Dolorem
-            quae eligendi fuga saepeeos dicta harum magnam sunt! Dolorem
-          </h3>
-        </div>
+          To ensure you make the best decision, our experts will select the ideal commercial space tailored to your requirements, considering factors like location, budget, and expected return on investment, enabling you to achieve lucrative earnings.
 
-        <div className="imags2">
-          <img  src="/uploads/commercial/export/photo3.png" alt="asdasd" />
+
+          </h3>
+          <div className="imags1">
+            <img className="img3" src="/uploads/commercial/export/photo3.png" alt="asdasd" />
+          </div>
+   
         </div>
-      </div>
-      <div className="title-imags1">
-        <div className="title-Commercial1">
+        <div className="title-Commercial2">
           <h3>
-           <span style={{fontWeight:"bolder",listStyle:"inside"}}> Lorem ipsum dolor sit amet, </span>consectetur adipisicing elit. Illum,
-            doloremque in quibusdam a, ipsam incidunt voluptatem molestias, quae
-            eligendi fuga saepeeos dicta harum magnam sunt! Dolorem assumenda
-            non nam!Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Illum, doloremque in quibusdam a, ipsam incidunt voluptatem
-        
+          
+              Choosing Seattle & Middle East for commercial property services means you are supported by a network of commercial real estate experts with over 15 years of experience in the UAE market.
+
+
           </h3>
+          <div className="imags1">
+            <img src="/uploads/commercial/export/photo4.png" alt="asdasd" />
+          </div>
+   
+        </div>
+        <div className="title-Commercial2">
           <h3>
-           <span style={{fontWeight:"bolder",listStyle:"inside"}}> Lorem ipsum dolor sit amet, </span>consectetur adipisicing elit. Illum,
-            doloremque in quibusdam a, ipsam incidunt voluptatem molestias, quae
-            eligendi fuga saepeeos dicta harum magnam sunt! Dolorem assumenda
-            non nam!Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Illum, doloremque in quibusdam a, ipsam incidunt voluptatem
-        
+          Our strong team of experts provides full support, following every step of your journey in the commercial real estate world in Dubai and Abu Dhabi. Our services extend beyond brokerage to include consultancy, appraisal, and property management.
+
+
           </h3>
+          <div className="imags1">
+            <img src="/uploads/commercial/export/photo5.png" alt="asdasd" />
+          </div>
+   
         </div>
+  
 
-        <div className="imags3">
-          <img  src="/uploads/commercial/export/photo5.png" alt="asdasd" />
-          <img  src="/uploads/commercial/export/photo4.png" alt="asdasd" />
-        </div>
-      </div>
-
-
-       <div className="h-5vh"></div>
-
-       <div className="h-5vh"></div>
+      
+      </div> 
+      <div className="h-5vh"></div>
 
       <div className="grop-title">
         <div className="img-dis">
@@ -167,12 +161,27 @@ export default function Commercial() {
         </div>
         <div className="title-dis7" style={{ display: "flex" }}>
           <h2>
-            <div style={{ textTransform: "uppercase" ,fontSize:"50px"}}>offices for sale in uae</div>
+            <div style={{ textTransform: "uppercase", fontSize: "50px" }}>
+              offices for sale in uae
+            </div>
           </h2>
         </div>
       </div>
 
-      <SaleIn/>
+      <SaleIn />
+
+
+      <div className="img-Developers1">
+      <div className="h-5vh"></div>
+      <div className="h-5vh"></div>
+<h2 style={{textTransform:"uppercase"}}>OUR EXPERT WILL HELP YOU </h2>
+<h5 style={{textTransform:"uppercase"}}>Feel free to contact us at any time, we are online 24/7</h5>
+<h4 style={{textTransform:"uppercase"}}><FormN name={"CONTACT US"}/></h4>
+
+
+
+</div>
+<Footer/>
     </div>
   );
 }

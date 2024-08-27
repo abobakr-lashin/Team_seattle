@@ -31,6 +31,8 @@ import UpdateBlog from './admin/pageDb/UpdateBlog';
 import LastNews from './Components/blog/LastNews';
 import Commercial from './Components/commercial/Commercial';
 import SaleIn from './Components/commercial/SaleIn';
+import Sell from './Components/sell/Sell';
+import Cardsell from './Components/sell/Cardsell';
 
 export default function App() {
     return (
@@ -47,6 +49,7 @@ export default function App() {
                     <Route path="AbudhabiDetails/:AbudhabiDetails" element={<AbudhabiDetails />} />
                     <Route path="Mortgage" element={<Mortgage />} />
                     <Route path="Spartan" element={<Spartan />} />
+                    <Route path="Sell" element={<Sell />} />
                     <Route path="LatestNews" element={<LatestNews />} />
                     <Route path="Blog/:id" element={<Blog />} />
                     <Route path="FormMS" element={<FormMS />} />
@@ -55,6 +58,7 @@ export default function App() {
                     <Route path="LastNews" element={<LastNews />} />
                     <Route path="Commercial" element={<Commercial/>} />
                     <Route path="SaleIn" element={<SaleIn/>} />
+                    <Route path="Cardsell" element={<Cardsell/>} />
                     <Route path="*" element={<NotFonunt />} />
                     <Route path="login" element={<Login />} />
                     <Route path="dashboard" element={<Dashboard />} >

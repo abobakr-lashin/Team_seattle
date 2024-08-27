@@ -1,0 +1,109 @@
+.Sell{
+    width: 100%;
+    overflow: hidden;
+}
+.Sell h1{
+font-size: 3rem;
+}
+.img-Sell{
+    background-image: url("/public/uploads/sell/export/photo1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    width: 80%;
+    height: 550px; /* أو تعيين ارتفاع مناسب حسب التصميم */
+    margin: auto;
+  }
+  .img-Sell h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    margin: 0; /* إلغاء أي تباعد افتراضي قد يؤثر على المحاذاة */
+    text-align: center; /* لضمان أن النص متمركز أفقيًا داخل العنصر */
+    font-size: 3dvw;
+    width: 100%;
+  }
+  .img-Sell h3 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    margin: 0; /* إلغاء أي تباعد افتراضي قد يؤثر على المحاذاة */
+    text-align: center; /* لضمان أن النص متمركز أفقيًا داخل العنصر */
+    font-size: 3dvw;
+  }
+  .sellcontact1{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    padding-top: 7%;
+    justify-content: space-evenly;
+    align-items: center;
+
+  }
+
+
+.selltitel {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+  .textcon1{
+width: 40%;
+flex-wrap: wrap;
+font-size: 20px !important;
+  }
+  .textcon1 span{
+font-size: 35px;
+font-weight: 600;
+  }
+
+
+.imgcon1{
+    width: 45%;
+}
+.imgcon1 img{
+width: 700px;
+
+
+}
+  .sellcontact2{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    padding-top: 7%;
+    justify-content: space-evenly;
+    align-items: center;
+
+  }
+  .textcon2{
+    width: 40%;
+    flex-wrap: wrap;
+font-size: 20px !important;
+  }
+  .textcon2 span{
+font-size: 35px;
+font-weight: 600;
+  }
+
+
+.imgcon2{
+    width: 45%;
+}
+.imgcon2 img{
+width: 700px;
+
+
+}
+
+
+

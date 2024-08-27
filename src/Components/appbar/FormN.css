@@ -154,9 +154,9 @@
 /* أنماط متجاوبة للشاشات الصغيرة جدًا */
 @media (max-width: 480px) {
   .btn-RE11 {
-    width: 120px; /* تقليل العرض */
-    height: 25px; /* تقليل الارتفاع */
-    font-size: 10px; /* تقليل حجم الخط */
+    width: 90px; /* تقليل العرض */
+    height: 20px; /* تقليل الارتفاع */
+    font-size: 8px !important; /* تقليل حجم الخط */
     border-radius: 10px; /* تقليل نصف قطر الزاوية */
     background-color: #D6C48B; /* لون خلفية الزر */
   }

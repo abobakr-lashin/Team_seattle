@@ -59,8 +59,9 @@
 .custom-navbar-link {
   color: #fff1f1;
   text-decoration: none;
-  font-size: 17px;
-  padding: 5px;
+  font-size: 16px;
+  padding: 6px;
+  cursor: pointer;
 }
 .custom-navbar-link::after {
   content: ""; /* Insert an empty content */

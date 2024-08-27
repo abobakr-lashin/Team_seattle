@@ -65,7 +65,7 @@ export default function SaleIn() {
     {
       id: 1,
       src1: "/uploads/commercial/export/photo5.png",
-      money: "50002151050500",
+      money: "28,000,000",
       CoinsName: "AED",
       bed: 3,
       bath: 4,
@@ -73,8 +73,8 @@ export default function SaleIn() {
       imgbed: "/uploads/commercial/export/icon/bed.png",
       imgbath: "/uploads/commercial/export/icon/bath.png",
       imgsquare: "/uploads/commercial/export/icon/square.png",
-      title: "asfkdjgyhoiaksDOP UAWS09D JIO ds afdfs dsfdsPA SJU OPDIJ",
-      LocationOn: "ds afdfs dsfdsPA SJU OPDIJ",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
     },
     {
       id: 2,
@@ -87,8 +87,8 @@ export default function SaleIn() {
       imgbed: "/uploads/commercial/export/icon/bed.png",
       imgbath: "/uploads/commercial/export/icon/bath.png",
       imgsquare: "/uploads/commercial/export/icon/square.png",
-      title: "asfkdjgyhoiaksDOP UAWS09D JIO ds afdfs dsfdsPA SJU OPDIJ",
-      LocationOn: "ds afdfs dsfdsPA SJU OPDIJ",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
     },
     {
       id: 3,
@@ -101,8 +101,8 @@ export default function SaleIn() {
       imgbed: "/uploads/commercial/export/icon/bed.png",
       imgbath: "/uploads/commercial/export/icon/bath.png",
       imgsquare: "/uploads/commercial/export/icon/square.png",
-      title: "asfkdjgyhoiaksDOP UAWS09D JIO ds afdfs dsfdsPA SJU OPDIJ",
-      LocationOn: "ds afdfs dsfdsPA SJU OPDIJ",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
     },
     // ... Add more items as needed
   ];
@@ -149,17 +149,7 @@ export default function SaleIn() {
       <Slider {...settings}>{imgsetin}</Slider>
       <div className="h-5vh"></div>
      
-      <div className="img-Developers1">
-      <div className="h-5vh"></div>
-      <div className="h-5vh"></div>
-<h2 style={{textTransform:"uppercase"}}>Developers in uae</h2>
-<h3 style={{textTransform:"uppercase"}}>Developers in uaeasdasdas</h3>
-<h4 style={{textTransform:"uppercase"}}><FormN name={"CONTACT US"}/></h4>
-
-
-
-</div>
-<Footer/>
+  
     </div>
   );
 }

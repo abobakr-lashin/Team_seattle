@@ -73,8 +73,9 @@ const Navbar = () => {
             <Link to="/Commercial" className="custom-navbar-link">COMMERCIAL</Link>
           </li>
           <li className="custom-navbar-item">
-            <Link to="/Service" className="custom-navbar-link">Services</Link>
+            <Link to="/SELL" className="custom-navbar-link">SELL</Link>
           </li>
+    
           <li className="custom-navbar-item">
             <Link to="/Ourpartners" className="custom-navbar-link">DEVELOPERS</Link>
           </li>
@@ -100,6 +101,9 @@ const Navbar = () => {
           </li>
           <li className="custom-navbar-item">
             <Link to="/LatestNews" className="custom-navbar-link">BOLGE</Link>
+          </li>
+          <li className="custom-navbar-item">
+            <Link to="/Service" className="custom-navbar-link">Services</Link>
           </li>
           <li
             className="custom-navbar-item"
