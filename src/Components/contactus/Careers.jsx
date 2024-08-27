@@ -202,9 +202,15 @@ export default function Careers() {
                             <MuiTelInput
                                 sx={{
                                     mt: "10px",
+                                    backgroundColor: "white",
                                     borderRadius: "21px",
                                     border: "none",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    alignItems: "center",
                                     outline: "none",
+                                    maxWidth:"600px",
+
                                     boxShadow: "none",
                                     '& .MuiOutlinedInput-root': {
                                         '& fieldset': {

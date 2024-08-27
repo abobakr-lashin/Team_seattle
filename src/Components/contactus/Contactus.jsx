@@ -122,19 +122,6 @@ export default function Contactus() {
         // Clear form after submission
         setContactFormData({ id: uuidv4(), fullName: "", contactPhone: "+971", contactEmail: "", contactMessage: "" });
 
-        // set(newDatabase , {
-        //     id: uuidv4(),
-        //     fullName: contactFormData.fullName,
-        //     contactPhone: contactFormData.contactPhone,
-        //     contactEmail: contactFormData.contactEmail,
-        //     contactMessage: contactFormData.contactMessage,
-        //     date: new Date().toDateString(),
-        //     time: new Date().toLocaleTimeString()
-        // }).then(()=>{
-        //     console.log("Data has been saved to Firebase!");
-        // }).catch(err => {
-        //     console.error("Error saving data to Firebase: ", err);
-        // })
         set(ref(db, `user/message/${contactFormData.id}`), {
             id: contactFormData.id,
             fullName: contactFormData.fullName,
@@ -285,6 +272,7 @@ export default function Contactus() {
                                         backgroundColor: "white",
                                         borderRadius: "21px",
                                         border: "none",
+                                        maxWidth:"500px",
                                         display: "flex",
                                         justifyContent: "center",
                                         alignItems: "center",
