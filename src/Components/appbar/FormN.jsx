@@ -165,15 +165,7 @@ export default function FormN({name}) {
     );
     setOpenSnackbar(true);
 
-    // Add data to array
-    // const newEntry = { id: uuidv4(), ...formData };
-    // setFormMSArr((prevArr) => {
-    //   const updatedArr = [...prevArr, newEntry];
-    //   console.log("Updated Array:", updatedArr); // Verify the array here
-    //   return updatedArr;
-    // });
 
-    // Perform any action with formData, e.g., sending to a server
     console.log("Saved Data:", formData);
 
     // Clear form after submission
@@ -283,7 +275,7 @@ export default function FormN({name}) {
               {/* phone */}
               <MuiTelInput
                 sx={{
-                  backgroundColor: "white",
+                  backgroundColor: "white  !important",
                   border: "none !important", // إزالة الحدود الافتراضية
                   outline: "none !important", // إزالة الـ outline
                   borderRadius: "20px", // الاحتفاظ بالزوايا المستديرة
@@ -292,8 +284,7 @@ export default function FormN({name}) {
                   alignItems: "center",
                   padding: "20px",
                   justifyContent: "center",
-                  width: '100%', // تحديد العرض
-                  maxWidth: '200px', // الحد الأقصى للعرض
+                  maxWidth: '200px !important', // الحد الأقصى للعرض
                   height: '50px', // تحديد الطول
                   boxShadow: 'none !important', // إزالة أي تأثيرات ظل
                   "& .MuiOutlinedInput-root": {
