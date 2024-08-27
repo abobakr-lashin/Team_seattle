@@ -209,7 +209,7 @@ export default function Careers() {
                                     justifyContent: "center",
                                     alignItems: "center",
                                     outline: "none",
-                                    maxWidth:"500px",
+                                    maxWidth:"455px",
 
                                     boxShadow: "none",
                                     '& .MuiOutlinedInput-root': {
