@@ -530,3 +530,32 @@ align-items: center;
 
 
 }
+
+.css-1ufn0jl {
+overflow-x: hidden !important;
+
+
+}
+.css-197gwjx .MuiPaper-root {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 100vh !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none;
+  overflow-x: hidden !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.css-1s3v6u5{
+  background-color: white !important;
+}
+.css-1ufn0jl {
+
+width: 100% !important;
+}
+.css-1vovazs{
+  color: white !important;
+}
