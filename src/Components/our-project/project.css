@@ -1,6 +1,7 @@
 .OurProjects {
   background-image: url("/public/uploads/img/iconbackpattern.png");
-  width: 100% !important;
+  width: 99% !important;
+  overflow: hidden;
 }
 
 .title-dis7 {
@@ -57,6 +58,159 @@
   position: absolute;
   bottom: 5px;
 }
+/* Abudhabi */
+
+.OurProjects .img-Commercial{
+    background-image: url("/public/uploads/developerprojects/photo1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    padding-top: 50%;
+    position: relative;
+    width: 100%;
+    height: 100%; /* أو تعيين ارتفاع مناسب حسب التصميم */
+  }
+
+  .OurProjects .img-Commercial input{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    width: 100%;
+    width: 60%;
+    border-radius: 50px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    padding-left: 50px;
+color: black;
+  }
+
+  .OurProjects .img-Commercial input::placeholder{
+
+
+  }
+
+  .search-container {
+    width: 100%; /* عرض الحاوية بالكامل */
+    max-width: 600px; /* عرض أقصى للحاوية */
+    margin: auto;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 59.5%;
+    left: 21%;
+    z-index: 11;
+    transform: translateY(-50%);
+    color: #888888;
+    font-size: large;
+  }
+  
+  .search-end-icon {
+    position: absolute;
+    top: 60%;
+    right: 22%;
+    transform: translateY(-50%);
+    color: #888;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px 40px; /* مساحة داخلية للإدخال لضمان عدم تداخل الأيقونات */
+    padding-left: 40px; /* المسافة بين النص والأيقونة اليسرى */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* تدوير الحواف */
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .search-input::placeholder {
+    color: #645e5e; /* لون النص البديل */
+  }
+  
+
+
+
+
+
+
+ .all-a {
+  margin: auto !important;
+
+
+}
+.all-Abudhabi {
+  margin: auto !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-Abudhabi {
+  width: 70%;
+  position: relative;
+  background-color: rgb(4, 31, 61);
+  padding-top: 70%;
+  border-radius: 50px;
+}
+.bg-imga {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 55%;
+  background-position: center;
+  background-size: 100%;
+  border-radius:50px 50px  60px  60px;
+  background-repeat: no-repeat;
+  background-position: 100%;
+  box-shadow: 1px 2px 15px 0px rgba(0, 0, 0, 0.336);
+}
+
+.img-Abudhabi h2 {
+  width: 100%;
+  position: absolute;
+  margin: auto !important;
+  text-align: center;
+  font-size: 25px;
+  top: 55%;
+}
+.img-Abudhabi h3 {
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  text-align: center;
+  top: 65%;
+}
+
+.dis {
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  align-items: center;
+  top: 80%;
+  width: 100%;
+  margin: auto;
+}
+.dis div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dis div .btn-t {
+  width: 150px;
+  height: 30px;
+  background-color: aquamarine;
+  padding: 20px;
+  margin-right: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Abudhabi */
 
 /* الوسائط الإعلامية لتجاوب أفضل */
 @media screen and (max-width: 1580px) {

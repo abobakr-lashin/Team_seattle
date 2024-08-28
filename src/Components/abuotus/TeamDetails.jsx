@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
 import Footer from "../footer/Footer.jsx";
 import "./team.css";
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 export default function TeamDetails() {
   const imgTeam = [
     {
@@ -14,7 +14,7 @@ export default function TeamDetails() {
       src3: "/uploads/Finish/Finish/about us/OUR Team/s/2.png",
       title: "MOHAMMAD SAQR",
       title2: "GENERAL MANAGER OF GROUP SALES",
-      p: "",
+      p: "Mr. Mohamed Saqr is the General Manager of Seattle Middle East, based in Abu Dhabi, United Arab Emirates. He is an alumnus of Alexandria University. Mr. Saqr has over 17 years of experience in the banking, retail, and sales sectors, having held positions such as Relationship Manager, Sales Manager, regional head and Area Sales Manager. He possesses strong skills in retail banking, team management, business planning, cross-selling, loans, and other banking services.",
     },
     {
       id: 1,
@@ -37,9 +37,9 @@ export default function TeamDetails() {
   ];
 
   const imgTeams = [
-    { id: 1, src: '/uploads/img/team/essam.png'},
-    { id: 2, src: '/uploads/img/team/nada.png' },
-    { id: 3, src: '/uploads/img/team/saqr.png' },
+    { id: 1, src: "/uploads/img/team/essam.png" },
+    { id: 2, src: "/uploads/img/team/nada.png" },
+    { id: 3, src: "/uploads/img/team/saqr.png" },
   ];
 
   const { Teamid } = useParams();
@@ -47,7 +47,18 @@ export default function TeamDetails() {
 
   if (!teamMember) {
     return (
-      <div style={{ width: "100%", fontSize: "100px", textAlign: "center", color: "white", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div
+        style={{
+          width: "100%",
+          fontSize: "100px",
+          textAlign: "center",
+          color: "white",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         Team member not found
       </div>
     );
@@ -64,22 +75,17 @@ export default function TeamDetails() {
         <div className="title-dis6" style={{ display: "flex" }}>
           <h2>
             Home{" "}
-    <Link to={"/"}><KeyboardDoubleArrowRightIcon sx={{color:"#d3b76d",fontSize:"65px"}}/> </Link> 
+            <Link to={"/"}>
+              <KeyboardDoubleArrowRightIcon
+                sx={{ color: "#d3b76d", fontSize: "65px" }}
+              />{" "}
+            </Link>
           </h2>
-             <h3>MANAGEMENT TEAM</h3>
+          <h3>MANAGEMENT TEAM</h3>
         </div>
       </div>
 
-      <Box
-      className="team-img-title"
-        sx={{
-   
-        }}
-        item
-        xs={12}
-        sm={6}
-        md={6}
-      >
+      <Box className="team-img-title" sx={{}} item xs={12} sm={6} md={6}>
         <img className="img-smal" src={teamMember.src} alt="" />
         <div className="grop-title22">
           <h2>{teamMember.title}</h2>
@@ -92,15 +98,22 @@ export default function TeamDetails() {
 
       <Grid container spacing={4}>
         {imgTeams
-          .filter(i => i.id !== teamMember.id)
-          .map(i => (
+          .filter((i) => i.id !== teamMember.id)
+          .map((i) => (
             <Grid
               key={i.id}
               item
               xs={12}
               sm={6}
               md={4}
-              sx={{margin:"auto", display: 'flex', justifyContent: 'end', alignItems: 'start', width:"100%", height: "auto" }}
+              sx={{
+                margin: "auto",
+                display: "flex",
+                justifyContent: "end",
+                alignItems: "start",
+                width: "100%",
+                height: "auto",
+              }}
             >
               <Link className="center" to={`/TeamDetails/${i.id}`}>
                 <img className="img-smal" src={i.src} alt="يسشي" />

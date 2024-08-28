@@ -137,7 +137,7 @@ export default function SaleIn() {
           </div>
           <h5>{img.title}</h5>
           <h6>
-            <LocationOnIcon /> {img.LocationOn}
+            <ationOnIcon /> {img.LocationOn}
           </h6>
         </div>
       </div>
@@ -146,6 +146,20 @@ export default function SaleIn() {
 
   return (
     <div>
+          <div className="grop-title">
+        <div className="img-dis">
+          <img src="/uploads/img/marpa.png" alt="" />
+        </div>
+        <div className="title-dis7" style={{ display: "flex" }}>
+          <h2>
+            <div style={{ textTransform: "uppercase", fontSize: "50px" }}>
+              offices for sale in uae
+            </div>
+          </h2>
+        </div>
+      </div>
+      <div className="h-5vh"></div>
+
       <Slider {...settings}>{imgsetin}</Slider>
       <div className="h-5vh"></div>
      
