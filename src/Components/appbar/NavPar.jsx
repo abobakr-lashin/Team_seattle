@@ -54,7 +54,7 @@ const Navbar = () => {
   return (
     <div className="custom-navbar-brand">
       <Link to="/">
-        <img width="220px" src="./uploads/img/LOGO.png" alt="Logo" />
+        <img width="200px" src="./uploads/img/LOGO.png" alt="Logo" />
       </Link>
       <nav className="custom-navbar">
         <div className="custom-navbar-toggle" onClick={toggleMenu}>
