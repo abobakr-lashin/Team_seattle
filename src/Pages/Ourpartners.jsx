@@ -6,11 +6,12 @@ import { Box } from '@mui/material'
 import "./OurPartners.css"
 import { Link } from 'react-router-dom';
 import FormN from '../Components/appbar/FormN.jsx';
+import OUREXPERT from './OUREXPERT.jsx';
 export default function OurPartners() {
     const imgBigOurPartners=[
         {id:1,src:"./uploads/img/esteemed/bag/images (1).png"},
         {id:2,src:"./uploads/img/esteemed/bag/images.png"},
-        {id:3,src:"./uploads/img/esteemed/bag/10.png"},
+        {id:3,src:"./uploads/img/esteemed/bag/emaar.png"},
     ]
     const imgSmallOurPartners=[
       { id: 1, src: "./uploads/img/esteemed/1.png" },
@@ -21,7 +22,6 @@ export default function OurPartners() {
       { id: 6, src: "./uploads/img/esteemed/6.png" },
       { id: 7, src: "./uploads/img/esteemed/7.png" },
       { id: 8, src: "./uploads/img/esteemed/8.png" },
-      { id: 9, src: "./uploads/img/esteemed/9.png" },
       { id: 10, src: "./uploads/img/esteemed/10.png" },
       { id: 11, src: "./uploads/img/esteemed/11.png" },
       { id: 12, src: "./uploads/img/esteemed/12.png" },
@@ -90,16 +90,7 @@ export default function OurPartners() {
 
 
 </Box>
-<div className="img-Developers1">
-
-<h2 style={{textTransform:"uppercase"}}>OUR EXPERT WILL HELP YOU</h2>
-<h5 style={{textTransform:"uppercase"}}> free to contact us at any time, we are online 24/7</h5>
-<h4 style={{textTransform:"uppercase"}}><FormN name={"CONTACT US"}/></h4>
-
-
-
-
-</div>
+<OUREXPERT/>
 <div className="h-5vh"></div>
 
 <Footer/>

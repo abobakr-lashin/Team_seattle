@@ -6,6 +6,7 @@ import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import FormMS from './FormMS';
 import  './formMs.css';
+import OUREXPERT from '../../Pages/OUREXPERT';
 export default function Mortgage() {
   const Mortgage = [
     { id: 1, src: "/uploads/Finish/Finish/Companies/SpartanTourism/1/INTEREST RATEANALYSIS.png" },
@@ -78,6 +79,8 @@ export default function Mortgage() {
         <div className="h-5vh"></div>
         <FormMS />
         <div className="h-5vh"></div>
+        <OUREXPERT/>
+
         <Footer />
       </div>
     </div>

@@ -5,6 +5,7 @@ import { Box, Grid } from '@mui/material';
 import Footer from '../footer/Footer';
 import { Link } from 'react-router-dom';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import OUREXPERT from '../../Pages/OUREXPERT';
 
 export default function Service() {
     const imgSevrvices = [
@@ -49,6 +50,8 @@ export default function Service() {
                         {ser}
                     </Box>
                     <div className="h-5vh"></div>
+                    <OUREXPERT/>
+
                     <Footer />
                 </div>
             </div>

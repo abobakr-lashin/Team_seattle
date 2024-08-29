@@ -14,6 +14,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
 import FormBlog from "./_components/FormBlog";
 import Category from "./_components/category";
+import OUREXPERT from "../../Pages/OUREXPERT";
 
 export default function Blog() {
     const [liked, setLiked] = useState(false);
@@ -228,6 +229,8 @@ export default function Blog() {
                     {snackbarMessage}
                 </Alert>
             </Snackbar>
+            <OUREXPERT/>
+
             <Footer />
         </div>
     );

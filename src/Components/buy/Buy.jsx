@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import NavPar from "../appbar/NavPar";
-import "./buy.css";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Grid } from '@mui/material';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import SearchIcon from '@mui/icons-material/Search';
 import FormN from '../appbar/FormN';
 import Footer from '../footer/Footer';
+import OUREXPERT from '../../Pages/OUREXPERT';
 
+import "./buy.css";
 export default function Buy() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
@@ -382,16 +383,8 @@ export default function Buy() {
 
 
       
-      <div className="img-Developers1">
-      <div className="h-5vh"></div>
-      <div className="h-5vh"></div>
-<h2 style={{textTransform:"uppercase"}}>OUR EXPERT WILL HELP YOU </h2>
-<h5 style={{textTransform:"uppercase"}}>Feel free to contact us at any time, we are online 24/7</h5>
-<h4 style={{textTransform:"uppercase"}}><FormN name={"CONTACT US"}/></h4>
+      <OUREXPERT/>
 
-
-
-</div>
 <Footer/>
     </div>
   );

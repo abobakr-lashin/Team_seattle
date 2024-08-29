@@ -10,6 +10,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import app, { firestore, storage } from '../../firebaseConfig';
 import { addDoc, collection } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
+import OUREXPERT from '../../Pages/OUREXPERT';
 
 export default function Careers() {
     const [formData, setFormData] = useState({
@@ -326,6 +327,8 @@ export default function Careers() {
                     </div>
                 </div>
                 <div className="h-5vh"></div>
+                <OUREXPERT/>
+
                 <div className="h-5vh"></div>
                 <Footer />
             </div>

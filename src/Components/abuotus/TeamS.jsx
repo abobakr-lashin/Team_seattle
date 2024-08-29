@@ -4,6 +4,7 @@ import Footer from "./../footer/Footer.jsx"
 import NavPar from "./../appbar/NavPar"
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { Link } from 'react-router-dom';
+import OUREXPERT from '../../Pages/OUREXPERT.jsx';
 export default function TeamS() {
   return (
        <div className='OurPartners'>
@@ -24,7 +25,9 @@ export default function TeamS() {
 </div>
 <div className="h-5vh"></div>
 <Team/>
-<div className="h-10vh"></div>
+<OUREXPERT/>
+
+<div className="h-5vh"></div>
 <Footer/>
 </div>
 

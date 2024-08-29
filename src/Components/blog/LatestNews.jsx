@@ -10,6 +10,7 @@ import "./LatestNews.css";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
 import LastNews from "./LastNews";
+import OUREXPERT from "../../Pages/OUREXPERT";
 
 export default function LatestNews() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -37,6 +38,8 @@ export default function LatestNews() {
   
   <LastNews newsPerPage={9}/>
             <div className="h-5vh"></div>
+            <OUREXPERT/>
+
             <Footer />
         </div>
     );

@@ -5,6 +5,7 @@ import { Box, Grid } from "@mui/material";
 import Footer from "../footer/Footer.jsx";
 import "./team.css";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import OUREXPERT from "../../Pages/OUREXPERT.jsx";
 export default function TeamDetails() {
   const imgTeam = [
     {
@@ -122,6 +123,7 @@ export default function TeamDetails() {
           ))}
       </Grid>
       <div className="h-5vh"></div>
+      <OUREXPERT/>
 
       <Footer />
     </div>

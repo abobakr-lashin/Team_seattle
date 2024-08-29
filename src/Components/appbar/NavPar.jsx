@@ -67,7 +67,7 @@ const Navbar = () => {
             <Link to="/Buy" className="custom-navbar-link">BUY</Link>
           </li>
           <li className="custom-navbar-item">
-            <Link to="/services" className="custom-navbar-link">RENT</Link>
+            <Link to="/RENT" className="custom-navbar-link">RENT</Link>
           </li>
           <li className="custom-navbar-item">
             <Link to="/Commercial" className="custom-navbar-link">COMMERCIAL</Link>

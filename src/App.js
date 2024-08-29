@@ -35,6 +35,7 @@ import Sell from './Components/sell/Sell';
 import Cardsell from './Components/sell/Cardsell';
 import Buy from './Components/buy/Buy';
 import Buycards from './Components/buy/Buycards';
+import Rent from './Components/RENT/Rent';
 
 export default function App() {
     return (
@@ -63,6 +64,7 @@ export default function App() {
                     <Route path="Cardsell" element={<Cardsell/>} />
                     <Route path="Buy" element={<Buy/>} />
                     <Route path="BuBuycardsy" element={<Buycards/>} />
+                    <Route path="Rent" element={<Rent/>} />
                     <Route path="*" element={<NotFonunt />} />
                     <Route path="login" element={<Login />} />
                     <Route path="dashboard" element={<Dashboard />} >

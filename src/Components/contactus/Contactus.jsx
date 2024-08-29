@@ -12,6 +12,7 @@ import Alert from '@mui/material/Alert';
 import Footer from '../footer/Footer';
 import app from '../../firebaseConfig';
 import { getDatabase, push, ref, set } from 'firebase/database';
+import OUREXPERT from '../../Pages/OUREXPERT';
 
 export default function Contactus() {
 
@@ -360,6 +361,8 @@ export default function Contactus() {
                 </Alert>
             </Snackbar>
             <div className="h-5vh"></div>
+            <OUREXPERT/>
+
             <div className="h-5vh"></div>
 
             <Footer />
