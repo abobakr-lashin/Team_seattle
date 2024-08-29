@@ -64,7 +64,7 @@ const Navbar = () => {
         </div>
         <ul className={`custom-navbar-menu ${isOpen ? 'active' : ''}`}>
           <li className="custom-navbar-item">
-            <Link to="/services" className="custom-navbar-link">BUY</Link>
+            <Link to="/Buy" className="custom-navbar-link">BUY</Link>
           </li>
           <li className="custom-navbar-item">
             <Link to="/services" className="custom-navbar-link">RENT</Link>

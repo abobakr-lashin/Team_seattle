@@ -1,8 +1,8 @@
 import { Grid } from '@mui/material';
 import React, { useState } from 'react';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import "./project.css";
 import SearchIcon from '@mui/icons-material/Search';
+import "./project.css";
 
 export default function AbudhabiDetails() {
   const [currentPage, setCurrentPage] = useState(1);

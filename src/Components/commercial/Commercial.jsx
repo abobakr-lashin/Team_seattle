@@ -1,7 +1,7 @@
 import React from "react";
-import NavPar from "../appbar/NavPar";
-import { Link } from "react-router-dom";
 import "./Commercial.css";
+import { Link } from "react-router-dom";
+import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import FormN from "../appbar/FormN";
 import SaleIn from "./SaleIn";
