@@ -149,7 +149,7 @@ export default function Buy() {
         imgbath: "/uploads/commercial/export/icon/bath.png",
         imgsquare: "/uploads/commercial/export/icon/square.png",
         title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "One Canal, Al Wasl",
+        LocationOn: "zayed, Al Wasl",
       },
       {
         id: 10,
