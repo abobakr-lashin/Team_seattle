@@ -193,7 +193,7 @@ a {
     font-size: 5px;
   }
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1440px) {
   .footer {
     color: white !important;
     font-family: Arial, sans-serif;
