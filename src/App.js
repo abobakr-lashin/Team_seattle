@@ -1,5 +1,6 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
+import ScrollToTop from './ScrollToTop'; // تأكد من استيراد المكون
 import Home from './Pages/Home';
 import Ourpartners from './Pages/Ourpartners';
 import TeamS from './Components/abuotus/TeamS';
@@ -41,6 +42,7 @@ export default function App() {
     return (
         <div>
             <HashRouter>
+                <ScrollToTop /> {/* هنا يتم إضافة ScrollToTop */}
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="Ourpartners" element={<Ourpartners />} />
