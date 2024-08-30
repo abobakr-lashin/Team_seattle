@@ -134,7 +134,6 @@ export default function Blog() {
                     </div>
                 </div>
             </div>
-
             <Grid container spacing={2}>
     <Grid sx={{flex:"start"}} item xs={12} md={8}>
         <div className="prgraf-blog ">
@@ -175,48 +174,51 @@ export default function Blog() {
             {/* Textarea */}
         </div>
     </Grid>
-    <Grid className="sticky-element" item xs={12} md={4} sx={{ position: "sticky", top: "10px" }}>
-        <div className="about-me">
-            <div className="about">
-                <div className="about-title">ABOUT ME</div>
-                <div className="img-me-name">
-                    <img src={formData.fileBlog} alt="" />
-                    <h4>{formData.name}</h4>
+    <Grid item xs={12} md={4}>
+        <div className="sticky-element" style={{ position: "sticky", top: "10px" }}>
+            <div className="about-me">
+                <div className="about">
+                    <div className="about-title">ABOUT ME</div>
+                    <div className="img-me-name">
+                        <img src={formData.fileBlog} alt="" />
+                        <h4>{formData.name}</h4>
+                    </div>
+                </div>
+                <div className="hr3"></div>
+                <div className="recent-posts">
+                    <h5>RECENT POSTS</h5>
+                    <Category id={id} />
                 </div>
             </div>
-            <div className="hr3"></div>
-            <div className="recent-posts">
-                <h5>RECENT POSTS</h5>
-                <Category id={id} />
+            <div className="follow-us">
+                <h5>FOLLOW US</h5>
+                <div className="social-icons">
+                    <Link to="https://www.facebook.com/seattleme" target="_blank">
+                        <img src="/uploads/Finish/Finish/blog/facebook_1384005.png" alt="Facebook" />
+                    </Link>
+                    <Link to="https://www.instagram.com/seattlemiddleeast/" target="_blank">
+                        <img src="/uploads/Finish/Finish/blog/instagram_1384015.png" alt="Instagram" />
+                    </Link>
+                    <Link to="https://www.threads.net/@seattlemiddleeast" target="_blank">
+                        <img src="/uploads/Finish/Finish/blog/threads.png" alt="threads" />
+                    </Link>
+                    <Link to="https://www.linkedin.com/company/seattleme/" target="_blank">
+                        <img src="/uploads/Finish/Finish/blog/linkedin_1384014.png" alt="LinkedIn" />
+                    </Link>
+                    <Link to="https://www.snapchat.com/add/semabudhabi?invite_id=9MOLq1lA&locale=en_AE&share_id=warI0iHcROaLw-YwHLVqzw&sid=73c8101497ec451ebc15376ae6742048" target="_blank">
+                        <img src="/uploads/Finish/Finish/blog/snapchat_3669965.png" alt="snapchat" />
+                    </Link>
+                </div>
             </div>
-        </div>
-        <div className="follow-us">
-            <h5>FOLLOW US</h5>
-            <div className="social-icons">
-                <Link to="https://www.facebook.com/seattleme" target="_blank">
-                    <img src="/uploads/Finish/Finish/blog/facebook_1384005.png" alt="Facebook" />
-                </Link>
-                <Link to="https://www.instagram.com/seattlemiddleeast/" target="_blank">
-                    <img src="/uploads/Finish/Finish/blog/instagram_1384015.png" alt="Instagram" />
-                </Link>
-                <Link to="https://www.threads.net/@seattlemiddleeast" target="_blank">
-                    <img src="/uploads/Finish/Finish/blog/threads.png" alt="threads" />
-                </Link>
-                <Link to="https://www.linkedin.com/company/seattleme/" target="_blank">
-                    <img src="/uploads/Finish/Finish/blog/linkedin_1384014.png" alt="LinkedIn" />
-                </Link>
-                <Link to="https://www.snapchat.com/add/semabudhabi?invite_id=9MOLq1lA&locale=en_AE&share_id=warI0iHcROaLw-YwHLVqzw&sid=73c8101497ec451ebc15376ae6742048" target="_blank">
-                    <img src="/uploads/Finish/Finish/blog/snapchat_3669965.png" alt="snapchat" />
-                </Link>
+            <div className="need-help">
+                <img src="/uploads/Finish/Finish/blog/qu.png" alt="help" />
+                <h5>We have a ready team to assist you and respond to your inquiries</h5>
+                <FormBlog />
             </div>
-        </div>
-        <div className="need-help">
-            <img src="/uploads/Finish/Finish/blog/qu.png" alt="help" />
-            <h5>We have a ready team to assist you and respond to your inquiries</h5>
-            <FormBlog />
         </div>
     </Grid>
 </Grid>
+
 
             <div className="h-5vh"></div>
             <div className="h-5vh"></div>
