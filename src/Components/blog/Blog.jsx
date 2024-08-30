@@ -174,8 +174,8 @@ export default function Blog() {
             {/* Textarea */}
         </div>
     </Grid>
-    <Grid item xs={12} md={4}>
-        <div className="sticky-element" style={{ position: "sticky", top: "10px" }}>
+    <Grid item xs={12} md={4}style={{ position: "sticky", top: "10px",height:"auto",overflow:"auto" }}>
+        <div className="sticky-element" style={{ position: "sticky", top: "10px",height:"auto",overflow:"auto" }}>
             <div className="about-me">
                 <div className="about">
                     <div className="about-title">ABOUT ME</div>
