@@ -85,13 +85,15 @@ const Navbar = () => {
             onMouseLeave={() => handleMouseLeave('OUR_PROJECTS')}
             onClick={() => handleDropdownToggle('OUR_PROJECTS')}
           >
-            <span className="custom-navbar-link">AREAS</span>
+            <span className="custom-navbar-link">
+            <Link  to="/Abudhabi">
+
+              AREAS
+              </Link>
+
+              </span>
             <ul className={`custom-dropdown-menu ${dropdownOpen.OUR_PROJECTS ? 'show' : ''}`}>
-              <li>
-                <Link className="custom-dropdown-item" to="/Abudhabi">
-                  ABU DHABI
-                </Link>
-              </li>
+          
               <li>
                 <Link className="custom-dropdown-item" to="/login">
                   loginAdmin
