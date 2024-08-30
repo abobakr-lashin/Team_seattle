@@ -193,7 +193,7 @@ a {
     font-size: 5px;
   }
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1441px) {
   .footer {
     color: white !important;
     font-family: Arial, sans-serif;
@@ -231,6 +231,12 @@ a {
   }
   .social-media .icon {
     margin: 5px 0px !important;
+  }
+  .css-1tz8m30 {
+    
+  margin-top: 10% !important;
+  
+  
   }
 }
 
