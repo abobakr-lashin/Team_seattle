@@ -1,6 +1,9 @@
 .App {
   text-align: center;
   scroll-behavior: auto;
+  filter: none !important;
+  opacity: 1 !important;
+
 }
 
 .App-logo {

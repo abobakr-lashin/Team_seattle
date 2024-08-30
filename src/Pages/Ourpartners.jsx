@@ -9,9 +9,9 @@ import FormN from '../Components/appbar/FormN.jsx';
 import OUREXPERT from './OUREXPERT.jsx';
 export default function OurPartners() {
     const imgBigOurPartners=[
-        {id:1,src:"./uploads/img/esteemed/bag/images (1).png"},
-        {id:2,src:"./uploads/img/esteemed/bag/images.png"},
-        {id:3,src:"./uploads/img/esteemed/bag/emaar.png"},
+        {id:1,src:"./uploads/img/esteemed/bag/images1.png"},
+        {id:2,src:"./uploads/img/esteemed/bag/emaar.png"},
+        {id:3,src:"./uploads/img/esteemed/bag/images.png"},
     ]
     const imgSmallOurPartners=[
       { id: 1, src: "./uploads/img/esteemed/1.png" },

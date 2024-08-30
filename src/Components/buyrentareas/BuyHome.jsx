@@ -1,21 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import "./Commercial.css";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import FormN from "../appbar/FormN";
-import Footer from "../footer/Footer";
+import "../commercial/Commercial.css";
 
 const CustomPrevArrow = (props) => {
   const { className, onClick } = props;
   return (
-    <div
-      className={`${className} custom-prev-arrow`}
-      onClick={onClick}
-    >
-      {/* يمكنك استخدام أي محتوى تريده هنا مثل نص أو عنصر SVG */}
-      <span></span> {/* استخدام رمز "أقل من" كرمز سهم */}
+    <div className={`${className} custom-prev-arrow`} onClick={onClick}>
+      <span></span>
     </div>
   );
 };
@@ -23,26 +17,28 @@ const CustomPrevArrow = (props) => {
 const CustomNextArrow = (props) => {
   const { className, onClick } = props;
   return (
-    <div
-      className={`${className} custom-next-arrow`}
-      onClick={onClick}
-    >
-      {/* يمكنك استخدام أي محتوى تريده هنا مثل نص أو عنصر SVG */}
-      <span></span> {/* استخدام رمز "أكبر من" كرمز سهم */}
+    <div className={`${className} custom-next-arrow`} onClick={onClick}>
+      <span></span>
     </div>
   );
 };
 
-export default function SaleIn() {
+export default function BuyHome() {
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      console.log('Checking DOM changes after the page load');
+      // يمكنك هنا وضع أي أكواد تحتاج إلى مراقبة تغييرات الـ DOM
+    });
+  }, []);
+
   const settings = {
     centerMode: false,
     centerPadding: "auto",
     slidesToShow: 3,
-    focusOnSelect: true,
+    focusOnSelect: false,
     infinite: true,
     speed: 600,
-    autoplay: true,
-    
+    autoplay: false,
     autoplaySpeed: 4000,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
@@ -105,7 +101,6 @@ export default function SaleIn() {
       title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
       LocationOn: "One Canal, Al Wasl",
     },
-    // ... Add more items as needed
   ];
 
   const imgsetin = imgSaleIn.map((img) => (
@@ -138,7 +133,7 @@ export default function SaleIn() {
           </div>
           <h5>{img.title}</h5>
           <h6>
-            <ationOnIcon /> {img.LocationOn}
+            <LocationOnIcon /> {img.LocationOn}
           </h6>
         </div>
       </div>
@@ -147,15 +142,14 @@ export default function SaleIn() {
 
   return (
     <div>
-          <div className="grop-title">
+      <div className="grop-title">
         <div className="img-dis">
           <img src="/uploads/img/marpa.png" alt="" />
         </div>
         <div className="title-dis7" style={{ display: "flex" }}>
           <h2>
             <div style={{ textTransform: "uppercase", fontSize: "50px" }}>
-              offices for sale in uae
-            </div>
+            Buying Property in UAE            </div>
           </h2>
         </div>
       </div>
@@ -163,8 +157,7 @@ export default function SaleIn() {
 
       <Slider {...settings}>{imgsetin}</Slider>
       <div className="h-5vh"></div>
-     
-  
+      <div className="h-5vh"></div>
     </div>
   );
 }

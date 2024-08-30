@@ -10,12 +10,21 @@ import INSIGHTS from './../Components/insights/INSIGHTS.jsx'
 import Footer from './../Components/footer/Footer.jsx'
 import { ToastContainer } from 'react-toastify'
 import Counternuber from '../Components/discover/Counternuber.jsx'
+import BuyHome from '../Components/buyrentareas/BuyHome.jsx'
+import RentHome from '../Components/buyrentareas/RentHome.jsx'
+import AreasHome from '../Components/buyrentareas/AreasHome.jsx'
 export default function Home() {
     return (
         <div>
             <ToastContainer />
             <Header />
-            <Discover />
+            <Counternuber/>
+            <BuyHome/>
+            <RentHome/>
+            <AreasHome/>
+              
+              
+              <Discover />
             <OurProjects />
             <Esteemed /> 
             <Sevrvices />

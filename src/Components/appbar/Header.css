@@ -123,8 +123,6 @@ color: #ad9a5a;
 
 
 .css-ohncnb-MuiSpeedDialIcon-root .MuiSpeedDialIcon-icon {
-  -webkit-transition: -webkit-transform 250ms cubic-bezier(12.4, 0, 0.2, 1) 0ms, opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
-  transition: transform 250ms cubic-bezier(12.4, 0, 0.2, 1) 0ms, opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
   color: #ffffff !important;
 
 }

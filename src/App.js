@@ -37,12 +37,13 @@ import Cardsell from './Components/sell/Cardsell';
 import Buy from './Components/buy/Buy';
 import Buycards from './Components/buy/Buycards';
 import Rent from './Components/RENT/Rent';
+import BuyHome from './Components/buyrentareas/BuyHome';
 
 export default function App() {
     return (
         <div>
             <HashRouter>
-                <ScrollToTop /> {/* هنا يتم إضافة ScrollToTop */}
+                <ScrollToTop /> 
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="Ourpartners" element={<Ourpartners />} />
@@ -67,6 +68,7 @@ export default function App() {
                     <Route path="Buy" element={<Buy/>} />
                     <Route path="BuBuycardsy" element={<Buycards/>} />
                     <Route path="Rent" element={<Rent/>} />
+                    <Route path="BuyHome" element={<BuyHome/>} />
                     <Route path="*" element={<NotFonunt />} />
                     <Route path="login" element={<Login />} />
                     <Route path="dashboard" element={<Dashboard />} >

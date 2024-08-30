@@ -6,6 +6,10 @@ import './Esteemed.css';
 
 export default function Esteemed() {
   const imgEsteemed = [
+    { id: 1, src: "./uploads/img/esteemed/bag/emaar.png" },
+    { id: 1, src: "./uploads/img/esteemed/bag/images1.png" },
+    { id: 1, src: "./uploads/img/esteemed/bag/images.png  " },
+
     { id: 1, src: "./uploads/img/esteemed/1.png" },
     { id: 2, src: "./uploads/img/esteemed/2.png" },
     { id: 3, src: "./uploads/img/esteemed/3.png" },
@@ -14,7 +18,6 @@ export default function Esteemed() {
     { id: 6, src: "./uploads/img/esteemed/6.png" },
     { id: 7, src: "./uploads/img/esteemed/7.png" },
     { id: 8, src: "./uploads/img/esteemed/8.png" },
-    { id: 9, src: "./uploads/img/esteemed/9.png" },
     { id: 10, src: "./uploads/img/esteemed/10.png" },
     { id: 11, src: "./uploads/img/esteemed/11.png" },
     { id: 12, src: "./uploads/img/esteemed/12.png" },

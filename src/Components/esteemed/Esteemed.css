@@ -59,8 +59,9 @@ width: 71%;
 
 
 .slick-slide {
-  transition: opacity 0.3s ease;
+  transition: opacity 1.3s ease !important;
 }
+
 
 .slick-center {
   opacity: 1 !important;
@@ -156,4 +157,7 @@ width: 71%;
     width: 150px !important;
     margin: auto;
   }
+}
+.slick-track{
+  opacity: 1 !important;
 }

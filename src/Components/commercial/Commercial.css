@@ -1,20 +1,28 @@
 .Commercial{
 width: 100%;
 overflow: hidden;
+z-index: 1000;  opacity: 1;
+
+
+}
+*{
+  opacity: 1;
+
 }
 
 
+.img-Commercial {
+  background-image: url("/public/uploads/commercial/export/photo1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  padding-top: 50%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
 
-.img-Commercial{
-    background-image: url("/public/uploads/commercial/export/photo1.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 80%;
-    padding-top: 50%;
-    position: relative;
-    width: 100%;
-    height: 100%; /* أو تعيين ارتفاع مناسب حسب التصميم */
-  }
   .img-Commercial h2 {
     position: absolute;
     top: 50%;
@@ -138,6 +146,8 @@ padding-top: 22px;
   border-radius: 50%;
   z-index: 1;
   font-size: 24px; /* حجم الخط */
+  opacity: 1;
+
 }
 
 
@@ -151,11 +161,14 @@ padding-top: 22px;
     height: 80px  !important;
     background-size:contain;
   background-image: url("/public/uploads/commercial/export/northarrow.png");
+  opacity: 1;
+
 }
 
 .custom-next-arrow {
     position: absolute;
     background-size:contain;
+    opacity: 1;
 
     top: 110%;
     margin: auto;
@@ -176,6 +189,8 @@ padding-top: 22px;
   padding-top: 100%;
   box-sizing: border-box;
   margin: auto !important;
+  opacity: 1;
+
 }
 
 .bg-back .imgSaleIn {
@@ -187,6 +202,8 @@ padding-top: 22px;
   border-radius: 50px;
   overflow: hidden;
   box-shadow: 1px 10px 50px 1px rgba(0, 0, 0, 0.363);
+  opacity: 1;
+
 }
 
 .img-imgSaleIn h3 {
@@ -196,6 +213,8 @@ padding-top: 22px;
   text-align: center;
   margin: auto;
   width: 100%;
+  opacity: 1;
+
   color: white !important;
 }
 
@@ -208,11 +227,15 @@ padding-top: 22px;
   justify-content: space-around;
   align-items: center;
   color: white !important;
+  opacity: 1;
+
   font-size: 20px;
 }
 
 .dis-play img {
   width: 35px;
+  opacity: 1;
+
 }
 
 .img-imgSaleIn h5 {
@@ -227,6 +250,8 @@ padding-top: 22px;
   color: white;
   font-size: 20px;
   flex-wrap: wrap;
+  opacity: 1;
+
 }
 
 .img-imgSaleIn h6 {
@@ -237,11 +262,15 @@ padding-top: 22px;
   color: white;
   font-size: 20px;
   flex-wrap: wrap;
+  opacity: 1;
+
 }
 @media screen and (max-width: 1024px) {
 
   .bg-back{
     height: 600px;
+    opacity: 1;
+
   }
   .img-imgSaleIn h5 {
   
@@ -251,24 +280,7 @@ padding-top: 22px;
 
 
   }
-  /* .title-imags1{
-    flex-direction: column-reverse !important;
-    margin: auto;
-    width: 100%;
-    
-  }
-  
-  .allimg{
-    flex-direction: row-reverse;
-    align-items: center;
 
-  }
-  .allimg img{
-width: 300px;
-display: flex;
-height: auto;
-
-  } */
 
 
 

@@ -5,7 +5,17 @@ body{
   padding: 0px ;
   margin: 0px ;
   color: white;
+  filter: none !important;
+  opacity: 1 !important;
+
 }
+* {
+  /* transition: none !important; */
+  animation: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
 @font-face {
   font-family:ssa;
   src: url('./../public/uploads/font/alfont_com_AlFont_com_SST-Arabic-Medium.ttf');

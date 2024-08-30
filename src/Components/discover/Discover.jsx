@@ -11,7 +11,6 @@ export default function Discover() {
     <div className="Discover">
       <div className="body-img">
         {/* <div className="h-5vh"></div> */}
-  <Counternuber/>
         <div className="h-6vh"></div>
 
         <div className="grop-title1">
