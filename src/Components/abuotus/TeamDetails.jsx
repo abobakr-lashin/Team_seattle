@@ -10,27 +10,33 @@ export default function TeamDetails() {
   const imgTeam = [
     {
       id: 3,
-      src: "/uploads/Finish/Finish/about us/OUR Team/New folder/PHOTO.png",
-      src2: "/uploads/Finish/Finish/about us/OUR Team/s/1.png",
-      src3: "/uploads/Finish/Finish/about us/OUR Team/s/2.png",
+      src: "/uploads/Newfolder/PHOTO.png",
+      src2: "/uploads/s/1.png",
+      src3: "/uploads/s/2.png",
       title: "MOHAMMAD SAQR",
       title2: "GENERAL MANAGER OF GROUP SALES",
       p: "Mr. Mohamed Saqr is the General Manager of Seattle Middle East, based in Abu Dhabi, United Arab Emirates. He is an alumnus of Alexandria University. Mr. Saqr has over 17 years of experience in the banking, retail, and sales sectors, having held positions such as Relationship Manager, Sales Manager, regional head and Area Sales Manager. He possesses strong skills in retail banking, team management, business planning, cross-selling, loans, and other banking services.",
     },
     {
       id: 1,
-      src: "/uploads/Finish/Finish/about us/OUR Team/New folder/sa.png",
-      src2: "/uploads/Finish/Finish/about us/OUR Team/s/2.png",
-      src3: "/uploads/Finish/Finish/about us/OUR Team/s/3.png",
+      src: "/uploads/Newfolder/sa.png",
+      src2: "/uploads/s/2.png",
+      src3: "/uploads/s/3.png",
       title: "ESSAM EL REFAEY",
       title2: "GROUP EXECUTIVE DIRECTOR & CEO",
-      p: "A driven managing director with an insatiable hunger for success in real estate and investing. With a keen eye for lucrative opportunities and the tenacity to close the deal, his unbridled passion has propelled him to the top of his field. Though intensely focused on the bottom line, he still makes time to pass on his hard-won knowledge by mentoring aspiring entrepreneurs. His depth of expertise and unwavering determination make him a force to be reckoned with in the world of real estate and investing.",
+      p: `
+With an illustrious 26-year career in banking & mortgage, Essam El Refaey stands at the forefront of real estate and investment excellence as the Group Executive Director & CEO. His unparalleled expertise and strategic vision have consistently driven the success of our organization, navigating complex markets and identifying high-value opportunities with precision.
+
+Essam’s exceptional leadership and relentless pursuit of excellence have established him as a formidable presence in the industry. His ability to secure and close high-impact deals underscores his profound understanding of market dynamics and financial intricacies.
+
+His profound commitment to success, combined with his deep industry knowledge, makes Essam El Refaey a transformative force in real estate and investment, continually advancing the growth and innovation of our group.      
+      `,
     },
     {
       id: 2,
-      src: "/uploads/Finish/Finish/about us/OUR Team/New folder/safv.png",
-      src2: "/uploads/Finish/Finish/about us/OUR Team/s/1.png",
-      src3: "/uploads/Finish/Finish/about us/OUR Team/s/3.png",
+      src: "/uploads/Newfolder/safv.png",
+      src2: "/uploads/s/1.png",
+      src3: "/uploads/s/3.png",
       title: "NADA JALAL MOHAMMED AL KHALED",
       title2: "CO-FOUNDER & DIRECTOR OF GROUP QUALITY CONTROL",
       p: "Nada Al Khaled serves as the Quality Control Director of the group. Graduating from New York University Abu Dhabi, Nada’s unwavering commitment to excellence is evident in her meticulous approach to overseeing quality control processes across the company’s diverse sectors, including Real Estate, Mortgage, Digital Media, and Travel. Through her astute inspections, audits, and assessments, she consistently identifies areas for improvement and implements robust quality control measures. Nada’s collaborative nature and dedication to customer satisfaction, regulatory compliance, and continuous enhancement have solidified Seattle and Middle East’s reputation as a paragon of quality and reliability in the industry.",
@@ -87,7 +93,7 @@ export default function TeamDetails() {
       </div>
 
       <Box className="team-img-title" sx={{}} item xs={12} sm={6} md={6}>
-        <img className="img-smal" src={teamMember.src} alt="" />
+        <img width={"90%"} className="img-smal" src={teamMember.src} alt="" />
         <div className="grop-title22">
           <h2>{teamMember.title}</h2>
           <h3>{teamMember.title2}</h3>

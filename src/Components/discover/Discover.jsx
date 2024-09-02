@@ -2,11 +2,9 @@ import React, { useEffect, useState, useRef } from "react";
 import { Grid } from "@mui/material";
 import CounterBox from "./CounterBox"; // تأكد من تحديث مسار الاستيراد وفقًا لموقع الملف
 import "./Discover.css";
-import FormMs from "../morttgage/FormMS"
+import FormMs from "../morttgage/FormMS";
 import Counternuber from "./Counternuber";
 export default function Discover() {
-
-
   return (
     <div className="Discover">
       <div className="body-img">
@@ -25,33 +23,34 @@ export default function Discover() {
 
         <div className="prgraf">
           <p>
-            Seattle & Middle East Group is a leader in providing exceptional
-            professional services across Real Estate, Travel, Contracting,
-            Mortgage, and Digital Marketing. <br /> 
-             We are committed to delivering
-            tailored solutions that meet the unique needs of our clients. <br />
+            Seattle & Middle East Group excels in delivering comprehensive,
+            professional services across Real Estate, Mortgage, Tourism,
+            Contracting, and Digital Marketing sectors.
+            <br />
+            Our organization encompasses a diverse range of companies, including
+            Seattle & Middle East Real Estate, JNJ Mortgage and Spartan Tourism,
+            allowing us to offer a full spectrum of services. Clients can
+            seamlessly navigate the process of purchasing real estate, securing
+            financing, and arranging travel, all within our integrated network.
+            <br />
           </p>
           <p>
-            Our expert team in Real Estate helps you find ideal residential,
-            commercial, or investment properties. <br />
-             Our Travel Services offer
-            seamless and memorable journeys, while our Mortgage team
-            provides comprehensive financing guidance. <br />
-             Our Digital Marketing
-            Agency boosts your brand's online presence with cutting-edge
-            strategies.
-          </p>
-          <p>
-            Professionalism, integrity, and customer satisfaction are our core
-            values.
+            Our Real Estate division specializes in identifying the perfect
+            residential, commercial, or investment properties. Concurrently, our
+            Mortgage team at JNJ Mortgage provides expert guidance on financing
+            options, ensuring a smooth acquisition process. Spartan Tourism
+            enhances your experience with exceptional travel services, designed
+            to make your journey as effortless and enjoyable as possible.
+            <br />
+            At Seattle & Middle East Group, we uphold the highest standards of professionalism, integrity, and customer satisfaction.
+           
           </p>
         </div>
 
- <FormMs/>
- <br />
- <br />
+        <FormMs />
+        <br />
+        <br />
       </div>
-
     </div>
   );
 }

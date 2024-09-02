@@ -1,7 +1,7 @@
 
   .img-smal{
-    width: 440px;
-    margin-right: 25px;
+    width: 400px;
+    margin-right: 25px ;
   }
   .OurPartners{
     overflow: hidden;
@@ -41,7 +41,7 @@
 
   }
   .grop-title22 h3 {
-    font-size: 40px;
+    font-size: 30px;
     margin: 15px;
     color: white;
 
@@ -50,7 +50,7 @@
   .grop-title22 p {
     width: 800px; 
        margin: 15px;
-    line-height: 2.0;
+    line-height: 1.7;
     font-size: 20px;
     color: white;
 
