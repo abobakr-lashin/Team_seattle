@@ -75,14 +75,23 @@ export default function OurPartners() {
 <div className="h-5vh"></div>
 <div className='display12'>
 {imgBigOurPartners.map((img)=>{
-    return <div key={img.id}> <img className='imgBigOurPartners' src={img.src} alt="" /></div> 
+    return <div key={img.id}> 
+    <Link to={"/Developers"}>
+    <img className='imgBigOurPartners' src={img.src} alt="" />
+    </Link>
+    
+    </div> 
 })
 }
 
 </div>
 <div className='display12'>
 {imgSmallOurPartners.map((img)=>{
-  return <div style={{margin:"25px"}} key={img.id}> <img className='imgSmallOurPartners' src={img.src} alt="" /></div> 
+  return <div style={{margin:"25px"}} key={img.id}><Link to={"/Developers"}>
+  
+  <img className='imgSmallOurPartners' src={img.src} alt="" />
+  </Link> 
+  </div> 
 })
 
 }

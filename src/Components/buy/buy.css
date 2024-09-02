@@ -84,11 +84,11 @@ font-weight: 600;
 }
 /* /* .buy .bg-back */
 .buy .bg-back {
-    width: 90%;
+    width: 85%;
     position: relative;
-    background-color: #043844;
+    background-color: #085364;
     border-radius: 50px;
-    height: 700px;
+    height: 580px;
     margin-top: 40px;
     padding-top: 100%;
     box-sizing: border-box;
@@ -164,8 +164,8 @@ font-weight: 600;
     gap: 10px;
   }
   .img-lisby img{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius:100% 100%;
   }
 
@@ -180,7 +180,7 @@ font-weight: 600;
   @media screen and (max-width: 1024px) {
   
     .buy .bg-back {
-      height: 600px;
+      height: 550px;
     }
   
     .buy .img-imgSaleIn h5 {

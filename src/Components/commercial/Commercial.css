@@ -180,11 +180,11 @@ padding-top: 22px;
 
 /* أنماط إضافية لتصميم السلايدر */
 .bg-back {
-  width: 90%;
+  width: 85%;
   position: relative;
-  background-color: #043844;
+  background-color: #085364;
   border-radius: 50px;
-  height: 700px;
+  height: 580px;
   margin-top: 40px;
   padding-top: 100%;
   box-sizing: border-box;
