@@ -22,12 +22,12 @@ export default function ServiceDetails() {
 
 
   const imgSevrvices = [
-    { id: 1, src: "/uploads/img/content/1.png" },
-    { id: 2, src: "/uploads/img/content/2.png" },
-    { id: 3, src: "/uploads/img/content/3.png" },
-    { id: 4, src: "/uploads/img/content/4.png" },
-    { id: 5, src: "/uploads/img/content/5.png" },
-    { id: 6, src: "/uploads/img/content/6.png" },
+    { id: 1, src: './uploads/img/content/1.png' },
+    { id: 2, src: './uploads/img/content/3.png' },
+    { id: 3, src: './uploads/img/content/4.png' },
+    { id: 4, src: './uploads/img/content/5.png' },
+    { id: 5, src: './uploads/img/content/6.png' },
+    { id: 6, src: './uploads/img/content/2.png' },
   ];
 
   const ServiceDetails = [
