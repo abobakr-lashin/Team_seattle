@@ -3,10 +3,10 @@ import NavPar from './../Components/appbar/NavPar'
 import Footer from './../Components/footer/Footer.jsx'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { Box } from '@mui/material'
-import "./OurPartners.css"
 import { Link } from 'react-router-dom';
 import FormN from '../Components/appbar/FormN.jsx';
 import OUREXPERT from './OUREXPERT.jsx';
+import "./OurPartners.css"
 export default function OurPartners() {
     const imgBigOurPartners=[
         {id:1,src:"./uploads/img/esteemed/bag/images1.png"},
