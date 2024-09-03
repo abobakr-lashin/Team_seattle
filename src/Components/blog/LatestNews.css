@@ -24,6 +24,7 @@
   .title-dis7 div {
     display: flex;
     align-items: center;
+    font-size: 50px
   }
   
   .news-container {
@@ -142,14 +143,12 @@ background-repeat: no-repeat;
   /* Media Queries for Responsive Design */
   
   @media screen and (max-width: 768px) {
-    /* .img-LatestNews1 {
-      max-width: 100%;
-      height: 350px;
+
+    .title-dis7 div{
+      font-size: 40px;
     }
-  
-    .news-title, .news-text, .avatar, .date {
-      font-size: 14px;
-    } */
+
+
   }
   
   @media screen and (max-width: 500px) {
@@ -188,6 +187,9 @@ background-repeat: no-repeat;
       }
       
       
+    .title-dis7 div{
+      font-size: 20px;
+    }
     .news-title, .news-text, .avatar, .date {
       font-size: 12px;
     }

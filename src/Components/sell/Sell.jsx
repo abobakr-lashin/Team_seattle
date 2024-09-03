@@ -29,7 +29,6 @@ export default function Sell() {
           </h1>
         </div>
       </div>
-      <br />
       <div className="img-Sell">
         <h2 style={{ textTransform: "uppercase" }}>
           SELL OR RENT OUT YOUR PROPERTY IN UAE{" "}
@@ -62,6 +61,11 @@ export default function Sell() {
           <img src="/uploads/sell/export/photo2.png" alt="" />
         </div>
       </div>
+
+
+
+
+
       <div className="sellcontact2">
    
         <div className="imgcon2">
@@ -132,7 +136,7 @@ export default function Sell() {
   </div>
   <div className="title-dis7" style={{ display: "flex" }}>
     <h2>
-      <div style={{ textTransform: "uppercase", fontSize: "50px" }}>
+      <div style={{ textTransform: "uppercase",  }}>
       OFFPLAN LATEST LAUNCHES
 
 </div>

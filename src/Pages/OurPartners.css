@@ -35,7 +35,7 @@
   padding-top: 30%;
   position: relative;
   width: 80%;
-  margin: auto;
+  margin:20px auto;
   height: 100%; /* أو تعيين ارتفاع مناسب حسب التصميم */
 }
 .img-Developers1 h2 {
@@ -164,7 +164,11 @@
         transition: 0.3s;
       }
 /*img-Developers1  */
-
+.img-Developers1{
+  width: 95% !important;
+  padding: 20%;
+  margin-top: 30px;
+}
 .img-Developers1 h2 {
   width: 100%;
   position: absolute;
@@ -210,7 +214,11 @@
 
 }
 @media screen and (max-width:375px) {
-
+  .img-Developers1{
+    width: 100% !important;
+    padding: 20%;
+    margin-top: 28px;
+  }
   .img-Developers1 h2 {
     width: 100%;
     position: absolute;
@@ -269,9 +277,8 @@
         left: 50%;
         transform: translate(-50%, -50%);
         color: aliceblue;
-        margin: 0; /* إلغاء أي تباعد افتراضي قد يؤثر على المحاذاة */
         text-align: center; /* لضمان أن النص متمركز أفقيًا داخل العنصر */
-        font-size: 15px;
+        font-size: 10px !important;
         width: 100%;
       
       }
@@ -281,10 +288,9 @@
         left: 50%;
         transform: translate(-50%, -50%);
         color: aliceblue;
-        margin: 0; /* إلغاء أي تباعد افتراضي قد يؤثر على المحاذاة */
         text-align: center; /* لضمان أن النص متمركز أفقيًا داخل العنصر */
         width: 100%;
-        font-size: 8px;
+        font-size: 8px !important;
       
       }
       .img-Developers1 h4 {
@@ -293,7 +299,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         color: aliceblue;
-        margin: 0; /* إلغاء أي تباعد افتراضي قد يؤثر على المحاذاة */
         text-align: center; /* لضمان أن النص متمركز أفقيًا داخل العنصر */
         font-size: 10px;
       

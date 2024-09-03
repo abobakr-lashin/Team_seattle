@@ -100,7 +100,6 @@ export default function Developers() {
 <div>EMAAR</div>
   </div>
 </div>
-<div className="h-5vh"></div>
 
 <Box  sx={{width:"80%",margin:"20px auto"
 }}>
@@ -130,9 +129,9 @@ export default function Developers() {
 
       <Grid sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
 
-<img width={"600px"} style={{margin:"15px"}}  src="/uploads/developerprojects/export/photo2.png" alt="" />
-<img width={"300px"} style={{margin:"5px"}} src="/uploads/developerprojects/export/photo3.png" alt="" />
-<img width={"300px"} style={{margin:"5px"}} src="/uploads/developerprojects/export/photo5.png" alt="" />
+<img width={"40%"} style={{margin:"15px"}}  src="/uploads/developerprojects/export/photo2.png" alt="" />
+<img  width={"25%"}   style={{margin:"px"}} src="/uploads/developerprojects/export/photo3.png" alt="" />
+<img width={"25%"}  style={{margin:"5px"}} src="/uploads/developerprojects/export/photo5.png" alt="" />
 
 
 </Grid>
@@ -142,9 +141,9 @@ export default function Developers() {
 
       <Grid sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
 
-<img width={"600px"} style={{margin:"15px"}}  src="/uploads/developerprojects/export/photo4.png" alt="" />
-<img width={"300px"} style={{margin:"5px"}} src="/uploads/developerprojects/export/photo6.png" alt="" />
-<img width={"300px"} style={{margin:"5px"}} src="/uploads/developerprojects/export/photo7.png" alt="" />
+<img width={"40%"} style={{margin:"15px"}}  src="/uploads/developerprojects/export/photo4.png" alt="" />
+<img width={"25%"}  style={{margin:"5px"}} src="/uploads/developerprojects/export/photo6.png" alt="" />
+<img width={"25%"}   style={{margin:"5px"}} src="/uploads/developerprojects/export/photo7.png" alt="" />
 
 
 
