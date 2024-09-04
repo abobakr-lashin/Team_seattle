@@ -42,7 +42,7 @@ export default function Header() {
                 </video>
 
 <div className="Formheader">
-<FormContainer/>
+<FormContainer color={"rgba(255, 255, 255, 0.466)"}/>
     </div>
              
 

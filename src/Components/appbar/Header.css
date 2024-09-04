@@ -17,20 +17,18 @@
 .Formheader{
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: end;
-  height: 79% !important;
+  justify-content: center ;
+  align-items: end !important;
 
 }
 /* انميشن  */
 
 /* انميشن  */
-.form-container {
-
+ .form-container {
   display: flex;
-  justify-content:end !important; /* تعديل ليكون النص في المنتصف بشكل أفقي */
   align-items: center;
   flex-direction: column;
+  justify-content: end;
   height: 90vh; /* ارتفاع الكتلة يتناسب مع الشاشة */
   padding: 20px;
   text-align: center; /* توسيط النصوص */
@@ -40,7 +38,6 @@
 .form{
   width: 25rem;
   height:19rem;
-  background-color:rgba(255, 255, 255, 0.466);
   border-radius:20px;
 
 }

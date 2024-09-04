@@ -12,7 +12,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import app from "../../firebaseConfig";
 import { getDatabase, ref, onValue, set, push } from "firebase/database";
 import { toast, ToastContainer } from "react-toastify";
-export default function FormContainer() {
+export default function FormContainer({color,jast}) {
 
     const [formData, setFormData] = useState({ name: "", phone: "+971" });
     const [phoneError, setPhoneError] = useState("");
@@ -88,8 +88,8 @@ export default function FormContainer() {
 
   return (
     <div>
-         <div className="form-container">
-                    <Box className="form">
+         <div className="form-container" >
+                    <Box className="form" sx={{backgroundColor:`${color}`}}>
                         <TextField
                             className="input"
                             sx={{
