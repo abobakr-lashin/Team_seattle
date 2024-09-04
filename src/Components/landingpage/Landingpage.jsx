@@ -176,10 +176,10 @@ export default function Landingpage() {
 
 
 </div>
-<div className="hr1"></div>
+<div className="hr3"></div>
 
 {imgsetsin}
-<div className="hr1"></div>
+<div className="hr3"></div>
 <p>Looking for a luxurious contemporary villa that comes with a private pool and landscaped garden?
 Do you want to live in a gated community in a prime location?
 These plush homes are the perfect setting to start a family or raise children.
