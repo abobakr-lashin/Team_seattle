@@ -155,9 +155,11 @@
   text-align: center;
   font-size: 35px;
 }
-
-
-
+.PropertyDetails ul{
+  
+  width: 80%;
+  flex-wrap: wrap;
+}
 
 
 

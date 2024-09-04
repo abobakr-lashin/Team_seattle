@@ -125,25 +125,25 @@ export default function Developers() {
 
 
 </Box>
-      <Grid sx={{  width: "100%" }}  spacing={2}>
+      <Grid sx={{  width: "100%" }}  spacing={5}>
 
       <Grid sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
 
-<img width={"40%"} style={{margin:"15px"}}  src="/uploads/developerprojects/export/photo2.png" alt="" />
-<img  width={"25%"}   style={{margin:"px"}} src="/uploads/developerprojects/export/photo3.png" alt="" />
-<img width={"25%"}  style={{margin:"5px"}} src="/uploads/developerprojects/export/photo5.png" alt="" />
+<img width={"35%"} style={{margin:"15px"}}  src="/uploads/developerprojects/export/photo2.png" alt="" />
+<img  width={"20%"}   style={{margin:"15px"}} src="/uploads/developerprojects/export/photo3.png" alt="" />
+<img width={"20%"}  style={{margin:"15px"}} src="/uploads/developerprojects/export/photo5.png" alt="" />
 
 
 </Grid>
 
 </Grid>
-      <Grid sx={{  width: "100%" }}  spacing={2}>
+      <Grid sx={{  width: "100%" }}  spacing={5}>
 
-      <Grid sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
+   <Grid sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
 
-<img width={"40%"} style={{margin:"15px"}}  src="/uploads/developerprojects/export/photo4.png" alt="" />
-<img width={"25%"}  style={{margin:"5px"}} src="/uploads/developerprojects/export/photo6.png" alt="" />
-<img width={"25%"}   style={{margin:"5px"}} src="/uploads/developerprojects/export/photo7.png" alt="" />
+<img width={"35%"} style={{margin:"15px"}}  src="/uploads/developerprojects/export/photo4.png" alt="" />
+<img width={"20%"}  style={{margin:"15px"}} src="/uploads/developerprojects/export/photo6.png" alt="" />
+<img width={"20%"}   style={{margin:"15px"}} src="/uploads/developerprojects/export/photo7.png" alt="" />
 
 
 
