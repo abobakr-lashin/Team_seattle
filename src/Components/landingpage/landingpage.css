@@ -124,8 +124,6 @@
 .theprice{
   font-size: larger;
   font-size: 35px; 
-   margin: 10px;
-   padding: 10px;
 
 }
 .Sitedetails{
@@ -153,19 +151,63 @@
   width: 100%;
   justify-content: space-evenly;
   text-align: center;
-  font-size: 35px;
+  font-size: 25px;
 }
-.PropertyDetails ul{
-  
-  width: 80%;
+.dis-play2{
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  text-align: start;
+  font-size: 20px;
+}
+.dis-play2 li{
+  padding: 10px;
+
+}
+.PropertyDetails ul , .PropertyDetails{
+  font-size: 20px;
+margin-top: 25px;
+  width: 100%;
   flex-wrap: wrap;
 }
 
 
+.PropertyDetails1 li ,
+.PropertyDetails1  ul{
+  padding: 10px;
+  text-align: start;
+list-style: none;
+font-size: 20px;
 
+}
+.map{
+  text-align: center;
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.map iframe{
+  width: 75vw;
+  height: 400px;
+  border-radius: 10px;
+}
+.map textarea { 
+width: 100%;
+border-radius: 12px;
+margin: 10px 0px;
 
-
-
-
+}
+.map form input{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map .css-104c99h-MuiButtonBase-root-MuiIconButton-root{
+  left: 16px;
+  margin: 16px;
+}
 
 /* Site details */
