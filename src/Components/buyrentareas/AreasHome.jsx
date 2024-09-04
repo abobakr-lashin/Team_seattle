@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "../commercial/Commercial.css";
 import { Grid } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const CustomPrevArrow = (props) => {
   const { className, onClick } = props;
@@ -100,8 +101,8 @@ export default function BuyHome() {
             <br />
             <div className="dis">
               <div>
-                <div className="btn-t">Buy Property </div>
-                <div className="btn-t">Rent Property</div>
+                <div className="btn-t"><Link to={"/Landingpage"} >Buy Property</Link>  </div>
+                <div className="btn-t"><Link to={"/Landingpage"}>Rent Property</Link> </div>
               </div>
             </div>
           </div>

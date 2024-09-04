@@ -39,6 +39,7 @@ import Buycards from './Components/buy/Buycards';
 import Rent from './Components/RENT/Rent';
 import BuyHome from './Components/buyrentareas/BuyHome';
 import Developers from './Pages/Developers';
+import Landingpage from './Components/landingpage/Landingpage';
 
 export default function App() {
     return (
@@ -71,6 +72,7 @@ export default function App() {
                     <Route path="Rent" element={<Rent/>} />
                     <Route path="BuyHome" element={<BuyHome/>} />
                     <Route path="Developers" element={<Developers/>} />
+                    <Route path="Landingpage" element={<Landingpage/>} />
                     <Route path="*" element={<NotFonunt />} />
                     <Route path="login" element={<Login />} />
                     <Route path="dashboard" element={<Dashboard />} >
