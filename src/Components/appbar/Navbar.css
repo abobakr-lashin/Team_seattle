@@ -81,31 +81,252 @@
 }
 .custom-navbar-link:hover {
   color: #e2bc10;
+  
 }
 
 .custom-dropdown-menu {
   display: none;
+  margin:10px ;
   position: absolute;
-  background-color: #9b6501;
+  left: -50px !important;
+  background-color: #cfb87a;
   list-style: none;
-  padding: 10px 0;
-  opacity: 0;
-  min-width: 160px;
-  z-index: 1000;
-  border-radius: 4px;
+  padding: 12px 0;
+  z-index:9699999999999999 !important;
+  border-radius: 40px;
+height: 50vh;
+  overflow: hidden;
   transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
 }
 
+
+
+/* .custom-dropdown-menu */
+/* BUY */
+
+.Buys .custom-dropdown-menu{
+  display: none;
+  width:80vw;
+  margin:10px ;
+  position: absolute;
+  left: -50px !important;
+  background-color: #cfb87a;
+  list-style: none;
+  padding: 18px 24px;
+  z-index:9699999999999999 !important;
+  border-radius: 23px;
+height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+
+
+
+.dis-paly{
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+  justify-content: start;
+}
+.dis-paly li{
+list-style: disc;  padding: 5px;
+
+  
+}
+.dis-imgNbuy{
+  display: flex;
+  font-size: 20px;
+ 
+  justify-content: start;
+
+
+
+}
+.dis-imgNbuy li{
+  padding: 5px;
+margin: 5px;
+list-style: disc;
+}
+
+
+
+/* BUY */
+/* RENT */
+
+
+.RENT .custom-dropdown-menu{
+  display: none;
+  width:80vw;
+  margin:10px ;
+  position: absolute;
+  left: -50px !important;
+  background-color: #cfb87a;
+  list-style: none;
+  padding: 18px 24px;
+  z-index:9699999999999999 !important;
+  border-radius: 23px;
+height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+
+
+
+.dis-paly2{
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+  justify-content: space-around;
+}
+.dis-paly2 li{
+list-style: disc;  padding: 5px;
+
+  
+}
+.dis-imgNbuy2{
+  font-size: 20px;
+ 
+  justify-content: start;
+
+
+
+}
+.dis-imgNbuy2 li{
+  padding: 5px;
+margin: 5px;
+list-style: disc;
+}
 .custom-dropdown-item {
-  padding: 8px 16px;
-  color: white;
+  width: 100%;
+    color: white;
   text-decoration: none;
   display: block;
 }
 
+.RENT .custom-dropdown-item {
+    color: white;
+  text-decoration: none;
+  display: block;
+}
+/* RENT */
+/* Commercial */
+
+
+.Commercial .custom-dropdown-menu{
+  display: none;
+  width:80vw;
+  margin:10px ;
+  position: absolute;
+  left: -100px !important;
+  background-color: #cfb87a;
+  list-style: none;
+  padding: 18px 24px;
+  z-index:9699999999999999 !important;
+  border-radius: 23px;
+height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+
+
+
+.Commercial .dis-paly2{
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+  justify-content: start;
+}
+.dis-paly2 li{
+list-style: disc;  padding: 5px;
+
+  
+}
+
+.dis-imgNbuy2 li{
+ 
+list-style: disc;
+}
+.custom-dropdown-item {
+    color: white;
+  text-decoration: none;
+  display: block;
+}
+.imgNCommercial{
+  margin: 15px;
+}
+
+
+/* Commercial */
+/* DEVELOPERS */
+
+
+.DEVELOPERS .custom-dropdown-menu{
+  display: none;
+  width:80vw;
+  margin:10px ;
+  position: absolute;
+  left: -250% !important;
+  background-color: #cfb87a;
+  list-style: none;
+  padding: 18px 24px;
+  z-index:9699999999999999 !important;
+  border-radius: 23px;
+height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+
+
+
+.DEVELOPERS .dis-paly2{
+  display: flex;
+  font-size: 20px;
+  margin: 10px;
+  align-items: center;
+  justify-content: start;
+}
+.dis-paly2 li{
+list-style: disc;
+  padding: 5px;
+  margin: 10px;
+
+
+  
+}
+
+
+.custom-dropdown-item {
+    color: white;
+  text-decoration: none;
+  display: block;
+}
+.imgNCommercial{
+  margin: 15px;
+}
+
+
+
+
+/* DEVELOPERS */
+
+
+
+
+/* .custom-dropdown-menu */
+
 .custom-dropdown-item:hover {
-  background-color: #a5890d;
   color: #fff;
+  opacity: 1 !important;
 }
 
 .custom-dropdown-toggle::after {
@@ -116,7 +337,7 @@
 }
 
 .custom-dropdown-menu.show {
-  display: block; /* عرض القائمة */
+display: flex;
   opacity: 1; /* جعل القائمة مرئية */
   transform: translateY(0); /* إعادة القائمة لمكانها الطبيعي */
 }

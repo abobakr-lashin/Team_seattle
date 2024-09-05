@@ -2,8 +2,11 @@ import { Box, Grid } from '@mui/material'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { Link } from 'react-router-dom';
 import NavPar from './../Components/appbar/NavPar'
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+
 import Footer from './../Components/footer/Footer.jsx'
 import "./Developers.css"
+
 import { useState } from 'react';
 import OUREXPERT from './OUREXPERT';
 
@@ -12,26 +15,26 @@ export default function Developers() {
     const [searchTerm, setSearchTerm] = useState(''); // لتتبع مصطلح البحث
     const itemsPerPage = 9;
     const ourProject = [
-        { id: 1, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLAN `,Price : " Price from 410,300 AED" },
-        { id: 2, src: "/uploads/developerprojects/export/photo2.png", name: "SAADIYAT ISLAND", Price : " Emaar south" },
-        { id: 3, src: "/uploads/developerprojects/export/photo2.png", name: " YAS ISLAND", Price : " Emaar south" },
-        { id: 4, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Price : " Emaar south" },
-        { id: 5, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`,Price : " Price from 410,300 AED" },
-        { id: 6, src: "/uploads/developerprojects/export/photo2.png", name: "SAADIYAT ISLAND", Price : " Emaar south" },
-        { id: 7, src: "/uploads/developerprojects/export/photo2.png", name: " YAS ISLAND", Price : " Emaar south" },
-        { id: 8, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Price : " Emaar south" },
-        { id: 9, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`,Price : " Price from 410,300 AED" },
-        { id: 10, src: "/uploads/developerprojects/export/photo2.png", name: "SAADIYAT ISLAND", Price : " Emaar south" },
-        { id: 11, src: "/uploads/developerprojects/export/photo2.png", name: " YAS ISLAND", Price : " Emaar south" },
-        { id: 12, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Price : " Emaar south" },
-        { id: 13, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`,Price : " Price from 410,300 AED" },
-        { id: 14, src: "/uploads/developerprojects/export/photo2.png", name: "SAADIYAT ISLAND", Price : " Emaar south" },
-        { id: 15, src: "/uploads/developerprojects/export/photo2.png", name: " YAS ISLAND", Price : " Emaar south" },
-        { id: 16, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Price : " Emaar south" },
-        { id: 17, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`,Price : " Price from 410,300 AED" },
-        { id: 18, src: "/uploads/developerprojects/export/photo2.png", name: "SAADIYAT ISLAND", Price : " Emaar south" },
-        { id: 19, src: "/uploads/developerprojects/export/photo2.png", name: " YAS ISLAND", Price : " Emaar south" },
-        { id: 20, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Price : " Emaar south" },
+        { id: 1, src: "/uploads/developerprojects/export/photo2.png", name: `Greenway`,Location : " Emaar South" },
+        { id: 2, src: "/uploads/developerprojects/export/photo2.png", name: `Greenway`, Location : " Emaar South" },
+        { id: 3, src: "/uploads/developerprojects/export/photo2.png",name: `Greenway`, Location : " Emaar South" },
+        { id: 4, src: "/uploads/developerprojects/export/photo2.png",name: `Greenway`, Location : " Emaar South" },
+        { id: 5, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`,Location : " Emaar South" },
+        { id: 6, src: "/uploads/developerprojects/export/photo2.png", name: `Greenway`, Location : " Emaar South" },
+        { id: 7, src: "/uploads/developerprojects/export/photo2.png",name: `Greenway`, Location : " Emaar South" },
+        { id: 8, src: "/uploads/developerprojects/export/photo2.png",name: `Greenway`, Location : " Emaar South" },
+        { id: 9, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`,Location : "Emaar South" },
+        { id: 10, src: "/uploads/developerprojects/export/photo2.png", name: `Greenway`, Location : " Emaar South" },
+        { id: 11, src: "/uploads/developerprojects/export/photo2.png",name: `Greenway`, Location : " Emaar South" },
+        { id: 12, src: "/uploads/developerprojects/export/photo2.png",name: `Greenway`, Location : " Emaar South" },
+        { id: 13, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`,Location : "Emaar South" },
+        { id: 14, src: "/uploads/developerprojects/export/photo2.png", name: `Greenway`, Location : " Emaar South" },
+        { id: 15, src: "/uploads/developerprojects/export/photo2.png",name: `Greenway`, Location : " Emaar South" },
+        { id: 16, src: "/uploads/developerprojects/export/photo2.png",name: `Greenway`, Location : " Emaar South" },
+        { id: 17, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`,Location : "Emaar South" },
+        { id: 18, src: "/uploads/developerprojects/export/photo2.png", name: `Greenway`, Location : " Emaar South" },
+        { id: 19, src: "/uploads/developerprojects/export/photo2.png",name: `Greenway`, Location : " Emaar South" },
+        { id: 20, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Location : " Emaar South" },
     
       ];
       const filteredProjects = ourProject.filter((project) =>
@@ -68,11 +71,10 @@ export default function Developers() {
                 ></div>
                 <h2>{img.name}</h2>
                 <h3>
-              {img.Price }
+                <LocationOnIcon/> {img.Location }
                 </h3>
                 <div className="dis">
                   <div>
-                    <div className="btn-t">Buy Property </div>
                     <div className="btn-t">Rent Property</div>
                   </div>
                 </div>

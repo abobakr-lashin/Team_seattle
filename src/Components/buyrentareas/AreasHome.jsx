@@ -6,7 +6,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "../commercial/Commercial.css";
 import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
-
+import "./BuyHome.css"
 const CustomPrevArrow = (props) => {
   const { className, onClick } = props;
   return (

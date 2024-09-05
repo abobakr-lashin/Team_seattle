@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "../commercial/Commercial.css";
+import "./BuyHome.css"
 
 const CustomPrevArrow = (props) => {
   const { className, onClick } = props;
