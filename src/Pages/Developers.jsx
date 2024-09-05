@@ -34,7 +34,7 @@ export default function Developers() {
         { id: 17, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`,Location : "Emaar South" },
         { id: 18, src: "/uploads/developerprojects/export/photo2.png", name: `Greenway`, Location : " Emaar South" },
         { id: 19, src: "/uploads/developerprojects/export/photo2.png",name: `Greenway`, Location : " Emaar South" },
-        { id: 20, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Location : " Emaar South" },
+        { id: 20, src: "/uploads/developerprojects/export/photo2.png", name: "Greenway", Location : " Emaar South" },
     
       ];
       const filteredProjects = ourProject.filter((project) =>

@@ -180,6 +180,7 @@ color: black;
   position: absolute;
   margin: auto;
   text-align: center;
+  opacity: .7!important;
   top: 74%;
 }
 
