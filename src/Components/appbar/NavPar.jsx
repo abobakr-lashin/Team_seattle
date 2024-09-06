@@ -28,7 +28,17 @@ const Navbar = () => {
 
   const handleDropdownToggle = (dropdown) => {
     setDropdownOpen({
-      ...dropdownOpen,
+      ABOUT_US: false,
+      OUR_PROJECTS: false,
+      COMPANIES: false,
+      MEDIA_CENTER: false,
+      CONTACT_US: false,
+      BUY: false,
+      RENT: false,
+      Commercial: false,
+      SELL: false,
+      DEVELOPERS: false,
+      AREAS: false,
       [dropdown]: !dropdownOpen[dropdown],
     });
   };
@@ -42,7 +52,7 @@ const Navbar = () => {
   // Add event listener to detect click outside the navbar
   useEffect(() => {
     const handleClickOutside = (event) => {
-      const navbar = document.querySelector(".custom-navbar");
+      const navbar = document.querySelector(".custom-navbar-menu");
       if (navbar && !navbar.contains(event.target)) {
         closeMenu();
       }
@@ -59,7 +69,17 @@ const Navbar = () => {
 
   const handleMouseEnter = (dropdown) => {
     setDropdownOpen({
-      ...dropdownOpen,
+      ABOUT_US: false,
+      OUR_PROJECTS: false,
+      COMPANIES: false,
+      MEDIA_CENTER: false,
+      CONTACT_US: false,
+      BUY: false,
+      RENT: false,
+      Commercial: false,
+      SELL: false,
+      DEVELOPERS: false,
+      AREAS: false,
       [dropdown]: true,
     });
   };
@@ -146,19 +166,7 @@ const Navbar = () => {
                       </ul>
                     </div>
                   </Grid>
-<div className="imgnp">
-  <div className="disi">
-  <h3>
-  Schedule your free consultation today
-
-    <h5>And our team will help you find the ideal property for your needs</h5>
-  </h3>
-  
-  <FormN name={"Free consultation"} />
-  </div>
-  
-
-  </div>                </Grid>
+                </Grid>
               </ul>
             </div>
           </li>
@@ -278,9 +286,7 @@ const Navbar = () => {
                 <div className="imgNCommercial">
                   <img src="./uploads/nav/developers/photo5.png" alt="" />
                 </div>
-                
               </ul>
-              
             </div>
           </li>
 

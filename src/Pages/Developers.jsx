@@ -75,7 +75,7 @@ export default function Developers() {
                 </h3>
                 <div className="dis">
                   <div>
-                    <div className="btn-t">Rent Property</div>
+                    <div className="btn-t">buy Property</div>
                   </div>
                 </div>
               </div>
