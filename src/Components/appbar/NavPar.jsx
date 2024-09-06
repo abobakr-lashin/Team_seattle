@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import FormN from "./FormN";
@@ -13,6 +13,12 @@ const Navbar = () => {
     COMPANIES: false,
     MEDIA_CENTER: false,
     CONTACT_US: false,
+    BUY: false,
+    RENT: false,
+    Commercial: false,
+    SELL: false,
+    DEVELOPERS: false,
+    AREAS: false,
   });
   const [languageOpen, setLanguageOpen] = useState(false);
 
@@ -26,6 +32,30 @@ const Navbar = () => {
       [dropdown]: !dropdownOpen[dropdown],
     });
   };
+
+  const closeMenu = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  };
+
+  // Add event listener to detect click outside the navbar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const navbar = document.querySelector(".custom-navbar");
+      if (navbar && !navbar.contains(event.target)) {
+        closeMenu();
+      }
+    };
+
+    // Add event listener to the document
+    document.addEventListener("click", handleClickOutside);
+
+    // Cleanup function to remove event listener when component unmounts
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isOpen]);
 
   const handleMouseEnter = (dropdown) => {
     setDropdownOpen({
@@ -64,146 +94,145 @@ const Navbar = () => {
           <span className="custom-bar"></span>
         </div>
         <ul className={`custom-navbar-menu ${isOpen ? "active" : ""}`}>
-          <li className="custom-navbar-item">
-            <li
-              className="custom-navbar-item"
-              onMouseEnter={() => handleMouseEnter("BUY")}
-              onMouseLeave={() => handleMouseLeave("BUY")}
-              onClick={() => handleDropdownToggle("BUY")}
-            >
-              <span className="custom-navbar-link ">
-                <Link to={"/Buy"}>BUY</Link>{" "}
-              </span>
-              <div className="Buys">
-                <ul
-                  className={`custom-dropdown-menu ${
-                    dropdownOpen.BUY ? "show" : ""
-                  }`}
-                >
-                  <Grid
-                    container
-                    spacing={2}
-                    className="custom-dropdown-item"
-                    display={"flex"}
-                  >
-                    <Grid item xs={5}>
-                      <h3>Buy properties in UAE{">"}</h3>
-                      <div className="dis-paly">
-                        <ul>
-                          <li>Secondary properties</li>
-                          <li>🔥Hot Properties</li>
-                          <li>🏆Exclusive Properties</li>
-                          <li> Apartments</li>
-                          <li> Penthouses</li>
-                        </ul>
-                        <ul>
-                          <li>Off-plan</li>
-                          <li>Apartments</li>
-                          <li>Penthouses</li>
-                          <li> Townhouses</li>
-                          <li>Villas</li>
-                        </ul>
-                      </div>
-                    </Grid>
-
-                    <Grid item xs={7}>
-                      <div className="dis-imgNbuy">
-                        <div className="imgNbuy">
-                          <img src="./uploads/nav/buy/photo1.png" alt="" />
-                        </div>
-
-                        <ul>
-                          <h3>Investments abroad</h3>
-                          <li>Dubai</li>
-                          <li>Sharjah</li>
-                          <li>Ajman</li>
-                          <li>Ras Al Khaimah</li>
-                          <li>Fujairah</li>
-                        </ul>
-                      </div>
-                    </Grid>
-                  </Grid>
-                </ul>
-              </div>
-            </li>
-          </li>
-          <li className="custom-navbar-item">
-            <li
-              className="custom-navbar-item"
-              onMouseEnter={() => handleMouseEnter("RENT")}
-              onMouseLeave={() => handleMouseLeave("RENT")}
-              onClick={() => handleDropdownToggle("RENT")}
-            >
-              <span className="custom-navbar-link ">
-                <Link to={"/RENT"}>RENT</Link>{" "}
-              </span>
-              <div className="RENT">
-                <ul
-                  className={`custom-dropdown-menu ${
-                    dropdownOpen.RENT ? "show" : ""
-                  }`}
-                >
-                  <div className="custom-dropdown-item">
-                    <h3>Rent properties in Dubai {">"}</h3>
-                    <div className="dis-paly2">
-                      <ul>
-                        <li>Rental Properties</li>
-                        <li>Apartments</li>
-                        <li>Villas</li>
-                        <li> Townhouses</li>
-                      </ul>
-                      <ul>
-                        <li>Landlords Tools</li>
-                        <li>🏆 Property Management</li>
-                        <li>Utilities Connections and Payments</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="imgNbuy">
-                    <img src="./uploads/nav/rent/photo2.png" alt="" />
-                  </div>
-                </ul>
-              </div>
-            </li>
-          </li>
-
-          <li className="custom-navbar-item">
-            <li
-              className="custom-navbar-item"
-              onMouseEnter={() => handleMouseEnter("Commercial")}
-              onMouseLeave={() => handleMouseLeave("Commercial")}
-              onClick={() => handleDropdownToggle("Commercial")}
-            >
-              <span className="custom-navbar-link ">
-                <Link to={"/Commercial"}>Commercial</Link>{" "}
-              </span>
-              <div className="Commercial">
-                <ul
-                  className={`custom-dropdown-menu ${
-                    dropdownOpen.Commercial ? "show" : ""
-                  }`}
-                >
-                  <div className="custom-dropdown-item">
-                    <h3>Buy commercial properties {">"}</h3>
-                    <div className="dis-paly2">
+          <li
+            className="custom-navbar-item"
+            onMouseEnter={() => handleMouseEnter("BUY")}
+            onMouseLeave={() => handleMouseLeave("BUY")}
+            onClick={() => handleDropdownToggle("BUY")}
+          >
+            <span className="custom-navbar-link">
+              <Link to="/Buy">BUY</Link>
+            </span>
+            <div className="Buys">
+              <ul
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.BUY ? "show" : ""
+                }`}
+              >
+                <Grid container spacing={2} className="custom-dropdown-item">
+                  <Grid item xs={5}>
+                    <h3>Buy properties in UAE{">"}</h3>
+                    <div className="dis-paly">
                       <ul>
                         <li>Secondary properties</li>
-                        <li>🏢 Offices</li>
-                        <li>Hotels</li>
-                        <li> Shop</li>
-                        <li> Commercial lands</li>
+                        <li>🔥Hot Properties</li>
+                        <li>🏆Exclusive Properties</li>
+                        <li>Apartments</li>
+                        <li>Penthouses</li>
+                      </ul>
+                      <ul>
+                        <li>Off-plan</li>
+                        <li>Apartments</li>
+                        <li>Penthouses</li>
+                        <li>Townhouses</li>
+                        <li>Villas</li>
                       </ul>
                     </div>
+                  </Grid>
+
+                  <Grid item xs={7}>
+                    <div className="dis-imgNbuy">
+                      <div className="imgNbuy">
+                        <img src="./uploads/nav/buy/photo1.png" alt="" />
+                      </div>
+
+                      <ul>
+                        <h3>Investments abroad</h3>
+                        <li>Dubai</li>
+                        <li>Sharjah</li>
+                        <li>Ajman</li>
+                        <li>Ras Al Khaimah</li>
+                        <li>Fujairah</li>
+                      </ul>
+                    </div>
+                  </Grid>
+<div className="imgnp">
+  
+  <h3>
+  Schedule your free consultation today
+
+    <h5>And our team will help you find the ideal property for your needs</h5>
+  </h3>
+  
+  
+  </div>                </Grid>
+              </ul>
+            </div>
+          </li>
+
+          <li
+            className="custom-navbar-item"
+            onMouseEnter={() => handleMouseEnter("RENT")}
+            onMouseLeave={() => handleMouseLeave("RENT")}
+            onClick={() => handleDropdownToggle("RENT")}
+          >
+            <span className="custom-navbar-link">
+              <Link to="/RENT">RENT</Link>
+            </span>
+            <div className="RENT">
+              <ul
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.RENT ? "show" : ""
+                }`}
+              >
+                <div className="custom-dropdown-item">
+                  <h3>Rent properties in Dubai {">"}</h3>
+                  <div className="dis-paly2">
+                    <ul>
+                      <li>Rental Properties</li>
+                      <li>Apartments</li>
+                      <li>Villas</li>
+                      <li>Townhouses</li>
+                    </ul>
+                    <ul>
+                      <li>Landlords Tools</li>
+                      <li>🏆 Property Management</li>
+                      <li>Utilities Connections and Payments</li>
+                    </ul>
                   </div>
-                  <div className="imgNCommercial">
-                    <img src="./uploads/nav/commercial/photo3.png" alt="" />
+                </div>
+                <div className="imgNbuy">
+                  <img src="./uploads/nav/rent/photo2.png" alt="" />
+                </div>
+              </ul>
+            </div>
+          </li>
+
+          <li
+            className="custom-navbar-item"
+            onMouseEnter={() => handleMouseEnter("Commercial")}
+            onMouseLeave={() => handleMouseLeave("Commercial")}
+            onClick={() => handleDropdownToggle("Commercial")}
+          >
+            <span className="custom-navbar-link">
+              <Link to="/Commercial">Commercial</Link>
+            </span>
+            <div className="Commercial">
+              <ul
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.Commercial ? "show" : ""
+                }`}
+              >
+                <div className="custom-dropdown-item">
+                  <h3>Buy commercial properties {">"}</h3>
+                  <div className="dis-paly2">
+                    <ul>
+                      <li>Secondary properties</li>
+                      <li>🏢 Offices</li>
+                      <li>Hotels</li>
+                      <li>Shops</li>
+                      <li>Commercial lands</li>
+                    </ul>
                   </div>
-                  <div className="imgNCommercial">
-                    <img src="./uploads/nav/commercial/photo4.png" alt="" />
-                  </div>
-                </ul>
-              </div>
-            </li>
+                </div>
+                <div className="imgNCommercial">
+                  <img src="./uploads/nav/commercial/photo3.png" alt="" />
+                </div>
+                <div className="imgNCommercial">
+                  <img src="./uploads/nav/commercial/photo4.png" alt="" />
+                </div>
+              </ul>
+            </div>
           </li>
 
           <li className="custom-navbar-item">
@@ -211,83 +240,117 @@ const Navbar = () => {
               SELL
             </Link>
           </li>
-          <li className="custom-navbar-item">
-            <li
-              className="custom-navbar-item"
-              onMouseEnter={() => handleMouseEnter("DEVELOPERS")}
-              onMouseLeave={() => handleMouseLeave("DEVELOPERS")}
-              onClick={() => handleDropdownToggle("DEVELOPERS")}
-            >
-              <span className="custom-navbar-link ">
-                <Link to={"/Ourpartners"}>DEVELOPERS</Link>{" "}
-              </span>
-              <div className="DEVELOPERS">
-                <ul
-                  className={`custom-dropdown-menu ${
-                    dropdownOpen.DEVELOPERS ? "show" : ""
-                  }`}
-                >
-                  <div className="custom-dropdown-item">
-                    <h3>See all developers in UAE  {">"}</h3>
-                    <div className="dis-paly2">
-                      <ul>
-                        <li>Top developers
 
-</li>
-                        <li>Reportage
-                        </li>
-                        <li>DAMAC
-                        </li>
-                        <li> Meraas</li>
-                      </ul>
-                      <ul>
-
-                        <li>Emaar</li>
-                        <li>ALDAR
-                        </li>
-                        <li> Bloom</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="imgNCommercial">
-                    <img src="./uploads/nav/developers/photo5.png" alt="" />
-                  </div>
-             
-                </ul>
-              </div>
-            </li>
-          </li>
           <li
             className="custom-navbar-item"
-            onMouseEnter={() => handleMouseEnter("OUR_PROJECTS")}
-            onMouseLeave={() => handleMouseLeave("OUR_PROJECTS")}
-            onClick={() => handleDropdownToggle("OUR_PROJECTS")}
+            onMouseEnter={() => handleMouseEnter("DEVELOPERS")}
+            onMouseLeave={() => handleMouseLeave("DEVELOPERS")}
+            onClick={() => handleDropdownToggle("DEVELOPERS")}
+          >
+            <span className="custom-navbar-link">
+              <Link to="/Ourpartners">DEVELOPERS</Link>
+            </span>
+            <div className="DEVELOPERS">
+              <ul
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.DEVELOPERS ? "show" : ""
+                }`}
+              >
+                <div className="custom-dropdown-item">
+                  <h3>See all developers in UAE {">"}</h3>
+                  <div className="dis-paly2">
+                    <ul>
+                      <li>Top developers</li>
+                      <li>Reportage</li>
+                      <li>DAMAC</li>
+                      <li>Meraas</li>
+                    </ul>
+                    <ul>
+                      <li>Emaar</li>
+                      <li>ALDAR</li>
+                      <li>Bloom</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="imgNCommercial">
+                  <img src="./uploads/nav/developers/photo5.png" alt="" />
+                </div>
+              </ul>
+            </div>
+          </li>
+
+          <li
+            className="custom-navbar-item"
+            onMouseEnter={() => handleMouseEnter("AREAS")}
+            onMouseLeave={() => handleMouseLeave("AREAS")}
+            onClick={() => handleDropdownToggle("AREAS")}
           >
             <span className="custom-navbar-link">
               <Link to="/Abudhabi">AREAS</Link>
             </span>
-            <ul
-              className={`custom-dropdown-menu ${
-                dropdownOpen.OUR_PROJECTS ? "show" : ""
-              }`}
-            >
-              <li>
-                <Link className="custom-dropdown-item" to="/login">
-                  loginAdmin
-                </Link>
-              </li>
-            </ul>
+            <div className="AREAS">
+              <ul
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.AREAS ? "show" : ""
+                }`}
+              >
+                <Grid container spacing={2} className="custom-dropdown-item">
+                  <Grid item xs={4}>
+                    <h3>See all areas in UAE {">"}</h3>
+                    <div className="dis-paly">
+                      <ul>
+                        <li>Abu Dhabi</li>
+                        <li>Yas Island</li>
+                        <li>Khalifa City</li>
+                        <li>Al Raha City</li>
+                        <li>Masdar City</li>
+                        <li>Zayed City</li>
+                      </ul>
+                      <ul>
+                        <li>Al Reem Island</li>
+                        <li>Maryah Island</li>
+                        <li>Rabdan</li>
+                        <li>Saadiyat Island</li>
+                        <li>Palm Jumeirah</li>
+                        <li>Downtown Dubai</li>
+                      </ul>
+                    </div>
+                  </Grid>
+
+                  <Grid item xs={7}>
+                    <div className="dis-imgNbuy">
+                      <div className="imgNbuy">
+                        <img src="./uploads/nav/areas/photo6.png" alt="" />
+                      </div>
+
+                      <ul>
+                        <h3>Living abroad</h3>
+                        <li>Dubai</li>
+                        <li>Abu Dhabi</li>
+                        <li>Sharjah</li>
+                        <li>Ajman</li>
+                        <li>Ras Al Khaimah</li>
+                        <li>Fujairah</li>
+                      </ul>
+                    </div>
+                  </Grid>
+                </Grid>
+              </ul>
+            </div>
           </li>
+
           <li className="custom-navbar-item">
             <Link to="/LatestNews" className="custom-navbar-link">
-              Blogs{" "}
+              Blogs
             </Link>
           </li>
+
           <li className="custom-navbar-item">
             <Link to="/Service" className="custom-navbar-link">
               Services
             </Link>
           </li>
+
           <li
             className="custom-navbar-item"
             onMouseEnter={() => handleMouseEnter("ABOUT_US")}
@@ -317,6 +380,7 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
+
           <li
             className="custom-navbar-item"
             onMouseEnter={() => handleMouseEnter("CONTACT_US")}
@@ -324,23 +388,39 @@ const Navbar = () => {
             onClick={() => handleDropdownToggle("CONTACT_US")}
           >
             <span className="custom-navbar-link">CONTACT US</span>
-            <ul
-              className={`custom-dropdown-menu ${
-                dropdownOpen.CONTACT_US ? "show" : ""
-              }`}
-            >
-              <li>
-                <Link className="custom-dropdown-item" to="/Careers">
-                  CAREERS
-                </Link>
-              </li>
-              <li>
-                <Link className="custom-dropdown-item" to="/Contactus">
-                  CONTACT US
-                </Link>
-              </li>
-            </ul>
+
+            <div className="CONTACT">
+              <ul
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.CONTACT_US ? "show" : ""
+                }`}
+              >
+                <div className="custom-dropdown-item">
+                  <div className="imgcon">
+                    <img src="./uploads/nav/contactus/areyouready.png" alt="" />
+                  </div>
+                  <div className="dis-paly2">
+                    <ul>
+                      <li>
+                        <Link className="custom-dropdown-item" to="/Careers">
+                          CAREERS {">"}
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="custom-dropdown-item" to="/Contactus">
+                          CONTACT US {">"}
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="imgNCommercial">
+                  <img src="./uploads/nav/contactus/photo11.png" alt="" />
+                </div>
+              </ul>
+            </div>
           </li>
+
           <li className="custom-navbar-item">
             <Link
               to="tel:+971502135701"
@@ -354,19 +434,19 @@ const Navbar = () => {
               +971502135701
             </Link>
           </li>
-          <ul>
-            <li className="custom-navbar-item">
-              <div className="click-button">
-                <FormN name={"Free consultation"} />
-              </div>
-            </li>
-          </ul>
+
+          <li className="custom-navbar-item">
+            <div className="click-button">
+              <FormN name={"Free consultation"} />
+            </div>
+          </li>
+
           <li className="custom-navbar-item">
             <div
               className="language-selector-item"
               onClick={toggleLanguageDropdown}
             >
-              <Typography variant="body" className="language-selector-title">
+              <Typography variant="body1" className="language-selector-title">
                 <span className="selected-language">{selectedLanguage}</span>
               </Typography>
             </div>
@@ -379,7 +459,9 @@ const Navbar = () => {
               >
                 <div
                   className="language-flag"
-                  style={{ backgroundImage: 'url("/path/to/arabic-flag.png")' }}
+                  style={{
+                    backgroundImage: 'url("/path/to/arabic-flag.png")',
+                  }}
                 ></div>
                 <span>العربية</span>
               </div>

@@ -88,7 +88,7 @@
   display: none;
   margin:10px ;
   position: absolute;
-  left: -50px !important;
+  left: -50% ;
   background-color: #cfb87a;
   list-style: none;
   padding: 12px 0;
@@ -103,13 +103,20 @@ height: 50vh;
 
 /* .custom-dropdown-menu */
 /* BUY */
-
+.imgnp{
+  margin: 10px;
+  background-image: url("/public/uploads/nav/photo14.png");
+  width: 95%;
+  height: 100px;
+  border-radius:30px ;
+  padding: 10px;
+}
 .Buys .custom-dropdown-menu{
   display: none;
   width:80vw;
   margin:10px ;
   position: absolute;
-  left: -50px !important;
+  left: -50% !important;
   background-color: #cfb87a;
   list-style: none;
   padding: 18px 24px;
@@ -148,7 +155,7 @@ list-style: disc;  padding: 5px;
 .dis-imgNbuy li{
   padding: 5px;
 margin: 5px;
-list-style: disc;
+list-style: none;
 }
 
 
@@ -162,7 +169,7 @@ list-style: disc;
   width:80vw;
   margin:10px ;
   position: absolute;
-  left: -50px !important;
+  left: -120% !important;
   background-color: #cfb87a;
   list-style: none;
   padding: 18px 24px;
@@ -200,7 +207,7 @@ list-style: disc;  padding: 5px;
 .dis-imgNbuy2 li{
   padding: 5px;
 margin: 5px;
-list-style: disc;
+list-style: none;
 }
 .custom-dropdown-item {
   width: 100%;
@@ -223,7 +230,7 @@ list-style: disc;
   width:80vw;
   margin:10px ;
   position: absolute;
-  left: -100px !important;
+  left: -130% !important;
   background-color: #cfb87a;
   list-style: none;
   padding: 18px 24px;
@@ -253,7 +260,7 @@ list-style: disc;  padding: 5px;
 
 .dis-imgNbuy2 li{
  
-list-style: disc;
+list-style: none;
 }
 .custom-dropdown-item {
     color: white;
@@ -274,7 +281,7 @@ list-style: disc;
   width:80vw;
   margin:10px ;
   position: absolute;
-  left: -250% !important;
+  left: -260% !important;
   background-color: #cfb87a;
   list-style: none;
   padding: 18px 24px;
@@ -296,7 +303,7 @@ height: auto;
   justify-content: start;
 }
 .dis-paly2 li{
-list-style: disc;
+list-style: none;
   padding: 5px;
   margin: 10px;
 
@@ -318,9 +325,118 @@ list-style: disc;
 
 
 /* DEVELOPERS */
+/* AREAS */
+
+.AREAS .custom-dropdown-menu{
+  display: none;
+  width:80vw;
+  margin:10px ;
+  position: absolute;
+  left: -25vw !important;
+  background-color: #cfb87a;
+  list-style: none;
+  padding: 18px 24px;
+  z-index:9699999999999999 !important;
+  border-radius: 23px;
+height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
 
 
 
+
+.AREAS .dis-paly{
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+.dis-paly li{
+list-style: none;  padding: 5px;
+
+  
+}
+.AREAS .dis-imgNbuy{
+  display: flex;
+  font-size: 20px;
+ 
+  justify-content: space-between;
+
+
+
+}
+.AREAS .dis-imgNbuy li{
+  padding: 5px;
+margin: 5px;
+list-style: none;
+}
+
+
+/* AREAS */
+/* CONTACT */
+
+
+
+
+.CONTACT .custom-dropdown-menu{
+  display: none;
+  width:80vw;
+  margin:10px ;
+  position: absolute;
+  left: -45vw !important;
+  background-color: #cfb87a;
+  list-style: none;
+  padding: 18px 24px;
+  z-index:9699999999999999 !important;
+  border-radius: 23px;
+height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+
+.CONTACT .custom-dropdown-menu .imgcon img{
+width: 80%;
+}
+
+.CONTACT .dis-paly2{
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+.dis-paly li{
+list-style: none;  padding: 5px;
+
+  
+}
+.CONTACT .imgNCommercial{
+  display: flex;
+  font-size: 20px;
+ 
+  justify-content: center !important;
+
+
+
+}
+.AREAS .dis-imgNbuy li{
+  padding: 5px;
+margin: 5px;
+list-style: none;
+}
+
+
+
+/* CONTACT */
+
+
+
+  
 
 /* .custom-dropdown-menu */
 
