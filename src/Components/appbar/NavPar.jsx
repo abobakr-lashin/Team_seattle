@@ -147,14 +147,17 @@ const Navbar = () => {
                     </div>
                   </Grid>
 <div className="imgnp">
-  
+  <div className="disi">
   <h3>
   Schedule your free consultation today
 
     <h5>And our team will help you find the ideal property for your needs</h5>
   </h3>
   
+  <FormN name={"Free consultation"} />
+  </div>
   
+
   </div>                </Grid>
               </ul>
             </div>
@@ -275,7 +278,9 @@ const Navbar = () => {
                 <div className="imgNCommercial">
                   <img src="./uploads/nav/developers/photo5.png" alt="" />
                 </div>
+                
               </ul>
+              
             </div>
           </li>
 

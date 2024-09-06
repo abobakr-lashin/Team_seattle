@@ -100,7 +100,11 @@ height: 50vh;
 }
 
 
-
+.disi{
+  width: 80%;
+  display: flex;
+  align-items: center;
+justify-content: space-between;}
 /* .custom-dropdown-menu */
 /* BUY */
 .imgnp{
