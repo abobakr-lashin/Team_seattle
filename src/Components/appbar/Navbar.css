@@ -104,16 +104,18 @@ height: 50vh;
   width: 80%;
   display: flex;
   align-items: center;
-justify-content: space-between;}
+justify-content: space-between;
+align-items: center;}
 /* .custom-dropdown-menu */
 /* BUY */
 .imgnp{
   margin: 10px;
   background-image: url("/public/uploads/nav/photo14.png");
-  width: 95%;
+  width: 99%;
   height: 100px;
   border-radius:30px ;
-  padding: 10px;
+  padding: 20px;
+  background-size: cover;
 }
 .Buys .custom-dropdown-menu{
   display: none;
@@ -170,7 +172,7 @@ list-style: none;
 
 .RENT .custom-dropdown-menu{
   display: none;
-  width:80vw;
+  width:70vw;
   margin:10px ;
   position: absolute;
   left: -120% !important;
@@ -187,27 +189,28 @@ height: auto;
 
 
 
-.dis-paly2{
-  display: flex;
+.RENT .dis-paly2{
+  display: flex !important;
   font-size: 20px;
   padding: 10px;
-  margin: 5px;
   align-items: center;
+  justify-content: start;
+}
+
+.RENT .dis-paly3{
+  display: flex !important;
+width: 100%;
+  align-items: center;
+  position: relative;
+  left: -26px;
   justify-content: space-around;
 }
-.dis-paly2 li{
+.dis-paly3 li{
 list-style: disc;  padding: 5px;
 
   
 }
-.dis-imgNbuy2{
-  font-size: 20px;
- 
-  justify-content: start;
 
-
-
-}
 .dis-imgNbuy2 li{
   padding: 5px;
 margin: 5px;
@@ -237,7 +240,7 @@ list-style: none;
   left: -130% !important;
   background-color: #cfb87a;
   list-style: none;
-  padding: 18px 24px;
+  padding: 30px 24px;
   z-index:9699999999999999 !important;
   border-radius: 23px;
 height: auto;
@@ -246,15 +249,28 @@ height: auto;
 }
 
 
+.Commercial .css-mhc70k-MuiGrid-root>.MuiGrid-item{
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  
+}
+.Commercial .css-mhc70k-MuiGrid-root{
+  align-items: start;
+  list-style: disc;
+  
+}
+.Commercial li{
+  list-style: none;
+}
 
 
 .Commercial .dis-paly2{
   display: flex;
   font-size: 20px;
   padding: 10px;
-  margin: 5px;
-  align-items: center;
-  justify-content: start;
+  align-items: start;
+  justify-content:start;
 }
 .dis-paly2 li{
 list-style: disc;  padding: 5px;
@@ -271,15 +287,26 @@ list-style: none;
   text-decoration: none;
   display: block;
 }
-.imgNCommercial{
-  margin: 15px;
+.Commercial .imgNCommercial img{
+  width: 300px;
+  margin: 20px;
 }
 
 
 /* Commercial */
 /* DEVELOPERS */
 
-
+.DEVELOPERS .css-mhc70k-MuiGrid-root>.MuiGrid-item{
+  margin: 15px 0PX;
+  padding: 0px;
+  font-size: 20px;
+  
+}
+.DEVELOPERS .css-mhc70k-MuiGrid-root{
+  align-items: start;
+  list-style: disc;
+  
+}
 .DEVELOPERS .custom-dropdown-menu{
   display: none;
   width:80vw;
@@ -288,7 +315,7 @@ list-style: none;
   left: -260% !important;
   background-color: #cfb87a;
   list-style: none;
-  padding: 18px 24px;
+  padding: 30px 24px;
   z-index:9699999999999999 !important;
   border-radius: 23px;
 height: auto;
@@ -321,16 +348,25 @@ list-style: none;
   text-decoration: none;
   display: block;
 }
-.imgNCommercial{
-  margin: 15px;
+.DEVELOPERS .imgNCommercial img{
+  width: 90%;
 }
-
 
 
 
 /* DEVELOPERS */
 /* AREAS */
-
+.AREAS .css-mhc70k-MuiGrid-root>.MuiGrid-item{
+  margin: 15px 0PX;
+  padding: 0px;
+  font-size: 20px;
+  
+}
+.AREAS .css-mhc70k-MuiGrid-root{
+  align-items: start;
+  list-style: disc;
+  
+}
 .AREAS .custom-dropdown-menu{
   display: none;
   width:80vw;
@@ -356,6 +392,8 @@ height: auto;
   padding: 10px;
   margin: 5px;
   align-items: center;
+  position: relative;
+  left: -50px;
   justify-content: space-between;
 }
 .dis-paly li{
@@ -469,12 +507,14 @@ display: flex;
   position: absolute;
   right: 0px;
 }
+.custom-navbar-link{
 
+  font-size: 19px;  }
 /* التنسيق المتجاوب لشاشات أصغر */
 @media (max-width: 1560px) {
   .custom-navbar-link{
-    font-size: 15px;
-  }
+
+    font-size: 17px;  }
 }
 @media (max-width: 1024px) {
   .custom-navbar-link{
@@ -530,9 +570,10 @@ display: flex;
 
   .custom-navbar-link {
     width: 100%;
-    padding: 10px 0;
+    padding:0;
     text-align: center;
     color: white;
+    font-size: 15px;
   }
   .custom-navbar-menu {
     display: flex;

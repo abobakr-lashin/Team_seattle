@@ -130,13 +130,25 @@ const Navbar = () => {
                 }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
-                  <Grid item xs={5}>
-                    <h3>Buy properties in UAE{">"}</h3>
+                  <Grid item spacing={2} xs={5}>
+                    <h3>
+                      Buy properties in UAE{" "}
+                      <img src="./uploads/nav/icon/arrow.png" alt="" />
+                    </h3>
                     <div className="dis-paly">
                       <ul>
                         <li>Secondary properties</li>
-                        <li>🔥Hot Properties</li>
-                        <li>🏆Exclusive Properties</li>
+                        <li>
+                          <img
+                            src="./uploads/nav/icon/trending-topic.png"
+                            alt=""
+                          />{" "}
+                          {"  "}Hot Properties
+                        </li>
+                        <li>
+                          <img src="./uploads/nav/icon/exclusive.png" alt="" />{" "}
+                          {"  "}Exclusive Properties
+                        </li>
                         <li>Apartments</li>
                         <li>Penthouses</li>
                       </ul>
@@ -166,6 +178,18 @@ const Navbar = () => {
                       </ul>
                     </div>
                   </Grid>
+                  <div className="imgnp">
+                    <div className="disi">
+                      <h5>
+                        Schedule your free consultation today
+                        <h6>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h6>
+                      </h5>
+                      <FormN name={"Free consultation"} />
+                    </div>
+                  </div>
                 </Grid>
               </ul>
             </div>
@@ -180,31 +204,63 @@ const Navbar = () => {
             <span className="custom-navbar-link">
               <Link to="/RENT">RENT</Link>
             </span>
+
             <div className="RENT">
               <ul
                 className={`custom-dropdown-menu ${
                   dropdownOpen.RENT ? "show" : ""
                 }`}
               >
-                <div className="custom-dropdown-item">
-                  <h3>Rent properties in Dubai {">"}</h3>
+                <Grid
+                  container
+                  spacing={2}
+                  className="custom-dropdown-item dis-paly2"
+                >
                   <div className="dis-paly2">
-                    <ul>
-                      <li>Rental Properties</li>
-                      <li>Apartments</li>
-                      <li>Villas</li>
-                      <li>Townhouses</li>
-                    </ul>
-                    <ul>
-                      <li>Landlords Tools</li>
-                      <li>🏆 Property Management</li>
-                      <li>Utilities Connections and Payments</li>
-                    </ul>
+                    <Grid item xs={7}>
+                      <h3>
+                        Rent properties in Dubai{" "}
+                        <img src="./uploads/nav/icon/arrow.png" alt="" />
+                      </h3>
+                      <div className="dis-paly3">
+                        <ul>
+                          <li>Rental Properties</li>
+                          <li>Apartments</li>
+                          <li>Villas</li>
+                          <li>Townhouses</li>
+                        </ul>
+                        <ul>
+                          <li>Landlords Tools</li>
+                          <li>
+                            <img
+                              src="./uploads/nav/icon/management.png"
+                              alt=""
+                            />{" "}
+                            Property Management
+                          </li>
+                          <li>Utilities Connections and Payments</li>
+                        </ul>
+                      </div>
+                    </Grid>
+                    <Grid item xs={5}>
+                      <div className="imgNbuy">
+                        <img src="./uploads/nav/rent/photo2.png" alt="" />
+                      </div>
+                    </Grid>
                   </div>
-                </div>
-                <div className="imgNbuy">
-                  <img src="./uploads/nav/rent/photo2.png" alt="" />
-                </div>
+                  <div className="imgnp">
+                    <div className="disi">
+                      <h5>
+                        Schedule your free consultation today
+                        <h6>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h6>
+                      </h5>
+                      <FormN name={"Free consultation"} />
+                    </div>
+                  </div>
+                </Grid>
               </ul>
             </div>
           </li>
@@ -224,24 +280,47 @@ const Navbar = () => {
                   dropdownOpen.Commercial ? "show" : ""
                 }`}
               >
-                <div className="custom-dropdown-item">
-                  <h3>Buy commercial properties {">"}</h3>
-                  <div className="dis-paly2">
+                <Grid container spacing={2} className="custom-dropdown-item" >
+
+                <Grid item xs={5}>
+                <h3>
+                    Buy commercial properties{" "}
+                    <img src="./uploads/nav/icon/arrow.png" alt="" />
+                  </h3>
+
                     <ul>
                       <li>Secondary properties</li>
-                      <li>🏢 Offices</li>
+                      <li> <img src="./uploads/nav/icon/exclusive.png" alt="" />{" "} Offices</li>
                       <li>Hotels</li>
                       <li>Shops</li>
                       <li>Commercial lands</li>
                     </ul>
-                  </div>
-                </div>
+                  </Grid>
+                  <Grid item xs={7} display={"flex"}>
+
                 <div className="imgNCommercial">
                   <img src="./uploads/nav/commercial/photo3.png" alt="" />
                 </div>
                 <div className="imgNCommercial">
                   <img src="./uploads/nav/commercial/photo4.png" alt="" />
                 </div>
+
+                </Grid>
+                <div className="imgnp">
+                    <div className="disi">
+                      <h5>
+                        Schedule your free consultation today
+                        <h6>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h6>
+                      </h5>
+                      <FormN name={"Free consultation"} />
+                    </div>
+                  </div>
+                </Grid>
+
+
               </ul>
             </div>
           </li>
@@ -259,6 +338,7 @@ const Navbar = () => {
             onClick={() => handleDropdownToggle("DEVELOPERS")}
           >
             <span className="custom-navbar-link">
+
               <Link to="/Ourpartners">DEVELOPERS</Link>
             </span>
             <div className="DEVELOPERS">
@@ -267,25 +347,51 @@ const Navbar = () => {
                   dropdownOpen.DEVELOPERS ? "show" : ""
                 }`}
               >
-                <div className="custom-dropdown-item">
-                  <h3>See all developers in UAE {">"}</h3>
+                <Grid container spacing={2} className="custom-dropdown-item">
+                <Grid item xs={5} >
+                  <h3>
+                    See all developers in UAE{" "}
+                    <img src="./uploads/nav/icon/arrow.png" alt="" />
+                  </h3>
                   <div className="dis-paly2">
                     <ul>
                       <li>Top developers</li>
-                      <li>Reportage</li>
-                      <li>DAMAC</li>
-                      <li>Meraas</li>
-                    </ul>
-                    <ul>
                       <li>Emaar</li>
-                      <li>ALDAR</li>
+                      <li>ALDAR
+                      </li>
                       <li>Bloom</li>
                     </ul>
-                  </div>
-                </div>
+                    <ul>
+                      <li>Select Group
+
+</li>
+                      <li>Reportage
+                      </li>
+                      <li>DAMAC</li>
+                      <li>Meraas
+                      </li>
+                    </ul>
+                    </div>
+                  </Grid>
+                  <Grid item xs={7} >
+
                 <div className="imgNCommercial">
                   <img src="./uploads/nav/developers/photo5.png" alt="" />
                 </div>
+                </Grid>
+                <div className="imgnp">
+                    <div className="disi">
+                      <h5>
+                        Schedule your free consultation today
+                        <h6>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h6>
+                      </h5>
+                      <FormN name={"Free consultation"} />
+                    </div>
+                  </div>
+                </Grid>
               </ul>
             </div>
           </li>
@@ -307,7 +413,10 @@ const Navbar = () => {
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={4}>
-                    <h3>See all areas in UAE {">"}</h3>
+                    <h3>
+                      See all areas in UAE{" "}
+                      <img src="./uploads/nav/icon/arrow.png" alt="" />
+                    </h3>
                     <div className="dis-paly">
                       <ul>
                         <li>Abu Dhabi</li>
@@ -345,6 +454,18 @@ const Navbar = () => {
                       </ul>
                     </div>
                   </Grid>
+                  <div className="imgnp">
+                    <div className="disi">
+                      <h5>
+                        Schedule your free consultation today
+                        <h6>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h6>
+                      </h5>
+                      <FormN name={"Free consultation"} />
+                    </div>
+                  </div>
                 </Grid>
               </ul>
             </div>
@@ -414,12 +535,14 @@ const Navbar = () => {
                     <ul>
                       <li>
                         <Link className="custom-dropdown-item" to="/Careers">
-                          CAREERS {">"}
+                          CAREERS{" "}
+                          <img src="./uploads/nav/icon/arrow.png" alt="" />
                         </Link>
                       </li>
                       <li>
                         <Link className="custom-dropdown-item" to="/Contactus">
-                          CONTACT US {">"}
+                          CONTACT US{" "}
+                          <img src="./uploads/nav/icon/arrow.png" alt="" />
                         </Link>
                       </li>
                     </ul>
@@ -428,6 +551,7 @@ const Navbar = () => {
                 <div className="imgNCommercial">
                   <img src="./uploads/nav/contactus/photo11.png" alt="" />
                 </div>
+                
               </ul>
             </div>
           </li>

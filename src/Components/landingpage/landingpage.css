@@ -146,12 +146,13 @@
   opacity: .5 !important;
 }
 
-.dis-play1{
+.Landingpage .dis-play1{
   display: flex;
   width: 100%;
   justify-content: space-evenly;
   text-align: center;
   font-size: 25px;
+  margin: 25px 0px;
 }
 .dis-play2{
   display: flex;
