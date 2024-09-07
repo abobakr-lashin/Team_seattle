@@ -475,6 +475,61 @@ list-style: none;
 
 
 /* CONTACT */
+/* ABOUT */
+
+.ABOUT .css-mhc70k-MuiGrid-root>.MuiGrid-item{
+  margin: 15px 0PX;
+  padding: 0px;
+  font-size: 20px;
+  
+}
+.ABOUT .css-mhc70k-MuiGrid-root{
+  align-items: start;
+  list-style: disc;
+  
+}
+.ABOUT .custom-dropdown-menu{
+  display: none;
+  width:70vw;
+  margin:10px ;
+  position: absolute;
+  left: -45vw !important;
+  background-color: #cfb87a;
+  list-style: none;
+  padding: 18px 24px;
+  z-index:9699999999999999 !important;
+  border-radius: 23px;
+height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+
+
+
+.ABOUT .dis-paly{
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+  position: relative;
+}
+.dis-paly li{
+list-style: none;  padding: 5px;
+
+  
+}
+
+.ABOUT .dis-imgNbuy{
+  justify-content: end;
+}
+
+.ABOUT .custom-dropdown-item {padding: 25px;
+  list-style: none;
+
+}
+/* ABOUT */
 
 
 

@@ -491,13 +491,24 @@ const Navbar = () => {
             onMouseLeave={() => handleMouseLeave("ABOUT_US")}
             onClick={() => handleDropdownToggle("ABOUT_US")}
           >
-            <span className="custom-navbar-link">ABOUT US</span>
-            <ul
-              className={`custom-dropdown-menu ${
-                dropdownOpen.ABOUT_US ? "show" : ""
-              }`}
-            >
-              <li>
+            <span className="custom-navbar-link">
+              <Link to={"/ABOUT"}>
+              ABOUT US
+              </Link>
+              </span>
+            <div className="ABOUT">
+              <ul
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.ABOUT_US ? "show" : ""
+                }`}
+              >
+                <Grid container spacing={2} className="custom-dropdown-item">
+                  <Grid item xs={7}>
+                    <h3>
+                      See all areas in UAE{" "}
+                      <img src="./uploads/nav/icon/arrow.png" alt="" />
+                    </h3>
+                    <li>
                 <Link className="custom-dropdown-item" to="/TeamS">
                   Our Team
                 </Link>
@@ -512,7 +523,30 @@ const Navbar = () => {
                   SPARTAN TOURISM
                 </Link>
               </li>
-            </ul>
+                  </Grid>
+
+                  <Grid item xs={5}>
+                    <div className="dis-imgNbuy">
+                        <img src="./uploads/nav/areas/photo6.png" alt="" />
+                      </div>
+           
+         
+                  </Grid>
+                  <div className="imgnp">
+                    <div className="disi">
+                      <h5>
+                        Schedule your free consultation today
+                        <h6>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h6>
+                      </h5>
+                      <FormN name={"Free consultation"} />
+                    </div>
+                  </div>
+                </Grid>
+              </ul>
+            </div>
           </li>
 
           <li
@@ -529,8 +563,9 @@ const Navbar = () => {
                   dropdownOpen.CONTACT_US ? "show" : ""
                 }`}
               >
-                <div className="custom-dropdown-item">
-                  <div className="imgcon">
+                <Grid container spacing={2} className="custom-dropdown-item">
+                <Grid>
+                <div className="imgcon">
                     <img src="./uploads/nav/contactus/areyouready.png" alt="" />
                   </div>
                   <div className="dis-paly2">
@@ -549,11 +584,26 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </div>
-                </div>
-                <div className="imgNCommercial">
+</Grid>              
+<Grid>              
+  <div className="imgNCommercial">
                   <img src="./uploads/nav/contactus/photo11.png" alt="" />
                 </div>
-                
+
+                </Grid>      
+                <div className="imgnp">
+                    <div className="disi">
+                      <h5>
+                        Schedule your free consultation today
+                        <h6>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h6>
+                      </h5>
+                      <FormN name={"Free consultation"} />
+                    </div>
+                  </div>        
+                </Grid>              
               </ul>
             </div>
           </li>
