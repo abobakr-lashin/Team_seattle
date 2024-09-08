@@ -475,6 +475,7 @@ list-style: none;
 
 
 /* CONTACT */
+<<<<<<< HEAD
 /* About */
 
 
@@ -485,12 +486,34 @@ list-style: none;
 .About .custom-dropdown-menu{
   display: none;
   width:80vw;
+=======
+/* ABOUT */
+
+.ABOUT .css-mhc70k-MuiGrid-root>.MuiGrid-item{
+  margin: 15px 0PX;
+  padding: 0px;
+  font-size: 20px;
+  
+}
+.ABOUT .css-mhc70k-MuiGrid-root{
+  align-items: start;
+  list-style: disc;
+  
+}
+.ABOUT .custom-dropdown-menu{
+  display: none;
+  width:70vw;
+>>>>>>> f63a9240704b8b129f070b5a53b16db383fdf994
   margin:10px ;
   position: absolute;
   left: -45vw !important;
   background-color: #cfb87a;
   list-style: none;
+<<<<<<< HEAD
   padding: 18px 18px;
+=======
+  padding: 18px 24px;
+>>>>>>> f63a9240704b8b129f070b5a53b16db383fdf994
   z-index:9699999999999999 !important;
   border-radius: 23px;
 height: auto;
@@ -499,6 +522,7 @@ height: auto;
 }
 
 
+<<<<<<< HEAD
 .About .custom-dropdown-menu .imgcon img{
 width: 80%;
 }
@@ -509,12 +533,24 @@ width: 80%;
   margin: 5px;
   align-items: start;
   justify-content: space-between;
+=======
+
+
+.ABOUT .dis-paly{
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+  position: relative;
+>>>>>>> f63a9240704b8b129f070b5a53b16db383fdf994
 }
 .dis-paly li{
 list-style: none;  padding: 5px;
 
   
 }
+<<<<<<< HEAD
 .About .imgNCommercial{
   display: flex;
   font-size: 20px;
@@ -537,6 +573,18 @@ list-style: none;
 
 
 /* About */
+=======
+
+.ABOUT .dis-imgNbuy{
+  justify-content: end;
+}
+
+.ABOUT .custom-dropdown-item {padding: 25px;
+  list-style: none;
+
+}
+/* ABOUT */
+>>>>>>> f63a9240704b8b129f070b5a53b16db383fdf994
 
 
 

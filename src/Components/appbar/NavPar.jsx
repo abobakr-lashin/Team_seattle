@@ -485,15 +485,24 @@ const Navbar = () => {
             onClick={() => handleDropdownToggle("ABOUT_US")}
           >
             <span className="custom-navbar-link">
+<<<<<<< HEAD
               <Link to={"/About"}>ABOUT US</Link>
             </span>
             <div className="About">
+=======
+              <Link to={"/ABOUT"}>
+              ABOUT US
+              </Link>
+              </span>
+            <div className="ABOUT">
+>>>>>>> f63a9240704b8b129f070b5a53b16db383fdf994
               <ul
                 className={`custom-dropdown-menu ${
                   dropdownOpen.ABOUT_US ? "show" : ""
                 }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
+<<<<<<< HEAD
                   <Grid item xs={5}>
                     <h3>
                       See all developers in UAE{" "}
@@ -502,6 +511,53 @@ const Navbar = () => {
                     <div className="dis-paly2">
                       <ul>
                         <Link to="/Login">Login</Link>
+=======
+                  <Grid item xs={7}>
+                    <h3>
+                      See all areas in UAE{" "}
+                      <img src="./uploads/nav/icon/arrow.png" alt="" />
+                    </h3>
+                    <li>
+                <Link className="custom-dropdown-item" to="/TeamS">
+                  Our Team
+                </Link>
+              </li>
+              <li>
+                <Link className="custom-dropdown-item" to="/Mortgage">
+                  JNJ MORTGAGE
+                </Link>
+              </li>
+              <li>
+                <Link className="custom-dropdown-item" to="/Spartan">
+                  SPARTAN TOURISM
+                </Link>
+              </li>
+                  </Grid>
+
+                  <Grid item xs={5}>
+                    <div className="dis-imgNbuy">
+                        <img src="./uploads/nav/areas/photo6.png" alt="" />
+                      </div>
+           
+         
+                  </Grid>
+                  <div className="imgnp">
+                    <div className="disi">
+                      <h5>
+                        Schedule your free consultation today
+                        <h6>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h6>
+                      </h5>
+                      <FormN name={"Free consultation"} />
+                    </div>
+                  </div>
+                </Grid>
+              </ul>
+            </div>
+          </li>
+>>>>>>> f63a9240704b8b129f070b5a53b16db383fdf994
 
                         <li>
                           <Link className="custom-dropdown-item" to="/TeamS">
@@ -556,8 +612,9 @@ const Navbar = () => {
                   dropdownOpen.CONTACT_US ? "show" : ""
                 }`}
               >
-                <div className="custom-dropdown-item">
-                  <div className="imgcon">
+                <Grid container spacing={2} className="custom-dropdown-item">
+                <Grid>
+                <div className="imgcon">
                     <img src="./uploads/nav/contactus/areyouready.png" alt="" />
                   </div>
                   <div className="dis-paly2">
@@ -576,10 +633,26 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </div>
-                </div>
-                <div className="imgNCommercial">
+</Grid>              
+<Grid>              
+  <div className="imgNCommercial">
                   <img src="./uploads/nav/contactus/photo11.png" alt="" />
                 </div>
+
+                </Grid>      
+                <div className="imgnp">
+                    <div className="disi">
+                      <h5>
+                        Schedule your free consultation today
+                        <h6>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h6>
+                      </h5>
+                      <FormN name={"Free consultation"} />
+                    </div>
+                  </div>        
+                </Grid>              
               </ul>
             </div>
           </li>
