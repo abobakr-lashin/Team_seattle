@@ -475,6 +475,68 @@ list-style: none;
 
 
 /* CONTACT */
+/* About */
+
+
+
+
+
+
+.About .custom-dropdown-menu{
+  display: none;
+  width:80vw;
+  margin:10px ;
+  position: absolute;
+  left: -45vw !important;
+  background-color: #cfb87a;
+  list-style: none;
+  padding: 18px 18px;
+  z-index:9699999999999999 !important;
+  border-radius: 23px;
+height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+
+.About .custom-dropdown-menu .imgcon img{
+width: 80%;
+}
+
+.About .dis-paly2{
+  display: flex;
+  font-size: 20px;
+  margin: 5px;
+  align-items: start;
+  justify-content: space-between;
+}
+.dis-paly li{
+list-style: none;  padding: 5px;
+
+  
+}
+.About .imgNCommercial{
+  display: flex;
+  font-size: 20px;
+ 
+  justify-content: start !important;
+
+
+
+}
+.About .dis-imgNbuy li{
+  padding: 5px;
+margin: 5px;
+list-style: none;
+}
+.About .css-mhc70k-MuiGrid-root{
+  align-items: start;
+}
+
+
+
+
+/* About */
 
 
 

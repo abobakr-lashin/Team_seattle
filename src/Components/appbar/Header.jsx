@@ -36,10 +36,10 @@ export default function Header() {
     return (
         <>
             <div className="header-container">
-                <NavPar />
                 <video className="video-background" autoPlay loop muted>
                     <source src={video} type="video/mp4" />
                 </video>
+                <NavPar />
 
 <div className="Formheader">
 <FormContainer color={"rgba(255, 255, 255, 0.466)"}/>

@@ -42,6 +42,8 @@ import Developers from './Pages/Developers';
 import Landingpage from './Components/landingpage/Landingpage';
 import CareersForm from './Components/contactus/CareersForm';
 import ContactusForm from './Components/contactus/ContactusForm';
+import About from './Components/abuotus/About';
+import Commercialcreat from './admin/pageDb/Commercialcreat';
 
 export default function App() {
     return (
@@ -77,6 +79,7 @@ export default function App() {
                     <Route path="Landingpage" element={<Landingpage/>} />
                     <Route path="CareersForm" element={<CareersForm/>} />
                     <Route path="ContactusForm" element={<ContactusForm/>} />
+                    <Route path="About" element={<About/>} />
                     <Route path="*" element={<NotFonunt />} />
                     <Route path="login" element={<Login />} />
                     <Route path="dashboard" element={<Dashboard />} >
@@ -88,6 +91,7 @@ export default function App() {
                         <Route path="BlogsCreat" element={<BlogsCreat />} />
                         <Route path="BlogsUpdete" element={<BlogsUpdete />} />
                         <Route path="update-blog/:id" element={<UpdateBlog />} />
+                        <Route path="Commercialcreat" element={<Commercialcreat />} />
                     </Route>
                 </Routes>
             </HashRouter>

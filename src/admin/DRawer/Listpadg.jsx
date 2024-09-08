@@ -32,6 +32,7 @@ export default function Listpadg() {
     {text:"MasssgeUs",ico:TextsmsIcon,path:"MasssgeUs"}, 
     {text:"CreatBolgs",ico:CreateIcon,path:"BlogsCreat"}, 
     {text:"BlogsUpdete",ico:CreateIcon,path:"BlogsUpdete"}, 
+    {text:"Commercialcreat",ico:CreateIcon,path:"Commercialcreat"}, 
   ]
   return (
     <>
