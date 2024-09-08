@@ -370,10 +370,10 @@ const Navbar = () => {
                     </div>
                     <div className="dis-paly2">
 
-                        <li><img src="./uploads/nav/aldar.png" alt="" /></li>
-                        <li><img src="./uploads/nav/bloom.png" alt="" /></li>
-                        <li><img src="./uploads/nav/damac.png" alt="" /></li>
-                        <li><img src="./uploads/nav/emaar.png" alt="" /></li>
+                        <li className="aldar" ><img src="./uploads/nav/aldar.png" alt="" /></li>
+                        <li className="aldar" ><img src="./uploads/nav/bloom.png" alt="" /></li>
+                        <li className="aldar" ><img src="./uploads/nav/damac.png" alt="" /></li>
+                        <li className="aldar" ><img src="./uploads/nav/emaar.png" alt="" /></li>
                   
                       </div>
                       <ul></ul>
