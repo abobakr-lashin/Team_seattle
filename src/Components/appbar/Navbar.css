@@ -311,6 +311,10 @@
   margin: 10px;
 }
 
+.dis-paly2 li img{
+width: 100px;
+}
+
 .custom-dropdown-item {
   color: white;
   text-decoration: none;

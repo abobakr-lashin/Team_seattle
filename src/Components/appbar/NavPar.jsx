@@ -368,6 +368,15 @@ const Navbar = () => {
                         <li>Meraas</li>
                       </ul>
                     </div>
+                    <div className="dis-paly2">
+
+                        <li><img src="./uploads/nav/aldar.png" alt="" /></li>
+                        <li><img src="./uploads/nav/bloom.png" alt="" /></li>
+                        <li><img src="./uploads/nav/damac.png" alt="" /></li>
+                        <li><img src="./uploads/nav/emaar.png" alt="" /></li>
+                  
+                      </div>
+                      <ul></ul>
                   </Grid>
                   <Grid item xs={7}>
                     <div className="imgNCommercial">
@@ -487,7 +496,7 @@ const Navbar = () => {
             <span className="custom-navbar-link">
               <Link to={"/About"}>ABOUT US</Link>
             </span>
-       
+
             <div className="ABOUT">
               <ul
                 className={`custom-dropdown-menu ${
@@ -503,33 +512,30 @@ const Navbar = () => {
                     <div className="dis-paly2">
                       <ul>
                         <Link to="/Login">Login</Link>
-   
-                  
-                    <li>
-                <Link className="custom-dropdown-item" to="/TeamS">
-                  Our Team
-                </Link>
-              </li>
-              <li>
-                <Link className="custom-dropdown-item" to="/Mortgage">
-                  JNJ MORTGAGE
-                </Link>
-              </li>
-              <li>
-                <Link className="custom-dropdown-item" to="/Spartan">
-                  SPARTAN TOURISM
-                </Link>
-              </li>
-              </ul>
-              </div>
-              </Grid>
+
+                        <li>
+                          <Link className="custom-dropdown-item" to="/TeamS">
+                            Our Team
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="custom-dropdown-item" to="/Mortgage">
+                            JNJ MORTGAGE
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="custom-dropdown-item" to="/Spartan">
+                            SPARTAN TOURISM
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </Grid>
 
                   <Grid item xs={5}>
                     <div className="dis-imgNbuy">
-                        <img src="./uploads/nav/areas/photo6.png" alt="" />
-                      </div>
-           
-         
+                      <img src="./uploads/nav/areas/photo6.png" alt="" />
+                    </div>
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
@@ -543,9 +549,6 @@ const Navbar = () => {
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
-
-
-              
                 </Grid>
               </ul>
             </div>
@@ -565,34 +568,39 @@ const Navbar = () => {
                 }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
-                <Grid>
-                <div className="imgcon">
-                    <img src="./uploads/nav/contactus/areyouready.png" alt="" />
-                  </div>
-                  <div className="dis-paly2">
-                    <ul>
-                      <li>
-                        <Link className="custom-dropdown-item" to="/Careers">
-                          CAREERS{" "}
-                          <img src="./uploads/nav/icon/arrow.png" alt="" />
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="custom-dropdown-item" to="/Contactus">
-                          CONTACT US{" "}
-                          <img src="./uploads/nav/icon/arrow.png" alt="" />
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-</Grid>              
-<Grid>              
-  <div className="imgNCommercial">
-                  <img src="./uploads/nav/contactus/photo11.png" alt="" />
-                </div>
-
-                </Grid>      
-                <div className="imgnp">
+                  <Grid>
+                    <div className="imgcon">
+                      <img
+                        src="./uploads/nav/contactus/areyouready.png"
+                        alt=""
+                      />
+                    </div>
+                    <div className="dis-paly2">
+                      <ul>
+                        <li>
+                          <Link className="custom-dropdown-item" to="/Careers">
+                            CAREERS{" "}
+                            <img src="./uploads/nav/icon/arrow.png" alt="" />
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className="custom-dropdown-item"
+                            to="/Contactus"
+                          >
+                            CONTACT US{" "}
+                            <img src="./uploads/nav/icon/arrow.png" alt="" />
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </Grid>
+                  <Grid>
+                    <div className="imgNCommercial">
+                      <img src="./uploads/nav/contactus/photo11.png" alt="" />
+                    </div>
+                  </Grid>
+                  <div className="imgnp">
                     <div className="disi">
                       <h5>
                         Schedule your free consultation today
@@ -603,8 +611,8 @@ const Navbar = () => {
                       </h5>
                       <FormN name={"Free consultation"} />
                     </div>
-                  </div>        
-                </Grid>              
+                  </div>
+                </Grid>
               </ul>
             </div>
           </li>
