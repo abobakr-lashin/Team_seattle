@@ -32,7 +32,6 @@ export default function Testimonials() {
     { id: 2, src: './uploads/img/testimonials/2.png' },
     { id: 3, src: './uploads/img/testimonials/3.png' },
     { id: 4, src: './uploads/img/testimonials/4.png' },
-    { id: 5, src: './uploads/img/testimonials/5.png' },
   ];
 
   const settings = {
