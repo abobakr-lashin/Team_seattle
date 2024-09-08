@@ -32,12 +32,12 @@
 }
 
 .img-Esteemed1 {
-  width: 300px;
+  width: 450px;
   display: flex;
   justify-content: end;
   align-items: center;
   margin: 30px auto !important;
-  height: 50vh;
+  padding-top: 20px;
 }
 
 .slick-prev,

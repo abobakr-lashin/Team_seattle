@@ -180,13 +180,7 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                      <h5>
-                        Schedule your free consultation today
-                        <h6>
-                          And our team will help you find the ideal property for
-                          your needs
-                        </h6>
-                      </h5>
+                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -250,13 +244,7 @@ const Navbar = () => {
                   </div>
                   <div className="imgnp">
                     <div className="disi">
-                      <h5>
-                        Schedule your free consultation today
-                        <h6>
-                          And our team will help you find the ideal property for
-                          your needs
-                        </h6>
-                      </h5>
+                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -312,13 +300,7 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                      <h5>
-                        Schedule your free consultation today
-                        <h6>
-                          And our team will help you find the ideal property for
-                          your needs
-                        </h6>
-                      </h5>
+                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -385,13 +367,7 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                      <h5>
-                        Schedule your free consultation today
-                        <h6>
-                          And our team will help you find the ideal property for
-                          your needs
-                        </h6>
-                      </h5>
+                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -460,13 +436,7 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                      <h5>
-                        Schedule your free consultation today
-                        <h6>
-                          And our team will help you find the ideal property for
-                          your needs
-                        </h6>
-                      </h5>
+                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -539,13 +509,7 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                      <h5>
-                        Schedule your free consultation today
-                        <h6>
-                          And our team will help you find the ideal property for
-                          your needs
-                        </h6>
-                      </h5>
+                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -602,13 +566,7 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                      <h5>
-                        Schedule your free consultation today
-                        <h6>
-                          And our team will help you find the ideal property for
-                          your needs
-                        </h6>
-                      </h5>
+                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
