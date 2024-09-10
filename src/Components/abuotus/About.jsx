@@ -9,8 +9,8 @@ import OUREXPERT from '../../Pages/OUREXPERT.jsx';
 export default function About() {
   return (
     <div  className="Abouts">
-        <NavPar />
       <div className="About">
+        <NavPar />
 
         <div className="h-5vh"></div>
 
