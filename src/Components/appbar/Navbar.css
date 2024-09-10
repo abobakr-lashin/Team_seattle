@@ -399,7 +399,7 @@ margin-top: 30px !important;
 }
 .CONTACT .custom-dropdown-menu {
   display: none;
-  width: 80vw;
+  width: 80vw !important;
   margin: 10px;
   position: absolute;
   left: -55vw !important;
