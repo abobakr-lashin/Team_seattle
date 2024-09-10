@@ -30,6 +30,7 @@ export default function Commercialcreat() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // هنا يمكنك إرسال البيانات إلى الخادم أو التعامل معها
+    // Commit Add Code Api Send Date To Fire Base
     console.log(formData);
   };
   // استخدام الـ state لحفظ البيانات المدخلة
