@@ -571,6 +571,7 @@ Securing Your Dream Home: Navigating Market, Finances.
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={7}>
+                  <Link to={"/About"}>
                     <h3>
                       About us <img src="./uploads/nav/icon/arrow.png" alt="" />
                     </h3>
@@ -583,6 +584,7 @@ Securing Your Dream Home: Navigating Market, Finances.
                         international markets.
                       </p>
                     </div>
+                    </Link>
                     <div className="dis-paly2">
                       <li className="aldar">
                       <Link to={"/TeamS"}>
