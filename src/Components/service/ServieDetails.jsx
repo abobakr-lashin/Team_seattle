@@ -28,6 +28,8 @@ export default function ServiceDetails() {
     { id: 4, src: './uploads/img/content/5.png' },
     { id: 5, src: './uploads/img/content/6.png' },
     { id: 6, src: './uploads/img/content/2.png' },
+  
+
   ];
 
   const ServiceDetails = [

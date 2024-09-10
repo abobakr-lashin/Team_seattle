@@ -37,7 +37,7 @@ export default function Service() {
                             <h2>
                                 Home{" "}
                                 <Link to={"/"}>   <KeyboardDoubleArrowRightIcon  sx={{ color: "#d3b76d", fontSize: "65px" }} /></Link> 
-                                
+
                                 <div>MANAGEMENT TEAM</div>
                             </h2>
                         </div>
@@ -48,6 +48,8 @@ export default function Service() {
                     }}
                         container margin={"auto"} >
                         {ser}
+                        <Link to={"/Mortgage"}> <img className="img-Sevrvices"  src="./uploads/img/content/mortgage.png" alt="" /></Link> 
+
                     </Box>
                     <div className="h-5vh"></div>
                     <OUREXPERT/>

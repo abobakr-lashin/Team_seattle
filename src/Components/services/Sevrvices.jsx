@@ -39,6 +39,8 @@ export default function Sevrvices() {
                 }}
                     container margin={"auto"} >
                     {ser}
+                    <Link to={"/Mortgage"}> <img className="img-Sevrvices"  src="./uploads/img/content/mortgage.png" alt="" /></Link> 
+
                 </Box>
                 <div className="h-5vh"></div>
             </div>

@@ -258,7 +258,7 @@ const Navbar = () => {
             onClick={() => handleDropdownToggle("Commercial")}
           >
             <span className="custom-navbar-link">
-              <Link to="/Commercial">Commercial</Link>
+              <Link to="/Commercial">COMMERCIAL</Link>
             </span>
             <div className="Commercial">
               <ul
@@ -453,7 +453,7 @@ const Navbar = () => {
             onClick={() => handleDropdownToggle("Blogs")}
           >
             <span className="custom-navbar-link">
-              <Link to="/LatestNews">Blogs</Link>
+              <Link to="/LatestNews">BLOGS</Link>
             </span>
             <div className="Blogs">
               <ul
@@ -467,7 +467,7 @@ const Navbar = () => {
                   className="custom-dropdown-item"
                   sx={{ display: "flex" }}
                 >
-                  <Grid item spacing={2} xs={4}>
+                  <Grid item spacing={2} xs={5}>
                     <h3>
                       Buy properties in UAE{" "}
                       <img src="./uploads/nav/icon/arrow.png" alt="" />
@@ -535,28 +535,6 @@ Securing Your Dream Home: Navigating Market, Finances.
                         </div>
                       </div>
 
-                    <div className="dis-play3">
-                      <h3>
-                      Press about us <img src="./uploads/nav/icon/arrow.png" alt="" />
-                    </h3>
-                      <p>
-                      All information with the mention of our company in the media is collected here.
-
-
-                      </p>
-      
-                      <div  className="dis-paly1">
-                      <div className="">
-                          <img src="./uploads/nav/blogs/JNJ.png" alt="" />
-                          </div>     
-                            <div className="">
-                          <img src="./uploads/nav/blogs/RequestQuoteNow.png" alt="" />
-                          </div>
-
-
-
-</div>
-                    </div>
                     </div>
                   </Grid>
                   <div className="imgnp">
@@ -571,7 +549,7 @@ Securing Your Dream Home: Navigating Market, Finances.
 
           <li className="custom-navbar-item">
             <Link to="/Service" className="custom-navbar-link">
-              Services
+              SERVICES
             </Link>
           </li>
 
@@ -607,19 +585,27 @@ Securing Your Dream Home: Navigating Market, Finances.
                     </div>
                     <div className="dis-paly2">
                       <li className="aldar">
+                      <Link to={"/TeamS"}>
                         {" "}
                         <h6>Our Team </h6>{" "}
                         <img src="./uploads/nav/aboutus/team.png" alt="" />
+                      </Link>
                       </li>
                       <li className="aldar">
+                      <Link to={"/Mortgage"}>
                         {" "}
                         <h6>JNJ-MORTGAGE </h6>{" "}
                         <img src="./uploads/nav/aboutus/jnj.png" alt="" />{" "}
+                      </Link>
                       </li>
                       <li className="aldar">
+                      <Link to={"/Spartan"}>
+
                         {" "}
                         <h6>SPARTAN TOURISM</h6>
                         <img src="./uploads/nav/aboutus/spartan.png" alt="" />
+                        </Link>
+
                       </li>
                     </div>
                     <ul></ul>
