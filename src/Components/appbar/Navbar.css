@@ -412,6 +412,10 @@ margin-top: 30px !important;
   overflow: hidden;
   transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
 }
+.CONTACT .css-isbt42 {
+  margin-top: 47px;
+  margin-left: 27px;
+}
 
 .CONTACT .custom-dropdown-menu .imgcon img {
   width: 86%;}
