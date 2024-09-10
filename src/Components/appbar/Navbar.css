@@ -434,9 +434,10 @@ margin-top: 30px !important;
 }
 .CONTACT .imgNCommercial {
   display: flex;
+  width: 100%;
   font-size: 20px;
-align-items: center;
-  justify-content: center !important;
+align-items: end;
+  justify-content: end !important;
 }
 
 .CONTACT .dis-paly2 li{
