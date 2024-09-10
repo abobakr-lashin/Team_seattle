@@ -162,7 +162,7 @@
 
 .RENT .custom-dropdown-menu {
   display: none;
-  width: 70vw;
+  width: 75vw;
   margin: 10px;
   position: absolute;
   left: -120% !important;
@@ -234,8 +234,8 @@
 }
 
 .Commercial .css-mhc70k-MuiGrid-root > .MuiGrid-item {
-  margin: 0px;
-  padding: 0px;
+ 
+
   font-size: 20px;
 }
 .Commercial .css-mhc70k-MuiGrid-root {
@@ -270,7 +270,9 @@
   width: 300px;
   margin: 20px;
 }
-
+.Commercial ul li{
+padding: 10px;
+}
 /* Commercial */
 /* DEVELOPERS */
 
@@ -380,7 +382,9 @@ width: 95px;
 
 /* AREAS */
 /* CONTACT */
-
+.CONTACT .css-mhc70k-MuiGrid-root {
+margin-top: 20px !important;
+}
 .CONTACT .custom-dropdown-menu {
   display: none;
   width: 80vw;
@@ -398,8 +402,7 @@ width: 95px;
 }
 
 .CONTACT .custom-dropdown-menu .imgcon img {
-  width: 80%;
-}
+  width: 100%;}
 
 .CONTACT .dis-paly2 {
   display: flex;
@@ -416,14 +419,10 @@ width: 95px;
 .CONTACT .imgNCommercial {
   display: flex;
   font-size: 20px;
-
+align-items: center;
   justify-content: center !important;
 }
-.AREAS .dis-imgNbuy li {
-  padding: 5px;
-  margin: 5px;
-  list-style: none;
-}
+
 
 /* CONTACT */
 /* About */
@@ -446,7 +445,7 @@ width: 95px;
   width: 70vw;
   margin: 10px;
   position: absolute;
-  left: -45vw !important;
+  left: -40vw !important;
   background-color: #cfb87a;
   list-style: none;
   padding: 18px 18px;
@@ -500,15 +499,169 @@ width: 95px;
 
 /* About */
 
-.ABOUT .dis-imgNbuy {
+.ABOUT .imgNCommercial {
+  display: flex;
   justify-content: end;
 }
-
+.ABOUT p{
+  width: 100%;
+}
 .ABOUT .custom-dropdown-item {
   padding: 25px;
   list-style: none;
 }
+.ABOUT .dis-paly2 {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  justify-content: start;
+}
 /* ABOUT */
+.ABOUT .dis-paly2 li{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  font-size: 17px;
+  font-weight: bolder;
+
+  align-items: center !important;
+  justify-content: start;
+}
+.ABOUT .dis-paly2 li img{
+width:70px;
+}
+/* ABOUT */
+/* Blogs */
+
+
+.Blogs .imgnp {
+  margin: 10px;
+  background-image: url("/public/uploads/nav/Gif2.gif");
+  width: 99%;
+  height: auto;
+  border-radius: 30px;
+  padding: 20px;
+  background-size: cover;
+}
+.Blogs .custom-dropdown-menu {
+  display: none;
+  width: 90vw;
+  margin: 10px;
+  position: absolute;
+  left: -39vw !important;
+  background-color: #cfb87a;
+  list-style: none;
+  padding: 18px 24px;
+  border-radius: 23px;
+  height: auto;
+  overflow: hidden;
+  margin-top: 20px;
+  
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+  z-index: 9699999999999956489489486999 !important;
+}
+.dis-play3 .dis-paly1 div img{
+margin: 20px;
+width: 150px;
+height: 100%;
+}
+
+.Blogs .dis-paly {
+  display: flex;
+  font-size: 18px;
+  padding: 10px;
+  align-items: center;
+  justify-content: start;
+}
+.Blogs .dis-paly1 {
+  display: flex;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+  justify-content: start;
+}
+.Blogs .dis-paly li {
+  list-style: disc;
+  padding: 5px;
+}
+.Blogs .imgNbuy {
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+gap: 5px;
+  justify-content: start;
+}
+.Blogs .imgNbuy img{
+  width: 450px;
+  margin-top: 20px;
+
+}
+.Blogs .imgNbuy .imgNbuy1 img{
+  width: 450px;
+  height: 300px;
+  margin-top: 20px;
+
+}
+.Blogs .imgNbuy .imgNbuy2 img{
+  width: 450px;
+  height: 150px;
+  margin-top: 20px;
+
+}
+.dis-play3{
+  flex-direction: column;
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 18px;
+  width: 80%;
+  flex-wrap: wrap;
+}
+.dis-play3 h4{
+
+  font-size: 22px;
+}
+.dis-play3 p{
+  width: 80%;
+  flex-wrap: wrap;
+
+  font-size: 22px;
+}
+
+
+
+
+
+.Blogs .dis-imgNbuy li {
+  padding: 5px;
+  margin: 5px;
+  list-style: none;
+}
+.Blogs .dis-paly1 .titel{
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 5px;
+}
+.Blogs .dis-paly1 .img img{
+width: 90px;
+height: 100%;
+}
+.Blogs .dis-paly1 .titel h5 {
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+}
+.Blogs .dis-paly1 .titel  p {
+  font-size: 10px !important;
+  width: 100%;
+}
+
+
+
+
+/* Blogs */
 
 /* .custom-dropdown-menu */
 

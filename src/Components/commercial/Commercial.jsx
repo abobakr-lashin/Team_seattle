@@ -61,7 +61,7 @@ export default function Commercial() {
 };
 
   return (
-    <div className="Commercial">
+    <div className="Commercial1">
       <NavPar />
       <div className="h-5vh"></div>
 

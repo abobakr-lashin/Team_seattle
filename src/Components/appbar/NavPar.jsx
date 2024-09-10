@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import FormN from "./FormN";
 import Typography from "@mui/material/Typography";
-import { Grid } from "@mui/material";
+import { Grid, ImageListTileBar, IconButton } from "@mui/material";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -180,7 +180,6 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -244,7 +243,6 @@ const Navbar = () => {
                   </div>
                   <div className="imgnp">
                     <div className="disi">
-                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -280,7 +278,7 @@ const Navbar = () => {
                       <li>
                         {" "}
                         <img
-                          src="./uploads/nav/icon/exclusive.png"
+                          src="./uploads/nav/icon/workspace.png"
                           alt=""
                         />{" "}
                         Offices
@@ -300,7 +298,6 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -351,14 +348,20 @@ const Navbar = () => {
                       </ul>
                     </div>
                     <div className="dis-paly2">
-
-                        <li className="aldar" ><img src="./uploads/nav/aldar.png" alt="" /></li>
-                        <li className="aldar" ><img src="./uploads/nav/bloom.png" alt="" /></li>
-                        <li className="aldar" ><img src="./uploads/nav/damac.png" alt="" /></li>
-                        <li className="aldar" ><img src="./uploads/nav/emaar.png" alt="" /></li>
-                  
-                      </div>
-                      <ul></ul>
+                      <li className="aldar">
+                        <img src="./uploads/nav/aldar.png" alt="" />
+                      </li>
+                      <li className="aldar">
+                        <img src="./uploads/nav/bloom.png" alt="" />
+                      </li>
+                      <li className="aldar">
+                        <img src="./uploads/nav/damac.png" alt="" />
+                      </li>
+                      <li className="aldar">
+                        <img src="./uploads/nav/emaar.png" alt="" />
+                      </li>
+                    </div>
+                    <ul></ul>
                   </Grid>
                   <Grid item xs={7}>
                     <div className="imgNCommercial">
@@ -367,7 +370,6 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -436,7 +438,6 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -445,10 +446,127 @@ const Navbar = () => {
             </div>
           </li>
 
-          <li className="custom-navbar-item">
-            <Link to="/LatestNews" className="custom-navbar-link">
-              Blogs
-            </Link>
+          <li
+            className="custom-navbar-item"
+            onMouseEnter={() => handleMouseEnter("Blogs")}
+            onMouseLeave={() => handleMouseLeave("Blogs")}
+            onClick={() => handleDropdownToggle("Blogs")}
+          >
+            <span className="custom-navbar-link">
+              <Link to="/LatestNews">Blogs</Link>
+            </span>
+            <div className="Blogs">
+              <ul
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.Blogs ? "show" : ""
+                }`}
+              >
+                <Grid
+                  container
+                  spacing={2}
+                  className="custom-dropdown-item"
+                  sx={{ display: "flex" }}
+                >
+                  <Grid item spacing={2} xs={4}>
+                    <h3>
+                      Buy properties in UAE{" "}
+                      <img src="./uploads/nav/icon/arrow.png" alt="" />
+                    </h3>
+                    <div className="dis-paly">
+                      <p>
+                        A Comprehensive Guide Discover everything you need to
+                        know about life and culture in the UAE. Learn how the
+                        emirates are organized, explore work and investment
+                        opportunities, and get detailed instructions on applying
+                        for visas, extending stays, and making purchases.
+                      </p>
+                    </div>
+                    <div>
+                      <div  className="dis-paly1">
+                        <div className="img">
+                          <img src="./uploads/nav/blogs/photo10.png" alt="" />
+                          </div>
+                      <div className="titel">
+<h5>
+  The Future of the UAE Real Estate Market
+</h5>
+<p>
+Securing Your Dream Home: Navigating Market, Finances.
+<p>
+  19 / August / 2024
+
+
+
+</p>
+</p>
+                      </div>
+                      </div>
+                      <div  className="dis-paly1">
+                        <div className="img">
+                          <img src="./uploads/nav/blogs/photo9.png" alt="" />
+                          </div>
+                      <div className="titel">
+<h5>
+  The Future of the UAE Real Estate Market
+</h5>
+<p>
+Securing Your Dream Home: Navigating Market, Finances.
+<p>
+  19 / August / 2024
+
+
+
+</p>
+</p>
+                      </div>
+                      </div>
+                    </div>
+                  </Grid>
+
+                  <Grid item xs={7}>
+                    <div className="dis-imgNbuy">
+                      <div className="imgNbuy">
+                        <div className="imgNbuy1">
+                        <img src="./uploads/nav/blogs/photo7.png" alt="" />
+                        </div>
+                        <div className="imgNbuy2">
+
+                        <img src="./uploads/nav/blogs/photo8.png" alt="" />
+                        </div>
+                      </div>
+
+                    <div className="dis-play3">
+                      <h3>
+                      Press about us <img src="./uploads/nav/icon/arrow.png" alt="" />
+                    </h3>
+                      <p>
+                      All information with the mention of our company in the media is collected here.
+
+
+                      </p>
+      
+                      <div  className="dis-paly1">
+                      <div className="">
+                          <img src="./uploads/nav/blogs/JNJ.png" alt="" />
+                          </div>     
+                            <div className="">
+                          <img src="./uploads/nav/blogs/RequestQuoteNow.png" alt="" />
+                          </div>
+
+
+
+</div>
+                    </div>
+                    </div>
+                  </Grid>
+                  <div className="imgnp">
+                    <div className="disi">
+                      <FormN name={"Free consultation"} />
+                    </div>
+                  </div>
+                </Grid>
+              </ul>
+            </div>
           </li>
 
           <li className="custom-navbar-item">
@@ -474,42 +592,45 @@ const Navbar = () => {
                 }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
-                  <Grid item xs={5}>
+                  <Grid item xs={7}>
                     <h3>
-                      See all developers in UAE{" "}
-                      <img src="./uploads/nav/icon/arrow.png" alt="" />
+                      About us <img src="./uploads/nav/icon/arrow.png" alt="" />
                     </h3>
                     <div className="dis-paly2">
-                      <ul>
-                        <Link to="/Login">Login</Link>
-
-                        <li>
-                          <Link className="custom-dropdown-item" to="/TeamS">
-                            Our Team
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="custom-dropdown-item" to="/Mortgage">
-                            JNJ MORTGAGE
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="custom-dropdown-item" to="/Spartan">
-                            SPARTAN TOURISM
-                          </Link>
-                        </li>
-                      </ul>
+                      <p>
+                        Founded in 2021, Seattle & Middle East stands as a
+                        premier real estate firm headquartered in Abu Dhabi,
+                        distinguished by our commitment to providing exemplary
+                        property solutions across the UAE, GCC, and select
+                        international markets.
+                      </p>
                     </div>
+                    <div className="dis-paly2">
+                      <li className="aldar">
+                        {" "}
+                        <h6>Our Team </h6>{" "}
+                        <img src="./uploads/nav/aboutus/team.png" alt="" />
+                      </li>
+                      <li className="aldar">
+                        {" "}
+                        <h6>JNJ-MORTGAGE </h6>{" "}
+                        <img src="./uploads/nav/aboutus/jnj.png" alt="" />{" "}
+                      </li>
+                      <li className="aldar">
+                        {" "}
+                        <h6>SPARTAN TOURISM</h6>
+                        <img src="./uploads/nav/aboutus/spartan.png" alt="" />
+                      </li>
+                    </div>
+                    <ul></ul>
                   </Grid>
-
                   <Grid item xs={5}>
-                    <div className="dis-imgNbuy">
-                      <img src="./uploads/nav/areas/photo6.png" alt="" />
+                    <div className="imgNCommercial">
+                      <img src="./uploads/nav/aboutus/photoabout.png" alt="" />
                     </div>
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -566,7 +687,6 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                   
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
