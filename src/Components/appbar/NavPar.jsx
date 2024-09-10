@@ -52,7 +52,7 @@ const Navbar = () => {
   // Add event listener to detect click outside the navbar
   useEffect(() => {
     const handleClickOutside = (event) => {
-      const navbar = document.querySelector(".custom-navbar-menu");
+      const navbar = document.querySelector("custom-navbar-menu");
       if (navbar && !navbar.contains(event.target)) {
         closeMenu();
       }
