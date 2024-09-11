@@ -33,6 +33,8 @@
   flex-direction: column;
   cursor: pointer;
   flex-wrap: wrap;
+  z-index: 90000;
+  
 }
 
 .custom-bar {
@@ -83,20 +85,7 @@
   color: #e2bc10;
 }
 
-.custom-dropdown-menu {
-  display: none;
-  margin: 10px;
-  position: absolute;
-  left: -50%;
-  background-color: #bfb78f;
-  list-style: none;
-  padding: 12px 0;
-  z-index: 9699999999999999 !important;
-  border-radius: 40px;
-  height: 50vh;
-  overflow: hidden;
-  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
-}
+
 
 .disi {
   width:75%;
@@ -122,7 +111,7 @@
   width: 80vw;
   margin: 10px;
   position: absolute;
-  left: -50% !important;
+  left: -50% ;
   background-color: #bfb78f;
   list-style: none;
   padding: 18px 24px;
@@ -355,7 +344,7 @@ width: 95px;
   width: 80vw;
   margin: 10px;
   position: absolute;
-  left: -25vw !important;
+  left: -25vw ;
   background-color: #bfb78f;
   list-style: none;
   padding: 18px 24px;
@@ -707,160 +696,7 @@ height: 100%;
 .custom-navbar-link {
   font-size: 19px;
 }
-/* التنسيق المتجاوب لشاشات أصغر */
-@media (max-width: 1560px) {
-  .custom-navbar-link {
-    font-size: 17px;
-  }
-}
-@media (max-width: 1024px) {
-  .custom-navbar-link {
-    font-size: 20px;
-  }
-  .custom-navbar-menu {
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(17, 34, 51);
-    height: auto;
-    position: absolute;
-    top: 100%; /* توسيط القائمة تحت شريط التنقل */
-    left: 0;
-    margin: auto;
-    overflow-y: scroll !important;
-    z-index: 100;
-  }
-
-  .custom-navbar-toggle {
-    padding: 8px;
-    border-radius: 8px;
-    display: flex;
-    position: absolute;
-    top: 10px;
-    right: 5px;
-    background-color: #123;
-    transition: all 0.3s ease;
-  }
-
-  .custom-navbar-toggle:hover {
-    transform: scale(1.1); /* تكبير العنصر قليلاً عند المرور */
-  }
-
-  .custom-navbar-item {
-    margin: 5px 0;
-    width: 100%;
-    color: white !important;
-  }
-
-  .custom-dropdown-menu {
-    position: static;
-    min-width: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .custom-dropdown-menu.show {
-    display: block;
-    opacity: 1;
-  }
-
-  .custom-navbar-link {
-    width: 100%;
-    padding: 0;
-    text-align: center;
-    color: white;
-    font-size: 15px;
-  }
-  .custom-navbar-menu {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    margin: 0;
-    transition: max-height 0.3s ease-in-out; /* لإضافة الأنيميشن */
-    overflow: hidden;
-    max-height: 0; /* يتم تحديده في الوضع الافتراضي للإخفاء */
-  }
-  .custom-navbar-toggle {
-    padding: 8px;
-    border-radius: 8px;
-    display: flex;
-    position: absolute;
-    top: 10px;
-    right: 5px;
-    background-color: #123;
-    transition: all 0.3s ease; /* إضافة انتقال سلس لتأثيرات التغيير */
-  }
-
-  .custom-navbar-toggle:hover {
-    transform: scale(1.1); /* تكبير العنصر قليلاً عند المرور */
-  }
-
-  .custom-navbar-menu {
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(17, 34, 51);
-    height: auto;
-    position: absolute;
-    top: 20%;
-    left: 0%;
-    margin: auto;
-    overflow-y: scroll !important;
-    z-index: 100;
-  }
-
-  .custom-navbar-menu.active {
-    max-height: 95%; /* يتم تحديد الحد الأقصى للطول عند الفتح */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-  }
-
-  .custom-navbar-item {
-    margin: 5px 0;
-    width: 100%;
-    color: white !important;
-  }
-
-  .custom-dropdown-menu {
-    position: static;
-    min-width: 100%;
-    opacity: 0;
-    transition: opacity 10s ease, background-color 5s; /* إضافة أنيميشن */
-  }
-  .custom-dropdown-menu.show {
-    display: block;
-    opacity: 1;
-  }
-
-  .custom-dropdown-item {
-    padding: 12px 20px;
-    text-align: center;
-    color: white;
-    transition: display 10.5s;
-  }
-
-  .custom-navbar-link {
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    color: white;
-  }
-  .custom-en-ar {
-    flex: content;
-    position: relative;
-  }
-}
-
-/* Navbar.css */
-
-/* NavbarCustom.css */
-
-/* قائمة تحديد اللغة */
+غة */
 .language-selector-list {
   list-style-type: none;
   padding: 0;
@@ -940,4 +776,780 @@ height: 100%;
   margin-right: 10px;
   background-size: cover;
   background-position: center;
+}
+
+/* التنسيق المتجاوب لشاشات أصغر */
+@media (max-width: 1560px) {
+  .custom-navbar-link {
+    font-size: 17px;
+  }
+}
+@media (max-width: 1024px) {
+  .custom-navbar-link {
+    font-size: 20px;
+  }
+  
+
+
+  .custom-navbar-toggle:hover {
+    transform: scale(1.1); /* تكبير العنصر قليلاً عند المرور */
+  }
+
+  .custom-navbar-item {
+    margin: 5px 0;
+    width: 100%;
+    color: white !important;
+  }
+
+  .custom-dropdown-menu {
+    position: static;
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .custom-dropdown-menu.show {
+    display: block;
+    opacity: 1;
+  }
+
+  .custom-navbar-link {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+  }
+  .custom-navbar-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    transition: max-height 0.3s ease-in-out; /* لإضافة الأنيميشن */
+    overflow: hidden;
+    max-height: 0; /* يتم تحديده في الوضع الافتراضي للإخفاء */
+  }
+  .custom-navbar-toggle {
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    border: #fffb00 solid 1px;
+    background-color: #bfb78f;
+    transition: all 0.3s ease; /* إضافة انتقال سلس لتأثيرات التغيير */
+  }
+
+  .custom-navbar-toggle:hover {
+    transform: scale(1.1); /* تكبير العنصر قليلاً عند المرور */
+  }
+
+  .custom-navbar-menu {
+    flex-direction: column;
+    width: 100%;
+    text-align:left;
+    justify-content: center;
+    align-items: center;
+    background-color: #bfb78f;
+    height:100vh;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin: auto;
+    overflow-y: scroll !important;
+    z-index: 100;
+  }
+
+  .custom-navbar-menu.active {
+    max-height: 100%; /* يتم تحديد الحد الأقصى للطول عند الفتح */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .custom-navbar-item {
+    width: 100%;
+    color: white !important;
+    margin-left: 10%;
+    font-size: 20px;
+  }
+
+  .custom-dropdown-menu {
+    position: static;
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 10s ease, background-color 5s; /* إضافة أنيميشن */
+  }
+  .custom-dropdown-menu.show {
+    display: block;
+    opacity: 1;
+  }
+
+  .custom-dropdown-item {
+    padding: 12px 20px;
+    text-align: center;
+    color: white;
+    transition: display 10.5s;
+  }
+
+  .custom-navbar-link {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+  }
+  .custom-en-ar {
+    flex: content;
+    position: relative;
+  }
+  .custom-navbar-link::after {
+    content: ">";
+    margin-left: 120px;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: -7px;
+    display: inline-block; /* تغيير display لتمكين التحكم في المسافات */
+}
+/* BUY */
+.imgnp {
+  margin: 10px;
+  background-image: url("/public/uploads/nav/Gif2.gif");
+  width: 99%;
+  height: 100px;
+  border-radius: 30px;
+  padding: 20px;
+  background-size: cover;
+}
+.Buys .custom-dropdown-menu {
+  width: 60vw;
+  left: -5% ;
+  top: -40px;
+ }  
+ .Buys h3{
+  width: 100%;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+ }
+ .Buys h3 img{
+  font-weight: bold;
+  width: 35px;
+ }
+ .Buys .dis-paly {
+  width: 100%;  
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  align-items: start;
+  justify-content: start;
+}
+.Buys .dis-paly ul{
+  width: 100%;
+}
+ .dis-paly li {
+  width: 100%;
+  padding: 5px;
+  font-size: 30px;
+}
+
+
+/* BUY */
+/* RENT */
+
+.RENT .custom-dropdown-menu {
+  display: none;
+  width: 75vw;
+  margin: 10px;
+  position: absolute;
+  left: -120% !important;
+  background-color: #bfb78f;
+  list-style: none;
+  padding: 18px 24px;
+  z-index: 9699999999999999 !important;
+  border-radius: 23px;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+.RENT .dis-paly2 {
+  display: flex !important;
+  font-size: 20px;
+  padding: 10px;
+  align-items: center;
+  justify-content: start;
+}
+
+.RENT .dis-paly3 {
+  display: flex !important;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  left: -26px;
+  justify-content: space-around;
+}
+.dis-paly3 li {
+  list-style: disc;
+  padding: 5px;
+}
+
+.dis-imgNbuy2 li {
+  padding: 5px;
+  margin: 5px;
+  list-style: none;
+}
+.custom-dropdown-item {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.RENT .custom-dropdown-item {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+/* RENT */
+/* Commercial */
+
+.Commercial .custom-dropdown-menu {
+  display: none;
+  width: 80vw;
+  margin: 10px;
+  position: absolute;
+  left: -130% !important;
+  background-color: #bfb78f;
+  list-style: none;
+  padding: 30px 24px;
+  z-index: 9699999999999999 !important;
+  border-radius: 23px;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+.Commercial .css-mhc70k-MuiGrid-root > .MuiGrid-item {
+ 
+
+  font-size: 20px;
+}
+.Commercial .css-mhc70k-MuiGrid-root {
+  align-items: start;
+  list-style: disc;
+}
+.Commercial li {
+  list-style: none;
+}
+
+.Commercial .dis-paly2 {
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  align-items: start;
+  font-weight: bolder;
+
+  justify-content: start;
+}
+.dis-paly2 li {
+  list-style: disc;
+  padding: 5px;
+  font-weight: bolder;
+}
+
+.dis-imgNbuy2 li {
+  font-weight: bolder;
+
+  list-style: none;
+}
+.custom-dropdown-item {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+.Commercial .imgNCommercial img {
+  width: 300px;
+  margin: 20px;
+}
+.Commercial ul li{
+padding: 10px;
+font-weight: bold;
+
+}
+/* Commercial */
+/* DEVELOPERS */
+
+.DEVELOPERS .css-mhc70k-MuiGrid-root > .MuiGrid-item {
+  margin: 15px 0px;
+  padding: 0px;
+  font-size: 20px;
+}
+.DEVELOPERS .css-mhc70k-MuiGrid-root {
+  align-items: start;
+  list-style: disc;
+}
+.DEVELOPERS .custom-dropdown-menu {
+  display: none;
+  width: 80vw;
+  margin: 10px;
+  position: absolute;
+  left: -260% !important;
+  background-color: #bfb78f;
+  list-style: none;
+  padding: 30px 24px;
+  z-index: 9699999999999999 !important;
+  border-radius: 23px;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+.DEVELOPERS .dis-paly2 {
+  display: flex;
+  font-size: 20px;
+  margin: 10px;
+  align-items: center;
+  justify-content: start;
+}
+.dis-paly2 li {
+  list-style: none;
+  padding: 5px;
+  margin: 10px;
+}
+
+.dis-paly2 .aldar img{
+width: 95px;
+}
+
+.custom-dropdown-item {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+.DEVELOPERS .imgNCommercial img {
+  display: flex;
+  justify-content: end;
+  width: 80%;
+}
+.DEVELOPERS .imgNCommercial{
+  width: 100%;  display: flex;
+  justify-content: end;
+}
+/* DEVELOPERS */
+/* AREAS */
+.AREAS .css-mhc70k-MuiGrid-root > .MuiGrid-item {
+  margin: 15px 0px;
+  padding: 0px;
+  font-size: 20px;
+}
+.AREAS .css-mhc70k-MuiGrid-root {
+  align-items: start;
+  list-style: disc;
+}
+.AREAS .custom-dropdown-menu {
+  display: none;
+  width: 80vw;
+  margin: 10px;
+  position: absolute;
+  left: -25vw ;
+  background-color: #bfb78f;
+  list-style: none;
+  padding: 18px 24px;
+  z-index: 9699999999999999 !important;
+  border-radius: 23px;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+.AREAS .dis-paly {
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+  position: relative;
+  left: -50px;
+  justify-content: space-between;
+}
+.dis-paly li {
+  list-style: none;
+  padding: 5px;
+}
+.AREAS .dis-imgNbuy {
+  display: flex;
+  font-size: 20px;
+
+  justify-content: space-between;
+}
+.AREAS .dis-imgNbuy li {
+  padding: 5px;
+  margin: 5px;
+  list-style: none;
+}
+
+/* AREAS */
+/* CONTACT */
+.CONTACT .css-mhc70k-MuiGrid-root {
+margin-top: 30px !important;
+}
+.CONTACT .custom-dropdown-menu {
+  display: none;
+  width: 80vw !important;
+  margin: 10px;
+  position: absolute;
+  left: -55vw !important;
+  background-color: #bfb78f;
+  list-style: none;
+  padding: 18px 24px;
+  z-index: 9699999999999999 !important;
+  border-radius: 23px;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+.CONTACT .css-isbt42 {
+  margin-top: 47px;
+  margin-left: 27px;
+}
+
+.CONTACT .custom-dropdown-menu .imgcon img {
+  width: 86%;}
+
+.CONTACT .dis-paly2 {
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+.dis-paly li {
+  list-style: none;
+  padding: 5px;
+}
+.CONTACT .imgNCommercial {
+  display: flex;
+  width: 100%;
+  font-size: 20px;
+align-items: end;
+  justify-content: end !important;
+}
+
+.CONTACT .dis-paly2 li{
+  font-size: 24px;
+}
+/* CONTACT */
+/* About */
+
+.About .custom-dropdown-menu {
+  display: none;
+  width: 80vw;
+}
+.ABOUT .css-mhc70k-MuiGrid-root > .MuiGrid-item {
+  margin: 15px 0px;
+  padding: 0px;
+  font-size: 20px;
+}
+.ABOUT .css-mhc70k-MuiGrid-root {
+  align-items: start;
+  list-style: disc;
+}
+.ABOUT .custom-dropdown-menu {
+  display: none;
+  width: 70vw;
+  margin: 10px;
+  position: absolute;
+  left: -40vw !important;
+  background-color: #bfb78f;
+  list-style: none;
+  padding: 18px 18px;
+  padding: 18px 24px;
+  z-index: 9699999999999999 !important;
+  border-radius: 23px;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+}
+
+.About .custom-dropdown-menu .imgcon img {
+  width: 80%;
+}
+
+.About .dis-paly2 {
+  display: flex;
+  font-size: 20px;
+  margin: 5px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.ABOUT .dis-paly {
+  display: flex;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
+  align-items: center;
+  position: relative;
+}
+.dis-paly li {
+  list-style: none;
+  padding: 5px;
+}
+
+.About .imgNCommercial {
+  display: flex;
+  font-size: 20px;
+
+  justify-content: start !important;
+}
+.About .dis-imgNbuy li {
+  padding: 5px;
+  margin: 5px;
+  list-style: none;
+}
+.About .css-mhc70k-MuiGrid-root {
+  align-items: start;
+}
+
+.ABOUT .imgNCommercial {
+  display: flex;
+  justify-content: end;
+}
+.ABOUT p{
+  width: 100%;
+}
+.ABOUT .custom-dropdown-item {
+  padding: 25px;
+  list-style: none;
+}
+.ABOUT .dis-paly2 {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  justify-content: start;
+}
+.ABOUT .dis-paly2 li{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  font-size: 17px;
+  font-weight: bolder;
+
+  align-items: center !important;
+  justify-content: start;
+}
+
+/* ABOUT */
+/* Blogs */
+
+
+.Blogs .imgnp {
+  margin: 10px;
+  background-image: url("/public/uploads/nav/Gif2.gif");
+  width: 99%;
+  height: auto;
+  border-radius: 30px;
+  padding: 20px;
+  background-size: cover;
+}
+.Blogs .custom-dropdown-menu {
+  display: none;
+  width: 82vw;
+  margin: 10px;
+  position: absolute;
+  left: -39vw !important;
+  background-color: #bfb78f;
+  list-style: none;
+  padding: 18px 24px;
+  border-radius: 23px;
+  height: auto;
+  overflow: hidden;
+  margin-top: 20px;
+  
+  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+  z-index: 9699999999999956489489486999 !important;
+}
+.dis-play3 .dis-paly1 div img{
+width: 100px;
+height: 100%;
+}
+
+.Blogs .dis-paly {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  justify-content: start;
+}
+.Blogs .dis-paly1 {
+  display: flex;
+  padding: 0px;
+  margin: 5px;
+  align-items: center;
+  justify-content: start;
+}
+.Blogs .dis-paly li {
+  list-style: disc;
+  padding: 5px;
+}
+.Blogs .imgNbuy {
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+gap: 5px;
+  justify-content: start;
+}
+.Blogs .imgNbuy .imgNbuy1 {
+  display: flex;
+  justify-content: end;
+}
+.Blogs .imgNbuy .imgNbuy2 {
+  display: flex;
+  justify-content: end;
+}
+.Blogs .imgNbuy .imgNbuy1 img{
+  width: 90%;
+  height: 200px;
+
+}
+.Blogs .imgNbuy .imgNbuy2 img{
+  width: 90%;
+  height: 160px;
+  margin-top: 1 0px;
+
+}
+.dis-play3{
+  flex-direction: column;
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 18px;
+  width: 80%;
+  flex-wrap: wrap;
+}
+.dis-play3 h4{
+
+  font-size: 22px;
+}
+.dis-play3 p{
+  width: 80%;
+  flex-wrap: wrap;
+
+  font-size: 22px;
+}
+
+
+
+
+
+.Blogs .dis-imgNbuy {
+display: flex;
+justify-content: end !important;
+flex-direction: column;
+}
+.Blogs .dis-paly1 .titel{
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 5px;
+}
+.Blogs .dis-paly1 .img img{
+width: 90px;
+height: 100%;
+}
+.Blogs .dis-paly1 .titel h5 {
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+}
+.Blogs .dis-paly1 .titel  p {
+  font-size: 10px !important;
+  width: 100%;
+}
+
+
+
+
+/* Blogs */
+}
+@media (max-width: 770px) {
+
+  .dis-paly li {
+    width: 100%;
+    padding: 5px;
+    font-size: 25px;
+  }
+  
+
+}
+@media (max-width: 425px) {
+
+  .Buys h3{
+    width: 100%;
+    font-size: 25px;
+   }
+   .Buys h3 img{
+    width: 25px;
+   }
+   .Buys .dis-paly {
+    width: 146%;
+    display: flex;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px;
+    align-items: start;
+    justify-content: start;
+    align-items: start;
+    text-align: start;
+    margin-left: -61px;
+
+  }
+  .Buys .dis-paly ul{
+    width: 100%;
+    text-align: start;
+
+  }
+   .dis-paly li {
+    padding: 10px;
+    text-align: start;
+    font-size: 18px;
+ 
+  }
+  .dis-imgNbuy{
+display: flex;
+flex-direction: column;
+  }
+}
+@media (max-width: 325px) {
+  .Buys h3{
+    font-size:18px ;
+    } 
+ 
+
+  .Buys .dis-paly {
+    width: 156%;
+    margin-left: -71px;
+    flex-direction: column;
+
+  }   .dis-paly li {
+    padding: 10px;
+    text-align: start;
+    font-size: 23px;
+ 
+  }
+  .imgNbuy{
+width: 100%;
+margin: auto;
+  }
+  .imgNbuy img{
+width: 300px;
+margin-left: -40px !important;
+  }
+  .ullest{
+margin-left: -51px !important;
+  }
 }

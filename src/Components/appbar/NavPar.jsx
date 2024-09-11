@@ -130,7 +130,7 @@ const Navbar = () => {
                 }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
-                  <Grid item spacing={2} xs={5}>
+                  <Grid item spacing={2} lg={5} xs={12}>
                     <h3>
                       Buy properties in UAE{" "}
                       <img src="./uploads/nav/icon/arrow.png" alt="" />
@@ -162,13 +162,13 @@ const Navbar = () => {
                     </div>
                   </Grid>
 
-                  <Grid item xs={7}>
+                  <Grid item lg={7} xs={12}>
                     <div className="dis-imgNbuy">
                       <div className="imgNbuy">
                         <img src="./uploads/nav/buy/photo1.png" alt="" />
                       </div>
 
-                      <ul>
+                      <ul className="ullest">
                         <h3>Investments abroad</h3>
                         <li>Dubai</li>
                         <li>Sharjah</li>
