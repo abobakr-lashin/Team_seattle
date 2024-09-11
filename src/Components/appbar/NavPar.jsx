@@ -4,9 +4,12 @@ import "./Navbar.css";
 import FormN from "./FormN";
 import Typography from "@mui/material/Typography";
 import { Grid, ImageListTileBar, IconButton } from "@mui/material";
+import { collection, getDocs } from "firebase/firestore";
+import { firestore } from "../../firebaseConfig";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [DataBase, setDataBase] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState({
     ABOUT_US: false,
     OUR_PROJECTS: false,
@@ -102,6 +105,25 @@ const Navbar = () => {
     setLanguageOpen(false);
   };
 
+  // Get Data to Firestore
+  const GetDataFireStore = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(firestore, "category"));
+      const docs = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
+      setDataBase(docs);
+    } catch (error) {
+      console.error("Error fetching documents: ", error);
+    }
+  };
+
+  useEffect(() => {
+    GetDataFireStore();
+  }, []);
+
   return (
     <div className="custom-navbar-brand">
       <Link to="/">
@@ -125,9 +147,8 @@ const Navbar = () => {
             </span>
             <div className="Buys">
               <ul
-                className={`custom-dropdown-menu ${
-                  dropdownOpen.BUY ? "show" : ""
-                }`}
+                className={`custom-dropdown-menu ${dropdownOpen.BUY ? "show" : ""
+                  }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item spacing={2} lg={5} xs={12}>
@@ -200,9 +221,8 @@ const Navbar = () => {
 
             <div className="RENT">
               <ul
-                className={`custom-dropdown-menu ${
-                  dropdownOpen.RENT ? "show" : ""
-                }`}
+                className={`custom-dropdown-menu ${dropdownOpen.RENT ? "show" : ""
+                  }`}
               >
                 <Grid
                   container
@@ -262,9 +282,8 @@ const Navbar = () => {
             </span>
             <div className="Commercial">
               <ul
-                className={`custom-dropdown-menu ${
-                  dropdownOpen.Commercial ? "show" : ""
-                }`}
+                className={`custom-dropdown-menu ${dropdownOpen.Commercial ? "show" : ""
+                  }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={5}>
@@ -273,20 +292,19 @@ const Navbar = () => {
                       <img src="./uploads/nav/icon/arrow.png" alt="" />
                     </h3>
 
+
+
                     <ul>
-                      <li>Secondary properties</li>
-                      <li>
-                        {" "}
-                        <img
-                          src="./uploads/nav/icon/workspace.png"
-                          alt=""
-                        />{" "}
-                        Offices
-                      </li>
-                      <li>Hotels</li>
-                      <li>Shops</li>
-                      <li>Commercial lands</li>
+                      {DataBase.slice(0 , 4).map((it) => {
+                        return (
+                          <li key={it.id}>
+                            <Link to={`/${it.name}`}>{it.name}</Link> 
+                          </li>
+                        )
+                      })}
                     </ul>
+
+
                   </Grid>
                   <Grid item xs={7} display={"flex"}>
                     <div className="imgNCommercial">
@@ -323,9 +341,8 @@ const Navbar = () => {
             </span>
             <div className="DEVELOPERS">
               <ul
-                className={`custom-dropdown-menu ${
-                  dropdownOpen.DEVELOPERS ? "show" : ""
-                }`}
+                className={`custom-dropdown-menu ${dropdownOpen.DEVELOPERS ? "show" : ""
+                  }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={5}>
@@ -389,9 +406,8 @@ const Navbar = () => {
             </span>
             <div className="AREAS">
               <ul
-                className={`custom-dropdown-menu ${
-                  dropdownOpen.AREAS ? "show" : ""
-                }`}
+                className={`custom-dropdown-menu ${dropdownOpen.AREAS ? "show" : ""
+                  }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={4}>
@@ -457,9 +473,8 @@ const Navbar = () => {
             </span>
             <div className="Blogs">
               <ul
-                className={`custom-dropdown-menu ${
-                  dropdownOpen.Blogs ? "show" : ""
-                }`}
+                className={`custom-dropdown-menu ${dropdownOpen.Blogs ? "show" : ""
+                  }`}
               >
                 <Grid
                   container
@@ -482,43 +497,43 @@ const Navbar = () => {
                       </p>
                     </div>
                     <div>
-                      <div  className="dis-paly1">
+                      <div className="dis-paly1">
                         <div className="img">
                           <img src="./uploads/nav/blogs/photo10.png" alt="" />
-                          </div>
-                      <div className="titel">
-<h5>
-  The Future of the UAE Real Estate Market
-</h5>
-<p>
-Securing Your Dream Home: Navigating Market, Finances.
-<p>
-  19 / August / 2024
+                        </div>
+                        <div className="titel">
+                          <h5>
+                            The Future of the UAE Real Estate Market
+                          </h5>
+                          <p>
+                            Securing Your Dream Home: Navigating Market, Finances.
+                            <p>
+                              19 / August / 2024
 
 
 
-</p>
-</p>
+                            </p>
+                          </p>
+                        </div>
                       </div>
-                      </div>
-                      <div  className="dis-paly1">
+                      <div className="dis-paly1">
                         <div className="img">
                           <img src="./uploads/nav/blogs/photo9.png" alt="" />
-                          </div>
-                      <div className="titel">
-<h5>
-  The Future of the UAE Real Estate Market
-</h5>
-<p>
-Securing Your Dream Home: Navigating Market, Finances.
-<p>
-  19 / August / 2024
+                        </div>
+                        <div className="titel">
+                          <h5>
+                            The Future of the UAE Real Estate Market
+                          </h5>
+                          <p>
+                            Securing Your Dream Home: Navigating Market, Finances.
+                            <p>
+                              19 / August / 2024
 
 
 
-</p>
-</p>
-                      </div>
+                            </p>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </Grid>
@@ -527,11 +542,11 @@ Securing Your Dream Home: Navigating Market, Finances.
                     <div className="dis-imgNbuy">
                       <div className="imgNbuy">
                         <div className="imgNbuy1">
-                        <img src="./uploads/nav/blogs/photo7.png" alt="" />
+                          <img src="./uploads/nav/blogs/photo7.png" alt="" />
                         </div>
                         <div className="imgNbuy2">
 
-                        <img src="./uploads/nav/blogs/photo8.png" alt="" />
+                          <img src="./uploads/nav/blogs/photo8.png" alt="" />
                         </div>
                       </div>
 
@@ -565,47 +580,46 @@ Securing Your Dream Home: Navigating Market, Finances.
 
             <div className="ABOUT">
               <ul
-                className={`custom-dropdown-menu ${
-                  dropdownOpen.ABOUT_US ? "show" : ""
-                }`}
+                className={`custom-dropdown-menu ${dropdownOpen.ABOUT_US ? "show" : ""
+                  }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={7}>
-                  <Link to={"/About"}>
-                    <h3>
-                      About us <img src="./uploads/nav/icon/arrow.png" alt="" />
-                    </h3>
-                    <div className="dis-paly2">
-                      <p>
-                        Founded in 2021, Seattle & Middle East stands as a
-                        premier real estate firm headquartered in Abu Dhabi,
-                        distinguished by our commitment to providing exemplary
-                        property solutions across the UAE, GCC, and select
-                        international markets.
-                      </p>
-                    </div>
+                    <Link to={"/About"}>
+                      <h3>
+                        About us <img src="./uploads/nav/icon/arrow.png" alt="" />
+                      </h3>
+                      <div className="dis-paly2">
+                        <p>
+                          Founded in 2021, Seattle & Middle East stands as a
+                          premier real estate firm headquartered in Abu Dhabi,
+                          distinguished by our commitment to providing exemplary
+                          property solutions across the UAE, GCC, and select
+                          international markets.
+                        </p>
+                      </div>
                     </Link>
                     <div className="dis-paly2">
                       <li className="aldar">
-                      <Link to={"/TeamS"}>
-                        {" "}
-                        <h6>Our Team </h6>{" "}
-                        <img src="./uploads/nav/aboutus/team.png" alt="" />
-                      </Link>
+                        <Link to={"/TeamS"}>
+                          {" "}
+                          <h6>Our Team </h6>{" "}
+                          <img src="./uploads/nav/aboutus/team.png" alt="" />
+                        </Link>
                       </li>
                       <li className="aldar">
-                      <Link to={"/Mortgage"}>
-                        {" "}
-                        <h6>JNJ-MORTGAGE </h6>{" "}
-                        <img src="./uploads/nav/aboutus/jnj.png" alt="" />{" "}
-                      </Link>
+                        <Link to={"/Mortgage"}>
+                          {" "}
+                          <h6>JNJ-MORTGAGE </h6>{" "}
+                          <img src="./uploads/nav/aboutus/jnj.png" alt="" />{" "}
+                        </Link>
                       </li>
                       <li className="aldar">
-                      <Link to={"/Spartan"}>
+                        <Link to={"/Spartan"}>
 
-                        {" "}
-                        <h6>SPARTAN TOURISM</h6>
-                        <img src="./uploads/nav/aboutus/spartan.png" alt="" />
+                          {" "}
+                          <h6>SPARTAN TOURISM</h6>
+                          <img src="./uploads/nav/aboutus/spartan.png" alt="" />
                         </Link>
 
                       </li>
@@ -636,9 +650,8 @@ Securing Your Dream Home: Navigating Market, Finances.
 
             <div className="CONTACT">
               <ul
-                className={`custom-dropdown-menu ${
-                  dropdownOpen.CONTACT_US ? "show" : ""
-                }`}
+                className={`custom-dropdown-menu ${dropdownOpen.CONTACT_US ? "show" : ""
+                  }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid>
@@ -670,7 +683,7 @@ Securing Your Dream Home: Navigating Market, Finances.
                             className="custom-dropdown-item"
                             to="/Login"
                           >
-                          login{" "}
+                            login{" "}
                             <img src="./uploads/nav/icon/arrow.png" alt="" />
                           </Link>
                         </li>
