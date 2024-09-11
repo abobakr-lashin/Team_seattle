@@ -44,6 +44,7 @@ import CareersForm from './Components/contactus/CareersForm';
 import ContactusForm from './Components/contactus/ContactusForm';
 import About from './Components/abuotus/About';
 import Commercialcreat from './admin/pageDb/Commercialcreat';
+import AddCategory from './admin/pageDb/AddCategory';
 
 export default function App() {
     return (
@@ -92,6 +93,7 @@ export default function App() {
                         <Route path="BlogsUpdete" element={<BlogsUpdete />} />
                         <Route path="update-blog/:id" element={<UpdateBlog />} />
                         <Route path="Commercialcreat" element={<Commercialcreat />} />
+                        <Route path="AddCategory" element={<AddCategory />} />
                     </Route>
                 </Routes>
             </HashRouter>
