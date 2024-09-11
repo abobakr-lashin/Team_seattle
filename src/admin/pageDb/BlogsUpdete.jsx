@@ -16,7 +16,6 @@ export default function BlogsUpdete() {
                 id: doc.id,
                 ...doc.data()
             }));
-            console.log(docs);
             setDataBase(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
