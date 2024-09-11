@@ -7,6 +7,7 @@ import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 import CircularProgress from '@mui/material/CircularProgress';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
@@ -21,6 +22,7 @@ const VisuallyHiddenInput = styled('input')({
 });
 
 const AddCategory = () => {
+    const Navigste = useNavigate()
     const [category, setCategory] = useState('');
     const [FileImage, setFileImage] = useState(null);
     const [categories, setCategories] = useState([]);
@@ -33,7 +35,7 @@ const AddCategory = () => {
     const handleAddCategory = async (e) => {
         e.preventDefault();
         if (!category.trim()) {
-            setError('Category name is required');
+            toast.error('Category already exists!');
             return;
         }
 
@@ -42,7 +44,7 @@ const AddCategory = () => {
 
         try {
             // Cheake Category 
-            const categoriesRef = collection(firestore,  'Blogs');
+            const categoriesRef = collection(firestore,  'category');
             const q = query(categoriesRef, where('category', '==', category));
             const querySnapshot = await getDocs(q);
 
@@ -53,9 +55,10 @@ const AddCategory = () => {
                 });
                 toast.success('Category added successfully!.')
                 setCategory('');
+                Navigste('/dashboard')
                 return
             } else {
-                alert('Category already exists!');
+                toast.error('Category already exists!');
             }
         } catch (err) {
             setError('Error adding category: ' + err.message);

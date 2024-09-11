@@ -45,12 +45,13 @@ import ContactusForm from './Components/contactus/ContactusForm';
 import About from './Components/abuotus/About';
 import Commercialcreat from './admin/pageDb/Commercialcreat';
 import AddCategory from './admin/pageDb/AddCategory';
+import Company from './Pages/Company';
 
 export default function App() {
     return (
         <div>
             <HashRouter>
-                <ScrollToTop /> 
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="Ourpartners" element={<Ourpartners />} />
@@ -69,20 +70,23 @@ export default function App() {
                     <Route path="Careers" element={<Careers />} />
                     <Route path="Contactus" element={<Contactus />} />
                     <Route path="LastNews" element={<LastNews />} />
-                    <Route path="Commercial" element={<Commercial/>} />
-                    <Route path="SaleIn" element={<SaleIn/>} />
-                    <Route path="Cardsell" element={<Cardsell/>} />
-                    <Route path="Buy" element={<Buy/>} />
-                    <Route path="BuBuycardsy" element={<Buycards/>} />
-                    <Route path="Rent" element={<Rent/>} />
-                    <Route path="BuyHome" element={<BuyHome/>} />
-                    <Route path="Developers" element={<Developers/>} />
-                    <Route path="Landingpage" element={<Landingpage/>} />
-                    <Route path="CareersForm" element={<CareersForm/>} />
-                    <Route path="ContactusForm" element={<ContactusForm/>} />
-                    <Route path="About" element={<About/>} />
+                    <Route path="Commercial" element={<Commercial />} />
+                    <Route path="SaleIn" element={<SaleIn />} />
+                    <Route path="Cardsell" element={<Cardsell />} />
+                    <Route path="Buy" element={<Buy />} />
+                    <Route path="BuBuycardsy" element={<Buycards />} />
+                    <Route path="Rent" element={<Rent />} />
+                    <Route path="BuyHome" element={<BuyHome />} />
+                    <Route path="Developers" element={<Developers />} />
+                    <Route path="Landingpage" element={<Landingpage />} />
+                    <Route path="CareersForm" element={<CareersForm />} />
+                    <Route path="ContactusForm" element={<ContactusForm />} />
+                    <Route path="About" element={<About />} />
                     <Route path="*" element={<NotFonunt />} />
                     <Route path="login" element={<Login />} />
+                    {/*  */}
+                    <Route path="/:id" element={<Company />} />                 
+                    {/*  */}
                     <Route path="dashboard" element={<Dashboard />} >
                         <Route index element={<Formdb />} />
                         <Route path="Formservice" element={<Formservice />} />

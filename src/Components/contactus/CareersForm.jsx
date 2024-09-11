@@ -126,7 +126,7 @@ export default function CareersForm() {
                     phone: formData.phone,
                     email: formData.email,
                     experience: formData.experience,
-                    fileURLs: uploadedFileURLs , // Save all file URLs
+                    fileURLs: uploadedFileURLs, // Save all file URLs
                     date: new Date().toDateString(),
                     time: new Date().toLocaleTimeString()
                 });
@@ -141,164 +141,164 @@ export default function CareersForm() {
         setOpenSnackbar(false);
     };
 
-  return (
-    <div>
-          <div className='center10 mt-5'>
-                        <div className="form10" placeholder="">
-                            {/* Name */}
-                            <input
-                                name="name"
-                                placeholder={
-                                    language === "ar" ? "الاسم الكامل" : "Full Name"
-                                }
-                                value={formData.name}
-                                onChange={handleChange}
-                                className={nameError ? "error" : ""}
-                                style={{
-                                    marginBottom: "8px",
-                                    boxSizing: "border-box",
-                                }}
-                            />
-                            {nameError && (
-                                <div
-                                    style={{
-                                        color: "red",
-                                        top: "100%",
-                                        left: "0",
-                                        fontSize: "15px",
-                                    }}
-                                >
-                                    {nameError}
-                                </div>
-                            )}
-                            <div className="br"></div>
-                            <div className="br"></div>
-                            {/* Phone number */}
-                            <MuiTelInput
-                                sx={{
-                                    mt: "10px",
-                                    backgroundColor: "white",
-                                    borderRadius: "21px",
-                                    border: "none",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    outline: "none",
-                                    maxWidth:"80%",
-
-                                    boxShadow: "none",
-                                    '& .MuiOutlinedInput-root': {
-                                        '& fieldset': {
-                                            border: 'none',
-                                        },
-                                        '&:hover fieldset': {
-                                            border: 'none',
-                                        },
-                                        '&.Mui-focused fieldset': {
-                                            border: 'none',
-                                        },
-                                    },
-
-                                }}
-                                value={formData.phone}
-                                onChange={handlePhoneChange}
-                                error={Boolean(phoneError)}
-                                helperText={phoneError}
-                            />
-                            <div className="br"></div>
-                            <div className="br"></div>
-                            {/* Email */}
-                            <input
-                                type="email"
-                                placeholder="Email"
-                                name="email"
-                                label={language === "ar" ? "البريد الإلكتروني" : "Email"}
-                                variant="outlined"
-                                value={formData.email}
-                                onChange={handleChange}
-                                error={Boolean(emailError)}
-                                required
-                            />
-                            {emailError && (
-                                <div
-                                    style={{
-                                        color: "red",
-                                        top: "100%",
-                                        left: "5px",
-                                        margin: "2px",
-                                        fontSize: "15px",
-                                    }}
-                                >
-                                    {emailError}
-                                </div>
-                            )}
-                            <div className="br"></div>
-                            <div className="br"></div>
-                            {/* Experience */}
-                            <input
-                                type='number'
-                                name="experience"
-                                placeholder={
-                                    language === "ar" ? "عدد سنوات الخبرة" : "Years of Experience"
-                                }
-                                onChange={(e) => {
-                                    setFormData({ ...formData, experience: e.target.value });
-                                }}
-                                value={formData.experience}
-                                className={nameError ? "error" : ""}
-                                style={{
-                                    boxSizing: "border-box",
-                                }}
-                            />
-                            {nameError && (
-                                <div
-                                    style={{
-                                        color: "red",
-                                        top: "100%",
-                                        left: "0",
-                                        fontSize: "15px",
-                                    }}
-                                >
-                                    {nameError}
-                                </div>
-                            )}
-                            <div className="br"></div>
-                            <div className="br"></div>
-                            {/* File upload */}
-                            <h6>Upload CV / Resume(s)</h6>
-                            <Button className='btn-files' variant="contained" component="label" style={{ backgroundColor: '#d4af37', color: '#0d223d', margin: '20px 0', textAlign: "center" }}>
-                                <img className='img-file' src=" /uploads/CAREERS/Rectangle3.png" alt="" />
-                                <input
-                                    type="file"
-                                    multiple
-                                    hidden
-                                    onChange={(e) => {
-                                        setFileURLs(Array.from(e.target.files));
-                                    }}
-                                />
-                            </Button>
-                            {/* File upload */}
-                            <button
-                                className="serviceD2-submit"
-                                onClick={handleButtonClick}
-                            >
-                                {language === "ar" ? "إرسال" : "Submit"}
-                            </button>
-                            <Snackbar
-                                open={openSnackbar}
-                                autoHideDuration={6000}
-                                onClose={handleCloseSnackbar}
-                            >
-                                <Alert
-                                    onClose={handleCloseSnackbar}
-                                    severity="success"
-                                    sx={{ width: "100%" }}
-                                >
-                                    {snackbarMessage}
-                                </Alert>
-                            </Snackbar>
+    return (
+        <div>
+            <div className='center10 mt-5'>
+                <div className="form10" placeholder="">
+                    {/* Name */}
+                    <input
+                        name="name"
+                        placeholder={
+                            language === "ar" ? "الاسم الكامل" : "Full Name"
+                        }
+                        value={formData.name}
+                        onChange={handleChange}
+                        className={nameError ? "error" : ""}
+                        style={{
+                            marginBottom: "8px",
+                            boxSizing: "border-box",
+                        }}
+                    />
+                    {nameError && (
+                        <div
+                            style={{
+                                color: "red",
+                                top: "100%",
+                                left: "0",
+                                fontSize: "15px",
+                            }}
+                        >
+                            {nameError}
                         </div>
-                    </div>
-    </div>
-  )
+                    )}
+                    <div className="br"></div>
+                    <div className="br"></div>
+                    {/* Phone number */}
+                    <MuiTelInput
+                        sx={{
+                            mt: "10px",
+                            backgroundColor: "white",
+                            borderRadius: "21px",
+                            border: "none",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            outline: "none",
+                            maxWidth: "80%",
+
+                            boxShadow: "none",
+                            '& .MuiOutlinedInput-root': {
+                                '& fieldset': {
+                                    border: 'none',
+                                },
+                                '&:hover fieldset': {
+                                    border: 'none',
+                                },
+                                '&.Mui-focused fieldset': {
+                                    border: 'none',
+                                },
+                            },
+
+                        }}
+                        value={formData.phone}
+                        onChange={handlePhoneChange}
+                        error={Boolean(phoneError)}
+                        helperText={phoneError}
+                    />
+                    <div className="br"></div>
+                    <div className="br"></div>
+                    {/* Email */}
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        label={language === "ar" ? "البريد الإلكتروني" : "Email"}
+                        variant="outlined"
+                        value={formData.email}
+                        onChange={handleChange}
+                        error={Boolean(emailError)}
+                        required
+                    />
+                    {emailError && (
+                        <div
+                            style={{
+                                color: "red",
+                                top: "100%",
+                                left: "5px",
+                                margin: "2px",
+                                fontSize: "15px",
+                            }}
+                        >
+                            {emailError}
+                        </div>
+                    )}
+                    <div className="br"></div>
+                    <div className="br"></div>
+                    {/* Experience */}
+                    <input
+                        type='number'
+                        name="experience"
+                        placeholder={
+                            language === "ar" ? "عدد سنوات الخبرة" : "Years of Experience"
+                        }
+                        onChange={(e) => {
+                            setFormData({ ...formData, experience: e.target.value });
+                        }}
+                        value={formData.experience}
+                        className={nameError ? "error" : ""}
+                        style={{
+                            boxSizing: "border-box",
+                        }}
+                    />
+                    {nameError && (
+                        <div
+                            style={{
+                                color: "red",
+                                top: "100%",
+                                left: "0",
+                                fontSize: "15px",
+                            }}
+                        >
+                            {nameError}
+                        </div>
+                    )}
+                    <div className="br"></div>
+                    <div className="br"></div>
+                    {/* File upload */}
+                    <h6>Upload CV / Resume(s)</h6>
+                    <Button className='btn-files' variant="contained" component="label" style={{ backgroundColor: '#d4af37', color: '#0d223d', margin: '20px 0', textAlign: "center" }}>
+                        <img className='img-file' src=" /uploads/CAREERS/Rectangle3.png" alt="" />
+                        <input
+                            type="file"
+                            multiple
+                            hidden
+                            onChange={(e) => {
+                                setFileURLs(Array.from(e.target.files));
+                            }}
+                        />
+                    </Button>
+                    {/* File upload */}
+                    <button
+                        className="serviceD2-submit"
+                        onClick={handleButtonClick}
+                    >
+                        {language === "ar" ? "إرسال" : "Submit"}
+                    </button>
+                    <Snackbar
+                        open={openSnackbar}
+                        autoHideDuration={6000}
+                        onClose={handleCloseSnackbar}
+                    >
+                        <Alert
+                            onClose={handleCloseSnackbar}
+                            severity="success"
+                            sx={{ width: "100%" }}
+                        >
+                            {snackbarMessage}
+                        </Alert>
+                    </Snackbar>
+                </div>
+            </div>
+        </div>
+    )
 }
