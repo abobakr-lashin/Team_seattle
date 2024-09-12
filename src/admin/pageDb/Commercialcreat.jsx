@@ -5,17 +5,23 @@ import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن مسار الاستيراد صحيح
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 export default function CommercialCreate() {
+    const Navigate = useNavigate()
     const [FileURLs, setFileURLs] = useState([])
     const [FileImage, setFileImages] = useState([])
     const [urlImge, setUrlImge] = useState(null)
-    const [Categories , setCategories] = useState([])
+    const [ImgeCart, setImgeCart] = useState(null)
+    const [Categories, setCategories] = useState([])
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [formDataImage , setformDataImage] = useState('')
     const [formData, setFormData] = useState({
+        title: '',
         text: '',
         price: '',
+        currency: '',
         beds: '',
         baths: '',
         square: '',
@@ -27,10 +33,10 @@ export default function CommercialCreate() {
         email: '',
         map: '',
         category: '',
-        listingImage: null
+        listingImage: null,
     });
 
-    console.log(Categories);
+    console.log(formDataImage);
 
 
 
@@ -78,15 +84,23 @@ export default function CommercialCreate() {
                 return await getDownloadURL(fileRef);
             }));
             const fileRefBlog = ref(storage, `filesBlog/${formData.listingImage.name}`);
+            const fileRefImageCart = ref(storage, `filesBlog/${formDataImage.name}`);
+
             const [snapshotBlog, snapshotCart] = await Promise.all([
                 uploadBytes(fileRefBlog, formData.listingImage),
+                uploadBytes(fileRefImageCart, formDataImage),
             ]);
 
             const BgImage = await getDownloadURL(fileRefBlog);
+            const BgImageCard = await getDownloadURL(fileRefImageCart);
+
+            
             // Send Data TO fierStore
             await addDoc(collection(firestore, 'listingsBlogs'), {
-                category: '',
+                title: formData.title,
+                category: formData.category,
                 price: formData.price,
+                currency: formData.currency,
                 beds: formData.beds,
                 baths: formData.baths,
                 square: formData.square,
@@ -99,6 +113,7 @@ export default function CommercialCreate() {
                 map: formData.map,
                 bgImage: BgImage,
                 text: formData.text,
+                imageCart: BgImageCard,
                 imageSlider: uploadedFileURLs,
                 date: new Date().toDateString(),
                 time: new Date().toLocaleTimeString()
@@ -106,6 +121,7 @@ export default function CommercialCreate() {
 
             toast.success('Data submitted successfully!');
             setFormData({
+                title: '',
                 text: '',
                 price: '',
                 beds: '',
@@ -119,8 +135,10 @@ export default function CommercialCreate() {
                 email: '',
                 map: '',
                 category: '',
-                listingImage: null
+                listingImage: null,
+                imageCart: null
             });
+            Navigate('/dashboard/listingBlogs')
         } catch (err) {
             toast.error('Error submitting data: ' + err.message);
             console.error('Error submitting data:', err);
@@ -165,6 +183,41 @@ export default function CommercialCreate() {
             <div>
                 <form className="cardcreat" onSubmit={handleSubmit}>
                     <h1>Create Cards</h1>
+                    <div className="form-group">
+                        <label htmlFor="me" style={{ fontSize: '30px' }}>
+                            Image Cart
+                        </label>
+                        <input id="me" type="file" name="listingImage" onChange={(e) => {
+                            const file = URL.createObjectURL(e.target.files[0])
+                            setImgeCart(file)
+                            setformDataImage(e.target.files[0])
+                        }} />
+                        <div className="img">
+                            {ImgeCart && <img
+                                src={ImgeCart}
+                                alt="ImageCart"
+                                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                            />}
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="title"
+                            placeholder="title"
+                            value={formData.title}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="currency"
+                            placeholder="Name of the currency"
+                            value={formData.currency}
+                            onChange={handleInputChange}
+                        />
+                    </div>
                     <div className="form-group">
                         <input
                             type="number"
@@ -289,11 +342,11 @@ export default function CommercialCreate() {
                         </div>
                     </div>
                     <div className="form-group">
-                        <select style={{ margin: '20px', width: '80%' }} name="category" value={formData.category} onChange={(e)=>{
-                            setFormData({...formData, category: e.target.value });
+                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
+                            setFormData({ ...formData, category: e.target.value });
                         }}>
                             <option hidden >Select Category</option>
-                            {Categories.map((it)=>{
+                            {Categories.map((it) => {
                                 return <option key={it.id} value={it.name}>{it.name}</option>
                             })}
                         </select>
