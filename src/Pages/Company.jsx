@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
@@ -15,6 +15,7 @@ import { firestore } from '../firebaseConfig';
 
 const Company = () => {
     const { id } = useParams()
+    const Navgiate = useNavigate()
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
     const [price, setPrice] = useState('');
@@ -31,7 +32,7 @@ const Company = () => {
     const itemsPerPage = 9;
 
 
-    
+
     // const filteredProjects = imgSaleIn.filter((project) => {
     //     return (
     //         (!searchTerm || project.title.toUpperCase().includes(searchTerm.toUpperCase())) &&
@@ -87,16 +88,18 @@ const Company = () => {
         }
     };
 
-    console.log(loading);
 
     useEffect(() => {
         getCategories();
     }, []);
 
-    const FilterProducts = Products.filter((it) => it.category === id)
+    let FilterProducts;
+
+    FilterProducts = Products.filter((item) => item.category === id)
 
 
-    const imgsetin = FilterProducts.map((it) => (
+
+    const imgsetin = FilterProducts?.map((it) => (
         <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
             <div className="CONTER">
                 <div className="bg-back">

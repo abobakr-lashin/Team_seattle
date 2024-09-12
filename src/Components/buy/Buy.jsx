@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
@@ -10,6 +10,8 @@ import Footer from '../footer/Footer';
 import OUREXPERT from '../../Pages/OUREXPERT';
 
 import "./buy.css";
+import { collection, getDocs } from 'firebase/firestore';
+import { firestore } from '../../firebaseConfig';
 export default function Buy() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
@@ -22,166 +24,171 @@ export default function Buy() {
   const [minBedrooms, setMinBedrooms] = useState('');
   const [maxBedrooms, setMaxBedrooms] = useState('');
   const [minPrice, setMinPrice] = useState('');
+  const [Products, setProducts] = useState([]);
+  const [Loading, setLoading] = useState(false)
 
   const itemsPerPage = 9;
 
-    const imgSaleIn = [
-      {
-        id: 1,
-        src1: "/uploads/commercial/export/photo5.png",
-        money: "28,000,000",
-        CoinsName: "AED",
-        bed: 3,
-        bath: 4,
-        square: 4.067,
-        imgbed: "/uploads/commercial/export/icon/bed.png",
-        imgbath: "/uploads/commercial/export/icon/bath.png",
-        imgsquare: "/uploads/commercial/export/icon/square.png",
-        title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "One Canal, Al Wasl",
-      },
-      {
-        id: 2,
-        src1: "/uploads/commercial/export/photo5.png",
-        money: "50,000,000",
-        CoinsName: "AED",
-        bed: 3,
-        bath: 4,
-        square: 4.067,
-        imgbed: "/uploads/commercial/export/icon/bed.png",
-        imgbath: "/uploads/commercial/export/icon/bath.png",
-        imgsquare: "/uploads/commercial/export/icon/square.png",
-        title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "One Canal, Al Wasl",
-      },
-      {
-        id: 3,
-        src1: "/uploads/commercial/export/photo5.png",
-        money: "50,000,000",
-        CoinsName: "AED",
-        bed: 3,
-        bath: 4,
-        square: 4.067,
-        imgbed: "/uploads/commercial/export/icon/bed.png",
-        imgbath: "/uploads/commercial/export/icon/bath.png",
-        imgsquare: "/uploads/commercial/export/icon/square.png",
-        title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "One Canal, Al Wasl",
-      },
-      {
-        id: 4,
-        src1: "/uploads/commercial/export/photo5.png",
-        money: "50,000,000",
-        CoinsName: "AED",
-        bed: 3,
-        bath: 4,
-        square: 4.067,
-        imgbed: "/uploads/commercial/export/icon/bed.png",
-        imgbath: "/uploads/commercial/export/icon/bath.png",
-        imgsquare: "/uploads/commercial/export/icon/square.png",
-        title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "One Canal, Al Wasl",
-      },
-      {
-        id: 5,
-        src1: "/uploads/commercial/export/photo5.png",
-        money: "50,000,000",
-        CoinsName: "AED",
-        bed: 3,
-        bath: 4,
-        square: 4.067,
-        imgbed: "/uploads/commercial/export/icon/bed.png",
-        imgbath: "/uploads/commercial/export/icon/bath.png",
-        imgsquare: "/uploads/commercial/export/icon/square.png",
-        title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "One Canal, Al Wasl",
-      },
-      {
-        id: 6,
-        src1: "/uploads/commercial/export/photo5.png",
-        money: "50,000,000",
-        CoinsName: "AED",
-        bed: 3,
-        bath: 4,
-        square: 4.067,
-        imgbed: "/uploads/commercial/export/icon/bed.png",
-        imgbath: "/uploads/commercial/export/icon/bath.png",
-        imgsquare: "/uploads/commercial/export/icon/square.png",
-        title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "One Canal, Al Wasl",
-      },
-      {
-        id: 7,
-        src1: "/uploads/commercial/export/photo5.png",
-        money: "50,000,000",
-        CoinsName: "AED",
-        bed: 3,
-        bath: 4,
-        square: 4.067,
-        imgbed: "/uploads/commercial/export/icon/bed.png",
-        imgbath: "/uploads/commercial/export/icon/bath.png",
-        imgsquare: "/uploads/commercial/export/icon/square.png",
-        title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "One Canal, Al Wasl",
-      },
-      {
-        id: 8,
-        src1: "/uploads/commercial/export/photo5.png",
-        money: "50,000,000",
-        CoinsName: "AED",
-        bed: 3,
-        bath: 4,
-        square: 4.067,
-        imgbed: "/uploads/commercial/export/icon/bed.png",
-        imgbath: "/uploads/commercial/export/icon/bath.png",
-        imgsquare: "/uploads/commercial/export/icon/square.png",
-        title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "One Canal, Al Wasl",
-      },
-      {
-        id: 9,
-        src1: "/uploads/commercial/export/photo5.png",
-        money: "50,000,000",
-        CoinsName: "AED",
-        bed: 3,
-        bath: 4,
-        square: 4.067,
-        imgbed: "/uploads/commercial/export/icon/bed.png",
-        imgbath: "/uploads/commercial/export/icon/bath.png",
-        imgsquare: "/uploads/commercial/export/icon/square.png",
-        title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "zayed, Al Wasl",
-      },
-      {
-        id: 10,
-        src1: "/uploads/commercial/export/photo5.png",
-        money: "50,000,000",
-        CoinsName: "AED",
-        bed: 3,
-        bath: 4,
-        square: 4.067,
-        imgbed: "/uploads/commercial/export/icon/bed.png",
-        imgbath: "/uploads/commercial/export/icon/bath.png",
-        imgsquare: "/uploads/commercial/export/icon/square.png",
-        title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "One Canal, Al Wasl",
-      },
-      {
-        id: 11,
-        src1: "/uploads/commercial/export/photo5.png",
-        money: "50,000,000",
-        CoinsName: "AED",
-        bed: 3,
-        bath: 4,
-        square: 4.067,
-        imgbed: "/uploads/commercial/export/icon/bed.png",
-        imgbath: "/uploads/commercial/export/icon/bath.png",
-        imgsquare: "/uploads/commercial/export/icon/square.png",
-        title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-        LocationOn: "One Canal, Al Wasl",
-      },
-      // ... Add more items as needed
-    ];  
+  const imgSaleIn = [
+    {
+      id: 1,
+      src1: "/uploads/commercial/export/photo5.png",
+      money: "28,000,000",
+      CoinsName: "AED",
+      bed: 3,
+      bath: 4,
+      square: 4.067,
+      imgbed: "/uploads/commercial/export/icon/bed.png",
+      imgbath: "/uploads/commercial/export/icon/bath.png",
+      imgsquare: "/uploads/commercial/export/icon/square.png",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
+    },
+    {
+      id: 2,
+      src1: "/uploads/commercial/export/photo5.png",
+      money: "50,000,000",
+      CoinsName: "AED",
+      bed: 3,
+      bath: 4,
+      square: 4.067,
+      imgbed: "/uploads/commercial/export/icon/bed.png",
+      imgbath: "/uploads/commercial/export/icon/bath.png",
+      imgsquare: "/uploads/commercial/export/icon/square.png",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
+    },
+    {
+      id: 3,
+      src1: "/uploads/commercial/export/photo5.png",
+      money: "50,000,000",
+      CoinsName: "AED",
+      bed: 3,
+      bath: 4,
+      square: 4.067,
+      imgbed: "/uploads/commercial/export/icon/bed.png",
+      imgbath: "/uploads/commercial/export/icon/bath.png",
+      imgsquare: "/uploads/commercial/export/icon/square.png",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
+    },
+    {
+      id: 4,
+      src1: "/uploads/commercial/export/photo5.png",
+      money: "50,000,000",
+      CoinsName: "AED",
+      bed: 3,
+      bath: 4,
+      square: 4.067,
+      imgbed: "/uploads/commercial/export/icon/bed.png",
+      imgbath: "/uploads/commercial/export/icon/bath.png",
+      imgsquare: "/uploads/commercial/export/icon/square.png",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
+    },
+    {
+      id: 5,
+      src1: "/uploads/commercial/export/photo5.png",
+      money: "50,000,000",
+      CoinsName: "AED",
+      bed: 3,
+      bath: 4,
+      square: 4.067,
+      imgbed: "/uploads/commercial/export/icon/bed.png",
+      imgbath: "/uploads/commercial/export/icon/bath.png",
+      imgsquare: "/uploads/commercial/export/icon/square.png",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
+    },
+    {
+      id: 6,
+      src1: "/uploads/commercial/export/photo5.png",
+      money: "50,000,000",
+      CoinsName: "AED",
+      bed: 3,
+      bath: 4,
+      square: 4.067,
+      imgbed: "/uploads/commercial/export/icon/bed.png",
+      imgbath: "/uploads/commercial/export/icon/bath.png",
+      imgsquare: "/uploads/commercial/export/icon/square.png",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
+    },
+    {
+      id: 7,
+      src1: "/uploads/commercial/export/photo5.png",
+      money: "50,000,000",
+      CoinsName: "AED",
+      bed: 3,
+      bath: 4,
+      square: 4.067,
+      imgbed: "/uploads/commercial/export/icon/bed.png",
+      imgbath: "/uploads/commercial/export/icon/bath.png",
+      imgsquare: "/uploads/commercial/export/icon/square.png",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
+    },
+    {
+      id: 8,
+      src1: "/uploads/commercial/export/photo5.png",
+      money: "50,000,000",
+      CoinsName: "AED",
+      bed: 3,
+      bath: 4,
+      square: 4.067,
+      imgbed: "/uploads/commercial/export/icon/bed.png",
+      imgbath: "/uploads/commercial/export/icon/bath.png",
+      imgsquare: "/uploads/commercial/export/icon/square.png",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
+    },
+    {
+      id: 9,
+      src1: "/uploads/commercial/export/photo5.png",
+      money: "50,000,000",
+      CoinsName: "AED",
+      bed: 3,
+      bath: 4,
+      square: 4.067,
+      imgbed: "/uploads/commercial/export/icon/bed.png",
+      imgbath: "/uploads/commercial/export/icon/bath.png",
+      imgsquare: "/uploads/commercial/export/icon/square.png",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "zayed, Al Wasl",
+    },
+    {
+      id: 10,
+      src1: "/uploads/commercial/export/photo5.png",
+      money: "50,000,000",
+      CoinsName: "AED",
+      bed: 3,
+      bath: 4,
+      square: 4.067,
+      imgbed: "/uploads/commercial/export/icon/bed.png",
+      imgbath: "/uploads/commercial/export/icon/bath.png",
+      imgsquare: "/uploads/commercial/export/icon/square.png",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
+    },
+    {
+      id: 11,
+      src1: "/uploads/commercial/export/photo5.png",
+      money: "50,000,000",
+      CoinsName: "AED",
+      bed: 3,
+      bath: 4,
+      square: 4.067,
+      imgbed: "/uploads/commercial/export/icon/bed.png",
+      imgbath: "/uploads/commercial/export/icon/bath.png",
+      imgsquare: "/uploads/commercial/export/icon/square.png",
+      title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
+      LocationOn: "One Canal, Al Wasl",
+    },
+    // ... Add more items as needed
+  ];
+
+
+
 
   // تصفية المشاريع بناءً على مصطلحات البحث
   const filteredProjects = imgSaleIn.filter((project) => {
@@ -216,48 +223,74 @@ export default function Buy() {
   };
 
   const handleSearch = () => {
-    setCurrentPage(1); // إعادة ضبط الصفحة الحالية عند البحث
+    setCurrentPage(1);
   };
 
-  const imgsetin = currentItems.map((img) => (
-    <Grid key={img.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
+
+  // Get Data Category
+  const getCategories = async () => {
+    try {
+      setLoading(true);
+      const querySnapshot = await getDocs(collection(firestore, "listingsBlogs"));
+      const docs = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setProducts(docs);
+    } catch (error) {
+      console.error("Error fetching documents: ", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+  useEffect(() => {
+    getCategories();
+  }, []);
+
+  console.log(Products);
+
+
+  const imgsetin = Products.map((it) => (
+    <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
       <div className="CONTER">
         <div className="bg-back">
           <div className="img-imgSaleIn">
-            <img className="imgSaleIn" src={img.src1} alt="Property" />
+            <img className="imgSaleIn" src={it.imageCart} alt={it.title} />
             <h3>
-              {img.money} <span>{img.CoinsName}</span>
+              {it.price} <span>{it.currency}</span>
             </h3>
             <div className="dis-play">
               <div>
                 <span>
-                  <span>{img.bed}</span> <img src={img.imgbed} alt="Bed" />
+                  <span>{it.beds}</span> <img src={'/uploads/commercial/export/icon/bed.png'} alt="Bed" />
                 </span>
                 <div>BEDS</div>
               </div>
               <div>
                 <span>
-                  <span>{img.bath}</span> <img src={img.imgbath} alt="Bath" />
+                  <span>{it.baths}</span> <img src={'/uploads/commercial/export/icon/bath.png'} alt="Bath" />
                 </span>
                 <div>Baths</div>
               </div>
               <div>
                 <span>
-                  <span>{img.square}</span> <img src={img.imgsquare} alt="Square" />
+                  <span>{it.square}</span> <img src={'/uploads/commercial/export/icon/square.png'} alt="Square" />
                 </span>
                 <div>Square ft</div>
               </div>
             </div>
-            <h5>{img.title}</h5>
+            <h5>{it.title}</h5>
             <h6>
-              <LocationOnIcon /> {img.LocationOn}
+              <LocationOnIcon /> {it.locationOn}
               <hr />
               <div className="Listing-by">
-                <div className="img-lisby">       
-                  <img  src={img.src1} alt="Property" />
+                <div className="img-lisby">
+                  <img src={it.bgImage} alt="Property" />
                 </div>
                 <div className="title-lisby">Listing by Ramin Sadeghi </div>
-              </div> 
+              </div>
             </h6>
           </div>
         </div>
@@ -313,7 +346,7 @@ export default function Buy() {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />
-                        <input
+            <input
               type="submit"
               className="input-style-submit"
               value="FIND"
@@ -374,7 +407,7 @@ export default function Buy() {
           <div onClick={handlePreviousPage} style={{ cursor: currentPage > 1 ? 'pointer' : 'default', opacity: currentPage > 1 ? 1 : 0.5 }}>
             <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
           </div>
-          <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>    
+          <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>
           <div onClick={handleNextPage} style={{ cursor: currentPage < totalPages ? 'pointer' : 'default', opacity: currentPage < totalPages ? 1 : 0.5 }}>
             <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
           </div>
@@ -382,10 +415,10 @@ export default function Buy() {
       </div>
 
 
-      
-      <OUREXPERT/>
 
-<Footer/>
+      <OUREXPERT />
+
+      <Footer />
     </div>
   );
 }
