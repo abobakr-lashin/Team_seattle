@@ -5,11 +5,9 @@ body{
   padding: 0px ;
   margin: 0px ;
   color: white;
-  filter: none !important;
   
 }
 * {
-  /* transition: none !important; */
   font-family:"ssa" !important;
   opacity: 1 !important;
 }
@@ -17,21 +15,21 @@ body{
 @font-face {
   font-family:"ssa";
   src: url('./../public/uploads/font/alfont_com_AlFont_com_SST-Arabic-Medium.ttf');
-  font-weight: 500; /* الوزن المناسب للخط */
-  font-style: normal; /* إذا كان الخط مائلًا يمكنك تعيينه إلى italic */
+  font-weight: 500; 
+  font-style: normal; 
 }
 
 @font-face {
   font-family: "ssa";
   src: url('./../public/uploads/font/sst-arabic-medium.ttf');
-  font-weight: 500; /* الوزن المناسب للخط */
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "ssa";
   src: url('./../public/uploads/font/SSTArabic-Bold.ttf');
-  font-weight: 700; /* الوزن المناسب للخط */
+  font-weight: 700; 
   font-style: normal;
 }
 
