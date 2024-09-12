@@ -78,6 +78,35 @@ export default function Formdb() {
     return (
         <div>
             <ToastContainer />
+            <h3>Category</h3>
+            <div className="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>name</th>
+                            <th>img</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {DatabaseOffers.map((item) => (
+                            <tr key={""} style={{ background: 'white' }}>
+                                <td>{""}</td>
+                                <td>{""}</td>
+                                <td>{""}</td>
+                                <td>{""}</td>
+                                <td>
+                                    <Button variant="contained" color="secondary" onClick={() => handleDeleteOffers("")}>
+                                        Delete
+                                    </Button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
             <h3>FormNav</h3>
             <div className="table-container">
                 <table>
