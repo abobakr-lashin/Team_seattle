@@ -172,7 +172,14 @@ font-weight: 600;
     width: 828px !important;
       }
     }
-
+    @media screen and (max-width: 1500px) {
+      .buy .input-style-3{
+        width: 778px !important;
+          }
+          .rent .input-style-4 {
+            width: 372px;
+        }
+    }
     @media screen and (max-width: 1440px) {
       .rent .input-style-3{
       width: 744px !important;
