@@ -230,7 +230,7 @@ a {
     margin: auto;
   }
   .social-media .icon {
-    margin: 5px 0px !important;
+    margin: 21px 0px !important;
   }
   .css-.css-480o17-MuiGrid-root {
     
@@ -240,7 +240,11 @@ a {
   
   }
 }
-
+@media screen and (max-width: 1401px) {
+  .social-media .icon {
+    margin: 26px 0px !important;
+  }
+}
 @media screen and (max-width: 1300px) {
   .footer {
     color: white !important;
@@ -328,7 +332,9 @@ a {
     padding: 40px 0;
   }
 
-
+  .css-480o17-MuiGrid-root>.MuiGrid-item {
+    padding-top: 0px !important;
+    }
 }
 
 @media screen and (max-width: 830px) {

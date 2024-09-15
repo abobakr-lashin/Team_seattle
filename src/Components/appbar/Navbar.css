@@ -15,13 +15,13 @@
 
 
 /* عند المرور على العنصر، تفتح القائمة */
- .custom-navbar-item .custom-dropdown-menu:hover{
+  .custom-navbar-item .custom-dropdown-menu:hover{
   display: block;
 } 
 
 .custom-dropdown-menu {
-  display: block;
-}
+  display: block  ;
+} 
 
 
 

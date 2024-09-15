@@ -161,24 +161,39 @@
 }
 @media screen and (max-width: 1564px) {
 .buy .input-style-3{
-width: 828px !important;
+width: 828px ;
   }
 }
-@media screen and (max-width: 1500px) {
-  .buy .input-style-3{
-    width: 778px !important;
-      }
-      .rent .input-style-4 {
-        width: 372px;
-    }
-}
+
+
 @media screen and (max-width: 1440px) {
 .buy .input-style-3{
-width: 744px !important;
+width: 741px ;
   }
   .buy .input-style-4 {
-  width: 330px;
+  width: 302px;
   }
+
+}
+@media screen and (max-width: 1400px) {
+  .buy .input-style-3{
+    width: 716px ;
+      }
+      .buy .input-style-4 {
+        width: 301px;
+    }
+    .buy .input-style-9 {
+      width: 107px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .buy .input-style-3{
+           width: 556px;
+    
+      }
+      .buy .input-style-4 {
+        width: 188px;
+    }
 }
 @media screen and (max-width: 1024px) {
   .buy .bg-back {
@@ -335,34 +350,3 @@ font-size: 15px;
   animation-delay: 0.16s !important;
 }
 
-@-webkit-keyframes loading-keys-app-loading {
-  0%,
-  80%,
-  100% {
-    opacity: 0.75;
-    box-shadow: 0 0 #076fe5;
-    height: 32px;
-  }
-
-  40% {
-    opacity: 1;
-    box-shadow: 0 -8px #076fe5;
-    height: 40px;
-  }
-}
-
-@keyframes loading-keys-app-loading {
-  0%,
-  80%,
-  100% {
-    opacity: 0.75;
-    box-shadow: 0 0 #076fe5;
-    height: 32px;
-  }
-
-  40% {
-    opacity: 1;
-    box-shadow: 0 -8px #076fe5;
-    height: 40px;
-  }
-}

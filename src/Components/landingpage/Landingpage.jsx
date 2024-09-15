@@ -167,6 +167,13 @@ export default function Landingpage() {
 
             {imgsetsin}
             <div className="hr3"></div>
+
+
+
+
+            {/* من هنا يا ابراهيم  */}
+            <div>
+
             <p>
               Looking for a luxurious contemporary villa that comes with a
               private pool and landscaped garden? Do you want to live in a gated
@@ -251,6 +258,8 @@ export default function Landingpage() {
                 <li>Shops</li>
               </ul>
             </div>
+            </div>
+                     {/* من هنا يا ابراهيم  */}
             <h1> Explore the Area: </h1>
             <h4>
               {" "}

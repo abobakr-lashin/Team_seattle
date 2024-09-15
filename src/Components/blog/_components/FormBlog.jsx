@@ -1,14 +1,13 @@
 import { getDatabase, push, ref, set } from 'firebase/database';
 import { MuiTelInput } from 'mui-tel-input';
 import React, { useState } from 'react';
-import app from './../../../firebaseConfig';
+import app from '../../../firebaseConfig';
 
 const FormBlog = () => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         phone: "+971",
-        message: "",
     });
     const [formErrors, setFormErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,10 +41,9 @@ const FormBlog = () => {
                 name: formData.name,
                 email: formData.email,
                 phone: formData.phone,
-                message: formData.message,
             });
             setSubmitSuccess(true);
-            setFormData({ name: "", email: "", phone: "+971", message: "" }); // Reset form
+            setFormData({ name: "", email: "", phone: "+971"}); // Reset form
         } catch (error) {
             console.error('Error saving data:', error);
         } finally {

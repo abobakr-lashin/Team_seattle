@@ -172,15 +172,26 @@ font-weight: 600;
     width: 828px !important;
       }
     }
-    @media screen and (max-width: 1500px) {
-      .buy .input-style-3{
-        width: 778px !important;
-          }
+    @media screen and (max-width: 1560px) {
+      .rent .input-style-3{
+        width: 741px ;
+      }
           .rent .input-style-4 {
-            width: 372px;
-        }
+            width: 302px;
+          }
     }
     @media screen and (max-width: 1440px) {
+      .rent .input-style-3{
+        width: 716px ;
+      }
+        .rent .input-style-4 {
+          width: 301px;
+        }
+        .rent .input-style-9 {
+          width: 107px;
+      }
+      }
+    @media screen and (max-width: 1400px) {
       .rent .input-style-3{
       width: 744px !important;
         }
