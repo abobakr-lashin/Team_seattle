@@ -119,6 +119,10 @@
   font-size: 20px;
   flex-wrap: wrap;
 }
+.imags1 {
+  width: 95%;
+
+}
 @media screen and (max-width: 1024px) {
 
   .bg-back{
@@ -132,24 +136,7 @@
 
 
   }
-  /* .title-imags1{
-    flex-direction: column-reverse !important;
-    margin: auto;
-    width: 100%;
-    
-  }
-  
-  .allimg{
-    flex-direction: row-reverse;
-    align-items: center;
 
-  }
-  .allimg img{
-width: 300px;
-display: flex;
-height: auto;
-
-  } */
 
 
 

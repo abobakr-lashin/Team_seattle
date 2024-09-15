@@ -8,6 +8,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
 
 const Navbar = () => {
+  
   const [isOpen, setIsOpen] = useState(false);
   const [DataBase, setDataBase] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState({
@@ -123,7 +124,14 @@ const Navbar = () => {
   useEffect(() => {
     GetDataFireStore();
   }, []);
+  // التحكم في إظهار القائمة بناءً على حالة checkbox
+  const [isChecked, setIsChecked] = useState(false);
 
+  // Toggle dropdown for BUY
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+  
   return (
     <div className="custom-navbar-brand">
       <Link to="/">
@@ -136,6 +144,13 @@ const Navbar = () => {
           <span className="custom-bar"></span>
         </div>
         <ul className={`custom-navbar-menu ${isOpen ? "active" : ""}`}>
+        <input
+        type="checkbox"
+        id="toggle-buy"
+        className="toggle-checkbox"
+        checked={isChecked}
+        onChange={handleCheckboxChange}
+      />
           <li
             className="custom-navbar-item"
             onMouseEnter={() => handleMouseEnter("BUY")}
@@ -150,7 +165,10 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.BUY ? "show" : ""
                   }`}
               >
-                <Grid container spacing={2} className="custom-dropdown-item">
+                <li className="back-button">
+                <label htmlFor="toggle-buy">رجوع</label>
+              </li>
+             <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item spacing={2} lg={5} xs={12}>
                     <h3>
                       Buy properties in UAE{" "}
@@ -410,7 +428,7 @@ const Navbar = () => {
                   }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
-                  <Grid item xs={4}>
+                  <Grid item lg={4} md={12}>
                     <h3>
                       See all areas in UAE{" "}
                       <img src="./uploads/nav/icon/arrow.png" alt="" />
@@ -435,7 +453,7 @@ const Navbar = () => {
                     </div>
                   </Grid>
 
-                  <Grid item xs={7}>
+                  <Grid item lg={7} md={12}>
                     <div className="dis-imgNbuy">
                       <div className="imgNbuy">
                         <img src="./uploads/nav/areas/photo6.png" alt="" />
@@ -654,7 +672,7 @@ const Navbar = () => {
                   }`}
               >
                 <Grid container spacing={2} className="custom-dropdown-item">
-                  <Grid>
+                  <Grid md={6} xs={12}>
                     <div className="imgcon">
                       <img
                         src="./uploads/nav/contactus/areyouready.png"
@@ -689,8 +707,8 @@ const Navbar = () => {
                         </li>
                       </ul>
                     </div>
-                  </Grid>
-                  <Grid>
+                  </Grid >
+                  <Grid  md={6} xs={12}>
                     <div className="imgNCommercial">
                       <img src="./uploads/nav/contactus/photo11.png" alt="" />
                     </div>
