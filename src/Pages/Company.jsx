@@ -5,11 +5,11 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 import { Grid } from '@mui/material';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import NavPar from '../Components/appbar/NavPar';
-import "../Components/buy/buy.css";
 import OUREXPERT from './OUREXPERT';
 import Footer from '../Components/footer/Footer';
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../firebaseConfig';
+import "./../Components/buy/buy.css";
 
 
 
@@ -185,13 +185,7 @@ const Company = () => {
                                 value={price}
                                 onChange={(e) => setPrice(e.target.value)}
                             />
-                            <input
-                                type="text"
-                                className="input-style-2"
-                                placeholder="Completion Status"
-                                value={completionStatus}
-                                onChange={(e) => setCompletionStatus(e.target.value)}
-                            />
+              
                             <input
                                 type="text"
                                 className="input-style-3"

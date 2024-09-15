@@ -298,13 +298,7 @@ export default function Rent() {
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
-              <input
-                type="text"
-                className="input-style-2"
-                placeholder="Completion Status"
-                value={completionStatus}
-                onChange={(e) => setCompletionStatus(e.target.value)}
-              />
+         
               <input
                 type="text"
                 className="input-style-3"

@@ -1,128 +1,111 @@
-.Commercial1{
-width: 100%;
-overflow: hidden;
-z-index: 1000;  opacity: 1;
-
-
+.Commercial1 {
+  width: 100%;
+  overflow: hidden;
+  z-index: 1000;
+  opacity: 1;
 }
-
-
 
 .img-Commercial {
   background-image: url("/public/uploads/commercial/export/photo1.png");
   background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: relative;
-    padding-top: 30%;
-    width: 90%;
-    margin:0  auto;
-  margin:30px  auto;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  padding-top: 30%;
+  width: 90%;
+  margin: 0 auto;
+  margin: 30px auto;
 }
 
-  .img-Commercial h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: aliceblue;
-    margin: 0; /* إلغاء أي تباعد افتراضي قد يؤثر على المحاذاة */
-    text-align: center; /* لضمان أن النص متمركز أفقيًا داخل العنصر */
-    font-size: 3dvw;
-    width: 100%;
-  }
-  .img-Commercial h3 {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: aliceblue;
-    margin: 0; /* إلغاء أي تباعد افتراضي قد يؤثر على المحاذاة */
-    text-align: center; /* لضمان أن النص متمركز أفقيًا داخل العنصر */
-    font-size: 3dvw;
-  }
-  .imgexportcommercial{
-   width: 150px;
-   margin: 5px auto;
-
-  }
-  .address1{
-    display: flex;
-    justify-content: space-evenly;
-flex-direction: column;
-align-items: center;
+.img-Commercial h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: aliceblue;
+  margin: 0; /* إلغاء أي تباعد افتراضي قد يؤثر على المحاذاة */
+  text-align: center; /* لضمان أن النص متمركز أفقيًا داخل العنصر */
+  font-size: 3dvw;
+  width: 100%;
 }
-.address1 .pragraf{
+.img-Commercial h3 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: aliceblue;
+  margin: 0; /* إلغاء أي تباعد افتراضي قد يؤثر على المحاذاة */
+  text-align: center; /* لضمان أن النص متمركز أفقيًا داخل العنصر */
+  font-size: 3dvw;
+}
+.imgexportcommercial {
+  width: 150px;
+  margin: 5px auto;
+}
+.address1 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+.address1 .pragraf {
   display: flex;
   width: 50%;
   align-items: center;
   justify-content: center;
-    font-size: 20px;
-    color: white;
-    width: 55%;
-    margin: 5px auto;
-    text-align: center;
-    
-    }
-    .title-imags1{
-      width: 95%;
-margin: auto;
-padding: 0;
-display: none;
-  
-  }
-  .title-imags1 img{
+  font-size: 20px;
+  color: white;
+  width: 55%;
+  margin: 5px auto;
+  text-align: center;
+}
+.title-imags1 {
+  width: 100%;
+  margin: auto;
+  padding: 0;
+  display: none;
+  flex-direction: column;
+}
+.title-imags1 img {
+  border-radius: 20px;
+}
+.title-Commercial1 {
+  color: white;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  width: 100%;
+  align-items: start !important;
+}
 
-border-radius: 50px;
 
-  }
-    .title-Commercial1{
-        color: white;
-        display: flex;
-justify-content:  space-between;
-        width: 100%;
-        align-items: start !important;
+.title-Commercial1 h3,
+.title-Commercial2 h3 {
+  width: 95% !important;
+  margin: auto;
+  text-align: center;
+}
+.allimg {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.imags1 {
+  width: 50%;
+  display: flex;
+  align-self: center;
+  justify-self: end;
+  justify-content: center;
+  padding-top: 22px;
+}
+.imags1 img {
+  width: 100vw; 
+  margin:20px auto;
+}
 
-    }
-    .title-Commercial2{
-        color: white;
-        display: flex;
-justify-content:  space-between;
-        width: 100%;
-        align-items: center !important;
-        margin-top: 10px;
 
-    }
- 
-
-    .title-Commercial1 h3,.title-Commercial2 h3{
-      width: 45% !important;
-
-    }
-    .allimg{
-      display: flex;
-      flex-direction: column;
-      align-items:start;
-    }
-    .imags1{
-        width: 50%;
-display: flex;
-align-self: center;
-justify-self: end;
-justify-content: center;
-padding-top: 22px;
-
-    }
-    .imags1 img{
-      width: 500px;
-    }
- 
-  
-    .imags1 .img3{
-      width: 600px;
-    }
- /* title-imags2 */
- .container1 {
+/* title-imags2 */
+.container1 {
   width: 95%;
   margin: auto;
   display: flex;
@@ -133,16 +116,15 @@ padding-top: 22px;
 .textSection {
   flex: 2;
   padding-right: 20px;
-  font-size:30px;
-  
-width: 40%;
+  font-size: 30px;
+
+  width: 40%;
 }
 
 .heading {
   font-size: 51px;
   margin-bottom: 20px;
-  line-height:1.5px;
-
+  line-height: 1.5px;
 }
 
 .paragraph {
@@ -154,33 +136,31 @@ width: 40%;
 .imageSection {
   flex: 1;
   display: grid;
-  grid-template-columns:  auto;
+  grid-template-columns: auto;
   grid-gap: 10px;
 }
 
 .image {
   border-radius: 8px;
 }
-.imgdis{
+.imgdis {
   width: 60%;
   display: flex;
   gap: 15px;
 }
-.imgdis img{
-  width:80%;
+.imgdis img {
+  width: 80%;
 }
 @media (max-width: 1024px) {
   .container1 {
-      display: none;
+    display: none;
+  }
+  .title-imags1{
+    display: flex;
   }
 }
 
-
-
- /* title-imags2 */
-  
-
-
+/* title-imags2 */
 
 /* تخصيص الأسهم */
 /* تعطيل الأسهم الافتراضية */
@@ -192,45 +172,41 @@ width: 40%;
 /* تخصيص الأسهم المخصصة */
 .custom-prev-arrow,
 .custom-next-arrow {
-    display: block;
-    position: absolute;
-    top: 110%;
-    right: 0px;
+  display: block;
+  position: absolute;
+  top: 110%;
+  right: 0px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   z-index: 1;
   font-size: 24px; /* حجم الخط */
   opacity: 1;
-
 }
-
-
 
 /* مواضع الأسهم */
 .custom-prev-arrow {
-    position: absolute;
-    top: 110%;
-    left: 40%;
-    width: 80px !important;
-    height: 80px  !important;
-    background-size:contain;
+  position: absolute;
+  top: 110%;
+  left: 40%;
+  width: 80px !important;
+  height: 80px !important;
+  background-size: contain;
   background-image: url("/public/uploads/commercial/export/northarrow.png");
   opacity: 1;
-
 }
 
 .custom-next-arrow {
-    position: absolute;
-    background-size:contain;
-    opacity: 1;
+  position: absolute;
+  background-size: contain;
+  opacity: 1;
 
-    top: 110%;
-    margin: auto;
-     right: 40%;
-     width: 80px !important;
-     height: 80px  !important;
-    background-image: url("/public/uploads/commercial/export/rightarrow.png");
+  top: 110%;
+  margin: auto;
+  right: 40%;
+  width: 80px !important;
+  height: 80px !important;
+  background-image: url("/public/uploads/commercial/export/rightarrow.png");
 }
 
 /* أنماط إضافية لتصميم السلايدر */
@@ -245,7 +221,6 @@ width: 40%;
   box-sizing: border-box;
   margin: auto !important;
   opacity: 1;
-
 }
 
 .bg-back .imgSaleIn {
@@ -258,7 +233,6 @@ width: 40%;
   overflow: hidden;
   box-shadow: 1px 10px 50px 1px rgba(0, 0, 0, 0.363);
   opacity: 1;
-
 }
 
 .img-imgSaleIn h3 {
@@ -290,7 +264,6 @@ width: 40%;
 .dis-play img {
   width: 35px;
   opacity: 1;
-
 }
 
 .img-imgSaleIn h5 {
@@ -306,7 +279,6 @@ width: 40%;
   font-size: 20px;
   flex-wrap: wrap;
   opacity: 1;
-
 }
 
 .img-imgSaleIn h6 {
@@ -318,75 +290,56 @@ width: 40%;
   font-size: 20px;
   flex-wrap: wrap;
   opacity: 1;
-
 }
 @media screen and (max-width: 1025px) {
-
   .img-imgSaleIn h5 {
-  
-  width: 100% !important;
-  font-size: 18px;
-  top: 82%;
-
-
+    width: 100% !important;
+    font-size: 18px;
+    top: 82%;
   }
 
-
-  .title-imags2{
-display: none !important;
+  .title-imags2 {
+    display: none !important;
   }
-  
-
 }
 @media screen and (max-width: 820px) {
-  .dis-play{
+  .dis-play {
     font-size: 13px;
   }
-  .bg-back{
+  .bg-back {
     height: 400px;
   }
-  .img-imgSaleIn h3{
+  .img-imgSaleIn h3 {
     font-size: 20px;
   }
 
   .img-imgSaleIn h5 {
-  
-  width: 100% !important;
-  font-size: 14px;
-
-
+    width: 100% !important;
+    font-size: 14px;
   }
-  .img-imgSaleIn h6{
+  .img-imgSaleIn h6 {
     font-size: 15px !important;
   }
-/* ازرار */
+  /* ازرار */
 
-.custom-prev-arrow{
-  height: 60px !important;
-}
-.custom-next-arrow{
-
-  height: 60px !important;
-}
-/* ازرار */
+  .custom-prev-arrow {
+    height: 60px !important;
+  }
+  .custom-next-arrow {
+    height: 60px !important;
+  }
+  /* ازرار */
 }
 @media screen and (max-width: 768px) {
-
   .img-imgSaleIn h5 {
     width: 95px;
   }
-
 }
 @media screen and (max-width: 375px) {
-
-  .img-Commercial h2{
+  .img-Commercial h2 {
     width: 100%;
-font-size: 12px !important;
+    font-size: 12px !important;
 
-top: 43%;
+    top: 43%;
   }
-
-
-
-
 }

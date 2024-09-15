@@ -1,7 +1,7 @@
 import { getDatabase, push, ref, set } from 'firebase/database';
 import { MuiTelInput } from 'mui-tel-input';
 import React, { useState } from 'react';
-import app from '../../../firebaseConfig';
+import app from './../../../firebaseConfig';
 
 const FormBlog = () => {
     const [formData, setFormData] = useState({
@@ -92,7 +92,7 @@ const FormBlog = () => {
                     name="phone"
                     className="help-input1"
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e })}  // تحديث مباشر لقيمة الهاتف
+                    onChange={(newValue) => setFormData({ ...formData, phone: newValue })}  // تحديث مباشر لقيمة الهاتف
                 />
                 {formErrors.phone && <div className="error">{formErrors.phone}</div>}
 
@@ -114,6 +114,6 @@ const FormBlog = () => {
             </form>
         </>
     );
-}
+};
 
 export default FormBlog;

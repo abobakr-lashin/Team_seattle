@@ -286,11 +286,12 @@ background-color: transparent;
 
 @media (max-width: 425px) {
   .display {
-    bottom: 20px;
-    left: 130px;
+    bottom: 50px;
+    left: 115px;
   }
   .btn-register1 {
-    bottom: 40px;
+    bottom: 70px;
+left: 50px;
   }
 }
 
@@ -306,12 +307,12 @@ background-color: transparent;
 
 @media (max-width: 375px) {
   .display {
-    top: 85%;
-    left: 110px;
+    top: 80%;
+    left: 36%;
   }
   .btn-register1 {
     top: 70%;
-    left: 45px;
+    left: 34px;
   }
 }
 
@@ -337,12 +338,14 @@ background-color: transparent;
 
 @media (max-width: 320px) {
   .display {
-    top: 80%;
+    top: 73%;
     left: 35%;
   }
   .btn-register1 {
-    top: 68%;
+    top: 63%;
     left: 10%;
+    width: 180px;
+    font-size: small;
   }
 }
 

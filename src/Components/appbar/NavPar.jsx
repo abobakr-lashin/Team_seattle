@@ -230,7 +230,7 @@ const Navbar = () => {
                   className="custom-dropdown-item dis-paly2"
                 >
                   <div className="dis-paly2">
-                    <Grid item xs={7}>
+                    <Grid item lg={7}   xs={12}>
                       <h3>
                         Rent properties in Dubai{" "}
                         <img src="./uploads/nav/icon/arrow.png" alt="" />
@@ -255,7 +255,7 @@ const Navbar = () => {
                         </ul>
                       </div>
                     </Grid>
-                    <Grid item xs={5}>
+                    <Grid item lg={5}  xs={12}>
                       <div className="imgNbuy">
                         <img src="./uploads/nav/rent/photo2.png" alt="" />
                       </div>

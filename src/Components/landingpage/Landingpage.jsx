@@ -154,8 +154,8 @@ export default function Landingpage() {
 
       <div className="h-5vh"></div>
       <div className="h-5vh"></div>
-      <Grid container spacing={2} sx={{ margin: "auto", width: "90%" }}>
-        <Grid item xs={8}>
+      <Grid container spacing={2} sx={{ margin: "auto", width: "90%" ,whiteSpace: "pre-wrap" }}>
+        <Grid item xs={8}  sx={{ margin: "auto", width: "90%" ,whiteSpace: "pre-wrap" }}>
           <div className="Sitedetails">
             <div className="address">
               5BR Villa in District One Villas, Mohammed Bin Rashid City
@@ -310,8 +310,11 @@ export default function Landingpage() {
                 </div>
               </div>
             </div>
-            <div className="Email">Email</div>
-          </div>
+            <div className="Email">
+  <a href="mailto:someone@example.com?subject=Subject&body=Hello!">
+    Email
+  </a>
+</div>          </div>
           <div className="formc">
             <FormContainer color={"#06404d"} />
           </div>

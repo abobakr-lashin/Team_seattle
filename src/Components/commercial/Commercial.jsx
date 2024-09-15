@@ -166,7 +166,7 @@ export default function Commercial() {
           </div>
    
         </div>
-        <div className="title-Commercial2">
+        <div className="title-Commercial1">
           <h3>
           To ensure you make the best decision, our experts will select the ideal commercial space tailored to your requirements, considering factors like location, budget, and expected return on investment, enabling you to achieve lucrative earnings.
 
@@ -177,7 +177,7 @@ export default function Commercial() {
           </div>
    
         </div>
-        <div className="title-Commercial2">
+        <div className="title-Commercial1">
           <h3>
           
               Choosing Seattle & Middle East for commercial property services means you are supported by a network of commercial real estate experts with over 15 years of experience in the UAE market.
@@ -189,7 +189,7 @@ export default function Commercial() {
           </div>
    
         </div>
-        <div className="title-Commercial2">
+        <div className="title-Commercial1">
           <h3>
           Our strong team of experts provides full support, following every step of your journey in the commercial real estate world in Dubai and Abu Dhabi. Our services extend beyond brokerage to include consultancy, appraisal, and property management.
 
@@ -204,6 +204,10 @@ export default function Commercial() {
 
       
       </div>
+
+
+
+
       <div className="container1">
             <div className="textSection">
                 <h2 className="heading">At Seattle & Middle East</h2>

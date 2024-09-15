@@ -214,6 +214,11 @@ export default function Blog() {
                 <img src="/uploads/Finish/Finish/blog/qu.png" alt="help" />
                 <h5>We have a ready team to assist you and respond to your inquiries</h5>
                 <FormBlog />
+
+
+
+
+                
             </div>
         </div>
     </Grid>
