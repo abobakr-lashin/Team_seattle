@@ -8,7 +8,6 @@ const FormBlog = () => {
         name: "",
         email: "",
         phone: "+971",
-        message: "",
     });
     const [formErrors, setFormErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -16,21 +15,21 @@ const FormBlog = () => {
 
     const db = getDatabase(app);
 
-    const validateForm = () => {
-        const errors = {};
-        if (!formData.name) errors.name = "Name is required";
-        if (!formData.email) errors.email = "Email is required";
-        if (!formData.phone) errors.phone = "Phone number is required";
-        return errors;
-    };
+    // const validateForm = () => {
+    //     const errors = {};
+    //     if (!formData.name) errors.name = "Name is required";
+    //     if (!formData.email) errors.email = "Email is required";
+    //     if (!formData.phone) errors.phone = "Phone number is required";
+    //     return errors;
+    // };
 
     const handleHelpSubmit = async (e) => {
         e.preventDefault();
-        const errors = validateForm();
-        if (Object.keys(errors).length > 0) {
-            setFormErrors(errors);
-            return;
-        }
+        // const errors = validateForm();
+        // if (Object.keys(errors).length > 0) {
+        //     setFormErrors(errors);
+        //     return;
+        // }
 
         setIsSubmitting(true);
         setFormErrors({});
@@ -42,8 +41,8 @@ const FormBlog = () => {
                 name: formData.name,
                 email: formData.email,
                 phone: formData.phone,
-                message: formData.message,
             });
+            console.log('Data saved successfully!');
             setSubmitSuccess(true);
             setFormData({ name: "", email: "", phone: "+971", message: "" }); // Reset form
         } catch (error) {

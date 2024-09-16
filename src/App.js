@@ -78,7 +78,7 @@ export default function App() {
                     <Route path="Rent" element={<Rent />} />
                     <Route path="BuyHome" element={<BuyHome />} />
                     <Route path="Developers" element={<Developers />} />
-                    <Route path="Landingpage" element={<Landingpage />} />
+                    <Route path="Landingpage/:id" element={<Landingpage />} />
                     <Route path="CareersForm" element={<CareersForm />} />
                     <Route path="ContactusForm" element={<ContactusForm />} />
                     <Route path="About" element={<About />} />
