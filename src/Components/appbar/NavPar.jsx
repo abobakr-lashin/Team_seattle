@@ -123,22 +123,18 @@ const Navbar = () => {
   const handltap = () => {
     let show = document.querySelector(".custom-dropdown-menu.show");
     
-    // إذا كان العنصر موجودًا، قم بإخفائه
     if (show) {
       show.style.display = "none";
     } else {
-      // البحث عن العنصر الذي يحتوي على .custom-dropdown-menu فقط وإظهاره
       show = document.querySelector(".custom-dropdown-menu");
       if (show) {
         show.style.display = "flex";
       }
     }
   
-    // الحصول على العنصر الذي يحتوي على .custom-navbar-link
     let naAll = document.querySelector(".custom-navbar-link");
     
     if (naAll) {
-      // تعيين مستمع onclick على العنصر
       naAll.onclick = () => {
         if (show) {
           show.style.display = "flex";
