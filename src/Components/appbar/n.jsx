@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import FormN from "./FormN";
 import Typography from "@mui/material/Typography";
-import { Grid, ImageListTileBar, IconButton } from "@mui/material";
+import { Grid } from "@mui/material";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
 
 const Navbar = () => {
-  
   const [isOpen, setIsOpen] = useState(false);
   const [DataBase, setDataBase] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState({
@@ -31,20 +30,10 @@ const Navbar = () => {
   };
 
   const handleDropdownToggle = (dropdown) => {
-    setDropdownOpen({
-      ABOUT_US: false,
-      OUR_PROJECTS: false,
-      COMPANIES: false,
-      MEDIA_CENTER: false,
-      CONTACT_US: false,
-      BUY: false,
-      RENT: false,
-      Commercial: false,
-      SELL: false,
-      DEVELOPERS: false,
-      AREAS: false,
-      [dropdown]: !dropdownOpen[dropdown],
-    });
+    setDropdownOpen((prevState) => ({
+      ...prevState,
+      [dropdown]: !prevState[dropdown],
+    }));
   };
 
   const closeMenu = () => {
@@ -53,46 +42,33 @@ const Navbar = () => {
     }
   };
 
-  // Add event listener to detect click outside the navbar
   useEffect(() => {
     const handleClickOutside = (event) => {
-      const navbar = document.querySelector("custom-navbar-menu");
+      const navbar = document.querySelector(".custom-dropdown-menu show");
       if (navbar && !navbar.contains(event.target)) {
         closeMenu();
       }
     };
 
-    // Add event listener to the document
     document.addEventListener("click", handleClickOutside);
 
-    // Cleanup function to remove event listener when component unmounts
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [isOpen]);
 
   const handleMouseEnter = (dropdown) => {
-    setDropdownOpen({
-      ABOUT_US: false,
-      OUR_PROJECTS: false,
-      COMPANIES: false,
-      MEDIA_CENTER: false,
-      CONTACT_US: false,
-      BUY: false,
-      RENT: false,
-      Commercial: false,
-      SELL: false,
-      DEVELOPERS: false,
-      AREAS: false,
+    setDropdownOpen((prevState) => ({
+      ...prevState,
       [dropdown]: true,
-    });
+    }));
   };
 
   const handleMouseLeave = (dropdown) => {
-    setDropdownOpen({
-      ...dropdownOpen,
+    setDropdownOpen((prevState) => ({
+      ...prevState,
       [dropdown]: false,
-    });
+    }));
   };
 
   const toggleLanguageDropdown = () => {
@@ -106,13 +82,12 @@ const Navbar = () => {
     setLanguageOpen(false);
   };
 
-  // Get Data to Firestore
   const GetDataFireStore = async () => {
     try {
       const querySnapshot = await getDocs(collection(firestore, "category"));
       const docs = querySnapshot.docs.map((doc) => ({
         id: doc.id,
-        ...doc.data()
+        ...doc.data(),
       }));
       docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
       setDataBase(docs);
@@ -120,43 +95,17 @@ const Navbar = () => {
       console.error("Error fetching documents: ", error);
     }
   };
-  const handltap = () => {
-    let show = document.querySelector(".custom-dropdown-menu.show");
-    
-    // إذا كان العنصر موجودًا، قم بإخفائه
-    if (show) {
-      show.style.display = "none";
-    } else {
-      // البحث عن العنصر الذي يحتوي على .custom-dropdown-menu فقط وإظهاره
-      show = document.querySelector(".custom-dropdown-menu");
-      if (show) {
-        show.style.display = "flex";
-      }
-    }
-  
-    // الحصول على العنصر الذي يحتوي على .custom-navbar-link
-    let naAll = document.querySelector(".custom-navbar-link");
-    
-    if (naAll) {
-      // تعيين مستمع onclick على العنصر
-      naAll.onclick = () => {
-        if (show) {
-          show.style.display = "flex";
-        }
-      };
-    }
-  }
+
   useEffect(() => {
     GetDataFireStore();
   }, []);
-  // التحكم في إظهار القائمة بناءً على حالة checkbox
+
   const [isChecked, setIsChecked] = useState(false);
 
-  // Toggle dropdown for BUY
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-  
+
   return (
     <div className="custom-navbar-brand">
       <Link to="/">
@@ -184,8 +133,8 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.BUY ? "show" : "none"
                   }`}
               >
-                <div onClick={handltap}>رجوع</div>
-             <Grid container spacing={2} className="custom-dropdown-item">
+     <div onClick={closeMenu}>رجوع</div>
+                  <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item spacing={2} lg={5} xs={12}>
                     <h3>
                       Buy properties in UAE{" "}
@@ -259,8 +208,6 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.RENT ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
-
                 <Grid
                   container
                   spacing={2}
@@ -322,8 +269,6 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.Commercial ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
-
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={5}>
                     <h3>
@@ -383,8 +328,6 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.DEVELOPERS ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
-
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={5}>
                     <h3>
@@ -450,8 +393,6 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.AREAS ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
-
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item lg={4} md={12}>
                     <h3>
@@ -519,8 +460,6 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.Blogs ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
-
                 <Grid
                   container
                   spacing={2}
@@ -628,8 +567,6 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.ABOUT_US ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
-
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={7}>
                     <Link to={"/About"}>
@@ -700,8 +637,6 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.CONTACT_US ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
-
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid md={6} xs={12}>
                     <div className="imgcon">

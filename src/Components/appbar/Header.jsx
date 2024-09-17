@@ -1,5 +1,3 @@
-import video from "./BannerFinish.mp4";
-import video2 from "./video2.mp4";
 import NavPar from "./NavPar";
 import "./Header.css";
 import { Box, Snackbar, Alert, SpeedDial, SpeedDialIcon, SpeedDialAction } from "@mui/material";
@@ -7,11 +5,10 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import PhoneIcon from '@mui/icons-material/Phone';
 import FormContainer from "./FormContainer";
 import React, { useEffect, useState } from 'react';
-
-// Post Data To fireBase (Ensure you have the logic for posting data)
+import bannerFinish from './BannerFinish.mp4';
+import video2 from './video2.mp4';
 
 export default function Header() {
-    // Snackbar state
     const [openSnackbar, setOpenSnackbar] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
 
@@ -19,34 +16,37 @@ export default function Header() {
         { icon: <WhatsAppIcon />, name: 'WhatsApp', link: "https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" },
         { icon: <PhoneIcon />, name: 'Phone', link: "tel:+971502135701" },
     ];
-        const [videoSrc, setVideoSrc] = useState("");
-      
-        useEffect(() => {
-          const handleResize = () => {
-            // إذا كان عرض الشاشة أكبر من 1024px، قم بتعيين فيديو للشاشات الكبيرة
-            if (window.innerWidth > 1024) {
-              setVideoSrc(video);
-            } else {
-              // إذا كان عرض الشاشة أقل من 1024px، قم بتعيين فيديو للشاشات الصغيرة
-              setVideoSrc(video2);
-            }
-          }; handleResize();
 
-          // أضف مستمع للحدث للتعامل مع تغيير حجم الشاشة
-          window.addEventListener('resize', handleResize);
-      
-          // قم بإزالة المستمع عند إلغاء تحميل المكون
-          return () => {
-            window.removeEventListener('resize', handleResize);
-          };
-        }, []);
+    const [videoSrc, setVideoSrc] = useState(bannerFinish); // تعيين فيديو افتراضي للشاشات الكبيرة
+
+    const updateVideoSrc = () => {
+        console.log(`Window width: ${window.innerWidth}`); // إخراج عرض الشاشة للتتبع
+        if (window.innerWidth > 1024) {
+            console.log('Setting large screen video');
+            setVideoSrc(bannerFinish);  // فيديو للشاشات الكبيرة
+        } else {
+            console.log('Setting small screen video');
+            setVideoSrc(video2);  // فيديو للشاشات الصغيرة
+        }
+    };
+
+    useEffect(() => {
+        updateVideoSrc();  // تعيين الفيديو عند التحميل لأول مرة
+        window.addEventListener('resize', updateVideoSrc);  // تحديث الفيديو عند تغيير حجم الشاشة
+
+        // تنظيف مستمع الحدث عند إلغاء المكون
+        return () => {
+            window.removeEventListener('resize', updateVideoSrc);
+        };
+    }, []);
+
     const handleActionClick = (link, name) => {
         if (name === 'Phone') {
-            window.location.href = link; // Initiates the phone call
+            window.location.href = link;  // يبدأ المكالمة الهاتفية
         } else {
-            window.open(link, '_blank');
+            window.open(link, '_blank');  // يفتح رابط WhatsApp في نافذة جديدة
         }
-        setSnackbarMessage(`You clicked on ${name}`);
+        setSnackbarMessage(`لقد ضغطت على ${name}`);
         setOpenSnackbar(true);
     };
 
@@ -57,16 +57,15 @@ export default function Header() {
     return (
         <>
             <div className="header-container">
-            <video className="video-background" autoPlay loop muted>
-      <source src={videoSrc} type="video/mp4" />
-    </video>
+                <video className="video-background" autoPlay loop muted preload="auto">
+                    <source src={videoSrc} type="video/mp4" />
+                    متصفحك لا يدعم عرض الفيديو.
+                </video>
                 <NavPar />
 
-<div className="Formheader">
-<FormContainer color={"rgba(255, 255, 255, 0.466)"}/>
-    </div>
-             
-
+                <div className="Formheader">
+                    <FormContainer color={"rgba(255, 255, 255, 0.466)"}/>
+                </div>
 
                 <Box className="chat">
                     <SpeedDial
@@ -86,7 +85,6 @@ export default function Header() {
                 </Box>
             </div>
 
-            {/* Snackbar for notifications */}
             <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={handleCloseSnackbar}>
                 <Alert onClose={handleCloseSnackbar} severity="info" sx={{ width: '100%' }}>
                     {snackbarMessage}

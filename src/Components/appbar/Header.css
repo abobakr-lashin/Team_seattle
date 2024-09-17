@@ -22,17 +22,7 @@
 
 }
 /* انميشن  */
-@media (max-width: 1024px) {
-  .video-background {
-    width: 100%; /* تخصيص الفيديو للشاشات الصغيرة */
-  }
-}
 
-@media (min-width: 1025px) {
-  .video-background {
-    width: auto; /* تخصيص الفيديو للشاشات الكبيرة */
-  }
-}
 /* انميشن  */
  .form-container {
   display: flex;
