@@ -84,11 +84,25 @@ export default function Footer() {
              <img className='color-g' src="./uploads/end/text/qu/r.png" alt=""/>
                 Quick Links
                 </Typography>
-                <Typography><Link to="/Ourpartners" color="inherit" className="link">   <FiberManualRecordIcon className='color-g2'/> About Us</Link></Typography>
-                <Typography><Link to="/Service" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/> Services</Link></Typography>
-                <Typography><Link href="#!" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/> News</Link></Typography>
-                <Typography><Link href="#!" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/> Videos</Link></Typography>
-                <Typography><Link href="#!" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/> Careers</Link></Typography>
+                <div className='dis-appbar'>
+<div>
+
+
+                <div><Link to="/BUY" color="inherit" className="link">   <FiberManualRecordIcon className='color-g2'/> BUY</Link></div>
+                <div><Link to="/RENT" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/>RENT</Link></div>
+                <div><Link to="/Commercial" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/>COMMERCIAL</Link></div>
+                <div><Link to="/Ourpartners" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/>DEVELOPERS</Link></div>
+                <div><Link to="/Abudhabi" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/> AREAS</Link></div>
+                </div>
+<div>
+
+
+                <div><Link to="/SELL" color="inherit" className="link">   <FiberManualRecordIcon className='color-g2'/>SELL</Link></div>
+                <div><Link to="/Contactus" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/>CONTACT US</Link></div>
+                <div><Link to="/About" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/> ABOUT US</Link></div>
+                <div><Link to="/LatestNews" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/> BLOGS</Link></div>
+                </div>
+</div>
               </Grid>
             </Grid>
 
