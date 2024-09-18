@@ -246,11 +246,12 @@ const Company = () => {
                     </div>
                 </div>
 
-                <div className='buy'>
+                 <div className='buy'>
                     <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
                         {imgsetin}
                     </Grid>
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+                 
+                    {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
                         <div onClick={'handlePreviousPage'} style={{ cursor: currentPage > 1 ? 'pointer' : 'default', opacity: currentPage > 1 ? 1 : 0.5 }}>
                             <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
                         </div>
@@ -258,8 +259,8 @@ const Company = () => {
                         <div onClick={'handleNextPage'} style={{ cursor: currentPage < 'totalPages' ? 'pointer' : 'default', opacity: currentPage < 'totalPages' ? 1 : 0.5 }}>
                             <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
                         </div>
-                    </div>
-                </div>
+                    </div> */}
+                </div> 
 
 
 
