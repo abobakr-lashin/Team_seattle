@@ -180,7 +180,7 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.BUY ? "show" : "none"
                   }`}
               >
-                <div onClick={handltap}>رجوع</div>
+                                <div className="bt-back" onClick={handltap}>رجوع</div>
              <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item spacing={2} lg={5} xs={12}>
                     <h3>
@@ -232,6 +232,11 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
+                    <div>
+
+                    <h3>Schedule your free consultation today</h3>
+                    <h4>And our team will help you find the ideal property for your needs</h4>
+                    </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -255,7 +260,7 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.RENT ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
+                                <div className="bt-back" onClick={handltap}>رجوع</div>
 
                 <Grid
                   container
@@ -294,8 +299,13 @@ const Navbar = () => {
                       </div>
                     </Grid>
                   </div>
-                  <div className="imgnp">
+                      <div className="imgnp">
                     <div className="disi">
+                    <div>
+
+                    <h3>Schedule your free consultation today</h3>
+                    <h4>And our team will help you find the ideal property for your needs</h4>
+                    </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -318,7 +328,7 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.Commercial ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
+                                <div className="bt-back" onClick={handltap}>رجوع</div>
 
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={5}>
@@ -349,8 +359,13 @@ const Navbar = () => {
                       <img src="./uploads/nav/commercial/photo4.png" alt="" />
                     </div>
                   </Grid>
-                  <div className="imgnp">
+                      <div className="imgnp">
                     <div className="disi">
+                    <div>
+
+                    <h3>Schedule your free consultation today</h3>
+                    <h4>And our team will help you find the ideal property for your needs</h4>
+                    </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -379,7 +394,7 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.DEVELOPERS ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
+                                                <div className="bt-back" onClick={handltap}>رجوع</div>
 
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={5}>
@@ -422,8 +437,13 @@ const Navbar = () => {
                       <img src="./uploads/nav/developers/photo5.png" alt="" />
                     </div>
                   </Grid>
-                  <div className="imgnp">
+                      <div className="imgnp">
                     <div className="disi">
+                    <div>
+
+                    <h3>Schedule your free consultation today</h3>
+                    <h4>And our team will help you find the ideal property for your needs</h4>
+                    </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -446,7 +466,7 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.AREAS ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
+                                                <div className="bt-back" onClick={handltap}>رجوع</div>
 
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item lg={4} md={12}>
@@ -491,8 +511,13 @@ const Navbar = () => {
                       </ul>
                     </div>
                   </Grid>
-                  <div className="imgnp">
+                      <div className="imgnp">
                     <div className="disi">
+                    <div>
+
+                    <h3>Schedule your free consultation today</h3>
+                    <h4>And our team will help you find the ideal property for your needs</h4>
+                    </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -515,7 +540,7 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.Blogs ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
+                                                <div className="bt-back" onClick={handltap}>رجوع</div>
 
                 <Grid
                   container
@@ -593,8 +618,13 @@ const Navbar = () => {
 
                     </div>
                   </Grid>
-                  <div className="imgnp">
+                      <div className="imgnp">
                     <div className="disi">
+                    <div>
+
+                    <h3>Schedule your free consultation today</h3>
+                    <h4>And our team will help you find the ideal property for your needs</h4>
+                    </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -624,7 +654,7 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.ABOUT_US ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
+                                                <div className="bt-back" onClick={handltap}>رجوع</div>
 
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={7}>
@@ -674,8 +704,13 @@ const Navbar = () => {
                       <img src="./uploads/nav/aboutus/photoabout.png" alt="" />
                     </div>
                   </Grid>
-                  <div className="imgnp">
+                      <div className="imgnp">
                     <div className="disi">
+                    <div>
+
+                    <h3>Schedule your free consultation today</h3>
+                    <h4>And our team will help you find the ideal property for your needs</h4>
+                    </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -696,7 +731,7 @@ const Navbar = () => {
                 className={`custom-dropdown-menu ${dropdownOpen.CONTACT_US ? "show" : ""
                   }`}
               >
-                                <div onClick={handltap}>رجوع</div>
+                                                <div className="bt-back" onClick={handltap}>رجوع</div>
 
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid md={6} xs={12}>
@@ -740,8 +775,13 @@ const Navbar = () => {
                       <img src="./uploads/nav/contactus/photo11.png" alt="" />
                     </div>
                   </Grid>
-                  <div className="imgnp">
+                      <div className="imgnp">
                     <div className="disi">
+                    <div>
+
+                    <h3>Schedule your free consultation today</h3>
+                    <h4>And our team will help you find the ideal property for your needs</h4>
+                    </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>

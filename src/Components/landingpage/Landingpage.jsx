@@ -332,12 +332,11 @@ export default function Landingpage() {
       <div className="map">
       <div className="h-5vh"></div>
 
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.030497225176!2d55.27188211512686!3d25.204849983898158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f434c9fd1efdd%3A0x8f24d8b87b2e6f5a!2sBurj%20Khalifa!5e0!3m2!1sen!2sae!4v1633599783645!5m2!1sen!2sae"
-              referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-<div className="h-5vh"></div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109180.12447447746!2d30.03728652547649!3d31.22408458346241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c49126710fd3%3A0xb4e0cda629ee6bb9!2z2KfZhNil2LPZg9mG2K_YsdmK2KnYjCDZhdit2KfZgdi42Kkg2KfZhNil2LPZg9mG2K_YsdmK2Kk!5e0!3m2!1sar!2seg!4v1726576245870!5m2!1sar!2seg"></iframe>
+ 
 
-              <ContactusForm/>
+
+           <ContactusForm/>
       </div>
 <div className="h-5vh"></div>
       <Footer/>

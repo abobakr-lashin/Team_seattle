@@ -111,7 +111,7 @@
   align-items: center;
   justify-content: space-between;
   align-items: center;
-  margin:15px;
+  margin:0px;
 }
 /* .custom-dropdown-menu */
 /* BUY */
@@ -169,10 +169,10 @@
 
 .RENT .custom-dropdown-menu {
   display: none;
-  width: 75vw;
+  width: 80vw;
   margin: 10px;
   position: absolute;
-  left: -120% !important;
+  left: -200% !important;
   background-color: #bfb78f;
   list-style: none;
   padding: 18px 24px;
@@ -208,6 +208,11 @@
   padding: 5px;
   margin: 5px;
   list-style: none;
+}
+.RENT .dis-imgNbuy {
+  display: flex;
+  align-items: end;
+  justify-content: end;
 }
 .custom-dropdown-item {
   width: 100%;
@@ -466,10 +471,10 @@ align-items: end;
 }
 .ABOUT .custom-dropdown-menu {
   display: none;
-  width: 70vw;
+  width: 80vw;
   margin: 10px;
   position: absolute;
-  left: -40vw !important;
+  left: -45vw !important;
   background-color: #bfb78f;
   list-style: none;
   padding: 18px 18px;
@@ -559,7 +564,43 @@ align-items: end;
   height: auto;
   border-radius: 30px;
   padding: 20px;
+  padding-top: 10px;
   background-size: cover;
+  text-align: center;
+}
+/* Animation for typewriter effect */
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  70% {
+    width: 100%;
+  }
+  90% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/* Apply the animations */
+.imgnp h3, .imgnp h4 {
+  width: 100%;
+  overflow: hidden; /* Ensures the text is clipped */
+  border-right: 2px solid rgba(0, 0, 0, 0.75); /* Creates a cursor effect */
+  white-space: nowrap; /* Ensures the text stays on one line */
+  width: 0; /* Start with zero width */
+  animation: typewriter 4s steps(30, end) infinite, blinkCursor 0.75s step-end infinite;
 }
 .Blogs .custom-dropdown-menu {
   display: none;
@@ -931,6 +972,20 @@ height: 100%;
     position: absolute;
     top: -7px;
     display: inline-block; /* تغيير display لتمكين التحكم في المسافات */
+}
+
+.bt-back{
+  position: absolute;
+    background-color: beige;
+    width: 100px;
+    text-align: center;
+    border-radius: 20px;
+    left: -35px;
+    top: 45px;
+    transform: 0(4px, 16px);
+    transform: rotate(-89deg);
+    color: #123;
+
 }
 /* BUY */
 .imgnp {

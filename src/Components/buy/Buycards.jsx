@@ -351,7 +351,7 @@ export default function Buycards() {
             <input
               type="text"
               className="input-style-9"
-              placeholder="Min. Price"
+              placeholder="Price"
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
             />
