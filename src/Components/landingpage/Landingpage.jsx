@@ -343,7 +343,7 @@ export default function Landingpage() {
           </div>
         </Grid>
       </Grid>
-      <div className="map">
+      {/* <div className="map">
         <div className="h-5vh"></div>
 
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.030497225176!2d55.27188211512686!3d25.204849983898158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f434c9fd1efdd%3A0x8f24d8b87b2e6f5a!2sBurj%20Khalifa!5e0!3m2!1sen!2sae!4v1633599783645!5m2!1sen!2sae"
@@ -352,7 +352,7 @@ export default function Landingpage() {
         <div className="h-5vh"></div>
 
         <ContactusForm />
-      </div>
+      </div> */}
       <div className="h-5vh"></div>
       <Footer />
     </div>
