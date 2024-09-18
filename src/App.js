@@ -60,7 +60,6 @@ export default function App() {
                     <Route path="Service" element={<Service />} />
                     <Route path="ServieDetails/:Servieid" element={<ServieDetails />} />
                     <Route path="Abudhabi" element={<Abudhabi />} />
-                    <Route path="AbudhabiDetails/:AbudhabiDetails" element={<AbudhabiDetails />} />
                     <Route path="Mortgage" element={<Mortgage />} />
                     <Route path="Spartan" element={<Spartan />} />
                     <Route path="Sell" element={<Sell />} />

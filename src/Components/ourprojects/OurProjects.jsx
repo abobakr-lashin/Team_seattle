@@ -47,7 +47,7 @@ export default function OurProjects() {
     return(
     <div key={img.id} className="slide-item">
       <div className="project-img" style={{ backgroundImage: `url(${img.src})` }}>
-      <Link className='center' to={`/AbudhabiDetails/${img.id}`}  >
+      <Link className='center' to={`/Abudhabi`}  >
         <button className="btn-register1">Register your interest</button>
         </Link>
         <div className="display">

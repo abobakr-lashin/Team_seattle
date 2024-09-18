@@ -88,6 +88,8 @@ export default function AbudhabiDetails() {
 
   return (
     <div>
+
+    
       <div className="img-Commercial">
         <h2 style={{ textTransform: "uppercase" }}>
           COMMERCIAL PROPERTIES SEND A REQUEST
