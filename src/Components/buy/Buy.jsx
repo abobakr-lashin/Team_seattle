@@ -210,17 +210,17 @@ export default function Buy() {
 
     const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
 
-    const handleNextPage = () => {
-        if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
-        }
-    };
+    // const handleNextPage = () => {
+    //     if (currentPage < totalPages) {
+    //         setCurrentPage(currentPage + 1);
+    //     }
+    // };
 
-    const handlePreviousPage = () => {
-        if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
-        }
-    };
+    // const handlePreviousPage = () => {
+    //     if (currentPage > 1) {
+    //         setCurrentPage(currentPage - 1);
+    //     }
+    // };
 
     // const handleSearch = () => {
     //     setCurrentPage(1);
@@ -405,7 +405,7 @@ export default function Buy() {
                 <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
                     {imgsetin}
                 </Grid>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+                {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
                     <div onClick={handlePreviousPage} style={{ cursor: currentPage > 1 ? 'pointer' : 'default', opacity: currentPage > 1 ? 1 : 0.5 }}>
                         <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
                     </div>
@@ -413,7 +413,7 @@ export default function Buy() {
                     <div onClick={handleNextPage} style={{ cursor: currentPage < totalPages ? 'pointer' : 'default', opacity: currentPage < totalPages ? 1 : 0.5 }}>
                         <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
                     </div>
-                </div>
+                </div> */}
             </div>
             <OUREXPERT />
             <Footer />
