@@ -222,9 +222,9 @@ export default function Buy() {
         }
     };
 
-    const handleSearch = () => {
-        setCurrentPage(1);
-    };
+    // const handleSearch = () => {
+    //     setCurrentPage(1);
+    // };
 
 
     // Get Data Category
@@ -306,7 +306,7 @@ export default function Buy() {
                 <NavPar />
                 <div className="h-5vh"></div>
 
-                <div className="grop-title">
+                {/* <div className="grop-title">
                     <div className="img-dis">
                         <img src="/uploads/img/marpa.png" alt="" />
                     </div>
@@ -322,9 +322,9 @@ export default function Buy() {
                             <div style={{ textTransform: "uppercase" }}>buy</div>
                         </h2>
                     </div>
-                </div>
+                </div> */}
                 <h1>LUXURY PROPERTIES FOR SALE IN UAE</h1>
-                <div className="hr">
+                {/* <div className="hr">
                     <div className="form-buy">
                         <input
                             type="number"
@@ -398,7 +398,7 @@ export default function Buy() {
                         />
 
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className='buy'>
