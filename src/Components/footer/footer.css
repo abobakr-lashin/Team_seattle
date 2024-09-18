@@ -155,7 +155,7 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 106vh;
+    height: 69vh;
     margin: auto;
   }
   .copyright {
@@ -181,7 +181,7 @@ a {
     font-size:13px !important;
   }
   .bg-footer {
-    width: 80%;
+    width: 100%;
     height: auto !important;
     background-image: url("./../../../public/uploads/end/back.png");
     background-position: center;
@@ -196,7 +196,7 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 106vh !important;
+    height: 81vh !important;
     margin: auto;
     /* padding: 40px 0; */
   }
@@ -204,6 +204,11 @@ a {
     margin:15px 0px !important;
     font-size: 5px;
   }
+  .css-1oqqzyl-MuiContainer-root {
+    padding-left: 24px;
+    padding-right: 33px;
+    padding-top: 25px;
+}
 }
 @media screen and (max-width: 1441px) {
   .footer {
@@ -223,7 +228,7 @@ a {
     font-size: 13px !important;
   }
   .bg-footer {
-    width: 80%;
+    width: 100%;
     height: auto !important;
     background-image: url("./../../../public/uploads/end/back.png");
     background-position: center;
@@ -251,6 +256,12 @@ a {
   
   
   }
+  .css-1oqqzyl-MuiContainer-root {
+    padding-top: 30px;
+    padding-left: 0;
+    top: 10px;
+    padding-right: 48px;
+}
 }
 @media screen and (max-width: 1401px) {
   .social-media .icon {
