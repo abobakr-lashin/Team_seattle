@@ -250,6 +250,8 @@ export default function Buy() {
     }, []);
 
 
+
+
     const imgsetin = Products.map((it) => (
         <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
             <Link to={`/Landingpage/${it.id}`}>
