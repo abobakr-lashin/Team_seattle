@@ -353,8 +353,8 @@ export default function Landingpage() {
 
         <ContactusForm />
       </div> */}
-      <div className="h-5vh"></div>
-      <Footer />
+      {/* <div className="h-5vh"></div>
+      <Footer /> */}
     </div>
   );
 }
