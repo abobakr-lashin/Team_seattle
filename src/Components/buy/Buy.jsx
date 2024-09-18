@@ -29,186 +29,29 @@ export default function Buy() {
 
     const itemsPerPage = 9;
 
-    const imgSaleIn = [
-        {
-            id: 1,
-            src1: "/uploads/commercial/export/photo5.png",
-            money: "28,000,000",
-            CoinsName: "AED",
-            bed: 3,
-            bath: 4,
-            square: 4.067,
-            imgbed: "/uploads/commercial/export/icon/bed.png",
-            imgbath: "/uploads/commercial/export/icon/bath.png",
-            imgsquare: "/uploads/commercial/export/icon/square.png",
-            title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-            LocationOn: "One Canal, Al Wasl",
-        },
-        {
-            id: 2,
-            src1: "/uploads/commercial/export/photo5.png",
-            money: "50,000,000",
-            CoinsName: "AED",
-            bed: 3,
-            bath: 4,
-            square: 4.067,
-            imgbed: "/uploads/commercial/export/icon/bed.png",
-            imgbath: "/uploads/commercial/export/icon/bath.png",
-            imgsquare: "/uploads/commercial/export/icon/square.png",
-            title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-            LocationOn: "One Canal, Al Wasl",
-        },
-        {
-            id: 3,
-            src1: "/uploads/commercial/export/photo5.png",
-            money: "50,000,000",
-            CoinsName: "AED",
-            bed: 3,
-            bath: 4,
-            square: 4.067,
-            imgbed: "/uploads/commercial/export/icon/bed.png",
-            imgbath: "/uploads/commercial/export/icon/bath.png",
-            imgsquare: "/uploads/commercial/export/icon/square.png",
-            title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-            LocationOn: "One Canal, Al Wasl",
-        },
-        {
-            id: 4,
-            src1: "/uploads/commercial/export/photo5.png",
-            money: "50,000,000",
-            CoinsName: "AED",
-            bed: 3,
-            bath: 4,
-            square: 4.067,
-            imgbed: "/uploads/commercial/export/icon/bed.png",
-            imgbath: "/uploads/commercial/export/icon/bath.png",
-            imgsquare: "/uploads/commercial/export/icon/square.png",
-            title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-            LocationOn: "One Canal, Al Wasl",
-        },
-        {
-            id: 5,
-            src1: "/uploads/commercial/export/photo5.png",
-            money: "50,000,000",
-            CoinsName: "AED",
-            bed: 3,
-            bath: 4,
-            square: 4.067,
-            imgbed: "/uploads/commercial/export/icon/bed.png",
-            imgbath: "/uploads/commercial/export/icon/bath.png",
-            imgsquare: "/uploads/commercial/export/icon/square.png",
-            title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-            LocationOn: "One Canal, Al Wasl",
-        },
-        {
-            id: 6,
-            src1: "/uploads/commercial/export/photo5.png",
-            money: "50,000,000",
-            CoinsName: "AED",
-            bed: 3,
-            bath: 4,
-            square: 4.067,
-            imgbed: "/uploads/commercial/export/icon/bed.png",
-            imgbath: "/uploads/commercial/export/icon/bath.png",
-            imgsquare: "/uploads/commercial/export/icon/square.png",
-            title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-            LocationOn: "One Canal, Al Wasl",
-        },
-        {
-            id: 7,
-            src1: "/uploads/commercial/export/photo5.png",
-            money: "50,000,000",
-            CoinsName: "AED",
-            bed: 3,
-            bath: 4,
-            square: 4.067,
-            imgbed: "/uploads/commercial/export/icon/bed.png",
-            imgbath: "/uploads/commercial/export/icon/bath.png",
-            imgsquare: "/uploads/commercial/export/icon/square.png",
-            title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-            LocationOn: "One Canal, Al Wasl",
-        },
-        {
-            id: 8,
-            src1: "/uploads/commercial/export/photo5.png",
-            money: "50,000,000",
-            CoinsName: "AED",
-            bed: 3,
-            bath: 4,
-            square: 4.067,
-            imgbed: "/uploads/commercial/export/icon/bed.png",
-            imgbath: "/uploads/commercial/export/icon/bath.png",
-            imgsquare: "/uploads/commercial/export/icon/square.png",
-            title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-            LocationOn: "One Canal, Al Wasl",
-        },
-        {
-            id: 9,
-            src1: "/uploads/commercial/export/photo5.png",
-            money: "50,000,000",
-            CoinsName: "AED",
-            bed: 3,
-            bath: 4,
-            square: 4.067,
-            imgbed: "/uploads/commercial/export/icon/bed.png",
-            imgbath: "/uploads/commercial/export/icon/bath.png",
-            imgsquare: "/uploads/commercial/export/icon/square.png",
-            title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-            LocationOn: "zayed, Al Wasl",
-        },
-        {
-            id: 10,
-            src1: "/uploads/commercial/export/photo5.png",
-            money: "50,000,000",
-            CoinsName: "AED",
-            bed: 3,
-            bath: 4,
-            square: 4.067,
-            imgbed: "/uploads/commercial/export/icon/bed.png",
-            imgbath: "/uploads/commercial/export/icon/bath.png",
-            imgsquare: "/uploads/commercial/export/icon/square.png",
-            title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-            LocationOn: "One Canal, Al Wasl",
-        },
-        {
-            id: 11,
-            src1: "/uploads/commercial/export/photo5.png",
-            money: "50,000,000",
-            CoinsName: "AED",
-            bed: 3,
-            bath: 4,
-            square: 4.067,
-            imgbed: "/uploads/commercial/export/icon/bed.png",
-            imgbath: "/uploads/commercial/export/icon/bath.png",
-            imgsquare: "/uploads/commercial/export/icon/square.png",
-            title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-            LocationOn: "One Canal, Al Wasl",
-        },
-        // ... Add more items as needed
-    ];
 
 
 
 
-    // تصفية المشاريع بناءً على مصطلحات البحث
-    const filteredProjects = imgSaleIn.filter((project) => {
-        return (
-            (!searchTerm || project.title.toUpperCase().includes(searchTerm.toUpperCase())) &&
-            (!price || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(price)) &&
-            (!location || project.LocationOn.toUpperCase().includes(location.toUpperCase())) &&
-            (!minBedrooms || project.bed >= parseInt(minBedrooms)) &&
-            (!maxBedrooms || project.bed <= parseInt(maxBedrooms)) &&
-            (!minPrice || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(minPrice)) &&
-            (!minArea || project.square >= parseFloat(minArea)) &&
-            (!maxArea || project.square <= parseFloat(maxArea))
-        );
-    });
+    // // تصفية المشاريع بناءً على مصطلحات البحث
+    // const filteredProjects = imgSaleIn.filter((project) => {
+    //     return (
+    //         (!searchTerm || project.title.toUpperCase().includes(searchTerm.toUpperCase())) &&
+    //         (!price || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(price)) &&
+    //         (!location || project.LocationOn.toUpperCase().includes(location.toUpperCase())) &&
+    //         (!minBedrooms || project.bed >= parseInt(minBedrooms)) &&
+    //         (!maxBedrooms || project.bed <= parseInt(maxBedrooms)) &&
+    //         (!minPrice || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(minPrice)) &&
+    //         (!minArea || project.square >= parseFloat(minArea)) &&
+    //         (!maxArea || project.square <= parseFloat(maxArea))
+    //     );
+    // });
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = filteredProjects.slice(indexOfFirstItem, indexOfLastItem);
+    // const currentItems = filteredProjects.slice(indexOfFirstItem, indexOfLastItem);
 
-    const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+    // const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
 
     // const handleNextPage = () => {
     //     if (currentPage < totalPages) {
