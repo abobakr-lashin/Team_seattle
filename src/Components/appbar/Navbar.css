@@ -206,12 +206,16 @@
   align-items: start;
   position: relative;
   left: -26px;
+  width: 100%;
+
   justify-content: space-around;
   text-align: start;
 }
  .dis-paly3 h4{
 margin: 10px ;
 align-items: start;
+width: 100%;
+
 }
 .dis-paly3 li {
   text-align: start;
@@ -225,6 +229,8 @@ align-items: start;
   padding: 5px;
   margin: 5px;
   list-style: none;
+  width: 100%;
+
 
 }
 .RENT .dis-imgNbuy {
