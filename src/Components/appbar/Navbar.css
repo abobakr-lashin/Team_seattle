@@ -20,7 +20,7 @@
 } 
 
 .custom-dropdown-menu {
-  display: none;
+  display: block;
 } 
 
 
@@ -142,23 +142,31 @@
 
 .dis-paly {
   display: flex;
-  font-size: 20px;
+  font-size: 22px;
   padding: 10px;
   margin: 5px;
   align-items: center;
+  font-family:'Courier New', Courier, monospace !important;
   justify-content: start;
 }
 .dis-paly li {
   list-style: disc;
   padding: 5px;
 }
+.dis-paly h4 {
+  list-style: disc;
+  padding: 5px;
+  font-weight: 550;
+}
 .dis-imgNbuy {
   display: flex;
-  font-size: 20px;
-
+  font-size: 25px;
+  align-items: center;
+  
   justify-content: start;
 }
 .dis-imgNbuy li {
+
   padding: 5px;
   margin: 5px;
   list-style: none;
@@ -187,27 +195,37 @@
   display: flex !important;
   font-size: 20px;
   padding: 10px;
-  align-items: center;
+  align-items: start;
   justify-content: start;
+  width: 100%;
 }
 
 .RENT .dis-paly3 {
   display: flex !important;
   width: 100%;
-  align-items: center;
+  align-items: start;
   position: relative;
   left: -26px;
   justify-content: space-around;
+  text-align: start;
+}
+ .dis-paly3 h4{
+margin: 10px ;
+align-items: start;
 }
 .dis-paly3 li {
+  text-align: start;
   list-style: disc;
   padding: 5px;
+  font-size: 22px;
+  width: 100%;
 }
 
 .dis-imgNbuy2 li {
   padding: 5px;
   margin: 5px;
   list-style: none;
+
 }
 .RENT .dis-imgNbuy {
   display: flex;
@@ -254,8 +272,9 @@
   align-items: start;
   list-style: disc;
 }
-.Commercial li {
+.Commercial ul li {
   list-style: none;
+  font-weight: lighter;
 }
 
 .Commercial .dis-paly2 {
@@ -266,6 +285,11 @@
   font-weight: bolder;
 
   justify-content: start;
+}
+.Commercial ul h4{
+  font-size: 24px;
+  width: 100%;
+  font-weight: 550;
 }
 .dis-paly2 li {
   list-style: disc;
@@ -293,18 +317,18 @@ font-weight: bold;
 
 }
 /* Commercial */
-/* DEVELOPERS */
+/* developers */
 
-.DEVELOPERS .css-mhc70k-MuiGrid-root > .MuiGrid-item {
+.developers .css-mhc70k-MuiGrid-root > .MuiGrid-item {
   margin: 15px 0px;
   padding: 0px;
   font-size: 20px;
 }
-.DEVELOPERS .css-mhc70k-MuiGrid-root {
+.developers .css-mhc70k-MuiGrid-root {
   align-items: start;
   list-style: disc;
 }
-.DEVELOPERS .custom-dropdown-menu {
+.developers .custom-dropdown-menu {
   display: none;
   width: 80vw;
   margin: 10px;
@@ -320,7 +344,7 @@ font-weight: bold;
   transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
 }
 
-.DEVELOPERS .dis-paly2 {
+.developers .dis-paly2 {
   display: flex;
   font-size: 20px;
   margin: 10px;
@@ -333,8 +357,8 @@ font-weight: bold;
   margin: 10px;
 }
 
-.dis-paly2 .aldar img{
-width: 95px;
+.developers .dis-paly2 .aldar img{
+width: 130px;
 }
 
 .custom-dropdown-item {
@@ -342,16 +366,17 @@ width: 95px;
   text-decoration: none;
   display: block;
 }
-.DEVELOPERS .imgNCommercial img {
-  display: flex;
-  justify-content: end;
+.developers .imgNCommercial img {
+  display: flex !important;
+  justify-content: end !important;
   width: 80%;
 }
-.DEVELOPERS .imgNCommercial{
-  width: 100%;  display: flex;
-  justify-content: end;
+.developers .imgNCommercial{
+  width: 100%;
+    display: flex;
+  justify-content: end !important;
 }
-/* DEVELOPERS */
+/* developers */
 /* AREAS */
 .AREAS .css-mhc70k-MuiGrid-root > .MuiGrid-item {
   margin: 15px 0px;
@@ -390,8 +415,10 @@ width: 95px;
 .dis-paly li {
   list-style: none;
   padding: 5px;
+  font-weight: 500;
 }
 .AREAS .dis-imgNbuy {
+  font-weight: 500;
   display: flex;
   font-size: 20px;
 
@@ -400,60 +427,12 @@ width: 95px;
 .AREAS .dis-imgNbuy li {
   padding: 5px;
   margin: 5px;
+
   list-style: none;
 }
 
 /* AREAS */
-/* CONTACT */
-.CONTACT .css-mhc70k-MuiGrid-root {
-margin-top: 30px !important;
-}
-.CONTACT .custom-dropdown-menu {
-  display: none;
-  width: 80vw !important;
-  margin: 10px;
-  position: absolute;
-  left: -55vw !important;
-  background-color: #bfb78f;
-  list-style: none;
-  padding: 18px 24px;
-  border-radius: 23px;
-  height: auto;
-  overflow: hidden;
-  transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
-}
-.CONTACT .css-isbt42 {
-  margin-top: 47px;
-  margin-left: 27px;
-}
 
-.CONTACT .custom-dropdown-menu .imgcon img {
-  width: 86%;}
-
-.CONTACT .dis-paly2 {
-  display: flex;
-  font-size: 20px;
-  padding: 10px;
-  margin: 5px;
-  align-items: center;
-  justify-content: space-between;
-}
-.dis-paly li {
-  list-style: none;
-  padding: 5px;
-}
-.CONTACT .imgNCommercial {
-  display: flex;
-  width: 100%;
-  font-size: 20px;
-align-items: end;
-  justify-content: end !important;
-}
-
-.CONTACT .dis-paly2 li{
-  font-size: 24px;
-}
-/* CONTACT */
 /* About */
 
 .About .custom-dropdown-menu {
@@ -514,7 +493,7 @@ align-items: end;
   display: flex;
   font-size: 20px;
 
-  justify-content: start !important;
+  justify-content: start ;
 }
 .About .dis-imgNbuy li {
   padding: 5px;
@@ -527,7 +506,7 @@ align-items: end;
 
 .ABOUT .imgNCommercial {
   display: flex;
-  justify-content: end;
+  justify-content: center !important;
 }
 .ABOUT p{
   width: 100%;
@@ -538,7 +517,7 @@ align-items: end;
 }
 .ABOUT .dis-paly2 {
   display: flex;
-  font-size: 20px;
+  font-size: 18px;
   align-items: center;
   justify-content: start;
 }
@@ -546,14 +525,79 @@ align-items: end;
   display: flex;
   width: 100%;
   flex-direction: column;
-  font-size: 17px;
+  font-size: 27px;
   font-weight: bolder;
 
-  align-items: center !important;
-  justify-content: start;
+  align-items: start !important;
+  justify-content: center;
 }
+.dis-paly2 .aldar img{
+  width: 90px ;
+}
+.dis-paly2 .aldar a{
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.dis-paly2 .aldar h6{
+  font-size: 18px;
+}
 /* ABOUT */
+/* CONTACT */
+.CONTACT .css-mhc70k-MuiGrid-root {
+  margin-top: 30px !important;
+  }
+  .CONTACT .custom-dropdown-menu {
+    display: none;
+    width: 80vw !important;
+    margin: 10px;
+    position: absolute;
+    left: -55vw !important;
+    background-color: #bfb78f;
+    list-style: none;
+    padding: 18px 24px;
+    border-radius: 23px;
+    height: auto;
+    overflow: hidden;
+    transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
+  }
+  .CONTACT .css-isbt42 {
+    margin-top: 47px;
+    margin-left: 27px;
+  }
+  
+  .CONTACT .custom-dropdown-menu .imgcon  {
+    width: 100%;}
+    .CONTACT .custom-dropdown-menu .imgcon h2{
+      font-size: 65px;
+    }
+  .CONTACT .dis-paly2 {
+    display: flex;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dis-paly li {
+    list-style: none;
+    padding: 5px;
+  }
+  .CONTACT .imgNCommercial {
+    display: flex !important;
+    width: 100%;
+    font-size: 20px;
+  align-items: end !important;
+    justify-content: end !important;
+  }
+  
+  .CONTACT .dis-paly2 li{
+    font-size: 24px;
+  }
+  /* CONTACT */
 /* Blogs */
 
 
@@ -626,9 +670,10 @@ height: 100%;
 
 .Blogs .dis-paly {
   display: flex;
-  font-size: 12px;
-  align-items: center;
+  font-size: 17px;
+  align-items: start;
   justify-content: start;
+  width: 100%;
 }
 .Blogs .dis-paly1 {
   display: flex;
@@ -658,7 +703,7 @@ gap: 5px;
 }
 .Blogs .imgNbuy .imgNbuy1 img{
   width: 90%;
-  height: 200px;
+  height: 240px;
 
 }
 .Blogs .imgNbuy .imgNbuy2 img{
@@ -681,7 +726,7 @@ gap: 5px;
   font-size: 22px;
 }
 .dis-play3 p{
-  width: 80%;
+  width: 100%;
   flex-wrap: wrap;
 
   font-size: 22px;
@@ -1120,19 +1165,19 @@ font-weight: bold;
 
 }
 /* Commercial */
-/* DEVELOPERS */
+/* developers */
 
-.DEVELOPERS .css-mhc70k-MuiGrid-root > .MuiGrid-item {
+.developers .css-mhc70k-MuiGrid-root > .MuiGrid-item {
   margin: 15px 0px;
   padding: 0px;
   font-size: 18px;
 }
-.DEVELOPERS .css-mhc70k-MuiGrid-root {
+.developers .css-mhc70k-MuiGrid-root {
   align-items: start;
   list-style: disc;
 }
 
-.DEVELOPERS .custom-dropdown-menu {
+.developers .custom-dropdown-menu {
   width: 100vw;
   margin: -1px;
   position: absolute;
@@ -1146,7 +1191,7 @@ font-weight: bold;
   overflow: hidden;
   transition: opacity 1s ease, transform 0.5s ease;
 }
-.DEVELOPERS .dis-paly2 {
+.developers .dis-paly2 {
   display: flex;
   font-size: 18px;
   margin: 10px;
@@ -1164,7 +1209,7 @@ width: 75px;
 }
 
 
-/* DEVELOPERS */
+/* developers */
 /* AREAS */
 .AREAS .css-mhc70k-MuiGrid-root > .MuiGrid-item {
   margin: 15px 0px;

@@ -367,6 +367,120 @@ a {
     }
 }
 
+@media screen and (max-width: 1200px) {
+  .social-media .icon {
+    margin: 10px 0px !important;
+  }
+
+  .footer {
+    color: white !important;
+    width: 100% !important;
+    margin: auto !important;
+    overflow: hidden;
+  }
+  .text-uppercase {
+    font-size: 22px !important;
+    padding-top: 0px !important;
+  }
+  .link,
+  .contact-item {
+    margin-top: 20px !important;
+    width: 250px;
+    font-size: 15px !important;
+  }
+  .bg-footer {
+    width: 90%;
+    height: 85vh !important;
+    background-image: url("../../../public/uploads/end/back.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 100px 100px 0px 0px;
+    
+  }
+
+  .overlay {
+    position: relative;
+    width: 90%;
+    background-image: url("./../../../public/uploads/end/LINE.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh !important;
+    margin: auto;
+    padding: 40px 0;
+  }
+  .copyright{
+    margin: 0px;
+  }
+
+  .css-480o17-MuiGrid-root>.MuiGrid-item {
+    padding-top: 0px !important;
+    }
+ 
+    .css-d7ugl3-MuiGrid-root {
+      margin-top: 82px !important;
+      width: 258px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .social-media .icon {
+    margin: 10px 0px !important;
+  }
+
+  .footer {
+    color: white !important;
+    width: 100% !important;
+    margin: auto !important;
+    overflow: hidden;
+  }
+  .text-uppercase {
+    font-size: 22px !important;
+    padding-top: 0px !important;
+  }
+  .link,
+  .contact-item {
+    margin-top: 20px !important;
+    width: 250px;
+    font-size: 18px !important;
+  }
+  .bg-footer {
+    width: 90%;
+    height: 95vh !important;
+    background-image: url("../../../public/uploads/end/back.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 100px 100px 0px 0px;
+    
+  }
+
+  .overlay {
+    position: relative;
+    width: 90%;
+    background-image: url("./../../../public/uploads/end/LINE.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 116vh !important;
+    margin: auto;
+    padding: 40px 0;
+  }
+  .copyright{
+    margin: 0px;
+  }
+
+  .css-480o17-MuiGrid-root>.MuiGrid-item {
+    padding-top: 0px !important;
+    }
+    .css-d7ugl3-MuiGrid-root{
+      margin-top: 60px !important;
+      width: 258px;
+    }
+}
+
 @media screen and (max-width: 830px) {
   .footer {
     color: white !important;
@@ -484,8 +598,8 @@ a {
     font-size: 13px !important;
   }
   .bg-footer {
-    width: 100%;
-    height: 120vh !important;
+    width: 90%;
+    height: 113vh !important;
     background-image: url("../../../public/uploads/end/back.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -514,6 +628,11 @@ a {
     width: 100%;
     margin: 0px 0px !important;
   }
+  .text-uppercase {
+    font-size: 25px !important;
+    margin-top: 41px !important;
+}
+
 }
 
 @media screen and (max-width: 540px) {
@@ -641,6 +760,7 @@ a {
     margin: 0px 0px !important;
   }
 }
+
 @media screen and (max-width: 430px) {
   .footer {
     color: white !important;
@@ -660,8 +780,8 @@ a {
     font-size: 13px !important;
   }
   .bg-footer {
-    width: 100%;
-    height: 120vh !important;
+    width: 94%;
+    height: 122vh !important;
     background-image: url("../../../public/uploads/end/back.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -684,10 +804,18 @@ a {
   .social-media {
     width: 100%;
   }
-
+  .dis-appbar {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
   .copyright {
     width: 100%;
     margin: 0px 0px !important;
+  }
+  .css-d7ugl3-MuiGrid-root {
+  margin-left: -55px !important;
   }
   .css-1oqqzyl-MuiContainer-root {
     width: 100%;
@@ -703,7 +831,18 @@ a {
     margin: 0px 0px !important;
   }
 }
+@media screen and (max-width: 414px) {
+  .bg-footer {
+    width: 94%;
+    height: 100vh !important;
+    background-image: url("../../../public/uploads/end/back.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
 
+}
 @media screen and (max-width: 375px) {
   .footer {
     color: white !important;
@@ -723,7 +862,7 @@ a {
     font-size: 13px !important;
   }
   .bg-footer {
-    width: 100%;
+    width: 95%;
     height: 130vh !important;
     background-image: url("../../../public/uploads/end/back.png");
     background-position: center;
@@ -739,17 +878,27 @@ a {
     background-position: right;
     background-repeat: no-repeat;
     background-size: 100% !important;
-    height: 90% !important;
+    height: 68% !important;
     margin: auto;
+    display: flex;
+    z-index: 33333;
   }
 
   .social-media {
     width: 100%;
   }
-
+  .dis-appbar {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    flex-direction: column;
+}
+.css-480o17-MuiGrid-root>.MuiGrid-item {
+  padding-top: 11px !important;
+}
   .copyright {
     width: 100%;
-    margin: 60px 0px !important;
+    margin: 0px 0px !important;
   }
   .css-1oqqzyl-MuiContainer-root {
     width: 100%;

@@ -8,7 +8,6 @@ import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
 
 const Navbar = () => {
-  
   const [isOpen, setIsOpen] = useState(false);
   const [DataBase, setDataBase] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState({
@@ -112,7 +111,7 @@ const Navbar = () => {
       const querySnapshot = await getDocs(collection(firestore, "category"));
       const docs = querySnapshot.docs.map((doc) => ({
         id: doc.id,
-        ...doc.data()
+        ...doc.data(),
       }));
       docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
       setDataBase(docs);
@@ -122,7 +121,7 @@ const Navbar = () => {
   };
   const handltap = () => {
     let show = document.querySelector(".custom-dropdown-menu.show");
-    
+
     if (show) {
       show.style.display = "none";
     } else {
@@ -131,9 +130,9 @@ const Navbar = () => {
         show.style.display = "flex";
       }
     }
-  
+
     let naAll = document.querySelector(".custom-navbar-link");
-    
+
     if (naAll) {
       naAll.onclick = () => {
         if (show) {
@@ -141,7 +140,7 @@ const Navbar = () => {
         }
       };
     }
-  }
+  };
   useEffect(() => {
     GetDataFireStore();
   }, []);
@@ -152,7 +151,7 @@ const Navbar = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-  
+
   return (
     <div className="custom-navbar-brand">
       <Link to="/">
@@ -165,7 +164,6 @@ const Navbar = () => {
           <span className="custom-bar"></span>
         </div>
         <ul className={`custom-navbar-menu ${isOpen ? "active" : ""}`}>
-
           <li
             className="custom-navbar-item"
             onMouseEnter={() => handleMouseEnter("BUY")}
@@ -177,19 +175,22 @@ const Navbar = () => {
             </span>
             <div className="Buys">
               <ul
-                className={`custom-dropdown-menu ${dropdownOpen.BUY ? "show" : "none"
-                  }`}
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.BUY ? "show" : "none"
+                }`}
               >
-                                <div className="bt-back" onClick={handltap}>رجوع</div>
-             <Grid container spacing={2} className="custom-dropdown-item">
+                <div className="bt-back" onClick={handltap}>
+                  رجوع
+                </div>
+                <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item spacing={2} lg={5} xs={12}>
                     <h3>
-                      Buy properties in UAE{" "}
+                      PURCHASE PROPERTIES IN THE UAE{" "}
                       <img src="./uploads/nav/icon/arrow.png" alt="" />
                     </h3>
                     <div className="dis-paly">
                       <ul>
-                        <li>Secondary properties</li>
+                        <h4> Secondary properties</h4>
                         <li>
                           <img
                             src="./uploads/nav/icon/trending-topic.png"
@@ -205,7 +206,7 @@ const Navbar = () => {
                         <li>Penthouses</li>
                       </ul>
                       <ul>
-                        <li>Off-plan</li>
+                        <h4>Off-plan</h4>
                         <li>Apartments</li>
                         <li>Penthouses</li>
                         <li>Townhouses</li>
@@ -217,11 +218,11 @@ const Navbar = () => {
                   <Grid item lg={7} xs={12}>
                     <div className="dis-imgNbuy">
                       <div className="imgNbuy">
-                        <img src="./uploads/nav/buy/photo1.png" alt="" />
+                        <img src="./uploads/nav/buy/1.png" alt="" />
                       </div>
 
                       <ul className="ullest">
-                        <h3>Investments abroad</h3>
+                        <h3>INVEST BY EMIRATE</h3>
                         <li>Dubai</li>
                         <li>Sharjah</li>
                         <li>Ajman</li>
@@ -232,11 +233,13 @@ const Navbar = () => {
                   </Grid>
                   <div className="imgnp">
                     <div className="disi">
-                    <div>
-
-                    <h3>Schedule your free consultation today</h3>
-                    <h4>And our team will help you find the ideal property for your needs</h4>
-                    </div>
+                      <div>
+                        <h3>Schedule your free consultation today</h3>
+                        <h4>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h4>
+                      </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -257,10 +260,13 @@ const Navbar = () => {
 
             <div className="RENT">
               <ul
-                className={`custom-dropdown-menu ${dropdownOpen.RENT ? "show" : ""
-                  }`}
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.RENT ? "show" : ""
+                }`}
               >
-                                <div className="bt-back" onClick={handltap}>رجوع</div>
+                <div className="bt-back" onClick={handltap}>
+                  رجوع
+                </div>
 
                 <Grid
                   container
@@ -268,44 +274,40 @@ const Navbar = () => {
                   className="custom-dropdown-item dis-paly2"
                 >
                   <div className="dis-paly2">
-                    <Grid item lg={7}   xs={12}>
+                    <Grid item lg={7} xs={12}>
                       <h3>
-                        Rent properties in Dubai{" "}
+                        RENT PROPERTIES IN THE UAE{" "}
                         <img src="./uploads/nav/icon/arrow.png" alt="" />
                       </h3>
                       <div className="dis-paly3">
                         <ul>
-                          <li>Rental Properties</li>
+                          <h4>Rental Properties</h4>
                           <li>Apartments</li>
                           <li>Villas</li>
                           <li>Townhouses</li>
                         </ul>
                         <ul>
-                          <li>Landlords Tools</li>
-                          <li>
-                            <img
-                              src="./uploads/nav/icon/management.png"
-                              alt=""
-                            />{" "}
-                            Property Management
-                          </li>
+                          <h4>Landlords Tools</h4>
+                          <li>Property Management</li>
                           <li>Utilities Connections and Payments</li>
                         </ul>
                       </div>
                     </Grid>
-                    <Grid item lg={5}  xs={12}>
+                    <Grid item lg={5} xs={12}>
                       <div className="imgNbuy">
-                        <img src="./uploads/nav/rent/photo2.png" alt="" />
+                        <img src="./uploads/nav/rent/2.png" alt="" />
                       </div>
                     </Grid>
                   </div>
-                      <div className="imgnp">
+                  <div className="imgnp">
                     <div className="disi">
-                    <div>
-
-                    <h3>Schedule your free consultation today</h3>
-                    <h4>And our team will help you find the ideal property for your needs</h4>
-                    </div>
+                      <div>
+                        <h3>Schedule your free consultation today</h3>
+                        <h4>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h4>
+                      </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -325,10 +327,13 @@ const Navbar = () => {
             </span>
             <div className="Commercial">
               <ul
-                className={`custom-dropdown-menu ${dropdownOpen.Commercial ? "show" : ""
-                  }`}
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.Commercial ? "show" : ""
+                }`}
               >
-                                <div className="bt-back" onClick={handltap}>رجوع</div>
+                <div className="bt-back" onClick={handltap}>
+                  رجوع
+                </div>
 
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={5}>
@@ -337,35 +342,35 @@ const Navbar = () => {
                       <img src="./uploads/nav/icon/arrow.png" alt="" />
                     </h3>
 
-
-
                     <ul>
-                      {DataBase.slice(0 , 4).map((it) => {
+                      <h4>Rental Properties</h4>
+                      {DataBase.slice(0, 4).map((it) => {
                         return (
+
                           <li key={it.id}>
-                            <Link to={`/${it.name}`}>{it.name}</Link> 
+                            <Link to={`/${it.name}`}>{it.name}</Link>
                           </li>
-                        )
+                        );
                       })}
                     </ul>
-
-
                   </Grid>
                   <Grid item xs={7} display={"flex"}>
                     <div className="imgNCommercial">
-                      <img src="./uploads/nav/commercial/photo3.png" alt="" />
+                      <img src="./uploads/nav/commercial/2.png" alt="" />
                     </div>
                     <div className="imgNCommercial">
-                      <img src="./uploads/nav/commercial/photo4.png" alt="" />
+                      <img src="./uploads/nav/commercial/4.png" alt="" />
                     </div>
                   </Grid>
-                      <div className="imgnp">
+                  <div className="imgnp">
                     <div className="disi">
-                    <div>
-
-                    <h3>Schedule your free consultation today</h3>
-                    <h4>And our team will help you find the ideal property for your needs</h4>
-                    </div>
+                      <div>
+                        <h3>Schedule your free consultation today</h3>
+                        <h4>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h4>
+                      </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -389,12 +394,15 @@ const Navbar = () => {
             <span className="custom-navbar-link">
               <Link to="/Ourpartners">DEVELOPERS</Link>
             </span>
-            <div className="DEVELOPERS">
+            <div className="developers">
               <ul
-                className={`custom-dropdown-menu ${dropdownOpen.DEVELOPERS ? "show" : ""
-                  }`}
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.DEVELOPERS ? "show" : ""
+                }`}
               >
-                                                <div className="bt-back" onClick={handltap}>رجوع</div>
+                <div className="bt-back" onClick={handltap}>
+                  رجوع
+                </div>
 
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={5}>
@@ -404,13 +412,14 @@ const Navbar = () => {
                     </h3>
                     <div className="dis-paly2">
                       <ul>
-                        <li>Top developers</li>
+                        <h4>Top developers</h4>
                         <li>Emaar</li>
                         <li>ALDAR</li>
                         <li>Bloom</li>
                       </ul>
                       <ul>
-                        <li>Select Group</li>
+                        <li>Select Group
+                        </li>
                         <li>Reportage</li>
                         <li>DAMAC</li>
                         <li>Meraas</li>
@@ -418,32 +427,34 @@ const Navbar = () => {
                     </div>
                     <div className="dis-paly2">
                       <li className="aldar">
-                        <img src="./uploads/nav/aldar.png" alt="" />
+                        <img src="./uploads/nav/developers/aldar.png" alt="" />
                       </li>
                       <li className="aldar">
-                        <img src="./uploads/nav/bloom.png" alt="" />
+                        <img src="./uploads/nav/developers/bloom.png" alt="" />
                       </li>
                       <li className="aldar">
-                        <img src="./uploads/nav/damac.png" alt="" />
+                        <img src="./uploads/nav/developers/damac.png" alt="" />
                       </li>
                       <li className="aldar">
-                        <img src="./uploads/nav/emaar.png" alt="" />
+                        <img src="./uploads/nav/developers/emaar.png" alt="" />
                       </li>
                     </div>
                     <ul></ul>
                   </Grid>
                   <Grid item xs={7}>
                     <div className="imgNCommercial">
-                      <img src="./uploads/nav/developers/photo5.png" alt="" />
+                      <img src="./uploads/nav/developers/1.png" alt="" />
                     </div>
                   </Grid>
-                      <div className="imgnp">
+                  <div className="imgnp">
                     <div className="disi">
-                    <div>
-
-                    <h3>Schedule your free consultation today</h3>
-                    <h4>And our team will help you find the ideal property for your needs</h4>
-                    </div>
+                      <div>
+                        <h3>Schedule your free consultation today</h3>
+                        <h4>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h4>
+                      </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -463,33 +474,47 @@ const Navbar = () => {
             </span>
             <div className="AREAS">
               <ul
-                className={`custom-dropdown-menu ${dropdownOpen.AREAS ? "show" : ""
-                  }`}
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.AREAS ? "show" : ""
+                }`}
               >
-                                                <div className="bt-back" onClick={handltap}>رجوع</div>
+                <div className="bt-back" onClick={handltap}>
+                  رجوع
+                </div>
 
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item lg={4} md={12}>
                     <h3>
-                      See all areas in UAE{" "}
+                    DISCOVER AREAS IN THE UAE
+
+{" "}
                       <img src="./uploads/nav/icon/arrow.png" alt="" />
                     </h3>
                     <div className="dis-paly">
                       <ul>
-                        <li>Abu Dhabi</li>
-                        <li>Yas Island</li>
-                        <li>Khalifa City</li>
-                        <li>Al Raha City</li>
-                        <li>Masdar City</li>
-                        <li>Zayed City</li>
+                        <li>Palm Jumeirah</li>
+                        <li>Yas Island
+                        </li>
+                        <li>Downtown Dubai
+                        </li>
+                        <li>Saadiyat Island
+                        </li>
+                        <li>Maryah Island
+                        </li>
+                        <li>Al Reem Island
+                        </li>
                       </ul>
                       <ul>
-                        <li>Al Reem Island</li>
-                        <li>Maryah Island</li>
-                        <li>Rabdan</li>
-                        <li>Saadiyat Island</li>
-                        <li>Palm Jumeirah</li>
-                        <li>Downtown Dubai</li>
+                        <li>Rabdan
+                        </li>
+                        <li>Khalifa City
+                        </li>
+                        <li>Al Raha City
+                        </li>
+                        <li>Masdar City
+                        </li>
+                        <li>Zayed City
+                        </li>
                       </ul>
                     </div>
                   </Grid>
@@ -497,27 +522,35 @@ const Navbar = () => {
                   <Grid item lg={7} md={12}>
                     <div className="dis-imgNbuy">
                       <div className="imgNbuy">
-                        <img src="./uploads/nav/areas/photo6.png" alt="" />
+                        <img src="./uploads/nav/areas/1.png" alt="" />
                       </div>
 
                       <ul>
-                        <h3>Living abroad</h3>
+                        <h3>BY EMIRATES
+
+</h3>
+                        <li>Abu Dhabi
+                        </li>
                         <li>Dubai</li>
-                        <li>Abu Dhabi</li>
                         <li>Sharjah</li>
-                        <li>Ajman</li>
-                        <li>Ras Al Khaimah</li>
-                        <li>Fujairah</li>
+                        <li>Ajman
+                        </li>
+                        <li>Ras Al Khaimah
+                        </li>
+                        <li>Fujairah
+                        </li>
                       </ul>
                     </div>
                   </Grid>
-                      <div className="imgnp">
+                  <div className="imgnp">
                     <div className="disi">
-                    <div>
-
-                    <h3>Schedule your free consultation today</h3>
-                    <h4>And our team will help you find the ideal property for your needs</h4>
-                    </div>
+                      <div>
+                        <h3>Schedule your free consultation today</h3>
+                        <h4>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h4>
+                      </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -537,10 +570,13 @@ const Navbar = () => {
             </span>
             <div className="Blogs">
               <ul
-                className={`custom-dropdown-menu ${dropdownOpen.Blogs ? "show" : ""
-                  }`}
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.Blogs ? "show" : ""
+                }`}
               >
-                                                <div className="bt-back" onClick={handltap}>رجوع</div>
+                <div className="bt-back" onClick={handltap}>
+                  رجوع
+                </div>
 
                 <Grid
                   container
@@ -568,17 +604,11 @@ const Navbar = () => {
                           <img src="./uploads/nav/blogs/photo10.png" alt="" />
                         </div>
                         <div className="titel">
-                          <h5>
-                            The Future of the UAE Real Estate Market
-                          </h5>
+                          <h5>The Future of the UAE Real Estate Market</h5>
                           <p>
-                            Securing Your Dream Home: Navigating Market, Finances.
-                            <p>
-                              19 / August / 2024
-
-
-
-                            </p>
+                            Securing Your Dream Home: Navigating Market,
+                            Finances.
+                            <p>19 / August / 2024</p>
                           </p>
                         </div>
                       </div>
@@ -587,17 +617,11 @@ const Navbar = () => {
                           <img src="./uploads/nav/blogs/photo9.png" alt="" />
                         </div>
                         <div className="titel">
-                          <h5>
-                            The Future of the UAE Real Estate Market
-                          </h5>
+                          <h5>The Future of the UAE Real Estate Market</h5>
                           <p>
-                            Securing Your Dream Home: Navigating Market, Finances.
-                            <p>
-                              19 / August / 2024
-
-
-
-                            </p>
+                            Securing Your Dream Home: Navigating Market,
+                            Finances.
+                            <p>19 / August / 2024</p>
                           </p>
                         </div>
                       </div>
@@ -611,20 +635,20 @@ const Navbar = () => {
                           <img src="./uploads/nav/blogs/photo7.png" alt="" />
                         </div>
                         <div className="imgNbuy2">
-
                           <img src="./uploads/nav/blogs/photo8.png" alt="" />
                         </div>
                       </div>
-
                     </div>
                   </Grid>
-                      <div className="imgnp">
+                  <div className="imgnp">
                     <div className="disi">
-                    <div>
-
-                    <h3>Schedule your free consultation today</h3>
-                    <h4>And our team will help you find the ideal property for your needs</h4>
-                    </div>
+                      <div>
+                        <h3>Schedule your free consultation today</h3>
+                        <h4>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h4>
+                      </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -651,16 +675,20 @@ const Navbar = () => {
 
             <div className="ABOUT">
               <ul
-                className={`custom-dropdown-menu ${dropdownOpen.ABOUT_US ? "show" : ""
-                  }`}
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.ABOUT_US ? "show" : ""
+                }`}
               >
-                                                <div className="bt-back" onClick={handltap}>رجوع</div>
+                <div className="bt-back" onClick={handltap}>
+                  رجوع
+                </div>
 
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid item xs={7}>
                     <Link to={"/About"}>
                       <h3>
-                        About us <img src="./uploads/nav/icon/arrow.png" alt="" />
+                        About us{" "}
+                        <img src="./uploads/nav/icon/arrow.png" alt="" />
                       </h3>
                       <div className="dis-paly2">
                         <p>
@@ -689,12 +717,10 @@ const Navbar = () => {
                       </li>
                       <li className="aldar">
                         <Link to={"/Spartan"}>
-
                           {" "}
                           <h6>SPARTAN TOURISM</h6>
                           <img src="./uploads/nav/aboutus/spartan.png" alt="" />
                         </Link>
-
                       </li>
                     </div>
                     <ul></ul>
@@ -704,13 +730,15 @@ const Navbar = () => {
                       <img src="./uploads/nav/aboutus/photoabout.png" alt="" />
                     </div>
                   </Grid>
-                      <div className="imgnp">
+                  <div className="imgnp">
                     <div className="disi">
-                    <div>
-
-                    <h3>Schedule your free consultation today</h3>
-                    <h4>And our team will help you find the ideal property for your needs</h4>
-                    </div>
+                      <div>
+                        <h3>Schedule your free consultation today</h3>
+                        <h4>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h4>
+                      </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
@@ -728,18 +756,22 @@ const Navbar = () => {
 
             <div className="CONTACT">
               <ul
-                className={`custom-dropdown-menu ${dropdownOpen.CONTACT_US ? "show" : ""
-                  }`}
+                className={`custom-dropdown-menu ${
+                  dropdownOpen.CONTACT_US ? "show" : ""
+                }`}
               >
-                                                <div className="bt-back" onClick={handltap}>رجوع</div>
+                <div className="bt-back" onClick={handltap}>
+                  رجوع
+                </div>
 
                 <Grid container spacing={2} className="custom-dropdown-item">
                   <Grid md={6} xs={12}>
                     <div className="imgcon">
-                      <img
-                        src="./uploads/nav/contactus/areyouready.png"
-                        alt=""
-                      />
+                  <h2>Elevate Your Career
+                  </h2>
+                  <h3>Join Our Team of Real Estate Experts Today.
+
+</h3>
                     </div>
                     <div className="dis-paly2">
                       <ul>
@@ -759,29 +791,28 @@ const Navbar = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link
-                            className="custom-dropdown-item"
-                            to="/Login"
-                          >
+                          <Link className="custom-dropdown-item" to="/Login">
                             login{" "}
                             <img src="./uploads/nav/icon/arrow.png" alt="" />
                           </Link>
                         </li>
                       </ul>
                     </div>
-                  </Grid >
-                  <Grid  md={6} xs={12}>
+                  </Grid>
+                  <Grid md={6} xs={12}>
                     <div className="imgNCommercial">
-                      <img src="./uploads/nav/contactus/photo11.png" alt="" />
+                      <img src="./uploads/nav/contactus/1.png" alt="" />
                     </div>
                   </Grid>
-                      <div className="imgnp">
+                  <div className="imgnp">
                     <div className="disi">
-                    <div>
-
-                    <h3>Schedule your free consultation today</h3>
-                    <h4>And our team will help you find the ideal property for your needs</h4>
-                    </div>
+                      <div>
+                        <h3>Schedule your free consultation today</h3>
+                        <h4>
+                          And our team will help you find the ideal property for
+                          your needs
+                        </h4>
+                      </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
