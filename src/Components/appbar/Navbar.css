@@ -10,6 +10,9 @@
 .number {
   color: #e2bc10 !important;
 }
+.logo-nav{
+  width: 200px;
+}
 /* لbutton */
 
 
@@ -22,12 +25,11 @@
 .custom-dropdown-menu {
   display: block;
 } 
-
-
-
-.toggle-checkbox {
-  display: none;
+.bt-back{
+  display: none !important;
+  visibility: hidden !important;
 }
+
 /* لbutton */
 .custom-navbar {
   width: 100%;
@@ -114,11 +116,16 @@
   margin:0px;
 }
 /* .custom-dropdown-menu */
+
+
 /* BUY */
+
+.dis-buy{
+  display: flex;
+}
 .imgnp {
   margin: 10px;
-  background-image: url("/public/uploads/nav/Gif2.gif");
-  width: 99%;
+  background-image: url("/public/uploads/nav/e3lan.png");  width: 99%;
   height: 100px;
   border-radius: 30px;
   padding: 20px;
@@ -139,24 +146,30 @@
   overflow: hidden;
   transition: opacity 1s ease, transform 0.5s ease; /* إضافة أنيميشن */
 }
-
+.Buys h3{
+  font-weight: bold;
+  margin-top: 5px;
+}
 .dis-paly {
   display: flex;
   font-size: 22px;
   padding: 10px;
   margin: 5px;
-  align-items: center;
+  align-items: start;
   font-family:'Courier New', Courier, monospace !important;
   justify-content: start;
+  margin-left: -38px !important;
+
 }
 .dis-paly li {
-  list-style: disc;
+  list-style: none;
   padding: 5px;
+  font-weight: lighter !important;
 }
 .dis-paly h4 {
   list-style: disc;
   padding: 5px;
-  font-weight: 550;
+  font-weight:500;
 }
 .dis-imgNbuy {
   display: flex;
@@ -166,9 +179,10 @@
   justify-content: start;
 }
 .dis-imgNbuy li {
-
+  
   padding: 5px;
   margin: 5px;
+  font-weight: lighter !important;
   list-style: none;
 }
 
@@ -609,8 +623,7 @@ width: 130px;
 
 .Blogs .imgnp {
   margin: 10px;
-  background-image: url("/public/uploads/nav/Gif2.gif");
-  width: 99%;
+  background-image: url("/public/uploads/nav/e3lan.png");  width: 99%;
   height: auto;
   border-radius: 30px;
   padding: 20px;
@@ -889,13 +902,126 @@ height: 100%;
   .custom-navbar-link {
     font-size: 17px;
   }
+
+
+
+
+  .Buys h3{
+position: relative;
+top: 0;
+font-size: 25px;  }
+  .dis-paly {
+    display: flex;
+    font-size: 22px;
+    padding: 0px;
+    margin: 5px;
+    align-items: start;
+    font-family:'Courier New', Courier, monospace !important;
+    justify-content: start;
+  }
+  .dis-paly li {
+    list-style: none;
+    padding: 5px;
+    font-weight: lighter !important;
+    font-size: 20px;
+  }
+  .dis-paly h4 {
+    list-style: disc;
+    padding: 5px;
+    font-weight:500;
+  }
+  .dis-imgNbuy {
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    
+    justify-content: start;
+  }
+  .dis-imgNbuy li {
+    
+    padding: 5px;
+    margin: 5px;
+    font-weight: lighter !important;
+    list-style: none;
+  }
+  
+  /* BUY */
+
+
+
 }
 @media (max-width: 1440px) {
-  .custom-navbar-link {
-    font-size: 15px;
+  .logo-nav{
+    width: 150px;
   }
+.custom-navbar {
+  width: 84%;
+}
+  .custom-navbar-link {
+    font-size: 14px;
+  }
+  .Buys .disi h3 {
+    position: relative;
+    top: 0;
+    font-size: 18px;
+}
+  .Buys .disi h4 {
+    position: relative;
+    top: 0;
+    font-size: 18px;
+}
 
-}@media (max-width: 1024px) {
+
+  .Buys h3 {
+    position: relative;
+    top: 0;
+    font-size: 23px;
+}
+
+}
+
+@media (max-width: 1280px) {
+  .logo-nav{
+    width: 120px;
+  }
+  .custom-navbar {
+    width: 100%;
+  }
+    .custom-navbar-link {
+      font-size: 11px;
+    }
+  .dis-paly h4 {
+    list-style: disc;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    width: 100%;
+}
+.Buys h3 {
+  position: relative;
+  top: 0;
+  font-size: 18px;
+}
+.Buys .custom-dropdown-menu {
+  display: none;
+  width: 80vw;
+  margin: 10px;
+  position: absolute;
+  left: -245%;
+  background-color: #bfb78f;
+  list-style: none;
+  padding: 18px 24px;
+  z-index: 9699999999999999 !important;
+  border-radius: 23px;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease;
+}
+}
+
+
+
+@media (max-width: 1024px) {
   .custom-navbar-link {
     font-size: 20px;
   
@@ -1041,8 +1167,7 @@ height: 100%;
 /* BUY */
 .imgnp {
   margin: 10px;
-  background-image: url("/public/uploads/nav/Gif2.gif");
-  width: 99%;
+  background-image: url("/public/uploads/nav/e3lan.png");  width: 99%;
   height: 100px;
   border-radius: 30px;
   padding: 20px;
@@ -1433,8 +1558,7 @@ align-items: end;
 
 .Blogs .imgnp {
   margin: 10px;
-  background-image: url("/public/uploads/nav/Gif2.gif");
-  width: 95%;
+  background-image: url("/public/uploads/nav/e3lan.png");  width: 95%;
   height: auto;
   border-radius: 30px;
   padding: 20px;

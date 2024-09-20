@@ -155,7 +155,7 @@ const Navbar = () => {
   return (
     <div className="custom-navbar-brand">
       <Link to="/">
-        <img width="200px" src="./uploads/img/LOGO.png" alt="Logo" />
+        <img className="logo-nav"  src="./uploads/img/LOGO.png" alt="Logo" />
       </Link>
       <nav className="custom-navbar">
         <div className="custom-navbar-toggle" onClick={toggleMenu}>
@@ -182,55 +182,65 @@ const Navbar = () => {
                 <div className="bt-back" onClick={handltap}>
                   رجوع
                 </div>
-                <Grid container spacing={2} className="custom-dropdown-item">
-                  <Grid item spacing={2} lg={5} xs={12}>
+                <div  container spacing={2} className="custom-dropdown-item  dis-buy">
+             <div className="dis-buy">
+             <div item  lg={5} xs={12}>
                     <h3>
-                      PURCHASE PROPERTIES IN THE UAE{" "}
+                    PURCHASE PROPERTIES IN THE UAE
+                    {" "}
                       <img src="./uploads/nav/icon/arrow.png" alt="" />
                     </h3>
                     <div className="dis-paly">
                       <ul>
-                        <h4> Secondary properties</h4>
+                        <h4> Secondary properties
+
+</h4>
                         <li>
-                          <img
-                            src="./uploads/nav/icon/trending-topic.png"
-                            alt=""
-                          />{" "}
+                   
                           {"  "}Hot Properties
+
                         </li>
                         <li>
-                          <img src="./uploads/nav/icon/exclusive.png" alt="" />{" "}
                           {"  "}Exclusive Properties
+
                         </li>
                         <li>Apartments</li>
                         <li>Penthouses</li>
                       </ul>
                       <ul>
-                        <h4>Off-plan</h4>
+                        <h4>Off-plan
+
+</h4>
                         <li>Apartments</li>
                         <li>Penthouses</li>
                         <li>Townhouses</li>
                         <li>Villas</li>
                       </ul>
                     </div>
-                  </Grid>
+                  </div>
 
-                  <Grid item lg={7} xs={12}>
+                  <div item lg={7} xs={12}>
                     <div className="dis-imgNbuy">
                       <div className="imgNbuy">
                         <img src="./uploads/nav/buy/1.png" alt="" />
                       </div>
 
                       <ul className="ullest">
-                        <h3>INVEST BY EMIRATE</h3>
+                        <h3>INVEST BY EMIRATE
+
+</h3>
+                        <li>Abu Dhabi
+                        </li>
                         <li>Dubai</li>
                         <li>Sharjah</li>
                         <li>Ajman</li>
-                        <li>Ras Al Khaimah</li>
+                        <li>Ras Al Khaimah
+                        </li>
                         <li>Fujairah</li>
                       </ul>
                     </div>
-                  </Grid>
+                  </div>
+             </div>
                   <div className="imgnp">
                     <div className="disi">
                       <div>
@@ -243,7 +253,7 @@ const Navbar = () => {
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
-                </Grid>
+                </div>
               </ul>
             </div>
           </li>
