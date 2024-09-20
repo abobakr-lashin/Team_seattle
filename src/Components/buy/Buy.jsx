@@ -149,7 +149,7 @@ export default function Buy() {
                 <NavPar />
                 <div className="h-5vh"></div>
 
-                {/* <div className="grop-title">
+                <div className="grop-title">
                     <div className="img-dis">
                         <img src="/uploads/img/marpa.png" alt="" />
                     </div>
@@ -165,9 +165,9 @@ export default function Buy() {
                             <div style={{ textTransform: "uppercase" }}>buy</div>
                         </h2>
                     </div>
-                </div> */}
-                {/* <h1>LUXURY PROPERTIES FOR SALE IN UAE</h1> */}
-                {/* <div className="hr">
+                </div>
+                <h1>LUXURY PROPERTIES FOR SALE IN UAE</h1>
+                <div className="hr">
                     <div className="form-buy">
                         <input
                             type="number"
@@ -195,7 +195,7 @@ export default function Buy() {
                             type="submit"
                             className="input-style-submit"
                             value="FIND"
-                            onClick={handleSearch}
+                            onClick={'handleSearch'}
                         />
                         <input
                             type="text"
@@ -241,22 +241,22 @@ export default function Buy() {
                         />
 
                     </div>
-                </div> */}
+                </div>
             </div>
 
             <div className='buy'>
                 <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
                     {imgsetin}
                 </Grid>
-                {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-                    <div onClick={handlePreviousPage} style={{ cursor: currentPage > 1 ? 'pointer' : 'default', opacity: currentPage > 1 ? 1 : 0.5 }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+                    <div onClick={'handlePreviousPage'} style={{ cursor: currentPage > 1 ? 'pointer' : 'default', opacity: currentPage > 1 ? 1 : 0.5 }}>
                         <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
                     </div>
                     <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>
-                    <div onClick={handleNextPage} style={{ cursor: currentPage < totalPages ? 'pointer' : 'default', opacity: currentPage < totalPages ? 1 : 0.5 }}>
+                    <div onClick={'handleNextPage'} style={{ cursor: currentPage < 'totalPages' ? 'pointer' : 'default', opacity: currentPage < 'totalPages' ? 1 : 0.5 }}>
                         <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
                     </div>
-                </div> */}
+                </div>
             </div>
             <OUREXPERT />
             <Footer />
