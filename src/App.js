@@ -68,7 +68,7 @@ export default function App() {
                     <Route path="Careers" element={<Careers />} />
                     <Route path="Contactus" element={<Contactus />} />
                     <Route path="LastNews" element={<LastNews />} />
-                    <Route path="Commercial" element={<Commercial />} />
+                    {/* <Route path="Commercial" element={<Commercial />} />
                     <Route path="SaleIn" element={<SaleIn />} />
                     <Route path="Cardsell" element={<Cardsell />} />
                     <Route path="Rent" element={<Rent />} />
@@ -78,7 +78,7 @@ export default function App() {
                     <Route path="ContactusForm" element={<ContactusForm />} />
                     <Route path="About" element={<About />} />
                     <Route path="*" element={<NotFonunt />} />
-                    <Route path="login" element={<Login />} />
+                    <Route path="login" element={<Login />} /> */}
                     {/* <Route path="/:id" element={<Company />} /> */}
                     {/* <Route path="dashboard" element={<Dashboard />} >
                         <Route index element={<Formdb />} />
