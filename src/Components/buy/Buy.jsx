@@ -166,7 +166,7 @@ export default function Buy() {
                         </h2>
                     </div>
                 </div> */}
-                <h1>LUXURY PROPERTIES FOR SALE IN UAE</h1>
+                {/* <h1>LUXURY PROPERTIES FOR SALE IN UAE</h1> */}
                 {/* <div className="hr">
                     <div className="form-buy">
                         <input
