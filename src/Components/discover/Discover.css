@@ -92,6 +92,7 @@ width: auto;
   color: white;
   max-width: 51%;
   margin-left: 20px;
+  text-transform:uppercase ;
 }
 
 .prgraf p {

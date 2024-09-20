@@ -23,27 +23,30 @@ export default function Discover() {
 
         <div className="prgraf">
           <p>
-            Seattle & Middle East Group excels in delivering comprehensive,
-            professional services across Real Estate, Mortgage, Tourism,
-            Contracting, and Digital Marketing sectors.
+            Seattle{` `} & {` ${' \  '}  `} Middle East Group is a leader in providing
             <br />
-            Our organization encompasses a diverse range of companies, including
-            Seattle & Middle East Real Estate, JNJ Mortgage and Spartan Tourism,
-            allowing us to offer a full spectrum of services. Clients can
-            seamlessly navigate the process of purchasing real estate, securing
-            financing, and arranging travel, all within our integrated network.
+            exceptional professional services across real estate,
+            <br /> travel, contracting, mortgage, and digital marketing.
             <br />
-          </p>
-          <p>
-            Our Real Estate division specializes in identifying the perfect
-            residential, commercial, or investment properties. Concurrently, our
-            Mortgage team at JNJ Mortgage provides expert guidance on financing
-            options, ensuring a smooth acquisition process. Spartan Tourism
-            enhances your experience with exceptional travel services, designed
-            to make your journey as effortless and enjoyable as possible.
+            We are committed to delivering tailored solutions that
             <br />
-            At Seattle & Middle East Group, we uphold the highest standards of professionalism, integrity, and customer satisfaction.
-           
+            meet the unique needs of our clients. 
+            <br />
+            <br />
+            Our expert team in real estate
+            helps you find ideal <br /> residential, commercial, or investment
+            properties. <br />
+            Our travel services offer seamless and memorable <br /> journeys, while our
+            mortgage team provides
+            <br />
+            comprehensive financing guidance. Our digital<br /> marketing agency
+            boosts your brand's online <br /> 
+            presence with cutting-edge strategies.
+            <br />
+            <br />
+            Professionalism, integrity, and customer satisfaction are our core
+            values.
+            <br />
           </p>
         </div>
 

@@ -149,6 +149,7 @@
 .Buys h3{
   font-weight: bold;
   margin-top: 5px;
+  font-size: 1.9rem;
 }
 .dis-paly {
   display: flex;
@@ -161,10 +162,13 @@
   margin-left: -38px !important;
 
 }
+
 .dis-paly li {
   list-style: none;
   padding: 5px;
   font-weight: 500 !important;
+  font-size: 20px;
+  margin: 12px 47px 0px 0px;
 }
 .dis-paly h4 {
   list-style: disc;
@@ -178,10 +182,10 @@
   
   justify-content: start;
 }
-.dis-imgNbuy li {
+.Buys .dis-imgNbuy li {
   
   padding: 5px;
-  margin: 5px;
+  margin: 1px;
   font-weight: 500 !important;
   list-style: none;
 }
@@ -226,6 +230,7 @@
 }
 .RENT .dis-paly2 h3{
 font-weight: bold;
+font-size: 2rem;
 }
 
 .RENT .dis-paly3 {
@@ -240,7 +245,7 @@ font-weight: bold;
   text-align: start;
 }
  .dis-paly3 h4{
-margin: 10px ;
+margin: 10px 3px ;
 align-items: start;
 width: 100%;
 font-weight: 550;
@@ -333,15 +338,13 @@ font-weight: 550;
   width: 100%;
   font-weight: 550 !important;
 }
-.dis-paly2 li {
+.Commercial .dis-paly2 li {
   list-style: disc;
   padding: 5px;
-  font-weight: bolder;
+  font-weight: normal;
 }
-
-.dis-imgNbuy2 li {
-  font-weight: bolder;
-
+.Commercial .dis-imgNbuy2 li {
+  font-weight: normal;
   list-style: none;
 }
 .custom-dropdown-item {
@@ -355,7 +358,7 @@ font-weight: 550;
 }
 .Commercial ul li{
 padding: 10px;
-font-weight: bold;
+font-weight: normal;
 
 }
 .Commercial h3{
@@ -405,9 +408,10 @@ font-weight: bold;
 .developers .dis-paly2 {
   display: flex;
   font-size: 20px;
+  width: 75%;
   margin: 10px;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
 }
 .dis-paly2 li {
   list-style: none;
