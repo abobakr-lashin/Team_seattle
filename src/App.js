@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, HashRouter } from "react-router-dom";
-import ScrollToTop from './ScrollToTop'; // تأكد من استيراد المكون
+import ScrollToTop from './ScrollToTop';
 import Home from './Pages/Home';
 import Ourpartners from './Pages/Ourpartners';
 import TeamS from './Components/abuotus/TeamS';

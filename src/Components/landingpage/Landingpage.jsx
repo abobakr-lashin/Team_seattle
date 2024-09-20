@@ -17,7 +17,7 @@ import { doc, getDoc } from "firebase/firestore";
 
 export default function Landingpage() {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [setLoading] = useState(true);
   const { id } = useParams()
 
   const settings = {
@@ -44,33 +44,6 @@ export default function Landingpage() {
       },
     ],
   };
-
-  const imgOurProjects = [
-    { id: 1, src: "/uploads/landingpage/export/photo2.png" },
-    { id: 1, src: "/uploads/landingpage/export/photo3.png" },
-    { id: 1, src: "/uploads/landingpage/export/photo2.png" },
-    { id: 1, src: "/uploads/landingpage/export/photo3.png" },
-  ];
-
-  // // const imgSaleIn = [
-  // //   {
-  // //     id: 1,
-  // //     money: "28,000,000",
-  // //     CoinsName: "AED",
-  // //     bed: 3,
-  // //     bath: 4,
-  // //     square: 4.067,
-  // //     imgbed: "/uploads/commercial/export/icon/bed.png",
-  // //     imgbath: "/uploads/commercial/export/icon/bath.png",
-  // //     imgsquare: "/uploads/commercial/export/icon/square.png",
-  // //     title: "3BR Apartment in One Canal, Al Wasl (MS-12865)",
-  // //     LocationOn: "One Canal, Al Wasl",
-  // //     Parking: "Parking ",
-  // //     Parkingn: 4,
-  // //   },
-
-  //   // ... Add more items as needed
-  // ];
 
   // get Data Base FireBase
 
@@ -117,9 +90,6 @@ export default function Landingpage() {
         style={{
           backgroundImage: `url(${data.imageCart})`,
         }}
-      // style={{
-      //   backgroundImage: `url(/uploads/landingpage/export/photo1.png)`,
-      // }}
       >
         <NavPar />
         <div className="h-5vh"></div>
