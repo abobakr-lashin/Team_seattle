@@ -101,8 +101,8 @@ export default function BuyHome() {
             <br />
             <div className="dis">
               <div>
-                <div className="btn-t"><Link to={"/Landingpage"} >Buy Property</Link>  </div>
-                <div className="btn-t"><Link to={"/Landingpage"}>Rent Property</Link> </div>
+                <div className="btn-t"><Link to={""} >Buy Property</Link>  </div>
+                <div className="btn-t"><Link to={""}>Rent Property</Link> </div>
               </div>
             </div>
           </div>
