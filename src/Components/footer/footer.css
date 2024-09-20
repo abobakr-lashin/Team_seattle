@@ -33,6 +33,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 100px 100px 0px 0px;
 }
 a {
   text-decoration-line: none !important ;
@@ -109,6 +110,7 @@ a {
 .social-media .icon {
   font-size: 20px;
   margin: 0 5px;
+  padding-top: 18px
 }
 
 .social-media {
@@ -133,7 +135,7 @@ a {
     color: white;
     width: 90%;
     margin: auto !important;
-    height: 75vh !important;
+    height: 61vh !important;
   }
   .bg-footer {
     width: 100% ;
@@ -161,6 +163,12 @@ a {
   .copyright {
     margin: -25px;
   }
+  .css-480o17-MuiGrid-root>.MuiGrid-item{
+    padding-top: 83px !important;
+  }
+  .css-d7ugl3-MuiGrid-root>.MuiGrid-item {
+    padding-top: 0;
+}
 }
 
 @media screen and (max-width: 1560px) {

@@ -278,13 +278,13 @@ const Navbar = () => {
                   رجوع
                 </div>
 
-                <Grid
+                <div
                   container
                   spacing={2}
-                  className="custom-dropdown-item dis-paly2"
+                  className="custom-dropdown-item  "
                 >
-                  <div className="dis-paly2">
-                    <Grid item lg={7} xs={12}>
+                  <div className="dis-paly2 dis-buy">
+                    <div item lg={7} xs={12}>
                       <h3>
                         RENT PROPERTIES IN THE UAE{" "}
                         <img src="./uploads/nav/icon/arrow.png" alt="" />
@@ -302,13 +302,14 @@ const Navbar = () => {
                           <li>Utilities Connections and Payments</li>
                         </ul>
                       </div>
-                    </Grid>
-                    <Grid item lg={5} xs={12}>
+                    </div>
+                    <div item lg={5} xs={12}>
                       <div className="imgNbuy">
                         <img src="./uploads/nav/rent/2.png" alt="" />
                       </div>
-                    </Grid>
+                    </div>
                   </div>
+
                   <div className="imgnp">
                     <div className="disi">
                       <div>
@@ -321,7 +322,7 @@ const Navbar = () => {
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
-                </Grid>
+                </div>
               </ul>
             </div>
           </li>
@@ -345,15 +346,19 @@ const Navbar = () => {
                   رجوع
                 </div>
 
-                <Grid container spacing={2} className="custom-dropdown-item">
-                  <Grid item xs={5}>
+                <div container spacing={2} className="custom-dropdown-item">
                     <h3>
-                      Buy commercial properties{" "}
+                    BUY COMMERCIAL PROPERTIES
+                    {" "}
                       <img src="./uploads/nav/icon/arrow.png" alt="" />
                     </h3>
+                  <div className="dis-buy"> 
+                     <div item xs={5}>
 
                     <ul>
-                      <h4>Rental Properties</h4>
+                      <h4>Secondary properties
+
+</h4>
                       {DataBase.slice(0, 4).map((it) => {
                         return (
 
@@ -363,15 +368,17 @@ const Navbar = () => {
                         );
                       })}
                     </ul>
-                  </Grid>
-                  <Grid item xs={7} display={"flex"}>
+                  </div>
+                  <div item xs={7} className={"dis-buy"}>
                     <div className="imgNCommercial">
                       <img src="./uploads/nav/commercial/2.png" alt="" />
                     </div>
                     <div className="imgNCommercial">
                       <img src="./uploads/nav/commercial/4.png" alt="" />
                     </div>
-                  </Grid>
+                  </div>
+                  </div>
+                 
                   <div className="imgnp">
                     <div className="disi">
                       <div>
@@ -384,7 +391,7 @@ const Navbar = () => {
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
-                </Grid>
+                </div>
               </ul>
             </div>
           </li>
@@ -414,15 +421,19 @@ const Navbar = () => {
                   رجوع
                 </div>
 
-                <Grid container spacing={2} className="custom-dropdown-item">
-                  <Grid item xs={5}>
+                <div container spacing={2} className="custom-dropdown-item">
                     <h3>
-                      See all developers in UAE{" "}
+                    THE UAE’S TOP DEVELOPERS
+                    {" "}
                       <img src="./uploads/nav/icon/arrow.png" alt="" />
                     </h3>
+              <div className="dis-buy">
+              <div item xs={5}>
+                        <h4>Top developers
+
+</h4>
                     <div className="dis-paly2">
                       <ul>
-                        <h4>Top developers</h4>
                         <li>Emaar</li>
                         <li>ALDAR</li>
                         <li>Bloom</li>
@@ -430,7 +441,6 @@ const Navbar = () => {
                       <ul>
                         <li>Select Group
                         </li>
-                        <li>Reportage</li>
                         <li>DAMAC</li>
                         <li>Meraas</li>
                       </ul>
@@ -450,12 +460,13 @@ const Navbar = () => {
                       </li>
                     </div>
                     <ul></ul>
-                  </Grid>
-                  <Grid item xs={7}>
+                  </div>
+                  <div item xs={7}>
                     <div className="imgNCommercial">
                       <img src="./uploads/nav/developers/1.png" alt="" />
                     </div>
-                  </Grid>
+                  </div>
+              </div>
                   <div className="imgnp">
                     <div className="disi">
                       <div>
@@ -468,7 +479,7 @@ const Navbar = () => {
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
-                </Grid>
+                </div>
               </ul>
             </div>
           </li>
@@ -762,7 +773,7 @@ const Navbar = () => {
             onMouseLeave={() => handleMouseLeave("CONTACT_US")}
             onClick={() => handleDropdownToggle("CONTACT_US")}
           >
-            <span className="custom-navbar-link">CONTACT US</span>
+            <span className="custom-navbar-link">APPLY</span>
 
             <div className="CONTACT">
               <ul

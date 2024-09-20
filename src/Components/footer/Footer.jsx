@@ -98,7 +98,7 @@ export default function Footer() {
 
 
                 <div><Link to="/SELL" color="inherit" className="link">   <FiberManualRecordIcon className='color-g2'/>SELL</Link></div>
-                <div><Link to="/Contactus" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/>CONTACT US</Link></div>
+                <div><Link to="/Contactus" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/>APPLY</Link></div>
                 <div><Link to="/About" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/> ABOUT US</Link></div>
                 <div><Link to="/LatestNews" color="inherit" className="link"> <FiberManualRecordIcon className='color-g2'/> BLOGS</Link></div>
                 </div>

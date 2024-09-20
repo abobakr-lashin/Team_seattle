@@ -18,11 +18,11 @@
 
 
 /* عند المرور على العنصر، تفتح القائمة */
-  .custom-navbar-item .custom-dropdown-menu:hover{
-  display: block;
+  .custom-navbar-item .custom-dropdown-menu {
+  display: none;
 } 
 
-.custom-dropdown-menu {
+.custom-dropdown-menu{
   display: block;
 } 
 .bt-back{
@@ -164,12 +164,12 @@
 .dis-paly li {
   list-style: none;
   padding: 5px;
-  font-weight: lighter !important;
+  font-weight: 500 !important;
 }
 .dis-paly h4 {
   list-style: disc;
   padding: 5px;
-  font-weight:500;
+  font-weight:550;
 }
 .dis-imgNbuy {
   display: flex;
@@ -182,10 +182,21 @@
   
   padding: 5px;
   margin: 5px;
-  font-weight: lighter !important;
+  font-weight: 500 !important;
   list-style: none;
 }
-
+.imgnp h3, .imgnp h4 {
+  width: 100%;
+  overflow: hidden; /* Ensures the text is clipped */
+  border-right: 2px solid rgba(0, 0, 0, 0.75); /* Creates a cursor effect */
+  white-space: nowrap; /* Ensures the text stays on one line */
+  width: 0; /* Start with zero width */
+  animation: typewriter 4s steps(30, end) infinite, blinkCursor 0.75s step-end infinite;
+}
+.imgnp h4{
+  
+  font-weight: lighter;
+}
 /* BUY */
 /* RENT */
 
@@ -213,6 +224,9 @@
   justify-content: start;
   width: 100%;
 }
+.RENT .dis-paly2 h3{
+font-weight: bold;
+}
 
 .RENT .dis-paly3 {
   display: flex !important;
@@ -229,14 +243,16 @@
 margin: 10px ;
 align-items: start;
 width: 100%;
+font-weight: 550;
 
 }
-.dis-paly3 li {
+.RENT .dis-paly3 li {
   text-align: start;
-  list-style: disc;
+  list-style: none;
   padding: 5px;
-  font-size: 22px;
+  font-size: 20px;
   width: 100%;
+  font-weight: 500;
 }
 
 .dis-imgNbuy2 li {
@@ -266,7 +282,11 @@ width: 100%;
 }
 /* RENT */
 /* Commercial */
-
+.Commercial .dis-buy{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .Commercial .custom-dropdown-menu {
   display: none;
   width: 80vw;
@@ -284,17 +304,19 @@ width: 100%;
 }
 
 .Commercial .css-mhc70k-MuiGrid-root > .MuiGrid-item {
- 
-
   font-size: 20px;
 }
 .Commercial .css-mhc70k-MuiGrid-root {
   align-items: start;
   list-style: disc;
 }
+
+
+
 .Commercial ul li {
   list-style: none;
-  font-weight: lighter;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .Commercial .dis-paly2 {
@@ -309,7 +331,7 @@ width: 100%;
 .Commercial ul h4{
   font-size: 24px;
   width: 100%;
-  font-weight: 550;
+  font-weight: 550 !important;
 }
 .dis-paly2 li {
   list-style: disc;
@@ -335,6 +357,22 @@ width: 100%;
 padding: 10px;
 font-weight: bold;
 
+}
+.Commercial h3{
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.Commercial .imgnp {
+  margin: 10px;
+  width: 99%;
+  height: 100px;
+  border-radius: 30px;
+  padding: 9px;
+  background-size: cover;
+}
+.Commercial .disi h4{
+  font-weight: lighter !important;
 }
 /* Commercial */
 /* developers */
@@ -374,13 +412,29 @@ font-weight: bold;
 .dis-paly2 li {
   list-style: none;
   padding: 5px;
-  margin: 10px;
+  font-weight: 500;
+margin: 10px auto;
+}
+.developers h3{
+  font-size: 2.5rem;
+  margin-left: 30px;
+  font-weight: bold;
+}
+.developers .dis-buy h4{
+  margin-left: 40px;
+  font-size: 2rem;
+  font-weight: 550;
 }
 
 .developers .dis-paly2 .aldar img{
 width: 130px;
 }
-
+.developers .imgnp  {
+padding: 9px;
+}
+.developers .imgnp h3{
+  margin-left: 0px;
+}
 .custom-dropdown-item {
   color: white;
   text-decoration: none;
@@ -389,7 +443,7 @@ width: 130px;
 .developers .imgNCommercial img {
   display: flex !important;
   justify-content: end !important;
-  width: 80%;
+  width: 100%;
 }
 .developers .imgNCommercial{
   width: 100%;
@@ -657,14 +711,7 @@ width: 130px;
 }
 
 /* Apply the animations */
-.imgnp h3, .imgnp h4 {
-  width: 100%;
-  overflow: hidden; /* Ensures the text is clipped */
-  border-right: 2px solid rgba(0, 0, 0, 0.75); /* Creates a cursor effect */
-  white-space: nowrap; /* Ensures the text stays on one line */
-  width: 0; /* Start with zero width */
-  animation: typewriter 4s steps(30, end) infinite, blinkCursor 0.75s step-end infinite;
-}
+
 .Blogs .custom-dropdown-menu {
   display: none;
   width: 82vw;
@@ -977,10 +1024,59 @@ font-size: 25px;  }
     top: 0;
     font-size: 23px;
 }
-
+.RENT .dis-paly3 li {
+  text-align: start;
+  list-style: none;
+  padding: 5px;
+  font-size: 18px;
+  width: 100%;
+  font-weight: lighter;
+}
 }
 
+@media (max-width: 1200px) {
+  .RENT .dis-paly2 h3 {
+    font-size: 20px;
+  }
+  .Commercial ul li {
+    list-style: none;
+    font-weight: 500;
+    font-size: 15px !important;
+  }
+  .dis-paly3 h4 {
+    margin: 10px;
+    align-items: start;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+}
+.imgnp h3, .imgnp h4 {
+  width: 97%;
+  overflow: hidden;
+  border-right: 2px solid rgba(0, 0, 0, 0.75);
+  white-space: nowrap;
+  width: 4px;
+  font-size: 17px;
+  animation: typewriter 4s steps(30, end) infinite, blinkCursor 0.75s step-end infinite;
+}
+  .RENT .dis-paly3 li {
+    text-align: start;
+    list-style: none;
+    padding: 5px;
+    font-size: 15px;
+    width: 100%;
+    font-weight: lighter;
+  }
+  .Commercial ul h4{
+    font-size: 18px;
+    width: 100%;
+    font-weight: 550 !important;
+  }
+
+}
 @media (max-width: 1280px) {
+
+
   .logo-nav{
     width: 120px;
   }
