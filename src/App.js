@@ -34,7 +34,7 @@ import Commercial from './Components/commercial/Commercial';
 import SaleIn from './Components/commercial/SaleIn';
 import Sell from './Components/sell/Sell';
 import Cardsell from './Components/sell/Cardsell';
-import Buycards from './Components/buy/Buycards';
+
 import Rent from './Components/RENT/Rent';
 import BuyHome from './Components/buyrentareas/BuyHome';
 import Developers from './Pages/Developers';
@@ -71,7 +71,7 @@ export default function App() {
                     <Route path="Commercial" element={<Commercial />} />
                     <Route path="SaleIn" element={<SaleIn />} />
                     <Route path="Cardsell" element={<Cardsell />} />
-                    <Route path="BuBuycardsy" element={<Buycards />} />
+                   
                     <Route path="Rent" element={<Rent />} />
                     <Route path="BuyHome" element={<BuyHome />} />
                     <Route path="Developers" element={<Developers />} />
