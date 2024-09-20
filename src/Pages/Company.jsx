@@ -5,7 +5,7 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 import { Grid } from '@mui/material';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import NavPar from '../Components/appbar/NavPar';
-import "../Components/buy/buy.css";
+// import "../Components/buy/buy.css";
 import OUREXPERT from './OUREXPERT';
 import Footer from '../Components/footer/Footer';
 import { collection, getDocs } from 'firebase/firestore';
