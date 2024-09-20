@@ -34,12 +34,10 @@ import Commercial from './Components/commercial/Commercial';
 import SaleIn from './Components/commercial/SaleIn';
 import Sell from './Components/sell/Sell';
 import Cardsell from './Components/sell/Cardsell';
-import Buy from './Components/buy/Buy';
 import Buycards from './Components/buy/Buycards';
 import Rent from './Components/RENT/Rent';
 import BuyHome from './Components/buyrentareas/BuyHome';
 import Developers from './Pages/Developers';
-import Landingpage from './Components/landingpage/Landingpage';
 import CareersForm from './Components/contactus/CareersForm';
 import ContactusForm from './Components/contactus/ContactusForm';
 import About from './Components/abuotus/About';
@@ -73,19 +71,17 @@ export default function App() {
                     <Route path="Commercial" element={<Commercial />} />
                     <Route path="SaleIn" element={<SaleIn />} />
                     <Route path="Cardsell" element={<Cardsell />} />
-                    <Route path="Buy" element={<Buy />} />
                     <Route path="BuBuycardsy" element={<Buycards />} />
                     <Route path="Rent" element={<Rent />} />
                     <Route path="BuyHome" element={<BuyHome />} />
                     <Route path="Developers" element={<Developers />} />
-                    <Route path="Landingpage/:id" element={<Landingpage />} />
                     <Route path="CareersForm" element={<CareersForm />} />
                     <Route path="ContactusForm" element={<ContactusForm />} />
                     <Route path="About" element={<About />} />
                     <Route path="*" element={<NotFonunt />} />
                     <Route path="login" element={<Login />} />
                     {/*  */}
-                    <Route path="/:id" element={<Company />} />                 
+                    <Route path="/:id" element={<Company />} />
                     {/*  */}
                     <Route path="dashboard" element={<Dashboard />} >
                         <Route index element={<Formdb />} />
