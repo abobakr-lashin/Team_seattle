@@ -80,9 +80,9 @@ export default function App() {
                     <Route path="About" element={<About />} />
                     <Route path="*" element={<NotFonunt />} />
                     <Route path="login" element={<Login />} />
-                    {/*  */}
+          
                     <Route path="/:id" element={<Company />} />
-                    {/*  */}
+             
                     <Route path="dashboard" element={<Dashboard />} >
                         <Route index element={<Formdb />} />
                         <Route path="Formservice" element={<Formservice />} />
