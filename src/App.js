@@ -51,7 +51,7 @@ export default function App() {
             <HashRouter>
                 <ScrollToTop />
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    {/* <Route path="/" element={<Home />} />
                     <Route path="Ourpartners" element={<Ourpartners />} />
                     <Route path="TeamS" element={<TeamS />} />
                     <Route path="TeamDetails/:Teamid" element={<TeamDetails />} />
@@ -67,7 +67,7 @@ export default function App() {
                     <Route path="FormMS" element={<FormMS />} />
                     <Route path="Careers" element={<Careers />} />
                     <Route path="Contactus" element={<Contactus />} />
-                    <Route path="LastNews" element={<LastNews />} />
+                    <Route path="LastNews" element={<LastNews />} /> */}
                     {/* <Route path="Commercial" element={<Commercial />} />
                     <Route path="SaleIn" element={<SaleIn />} />
                     <Route path="Cardsell" element={<Cardsell />} />
