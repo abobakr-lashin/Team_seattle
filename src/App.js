@@ -71,7 +71,6 @@ export default function App() {
                     <Route path="Commercial" element={<Commercial />} />
                     <Route path="SaleIn" element={<SaleIn />} />
                     <Route path="Cardsell" element={<Cardsell />} />
-                   
                     <Route path="Rent" element={<Rent />} />
                     <Route path="BuyHome" element={<BuyHome />} />
                     <Route path="Developers" element={<Developers />} />
@@ -80,10 +79,8 @@ export default function App() {
                     <Route path="About" element={<About />} />
                     <Route path="*" element={<NotFonunt />} />
                     <Route path="login" element={<Login />} />
-          
-                    <Route path="/:id" element={<Company />} />
-             
-                    <Route path="dashboard" element={<Dashboard />} >
+                    {/* <Route path="/:id" element={<Company />} /> */}
+                    {/* <Route path="dashboard" element={<Dashboard />} >
                         <Route index element={<Formdb />} />
                         <Route path="Formservice" element={<Formservice />} />
                         <Route path="RequestQuote" element={<RequestQuote />} />
@@ -94,7 +91,7 @@ export default function App() {
                         <Route path="update-blog/:id" element={<UpdateBlog />} />
                         <Route path="Commercialcreat" element={<Commercialcreat />} />
                         <Route path="AddCategory" element={<AddCategory />} />
-                    </Route>
+                    </Route> */}
                 </Routes>
             </HashRouter>
             <ToastContainer />
