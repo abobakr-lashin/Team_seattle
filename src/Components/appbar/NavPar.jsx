@@ -592,7 +592,7 @@ const Navbar = () => {
                             the UAE <br /> Seattle & Middle East: Your Trusted Partner
                             in Real Estate Investment
                           </div>
-                          <div className="p2 pt-2 pb-4">
+                          <div className="p2 pt-2 pb-1">
                             The UAE has evolved into a premier global
                             destination for real estate investment, <br /> a vision
                             realized by its leadership. Attracting investors
@@ -607,7 +607,7 @@ const Navbar = () => {
                       </div>
                       <div>
 
-                        <div className="dis-paly1">
+                        <div className="dis-paly1 pb-1">
                           <div className="img">
                             <img src="./uploads/nav/bolgs/3.png" alt="" />
                           </div>

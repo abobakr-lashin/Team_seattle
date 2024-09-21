@@ -536,10 +536,10 @@
 
 .Blogs .custom-dropdown-menu {
   display: none;
-  width: 82vw;
+  width: 72vw;
   margin: 10px;
   position: absolute;
-  left: -39vw !important;
+  left: -29vw !important;
   background-color: #bfb78f;
   list-style: none;
   padding: 18px 34px;
@@ -590,17 +590,15 @@
   justify-content: end;
 }
 .Blogs .imgNbuy .imgNbuy1 img {
-  width: 90%;
-  height: 330px;
+  width: 100%;
+  height: 300px;
 }
 .Blogs .imgNbuy .imgNbuy2 img {
-  width: 90%;
-  height: 190px;
-  margin-top: 1 0px;
+  width: 100%;
 }
 
 .titledis h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bolder;
 }
 
@@ -617,8 +615,7 @@
   margin-left: 5px;
 }
 .Blogs .dis-paly1 .img img {
-  width: 90px;
-  height: 100%;
+  width: 80px;
 }
 .Blogs .dis-paly1 .titel h5 {
   font-size: 18px;
@@ -633,17 +630,18 @@
 .Blogs .dis-buy .titledis {
   flex-direction: column;
   display: flex;
-  margin-top: 20px;
-  margin-left: 20px;
+ 
   font-size: 18px;
   width: 65%;
   flex-wrap: wrap;
 }
 .Blogs .dis-paly3 .p9 {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
 }
-
+.Blogs .dis-buy .p2 {
+  font-size:15px;
+}
 /* Blogs */
 /* About */
 
