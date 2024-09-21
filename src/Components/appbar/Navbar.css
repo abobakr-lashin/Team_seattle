@@ -402,7 +402,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.dis-paly2 li {
+.developers .dis-paly2 li {
   list-style: none;
   padding: 5px;
   font-weight: 500;
@@ -756,6 +756,11 @@
 }
 /* ABOUT */
 /* APPLY */
+.APPLY .dis-buy{
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .APPLY .css-mhc70k-MuiGrid-root {
   margin-top: 30px !important;
 }
@@ -792,20 +797,24 @@
   align-items: center;
   justify-content: space-between;
 }
-.dis-paly li {
-  list-style: none;
+.APPLY .dis-paly li {
+  list-style: none !important;
   padding: 5px;
 }
-.APPLY .imgNCommercial {
+.APPLY .imgNCommercial  {
   display: flex !important;
   width: 100%;
   font-size: 20px;
-  align-items: end !important;
-  justify-content: end !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .APPLY .dis-paly2 li {
   font-size: 24px;
+  font-weight: normal;
+  list-style: none !important;
+  padding: 5px;
+
 }
 /* APPLY */
 
@@ -1019,13 +1028,26 @@
   .Blogs .dis-buy .p2 {
     font-size: 0.8rem;
   }
-  
-.imgnp .h3{
-  font-size: 20px;
 
-} .imgnp .h4{
-font-size: 18px;
-} 
+  .imgnp .h3 {
+    font-size: 20px;
+  }
+  .imgnp .h4 {
+    font-size: 18px;
+  }
+
+  .APPLY .custom-dropdown-menu .imgcon h2 {
+    font-size: 55px;
+}
+.APPLY .custom-dropdown-menu .imgcon h3 {
+  font-size: 1.45rem;
+}
+.APPLY .dis-paly2 li {
+  font-size: 20px;
+  font-weight: normal;
+  list-style: none !important;
+  padding: 5px;
+}
 }
 @media (max-width: 1400px) {
   .AREAS .dis-buy1 h3 {
@@ -1118,6 +1140,19 @@ font-size: 18px;
   .Blogs .dis-buy .p2 {
     font-size: 0.7rem;
   }
+
+  .APPLY .custom-dropdown-menu .imgcon h2 {
+    font-size: 40px;
+}
+.APPLY .custom-dropdown-menu .imgcon h3 {
+  font-size: 1rem;
+}
+.APPLY .dis-paly2 li {
+  font-size: 20px;
+  font-weight: normal;
+  list-style: none !important;
+  padding: 5px;
+}
 }
 @media (max-width: 1280px) {
   .logo-nav {
@@ -1556,7 +1591,7 @@ font-size: 18px;
   }
 
   .APPLY .custom-dropdown-menu .imgcon img {
-    width: 86%;
+    width: 100%;
   }
 
   .APPLY .dis-paly2 {
@@ -1575,12 +1610,13 @@ font-size: 18px;
     display: flex;
     width: 100%;
     font-size: 20px;
-    align-items: end;
+    align-items: center;
     justify-content: end !important;
   }
 
   .APPLY .dis-paly2 li {
     font-size: 24px;
+    font-weight: lighter !important;
   }
   /* APPLY */
   /* About */

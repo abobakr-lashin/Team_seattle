@@ -782,21 +782,24 @@ const Navbar = () => {
                 <div container spacing={2} className="custom-dropdown-item">
             <div className="dis-buy">
             <div md={6} xs={12}>
-                    <div className="imgcon">
-                      <h2>Elevate Your Career</h2>
-                      <h3>Join Our Team of Real Estate Experts Today.</h3>
-                    </div>
                     <div className="dis-paly2">
                       <ul>
+                    <div className="imgcon">
+                      <h2>Elevate Your Career
+                      </h2>
+                      <h3>Join Our Team of Real Estate Experts Today.
+
+</h3>
+                    </div>
                         <li>
-                          <Link className="custom-dropdown-item" to="/Careers">
+                          <Link to="/Careers">
                             CAREERS{" "}
                             <img src="./uploads/nav/icon/arrow.png" alt="" />
                           </Link>
                         </li>
                         <li>
                           <Link
-                            className="custom-dropdown-item"
+                           
                             to="/Contactus"
                           >
                             CONTACT US{" "}
@@ -804,7 +807,7 @@ const Navbar = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link className="custom-dropdown-item" to="/Login">
+                          <Link  to="/Login">
                             login{" "}
                             <img src="./uploads/nav/icon/arrow.png" alt="" />
                           </Link>
