@@ -15,7 +15,7 @@ const Navbar = () => {
     OUR_PROJECTS: false,
     COMPANIES: false,
     MEDIA_CENTER: false,
-    CONTACT_US: false,
+    APPLY: false,
     BUY: false,
     RENT: false,
     Commercial: false,
@@ -35,7 +35,7 @@ const Navbar = () => {
       OUR_PROJECTS: false,
       COMPANIES: false,
       MEDIA_CENTER: false,
-      CONTACT_US: false,
+      APPLY: false,
       BUY: false,
       RENT: false,
       Commercial: false,
@@ -76,7 +76,7 @@ const Navbar = () => {
       OUR_PROJECTS: false,
       COMPANIES: false,
       MEDIA_CENTER: false,
-      CONTACT_US: false,
+      APPLY: false,
       BUY: false,
       RENT: false,
       Commercial: false,
@@ -155,7 +155,7 @@ const Navbar = () => {
   return (
     <div className="custom-navbar-brand">
       <Link to="/">
-        <img className="logo-nav"  src="./uploads/img/LOGO.png" alt="Logo" />
+        <img className="logo-nav" src="./uploads/img/LOGO.png" alt="Logo" />
       </Link>
       <nav className="custom-navbar">
         <div className="custom-navbar-toggle" onClick={toggleMenu}>
@@ -182,73 +182,63 @@ const Navbar = () => {
                 <div className="bt-back" onClick={handltap}>
                   رجوع
                 </div>
-                <div  container spacing={2} className="custom-dropdown-item  dis-buy">
-             <div className="dis-buy">
-             <div item  lg={5} xs={12}>
-                    <h3>
-                    PURCHASE PROPERTIES IN THE UAE
-                    {" "}
-                      <img src="./uploads/nav/icon/arrow.png" alt="" />
-                    </h3>
-                    <div className="dis-paly">
-                      <ul>
-                        <h4> Secondary properties
-
-</h4>
-                        <li>
-                   
-                          {"  "}Hot Properties
-
-                        </li>
-                        <li>
-                          {"  "}Exclusive Properties
-
-                        </li>
-                        <li>Apartments</li>
-                        <li>Penthouses</li>
-                      </ul>
-                      <ul>
-                        <h4>Off-plan
-
-</h4>
-                        <li>Apartments</li>
-                        <li>Penthouses</li>
-                        <li>Townhouses</li>
-                        <li>Villas</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div item lg={7} xs={12}>
-                    <div className="dis-imgNbuy">
-                      <div className="imgNbuy">
-                        <img src="./uploads/nav/buy/1.png" alt="" />
+                <div
+                  container
+                  spacing={2}
+                  className="custom-dropdown-item  dis-buy"
+                >
+                  <div className="dis-buy">
+                    <div item lg={5} xs={12}>
+                      <h3>
+                        PURCHASE PROPERTIES IN THE UAE{" "}
+                        <img src="./uploads/nav/icon/arrow.png" alt="" />
+                      </h3>
+                      <div className="dis-paly">
+                        <ul>
+                          <h4> Secondary properties</h4>
+                          <li>{"  "}Hot Properties</li>
+                          <li>{"  "}Exclusive Properties</li>
+                          <li>Apartments</li>
+                          <li>Penthouses</li>
+                        </ul>
+                        <ul>
+                          <h4>Off-plan</h4>
+                          <li>Apartments</li>
+                          <li>Penthouses</li>
+                          <li>Townhouses</li>
+                          <li>Villas</li>
+                        </ul>
                       </div>
+                    </div>
 
-                      <ul className="ullest">
-                        <h3>INVEST BY EMIRATE
+                    <div item lg={7} xs={12}>
+                      <div className="dis-imgNbuy">
+                        <div className="imgNbuy">
+                          <img src="./uploads/nav/buy/1.png" alt="" />
+                        </div>
 
-</h3>
-                        <li>Abu Dhabi
-                        </li>
-                        <li>Dubai</li>
-                        <li>Sharjah</li>
-                        <li>Ajman</li>
-                        <li>Ras Al Khaimah
-                        </li>
-                        <li>Fujairah</li>
-                      </ul>
+                        <ul className="ullest">
+                          <h3>INVEST BY EMIRATE</h3>
+                          <li>Abu Dhabi</li>
+                          <li>Dubai</li>
+                          <li>Sharjah</li>
+                          <li>Ajman</li>
+                          <li>Ras Al Khaimah</li>
+                          <li>Fujairah</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-             </div>
                   <div className="imgnp">
                     <div className="disi">
                       <div>
-                        <h3>Schedule your free consultation today</h3>
-                        <h4>
+                        <div className="h3">
+                          Schedule your free consultation today
+                        </div>
+                        <div className="h4">
                           And our team will help you find the ideal property for
                           your needs
-                        </h4>
+                        </div>
                       </div>
                       <FormN name={"Free consultation"} />
                     </div>
@@ -278,11 +268,7 @@ const Navbar = () => {
                   رجوع
                 </div>
 
-                <div
-                  container
-                  spacing={2}
-                  className="custom-dropdown-item  "
-                >
+                <div container spacing={2} className="custom-dropdown-item  ">
                   <div className="dis-paly2 dis-buy">
                     <div item lg={7} xs={12}>
                       <h3>
@@ -313,11 +299,13 @@ const Navbar = () => {
                   <div className="imgnp">
                     <div className="disi">
                       <div>
-                        <h3>Schedule your free consultation today</h3>
-                        <h4>
+                        <div className="h3">
+                          Schedule your free consultation today
+                        </div>
+                        <div className="h4">
                           And our team will help you find the ideal property for
                           your needs
-                        </h4>
+                        </div>
                       </div>
                       <FormN name={"Free consultation"} />
                     </div>
@@ -347,46 +335,43 @@ const Navbar = () => {
                 </div>
 
                 <div container spacing={2} className="custom-dropdown-item">
-                    <h3>
-                    BUY COMMERCIAL PROPERTIES
-                    {" "}
-                      <img src="./uploads/nav/icon/arrow.png" alt="" />
-                    </h3>
-                  <div className="dis-buy"> 
-                     <div item xs={5}>
-
-                    <ul>
-                      <h4>Secondary properties
-
-</h4>
-                      {DataBase.slice(0, 4).map((it) => {
-                        return (
-
-                          <li key={it.id}>
-                            <Link to={`/${it.name}`}>{it.name}</Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                  <div item xs={7} className={"dis-buy"}>
-                    <div className="imgNCommercial">
-                      <img src="./uploads/nav/commercial/2.png" alt="" />
+                  <h3>
+                    BUY COMMERCIAL PROPERTIES{" "}
+                    <img src="./uploads/nav/icon/arrow.png" alt="" />
+                  </h3>
+                  <div className="dis-buy">
+                    <div item xs={5}>
+                      <ul>
+                        <h4>Secondary properties</h4>
+                        {DataBase.slice(0, 4).map((it) => {
+                          return (
+                            <li key={it.id}>
+                              <Link to={`/${it.name}`}>{it.name}</Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
                     </div>
-                    <div className="imgNCommercial">
-                      <img src="./uploads/nav/commercial/4.png" alt="" />
+                    <div item xs={7} className={"dis-buy"}>
+                      <div className="imgNCommercial">
+                        <img src="./uploads/nav/commercial/2.png" alt="" />
+                      </div>
+                      <div className="imgNCommercial">
+                        <img src="./uploads/nav/commercial/4.png" alt="" />
+                      </div>
                     </div>
                   </div>
-                  </div>
-                 
+
                   <div className="imgnp">
                     <div className="disi">
                       <div>
-                        <h3>Schedule your free consultation today</h3>
-                        <h4>
+                        <div className="h3">
+                          Schedule your free consultation today
+                        </div>
+                        <div className="h4">
                           And our team will help you find the ideal property for
                           your needs
-                        </h4>
+                        </div>
                       </div>
                       <FormN name={"Free consultation"} />
                     </div>
@@ -422,59 +407,69 @@ const Navbar = () => {
                 </div>
 
                 <div container spacing={2} className="custom-dropdown-item">
-                    <h3>
-                    THE UAE’S TOP DEVELOPERS
-                    {" "}
-                      <img src="./uploads/nav/icon/arrow.png" alt="" />
-                    </h3>
-              <div className="dis-buy">
-              <div item xs={5}>
-                        <h4>Top developers
-
-</h4>
-                    <div className="dis-paly2">
-                      <ul>
-                        <li>Emaar</li>
-                        <li>ALDAR</li>
-                        <li>Bloom</li>
-                      </ul>
-                      <ul>
-                        <li>Select Group
+                  <h3>
+                    THE UAE’S TOP DEVELOPERS{" "}
+                    <img src="./uploads/nav/icon/arrow.png" alt="" />
+                  </h3>
+                  <div className="dis-buy">
+                    <div item xs={5}>
+                      <h4>Top developers</h4>
+                      <div className="dis-paly2">
+                        <ul>
+                          <li>Emaar</li>
+                          <li>ALDAR</li>
+                          <li>Bloom</li>
+                        </ul>
+                        <ul>
+                          <li>Select Group</li>
+                          <li>DAMAC</li>
+                          <li>Meraas</li>
+                        </ul>
+                      </div>
+                      <div className="dis-paly2">
+                        <li className="aldar">
+                          <img
+                            src="./uploads/nav/developers/aldar.png"
+                            alt=""
+                          />
                         </li>
-                        <li>DAMAC</li>
-                        <li>Meraas</li>
-                      </ul>
+                        <li className="aldar">
+                          <img
+                            src="./uploads/nav/developers/bloom.png"
+                            alt=""
+                          />
+                        </li>
+                        <li className="aldar">
+                          <img
+                            src="./uploads/nav/developers/damac.png"
+                            alt=""
+                          />
+                        </li>
+                        <li className="aldar">
+                          <img
+                            src="./uploads/nav/developers/emaar.png"
+                            alt=""
+                          />
+                        </li>
+                      </div>
+                      <ul></ul>
                     </div>
-                    <div className="dis-paly2">
-                      <li className="aldar">
-                        <img src="./uploads/nav/developers/aldar.png" alt="" />
-                      </li>
-                      <li className="aldar">
-                        <img src="./uploads/nav/developers/bloom.png" alt="" />
-                      </li>
-                      <li className="aldar">
-                        <img src="./uploads/nav/developers/damac.png" alt="" />
-                      </li>
-                      <li className="aldar">
-                        <img src="./uploads/nav/developers/emaar.png" alt="" />
-                      </li>
+                    <div item xs={7}>
+                      <div className="imgNCommercial">
+                        <img src="./uploads/nav/developers/1.png" alt="" />
+                      </div>
                     </div>
-                    <ul></ul>
                   </div>
-                  <div item xs={7}>
-                    <div className="imgNCommercial">
-                      <img src="./uploads/nav/developers/1.png" alt="" />
-                    </div>
-                  </div>
-              </div>
                   <div className="imgnp">
                     <div className="disi">
                       <div>
-                        <h3>Schedule your free consultation today</h3>
-                        <h4>
+                        <div className="h3">
+                          Schedule your free consultation today
+                        </div>
+                        <div className="h4">
                           And our team will help you find the ideal property for
                           your needs
-                        </h4>
+                        </div>
                       </div>
                       <FormN name={"Free consultation"} />
                     </div>
@@ -503,79 +498,63 @@ const Navbar = () => {
                   رجوع
                 </div>
 
-                <Grid container spacing={2} className="custom-dropdown-item">
-                  <Grid item lg={4} md={12}>
-                    <h3>
-                    DISCOVER AREAS IN THE UAE
-
-{" "}
-                      <img src="./uploads/nav/icon/arrow.png" alt="" />
-                    </h3>
-                    <div className="dis-paly">
-                      <ul>
-                        <li>Palm Jumeirah</li>
-                        <li>Yas Island
-                        </li>
-                        <li>Downtown Dubai
-                        </li>
-                        <li>Saadiyat Island
-                        </li>
-                        <li>Maryah Island
-                        </li>
-                        <li>Al Reem Island
-                        </li>
-                      </ul>
-                      <ul>
-                        <li>Rabdan
-                        </li>
-                        <li>Khalifa City
-                        </li>
-                        <li>Al Raha City
-                        </li>
-                        <li>Masdar City
-                        </li>
-                        <li>Zayed City
-                        </li>
-                      </ul>
-                    </div>
-                  </Grid>
-
-                  <Grid item lg={7} md={12}>
-                    <div className="dis-imgNbuy">
-                      <div className="imgNbuy">
-                        <img src="./uploads/nav/areas/1.png" alt="" />
+                <div container spacing={2} className="custom-dropdown-item ">
+                  <div className="dis-buy">
+                    <div className="dis-buy1">
+                      <h3>
+                        DISCOVER AREAS IN THE UAE{" "}
+                        <img src="./uploads/nav/icon/arrow.png" alt="" />
+                      </h3>
+                      <div item lg={4} md={12} className="dis-buy">
+                        <div className="dis-paly">
+                          <ul>
+                            <li>Palm Jumeirah</li>
+                            <li>Yas Island</li>
+                            <li>Downtown Dubai</li>
+                            <li>Saadiyat Island</li>
+                            <li>Maryah Island</li>
+                            <li>Al Reem Island</li>
+                          </ul>
+                          <ul>
+                            <li>Rabdan</li>
+                            <li>Khalifa City</li>
+                            <li>Al Raha City</li>
+                            <li>Masdar City</li>
+                            <li>Zayed City</li>
+                          </ul>
+                        </div>
                       </div>
-
+                    </div>
+                    <div className="imgNbuy">
+                      <img src="./uploads/nav/areas/1.png" alt="" />
+                    </div>
+                    <div className="dis-imgNbuy">
                       <ul>
-                        <h3>BY EMIRATES
-
-</h3>
-                        <li>Abu Dhabi
-                        </li>
+                        <h3>BY EMIRATES</h3>
+                        <li>Abu Dhabi</li>
                         <li>Dubai</li>
                         <li>Sharjah</li>
-                        <li>Ajman
-                        </li>
-                        <li>Ras Al Khaimah
-                        </li>
-                        <li>Fujairah
-                        </li>
+                        <li>Ajman</li>
+                        <li>Ras Al Khaimah</li>
+                        <li>Fujairah</li>
                       </ul>
                     </div>
-                  </Grid>
+                  </div>
                   <div className="imgnp">
                     <div className="disi">
                       <div>
-                        <h3>Schedule your free consultation today</h3>
-                        <h4>
+                        <div className="h3">
+                          Schedule your free consultation today
+                        </div>
+                        <div className="h4">
                           And our team will help you find the ideal property for
                           your needs
-                        </h4>
+                        </div>
                       </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
-                </Grid>
+                </div>
               </ul>
             </div>
           </li>
@@ -599,81 +578,95 @@ const Navbar = () => {
                   رجوع
                 </div>
 
-                <Grid
-                  container
-                  spacing={2}
-                  className="custom-dropdown-item"
-                  sx={{ display: "flex" }}
-                >
-                  <Grid item spacing={2} xs={5}>
-                    <h3>
-                      Buy properties in UAE{" "}
-                      <img src="./uploads/nav/icon/arrow.png" alt="" />
-                    </h3>
-                    <div className="dis-paly">
-                      <p>
-                        A Comprehensive Guide Discover everything you need to
-                        know about life and culture in the UAE. Learn how the
-                        emirates are organized, explore work and investment
-                        opportunities, and get detailed instructions on applying
-                        for visas, extending stays, and making purchases.
-                      </p>
-                    </div>
-                    <div>
-                      <div className="dis-paly1">
-                        <div className="img">
-                          <img src="./uploads/nav/blogs/photo10.png" alt="" />
-                        </div>
-                        <div className="titel">
-                          <h5>The Future of the UAE Real Estate Market</h5>
-                          <p>
-                            Securing Your Dream Home: Navigating Market,
-                            Finances.
-                            <p>19 / August / 2024</p>
-                          </p>
+                <div container spacing={2} className="custom-dropdown-item">
+                  <div className="dis-buy">
+                    <div className="titledis">
+                      <h3>
+                        EXPLORE THE UAE{" "}
+                        <img src="./uploads/nav/icon/arrow.png" alt="" />
+                      </h3>
+                      <div className="dis-paly3">
+                        <div>
+                          <div className="p9">
+                            A Comprehensive Guide to Investing in Real Estate in
+                            the UAE <br /> Seattle & Middle East: Your Trusted Partner
+                            in Real Estate Investment
+                          </div>
+                          <div className="p2 pt-2 pb-4">
+                            The UAE has evolved into a premier global
+                            destination for real estate investment, <br /> a vision
+                            realized by its leadership. Attracting investors
+                            with its strategic location, <br /> robust economy, and
+                            tax-free incentives, the UAE offers diverse
+                            opportunities <br /> across residential, commercial, and
+                            industrial sectors. Seattle & Middle East is <br />
+                            committed to guiding you through this dynamic market
+                            to maximize your investment <br /> potential.
+                          </div>
                         </div>
                       </div>
-                      <div className="dis-paly1">
-                        <div className="img">
-                          <img src="./uploads/nav/blogs/photo9.png" alt="" />
-                        </div>
-                        <div className="titel">
-                          <h5>The Future of the UAE Real Estate Market</h5>
-                          <p>
-                            Securing Your Dream Home: Navigating Market,
-                            Finances.
-                            <p>19 / August / 2024</p>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </Grid>
+                      <div>
 
-                  <Grid item xs={7}>
-                    <div className="dis-imgNbuy">
-                      <div className="imgNbuy">
-                        <div className="imgNbuy1">
-                          <img src="./uploads/nav/blogs/photo7.png" alt="" />
+                        <div className="dis-paly1">
+                          <div className="img">
+                            <img src="./uploads/nav/bolgs/3.png" alt="" />
+                          </div>
+                          <div className="titel">
+                            <h5>The Future of the UAE Real Estate Market</h5>
+                            <p>
+                              Exploring Trends and Opportunities in a Dynamic
+                              Landscape
+                              <p> 21 / August / 2024</p>
+                            </p>
+                          </div>
                         </div>
-                        <div className="imgNbuy2">
-                          <img src="./uploads/nav/blogs/photo8.png" alt="" />
+                        <div className="dis-paly1">
+                          <div className="img">
+                            <img src="./uploads/nav/bolgs/4.png" alt="" />
+                          </div>
+                          <div className="titel">
+                            <h5>
+                              The Ultimate Guide to Buying Your First Home in
+                              the UAE
+                            </h5>
+                            <p>
+                              Securing Your Dream Home: Navigating Market,
+                              Finances
+                              <p> 19 / August / 2024</p>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </Grid>
+
+                    <div item xs={7}>
+                      <div className="dis-imgNbuy">
+                        <div className="imgNbuy">
+                          <div className="imgNbuy1">
+                            <img src="./uploads/nav/bolgs/1.png" alt="" />
+                          </div>
+                          <div className="imgNbuy2">
+                            <img src="./uploads/nav/bolgs/2.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="imgnp">
                     <div className="disi">
                       <div>
-                        <h3>Schedule your free consultation today</h3>
-                        <h4>
+                        <div className="h3">
+                          Schedule your free consultation today
+                        </div>
+                        <div className="h4">
                           And our team will help you find the ideal property for
                           your needs
-                        </h4>
+                        </div>
                       </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
-                </Grid>
+                </div>
               </ul>
             </div>
           </li>
@@ -704,8 +697,9 @@ const Navbar = () => {
                   رجوع
                 </div>
 
-                <Grid container spacing={2} className="custom-dropdown-item">
-                  <Grid item xs={7}>
+                <div container spacing={2} className="custom-dropdown-item">
+         <div className="dis-buy">
+         <div item xs={7}>
                     <Link to={"/About"}>
                       <h3>
                         About us{" "}
@@ -725,74 +719,72 @@ const Navbar = () => {
                       <li className="aldar">
                         <Link to={"/TeamS"}>
                           {" "}
-                          <h6>Our Team </h6>{" "}
-                          <img src="./uploads/nav/aboutus/team.png" alt="" />
+                          <img src="./uploads/nav/aboutus/s&me.png" alt="" />
                         </Link>
                       </li>
                       <li className="aldar">
                         <Link to={"/Mortgage"}>
                           {" "}
-                          <h6>JNJ-MORTGAGE </h6>{" "}
                           <img src="./uploads/nav/aboutus/jnj.png" alt="" />{" "}
                         </Link>
                       </li>
                       <li className="aldar">
                         <Link to={"/Spartan"}>
                           {" "}
-                          <h6>SPARTAN TOURISM</h6>
                           <img src="./uploads/nav/aboutus/spartan.png" alt="" />
                         </Link>
                       </li>
                     </div>
                     <ul></ul>
-                  </Grid>
-                  <Grid item xs={5}>
+                  </div>
+                  <div item xs={5}>
                     <div className="imgNCommercial">
-                      <img src="./uploads/nav/aboutus/photoabout.png" alt="" />
+                      <img src="./uploads/nav/aboutus/1.png" alt="" />
                     </div>
-                  </Grid>
+                  </div>
+         </div>
                   <div className="imgnp">
                     <div className="disi">
                       <div>
-                        <h3>Schedule your free consultation today</h3>
-                        <h4>
+                        <div className="h3">
+                          Schedule your free consultation today
+                        </div>
+                        <div className="h4">
                           And our team will help you find the ideal property for
                           your needs
-                        </h4>
+                        </div>
                       </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
-                </Grid>
+                </div>
               </ul>
             </div>
           </li>
           <li
             className="custom-navbar-item"
-            onMouseEnter={() => handleMouseEnter("CONTACT_US")}
-            onMouseLeave={() => handleMouseLeave("CONTACT_US")}
-            onClick={() => handleDropdownToggle("CONTACT_US")}
+            onMouseEnter={() => handleMouseEnter("APPLY")}
+            onMouseLeave={() => handleMouseLeave("APPLY")}
+            onClick={() => handleDropdownToggle("APPLY")}
           >
             <span className="custom-navbar-link">APPLY</span>
 
-            <div className="CONTACT">
+            <div className="APPLY">
               <ul
                 className={`custom-dropdown-menu ${
-                  dropdownOpen.CONTACT_US ? "show" : ""
+                  dropdownOpen.APPLY ? "show" : ""
                 }`}
               >
                 <div className="bt-back" onClick={handltap}>
                   رجوع
                 </div>
 
-                <Grid container spacing={2} className="custom-dropdown-item">
-                  <Grid md={6} xs={12}>
+                <div container spacing={2} className="custom-dropdown-item">
+            <div className="dis-buy">
+            <div md={6} xs={12}>
                     <div className="imgcon">
-                  <h2>Elevate Your Career
-                  </h2>
-                  <h3>Join Our Team of Real Estate Experts Today.
-
-</h3>
+                      <h2>Elevate Your Career</h2>
+                      <h3>Join Our Team of Real Estate Experts Today.</h3>
                     </div>
                     <div className="dis-paly2">
                       <ul>
@@ -819,25 +811,28 @@ const Navbar = () => {
                         </li>
                       </ul>
                     </div>
-                  </Grid>
-                  <Grid md={6} xs={12}>
+                  </div>
+                  <div md={6} xs={12}>
                     <div className="imgNCommercial">
                       <img src="./uploads/nav/contactus/1.png" alt="" />
                     </div>
-                  </Grid>
+                  </div>
+            </div>
                   <div className="imgnp">
                     <div className="disi">
                       <div>
-                        <h3>Schedule your free consultation today</h3>
-                        <h4>
+                        <div className="h3">
+                          Schedule your free consultation today
+                        </div>
+                        <div className="h4">
                           And our team will help you find the ideal property for
                           your needs
-                        </h4>
+                        </div>
                       </div>
                       <FormN name={"Free consultation"} />
                     </div>
                   </div>
-                </Grid>
+                </div>
               </ul>
             </div>
           </li>
