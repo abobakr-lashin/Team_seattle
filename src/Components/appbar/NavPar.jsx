@@ -28,7 +28,11 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
+  const screenWidth = window.screen.width;
+  const screenHeight = window.screen.height;
+  
+  console.log(`عرض الشاشة: ${screenWidth}px`);
+  console.log(`ارتفاع الشاشة: ${screenHeight}px`);
   const handleDropdownToggle = (dropdown) => {
     setDropdownOpen({
       ABOUT_US: false,

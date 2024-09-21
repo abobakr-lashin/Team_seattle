@@ -590,11 +590,11 @@
   justify-content: end;
 }
 .Blogs .imgNbuy .imgNbuy1 img {
-  width: 100%;
-  height: 300px;
+  width: 90%;
+  height: 250px;
 }
 .Blogs .imgNbuy .imgNbuy2 img {
-  width: 100%;
+  width: 90%;
 }
 
 .titledis h3 {
@@ -615,7 +615,7 @@
   margin-left: 5px;
 }
 .Blogs .dis-paly1 .img img {
-  width: 80px;
+  width: 70px;
 }
 .Blogs .dis-paly1 .titel h5 {
   font-size: 18px;
@@ -1019,7 +1019,7 @@
     left: -29vw !important;
   }
   .Blogs .dis-paly3 .p9 {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 500;
   }
 
@@ -1150,6 +1150,10 @@
   font-weight: normal;
   list-style: none !important;
   padding: 5px;
+}
+.Blogs .dis-paly3 .p9 {
+  font-size: 13px !important;
+  font-weight: 550;
 }
 }
 @media (max-width: 1280px) {

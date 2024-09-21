@@ -127,6 +127,14 @@ color: #ad9a5a;
 .css-1tfnuay > .MuiGrid-item{
   padding-top: 0px !important;
 }
+@media screen and (max-width: 1600px) {
+  .header-container {
+    position: relative;
+    width: 100% !important;
+    height: 150vh;
+    overflow: hidden !important;
+}
+}
 @media screen and (max-width: 600px) {
   .form-container {
     /* height: 40vh; تعديل ارتفاع الكتلة على الشاشات الأصغر */
