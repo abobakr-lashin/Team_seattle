@@ -167,11 +167,8 @@ export default function Landingpage() {
 
             {imgsetsin}
             <div className="hr3"></div>
-
-
-
-
             {/* من هنا يا ابراهيم  */}
+            {/* من هنا يا ابو بكر  */}
             <div>
 
             <p>
