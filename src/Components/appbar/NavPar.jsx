@@ -350,7 +350,7 @@ const Navbar = () => {
                         {DataBase.slice(0, 4).map((it) => {
                           return (
                             <li key={it.id}>
-                              <Link to={`/${it.name}`}>{it.name}</Link>
+                              <Link to={`/Commercial/${it.name}`}>{it.name}</Link>
                             </li>
                           );
                         })}

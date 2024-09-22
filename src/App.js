@@ -46,6 +46,9 @@ import About from './Components/abuotus/About';
 import Commercialcreat from './admin/pageDb/Commercialcreat';
 import AddCategory from './admin/pageDb/AddCategory';
 import Company from './Pages/Company';
+import AddCateBuyLocation from './admin/pageDb/AddCateBuyLocation';
+import AddCategoryBuyPlan from './admin/pageDb/AddCategoryBuyPlan';
+import AddCardBuy from './admin/pageDb/AddCardBuy';
 
 export default function App() {
     return (
@@ -69,7 +72,6 @@ export default function App() {
                     <Route path="Careers" element={<Careers />} />
                     <Route path="Contactus" element={<Contactus />} />
                     <Route path="LastNews" element={<LastNews />} />
-                    <Route path="Commercial" element={<Commercial />} />
                     <Route path="SaleIn" element={<SaleIn />} />
                     <Route path="Cardsell" element={<Cardsell />} />
                     <Route path="Buy" element={<Buy />} />
@@ -83,9 +85,11 @@ export default function App() {
                     <Route path="About" element={<About />} />
                     <Route path="*" element={<NotFonunt />} />
                     <Route path="login" element={<Login />} />
-                    {/*  */}
-                    <Route path="/:id" element={<Company />} />                 
-                    {/*  */}
+                    {/* Handle Path Commercial*/}
+                    <Route path="Commercial" element={<Commercial />} />
+                    <Route path="/Commercial/:id" element={<Company />} />
+                    <Route path="/Commercial/:id/:id" element={<Landingpage />} />
+                    {/* End Path Commercial */}
                     <Route path="dashboard" element={<Dashboard />} >
                         <Route index element={<Formdb />} />
                         <Route path="Formservice" element={<Formservice />} />
@@ -96,11 +100,14 @@ export default function App() {
                         <Route path="BlogsUpdete" element={<BlogsUpdete />} />
                         <Route path="update-blog/:id" element={<UpdateBlog />} />
                         <Route path="Commercialcreat" element={<Commercialcreat />} />
-                        <Route path="AddCategory" element={<AddCategory />} />
+                        <Route path="AddCategoryCommercial" element={<AddCategory />} />
+                        <Route path="AddCategoryBuyLocation" element={<AddCateBuyLocation />} />
+                        <Route path="AddCateBuyPlan" element={<AddCategoryBuyPlan />} />
+                        <Route path="AddCardBuy" element={<AddCardBuy />} />
                     </Route>
                 </Routes>
             </HashRouter>
             <ToastContainer />
-        </div>
+        </div >
     );
 }

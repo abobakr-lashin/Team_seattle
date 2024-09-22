@@ -12,54 +12,6 @@ import OUREXPERT from "../../Pages/OUREXPERT";
 
 export default function Commercial() {
 
-
-
-
-  const styles = {
-    container: {
-        display: 'flex',
-        flexDirection: 'row',
-        AlignItems:" end !important",
-
-        padding: '20px',
-        color: '#ffffff',
-    },
-    textSection: {
-        flex: 2,
-        paddingRight: '20px',
-        fontSize:"30px",
-    },
-    heading: {
-        fontSize: '51px',
-        marginBottom: '20px',
-    },
-    paragraph: {
-      fontSize:"30px",
-      lineHeight: '1.5',
-        marginBottom: '20px',
-    },
-    imageSection: {
-        flex: 1,
-        display: 'grid',
-        gridTemplateColumns: ' auto',
-        gridGap: '10px',
-    },
-    image: {
-        borderRadius: '30px',
-    },
-    '@media (max-width: 1025px)': {
-        container: {
-            display: 'none !important',
-        },
-      
-      
-      
-      
-      
-      
-      }
-};
-
   return (
     <div className="Commercial1">
       <NavPar />
@@ -164,100 +116,77 @@ export default function Commercial() {
           <div className="imags1">
             <img src="/uploads/commercial/export/photo2.png" alt="asdasd" />
           </div>
-   
+
         </div>
         <div className="title-Commercial1">
           <h3>
-          To ensure you make the best decision, our experts will select the ideal commercial space tailored to your requirements, considering factors like location, budget, and expected return on investment, enabling you to achieve lucrative earnings.
+            To ensure you make the best decision, our experts will select the ideal commercial space tailored to your requirements, considering factors like location, budget, and expected return on investment, enabling you to achieve lucrative earnings.
 
 
           </h3>
           <div className="imags1">
             <img className="img3" src="/uploads/commercial/export/photo3.png" alt="asdasd" />
           </div>
-   
+
         </div>
         <div className="title-Commercial1">
           <h3>
-          
-              Choosing Seattle & Middle East for commercial property services means you are supported by a network of commercial real estate experts with over 15 years of experience in the UAE market.
+
+            Choosing Seattle & Middle East for commercial property services means you are supported by a network of commercial real estate experts with over 15 years of experience in the UAE market.
 
 
           </h3>
           <div className="imags1">
             <img src="/uploads/commercial/export/photo4.png" alt="asdasd" />
           </div>
-   
+
         </div>
         <div className="title-Commercial1">
           <h3>
-          Our strong team of experts provides full support, following every step of your journey in the commercial real estate world in Dubai and Abu Dhabi. Our services extend beyond brokerage to include consultancy, appraisal, and property management.
-
-
+            Our strong team of experts provides full support, following every step of your journey in the commercial real estate world in Dubai and Abu Dhabi. Our services extend beyond brokerage to include consultancy, appraisal, and property management.
           </h3>
           <div className="imags1">
             <img src="/uploads/commercial/export/photo5.png" alt="asdasd" />
           </div>
-   
         </div>
-  
-
-      
       </div>
-
-
-
-
       <div className="container1">
-            <div className="textSection">
-                <h2 className="heading">At Seattle & Middle East</h2>
-                <p className="paragraph">
-                    We pride ourselves on being a fundamental support for landlords, tenants, and buyers. 
-                    Our commercial property department offers comprehensive services encompassing various 
-                    commercial assets including office spaces, retail units, shops, warehouses, commercial villas, 
-                    entire buildings, factories, showrooms, land plots, labor camps, and staff accommodation.
-                </p>
-                <p className="paragraph">
-                    To ensure you make the best decision, our experts will select the ideal commercial space 
-                    tailored to your requirements, considering factors like location, budget, and expected 
-                    return on investment, enabling you to achieve lucrative earnings.
-                </p>
-                <p className="paragraph">
-                    Choosing Seattle & Middle East for commercial property services means you are supported by a network 
-                    of commercial real estate experts with over 15 years of experience in the UAE market.
-                </p>
-                <p className="paragraph">
-                    Our strong team of experts provides full support, following every step of your journey in the commercial 
-                    real estate world in Dubai and Abu Dhabi. Our services extend beyond brokerage to include consultancy, 
-                    appraisal, and property management.
-                </p>
-            </div>
-            <div className="imageSection">
-                <img className="image" src="/uploads/commercial/export/photo2.png" alt="Teamwork" />
-                <img className="image" src="/uploads/commercial/export/photo3.png" alt="Building" />
-              <div className="imgdis">
-                <img className="image" src="/uploads/commercial/export/photo4.png" alt="Meeting" />
-                <img className="image" src="/uploads/commercial/export/photo5.png" alt="Cityscape" />
-
-              </div>
-            </div>
+        <div className="textSection">
+          <h2 className="heading">At Seattle & Middle East</h2>
+          <p className="paragraph">
+            We pride ourselves on being a fundamental support for landlords, tenants, and buyers.
+            Our commercial property department offers comprehensive services encompassing various
+            commercial assets including office spaces, retail units, shops, warehouses, commercial villas,
+            entire buildings, factories, showrooms, land plots, labor camps, and staff accommodation.
+          </p>
+          <p className="paragraph">
+            To ensure you make the best decision, our experts will select the ideal commercial space
+            tailored to your requirements, considering factors like location, budget, and expected
+            return on investment, enabling you to achieve lucrative earnings.
+          </p>
+          <p className="paragraph">
+            Choosing Seattle & Middle East for commercial property services means you are supported by a network
+            of commercial real estate experts with over 15 years of experience in the UAE market.
+          </p>
+          <p className="paragraph">
+            Our strong team of experts provides full support, following every step of your journey in the commercial
+            real estate world in Dubai and Abu Dhabi. Our services extend beyond brokerage to include consultancy,
+            appraisal, and property management.
+          </p>
         </div>
-
-
-
-
-
-
+        <div className="imageSection">
+          <img className="image" src="/uploads/commercial/export/photo2.png" alt="Teamwork" />
+          <img className="image" src="/uploads/commercial/export/photo3.png" alt="Building" />
+          <div className="imgdis">
+            <img className="image" src="/uploads/commercial/export/photo4.png" alt="Meeting" />
+            <img className="image" src="/uploads/commercial/export/photo5.png" alt="Cityscape" />
+          </div>
+        </div>
+      </div>
       <div className="h-5vh"></div>
-
-  
-
       <SaleIn />
-
-
-      <OUREXPERT/>
-
-<Footer/>
+      <OUREXPERT />
+      <Footer />
     </div>
   );
 }

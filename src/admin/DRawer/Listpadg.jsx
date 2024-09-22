@@ -21,49 +21,52 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
 export default function Listpadg() {
-  
   const carrantlochen = useLocation();
   const theme = useTheme();
-  const myList=[
-    {text:"FormHeader",ico:HomeIcon,path: "/dashboard"}, 
-    {text:"Service",ico:Person2Icon,path:"Formservice"}, 
-    {text:"Request_Quote",ico:CoPresentIcon,path:"RequestQuote"}, 
-    {text:"TheTeam",ico:BookIcon,path:"TEameform"}, 
-    {text:"MasssgeUs",ico:TextsmsIcon,path:"MasssgeUs"}, 
-    {text:"CreatBolgs",ico:CreateIcon,path:"BlogsCreat"}, 
-    {text:"BlogsUpdete",ico:CreateIcon,path:"BlogsUpdete"}, 
-    {text:"AddCategory",ico:CreateIcon,path:"AddCategory"}, 
-    {text:"AddCommercial",ico:CreateIcon,path:"Commercialcreat"}, 
+  const myList = [
+    { text: "FormHeader", ico: HomeIcon, path: "/dashboard" },
+    { text: "Service", ico: Person2Icon, path: "Formservice" },
+    { text: "Request_Quote", ico: CoPresentIcon, path: "RequestQuote" },
+    { text: "TheTeam", ico: BookIcon, path: "TEameform" },
+    { text: "MasssgeUs", ico: TextsmsIcon, path: "MasssgeUs" },
+    { text: "CreatBolgs", ico: CreateIcon, path: "BlogsCreat" },
+    { text: "BlogsUpdete", ico: CreateIcon, path: "BlogsUpdete" },
+    { text: "AddCategoryCommer", ico: CreateIcon, path: "AddCategoryCommercial" },
+    { text: "AddCommercial", ico: CreateIcon, path: "Commercialcreat" },
+    { text: "AddCateBuyLocation", ico: CreateIcon, path: "AddCategoryBuyLocation" },
+    { text: "AddCateBuyPlan", ico: CreateIcon, path: "AddCateBuyPlan" },
+    { text: "CreateCardBuy", ico: CreateIcon, path: "AddCardBuy" },
+
   ]
   return (
     <>
       <List>
 
-        {myList.map((list)=>
-            (
-                <>
-                <ListItem
-          sx={{
-            background:
-              carrantlochen.pathname === `${list.path}` ? theme.palette.abo.Cadwo : null,
-        
+        {myList.map((list) =>
+        (
+          <>
+            <ListItem
+              sx={{
+                background:
+                  carrantlochen.pathname === `${list.path}` ? theme.palette.abo.Cadwo : null,
 
-          }}
-          disablePadding
-        >
-          <ListItemButton component={Link} to={list.path}>
-            <ListItemIcon>  {<list.ico/>}</ListItemIcon>
-            <ListItemText sx={{      color: theme.palette.mode === 'dark' ? 'white' : 'black',}} primary={list.text} /></ListItemButton>
-                
-        </ListItem>
-        
-        
-                </>
-            )
+
+              }}
+              disablePadding
+            >
+              <ListItemButton component={Link} to={list.path}>
+                <ListItemIcon>  {<list.ico />}</ListItemIcon>
+                <ListItemText sx={{ color: theme.palette.mode === 'dark' ? 'white' : 'black', }} primary={list.text} /></ListItemButton>
+
+            </ListItem>
+
+
+          </>
+        )
         )}
-        
 
-  
+
+
       </List>
     </>
   );

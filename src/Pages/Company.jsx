@@ -31,7 +31,7 @@ const Company = () => {
     const itemsPerPage = 9;
 
 
-    
+
     // const filteredProjects = imgSaleIn.filter((project) => {
     //     return (
     //         (!searchTerm || project.title.toUpperCase().includes(searchTerm.toUpperCase())) &&
@@ -98,47 +98,49 @@ const Company = () => {
 
     const imgsetin = FilterProducts.map((it) => (
         <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
-            <div className="CONTER">
-                <div className="bg-back">
-                    <div className="img-imgSaleIn">
-                        <img className="imgSaleIn" src={it.imageCart} alt={it.title} />
-                        <h3>
-                            {it.price} <span>{it.currency}</span>
-                        </h3>
-                        <div className="dis-play">
-                            <div>
-                                <span>
-                                    <span>{it.beds}</span> <img src={'/uploads/commercial/export/icon/bed.png'} alt="Bed" />
-                                </span>
-                                <div>BEDS</div>
-                            </div>
-                            <div>
-                                <span>
-                                    <span>{it.baths}</span> <img src={'/uploads/commercial/export/icon/bath.png'} alt="Bath" />
-                                </span>
-                                <div>Baths</div>
-                            </div>
-                            <div>
-                                <span>
-                                    <span>{it.square}</span> <img src={'/uploads/commercial/export/icon/square.png'} alt="Square" />
-                                </span>
-                                <div>Square ft</div>
-                            </div>
-                        </div>
-                        <h5>{it.title}</h5>
-                        <h6>
-                            <LocationOnIcon /> {it.locationOn}
-                            <hr />
-                            <div className="Listing-by">
-                                <div className="img-lisby">
-                                    <img src={it.bgImage} alt="Property" />
+            <Link to={`/Commercial/${id}/${it.id}`}>
+                <div className="CONTER">
+                    <div className="bg-back">
+                        <div className="img-imgSaleIn">
+                            <img className="imgSaleIn" src={it.imageCart} alt={it.title} />
+                            <h3>
+                                {it.price} <span>{it.currency}</span>
+                            </h3>
+                            <div className="dis-play">
+                                <div>
+                                    <span>
+                                        <span>{it.beds}</span> <img src={'/uploads/commercial/export/icon/bed.png'} alt="Bed" />
+                                    </span>
+                                    <div>BEDS</div>
                                 </div>
-                                <div className="title-lisby">Listing by Ramin Sadeghi </div>
+                                <div>
+                                    <span>
+                                        <span>{it.baths}</span> <img src={'/uploads/commercial/export/icon/bath.png'} alt="Bath" />
+                                    </span>
+                                    <div>Baths</div>
+                                </div>
+                                <div>
+                                    <span>
+                                        <span>{it.square}</span> <img src={'/uploads/commercial/export/icon/square.png'} alt="Square" />
+                                    </span>
+                                    <div>Square ft</div>
+                                </div>
                             </div>
-                        </h6>
+                            <h5>{it.title}</h5>
+                            <h6>
+                                <LocationOnIcon /> {it.locationOn}
+                                <hr />
+                                <div className="Listing-by">
+                                    <div className="img-lisby">
+                                        <img src={it.bgImage} alt="Property" />
+                                    </div>
+                                    <div className="title-lisby">Listing by Ramin Sadeghi </div>
+                                </div>
+                            </h6>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </Grid>
     ));
 
@@ -185,7 +187,7 @@ const Company = () => {
                                 value={price}
                                 onChange={(e) => setPrice(e.target.value)}
                             />
-              
+
                             <input
                                 type="text"
                                 className="input-style-3"
@@ -246,11 +248,11 @@ const Company = () => {
                     </div>
                 </div>
 
-                 <div className='buy'>
+                <div className='buy'>
                     <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
                         {imgsetin}
                     </Grid>
-                 
+
                     {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
                         <div onClick={'handlePreviousPage'} style={{ cursor: currentPage > 1 ? 'pointer' : 'default', opacity: currentPage > 1 ? 1 : 0.5 }}>
                             <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
@@ -260,7 +262,7 @@ const Company = () => {
                             <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
                         </div>
                     </div> */}
-                </div> 
+                </div>
 
 
 
