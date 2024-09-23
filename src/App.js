@@ -52,6 +52,7 @@ import AddCardBuy from './admin/pageDb/AddCardBuy';
 import AddDevelopers from './admin/pageDb/AddDevelopers';
 import LandingPageBuy from './Components/landingpage/LandingPageBuy';
 import CategoryCards from './Components/buy/CategoryCards';
+import LandingPageBuyLocation from './Components/buy/LandingPageBuyLocation';
 
 export default function App() {
     return (
@@ -80,6 +81,7 @@ export default function App() {
                     <Route path="Buy" element={<Buy />} />
                     <Route path="buy/category/:id" element={<CategoryCards />} />
                     <Route path="Buy/:id" element={<LandingPageBuy />} />
+                    <Route path="Buy/Location/:id" element={<LandingPageBuyLocation />} />
                     <Route path="BuBuycardsy" element={<Buycards />} />
                     <Route path="Rent" element={<Rent />} />
                     <Route path="BuyHome" element={<BuyHome />} />

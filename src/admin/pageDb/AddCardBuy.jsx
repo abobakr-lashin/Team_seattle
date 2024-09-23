@@ -40,7 +40,6 @@ export default function AddCardBuy() {
         CategoryBuyLocation: '',
         CategoryDevelopers: '',
         CategoryPlan: '',
-        buyPlan: ''
     });
 
     console.log(formDataImage);
@@ -125,7 +124,6 @@ export default function AddCardBuy() {
                 CategoryBuyLocation: formData.CategoryBuyLocation,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
-                buyPlan: formData.buyPlan,
                 date: new Date().toDateString(),
                 time: new Date().toLocaleTimeString()
             });
@@ -149,7 +147,7 @@ export default function AddCardBuy() {
                 listingImage: null,
                 imageCart: null
             });
-            Navigate('/dashboard/listingBlogs')
+            Navigate('/dashboard')
         } catch (err) {
             toast.error('Error submitting data: ' + err.message);
             console.error('Error submitting data:', err);
@@ -422,15 +420,7 @@ export default function AddCardBuy() {
                             })}
                         </select>
                     </div>
-                    <div className="form-group">
-                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({ ...formData, buyPlan: e.target.value });
-                        }}>
-                            <option hidden >Select Buy Plan</option>
-                            <option value={'Secondary properties'}>Secondary properties</option>
-                            <option value={'Off-plan'}>Off-plan</option>
-                        </select>
-                    </div>
+                    
                     <div className="form-group">
                         <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
                             setFormData({ ...formData, CategoryPlan: e.target.value });

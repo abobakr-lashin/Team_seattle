@@ -49,7 +49,7 @@ export default function CategoryCards() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, []);
+    }, [id]);
 
     // Filter items by category
     const filteredProjects = data.filter((project) => {
