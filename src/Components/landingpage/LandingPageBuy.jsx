@@ -176,9 +176,8 @@ export default function LandingPageBuy() {
                         <div className="hr3"></div>
                         {/* من هنا يا ابراهيم  */}
                         {/* من هنا يا ابو بكر  */}
-                        <div className="text">
-                            {filterCartId[0]?.text}
-                        </div>
+                            <div className="text" dangerouslySetInnerHTML={{ __html: filterCartId[0]?.text }}></div>
+
                         {/* من هنا يا ابراهيم  */}
                         <h1> Explore the Area: </h1>
                         <h4>
