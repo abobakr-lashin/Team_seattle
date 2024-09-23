@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Grid } from '@mui/material';
@@ -13,6 +13,7 @@ import "./buy.css";
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
 export default function CategoryCards() {
+    const {id} = useParams()
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
@@ -37,7 +38,10 @@ export default function CategoryCards() {
                 id: doc.id,
                 ...doc.data(),
             }));
-            setData(docs);
+            const filterdata = docs.filter((it)=>{
+                return it.CategoryPlan === id
+            })
+            setData(filterdata);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
