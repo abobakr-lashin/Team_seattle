@@ -162,8 +162,8 @@ export default function Landingpage() {
 
       <div className="h-5vh"></div>
       <div className="h-5vh"></div>
-      <Grid container spacing={2} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
-        <Grid item xs={8} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
+      <div className="grid-lan" spacing={2} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
+        <div className="grid-lan1" item lg={8} md={12} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
           <div className="Sitedetails">
             <div className="address">
               {filterCartId[0]?.location}
@@ -174,20 +174,18 @@ export default function Landingpage() {
 
             {imgsetsin}
             <div className="hr3"></div>
-            {/* من هنا يا ابراهيم  */}
-            {/* من هنا يا ابو بكر  */}
+          
               <div className="text" dangerouslySetInnerHTML={{ __html: filterCartId[0]?.text }}></div>
 
-            {/* من هنا يا ابراهيم  */}
             <h1> Explore the Area: </h1>
             <h4>
               {" "}
               <LocationOnIcon /> Location: Mohammed Bin Rashid City{" "}
             </h4>
           </div>
-        </Grid>
+        </div>
 
-        <Grid item xs={4} alignItems={"center"} justifyContent={"center"}>
+        <div item lg={4} md={12} alignItems={"center"} justifyContent={"center"}>
           <div className="ContactAgent">
             <div className="title">Contact Agent</div>
 
@@ -246,8 +244,8 @@ export default function Landingpage() {
           <div className="formc">
             <FormContainer color={"#06404d"} />
           </div>
-        </Grid>
-      </Grid>
+        </div>
+      </div>
       <div className="map">
         <div className="h-5vh"></div>
         {filterCartId[0]?.map && (

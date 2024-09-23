@@ -212,3 +212,9 @@ margin: 10px 0px;
 }
 
 /* Site details */
+
+.grid-lan{
+  display: flex;
+  width: 90%;
+  margin: auto;
+}

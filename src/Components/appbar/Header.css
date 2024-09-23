@@ -131,7 +131,7 @@ color: #ad9a5a;
   .header-container {
     position: relative;
     width: 100% !important;
-    height: 150vh;
+    height: 134vh;
     overflow: hidden !important;
 }
 .form-container {
@@ -139,7 +139,7 @@ color: #ad9a5a;
   align-items: center;
   flex-direction: column;
   justify-content: end;
-  height: 137vh;
+  height: 125vh;
   padding: 20px;
   text-align: center;
   position: relative;
