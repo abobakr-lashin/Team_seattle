@@ -150,7 +150,12 @@ export default function Landingpage() {
           </div>
         </div>
         <div className="contbg">
+          
+          <div>
+            <img src="/uploads/landingpage/export/icon/samayas.png" alt="samayas" />
+          </div>
           <div className="formheader">
+
             <FormContainer color={"rgba(255, 255, 255, 0.466)"} />
           </div>
         </div>

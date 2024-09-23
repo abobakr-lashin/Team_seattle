@@ -270,6 +270,9 @@ a {
     top: 10px;
     padding-right: 48px;
 }
+.css-480o17-MuiGrid-root>.MuiGrid-item {
+  padding-top: 0px !important;
+}
 }
 @media screen and (max-width: 1401px) {
   .social-media .icon {

@@ -12,9 +12,19 @@
 .contbg {
   width: 95%;
   display: flex;
-  justify-content: end;
+  align-items: center;
+  justify-content: space-evenly;
+  height: auto;
 }
-
+.contbg div img{
+  width: 80%;
+}
+/* .contbg div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
 
 /* silder */
 
@@ -107,12 +117,12 @@
   border-radius: 20px;
   margin-bottom: 10px;
 }
-.formc .form-container{
+/* .formc .form-container{
   display: flex;
   justify-content: start;
   align-items: center !important;
 }
-/* ContactAgent */
+ContactAgent */
 /* Site details */
 
 .address{
@@ -217,4 +227,16 @@ margin: 10px 0px;
   display: flex;
   width: 90%;
   margin: auto;
+}
+@media (max-width: 1280px) {
+
+
+  .grid-lan{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  .ContactAgent{
+    margin-left: 25px;
+  }
 }
