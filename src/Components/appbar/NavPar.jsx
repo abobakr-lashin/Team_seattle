@@ -13,6 +13,8 @@ const Navbar = () => {
     const [Secondaryproperties, setSecondaryProperties] = useState([]);
     const [offPlan, setOffPlan] = useState([]);
     const [language, setLocation] = useState([]);
+    const [RentalProperties, setRentalProperties] = useState([]);
+    const [LandlordsTools, setLandlordsTools] = useState([]);
     const [dropdownOpen, setDropdownOpen] = useState({
         ABOUT_US: false,
         OUR_PROJECTS: false,
@@ -178,7 +180,6 @@ const Navbar = () => {
         }
 
         // Get Data from Firestore
-
         try {
             const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
             const docs = querySnapshot.docs.map((doc) => ({
@@ -186,6 +187,25 @@ const Navbar = () => {
                 ...doc.data(),
             }));
             setLocation(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "categoryRentPlan"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            const filterPlan = docs.filter((item) => {
+                return item.CategoryPlan === "Rental Properties";
+            });
+            setRentalProperties(filterPlan)
+
+            const filterPlanOff = docs.filter((item) => {
+                return item.CategoryPlan === "Landlords Tools";
+            });
+            setLandlordsTools(filterPlanOff)
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -269,11 +289,11 @@ const Navbar = () => {
                                                 </div>
                                                 <ul className="ullest">
                                                     <h3>INVEST BY EMIRATE</h3>
-                                                    {language?.map((it)=>{
+                                                    {language?.map((it) => {
                                                         return (
                                                             <li><Link to={`/Buy/Location/${it.name}`}>{it.name}</Link></li>
                                                         )
-                                                    }) }
+                                                    })}
                                                 </ul>
                                             </div>
                                         </div>
@@ -323,14 +343,19 @@ const Navbar = () => {
                                             <div className="dis-paly3">
                                                 <ul>
                                                     <h4>Rental Properties</h4>
-                                                    <li>Apartments</li>
-                                                    <li>Villas</li>
-                                                    <li>Townhouses</li>
+                                                    {RentalProperties?.map((it) => {
+                                                        return (
+                                                            <li><Link to={`/Rent/Filter/${it.name}`}>{it.name}</Link></li>
+                                                        )
+                                                    })}
                                                 </ul>
                                                 <ul>
                                                     <h4>Landlords Tools</h4>
-                                                    <li>Property Management</li>
-                                                    <li>Utilities Connections and Payments</li>
+                                                    {LandlordsTools?.map((it) => {
+                                                        return (
+                                                            <li><Link to={`/Rent/Filter/${it.name}`}>{it.name}</Link></li>
+                                                        )
+                                                    })}
                                                 </ul>
                                             </div>
                                         </div>

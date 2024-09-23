@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Grid } from '@mui/material';
@@ -8,12 +8,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import FormN from '../appbar/FormN';
 import Footer from '../footer/Footer';
 import OUREXPERT from '../../Pages/OUREXPERT';
-
-import "./buy.css";
+import "./Rent.css"
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
-export default function Buy() {
-    const [data, setData] = useState([]);
+export default function RentFilter() {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
     const [price, setPrice] = useState('');
@@ -25,30 +23,30 @@ export default function Buy() {
     const [minBedrooms, setMinBedrooms] = useState('');
     const [maxBedrooms, setMaxBedrooms] = useState('');
     const [minPrice, setMinPrice] = useState('');
+    const [data, setData] = useState([]);
+    const {id} = useParams()
 
     const itemsPerPage = 9;
-
 
     // Get Data from Firestore
     const GetDataFireStore = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartBuy"));
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartRent"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
             }));
-            setData(docs);
+            const FilterCart = docs?.filter((it)=>it.CategoryPlan === id)
+            setData(FilterCart);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
     };
 
-    useEffect(() => {
-        GetDataFireStore();
-    }, []);
 
 
-    // Filter items by category
+
+    // تصفية المشاريع بناءً على مصطلحات البحث
     const filteredProjects = data.filter((project) => {
         return (
             (!searchTerm || project.title.toUpperCase().includes(searchTerm.toUpperCase())) &&
@@ -81,13 +79,16 @@ export default function Buy() {
     };
 
     const handleSearch = () => {
-        setCurrentPage(1);
+        setCurrentPage(1); // إعادة ضبط الصفحة الحالية عند البحث
     };
 
+    useEffect(() => {
+        GetDataFireStore();
+    }, [id]);
 
     const imgsetin = currentItems.map((it) => (
         <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
-            <Link to={`/buy/${it.id}`}>
+            <Link to={`/Rent/${it.id}`}>
                 <div className="CONTER">
                     <div className="bg-back">
                         <div className="img-imgSaleIn">
@@ -132,10 +133,9 @@ export default function Buy() {
             </Link>
         </Grid>
     ));
-
     return (
-        <div className="buy">
-            <div className="img-buy">
+        <div className="rent">
+            <div className="img-rent">
                 <NavPar />
                 <div className="h-5vh"></div>
 
@@ -152,17 +152,17 @@ export default function Buy() {
                                     sx={{ color: "#d3b76d", fontSize: "65px" }}
                                 />
                             </Link>
-                            <div style={{ textTransform: "uppercase" }}>buy</div>
+                            <div style={{ textTransform: "uppercase" }}>Filter/rent</div>
                         </h2>
                     </div>
                 </div>
                 <h1>LUXURY PROPERTIES FOR SALE IN UAE</h1>
                 <div className="hr">
-                    <div className="form-buy">
+                    <div className="form-rent">
                         <input
                             type="number"
                             className="input-style-1"
-                            placeholder="Buy"
+                            placeholder="rent"
                             min={10000}
                             value={price}
                             onChange={(e) => setPrice(e.target.value)}
@@ -228,7 +228,7 @@ export default function Buy() {
                 </div>
             </div>
 
-            <div className='buy'>
+            <div className='rent'>
                 <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
                     {imgsetin}
                 </Grid>
@@ -249,5 +249,6 @@ export default function Buy() {
 
             <Footer />
         </div>
+
     );
 }
