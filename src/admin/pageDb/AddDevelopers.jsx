@@ -21,7 +21,7 @@ const VisuallyHiddenInput = styled('input')({
     width: 1,
 });
 
-const AddCategoryBuyPlan = () => {
+const AddDevelopers = () => {
     const Navigste = useNavigate()
     const [category, setCategory] = useState('');
     const [FileImage, setFileImage] = useState(null);
@@ -29,9 +29,7 @@ const AddCategoryBuyPlan = () => {
     const [fileUrl, setfileUrl] = useState('');
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [CategoryPlan, setCategoryPlan] = useState('');
 
-    console.log(FileImage);
 
     const handleAddCategory = async (e) => {
         e.preventDefault();
@@ -45,14 +43,13 @@ const AddCategoryBuyPlan = () => {
 
         try {
             // Cheake Category 
-            const categoriesRef = collection(firestore, 'categoryBuyPlan');
+            const categoriesRef = collection(firestore, 'CategoryDevelopers');
             const q = query(categoriesRef, where('category', '==', category));
             const querySnapshot = await getDocs(q);
 
             if (querySnapshot.empty) {
                 await addDoc(categoriesRef, {
                     name: category,
-                    CategoryPlan,
                     createdAt: new Date(),
                 });
                 toast.success('Category added successfully!.')
@@ -72,8 +69,7 @@ const AddCategoryBuyPlan = () => {
 
     return (
         <Box sx={{ maxWidth: 400, mx: 'auto', mt: 4, p: 2, border: '1px solid #ccc', borderRadius: 2 }}>
-            <Typography variant="h5" sx={{ mb: 2 }}>Add Category Buy Plan</Typography>
-
+            <Typography variant="h5" sx={{ mb: 2 }}>Add Developers</Typography>
             <TextField
                 label="Category"
                 variant="outlined"
@@ -81,20 +77,9 @@ const AddCategoryBuyPlan = () => {
                 onChange={(e) => setCategory(e.target.value)}
                 sx={{ mb: 2 }}
             />
-            <div className="form-group">
-                <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                    setCategoryPlan(e.target.value);
-                }}>
-                    <option hidden >Select Buy Plan</option>
-                    <option value={'Secondary properties'}>Secondary properties</option>
-                    <option value={'Off-plan'}>Off-plan</option>
-                </select>
-            </div>
-
             <List>
                 <img style={{ width: '200px' }} src={fileUrl} alt="" />
             </List>
-
             <Button
                 sx={{ mt: 2, mb: 2 }}
                 component="label"
@@ -138,4 +123,4 @@ const AddCategoryBuyPlan = () => {
     );
 };
 
-export default AddCategoryBuyPlan;
+export default AddDevelopers;

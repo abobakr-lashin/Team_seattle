@@ -17,6 +17,9 @@ export default function AddCardBuy() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [formDataImage, setformDataImage] = useState('')
+    const [CategoryBuyLocation, setCategoryBuyLocation] = useState([])
+    const [CategoryDevelopers, setCategoryDevelopers] = useState([])
+    const [CategoryPlan, setCategoryPlan] = useState([])
     const [formData, setFormData] = useState({
         title: '',
         text: '',
@@ -34,6 +37,10 @@ export default function AddCardBuy() {
         map: '',
         category: '',
         listingImage: null,
+        CategoryBuyLocation: '',
+        CategoryDevelopers: '',
+        CategoryPlan: '',
+        buyPlan: ''
     });
 
     console.log(formDataImage);
@@ -96,7 +103,7 @@ export default function AddCardBuy() {
 
 
             // Send Data TO fierStore
-            await addDoc(collection(firestore, 'listingsBlogs'), {
+            await addDoc(collection(firestore, 'listBlogsCartBuy'), {
                 title: formData.title,
                 category: formData.category,
                 price: formData.price,
@@ -115,6 +122,10 @@ export default function AddCardBuy() {
                 text: formData.text,
                 imageCart: BgImageCard,
                 imageSlider: uploadedFileURLs,
+                CategoryBuyLocation: formData.CategoryBuyLocation,
+                CategoryDevelopers: formData.CategoryDevelopers,
+                CategoryPlan: formData.CategoryPlan,
+                buyPlan: formData.buyPlan,
                 date: new Date().toDateString(),
                 time: new Date().toLocaleTimeString()
             });
@@ -149,6 +160,8 @@ export default function AddCardBuy() {
 
     // Get Data Category
     const getCategories = async () => {
+
+        // Get Data Category
         try {
             const querySnapshot = await getDocs(collection(firestore, "category"));
             const docs = querySnapshot.docs.map((doc) => ({
@@ -156,6 +169,42 @@ export default function AddCardBuy() {
                 ...doc.data()
             }));
             setCategories(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        // get Category Locations  
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            setCategoryBuyLocation(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        // get category Developers  
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "CategoryDevelopers"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            setCategoryDevelopers(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        // get category buy Plans  
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "categoryBuyPlan"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            setCategoryPlan(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -177,6 +226,8 @@ export default function AddCardBuy() {
             ['clean']
         ]
     };
+
+    console.log(CategoryBuyLocation, CategoryDevelopers, CategoryPlan);
 
     return (
         <div>
@@ -347,6 +398,45 @@ export default function AddCardBuy() {
                         }}>
                             <option hidden >Select Category</option>
                             {Categories.map((it) => {
+                                return <option key={it.id} value={it.name}>{it.name}</option>
+                            })}
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
+                            setFormData({ ...formData, CategoryBuyLocation: e.target.value });
+                        }}>
+                            <option hidden >Select Category Location</option>
+                            {CategoryBuyLocation.map((it) => {
+                                return <option key={it.id} value={it.name}>{it.name}</option>
+                            })}
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
+                            setFormData({ ...formData, CategoryDevelopers: e.target.value });
+                        }}>
+                            <option hidden >Select Category Developers</option>
+                            {CategoryDevelopers.map((it) => {
+                                return <option key={it.id} value={it.name}>{it.name}</option>
+                            })}
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
+                            setFormData({ ...formData, buyPlan: e.target.value });
+                        }}>
+                            <option hidden >Select Buy Plan</option>
+                            <option value={'Secondary properties'}>Secondary properties</option>
+                            <option value={'Off-plan'}>Off-plan</option>
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
+                            setFormData({ ...formData, CategoryPlan: e.target.value });
+                        }}>
+                            <option hidden >Select Category Buy Plan</option>
+                            {CategoryPlan.map((it) => {
                                 return <option key={it.id} value={it.name}>{it.name}</option>
                             })}
                         </select>

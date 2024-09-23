@@ -49,6 +49,9 @@ import Company from './Pages/Company';
 import AddCateBuyLocation from './admin/pageDb/AddCateBuyLocation';
 import AddCategoryBuyPlan from './admin/pageDb/AddCategoryBuyPlan';
 import AddCardBuy from './admin/pageDb/AddCardBuy';
+import AddDevelopers from './admin/pageDb/AddDevelopers';
+import LandingPageBuy from './Components/landingpage/LandingPageBuy';
+import CategoryCards from './Components/buy/CategoryCards';
 
 export default function App() {
     return (
@@ -75,6 +78,8 @@ export default function App() {
                     <Route path="SaleIn" element={<SaleIn />} />
                     <Route path="Cardsell" element={<Cardsell />} />
                     <Route path="Buy" element={<Buy />} />
+                    <Route path="buy/category/:id" element={<CategoryCards />} />
+                    <Route path="Buy/:id" element={<LandingPageBuy />} />
                     <Route path="BuBuycardsy" element={<Buycards />} />
                     <Route path="Rent" element={<Rent />} />
                     <Route path="BuyHome" element={<BuyHome />} />
@@ -104,6 +109,7 @@ export default function App() {
                         <Route path="AddCategoryBuyLocation" element={<AddCateBuyLocation />} />
                         <Route path="AddCateBuyPlan" element={<AddCategoryBuyPlan />} />
                         <Route path="AddCardBuy" element={<AddCardBuy />} />
+                        <Route path="AddDevelopers" element={<AddDevelopers />} />
                     </Route>
                 </Routes>
             </HashRouter>

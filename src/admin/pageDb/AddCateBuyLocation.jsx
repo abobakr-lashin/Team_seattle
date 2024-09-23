@@ -30,7 +30,6 @@ const AddCateBuyLocation = () => {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    console.log(FileImage);
 
     const handleAddCategory = async (e) => {
         e.preventDefault();
@@ -44,7 +43,7 @@ const AddCateBuyLocation = () => {
 
         try {
             // Cheake Category 
-            const categoriesRef = collection(firestore,  'category');
+            const categoriesRef = collection(firestore,  'CategoryBuyLocation');
             const q = query(categoriesRef, where('category', '==', category));
             const querySnapshot = await getDocs(q);
 
