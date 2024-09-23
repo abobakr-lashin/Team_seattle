@@ -17,8 +17,7 @@ import { collection, getDocs } from "firebase/firestore";
 
 export default function LandingPageBuyLocation() {
     const [cartId, setCartId] = useState([]);
-    const { id } = useParams()
-
+    const { id } = useParams();
 
     // Get Data from FireStore
     const GetDataFireStore = async () => {
@@ -34,7 +33,6 @@ export default function LandingPageBuyLocation() {
         }
     };
     const filterCartId = cartId.filter((it) => it.CategoryBuyLocation === id);
-
 
     const settings = {
         centerMode: true,
@@ -72,9 +70,6 @@ export default function LandingPageBuyLocation() {
             </div>
         );
     });
-
-
-
 
     useEffect(() => {
         GetDataFireStore();
