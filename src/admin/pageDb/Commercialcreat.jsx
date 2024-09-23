@@ -25,6 +25,7 @@ export default function CommercialCreate() {
         beds: '',
         baths: '',
         square: '',
+        Parking: '',
         qualities: '',
         location: '',
         monthlyPayment: '',
@@ -104,6 +105,7 @@ export default function CommercialCreate() {
                 beds: formData.beds,
                 baths: formData.baths,
                 square: formData.square,
+                Parking: formData.Parking,
                 qualities: formData.qualities,
                 location: formData.location,
                 monthlyPayment: formData.monthlyPayment,
@@ -127,6 +129,7 @@ export default function CommercialCreate() {
                 beds: '',
                 baths: '',
                 square: '',
+                Parking: '',
                 qualities: '',
                 location: '',
                 monthlyPayment: '',
@@ -244,6 +247,13 @@ export default function CommercialCreate() {
                         />
                         <input
                             type="number"
+                            name="Parking "
+                            placeholder="Parking "
+                            value={formData.Parking }
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="number"
                             name="square"
                             placeholder="SQUARE"
                             value={formData.square}
@@ -320,13 +330,14 @@ export default function CommercialCreate() {
                             value={formData.email}
                             onChange={handleInputChange}
                         />
-                        <input
-                            type="text"
-                            name="map"
-                            placeholder="Map"
-                            value={formData.map}
-                            onChange={handleInputChange}
-                        />
+                         <input
+                type="text"
+                name="map"
+                placeholder="أدخل رابط الخريطة هنا"
+                value={formData.map}
+                onChange={handleInputChange}
+                style={{ width: "100%", padding: "10px", margin: "10px 0" }}
+            />
                     </div>
                     <div className="form-group">
                         <label htmlFor="me" style={{ fontSize: '30px' }}>
@@ -360,6 +371,7 @@ export default function CommercialCreate() {
                             placeholder="Enter detailed description here..."
                             style={{ height: '300px', width: '100%', padding: "10px", whiteSpace: "pre-wrap" }}
                         />
+
                     </div>
                     <br /><br />
                     <button type="submit" disabled={loading}>

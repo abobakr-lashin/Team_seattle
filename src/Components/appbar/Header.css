@@ -134,6 +134,17 @@ color: #ad9a5a;
     height: 150vh;
     overflow: hidden !important;
 }
+.form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: end;
+  height: 137vh;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
 }
 @media screen and (max-width: 600px) {
   .form-container {

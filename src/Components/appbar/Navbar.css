@@ -16,8 +16,8 @@
 /* لbutton */
 
 /* عند المرور على العنصر، تفتح القائمة */
-.custom-navbar-item .custom-dropdown-menu {
-  display: none;
+.custom-navbar-item .custom-dropdown-menu:hover {
+  display: block;
 }
 
 .custom-dropdown-menu {
@@ -741,7 +741,7 @@
   justify-content: center;
 }
 .ABOUT .dis-paly2 .aldar img {
-  width: 150px;
+  width: 200px;
 }
 .dis-paly2 .aldar a {
   display: flex;
@@ -1061,7 +1061,7 @@
     font-size: 1rem;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .RENT .dis-paly2 h3 {
     font-size: 20px;
   }
@@ -1122,14 +1122,12 @@
   .AREAS .imgnp .h4 {
     font-size: 18px;
   }
-  .AREAS [type="button"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  button:not(:disabled) {
-    cursor: pointer;
-    font-size: 13px;
-    width: 153px;
-  }
+  .AREAS .imgnp .h4 {
+    font-size: 14px;
+}
+.AREAS .imgnp .h3 {
+  font-size: 18px;
+}
   .AREAS .imgnp {
     background-repeat: no-repeat;
     background-size: cover;
@@ -1155,45 +1153,47 @@
   font-size: 13px !important;
   font-weight: 550;
 }
+.logo-nav {
+  width: 120px;
 }
-@media (max-width: 1280px) {
-  .logo-nav {
-    width: 120px;
-  }
-  .custom-navbar {
-    width: 100%;
-  }
-  .custom-navbar-link {
-    font-size: 11px;
-  }
-  .dis-paly h4 {
-    list-style: disc;
-    padding: 5px;
-    font-weight: 500;
-    font-size: 16px;
-    width: 100%;
-  }
-  .Buys h3 {
-    position: relative;
-    top: 0;
-    font-size: 18px;
-  }
-  .Buys .custom-dropdown-menu {
-    display: none;
-    width: 80vw;
-    margin: 10px;
-    position: absolute;
-    left: -245%;
-    background-color: #bfb78f;
-    list-style: none;
-    padding: 18px 24px;
-    z-index: 9699999999999999 !important;
-    border-radius: 23px;
-    height: auto;
-    overflow: hidden;
-    transition: opacity 1s ease, transform 0.5s ease;
-  }
+.custom-navbar {
+  width: 100%;
 }
+.custom-navbar-link {
+  font-size: 14px;
+}
+.dis-paly h4 {
+  list-style: disc;
+  padding: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  width: 100%;
+}
+.Buys h3 {
+  position: relative;
+  top: 0;
+  font-size: 18px;
+}
+.Buys .custom-dropdown-menu {
+  display: none;
+  width: 80vw;
+  margin: 10px;
+  position: absolute;
+  left: -245%;
+  background-color: #bfb78f;
+  list-style: none;
+  padding: 18px 24px;
+  z-index: 9699999999999999 !important;
+  border-radius: 23px;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 1s ease, transform 0.5s ease;
+}
+.ABOUT .dis-paly2 .aldar img {
+  width: 143px;
+}
+}
+
 
 @media (max-width: 1024px) {
   .custom-navbar-link {
