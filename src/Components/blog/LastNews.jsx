@@ -10,7 +10,7 @@ import "./LatestNews.css";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
 
-export default function LastNews({newsPerPage}) {
+export default function LastNews({ newsPerPage }) {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [FormData, setFormData] = useState([]);
@@ -36,7 +36,7 @@ export default function LastNews({newsPerPage}) {
     }, []);
 
     // console.log(FormData);
-    
+
 
     const handleNext = () => {
         setCurrentPage((prevPage) =>
@@ -55,67 +55,67 @@ export default function LastNews({newsPerPage}) {
     const currentNews = FormData.slice(indexOfFirstNews, indexOfLastNews);
 
     // console.log(currentNews);
-    
+
 
     const handleReadMore = (id) => {
         navigate(`/blog/${id}`);
     };
-  return (
+    return (
 
-    <div className="">
-    <div className="news-container">
-    {currentNews.length > 0 ? (
-        <div className="news-grid">
-            {currentNews.map((item) => (
-                <div
-                    className="img-LatestNews1"
-                    key={item.id}
-                    style={{ backgroundImage: `url(${item.fileCart})` }}
-                >
-                    <div className="news-title">{item.title}</div>
-                    <div className="news-text">{item.text}</div>
-                    <button onClick={() => handleReadMore(item.id)} className="read-More">
-                        Read More...
+        <div className="">
+            <div className="news-container">
+                {currentNews.length > 0 ? (
+                    <div className="news-grid">
+                        {currentNews.map((item) => (
+                            <div
+                                className="img-LatestNews1"
+                                key={item.id}
+                                style={{ backgroundImage: `url(${item.fileCart})` }}
+                            >
+                                <div className="news-title">{item.title}</div>
+                                <div className="news-text">{item.text}</div>
+                                <button onClick={() => handleReadMore(item.id)} className="read-More">
+                                    Read More...
+                                </button>
+                                <div className="avatar">
+                                    <PersonIcon /> {item.name}
+                                </div>
+                                <div className="date">
+                                    <CalendarMonthIcon /> {item?.DateS?.day} / {item?.DateS?.month} / {item?.DateS?.year}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <p>No news</p>
+                )}
+            </div>
+
+            {FormData.length > newsPerPage && (
+                <div className="navigation-buttons">
+                    <button onClick={handlePrevious} className="nav-button">
+                        <KeyboardDoubleArrowLeftIcon
+                            sx={{ color: "white", fontSize: "45px" }}
+                        />
                     </button>
-                    <div className="avatar">
-                        <PersonIcon /> {item.name}
+                    <div
+                        style={{
+                            fontSize: "25px",
+                            color: "#d3b76d",
+                            padding: "10px",
+                            fontWeight: "bold",
+                        }}
+                    >
+                        {currentPage}
                     </div>
-                    <div className="date">
-                        <CalendarMonthIcon /> {item?.DateS?.day} / {item?.DateS?.month} / {item?.DateS?.year}
-                    </div>
+                    <button onClick={handleNext} className="nav-button">
+                        <KeyboardDoubleArrowRightIcon
+                            sx={{ color: "white", fontSize: "45px" }}
+                        />
+                    </button>
                 </div>
-            ))}
+            )}
         </div>
-    ) : (
-        <p>No news</p>
-    )}
-</div>
+    )
+}
 
-{FormData.length > newsPerPage && (
-    <div className="navigation-buttons">
-        <button onClick={handlePrevious} className="nav-button">
-            <KeyboardDoubleArrowLeftIcon
-                sx={{ color: "white", fontSize: "45px" }}
-            />
-        </button>
-        <div
-            style={{
-                fontSize: "25px",
-                color: "#d3b76d",
-                padding: "10px",
-                fontWeight: "bold",
-            }}
-        >
-            {currentPage}
-        </div>
-        <button onClick={handleNext} className="nav-button">
-            <KeyboardDoubleArrowRightIcon
-                sx={{ color: "white", fontSize: "45px" }}
-            />
-        </button>
-    </div>
-)}
-</div>
-        )
-    }
-    
