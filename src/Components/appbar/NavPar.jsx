@@ -12,6 +12,9 @@ const Navbar = () => {
     const [DataBase, setDataBase] = useState([]);
     const [Secondaryproperties, setSecondaryProperties] = useState([]);
     const [offPlan, setOffPlan] = useState([]);
+    const [language, setLocation] = useState([]);
+    const [RentalProperties, setRentalProperties] = useState([]);
+    const [LandlordsTools, setLandlordsTools] = useState([]);
     const [dropdownOpen, setDropdownOpen] = useState({
         ABOUT_US: false,
         OUR_PROJECTS: false,
@@ -167,7 +170,7 @@ const Navbar = () => {
                 return item.CategoryPlan === "Secondary properties";
             });
             setSecondaryProperties(filterPlan)
-    
+
             const filterPlanOff = docs.filter((item) => {
                 return item.CategoryPlan === "Off-plan";
             });
@@ -175,6 +178,38 @@ const Navbar = () => {
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
+
+        // Get Data from Firestore
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setLocation(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "categoryRentPlan"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            const filterPlan = docs.filter((item) => {
+                return item.CategoryPlan === "Rental Properties";
+            });
+            setRentalProperties(filterPlan)
+
+            const filterPlanOff = docs.filter((item) => {
+                return item.CategoryPlan === "Landlords Tools";
+            });
+            setLandlordsTools(filterPlanOff)
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
     }
 
     // handle Filter 
@@ -252,15 +287,13 @@ const Navbar = () => {
                                                 <div className="imgNbuy">
                                                     <img src="./uploads/nav/buy/1.png" alt="" />
                                                 </div>
-
                                                 <ul className="ullest">
                                                     <h3>INVEST BY EMIRATE</h3>
-                                                    <li>Abu Dhabi</li>
-                                                    <li>Dubai</li>
-                                                    <li>Sharjah</li>
-                                                    <li>Ajman</li>
-                                                    <li>Ras Al Khaimah</li>
-                                                    <li>Fujairah</li>
+                                                    {language?.map((it) => {
+                                                        return (
+                                                            <li><Link to={`/Buy/Location/${it.name}`}>{it.name}</Link></li>
+                                                        )
+                                                    })}
                                                 </ul>
                                             </div>
                                         </div>
@@ -283,7 +316,6 @@ const Navbar = () => {
                             </ul>
                         </div>
                     </li>
-
                     <li
                         className="custom-navbar-item"
                         onMouseEnter={() => handleMouseEnter("RENT")}
@@ -293,7 +325,6 @@ const Navbar = () => {
                         <span className="custom-navbar-link">
                             <Link to="/RENT">RENT</Link>
                         </span>
-
                         <div className="RENT">
                             <ul
                                 className={`custom-dropdown-menu ${dropdownOpen.RENT ? "show" : ""
@@ -302,7 +333,6 @@ const Navbar = () => {
                                 <div className="bt-back" onClick={handltap}>
                                     رجوع
                                 </div>
-
                                 <div container spacing={2} className="custom-dropdown-item  ">
                                     <div className="dis-paly2 dis-buy">
                                         <div item lg={7} xs={12}>
@@ -313,14 +343,19 @@ const Navbar = () => {
                                             <div className="dis-paly3">
                                                 <ul>
                                                     <h4>Rental Properties</h4>
-                                                    <li>Apartments</li>
-                                                    <li>Villas</li>
-                                                    <li>Townhouses</li>
+                                                    {RentalProperties?.map((it) => {
+                                                        return (
+                                                            <li><Link to={`/Rent/Filter/${it.name}`}>{it.name}</Link></li>
+                                                        )
+                                                    })}
                                                 </ul>
                                                 <ul>
                                                     <h4>Landlords Tools</h4>
-                                                    <li>Property Management</li>
-                                                    <li>Utilities Connections and Payments</li>
+                                                    {LandlordsTools?.map((it) => {
+                                                        return (
+                                                            <li><Link to={`/Rent/Filter/${it.name}`}>{it.name}</Link></li>
+                                                        )
+                                                    })}
                                                 </ul>
                                             </div>
                                         </div>

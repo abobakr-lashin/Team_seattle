@@ -7,7 +7,7 @@ import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-export default function AddCardBuy() {
+export default function CreateRent() {
     const Navigate = useNavigate()
     const [FileURLs, setFileURLs] = useState([])
     const [FileImage, setFileImages] = useState([])
@@ -102,7 +102,7 @@ export default function AddCardBuy() {
 
 
             // Send Data TO fierStore
-            await addDoc(collection(firestore, 'listBlogsCartBuy'), {
+            await addDoc(collection(firestore, 'listBlogsCartRent'), {
                 title: formData.title,
                 category: formData.category,
                 price: formData.price,
@@ -171,9 +171,11 @@ export default function AddCardBuy() {
             console.error("Error fetching documents: ", error);
         }
 
+
+
         // get Category Locations  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
+            const querySnapshot = await getDocs(collection(firestore, "CategoryRentLocation"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -197,7 +199,7 @@ export default function AddCardBuy() {
 
         // get category buy Plans  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "categoryBuyPlan"));
+            const querySnapshot = await getDocs(collection(firestore, "categoryRentPlan"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -420,7 +422,7 @@ export default function AddCardBuy() {
                             })}
                         </select>
                     </div>
-                    
+
                     <div className="form-group">
                         <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
                             setFormData({ ...formData, CategoryPlan: e.target.value });

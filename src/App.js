@@ -52,6 +52,13 @@ import AddCardBuy from './admin/pageDb/AddCardBuy';
 import AddDevelopers from './admin/pageDb/AddDevelopers';
 import LandingPageBuy from './Components/landingpage/LandingPageBuy';
 import CategoryCards from './Components/buy/CategoryCards';
+import LandingPageBuyLocation from './Components/buy/LandingPageBuyLocation';
+import AddCategoryRentPlan from './admin/pageDb/AddCategoryRentPlan';
+import AddLocationRent from './admin/pageDb/AddLocationRent';
+import CreateRentPlan from './admin/pageDb/CreateRent';
+import CreateRent from './admin/pageDb/CreateRent';
+import LandingPage from './Components/RENT/LandingPage';
+import RentFilter from './Components/RENT/RentFilter';
 
 export default function App() {
     return (
@@ -80,8 +87,15 @@ export default function App() {
                     <Route path="Buy" element={<Buy />} />
                     <Route path="buy/category/:id" element={<CategoryCards />} />
                     <Route path="Buy/:id" element={<LandingPageBuy />} />
+                    <Route path="Buy/Location/:id" element={<LandingPageBuyLocation />} />
                     <Route path="BuBuycardsy" element={<Buycards />} />
+
                     <Route path="Rent" element={<Rent />} />
+                    <Route path="Rent/:id" element={<LandingPage />} />
+                    <Route path="Rent/Filter/:id" element={<RentFilter />} />
+
+
+
                     <Route path="BuyHome" element={<BuyHome />} />
                     <Route path="Developers" element={<Developers />} />
                     <Route path="Landingpage" element={<Landingpage />} />
@@ -110,6 +124,9 @@ export default function App() {
                         <Route path="AddCateBuyPlan" element={<AddCategoryBuyPlan />} />
                         <Route path="AddCardBuy" element={<AddCardBuy />} />
                         <Route path="AddDevelopers" element={<AddDevelopers />} />
+                        <Route path="AddCategoryRentPlan" element={<AddCategoryRentPlan />} />
+                        <Route path="AddLocationRent" element={<AddLocationRent />} />
+                        <Route path="CreateRent" element={<CreateRent />} />
                     </Route>
                 </Routes>
             </HashRouter>

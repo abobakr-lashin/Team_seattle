@@ -8,13 +8,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import FormN from '../appbar/FormN';
 import Footer from '../footer/Footer';
 import OUREXPERT from '../../Pages/OUREXPERT';
-
-import "./buy.css";
+import "./Rent.css"
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
-export default function CategoryCards() {
-    const {id} = useParams()
-    const [data, setData] = useState([]);
+export default function RentFilter() {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
     const [price, setPrice] = useState('');
@@ -26,32 +23,30 @@ export default function CategoryCards() {
     const [minBedrooms, setMinBedrooms] = useState('');
     const [maxBedrooms, setMaxBedrooms] = useState('');
     const [minPrice, setMinPrice] = useState('');
+    const [data, setData] = useState([]);
+    const {id} = useParams()
 
     const itemsPerPage = 9;
-
 
     // Get Data from Firestore
     const GetDataFireStore = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartBuy"));
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartRent"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
             }));
-            const filterdata = docs.filter((it)=>{
-                return it.CategoryPlan === id
-            })
-            setData(filterdata);
+            const FilterCart = docs?.filter((it)=>it.CategoryPlan === id)
+            setData(FilterCart);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
     };
 
-    useEffect(() => {
-        GetDataFireStore();
-    }, [id]);
 
-    // Filter items by category
+
+
+    // تصفية المشاريع بناءً على مصطلحات البحث
     const filteredProjects = data.filter((project) => {
         return (
             (!searchTerm || project.title.toUpperCase().includes(searchTerm.toUpperCase())) &&
@@ -84,13 +79,16 @@ export default function CategoryCards() {
     };
 
     const handleSearch = () => {
-        setCurrentPage(1);
+        setCurrentPage(1); // إعادة ضبط الصفحة الحالية عند البحث
     };
 
+    useEffect(() => {
+        GetDataFireStore();
+    }, [id]);
 
     const imgsetin = currentItems.map((it) => (
         <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
-            <Link to={`/buy/${it.id}`}>
+            <Link to={`/Rent/${it.id}`}>
                 <div className="CONTER">
                     <div className="bg-back">
                         <div className="img-imgSaleIn">
@@ -135,10 +133,9 @@ export default function CategoryCards() {
             </Link>
         </Grid>
     ));
-
     return (
-        <div className="buy">
-            <div className="img-buy">
+        <div className="rent">
+            <div className="img-rent">
                 <NavPar />
                 <div className="h-5vh"></div>
 
@@ -155,17 +152,17 @@ export default function CategoryCards() {
                                     sx={{ color: "#d3b76d", fontSize: "65px" }}
                                 />
                             </Link>
-                            <div style={{ textTransform: "uppercase" }}>buy</div>
+                            <div style={{ textTransform: "uppercase" }}>Filter/rent</div>
                         </h2>
                     </div>
                 </div>
                 <h1>LUXURY PROPERTIES FOR SALE IN UAE</h1>
                 <div className="hr">
-                    <div className="form-buy">
+                    <div className="form-rent">
                         <input
                             type="number"
                             className="input-style-1"
-                            placeholder="Buy"
+                            placeholder="rent"
                             min={10000}
                             value={price}
                             onChange={(e) => setPrice(e.target.value)}
@@ -226,10 +223,12 @@ export default function CategoryCards() {
                             value={minPrice}
                             onChange={(e) => setMinPrice(e.target.value)}
                         />
+
                     </div>
                 </div>
             </div>
-            <div className='buy'>
+
+            <div className='rent'>
                 <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
                     {imgsetin}
                 </Grid>
@@ -243,8 +242,13 @@ export default function CategoryCards() {
                     </div>
                 </div>
             </div>
+
+
+
             <OUREXPERT />
+
             <Footer />
         </div>
+
     );
 }
