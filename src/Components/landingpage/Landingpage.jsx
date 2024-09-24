@@ -253,20 +253,14 @@ export default function Landingpage() {
       </div>
       <div className="map">
         <div className="h-5vh"></div>
-        {filterCartId[0]?.map && (
-    <div>
+
+        <div>
         <h3>عرض الخريطة:</h3>
-        <iframe
-            src={filterCartId.map}
-            width="600"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-    </div>
-)}
+    
+ {filterCartId.map}
+
+      </div>
+
 
 
         <ContactusForm />

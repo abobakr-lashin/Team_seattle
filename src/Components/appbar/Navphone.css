@@ -1,0 +1,1149 @@
+/* phone */
+@media (max-width: 1024px) {
+    .custom-navbar-link {
+      font-size: 20px;
+    }
+    .bt-back {
+      display: block!important;
+      visibility: visible !important;
+    }
+    .custom-navbar-toggle:hover {
+      transform: scale(1.1); /* تكبير العنصر قليلاً عند المرور */
+    }
+  
+    .custom-navbar-item {
+      margin: 5px 0;
+      width: 100%;
+      color: white !important;
+    }
+  
+    .custom-dropdown-menu {
+      position: static;
+      min-width: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .custom-dropdown-menu.show {
+      display: block;
+      opacity: 1;
+    }
+  
+    .custom-navbar-link {
+      width: 100%;
+      padding: 0;
+      text-align: center;
+      color: white;
+      font-size: 15px;
+    }
+    .custom-navbar-menu {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      margin: 0;
+      transition: max-height 0.3s ease-in-out; /* لإضافة الأنيميشن */
+      overflow: hidden;
+      max-height: 0; /* يتم تحديده في الوضع الافتراضي للإخفاء */
+    }
+    .custom-navbar-toggle {
+      padding: 8px;
+      border-radius: 8px;
+      display: flex;
+      position: absolute;
+      top: 10px;
+      right: 5px;
+      border: #fffb00 solid 1px;
+      background-color: #bfb78f;
+      transition: all 0.3s ease; /* إضافة انتقال سلس لتأثيرات التغيير */
+    }
+  
+    .custom-navbar-toggle:hover {
+      transform: scale(1.1); /* تكبير العنصر قليلاً عند المرور */
+    }
+  
+    .custom-navbar-menu {
+      flex-direction: column;
+      width: 100%;
+      text-align: left;
+      justify-content: center;
+      align-items: center;
+      background-color: #bfb78f;
+      height: 100vh;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      margin: auto;
+      overflow-y: scroll !important;
+      z-index: 100;
+    }
+  
+    .custom-navbar-menu.active {
+      max-height: 100%; /* يتم تحديد الحد الأقصى للطول عند الفتح */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 160px 0px 0px 0px;
+      background-image: url("/public/uploads/nav/back.png");
+      background-repeat: no-repeat;
+      width: 100%;
+      background-size: cover;
+    }
+    .dis-n{
+      display: block;
+    }
+    .imgnp .h3 , .imgnp .h4 {
+      font-size: 20px;
+      color: white;
+  }
+  
+    .custom-navbar-item {
+      width: 100%;
+      color: white !important;
+      margin-left: 10%;
+      font-size: 20px;
+    }
+  
+    .custom-dropdown-menu {
+      position: static;
+      min-width: 100%;
+      opacity: 0;
+      transition: opacity 10s ease, background-color 5s; /* إضافة أنيميشن */
+    }
+    .custom-dropdown-menu.show {
+      display: block;
+      opacity: 1;
+    }
+  
+    .custom-dropdown-item {
+      padding: 12px 20px;
+      text-align: center;
+      color: white;
+      transition: display 10.5s;
+    }
+  
+    .custom-navbar-link {
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+      color: white;
+    }
+    .custom-en-ar {
+      flex: content;
+      position: relative;
+    }
+    .custom-navbar-link::after {
+      content: ">";
+      margin-left: 120px;
+      color: white;
+      font-size: 30px;
+      position: absolute;
+      top: -7px;
+      display: inline-block; /* تغيير display لتمكين التحكم في المسافات */
+    }
+  
+    .bt-back {
+      position: relative;
+      background-color: beige;
+      width: 97px;
+      height: 50px;
+      text-align: center;
+      border-radius: 20px;
+     
+      color: #123;
+  }
+    /* BUY */
+    .Buys .dis-buy {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .disi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+    .Buys .custom-dropdown-menu {
+      width: 60vw;
+      left: -5%;
+      top: -31px;
+    }
+    .Buys h3 {
+      width: 100%;
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .Buys h3 img {
+      font-weight: bold;
+      width: 35px;
+    }
+    .Buys .dis-paly {
+      width: 100%;
+      display: flex;
+      font-size: 20px;
+      padding: 10px;
+      margin: 5px;
+      align-items: start;
+      justify-content: start;
+    }
+    .Buys .dis-paly ul {
+      width: 100%;
+    }
+    .dis-paly li {
+      width: 100%;
+      padding: 5px;
+      font-size: 30px;
+    }
+    .dis-paly h4 {
+      list-style: disc;
+      padding: 5px;
+      font-weight: 500;
+      font-size: 36px;
+      width: 100%;
+  }
+  .imgnp .h3, .imgnp .h4 {
+    font-size: 20px;
+    color: white;
+    text-align: start;
+  }
+  .dis-n .imgnp {
+    margin: 10px;
+    background-image: url("/public/uploads/nav/backe3lan.png");
+    width: 100%;
+    height: 38vh;
+    background-position: 100%;
+    background-size: cover;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+  .dis-imgNbuy {
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    justify-content: space-around;
+    margin: 22px;
+
+}
+.Buys .imgnp {
+    margin: 10px;
+    background-image: url("/public/uploads/nav/backe3lan.png");
+    width: 100%;
+    height: 38vh;
+    background-position: 100%;
+    background-size: cover;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+.Buys .imgnp .h3, .imgnp .h4 {
+    font-size: 29px;
+    color: white;
+    text-align: start;
+}
+
+    /* BUY */
+    /* RENT */
+  
+    .RENT .custom-dropdown-menu {
+      width: 60vw;
+      left: -7% !important;
+      top: -61px;
+      height: 105vh;
+    }
+  
+    .RENT .dis-paly2 {
+      display: flex !important;
+      font-size: 18px;
+      padding: 22px;
+      align-items: center;
+      justify-content: start;
+    }
+  
+    .RENT .dis-paly3 {
+      display: flex !important;
+      width: 111%;
+      align-items: center;
+      position: relative;
+      left: -51px;
+      border: none;
+      outline: none;
+      justify-content: space-around;
+    }
+  
+    /* RENT */
+    /* Commercial */
+  
+    .Commercial .custom-dropdown-menu {
+      width: 100vw;
+      height: 100vh;
+      top: -112px;
+      left: -7% !important;
+      margin: 10px;
+    }
+  
+    .Commercial .css-mhc70k-MuiGrid-root > .MuiGrid-item {
+      font-size: 20px;
+    }
+    .Commercial .css-mhc70k-MuiGrid-root {
+      align-items: start;
+      list-style: disc;
+    }
+    .Commercial li {
+      list-style: none;
+    }
+  
+    .Commercial .dis-paly2 {
+      display: flex;
+      font-size: 20px;
+      padding: 10px;
+      align-items: start;
+      font-weight: bolder;
+  
+      justify-content: start;
+    }
+    .dis-paly2 li {
+      list-style: disc;
+      padding: 5px;
+      font-weight: bolder;
+    }
+  
+    .dis-imgNbuy2 li {
+      font-weight: bolder;
+  
+      list-style: none;
+    }
+    .custom-dropdown-item {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+    .Commercial .imgNCommercial img {
+      width: 250px;
+      margin: 26px;
+    }
+    .Commercial ul li {
+      padding: 10px;
+      font-weight: bold;
+    }
+    /* Commercial */
+    /* developers */
+  
+    .developers .css-mhc70k-MuiGrid-root > .MuiGrid-item {
+      margin: 15px 0px;
+      padding: 0px;
+      font-size: 18px;
+    }
+    .developers .css-mhc70k-MuiGrid-root {
+      align-items: start;
+      list-style: disc;
+    }
+  
+    .developers .custom-dropdown-menu {
+      width: 100vw;
+      margin: -1px;
+      position: absolute;
+      left: -5% !important;
+      top: -158px;
+      background-color: #bfb78f;
+      list-style: none;
+      padding: 0 1px;
+      border-radius: 23px;
+      height: auto;
+      overflow: hidden;
+      transition: opacity 1s ease, transform 0.5s ease;
+    }
+    .developers .dis-paly2 {
+      display: flex;
+      font-size: 18px;
+      margin: 10px;
+      align-items: center;
+      justify-content: start;
+    }
+    .dis-paly2 li {
+      list-style: none;
+      padding: 5px;
+      margin: 10px;
+    }
+  
+    .dis-paly2 .aldar img {
+      width: 75px;
+    }
+  
+    /* developers */
+    /* AREAS */
+    .AREAS .css-mhc70k-MuiGrid-root > .MuiGrid-item {
+      margin: 15px 0px;
+      padding: 0px;
+      font-size: 20px;
+    }
+    .AREAS .css-mhc70k-MuiGrid-root {
+      align-items: start;
+      list-style: disc;
+    }
+    .AREAS .custom-dropdown-menu {
+      width: 100vw;
+      position: absolute;
+      left: -37px !important;
+      top: -210px;
+      background-color: #bfb78f;
+      list-style: none;
+      padding: 0 1px;
+      border-radius: 23px;
+      height: auto;
+      overflow: hidden;
+      transition: opacity 1s ease, transform 0.5s ease;
+    }
+    .AREAS h3 {
+      width: 100vw;
+      font-size: 39px;
+      font-weight: bold;
+      margin: auto;
+      text-align: center;
+    }
+    .AREAS h3 img {
+      font-weight: bold;
+      width: 35px;
+    }
+    .AREAS .dis-paly {
+      width: 100vw;
+      display: flex;
+      font-size: 18px;
+      padding: 10px;
+      margin: 5px;
+      align-items: start;
+      justify-content: start;
+    }
+    .AREAS .dis-paly ul {
+      width: 100%;
+    }
+    .AREAS .dis-paly li {
+      width: 100%;
+      padding: 5px;
+      font-size: 23px;
+    }
+    .toggle-checkbox {
+      display: none;
+    }
+  
+    .AREAS .dis-imgNbuy h3 {
+      width: 61vw;
+      font-size: 34px;
+      font-weight: bold;
+      margin: auto;
+      text-align: center;
+    }
+    /* AREAS */
+    /* APPLY */
+    .APPLY .css-mhc70k-MuiGrid-root {
+      margin-top: 30px !important;
+    }
+    .APPLY .custom-dropdown-menu {
+      width: 100vw;
+      position: absolute;
+      left: -57px !important;
+      top: -389px;
+      background-color: #bfb78f;
+      list-style: none;
+      padding: 0 1px;
+      z-index: 9699999999999999 !important;
+      border-radius: 23px;
+      height: auto;
+      overflow: hidden;
+      transition: opacity 1s ease, transform 0.5s ease;
+    }
+    .APPLY .css-isbt42 {
+      margin-top: 47px;
+      margin-left: 27px;
+    }
+  
+    .APPLY .custom-dropdown-menu .imgcon img {
+      width: 100%;
+    }
+  
+    .APPLY .dis-paly2 {
+      display: flex;
+      font-size: 20px;
+      padding: 10px;
+      margin: 5px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dis-paly li {
+      list-style: none;
+      padding: 5px;
+    }
+    .APPLY .imgNCommercial {
+      display: flex;
+      width: 100%;
+      font-size: 20px;
+      align-items: center;
+      justify-content: end !important;
+    }
+  
+    .APPLY .dis-paly2 li {
+      font-size: 24px;
+      font-weight: lighter !important;
+    }
+    /* APPLY */
+    /* About */
+  
+    .About .custom-dropdown-menu {
+      display: none;
+      width: 80vw;
+    }
+    .ABOUT .css-mhc70k-MuiGrid-root > .MuiGrid-item {
+      margin: 15px 0px;
+      padding: 0px;
+      font-size: 20px;
+    }
+    .ABOUT .css-mhc70k-MuiGrid-root {
+      align-items: start;
+      list-style: disc;
+    }
+    .ABOUT .custom-dropdown-menu {
+      width: 100vw;
+      position: absolute;
+      left: -57px !important;
+      top: -331px;
+      background-color: #bfb78f;
+      list-style: none;
+      padding: 0 1px;
+      z-index: 9699999999999999 !important;
+      border-radius: 23px;
+      height: 100vh;
+      overflow: hidden;
+      transition: opacity 1s ease, transform 0.5s ease;
+    }
+  
+    .About .custom-dropdown-menu .imgcon img {
+      width: 80%;
+    }
+  
+    .About .dis-paly2 {
+      display: flex;
+      font-size: 20px;
+      margin: 5px;
+      align-items: start;
+      justify-content: space-between;
+    }
+  
+    .ABOUT .dis-paly {
+      display: flex;
+      font-size: 20px;
+      padding: 10px;
+      margin: 5px;
+      align-items: center;
+      position: relative;
+    }
+    .dis-paly li {
+      list-style: none;
+      padding: 5px;
+    }
+  
+    .About .imgNCommercial {
+      display: flex;
+      font-size: 20px;
+  
+      justify-content: start !important;
+    }
+    .About .dis-imgNbuy li {
+      padding: 5px;
+      margin: 5px;
+      list-style: none;
+    }
+    .About .css-mhc70k-MuiGrid-root {
+      align-items: start;
+    }
+  
+    .ABOUT .imgNCommercial {
+      display: flex;
+      justify-content: end;
+    }
+    .ABOUT p {
+      width: 100%;
+    }
+    .ABOUT .custom-dropdown-item {
+      padding: 25px;
+      list-style: none;
+    }
+    .ABOUT .dis-paly2 {
+      display: flex;
+      font-size: 20px;
+      align-items: center;
+      justify-content: start;
+    }
+    .ABOUT .dis-paly2 li {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      font-size: 17px;
+      font-weight: bolder;
+  
+      align-items: center !important;
+      justify-content: start;
+    }
+  
+    /* ABOUT */
+    /* Blogs */
+  
+    .Blogs .imgnp {
+      margin: 10px;
+      background-image: url("/public/uploads/nav/e3lan.png");
+      width: 95%;
+      height: auto;
+      border-radius: 30px;
+      padding: 20px;
+      background-size: cover;
+    }
+    .Blogs .custom-dropdown-menu {
+      width: 100vw;
+      position: absolute;
+      left: -37px !important;
+      top: -277px;
+      background-color: #bfb78f;
+      list-style: none;
+      padding: 0 1px;
+      z-index: 9699999999999999 !important;
+      border-radius: 23px;
+      height: auto;
+      overflow: hidden;
+      transition: opacity 1s ease, transform 0.5s ease;
+    }
+  
+    .dis-play3 .dis-paly1 div img {
+      width: 100px;
+      height: 100%;
+    }
+  
+    .Blogs .dis-paly {
+      display: flex;
+      font-size: 12px;
+      align-items: center;
+      justify-content: start;
+    }
+    .Blogs .dis-paly1 {
+      display: flex;
+      padding: 0px;
+      margin: 5px;
+      align-items: center;
+      justify-content: start;
+    }
+    .Blogs .dis-paly li {
+      list-style: disc;
+      padding: 5px;
+    }
+    .Blogs .imgNbuy {
+      display: flex;
+      font-size: 20px;
+      flex-direction: column;
+      gap: 5px;
+      justify-content: start;
+    }
+    .Blogs .imgNbuy .imgNbuy1 {
+      display: flex;
+      justify-content: center;
+    }
+    .Blogs .imgNbuy .imgNbuy2 {
+      display: flex;
+      justify-content: center;
+    }
+    .Blogs .imgNbuy .imgNbuy1 img {
+      width: 80%;
+      height: 200px;
+    }
+    .Blogs .imgNbuy .imgNbuy2 img {
+      width: 80%;
+      height: 160px;
+      margin-top: 1 0px;
+    }
+    .dis-play3 {
+      flex-direction: column;
+      display: flex;
+      margin-top: 20px;
+      margin-left: 20px;
+      font-size: 18px;
+      width: 80%;
+      flex-wrap: wrap;
+    }
+    .dis-play3 h4 {
+      font-size: 22px;
+    }
+    .dis-play3 p {
+      width: 80%;
+      flex-wrap: wrap;
+  
+      font-size: 22px;
+    }
+  
+    .Blogs .dis-imgNbuy {
+      display: flex;
+      justify-content: end !important;
+      flex-direction: column;
+    }
+    .Blogs .dis-paly1 .titel {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      margin-left: 5px;
+    }
+    .Blogs .dis-paly1 .img img {
+      width: 90px;
+      height: 100%;
+    }
+    .Blogs .dis-paly1 .titel h5 {
+      font-size: 18px;
+      padding: 0px;
+      margin: 0px;
+    }
+    .Blogs .dis-paly1 .titel p {
+      font-size: 10px !important;
+      width: 100%;
+    }
+  
+    /* Blogs */
+  
+    /* لاعفخى */
+    /* إخفاء القائمة المنسدلة افتراضيًا */
+    .custom-dropdown-menu {
+      position: absolute;
+    }
+  
+    /* إظهار القائمة عند التحديد (checked) */
+    #toggle-buy:checked ~ .custom-navbar-item:hover .custom-dropdown-menu {
+      display: none;
+      display: block;
+    }
+  
+    /* التأكد من إخفاء القائمة عند إلغاء التحديد */
+    #toggle-buy:not(:checked)
+      ~ ul
+      .custom-navbar-item:hover
+      .custom-dropdown-menu {
+      display: block;
+    }
+    .back-button:checked .custom-navbar-item:hover .custom-dropdown-menu {
+      display: none;
+    }
+    /* إضافة تنسيقات للقائمة */
+    .custom-dropdown-menu {
+      position: absolute;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 200px;
+    }
+  
+    .back-button label {
+      background-color: #bfb78f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    /* ghj */
+  }
+  @media (max-width: 770px) {
+    .Buys .custom-dropdown-menu {
+        width: 100%;
+        left: -45px;
+        top: -22px;
+        width: 103%;
+    }
+  .Buys h3 {
+    width: 100%;
+    font-size: 31px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .imgnp {
+    margin: 10px;
+    width: 98%;
+    height: 100%;
+    background-position: 100%;
+    background-size: 100%;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    padding: 20px;
+    position: relative;
+    left: 0;
+  }
+  .Buys .dis-paly h4 {
+    list-style: disc;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 28px;
+    width: 100%;
+  }
+  .Buys h3 {
+    width: 100%;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .Buys .dis-imgNbuy li {
+    padding: 5px;
+    margin: 1px;
+    font-weight: 500 !important;
+    list-style: none;
+    font-size: 20px;
+  }
+  .imgnp .h3, .imgnp .h4 {
+    font-size: 22px;
+    color: white;
+    text-align: start;
+}
+.dis-n .imgnp {
+    margin: 10px;
+    width: 100%;
+    height: 35vh;
+    background-position: 100%;
+    background-size: cover;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+    .dis-paly li {
+      width: 100%;
+      padding: 5px;
+      font-size: 25px;
+    }
+    .RENT .custom-dropdown-menu {
+      width: 60vw;
+      left: -7% !important;
+      top: -61px;
+      height: 105vh;
+    }
+  
+    .RENT .dis-paly2 {
+      display: flex !important;
+      font-size: 15px;
+      padding: 20px;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .RENT .imgNbuy img {
+      width: 100%;
+      margin: 20px;
+    }
+    .RENT .dis-paly3 {
+      display: flex !important;
+      width: 122%;
+      align-items: center;
+      position: relative;
+      left: -75px;
+      border: none;
+      outline: none;
+      justify-content: space-around;
+    }
+  }
+  @media (max-width: 425px) {
+    /* .Buys */
+    .Buys h3 {
+        width: 123%;
+        font-size: 22px;
+        text-align: left;
+        margin: 16px AUTO;
+    }
+    .Buys h3 img {
+        width: 13px;
+    }
+    .Buys .dis-paly h4 {
+        list-style: disc;
+        padding: 5px;
+        font-weight: 500;
+        font-size: 19px;
+        width: 100%;
+    }
+    .Buys .dis-paly {
+        width: 100%;
+        display: flex;
+        font-size: 20px;
+        padding: 10px;
+        margin: 5px;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+    }
+   .ullest .Buys h3 {
+        width: 100%;
+        font-size: 29px;
+    }
+    .Buys .dis-paly h4 {
+        list-style: disc;
+        padding: 11px;
+        font-weight: 500;
+        font-size: 27px;
+        width: 100%;
+    }
+    .Buys .dis-paly ul {
+      width: 100%;
+      text-align: start;
+    }
+    .Buys .imgnp .h3, .imgnp .h4 {
+        font-size: 17px;
+        color: white;
+        text-align: start;
+    }    .Buys .imgnp {
+      
+        height: 23vh;
+  
+    }
+    .dis-paly li {
+      padding: 10px;
+      text-align: start;
+      font-size: 18px;
+    }
+    .dis-imgNbuy {
+      display: flex;
+      flex-direction: column;
+    }
+    .imgnp .h3, .imgnp .h4 {
+        font-size: 11px;
+        color: white;
+        text-align: start;
+    }
+    .dis-n .imgnp {
+        margin: 10px;
+        width: 100%;
+        height: 21vh;
+        background-position: 100%;
+        background-size: cover;
+        border-radius: 30px;
+        background-repeat: no-repeat;
+        padding: 20px;
+    }
+    /* .Buys */
+    /* .RENT */
+    .RENT h3 {
+      margin-right: 25%;
+    }
+    .dis-paly li {
+      width: 100%;
+      padding: 5px;
+      font-size: 25px;
+    }
+    .RENT .custom-dropdown-menu {
+      width: 60vw;
+      left: -7% !important;
+      top: -61px;
+      height: fit-content;
+    }
+  
+    .RENT .dis-paly2 {
+      display: flex !important;
+      font-size: 20px;
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+    }
+    .RENT .imgNbuy img {
+      margin: 18px;
+      padding: 11px;
+      width: 91vw;
+      position: relative;
+      left: -49px;
+    }
+    .RENT .dis-paly3 {
+      display: flex !important;
+      width: 100vw;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      left: -54px;
+      border: none;
+      outline: none;
+      justify-content: space-around;
+    }
+    /* .RENT */
+  }
+  @media (max-width: 375px) {
+    .Buys h3 {
+      font-size: 18px;
+    }
+  
+    .Buys .dis-paly {
+      width: 156%;
+      margin-left: -71px;
+      flex-direction: column;
+    }
+    .dis-paly li {
+      padding: 10px;
+      text-align: start;
+      font-size: 23px;
+    }
+    .imgNbuy {
+      width: 100%;
+      margin: auto;
+    }
+    .imgNbuy img {
+      width: 300px;
+      margin-left: 0px !important;
+    }
+    .ullest {
+      margin-left: 0px !important;
+    }
+    .dis-n .imgnp {
+        margin: 10px;
+        width: 100%;
+        height: 18vh;
+        background-position: 100%;
+        background-size: cover;
+        border-radius: 30px;
+        background-repeat: no-repeat;
+        padding: 20px;
+    }
+    .imgnp .h3, .imgnp .h4 {
+        font-size: 10px;
+        color: white;
+        text-align: start;
+    }
+    .Buys .imgnp .h3, .imgnp .h4 {
+        font-size: 10px;
+
+        color: white;
+        text-align: start;
+    }
+    .Buys .imgnp {
+        height: 23vh;
+    }
+    /* .RENT */
+    .Buys h3 {
+        font-size: 26px;
+    }
+    .dis-paly li {
+      width: 100%;
+      padding: 5px;
+      font-size: 25px;
+    }
+    .RENT .custom-dropdown-menu {
+      width: 60vw;
+      left: -7% !important;
+      top: -61px;
+      height: fit-content;
+    }
+  
+    .RENT .dis-paly2 {
+      display: flex !important;
+      font-size: 15px;
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+    }
+    .RENT .imgNbuy img {
+      margin: 18px;
+      padding: 11px;
+      width: 91vw;
+      position: relative;
+      left: -29px;
+    }
+    .RENT .dis-paly3 {
+      display: flex !important;
+      width: 100vw;
+      align-items: center;
+      position: relative;
+      left: -54px;
+      border: none;
+      outline: none;
+      justify-content: space-around;
+    }
+    /* .RENT */
+  }
+  @media (max-width: 325px) {
+    .Buys .imgnp .h3, .imgnp .h4 {
+        font-size: 8px;
+        color: white;
+        text-align: start;
+    }    .Buys .imgnp {
+        height: 16vh;
+    }
+    /* buy */
+    .Buys .custom-dropdown-menu {
+        width: 100%;
+        left: -45px;
+        top: -22px;
+        width: 107%;
+    }
+    .imgNbuy img {
+        width: 220px;
+        margin-left: 0px !important;
+    }
+    .Buys h3 {
+        font-size: 19px;
+    }
+    .Buys .dis-paly li {
+        width: 100%;
+        padding: 5px;
+        font-size: 17px;
+    }
+    .Buys .dis-paly h4 {
+        list-style: disc;
+        padding: 11px;
+        font-weight: 500;
+        font-size: 21px;
+        width: 100%;
+    }
+    .Buys .dis-imgNbuy li {
+        padding: 5px;
+        margin: 1px;
+        font-weight: 500 !important;
+        list-style: none;
+        font-size: 15px;
+    }
+    /* buy */
+    /* .RENT */
+    .RENT h3 {
+      text-align: start;
+      margin-right: 30px;
+      font-size: 19px;
+    }
+    .dis-paly li {
+      width: 100%;
+      padding: 5px;
+      font-size: 25px;
+    }
+    .RENT .custom-dropdown-menu {
+      width: 60vw;
+      left: -7% !important;
+      top: -61px;
+      height: fit-content;
+    }
+  
+    .RENT .dis-paly2 {
+      display: flex !important;
+      font-size: 19px;
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+    }
+    .RENT .imgNbuy img {
+      margin: 18px;
+      padding: 11px;
+      width: 91vw;
+      position: relative;
+      left: -29px;
+    }
+    .RENT .dis-paly3 {
+      display: flex !important;
+      width: 100vw;
+      align-items: center;
+      position: relative;
+      left: -54px;
+      border: none;
+      outline: none;
+      justify-content: space-around;
+    }
+    /* .RENT */
+  }
+  /* phone */
+  
