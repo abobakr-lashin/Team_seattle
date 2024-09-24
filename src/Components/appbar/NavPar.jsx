@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
 import FormN from "./FormN";
 import Typography from "@mui/material/Typography";
 import { Grid, ImageListTileBar, IconButton } from "@mui/material";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
+import "./Navbar.css";
+import "./Navphone.css";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,11 +34,7 @@ const Navbar = () => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-    const screenWidth = window.screen.width;
-    const screenHeight = window.screen.height;
 
-    console.log(`عرض الشاشة: ${screenWidth}px`);
-    console.log(`ارتفاع الشاشة: ${screenHeight}px`);
     const handleDropdownToggle = (dropdown) => {
         setDropdownOpen({
             ABOUT_US: false,
@@ -244,17 +241,14 @@ const Navbar = () => {
                         </span>
                         <div className="Buys">
                             <ul
-                                className={`custom-dropdown-menu ${dropdownOpen.BUY ? "show" : "none"
-                                    }`}
-                            >
+                                className={`custom-dropdown-menu ${dropdownOpen.BUY ? "show" : "none" }`}>
+                                <div
+                                
+                                    className="custom-dropdown-item  dis-buy"
+                                >
                                 <div className="bt-back" onClick={handltap}>
                                     رجوع
                                 </div>
-                                <div
-                                    container
-                                    spacing={2}
-                                    className="custom-dropdown-item  dis-buy"
-                                >
                                     <div className="dis-buy">
                                         <div item lg={5} xs={12}>
                                             <h3>
@@ -962,6 +956,23 @@ const Navbar = () => {
                             </div>
                         </div>
                     </li>
+                    <div className="dis-n">
+
+                    <div className="imgnp">
+                                        <div className="disi">
+                                            <div>
+                                                <div className="h3">
+                                                    Schedule your free consultation today
+                                                </div>
+                                                <div className="h4">
+                                                    And our team will help you find the ideal property for
+                                                    your needs
+                                                </div>
+                                            </div>
+                                            <FormN name={"Free consultation"} />
+                                        </div>
+                                    </div>
+                    </div>
                 </ul>
             </nav>
         </div>
