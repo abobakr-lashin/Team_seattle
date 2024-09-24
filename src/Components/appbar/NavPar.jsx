@@ -133,7 +133,7 @@ const Navbar = () => {
         } else {
             show = document.querySelector(".custom-dropdown-menu");
             if (show) {
-                show.style.display = "flex";
+                show.classList = "show";
             }
         }
 
@@ -142,11 +142,23 @@ const Navbar = () => {
         if (naAll) {
             naAll.onclick = () => {
                 if (show) {
-                    show.style.display = "flex";
+                    show.classList= "show";
                 }
             };
         }
     };
+    const handlnav =()=>{
+        let show = document.querySelector(".custom-dropdown-menu.show");
+
+        if (show) {
+            show.style.display = "flex";
+        } else {
+            show = document.querySelector(".custom-dropdown-menu");
+            if (show) {
+                show.classList = "show";
+            }
+        }
+    }
     // التحكم في إظهار القائمة بناءً على حالة checkbox
     const [isChecked, setIsChecked] = useState(false);
 
@@ -241,6 +253,7 @@ const Navbar = () => {
                         </span>
                         <div className="Buys">
                             <ul
+                            onclick={handlnav}
                                 className={`custom-dropdown-menu ${dropdownOpen.BUY ? "show" : "none" }`}>
                                 <div
                                 
