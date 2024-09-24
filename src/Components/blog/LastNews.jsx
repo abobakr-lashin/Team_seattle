@@ -70,14 +70,7 @@ export default function LastNews({ newsPerPage }) {
                             <div
                                 className="img-LatestNews1"
                                 key={item.id}
-                                // style={{ backgroundImage: `url(${item.fileCart})`}}
-                                style={{
-                                    backgroundImage: `url(${item.fileCart})`,
-                                    backgroundSize: 'cover', // Ensures the image covers the entire div
-                                    backgroundPosition: 'center', // Centers the image
-                                    height: '200px', // Set a height for the div
-                                    width: '100%', // Set a width for the div
-                                }}
+                                style={{ backgroundImage: `url(${item.fileCart})` }}
                             >
                                 <div className="news-title">{item.title}</div>
                                 <div className="news-text">{item.text}</div>

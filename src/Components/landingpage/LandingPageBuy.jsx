@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import FormContainer from "../appbar/FormContainer";
 import Slider from "react-slick";
-import { Grid } from "@mui/material";
+import { Grid, Rating } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "./landingpage.css";
 import CareersForm from "../contactus/CareersForm";
@@ -199,42 +199,7 @@ export default function LandingPageBuy() {
                                 <div className=" Listing">Listing by</div>
                                 <div className="name">Ramin Sadeghi</div>
                                 <div className="contact ">
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
+                                <Rating name="size-medium" defaultValue={filterCartId[0]?.stars} readOnly />
                                 </div>
                             </div>
                         </div>
