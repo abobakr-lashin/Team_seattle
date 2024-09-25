@@ -241,7 +241,7 @@ color: black;
 
   
   .dis div .btn-t {
-    width: 105px;
+    width: 87px;
     height: 25px;
     background-color: #107D96;
     padding: 8px;
@@ -351,6 +351,13 @@ color: black;
     transform: translateY(-50%);
     color: #888;
   }
+  .img-Abudhabi {
+    width: 88%;
+    position: relative;
+    background-color: #085364;
+    padding-top: 100%;
+    border-radius: 50px;
+}
   
 }
 

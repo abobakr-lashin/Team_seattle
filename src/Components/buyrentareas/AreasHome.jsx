@@ -111,14 +111,14 @@ export default function BuyHome() {
   ));
 
   return (
-    <div>
+    <div className="home">
       <div className="grop-title">
         <div className="img-dis">
           <img src="/uploads/img/marpa.png" alt="" />
         </div>
         <div className="title-dis7" style={{ display: "flex" }}>
           <h2>
-            <div style={{ textTransform: "uppercase", fontSize: "50px" }}>
+            <div style={{ textTransform: "uppercase",  }}>
             Popular Areas in UAE</div>
           </h2>
         </div>
@@ -126,6 +126,7 @@ export default function BuyHome() {
       <div className="h-5vh"></div>
 
       <Slider {...settings}>{imgsetin}</Slider>
+      <div className="h-5vh"></div>
       <div className="h-5vh"></div>
       <div className="h-5vh"></div>
     </div>

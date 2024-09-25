@@ -229,7 +229,7 @@
     margin: 22px;
 
 }
-.Buys .imgnp {
+ .imgnp {
     margin: 10px;
     background-image: url("/public/uploads/nav/backe3lan.png");
     width: 100%;
@@ -240,7 +240,7 @@
     background-repeat: no-repeat;
     padding: 20px;
 }
-.Buys .imgnp .h3, .imgnp .h4 {
+ .imgnp .h3, .imgnp .h4 {
     font-size: 29px;
     color: white;
     text-align: start;
@@ -843,6 +843,24 @@
       outline: none;
       justify-content: space-around;
     }
+    .RENT .dis-paly2 h3 {
+      font-size: 27px;
+  }
+  .dis-paly3 h4 {
+    margin: 10px;
+    align-items: start;
+    width: 100%;
+    font-size: 22px;
+    font-weight: 500;
+}
+.RENT .dis-paly3 li {
+  text-align: start;
+  list-style: none;
+  padding: 5px;
+  font-size: 19px;
+  width: 100%;
+  font-weight: lighter;
+}
   }
   @media (max-width: 425px) {
     /* .Buys */
@@ -887,7 +905,7 @@
       width: 100%;
       text-align: start;
     }
-    .Buys .imgnp .h3, .imgnp .h4 {
+ .imgnp .h3, .imgnp .h4 {
         font-size: 17px;
         color: white;
         text-align: start;

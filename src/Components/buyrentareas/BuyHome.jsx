@@ -149,7 +149,7 @@ export default function BuyHome() {
         </div>
         <div className="title-dis7" style={{ display: "flex" }}>
           <h2>
-            <div style={{ textTransform: "uppercase", fontSize: "50px" }}>
+            <div style={{ textTransform: "uppercase",}}>
             Buying Property in UAE            </div>
           </h2>
         </div>

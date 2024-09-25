@@ -7,6 +7,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
 import "./Navbar.css";
 import "./Navphone.css";
+import { Block } from "@mui/icons-material";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -125,48 +126,7 @@ const Navbar = () => {
             console.error("Error fetching documents: ", error);
         }
     };
-    const handltap = () => {
-        let show = document.querySelector(".custom-dropdown-menu.show");
-
-        if (show) {
-            show.style.display = "none";
-        } else {
-            show = document.querySelector(".custom-dropdown-menu");
-            if (show) {
-                show.classList = "show";
-            }
-        }
-
-        let naAll = document.querySelector(".custom-navbar-link");
-
-        if (naAll) {
-            naAll.onclick = () => {
-                if (show) {
-                    show.classList= "show";
-                }
-            };
-        }
-    };
-    const handlnav =()=>{
-        let show = document.querySelector(".custom-dropdown-menu.show");
-
-        if (show) {
-            show.style.display = "flex";
-        } else {
-            show = document.querySelector(".custom-dropdown-menu");
-            if (show) {
-                show.classList = "show";
-            }
-        }
-    }
-    // التحكم في إظهار القائمة بناءً على حالة checkbox
-    const [isChecked, setIsChecked] = useState(false);
-
-    // Toggle dropdown for BUY
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
-    };
-
+   
     // Get Data Category
     const getCategories = async () => {
         try {
@@ -223,8 +183,52 @@ const Navbar = () => {
 
     // handle Filter 
 
+    const handleToggleDropdown = (dropdown) => {
+        setDropdownOpen({
+            ...dropdownOpen,
+            [dropdown]: !dropdownOpen[dropdown],
+        });
 
 
+    };
+    const handlback = (dropdown) => {
+        const tab = document.querySelector(`.custom-navbar-item .custom-dropdown-menu`);
+
+        // التأكد من أن العنصر موجود
+        if (tab) {
+            tab.style.display ="none" // تأكد من كتابة 'display' بشكل صحيح
+        }      
+    
+    };
+ 
+    const handltap = (event) => {
+        // التحقق مما إذا كانت الشاشة أقل من 1025 بكسل باستخدام matchMedia
+        const mediaQuery = window.matchMedia("(max-width: 1024px)");
+    
+        if (mediaQuery.matches) {
+            const targetElement = event.target; // العنصر الذي تم النقر عليه
+            const backButton = document.getElementById("back-button"); // زر الرجوع
+    
+            // التحقق مما إذا كان العنصر الذي تم النقر عليه هو زر الرجوع
+            if (targetElement === backButton) {
+                const buy = document.getElementsByClassName("custom-dropdown-menu");
+                const tab = document.querySelector(`custom-dropdown-menu show`);
+
+                // التأكد من أن لديك عناصر في القائمة
+                if (buy.length > 0) {
+                    // التعامل مع كل عنصر في القائمة
+                    for (let i = 0; i < buy.length; i++) {
+                        const menu = buy[i];
+    
+                        // التحقق مما إذا كان العنصر يحتوي على الصف 'show'
+                        if (menu.classList.contains("show")) {
+                            tab.style.display = "flex";  // إخفاء العنصر عند النقر على زر الرجوع
+                        }
+                    }
+                }
+            }
+        }
+    };
     useEffect(() => {
         GetDataFireStore();
         getCategories();
@@ -246,21 +250,22 @@ const Navbar = () => {
                         className="custom-navbar-item"
                         onMouseEnter={() => handleMouseEnter("BUY")}
                         onMouseLeave={() => handleMouseLeave("BUY")}
-                        onClick={() => handleDropdownToggle("BUY")}
-                    >
-                        <span className="custom-navbar-link">
+                        onClick={() => handleToggleDropdown("BUY")} 
+                        
+                        >
+                        <span className="custom-navbar-link"          
+                                      onClick={handltap("BUY")} 
+                        >
+
                             <Link to="/Buy">BUY</Link>
                         </span>
                         <div className="Buys">
-                            <ul
-                            onclick={handlnav}
-                                className={`custom-dropdown-menu ${dropdownOpen.BUY ? "show" : "none" }`}>
-                                <div
-                                
+                        <ul className={`custom-dropdown-menu ${dropdownOpen.BUY ? "show" : ""}`}>
+                        <div
                                     className="custom-dropdown-item  dis-buy"
                                 >
-                                <div className="bt-back" onClick={handltap}>
-                                    رجوع
+<div className="bt-back" onClick={() => handlback("BUY")}>
+رجوع
                                 </div>
                                     <div className="dis-buy">
                                         <div item lg={5} xs={12}>
@@ -337,7 +342,7 @@ const Navbar = () => {
                                 className={`custom-dropdown-menu ${dropdownOpen.RENT ? "show" : ""
                                     }`}
                             >
-                                <div className="bt-back" onClick={handltap}>
+                                <div className="bt-back" >
                                     رجوع
                                 </div>
                                 <div container spacing={2} className="custom-dropdown-item  ">
@@ -406,7 +411,7 @@ const Navbar = () => {
                                 className={`custom-dropdown-menu ${dropdownOpen.Commercial ? "show" : ""
                                     }`}
                             >
-                                <div className="bt-back" onClick={handltap}>
+                                <div className="bt-back" >
                                     رجوع
                                 </div>
 
@@ -477,7 +482,7 @@ const Navbar = () => {
                                 className={`custom-dropdown-menu ${dropdownOpen.DEVELOPERS ? "show" : ""
                                     }`}
                             >
-                                <div className="bt-back" onClick={handltap}>
+                                <div className="bt-back" >
                                     رجوع
                                 </div>
 
@@ -568,7 +573,7 @@ const Navbar = () => {
                                 className={`custom-dropdown-menu ${dropdownOpen.AREAS ? "show" : ""
                                     }`}
                             >
-                                <div className="bt-back" onClick={handltap}>
+                                <div className="bt-back" >
                                     رجوع
                                 </div>
 
@@ -647,7 +652,7 @@ const Navbar = () => {
                                 className={`custom-dropdown-menu ${dropdownOpen.Blogs ? "show" : ""
                                     }`}
                             >
-                                <div className="bt-back" onClick={handltap}>
+                                <div className="bt-back" >
                                     رجوع
                                 </div>
 
@@ -765,7 +770,7 @@ const Navbar = () => {
                                 className={`custom-dropdown-menu ${dropdownOpen.ABOUT_US ? "show" : ""
                                     }`}
                             >
-                                <div className="bt-back" onClick={handltap}>
+                                <div className="bt-back" >
                                     رجوع
                                 </div>
 
@@ -846,7 +851,7 @@ const Navbar = () => {
                                 className={`custom-dropdown-menu ${dropdownOpen.APPLY ? "show" : ""
                                     }`}
                             >
-                                <div className="bt-back" onClick={handltap}>
+                                <div className="bt-back" >
                                     رجوع
                                 </div>
 

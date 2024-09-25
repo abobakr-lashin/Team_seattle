@@ -160,8 +160,9 @@ color: #ad9a5a;
     margin: auto !important;
   } */
   .form-container {
-    width: 100% !important;  
-    margin-top: 5rem  ;}
+    width: 100% !important;
+    margin-top: 0rem;
+}
     .form{
       width: 18rem;
       height:19rem;
