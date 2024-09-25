@@ -9,14 +9,15 @@
   background-size: cover;
   
 }
-.contbg {
-  width: 95%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: auto;
-}
 
+.contbg {
+  align-items: center;
+  display: flex;
+  height: auto;
+  justify-content: space-evenly;
+  width: 82%;
+  margin: auto;
+}
 .contbg div img{
   width: 60%;
   margin-left: 20px;
