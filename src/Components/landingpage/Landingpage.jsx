@@ -150,8 +150,8 @@ export default function Landingpage() {
                     </div>
                 </div>
                 <div className="contbg">
-
-                    <div>
+{/* من هنا الصوره يا ابراهيم  */}
+                    <div className="img-samy">
                         <img src="/uploads/landingpage/export/icon/samayas.png" alt="samayas" />
                     </div>
                     <div className="formheader">

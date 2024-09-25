@@ -7,13 +7,13 @@ import FormContainer from "../appbar/FormContainer";
 import Slider from "react-slick";
 import { Grid, Rating } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import "./landingpage.css";
 import CareersForm from "../contactus/CareersForm";
 import ContactusForm from "../contactus/ContactusForm";
 import Footer from "../footer/Footer";
 import { useEffect, useState } from "react";
 import { firestore } from "../../firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
+import "./landingpage.css";
 
 export default function LandingPageBuy() {
     const [cartId, setCartId] = useState([]);
