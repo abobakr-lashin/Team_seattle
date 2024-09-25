@@ -16,8 +16,10 @@
   justify-content: space-evenly;
   height: auto;
 }
+
 .contbg div img{
-  width: 80%;
+  width: 60%;
+  margin-left: 20px;
 }
 /* .contbg div{
   display: flex;
@@ -27,7 +29,17 @@
 } */
 
 /* silder */
-
+.Landingpage .form-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  align-content: flex-end;
+  justify-content: space-around;
+}
 .slider-container {
   width: 80%;
   margin: auto;
