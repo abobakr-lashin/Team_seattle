@@ -11,15 +11,17 @@
 }
 
 .contbg {
+ 
   align-items: center;
   display: flex;
   height: auto;
   justify-content: space-evenly;
   width: 82%;
-  margin: auto;
+  margin: -52px auto auto;
+
 }
 .contbg div img{
-  width: 60%;
+  width: 77%;
   margin-left: 20px;
 }
 /* .contbg div{
