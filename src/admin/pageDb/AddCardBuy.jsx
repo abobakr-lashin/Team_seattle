@@ -28,7 +28,7 @@ export default function AddCardBuy() {
         beds: '',
         baths: '',
         square: '',
-        qualities: '',
+        parking: '',
         location: '',
         monthlyPayment: '',
         listingName: '',
@@ -89,6 +89,7 @@ export default function AddCardBuy() {
                 await uploadBytes(fileRef, file);
                 return await getDownloadURL(fileRef);
             }));
+
             const fileRefBlog = ref(storage, `filesBlog/${formData.listingImage.name}`);
             const fileRefImageCart = ref(storage, `filesBlog/${formDataImage.name}`);
 
@@ -110,7 +111,7 @@ export default function AddCardBuy() {
                 beds: formData.beds,
                 baths: formData.baths,
                 square: formData.square,
-                qualities: formData.qualities,
+                parking: formData.parking,
                 location: formData.location,
                 monthlyPayment: formData.monthlyPayment,
                 listingName: formData.listingName,
@@ -136,7 +137,7 @@ export default function AddCardBuy() {
                 beds: '',
                 baths: '',
                 square: '',
-                qualities: '',
+                parking: '',
                 location: '',
                 monthlyPayment: '',
                 listingName: '',
@@ -269,7 +270,7 @@ export default function AddCardBuy() {
                     </div>
                     <div className="form-group">
                         <input
-                            type="number"
+                            type="text"
                             name="price"
                             placeholder="Price"
                             value={formData.price}
@@ -302,10 +303,10 @@ export default function AddCardBuy() {
                     <div className="form-group">
                         <input
                             type="text"
-                            name="qualities"
-                            placeholder="Qualities"
+                            name="parking"
+                            placeholder="parking"
                             maxLength="50"
-                            value={formData.qualities}
+                            value={formData.parking}
                             onChange={handleInputChange}
                         />
                         <input

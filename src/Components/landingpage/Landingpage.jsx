@@ -150,7 +150,7 @@ export default function Landingpage() {
                     </div>
                 </div>
                 <div className="contbg">
-{/* من هنا الصوره يا ابراهيم  */}
+                    {/* من هنا الصوره يا ابراهيم  */}
                     <div className="img-samy">
                         <img src="/uploads/landingpage/export/icon/samayas.png" alt="samayas" />
                     </div>
@@ -195,7 +195,7 @@ export default function Landingpage() {
                             </div>
                             <div className="text">
                                 <div className=" Listing">Listing by</div>
-                                <div className="name">Ramin Sadeghi</div>
+                                <div className="name">{filterCartId[0]?.listingName}</div>
                                 <div className="contact ">
                                     <Rating name="size-medium" defaultValue={filterCartId[0]?.stars} readOnly />
                                 </div>

@@ -121,7 +121,7 @@ export default function Buy() {
                                 <hr />
                                 <div className="Listing-by">
                                     <div className="img-lisby">
-                                        <img src={it.imageCart} alt="Property" />
+                                        <img src={it.bgImage} alt="Property" />
                                     </div>
                                     <div className="title-lisby">Listing by Ramin Sadeghi </div>
                                 </div>

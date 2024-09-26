@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import FormContainer from "../appbar/FormContainer";
 import Slider from "react-slick";
-import { Grid } from "@mui/material";
+import { Grid, Rating } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "../landingpage/landingpage.css";
 import CareersForm from "../contactus/CareersForm";
@@ -74,6 +74,8 @@ export default function LandingPageBuyLocation() {
     useEffect(() => {
         GetDataFireStore();
     }, [id]);
+
+    console.log(filterCartId[0]?.stars);
 
     const imgsetsin = filterCartId?.map((it) => (
         <div className="dis-play1">
@@ -166,11 +168,7 @@ export default function LandingPageBuyLocation() {
 
                         {imgsetsin}
                         <div className="hr3"></div>
-                        {/* من هنا يا ابراهيم  */}
-                        {/* من هنا يا ابو بكر  */}
                         <div className="text" dangerouslySetInnerHTML={{ __html: filterCartId[0]?.text }}></div>
-
-                        {/* من هنا يا ابراهيم  */}
                         <h1> Explore the Area: </h1>
                         <h4>
                             {" "}
@@ -189,52 +187,16 @@ export default function LandingPageBuyLocation() {
                             </div>
                             <div className="text">
                                 <div className=" Listing">Listing by</div>
-                                <div className="name">Ramin Sadeghi</div>
+                                <div className="name">{filterCartId[0]?.listingName}</div>
                                 <div className="contact ">
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
-                                    <img
-                                        width={"20px"}
-                                        style={{ margin: "2px" }}
-                                        src="/uploads/landingpage/export/icon/star.png"
-                                        alt="star"
-                                    />
+                                    <Rating name="size-medium" defaultValue={''} readOnly />
                                 </div>
                             </div>
                         </div>
                         <div className="Email">
-                            <a href="mailto:someone@example.com?subject=Subject&body=Hello!">
-                                Email
-                            </a>
-                        </div>          </div>
+                            <a href={`mailto:${filterCartId[0]?.email}?subject=Subject&body=Hello!`}> </a>
+                        </div>
+                    </div>
                     <div className="formc">
                         <FormContainer color={"#06404d"} />
                     </div>
