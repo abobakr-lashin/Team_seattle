@@ -146,7 +146,11 @@ color: #ad9a5a;
   z-index: 1;
 }
 }
-
+@media screen and (max-width: 790px) {
+  .video-background{
+    width: 136%;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .form-container {
