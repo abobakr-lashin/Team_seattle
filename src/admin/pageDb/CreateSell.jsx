@@ -7,7 +7,7 @@ import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-export default function AddCardBuy() {
+export default function CreateSell() {
     const Navigate = useNavigate()
     const [FileURLs, setFileURLs] = useState([])
     const [FileImage, setFileImages] = useState([])
@@ -103,7 +103,7 @@ export default function AddCardBuy() {
 
 
             // Send Data TO fierStore
-            await addDoc(collection(firestore, 'listBlogsCartBuy'), {
+            await addDoc(collection(firestore, 'listBlogsCartSell'), {
                 title: formData.title,
                 category: formData.category,
                 price: formData.price,

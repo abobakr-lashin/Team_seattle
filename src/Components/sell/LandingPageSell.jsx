@@ -7,22 +7,22 @@ import FormContainer from "../appbar/FormContainer";
 import Slider from "react-slick";
 import { Grid, Rating } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import "./landingpage.css";
 import CareersForm from "../contactus/CareersForm";
 import ContactusForm from "../contactus/ContactusForm";
 import Footer from "../footer/Footer";
 import { useEffect, useState } from "react";
 import { firestore } from "../../firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
+import "../landingpage/landingpage.css";
 
-export default function Landingpage() {
+export default function LandingPageSell() {
     const [cartId, setCartId] = useState([]);
     const { id } = useParams()
 
     // Get Data from Firestore
     const GetDataFireStore = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firestore, "listingsBlogs"));
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartSell"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
@@ -83,6 +83,8 @@ export default function Landingpage() {
         GetDataFireStore();
     }, [id]);
 
+    console.log(filterCartId[0]?.stars);
+
     const imgsetsin = filterCartId?.map((it) => (
         <div className="dis-play1">
             <div>
@@ -105,7 +107,7 @@ export default function Landingpage() {
             </div>
             <div>
                 <span>
-                    <span>{it.Parkingn}</span>
+                    <span>{it.parking}</span>
                 </span>
                 <div>Parking </div>
             </div>
@@ -117,7 +119,7 @@ export default function Landingpage() {
             <div
                 className="bg-Landingpage"
                 style={{
-                    backgroundImage: `url(${filterCartId[0]?.bgImage})`,
+                    backgroundImage: `url(${filterCartId[0]?.imageCart})`,
                 }}
             >
                 <NavPar />
@@ -143,15 +145,16 @@ export default function Landingpage() {
                                     sx={{ color: "#d3b76d", fontSize: "65px" }}
                                 />
                             </Link>
-                            <div style={{ textTransform: "uppercase" }}>
+                            <div style={{ textTransform: "uppercase" , width:'80%' }}>
                                 {filterCartId[0]?.title}
                             </div>
                         </h2>
                     </div>
                 </div>
                 <div className="contbg">
-                    {/* من هنا الصوره يا ابراهيم  */}
-                    <div className="img-samy">
+
+                    <div>
+                        {/* هنا الصوره يا ابراهيم  */}
                         <img src="/uploads/landingpage/export/icon/samayas.png" alt="samayas" />
                     </div>
                     <div className="formheader">
@@ -167,8 +170,8 @@ export default function Landingpage() {
 
             <div className="h-5vh"></div>
             <div className="h-5vh"></div>
-            <div className="grid-lan" spacing={2} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
-                <div className="grid-lan1" item lg={8} md={12} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
+            <Grid container spacing={2} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
+                <Grid item xs={8} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
                     <div className="Sitedetails">
                         <div className="address">
                             {filterCartId[0]?.location}
@@ -176,53 +179,51 @@ export default function Landingpage() {
                         <div className="theprice">{filterCartId[0]?.price} ${filterCartId[0]?.currency}</div>
                         <div className="theprices">${filterCartId[0]?.monthlyPayment} {filterCartId[0]?.currency} (per month)</div>
                         <div className="hr3"></div>
+
                         {imgsetsin}
                         <div className="hr3"></div>
+                        {/* من هنا يا ابراهيم  */}
+                        {/* من هنا يا ابو بكر  */}
                         <div className="text" dangerouslySetInnerHTML={{ __html: filterCartId[0]?.text }}></div>
+
+                        {/* من هنا يا ابراهيم  */}
                         <h1> Explore the Area: </h1>
                         <h4>
                             {" "}
                             <LocationOnIcon /> Location: Mohammed Bin Rashid City{" "}
                         </h4>
                     </div>
-                </div>
-                <div item lg={4} md={12} alignItems={"center"} justifyContent={"center"}>
+                </Grid>
+
+                <Grid item xs={4} alignItems={"center"} justifyContent={"center"}>
                     <div className="ContactAgent">
                         <div className="title">Contact Agent</div>
+
                         <div className="imgctext">
                             <div className="imgcontact">
-                                <img src="/uploads/landingpage/export/photo3.png" alt="" />
+                                <img src={filterCartId[0]?.bgImage} alt="" />
                             </div>
                             <div className="text">
                                 <div className=" Listing">Listing by</div>
                                 <div className="name">{filterCartId[0]?.listingName}</div>
                                 <div className="contact ">
-                                    <Rating name="size-medium" defaultValue={filterCartId[0]?.stars} readOnly />
+                                    <Rating name="size-medium" value={filterCartId[0]?.stars || 0}readOnly />
                                 </div>
                             </div>
                         </div>
                         <div className="Email">
-                            <a href="mailto:someone@example.com?subject=Subject&body=Hello!">
+                            <a href={`mailto:${filterCartId[0]?.email}?subject=Subject&body=Hello!`}>
                                 Email
                             </a>
                         </div>          </div>
                     <div className="formc">
                         <FormContainer color={"#06404d"} />
                     </div>
-                </div>
-            </div>
+                </Grid>
+            </Grid>
             <div className="map">
                 <div className="h-5vh"></div>
-
-                <div>
-                    <h3>عرض الخريطة:</h3>
-
-                    {filterCartId.map}
-
-                </div>
-
-
-
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109180.12447447746!2d30.03728652547649!3d31.22408458346241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c49126710fd3%3A0xb4e0cda629ee6bb9!2z2KfZhNil2LPZg9mG2K_YsdmK2KnYjCDZhdit2KfZgdi42Kkg2KfZhNil2LPZg9mG2K_YsdmK2Kk!5e0!3m2!1sar!2seg!4v1726576245870!5m2!1sar!2seg"></iframe>
                 <ContactusForm />
             </div>
             <div className="h-5vh"></div>

@@ -8,7 +8,6 @@ import TeamDetails from './Components/abuotus/TeamDetails';
 import Service from './Components/service/Service';
 import ServieDetails from "./Components/service/ServieDetails";
 import Abudhabi from "./Components/our-project/Abudhabi";
-import AbudhabiDetails from './Components/our-project/AbudhabiDetails';
 import Mortgage from './Components/morttgage/Mortgage';
 import Spartan from './Components/morttgage/Spartan';
 import LatestNews from './Components/blog/LatestNews';
@@ -32,7 +31,9 @@ import UpdateBlog from './admin/pageDb/UpdateBlog';
 import LastNews from './Components/blog/LastNews';
 import Commercial from './Components/commercial/Commercial';
 import SaleIn from './Components/commercial/SaleIn';
+
 import Sell from './Components/sell/Sell';
+
 import Cardsell from './Components/sell/Cardsell';
 import Buy from './Components/buy/Buy';
 import Buycards from './Components/buy/Buycards';
@@ -55,10 +56,15 @@ import CategoryCards from './Components/buy/CategoryCards';
 import LandingPageBuyLocation from './Components/buy/LandingPageBuyLocation';
 import AddCategoryRentPlan from './admin/pageDb/AddCategoryRentPlan';
 import AddLocationRent from './admin/pageDb/AddLocationRent';
-import CreateRentPlan from './admin/pageDb/CreateRent';
+import CreateRentPlan from './admin/pageDb/RentDahs';
 import CreateRent from './admin/pageDb/CreateRent';
 import LandingPage from './Components/RENT/LandingPage';
 import RentFilter from './Components/RENT/RentFilter';
+import LandingPageSell from './Components/sell/LandingPageSell';
+import CreateSell from './admin/pageDb/CreateSell';
+import AddLocationSell from './admin/pageDb/AddLocationSell';
+import AddCategorySellPlan from './admin/pageDb/AddCategorySellPlan';
+import RentDahs from './admin/pageDb/RentDahs';
 
 export default function App() {
     return (
@@ -75,7 +81,11 @@ export default function App() {
                     <Route path="Abudhabi" element={<Abudhabi />} />
                     <Route path="Mortgage" element={<Mortgage />} />
                     <Route path="Spartan" element={<Spartan />} />
+
                     <Route path="Sell" element={<Sell />} />
+                    <Route path="Sell/:id" element={<LandingPageSell />} />
+
+                    
                     <Route path="LatestNews" element={<LatestNews />} />
                     <Route path="Blog/:id" element={<Blog />} />
                     <Route path="FormMS" element={<FormMS />} />
@@ -93,8 +103,6 @@ export default function App() {
                     <Route path="Rent" element={<Rent />} />
                     <Route path="Rent/:id" element={<LandingPage />} />
                     <Route path="Rent/Filter/:id" element={<RentFilter />} />
-
-
 
                     <Route path="BuyHome" element={<BuyHome />} />
                     <Route path="Developers" element={<Developers />} />
@@ -126,7 +134,11 @@ export default function App() {
                         <Route path="AddDevelopers" element={<AddDevelopers />} />
                         <Route path="AddCategoryRentPlan" element={<AddCategoryRentPlan />} />
                         <Route path="AddLocationRent" element={<AddLocationRent />} />
+                        <Route path="Rent" element={<RentDahs />} />
                         <Route path="CreateRent" element={<CreateRent />} />
+                        <Route path="CreateSell" element={<CreateSell />} />
+                        <Route path="AddLocationSell" element={<AddLocationSell />} />
+                        <Route path="AddCategorySellPlan" element={<AddCategorySellPlan />} />
                     </Route>
                 </Routes>
             </HashRouter>
