@@ -782,7 +782,7 @@ flex-direction: column;
     .center  {
         color: white;
         font-size: 25px;
-        width: 300px !important;
+        width: 100% !important;
         text-align: left !important;
     }
     .hr1{
@@ -874,7 +874,7 @@ flex-direction: column;
     .center  {
         color: white;
         font-size: 25px;
-        width: 300px !important;
+        width: 100% !important;
         text-align: left !important;
     }
     .hr1{

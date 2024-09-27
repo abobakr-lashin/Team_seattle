@@ -148,6 +148,7 @@ width: 71%;
   }
 }
 
+
 @media (max-width: 480px) {
   .slider-button {
     width: 200px;
@@ -159,4 +160,18 @@ width: 71%;
 }
 .slick-track{
   opacity: 1 !important;
+}
+@media (max-width: 380px) {
+  .prgraf {
+    font-size: 11px;
+    color: white;
+    max-width: 100%;
+    text-align: center;
+}
+.prgraf p {
+  font-size: 9px;
+  color: white;
+  max-width: 100%;
+  text-align: center !important;
+}
 }

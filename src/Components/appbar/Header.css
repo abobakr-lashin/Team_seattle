@@ -146,6 +146,8 @@ color: #ad9a5a;
   z-index: 1;
 }
 }
+
+
 @media screen and (max-width: 600px) {
   .form-container {
     /* height: 40vh; تعديل ارتفاع الكتلة على الشاشات الأصغر */
@@ -154,11 +156,6 @@ color: #ad9a5a;
   .btn-register {
     font-size: 18px; /* تقليل حجم الخط للزر على الشاشات الصغيرة */
   }
-
-
-  /* .video-background {
-    margin: auto !important;
-  } */
   .form-container {
     width: 100% !important;
     margin-top: 0rem;
@@ -182,3 +179,8 @@ color: #ad9a5a;
     
 }
 
+@media screen and (max-width: 430px) {
+  .video-background{
+    width: 150%;
+  }
+}

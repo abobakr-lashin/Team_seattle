@@ -307,13 +307,14 @@ background-color: transparent;
 
 @media (max-width: 375px) {
   .display {
-    top: 80%;
+    top: 85%;
     left: 36%;
   }
+ 
   .btn-register1 {
-    top: 70%;
-    left: 34px;
-  }
+    top: 72%;
+    left: 43px;
+}
 }
 
 @media (max-width: 365px) {
@@ -338,14 +339,16 @@ background-color: transparent;
 
 @media (max-width: 320px) {
   .display {
-    top: 73%;
+    top: 78%;
     left: 35%;
   }
+
   .btn-register1 {
-    top: 63%;
-    left: 10%;
-    width: 180px;
+    top: 66%;
+    left: 12%;
+    width: 176px;
     font-size: small;
-  }
+}
+
 }
 
