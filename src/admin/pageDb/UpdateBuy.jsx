@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // استيراد الأنماط الافتراضية لـ Quill.js
+import 'react-quill/dist/quill.snow.css';
 import { getFirestore, collection, updateDoc, doc, getDocs, getDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن مسار الاستيراد صحيح
+import { firestore, storage } from '../../firebaseConfig';
 import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
 
-export default function UpdateCardBuy() {
-    const { id } = useParams(); // الحصول على id من الرابط
+export default function UpdateBuy() {
+    const { id } = useParams();
     const Navigate = useNavigate();
     const [FileURLs, setFileURLs] = useState([]);
     const [FileImage, setFileImages] = useState([]);
@@ -41,6 +41,8 @@ export default function UpdateCardBuy() {
         });
     };
 
+    console.log(formData);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -52,13 +54,13 @@ export default function UpdateCardBuy() {
             let updatedCartImageSlider = formData.imageSlider;
 
 
-            if (FileURLs) {
+            if (FileURLs.length > 0) {
                 const uploadedFileURLs = await Promise.all(FileURLs.map(async (file) => {
                     const fileRef = ref(storage, `files/${file.name}`);
                     await uploadBytes(fileRef, file);
                     return await getDownloadURL(fileRef);
                 }));
-                updatedCartImageSlider = uploadedFileURLs
+                updatedCartImageSlider = uploadedFileURLs;
             }
 
             if (formDataImage) {
@@ -68,12 +70,12 @@ export default function UpdateCardBuy() {
             }
 
             if (formClintImage) {
-                const fileRefCart = ref(storage, `cartImages/${formClintImage.name}`);
+                const fileRefCart = ref(storage, `filesBlog/${formClintImage.name}`);
                 await uploadBytes(fileRefCart, formClintImage);
                 updatedBlogClint = await getDownloadURL(fileRefCart);
             }
 
-            const docRef = doc(firestore, 'listBlogsCartRent', id);
+            const docRef = doc(firestore, 'listBlogsCartBuy', id);
             await updateDoc(docRef, {
                 title: formData.title,
                 category: formData.category,
@@ -102,10 +104,10 @@ export default function UpdateCardBuy() {
             toast.success('Data updated successfully!');
             console.log('Data updated successfully!');
 
-            Navigate('/dashboard/Rent');
+            Navigate('/dashboard/buy');
         } catch (err) {
-            toast.error('Error updating data: ' + err.message);
-            console.error('Error updating data:', err);
+            // toast.error('Error updating data: ' + err.message);
+            console.error('Error updating data:', err.message);
         } finally {
             setLoading(false);
         }
@@ -164,7 +166,7 @@ export default function UpdateCardBuy() {
 
     const fetchData = async () => {
         try {
-            const docRef = doc(firestore, 'listBlogsCartRent', id);
+            const docRef = doc(firestore, 'listBlogsCartBuy', id);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
                 setFormData(docSnap.data());
@@ -179,9 +181,8 @@ export default function UpdateCardBuy() {
     useEffect(() => {
         getCategories();
         fetchData();
-    }, []);
+    }, [id]);
 
-    console.log(formData);
 
     const modules = {
         toolbar: [
@@ -323,16 +324,14 @@ export default function UpdateCardBuy() {
                                     style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '5px' }}
                                 />
                             ))}
-                            {
-                                formData.imageSlider && formData.imageSlider.map((it, index) => (
-                                    <img
-                                        key={index}
-                                        src={it}
-                                        alt={`preview-${index}`}
-                                        style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '5px' }}
-                                    />
-                                ))
-                            }
+                            {formData?.imageSlider?.map((it, index) => (
+                                <img
+                                    key={index}
+                                    src={it}
+                                    alt={`preview-${index}`}
+                                    style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '5px' }}
+                                />
+                            ))}
                         </div>
                     </div>
                     <div className="form-group">
@@ -394,7 +393,7 @@ export default function UpdateCardBuy() {
                                 src={urlImge}
                                 alt="listingImage"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
-                            /> : <img
+                            /> : formData.bgImage && <img
                                 src={formData.bgImage}
                                 alt="listingImage"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
@@ -443,7 +442,7 @@ export default function UpdateCardBuy() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <ReactQuill value={formData.text} onChange={handleQuillChange} modules={modules} />
+                        <ReactQuill value={formData?.text} onChange={handleQuillChange} modules={modules} />
                     </div>
                     <button type="submit" disabled={loading}>
                         {loading ? 'Updating...' : 'Update'}
