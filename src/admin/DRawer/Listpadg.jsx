@@ -40,7 +40,9 @@ export default function Listpadg() {
     { text: "AddCateRentPlan", ico: CreateIcon, path: "AddCategoryRentPlan" },
     { text: "AddLocationRent", ico: CreateIcon, path: "AddLocationRent" },
     { text: "CreateRent", ico: CreateIcon, path: "CreateRent" },
-
+    { text: "AddCateSellPlan", ico: CreateIcon, path: "AddCategorySellPlan" },
+    { text: "AddLocationSell", ico: CreateIcon, path: "AddLocationSell" },
+    { text: "CreateSell", ico: CreateIcon, path: "CreateSell" },
   ]
   return (
     <>
@@ -52,7 +54,7 @@ export default function Listpadg() {
             <ListItem
               sx={{
                 background:
-                  carrantlochen.pathname === `${list.path}` ? theme.palette.abo.Cadwo : null,
+                  carrantlochen.pathname === `${list?.path}` ? theme.palette.abo.Cadwo : null,
 
 
               }}

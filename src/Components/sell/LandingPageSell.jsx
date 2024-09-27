@@ -13,16 +13,16 @@ import Footer from "../footer/Footer";
 import { useEffect, useState } from "react";
 import { firestore } from "../../firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
-import "./landingpage.css";
+import "../landingpage/landingpage.css";
 
-export default function LandingPageBuy() {
+export default function LandingPageSell() {
     const [cartId, setCartId] = useState([]);
     const { id } = useParams()
 
     // Get Data from Firestore
     const GetDataFireStore = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartBuy"));
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartSell"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
@@ -223,11 +223,7 @@ export default function LandingPageBuy() {
             </Grid>
             <div className="map">
                 <div className="h-5vh"></div>
-
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109180.12447447746!2d30.03728652547649!3d31.22408458346241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c49126710fd3%3A0xb4e0cda629ee6bb9!2z2KfZhNil2LPZg9mG2K_YsdmK2KnYjCDZhdit2KfZgdi42Kkg2KfZhNil2LPZg9mG2K_YsdmK2Kk!5e0!3m2!1sar!2seg!4v1726576245870!5m2!1sar!2seg"></iframe>
-
-
-
                 <ContactusForm />
             </div>
             <div className="h-5vh"></div>
