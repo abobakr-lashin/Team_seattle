@@ -56,7 +56,7 @@ import CategoryCards from './Components/buy/CategoryCards';
 import LandingPageBuyLocation from './Components/buy/LandingPageBuyLocation';
 import AddCategoryRentPlan from './admin/pageDb/AddCategoryRentPlan';
 import AddLocationRent from './admin/pageDb/AddLocationRent';
-import CreateRentPlan from './admin/pageDb/CreateRent';
+import CreateRentPlan from './admin/pageDb/RentDahs';
 import CreateRent from './admin/pageDb/CreateRent';
 import LandingPage from './Components/RENT/LandingPage';
 import RentFilter from './Components/RENT/RentFilter';
@@ -64,6 +64,7 @@ import LandingPageSell from './Components/sell/LandingPageSell';
 import CreateSell from './admin/pageDb/CreateSell';
 import AddLocationSell from './admin/pageDb/AddLocationSell';
 import AddCategorySellPlan from './admin/pageDb/AddCategorySellPlan';
+import RentDahs from './admin/pageDb/RentDahs';
 
 export default function App() {
     return (
@@ -133,13 +134,11 @@ export default function App() {
                         <Route path="AddDevelopers" element={<AddDevelopers />} />
                         <Route path="AddCategoryRentPlan" element={<AddCategoryRentPlan />} />
                         <Route path="AddLocationRent" element={<AddLocationRent />} />
+                        <Route path="Rent" element={<RentDahs />} />
                         <Route path="CreateRent" element={<CreateRent />} />
                         <Route path="CreateSell" element={<CreateSell />} />
                         <Route path="AddLocationSell" element={<AddLocationSell />} />
                         <Route path="AddCategorySellPlan" element={<AddCategorySellPlan />} />
-
-
-
                     </Route>
                 </Routes>
             </HashRouter>

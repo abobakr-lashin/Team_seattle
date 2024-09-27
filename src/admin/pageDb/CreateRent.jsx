@@ -7,7 +7,7 @@ import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-export default function CreateRent() {
+export default function AddCardBuy() {
     const Navigate = useNavigate()
     const [FileURLs, setFileURLs] = useState([])
     const [FileImage, setFileImages] = useState([])
@@ -28,7 +28,7 @@ export default function CreateRent() {
         beds: '',
         baths: '',
         square: '',
-        qualities: '',
+        parking: '',
         location: '',
         monthlyPayment: '',
         listingName: '',
@@ -89,6 +89,7 @@ export default function CreateRent() {
                 await uploadBytes(fileRef, file);
                 return await getDownloadURL(fileRef);
             }));
+
             const fileRefBlog = ref(storage, `filesBlog/${formData.listingImage.name}`);
             const fileRefImageCart = ref(storage, `filesBlog/${formDataImage.name}`);
 
@@ -110,7 +111,7 @@ export default function CreateRent() {
                 beds: formData.beds,
                 baths: formData.baths,
                 square: formData.square,
-                qualities: formData.qualities,
+                parking: formData.parking,
                 location: formData.location,
                 monthlyPayment: formData.monthlyPayment,
                 listingName: formData.listingName,
@@ -136,7 +137,7 @@ export default function CreateRent() {
                 beds: '',
                 baths: '',
                 square: '',
-                qualities: '',
+                parking: '',
                 location: '',
                 monthlyPayment: '',
                 listingName: '',
@@ -147,7 +148,7 @@ export default function CreateRent() {
                 listingImage: null,
                 imageCart: null
             });
-            Navigate('/dashboard')
+            Navigate('/dashboard/Rent')
         } catch (err) {
             toast.error('Error submitting data: ' + err.message);
             console.error('Error submitting data:', err);
@@ -171,11 +172,9 @@ export default function CreateRent() {
             console.error("Error fetching documents: ", error);
         }
 
-
-
         // get Category Locations  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "CategoryRentLocation"));
+            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -199,7 +198,7 @@ export default function CreateRent() {
 
         // get category buy Plans  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "categoryRentPlan"));
+            const querySnapshot = await getDocs(collection(firestore, "categoryBuyPlan"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -271,7 +270,7 @@ export default function CreateRent() {
                     </div>
                     <div className="form-group">
                         <input
-                            type="number"
+                            type="text"
                             name="price"
                             placeholder="Price"
                             value={formData.price}
@@ -304,10 +303,10 @@ export default function CreateRent() {
                     <div className="form-group">
                         <input
                             type="text"
-                            name="qualities"
-                            placeholder="Qualities"
+                            name="parking"
+                            placeholder="parking"
                             maxLength="50"
-                            value={formData.qualities}
+                            value={formData.parking}
                             onChange={handleInputChange}
                         />
                         <input
@@ -343,7 +342,7 @@ export default function CreateRent() {
                     </div>
                     <div className="form-group">
                         <input
-                            type="number"
+                            type="text"
                             name="monthlyPayment"
                             placeholder="Monthly Payment"
                             min="1"
