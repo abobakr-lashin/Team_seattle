@@ -5,7 +5,7 @@ import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from 'fireb
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن مسار الاستيراد صحيح
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Box, CircularProgress, Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
@@ -120,7 +120,7 @@ export default function RentDahs() {
                 console.error('Error deleting document: ', error);
                 toast.error('Error deleting document')
                 setLoading(false);
-            } finally{
+            } finally {
                 setLoading(false);
             }
         }
@@ -144,7 +144,7 @@ export default function RentDahs() {
         getCategories();
     }, []);
 
-    
+
     if (loading) {
         return (
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -207,7 +207,7 @@ export default function RentDahs() {
                 </button>
             </div>
             <div className="table">
-                <TableContainer component={Paper} sx={{ mt: '30px' }}>
+                {data.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
                     <Table sx={{ minWidth: 900 }} aria-label="customized table">
                         <TableHead>
                             <TableRow>
@@ -233,14 +233,28 @@ export default function RentDahs() {
                                     <StyledTableCell align="center"><button onClick={() => {
                                         Navigate(`/dashboard/EditRent/${it.id}`)
                                     }} style={{ backgroundColor: '#1976d2' }}>Update</button></StyledTableCell>
-                                    <StyledTableCell align="center"><button onClick={()=>{
+                                    <StyledTableCell align="center"><button onClick={() => {
                                         handleDelete(it.id)
                                     }} style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
                                 </StyledTableRow>
                             ))}
                         </TableBody>
                     </Table>
-                </TableContainer>
+                </TableContainer> : <p style={{
+                    marginTop: '60px',
+                    fontSize: '20px',
+                    textAlign: 'center',
+                    color: '#234232',
+                    fontWeight: 'bold'
+                }}>
+                    There is no data in the data base <button style={{
+                        color: '#1976d2',
+                        textDecoration: 'underline',
+                        display: 'inline-block'
+                    }} onClick={() => {
+                        Navigate('/dashboard/CreateRent')
+                    }}>Add New Data</button>
+                </p>}
             </div>
         </>
     );
