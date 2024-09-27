@@ -154,6 +154,8 @@
     .Buys .dis-buy {
       display: flex;
       flex-direction: column;
+      justify-content: start;
+      align-items: center;
   }
 
   .disi {
@@ -202,7 +204,7 @@
       list-style: disc;
       padding: 5px;
       font-weight: 500;
-      font-size: 36px;
+      font-size: 30px;
       width: 100%;
   }
   .imgnp .h3, .imgnp .h4 {
@@ -221,14 +223,17 @@
     background-repeat: no-repeat;
     padding: 20px;
 }
-  .dis-imgNbuy {
-    display: flex;
-    font-size: 25px;
-    align-items: center;
-    justify-content: space-around;
-    margin: 22px;
+    .dis-imgNbuy {
+      display: flex;
+      font-size: 26px;
+      width: 100%;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin: 20px;
+  }
 
-}
+
  .imgnp {
     margin: 10px;
     background-image: url("/public/uploads/nav/backe3lan.png");
@@ -253,13 +258,14 @@
       width: 60vw;
       left: -7% !important;
       top: -61px;
-      height: 105vh;
+      height: 128vh;
     }
   
     .RENT .dis-paly2 {
       display: flex !important;
       font-size: 18px;
       padding: 22px;
+      flex-direction: column;
       align-items: center;
       justify-content: start;
     }
@@ -274,62 +280,61 @@
       outline: none;
       justify-content: space-around;
     }
-  
+    .RENT .dis-paly2 h3 {
+      font-size: 50px;
+  }
+  .dis-paly3 h4 {
+    margin: 10px;
+    align-items: start;
+    width: 100%;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.RENT .dis-paly3 li {
+  text-align: start;
+  list-style: none;
+  padding: 5px;
+  font-size: 28px;
+  width: 100%;
+  font-weight: lighter;
+}
+
+
+
+
+
+
     /* RENT */
     /* Commercial */
   
     .Commercial .custom-dropdown-menu {
       width: 100vw;
-      height: 100vh;
+      height: 130vh;
       top: -112px;
       left: -7% !important;
       margin: 10px;
-    }
+  }
   
-    .Commercial .css-mhc70k-MuiGrid-root > .MuiGrid-item {
-      font-size: 20px;
-    }
-    .Commercial .css-mhc70k-MuiGrid-root {
-      align-items: start;
-      list-style: disc;
-    }
-    .Commercial li {
-      list-style: none;
-    }
-  
-    .Commercial .dis-paly2 {
-      display: flex;
-      font-size: 20px;
-      padding: 10px;
-      align-items: start;
-      font-weight: bolder;
-  
-      justify-content: start;
-    }
-    .dis-paly2 li {
-      list-style: disc;
-      padding: 5px;
-      font-weight: bolder;
-    }
-  
-    .dis-imgNbuy2 li {
-      font-weight: bolder;
-  
-      list-style: none;
-    }
-    .custom-dropdown-item {
-      color: white;
-      text-decoration: none;
-      display: block;
-    }
+
     .Commercial .imgNCommercial img {
       width: 250px;
       margin: 26px;
     }
-    .Commercial ul li {
-      padding: 10px;
-      font-weight: bold;
-    }
+    .Commercial .dis-buy {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+  }    .Commercial ul h4 {
+    font-size: 41px;
+    width: 100%;
+    font-weight: 550 !important;
+}    .Commercial ul li {
+  list-style: none;
+  font-weight: 500;
+  font-size: 25px !important;
+}
     /* Commercial */
     /* developers */
   
@@ -819,7 +824,7 @@
       width: 60vw;
       left: -7% !important;
       top: -61px;
-      height: 105vh;
+      height: auto;
     }
   
     .RENT .dis-paly2 {
@@ -844,20 +849,20 @@
       justify-content: space-around;
     }
     .RENT .dis-paly2 h3 {
-      font-size: 27px;
+      font-size: 40px;
   }
-  .dis-paly3 h4 {
+  .RENT .dis-paly3 h4 {
     margin: 10px;
     align-items: start;
     width: 100%;
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 500;
 }
 .RENT .dis-paly3 li {
   text-align: start;
   list-style: none;
   padding: 5px;
-  font-size: 19px;
+  font-size: 21px;
   width: 100%;
   font-weight: lighter;
 }
@@ -865,7 +870,7 @@
   @media (max-width: 425px) {
     /* .Buys */
     .Buys h3 {
-        width: 123%;
+        /* width: 123%; */
         font-size: 22px;
         text-align: left;
         margin: 16px AUTO;
@@ -940,53 +945,80 @@
     }
     /* .Buys */
     /* .RENT */
-    .RENT h3 {
-      margin-right: 25%;
-    }
+    .RENT .custom-dropdown-menu {
+      width: 60vw;
+      left: -7% !important;
+      top: -111px;
+      height: auto;
+  }
+    .RENT .dis-paly2 {
+      display: flex !important;
+      font-size: 15px;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+  }
+    .RENT .dis-paly2 h3 {
+      font-size: 29px;
+      text-align: left;
+  }
     .dis-paly li {
       width: 100%;
       padding: 5px;
       font-size: 25px;
     }
-    .RENT .custom-dropdown-menu {
-      width: 60vw;
-      left: -7% !important;
-      top: -61px;
-      height: fit-content;
-    }
-  
-    .RENT .dis-paly2 {
-      display: flex !important;
-      font-size: 20px;
-      padding: 20px;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-    }
-    .RENT .imgNbuy img {
-      margin: 18px;
-      padding: 11px;
-      width: 91vw;
-      position: relative;
-      left: -49px;
-    }
     .RENT .dis-paly3 {
-      display: flex !important;
-      width: 100vw;
-      align-items: center;
       flex-direction: column;
+      display: flex !important;
+      width: 100%;
+      align-items: center;
       position: relative;
-      left: -54px;
       border: none;
       outline: none;
       justify-content: space-around;
-    }
+  }
+  .RENT .dis-paly3 h4 {
+    margin: 14px;
+    align-items: start;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 500;
+}
+.RENT .imgNbuy img {
+  width: 100%;
+  margin: 34px auto;
+}
     /* .RENT */
+    /* .Commercial */
+    .Commercial h3 {
+      width: 100%;
+      font-size: 29px;
+      font-weight: bold;
+  }
+  .Commercial ul h4 {
+    font-size: 28px;
+    width: 100%;
+    font-weight: 550 !important;
+}
+.Commercial ul li {
+  list-style: none;
+  font-weight: 500;
+  font-size: 25px !important;
+}
+.dis-buy1 {
+  display: flex;
+  flex-direction: column;
+}
+.Commercial .custom-dropdown-menu {
+  overflow-y: scroll;
+}
+
+    /* .Commercial */
   }
   @media (max-width: 375px) {
     .Buys h3 {
-      font-size: 18px;
-    }
+      font-size: 26px;
+  }
   
     .Buys .dis-paly {
       width: 156%;
@@ -1033,47 +1065,21 @@
     .Buys .imgnp {
         height: 23vh;
     }
-    /* .RENT */
-    .Buys h3 {
-        font-size: 26px;
-    }
-    .dis-paly li {
-      width: 100%;
-      padding: 5px;
-      font-size: 25px;
-    }
-    .RENT .custom-dropdown-menu {
-      width: 60vw;
-      left: -7% !important;
-      top: -61px;
-      height: fit-content;
-    }
-  
-    .RENT .dis-paly2 {
-      display: flex !important;
-      font-size: 15px;
-      padding: 20px;
+    .dis-imgNbuy {
+      display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: start;
-    }
-    .RENT .imgNbuy img {
-      margin: 18px;
-      padding: 11px;
-      width: 91vw;
-      position: relative;
-      left: -29px;
-    }
-    .RENT .dis-paly3 {
-      display: flex !important;
-      width: 100vw;
-      align-items: center;
-      position: relative;
-      left: -54px;
-      border: none;
-      outline: none;
-      justify-content: space-around;
-    }
+      align-items: baseline;
+  }
+  .Buys h3 {
+      font-size: 26px;
+  }
+    /* .RENT */
+    .custom-dropdown-item {
+      padding: 45px 0;
+      text-align: center;
+      color: white;
+      transition: display 10.5s;
+  }
     /* .RENT */
   }
   @media (max-width: 325px) {
@@ -1119,48 +1125,27 @@
     }
     /* buy */
     /* .RENT */
-    .RENT h3 {
-      text-align: start;
-      margin-right: 30px;
-      font-size: 19px;
-    }
-    .dis-paly li {
-      width: 100%;
-      padding: 5px;
-      font-size: 25px;
-    }
-    .RENT .custom-dropdown-menu {
-      width: 60vw;
-      left: -7% !important;
-      top: -61px;
-      height: fit-content;
-    }
-  
-    .RENT .dis-paly2 {
-      display: flex !important;
-      font-size: 19px;
-      padding: 20px;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-    }
-    .RENT .imgNbuy img {
-      margin: 18px;
-      padding: 11px;
-      width: 91vw;
-      position: relative;
-      left: -29px;
-    }
     .RENT .dis-paly3 {
+      flex-direction: column;
       display: flex !important;
-      width: 100vw;
+      width: 100%;
       align-items: center;
       position: relative;
-      left: -54px;
       border: none;
       outline: none;
-      justify-content: space-around;
-    }
+      margin-left: 39px;
+      justify-content: center;
+      text-align: center;
+  }  
+   .RENT .dis-paly3 li {
+    text-align: start;
+    list-style: none;
+    padding: 8px;
+    font-size: 21px;
+    width: 100%;
+    font-weight: lighter;
+    text-align: center;
+}
     /* .RENT */
   }
   /* phone */

@@ -286,6 +286,9 @@
   justify-content: space-between;
   align-items: center;
 }
+.dis-buy2{
+  display: flex;
+}
 .Commercial .custom-dropdown-menu {
   display: none;
   width: 80vw;

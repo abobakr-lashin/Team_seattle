@@ -433,7 +433,7 @@ const Navbar = () => {
                                                 })}
                                             </ul>
                                         </div>
-                                        <div item xs={7} className={"dis-buy"}>
+                                        <div item xs={7} className={"dis-buy2"}>
                                             <div className="imgNCommercial">
                                                 <img src="./uploads/nav/commercial/2.png" alt="" />
                                             </div>
