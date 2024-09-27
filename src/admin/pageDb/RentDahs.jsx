@@ -188,7 +188,7 @@ export default function RentDahs() {
     // Get Data Cart Firebase
     const getCategories = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartSell"));
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartRent"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
@@ -293,7 +293,9 @@ export default function RentDahs() {
                                     <StyledTableCell align="center">{it.text.slice(0, 30)}...</StyledTableCell>
                                     <StyledTableCell align="center">{it.price}</StyledTableCell>
                                     <StyledTableCell align="center">{it.location}</StyledTableCell>
-                                    <StyledTableCell align="center"><button style={{ backgroundColor: '#1976d2' }}>Update</button></StyledTableCell>
+                                    <StyledTableCell align="center"><button onClick={()=>{
+                                        Navigate(`/dashboard/EditRent/${it.id}`)
+                                    }} style={{ backgroundColor: '#1976d2' }}>Update</button></StyledTableCell>
                                     <StyledTableCell align="center"><button style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
                                 </StyledTableRow>
                             ))}
