@@ -142,7 +142,7 @@
 }
 @media screen and (max-width: 425px) {
   .Team {
-    padding-top: 140%;
+    padding-top: 100%;
   }
   .img-Team {
     padding-top: 100%;
@@ -150,8 +150,8 @@
 
   .img-Team-Content {
     max-width: 120px;
-    top: 35%;
-  }
+    top: 38%;
+}
 }
 @media screen and (max-width: 415px) {
   .Team {

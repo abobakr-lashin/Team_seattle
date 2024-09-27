@@ -122,9 +122,10 @@
     align-items: center;
   }
   .img-Sevrvices {
-    width: 120px;
-    max-width: none;margin: auto;
-  }
+    width: 166px;
+    max-width: none;
+    margin: auto;
+}
 }
 @media screen and (max-width: 360px) {
   .title-dis3 h2 {

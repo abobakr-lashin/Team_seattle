@@ -134,12 +134,11 @@ width: 71%;
     align-items: center;
   }
   .prgraf {
-    
-    font-size: 18px;
+    font-size: 12px;
     color: white;
     max-width: 100%;
     text-align: center;
-  }
+}
   .title-dis2 h2 {
     font-size: 7vw; /* Adjust font size for smaller screens */
   }

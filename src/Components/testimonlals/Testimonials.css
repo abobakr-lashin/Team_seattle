@@ -191,9 +191,10 @@
   .photo-phone {
     height: 70vh;
   }
-  .img-Esteemed1{
-    width: 230px !important;
-    height: 230px !important;
+  .img-Esteemed1 {
+  width: 270px !important;
+  height: 270px !important;
+  
   }
 }
 

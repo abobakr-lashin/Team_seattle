@@ -253,9 +253,9 @@ background-color: transparent;
     left: 130px;
   }
   .project-img {
-    width: 80%;
-    height: 90vh;
-  }
+    width: 87%;
+    height: 82vh;
+}
   .btn-register1 {
     bottom: 30px;
     left: 65px;
@@ -286,13 +286,13 @@ background-color: transparent;
 
 @media (max-width: 425px) {
   .display {
-    bottom: 50px;
-    left: 115px;
-  }
+    bottom: 24px;
+    left: 123px;
+}
   .btn-register1 {
-    bottom: 70px;
-left: 50px;
-  }
+    bottom: 47px;
+    left: 60px;
+}
 }
 
 @media (max-width: 395px) {

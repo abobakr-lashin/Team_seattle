@@ -82,11 +82,10 @@
         font-size: 50px;
     }
     
-    .INSIGHTS .title-dis2 h3{
-        font-size: 18px;
+    .INSIGHTS .title-dis2 h3 {
+        font-size: 14px;
         width: 90%;
     }
-    
   }
 @media screen and (max-width: 455px) {
     .img-Sevrvices11{

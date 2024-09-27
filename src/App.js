@@ -65,6 +65,9 @@ import CreateSell from './admin/pageDb/CreateSell';
 import AddLocationSell from './admin/pageDb/AddLocationSell';
 import AddCategorySellPlan from './admin/pageDb/AddCategorySellPlan';
 import RentDahs from './admin/pageDb/RentDahs';
+import BuyDahs from './admin/pageDb/BuyDahs';
+import COMMERCIALDahs from './admin/pageDb/COMMERCIALDahs';
+import SellDahs from './admin/pageDb/SellDahs';
 
 export default function App() {
     return (
@@ -135,6 +138,9 @@ export default function App() {
                         <Route path="AddCategoryRentPlan" element={<AddCategoryRentPlan />} />
                         <Route path="AddLocationRent" element={<AddLocationRent />} />
                         <Route path="Rent" element={<RentDahs />} />
+                        <Route path="Buy" element={<BuyDahs />} />
+                        <Route path="COMMERCIAL" element={<COMMERCIALDahs />} />
+                        <Route path="Sell" element={<SellDahs />} />
                         <Route path="CreateRent" element={<CreateRent />} />
                         <Route path="CreateSell" element={<CreateSell />} />
                         <Route path="AddLocationSell" element={<AddLocationSell />} />
