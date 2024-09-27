@@ -37,8 +37,6 @@ export default function Listpadg() {
     { text: "AddCateBuyPlan", ico: CreateIcon, path: "AddCateBuyPlan" },
     { text: "CreateCardBuy", ico: CreateIcon, path: "AddCardBuy" },
     { text: "AddDevelopers", ico: CreateIcon, path: "AddDevelopers" },
-    { text: "AddCateRentPlan", ico: CreateIcon, path: "AddCategoryRentPlan" },
-    { text: "AddLocationRent", ico: CreateIcon, path: "AddLocationRent" },
     { text: "Buy", ico: CreateIcon, path: "buy" },
     { text: "Rent", ico: CreateIcon, path: "Rent" },
     { text: "COMMERCIAL", ico: CreateIcon, path: "COMMERCIAL" },

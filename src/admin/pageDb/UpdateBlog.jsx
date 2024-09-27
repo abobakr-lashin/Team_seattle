@@ -68,7 +68,8 @@ export default function UpdateBlog() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true); // Start loading when submitting the form
+        setLoading(true); 
+
         try {
             let updatedBlogImageURL = blogImageURL;
             let updatedCartImageURL = cartImageURL;
