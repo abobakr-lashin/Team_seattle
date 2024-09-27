@@ -8,7 +8,6 @@ import TeamDetails from './Components/abuotus/TeamDetails';
 import Service from './Components/service/Service';
 import ServieDetails from "./Components/service/ServieDetails";
 import Abudhabi from "./Components/our-project/Abudhabi";
-import AbudhabiDetails from './Components/our-project/AbudhabiDetails';
 import Mortgage from './Components/morttgage/Mortgage';
 import Spartan from './Components/morttgage/Spartan';
 import LatestNews from './Components/blog/LatestNews';
