@@ -167,11 +167,11 @@ width: 828px ;
 
 
 @media screen and (max-width: 1440px) {
-.buy .input-style-3{
-width: 741px ;
+.input-style-3{
+width: 741px !important ;
   }
-  .buy .input-style-4 {
-  width: 302px;
+ .input-style-4 {
+  width: 302px !important;
   }
 
 }
@@ -186,14 +186,14 @@ width: 741px ;
       width: 107px;
   }
 }
-@media screen and (max-width: 1200px) {
-  .buy .input-style-3{
-           width: 556px;
-    
-      }
+@media screen and (max-width: 1280px) {
+ 
       .buy .input-style-4 {
         width: 188px;
     }
+    .buy .input-style-3 {
+      width: 56%;
+  }
 }
 @media screen and (max-width: 1024px) {
   .buy .bg-back {
@@ -206,9 +206,9 @@ width: 741px ;
     font-size: 17px;
     top: 81%;
   }
-  .buy .input-style-3{
-    width: 414px !important;
-      }
+  .buy .input-style-3 {
+    width: 47% !important;
+}
       .buy .input-style-4 {
       width: 225px;
       }
@@ -278,12 +278,8 @@ font-size: 15px;
   .buy .input-style-1 {
   width: 124px;
   }
-  .buy .input-style-3{
-    width: 414px !important;
-      }
-      .buy .input-style-4 {
-      width: 225px;
-      }
+  
+   
       .buy .input-style-8{
         width:120px;
       }
@@ -305,15 +301,38 @@ font-size: 15px;
        
       
       }
+      .input-style-submit {
+        width: 25% !important;
+      }
+      .buy .input-style-4 {
+        width: 48%;
+    }
+    .buy .input-style-9 {
+      width: 47%;
+      font-size: medium;
+  }
 }
 
-@media screen and (max-width: 375px) {
-  .buy .img-Commercial h2 {
+@media screen and (max-width: 425px) {
+  .buy .input-style-1 {
     width: 100%;
-    font-size: 12px !important;
-    top: 43%;
+}
+.buy .input-style-3 {
+  width: 100% !important;
+}
+.input-style-submit{
+  width: 100% !important; 
+}
+.buy .input-style-4 ,.input-style-5 ,.input-style-6 ,.input-style-7 ,.input-style-8 {
+  width: 45% !important;
+  font-size: small;
+}
+}
+@media screen and (max-width: 375px) {
+  .buy .input-style-4 ,.input-style-5 ,.input-style-6 ,.input-style-7 ,.input-style-8 {
+    width: 43% !important;
+    font-size: small;
   }
- 
 
  
 .img-imgSaleIn h5 {
