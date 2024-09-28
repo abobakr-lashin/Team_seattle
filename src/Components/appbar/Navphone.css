@@ -1,5 +1,6 @@
 /* phone */
 @media (max-width: 1024px) {
+
     .custom-navbar-link {
       font-size: 20px;
     }
@@ -451,13 +452,13 @@
       width: 100vw;
       position: absolute;
       left: -57px !important;
-      top: -389px;
+      top:  -364px;
       background-color: #bfb78f;
       list-style: none;
       padding: 0 1px;
       z-index: 9699999999999999 !important;
       border-radius: 23px;
-      height: auto;
+      height: 125vh;
       overflow: hidden;
       transition: opacity 1s ease, transform 0.5s ease;
     }
@@ -497,10 +498,7 @@
     /* APPLY */
     /* About */
   
-    .About .custom-dropdown-menu {
-      display: none;
-      width: 80vw;
-    }
+ 
     .ABOUT .css-mhc70k-MuiGrid-root > .MuiGrid-item {
       margin: 15px 0px;
       padding: 0px;
@@ -519,9 +517,10 @@
       list-style: none;
       padding: 0 1px;
       z-index: 9699999999999999 !important;
+      height: 125vh;
+overflow-y:scroll;
       border-radius: 23px;
-      height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden;
       transition: opacity 1s ease, transform 0.5s ease;
     }
   
@@ -608,17 +607,17 @@
     .Blogs .custom-dropdown-menu {
       width: 100vw;
       position: absolute;
-      left: -37px !important;
-      top: -277px;
+      left: -57px !important;
+      top: -258px;
       background-color: #bfb78f;
       list-style: none;
       padding: 0 1px;
       z-index: 9699999999999999 !important;
       border-radius: 23px;
-      height: auto;
+      height: 125vh;
       overflow: hidden;
       transition: opacity 1s ease, transform 0.5s ease;
-    }
+  }
   
     .dis-play3 .dis-paly1 div img {
       width: 100px;
@@ -710,7 +709,17 @@
       font-size: 10px !important;
       width: 100%;
     }
-  
+    .Blogs .titledis h3 {
+      font-size: 2.5rem;
+      font-weight: bolder;
+  }
+  .Blogs .dis-paly3 .p9 {
+    font-size: 17px !important;
+    font-weight: 557;
+}
+.Blogs .dis-buy .p2 {
+  font-size: 14px;
+}
     /* Blogs */
   
     /* لاعفخى */
@@ -753,6 +762,9 @@
       border-radius: 10px;
     }
     /* ghj */
+    .custom-dropdown-menu{
+      overflow-y: auto;
+    }
   }
   @media (max-width: 770px) {
     .Buys .custom-dropdown-menu {
@@ -800,6 +812,8 @@
     list-style: none;
     font-size: 20px;
   }
+
+  /* RENT */
   .imgnp .h3, .imgnp .h4 {
     font-size: 22px;
     color: white;
@@ -866,6 +880,58 @@
   width: 100%;
   font-weight: lighter;
 }
+/*  RENT*/
+/*  APPLY*/
+
+.APPLY .dis-buy {
+flex-direction: column;
+}
+/*  APPLY*/
+/*  ABOUT*/
+.ABOUT .dis-buy {
+  display: flex;
+  flex-direction: column;
+}
+
+.ABOUT .dis-paly2 .aldar img {
+  width: 188px;
+}
+/*  ABOUT*/
+/*  Blogs*/
+.Blogs .custom-dropdown-menu{
+  overflow-y: scroll;
+}
+.Blogs .dis-imgNbuy {
+  display: none;
+  justify-content: end !important;
+  flex-direction: column;
+}
+.Blogs .dis-buy .titledis {
+  flex-direction: row;
+  display: flex;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  Blogs*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
   @media (max-width: 425px) {
     /* .Buys */
@@ -1014,6 +1080,86 @@
 }
 
     /* .Commercial */
+    /* .APPLY */
+    .APPLY .custom-dropdown-menu {
+      width: 100vw;
+      position: absolute;
+      left: -31px !important;
+      top: -428px;
+      background-color: #bfb78f;
+      list-style: none;
+      padding: 0 1px;
+      z-index: 9699999999999999 !important;
+      border-radius: 23px;
+      height: 131vh;
+      overflow: hidden;
+      transition: opacity 1s ease, transform 0.5s ease;
+  }
+  .APPLY .custom-dropdown-menu .imgcon h2 {
+    font-size: 39px !important;
+}
+  .APPLY .imgNCommercial img{
+    width: 98%;
+  }
+  .APPLY .custom-dropdown-menu .imgcon h3 {
+    font-size: 20px;
+}
+.APPLY .dis-paly2 li {
+  font-size: 22px;
+  margin: 24px;
+  font-weight: lighter !important;
+}
+    /* .APPLY */
+    /* .ABOUT */
+    .ABOUT .custom-dropdown-menu {
+      width: 100vw;
+      position: absolute;
+      left: -26px !important;
+      top: -381px;
+      background-color: #bfb78f;
+      list-style: none;
+      padding: 0 1px;
+      z-index: 9699999999999999 !important;
+      height: auto;
+      overflow-y: scroll;
+      border-radius: 23px;
+      overflow-x: hidden;
+      transition: opacity 1s ease, transform 0.5s ease;
+  }
+  .ABOUT .dis-paly2 {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+.ABOUT .imgNCommercial img{
+  width: 95%;
+}
+    /* .ABOUT */
+    /* .Blogs */
+    .Blogs .custom-dropdown-menu {
+      width: 100vw;
+      position: absolute;
+      left: -30px !important;
+      top: -312px;
+      background-color: #bfb78f;
+      list-style: none;
+      padding: 0 1px;
+      z-index: 9699999999999999 !important;
+      border-radius: 23px;
+      height: auto;
+      overflow-y: scroll !important;
+      transition: opacity 1s ease, transform 0.5s ease;
+  }
+  .Blogs .dis-paly3 .p9 {
+    font-size: 22px !important;
+    font-weight: 557;
+}
+.Blogs .dis-buy .p2 {
+  font-size: 18px;
+}
+    /* .Blogs */
   }
   @media (max-width: 375px) {
     .Buys h3 {
@@ -1081,6 +1227,26 @@
       transition: display 10.5s;
   }
     /* .RENT */
+    /* .APPLY */
+    .APPLY .custom-dropdown-menu .imgcon h2 {
+      font-size: 31px !important;
+      width: 100%;
+  }
+    /* .APPLY */
+    /* .Blogs */
+    .Blogs .titledis h3 {
+      font-size: 2rem;
+      font-weight: bolder;
+  }
+  .Blogs .dis-paly3 .p9 {
+    font-size: 19px !important;
+    font-weight: 557;
+}
+
+.Blogs .dis-buy .p2 {
+  font-size: 16px;
+}
+    /* .Blogs */
   }
   @media (max-width: 325px) {
     .Buys .imgnp .h3, .imgnp .h4 {
