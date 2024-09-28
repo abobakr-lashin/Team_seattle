@@ -7,6 +7,7 @@ import "./Cardsell.css"
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
 import { Link } from 'react-router-dom';
+import "./Sell.css"
 const CustomPrevArrow = (props) => {
   const { className, onClick } = props;
   return (

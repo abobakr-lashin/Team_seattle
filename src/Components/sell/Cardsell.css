@@ -58,7 +58,9 @@
   box-sizing: border-box;
   margin: auto !important;
 }
-
+.slick-track{
+  display: contents;
+}
 .bg-back .imgSaleIn {
   position: absolute;
   display: flex;
