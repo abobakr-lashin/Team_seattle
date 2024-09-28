@@ -228,7 +228,7 @@ export default function RentDahs() {
                                         <img style={{ width: '200px' }} src={it.imageCart} alt="" />
                                     </StyledTableCell>
                                     <StyledTableCell align="center">{it.title}</StyledTableCell>
-                                    <StyledTableCell align="center">{it.text.slice(0, 30)}...</StyledTableCell>
+                                    <StyledTableCell align="center">{it?.text?.slice(0, 30)}...</StyledTableCell>
                                     <StyledTableCell align="center">{it.price}</StyledTableCell>
                                     <StyledTableCell align="center">{it.location}</StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {

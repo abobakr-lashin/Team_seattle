@@ -8,7 +8,8 @@ import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
 
-export default function UpdateRent() {
+
+export default function UpdateSell() {
     const { id } = useParams();
     const Navigate = useNavigate();
     const [FileURLs, setFileURLs] = useState([]);
@@ -40,7 +41,6 @@ export default function UpdateRent() {
             text: value,
         });
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -49,16 +49,16 @@ export default function UpdateRent() {
         try {
             let updatedBlogImageCart = formData.imageCart;
             let updatedBlogClint = formData.bgImage;
-            let updatedCartImageSlider = formData.imageSlider;
+            let updatedCartImageSlider = formData.imageSlider; 
 
-
+            
             if (FileURLs.length > 0) {
                 const uploadedFileURLs = await Promise.all(FileURLs.map(async (file) => {
                     const fileRef = ref(storage, `files/${file.name}`);
                     await uploadBytes(fileRef, file);
                     return await getDownloadURL(fileRef);
                 }));
-                updatedCartImageSlider = uploadedFileURLs;
+                updatedCartImageSlider = uploadedFileURLs
             }
 
             if (formDataImage) {
@@ -73,7 +73,7 @@ export default function UpdateRent() {
                 updatedBlogClint = await getDownloadURL(fileRefCart);
             }
 
-            const docRef = doc(firestore, 'listBlogsCartRent', id);
+            const docRef = doc(firestore, 'listBlogsCartSell', id);
             await updateDoc(docRef, {
                 title: formData.title,
                 category: formData.category,
@@ -90,26 +90,27 @@ export default function UpdateRent() {
                 email: formData.email,
                 map: formData.map,
                 bgImage: updatedBlogClint,
-                // text: formData.text,
                 imageCart: updatedBlogImageCart,
-                imageSlider: updatedCartImageSlider || formData.imageSlider,
+                imageSlider: formData.imageSlider || updatedCartImageSlider ,
                 CategoryBuyLocation: formData.CategoryBuyLocation,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
                 date: new Date().toDateString(),
                 time: new Date().toLocaleTimeString()
             });
+
             toast.success('Data updated successfully!');
             console.log('Data updated successfully!');
-
             Navigate('/dashboard/Rent');
         } catch (err) {
-            // toast.error('Error updating data: ' + err.message);
-            console.error('Error updating data:', err.message);
+            toast.error('Error updating data: ' + err.message);
+            console.error('Error updating data:', err);
         } finally {
             setLoading(false);
         }
     };
+
+
 
     // Get Data Category
     const getCategories = async () => {
@@ -127,7 +128,7 @@ export default function UpdateRent() {
 
         // get Category Locations  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "CategoryRentLocation"));
+            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -149,9 +150,10 @@ export default function UpdateRent() {
             console.error("Error fetching documents: ", error);
         }
 
+
         // get category buy Plans  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "categoryRentPlan"));
+            const querySnapshot = await getDocs(collection(firestore, "categoryBuyPlan"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -162,9 +164,10 @@ export default function UpdateRent() {
         }
     };
 
+
     const fetchData = async () => {
         try {
-            const docRef = doc(firestore, 'listBlogsCartRent', id);
+            const docRef = doc(firestore, 'listBlogsCartSell', id);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
                 setFormData(docSnap.data());
@@ -179,8 +182,9 @@ export default function UpdateRent() {
     useEffect(() => {
         getCategories();
         fetchData();
-    }, [id]);
+    }, []);
 
+    console.log(formData.bgImage);
 
     const modules = {
         toolbar: [
@@ -322,14 +326,16 @@ export default function UpdateRent() {
                                     style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '5px' }}
                                 />
                             ))}
-                            {formData?.imageSlider?.map((it, index) => (
-                                <img
-                                    key={index}
-                                    src={it}
-                                    alt={`preview-${index}`}
-                                    style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '5px' }}
-                                />
-                            ))}
+                            {
+                                formData.imageSlider && formData.imageSlider.map((it, index) => (
+                                    <img
+                                        key={index}
+                                        src={it}
+                                        alt={`preview-${index}`}
+                                        style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '5px' }}
+                                    />
+                                ))
+                            }
                         </div>
                     </div>
                     <div className="form-group">
@@ -391,7 +397,7 @@ export default function UpdateRent() {
                                 src={urlImge}
                                 alt="listingImage"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
-                            /> : formData.bgImage && <img
+                            /> : <img
                                 src={formData.bgImage}
                                 alt="listingImage"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
@@ -440,9 +446,7 @@ export default function UpdateRent() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <textarea value={formData.text} style={{ margin: '20px', width: '80%', height: '300px' }} onChange={handleInputChange} placeholder='Enter your Description' name="text" id="text">
-                            
-                        </textarea>
+                        <ReactQuill value={formData.text} onChange={handleQuillChange} modules={modules} />
                     </div>
                     <button type="submit" disabled={loading}>
                         {loading ? 'Updating...' : 'Update'}

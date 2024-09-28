@@ -41,7 +41,7 @@ export default function LandingPage() {
         focusOnSelect: true,
         infinite: true,
         speed: 600,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 4000,
         responsive: [
             {
@@ -100,19 +100,21 @@ export default function LandingPage() {
             </div>
             <div>
                 <span>
-                    <span>{it.Parkingn}</span>
+                    <span>{it.parking}</span>
                 </span>
                 <div>Parking </div>
             </div>
         </div>
     ));
 
+    console.log(filterCartId);
+
     return (
         <div className="Landingpage">
             <div
                 className="bg-Landingpage"
                 style={{
-                    backgroundImage: `url(${filterCartId[0]?.bgImage})`,
+                    backgroundImage: `url(${filterCartId[0]?.imageCart})`,
                 }}
             >
                 <NavPar />
@@ -191,16 +193,16 @@ export default function LandingPage() {
 
                         <div className="imgctext">
                             <div className="imgcontact">
-                                <img src="/uploads/landingpage/export/photo3.png" alt="" />
+                                <img src={filterCartId[0]?.bgImage} alt="" />
                             </div>
                             <div className="text">
                                 <div className=" Listing">Listing by</div>
-                                <div className="name">Ramin Sadeghi</div>
-                                <Rating name="size-medium" defaultValue={filterCartId[0]?.stars} readOnly />
+                                <div className="name">{filterCartId[0]?.listingName}</div>
+                                <Rating name="size-medium" value={filterCartId[0]?.stars || 0} readOnly />
                             </div>
                         </div>
                         <div className="Email">
-                            <a href="mailto:someone@example.com?subject=Subject&body=Hello!">
+                            <a href={`mailto:${filterCartId[0]?.email}?subject=Subject&body=Hello!`}>
                                 Email
                             </a>
                         </div>          </div>

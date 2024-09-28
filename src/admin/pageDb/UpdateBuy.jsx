@@ -106,7 +106,7 @@ export default function UpdateBuy() {
 
             Navigate('/dashboard/buy');
         } catch (err) {
-            // toast.error('Error updating data: ' + err.message);
+            toast.error('Error updating data: ' + err.message);
             console.error('Error updating data:', err.message);
         } finally {
             setLoading(false);
@@ -182,20 +182,6 @@ export default function UpdateBuy() {
         getCategories();
         fetchData();
     }, [id]);
-
-
-    const modules = {
-        toolbar: [
-            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-            [{ 'size': [] }],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ 'color': [] }, { 'background': [] }],
-            [{ 'align': [] }],
-            ['link', 'image'],
-            ['clean']
-        ]
-    };
 
     if (loading) {
         return (
@@ -442,7 +428,9 @@ export default function UpdateBuy() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <ReactQuill value={formData?.text} onChange={handleQuillChange} modules={modules} />
+                        <textarea value={formData.text} style={{ margin: '20px', width: '80%', height: '300px' }} onChange={handleInputChange} placeholder='Enter your Description' name="text" id="text">
+
+                        </textarea>
                     </div>
                     <button type="submit" disabled={loading}>
                         {loading ? 'Updating...' : 'Update'}

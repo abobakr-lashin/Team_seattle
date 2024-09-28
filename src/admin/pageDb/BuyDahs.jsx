@@ -6,7 +6,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن مسار الاستيراد صحيح
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Box, CircularProgress, Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import Paper from '@mui/material/Paper';
@@ -31,17 +31,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-}
-
 export default function BuyDahs() {
     const Navigate = useNavigate()
-    const [FileURLs, setFileURLs] = useState([])
-    const [FileImage, setFileImages] = useState([])
-    const [urlImge, setUrlImge] = useState(null)
-    const [ImgeCart, setImgeCart] = useState(null)
-    const [Categories, setCategories] = useState([])
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [formDataImage, setformDataImage] = useState('')
@@ -71,34 +62,6 @@ export default function BuyDahs() {
         CategoryPlan: '',
     });
 
-    console.log(formDataImage);
-
-
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
-
-    const handleFileChange = (e) => {
-        const { name, files } = e.target;
-        setUrlImge(URL.createObjectURL(e.target.files[0]))
-
-        if (name === 'sliderImages') {
-            setFormData({
-                ...formData,
-                [name]: Array.from(files),
-            });
-        } else {
-            setFormData({
-                ...formData,
-                [name]: files[0],
-            });
-        }
-    };
 
     // Handle Delete Item
     const handleDelete = async (id) => {
@@ -133,6 +96,15 @@ export default function BuyDahs() {
         getCategories();
     }, []);
 
+    if (loading) {
+        return (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <CircularProgress />
+            </Box>
+        );
+    }
+
+
     return (
         <>
             <div className="rent" style={{
@@ -151,9 +123,9 @@ export default function BuyDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/CreateRent')
+                    Navigate('/dashboard/AddCardBuy')
                 }}>
-                    Add Cart Rent
+                    Add Cart Buy
                 </button>
                 <button style={{
                     width: '100%',
@@ -165,9 +137,9 @@ export default function BuyDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddCategoryRentPlan')
+                    Navigate('/dashboard/AddCateBuyPlan')
                 }}>
-                    Add Category Rent
+                    Add Category Buy
                 </button>
                 <button style={{
                     width: '100%',
@@ -179,7 +151,7 @@ export default function BuyDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddLocationRent')
+                    Navigate('/dashboard/AddCategoryBuyLocation')
                 }}>
                     Add Category Location
                 </button>

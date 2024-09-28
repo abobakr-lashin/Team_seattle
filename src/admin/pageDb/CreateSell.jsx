@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // استيراد الأنماط الافتراضية لـ Quill.js
+import 'react-quill/dist/quill.snow.css';
 import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن مسار الاستيراد صحيح
+import { firestore, storage } from '../../firebaseConfig';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
@@ -148,7 +148,7 @@ export default function CreateSell() {
                 listingImage: null,
                 imageCart: null
             });
-            Navigate('/dashboard')
+            Navigate('/dashboard/Sell')
         } catch (err) {
             toast.error('Error submitting data: ' + err.message);
             console.error('Error submitting data:', err);
