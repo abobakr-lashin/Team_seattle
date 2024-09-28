@@ -19,7 +19,7 @@
 
 /* عند المرور على العنصر، تفتح القائمة */
 .custom-navbar-item .custom-dropdown-menu:hover {
-  display: block;
+  display: none;
 }
 
 .custom-dropdown-menu {

@@ -312,7 +312,7 @@
     .Commercial .custom-dropdown-menu {
       width: 100vw;
       height: 130vh;
-      top: -112px;
+      top: -155px;
       left: -7% !important;
       margin: 10px;
   }
@@ -1071,12 +1071,17 @@ flex-direction: column;
   font-weight: 500;
   font-size: 25px !important;
 }
-.dis-buy1 {
+.Commercial .dis-buy1 {
   display: flex;
   flex-direction: column;
 }
 .Commercial .custom-dropdown-menu {
   overflow-y: scroll;
+}
+.Commercial .dis-buy2{
+  flex-direction: column;
+
+
 }
 
     /* .Commercial */

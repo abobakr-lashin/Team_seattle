@@ -334,6 +334,23 @@
   .img-imgSaleIn h5 {
     width: 95px;
   }
+  .img-Commercial h2 {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    margin: 0;
+    text-align: center;
+    font-size: 4dvw;
+    width: 100%;
+}
+.title-Commercial1 h3,
+.title-Commercial2 h3 {
+  width: 95% !important;
+  margin: auto;
+  text-align: left;
+}
 }
 @media screen and (max-width: 375px) {
   .img-Commercial h2 {
@@ -342,4 +359,9 @@
 
     top: 43%;
   }
+  .img-Commercial h2 {
+    width: 100%;
+    font-size: 15px !important;
+    top: 31%;
+}
 }

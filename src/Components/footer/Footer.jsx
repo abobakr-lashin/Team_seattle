@@ -113,7 +113,7 @@ export default function Footer() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link to="https://www.instagram.com/seattlemiddleeast/" color="inherit" target='_blank'>
+                <Link to="https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA" color="inherit" target='_blank'>
                 <img className="icon"  src="/uploads/end/icon social/instagram_1384015.png" alt=""/>
                 </Link>
               </Grid>
@@ -123,7 +123,7 @@ export default function Footer() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link to="https://www.snapchat.com/add/semabudhabi?invite_id=9MOLq1lA&locale=en_AE&share_id=warI0iHcROaLw-YwHLVqzw&sid=73c8101497ec451ebc15376ae6742048" color="inherit"target='_blank'>
+                <Link to="https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65" color="inherit"target='_blank'>
                 <img className="icon"  src="/uploads/end/icon social/snapchat_3669965.png"  alt=""/>
                 </Link>
               </Grid>

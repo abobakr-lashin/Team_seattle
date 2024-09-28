@@ -152,9 +152,8 @@ export default function LandingPageSell() {
                     </div>
                 </div>
                 <div className="contbg">
-
-                    <div>
-                        {/* هنا الصوره يا ابراهيم  */}
+                    {/* من هنا الصوره يا ابراهيم  */}
+                    <div className="img-samy">
                         <img src="/uploads/landingpage/export/icon/samayas.png" alt="samayas" />
                     </div>
                     <div className="formheader">
@@ -170,8 +169,8 @@ export default function LandingPageSell() {
 
             <div className="h-5vh"></div>
             <div className="h-5vh"></div>
-            <Grid container spacing={2} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
-                <Grid item xs={8} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
+            <div className="grid-lan" spacing={2} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
+                <div className="grid-lan1" item lg={8} md={12} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
                     <div className="Sitedetails">
                         <div className="address">
                             {filterCartId[0]?.location}
@@ -179,48 +178,41 @@ export default function LandingPageSell() {
                         <div className="theprice">{filterCartId[0]?.price} ${filterCartId[0]?.currency}</div>
                         <div className="theprices">${filterCartId[0]?.monthlyPayment} {filterCartId[0]?.currency} (per month)</div>
                         <div className="hr3"></div>
-
                         {imgsetsin}
                         <div className="hr3"></div>
-                        {/* من هنا يا ابراهيم  */}
-                        {/* من هنا يا ابو بكر  */}
                         <div className="text" dangerouslySetInnerHTML={{ __html: filterCartId[0]?.text }}></div>
-
-                        {/* من هنا يا ابراهيم  */}
                         <h1> Explore the Area: </h1>
                         <h4>
                             {" "}
                             <LocationOnIcon /> Location: Mohammed Bin Rashid City{" "}
                         </h4>
                     </div>
-                </Grid>
-
-                <Grid item xs={4} alignItems={"center"} justifyContent={"center"}>
+                </div>
+                <div item lg={4} md={12} alignItems={"center"} justifyContent={"center"}>
                     <div className="ContactAgent">
                         <div className="title">Contact Agent</div>
-
                         <div className="imgctext">
                             <div className="imgcontact">
-                                <img src={filterCartId[0]?.bgImage} alt="" />
+                                <img src="/uploads/landingpage/export/photo3.png" alt="" />
                             </div>
                             <div className="text">
                                 <div className=" Listing">Listing by</div>
                                 <div className="name">{filterCartId[0]?.listingName}</div>
                                 <div className="contact ">
-                                    <Rating name="size-medium" value={filterCartId[0]?.stars || 0}readOnly />
+                                    <Rating name="size-medium" defaultValue={filterCartId[0]?.stars} readOnly />
                                 </div>
                             </div>
                         </div>
                         <div className="Email">
-                            <a href={`mailto:${filterCartId[0]?.email}?subject=Subject&body=Hello!`}>
+                            <a href="mailto:someone@example.com?subject=Subject&body=Hello!">
                                 Email
                             </a>
                         </div>          </div>
                     <div className="formc">
                         <FormContainer color={"#06404d"} />
                     </div>
-                </Grid>
-            </Grid>
+                </div>
+            </div>
             <div className="map">
                 <div className="h-5vh"></div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109180.12447447746!2d30.03728652547649!3d31.22408458346241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c49126710fd3%3A0xb4e0cda629ee6bb9!2z2KfZhNil2LPZg9mG2K_YsdmK2KnYjCDZhdit2KfZgdi42Kkg2KfZhNil2LPZg9mG2K_YsdmK2Kk!5e0!3m2!1sar!2seg!4v1726576245870!5m2!1sar!2seg"></iframe>

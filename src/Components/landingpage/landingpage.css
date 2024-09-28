@@ -1,6 +1,6 @@
 .Landingpage {
-  width: 100vw;
-  overflow: hidden;
+  width: 100%;
+  overflow: hidden !important;
 }
 
 .bg-Landingpage {
@@ -269,10 +269,10 @@ ContactAgent */
   }
 
   .grid-lan {
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-  }
+}
 
   .ContactAgent {
     margin-left: 25px;
