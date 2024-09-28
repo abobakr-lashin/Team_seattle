@@ -223,6 +223,7 @@ export default function RentDahs() {
                         <TableBody>
                             {data.map((it) => (
                                 <StyledTableRow key={it.id}>
+                                    
                                     <StyledTableCell>
                                         <img style={{ width: '200px' }} src={it.imageCart} alt="" />
                                     </StyledTableCell>
