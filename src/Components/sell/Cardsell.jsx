@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import Slider from "react-slick";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import "./Cardsell.css"
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
 import { Link } from 'react-router-dom';
 import "./Sell.css"
+import "./Cardsell.css"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const CustomPrevArrow = (props) => {
   const { className, onClick } = props;
   return (
@@ -36,10 +37,10 @@ const CustomNextArrow = (props) => {
 export default function Cardsell() {
   const [data , setData] = useState([])
   const settings = {
-    centerMode: false,
+    centerMode: true,
     centerPadding: "auto",
     slidesToShow: 3,
-    focusOnSelect: false,
+    focusOnSelect: true,
     infinite: true,
     speed: 600,
     autoplay: true,

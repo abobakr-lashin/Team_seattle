@@ -8,8 +8,6 @@ export default function Discover() {
   return (
     <div className="Discover">
       <div className="body-img">
-        {/* <div className="h-5vh"></div> */}
-        <div className="h-6vh"></div>
 
         <div className="grop-title1">
           <div className="img-dis">

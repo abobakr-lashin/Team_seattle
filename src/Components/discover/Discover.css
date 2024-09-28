@@ -243,6 +243,9 @@ width: auto;
     font-size: 18px !important;
     font-weight: 600;
   }
+  .body-img{
+    height: 115vh;
+  }
   .btn-RE {
     width: 270px;
     height: 50px;
@@ -265,6 +268,12 @@ width: auto;
     max-width: 80%;
     text-align: center !important;
   }
+  .prgraf {
+    font-size: 13px;
+    color: white;
+    max-width: 100%;
+    text-align: center;
+}
 
    .title-dis2{
     width: 80%;
@@ -285,7 +294,7 @@ width: auto;
   width: 90% !important  ;
 }
 .img-dis img {
-  max-width: 100% !important;
+  max-width: 50% !important;
   height: auto;
 }
 
@@ -294,7 +303,7 @@ width: auto;
 
 
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 375px) {
  
   .prgraf p{
     font-size:14px;
@@ -302,6 +311,15 @@ width: auto;
     max-width: 100%;
     text-align: center !important;
   }
+  .body-img {
+    height: 94vh;
+}
+  .prgraf p {
+    font-size: 11px;
+    color: white;
+    max-width: 100%;
+    text-align: center !important;
+}
   .title-dis3 h2{
     font-size:320px !important;
     width: 90% !important  ;
@@ -316,6 +334,22 @@ width: auto;
 }
 
 }
+
+
+@media screen and (max-width: 325px) {
+ 
+  .prgraf p {
+    font-size: 10px;
+    color: white;
+    max-width: 100%;
+    text-align: center !important;
+}
+
+}
+
+
+
+
 .bg-color{
   background:linear-gradient(rgba(0, 0, 0, 0.082),rgba(255, 255, 255, 0.068));
   height: 30px;

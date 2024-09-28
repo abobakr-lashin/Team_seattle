@@ -191,44 +191,19 @@ const Navbar = () => {
 
 
     };
-    const handlback = (dropdown) => {
-        const tab = document.querySelector(`.custom-navbar-item .custom-dropdown-menu`);
-
-        // التأكد من أن العنصر موجود
-        if (tab) {
-            tab.style.display ="none" // تأكد من كتابة 'display' بشكل صحيح
-        }      
+    // const handlback = (dropdown) => {
+       
+    // };
     
-    };
- 
-    const handltap = (event) => {
-        // التحقق مما إذا كانت الشاشة أقل من 1025 بكسل باستخدام matchMedia
-        const mediaQuery = window.matchMedia("(max-width: 1024px)");
+    // const handltap = (event) => {
+    //     const tab = document.querySelector(`.custom-navbar-item .custom-dropdown-menu`);
     
-        if (mediaQuery.matches) {
-            const targetElement = event.target; // العنصر الذي تم النقر عليه
-            const backButton = document.getElementById("back-button"); // زر الرجوع
-    
-            // التحقق مما إذا كان العنصر الذي تم النقر عليه هو زر الرجوع
-            if (targetElement === backButton) {
-                const buy = document.getElementsByClassName("custom-dropdown-menu");
-                const tab = document.querySelector(`custom-dropdown-menu show`);
-
-                // التأكد من أن لديك عناصر في القائمة
-                if (buy.length > 0) {
-                    // التعامل مع كل عنصر في القائمة
-                    for (let i = 0; i < buy.length; i++) {
-                        const menu = buy[i];
-    
-                        // التحقق مما إذا كان العنصر يحتوي على الصف 'show'
-                        if (menu.classList.contains("show")) {
-                            tab.style.display = "flex";  // إخفاء العنصر عند النقر على زر الرجوع
-                        }
-                    }
-                }
-            }
-        }
-    };
+    //     if (tab) {
+    //         // Get the current left position and convert it to a number
+    //         const currentLeft = parseInt(window.getComputedStyle(tab).left, 10) || 0;
+    //         tab.style.left= -31 +"px"; // Subtract 500px from the current left position
+    //     }
+    // };
     useEffect(() => {
         GetDataFireStore();
         getCategories();
@@ -254,7 +229,7 @@ const Navbar = () => {
                         
                         >
                         <span className="custom-navbar-link"          
-                                      onClick={handltap("BUY")} 
+                                    //   onClick={handltap("BUY")} 
                         >
 
                             <Link to="/Buy">BUY</Link>
@@ -264,7 +239,7 @@ const Navbar = () => {
                         <div
                                     className="custom-dropdown-item  dis-buy"
                                 >
-<div className="bt-back" onClick={() => handlback("BUY")}>
+<div className="bt-back" >
 رجوع
                                 </div>
                                     <div className="dis-buy">
