@@ -122,7 +122,7 @@ export default function Rent() {
                   <div className="img-lisby">
                     <img src={it.imageCart} alt="Property" />
                   </div>
-                  <div className="title-lisby">Listing by Ramin Sadeghi </div>
+                  <div className="title-lisby">Listing by {it.listingName} </div>
                 </div>
               </h6>
             </div>

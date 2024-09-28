@@ -34,13 +34,6 @@ export default function UpdateSell() {
         });
     };
 
-
-    const handleQuillChange = (value) => {
-        setFormData({
-            ...formData,
-            text: value,
-        });
-    };
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -49,9 +42,9 @@ export default function UpdateSell() {
         try {
             let updatedBlogImageCart = formData.imageCart;
             let updatedBlogClint = formData.bgImage;
-            let updatedCartImageSlider = formData.imageSlider; 
+            let updatedCartImageSlider = formData.imageSlider;
 
-            
+
             if (FileURLs.length > 0) {
                 const uploadedFileURLs = await Promise.all(FileURLs.map(async (file) => {
                     const fileRef = ref(storage, `files/${file.name}`);
@@ -91,7 +84,7 @@ export default function UpdateSell() {
                 map: formData.map,
                 bgImage: updatedBlogClint,
                 imageCart: updatedBlogImageCart,
-                imageSlider: formData.imageSlider || updatedCartImageSlider ,
+                imageSlider: formData.imageSlider || updatedCartImageSlider,
                 CategoryBuyLocation: formData.CategoryBuyLocation,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
@@ -101,7 +94,7 @@ export default function UpdateSell() {
 
             toast.success('Data updated successfully!');
             console.log('Data updated successfully!');
-            Navigate('/dashboard/Rent');
+            Navigate('/dashboard/Sell');
         } catch (err) {
             toast.error('Error updating data: ' + err.message);
             console.error('Error updating data:', err);
@@ -128,7 +121,7 @@ export default function UpdateSell() {
 
         // get Category Locations  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
+            const querySnapshot = await getDocs(collection(firestore, "CategorySellLocation"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -153,7 +146,7 @@ export default function UpdateSell() {
 
         // get category buy Plans  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "categoryBuyPlan"));
+            const querySnapshot = await getDocs(collection(firestore, "categorySellPlan"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -184,20 +177,7 @@ export default function UpdateSell() {
         fetchData();
     }, []);
 
-    console.log(formData.bgImage);
 
-    const modules = {
-        toolbar: [
-            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-            [{ 'size': [] }],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ 'color': [] }, { 'background': [] }],
-            [{ 'align': [] }],
-            ['link', 'image'],
-            ['clean']
-        ]
-    };
 
     if (loading) {
         return (
@@ -446,7 +426,9 @@ export default function UpdateSell() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <ReactQuill value={formData.text} onChange={handleQuillChange} modules={modules} />
+                        <textarea value={formData.text} style={{ margin: '20px', width: '80%', height: '300px' }} onChange={handleInputChange} placeholder='Enter your Description' name="text" id="text">
+
+                        </textarea>
                     </div>
                     <button type="submit" disabled={loading}>
                         {loading ? 'Updating...' : 'Update'}

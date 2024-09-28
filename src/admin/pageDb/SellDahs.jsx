@@ -6,7 +6,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from '../../firebaseConfig'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Box, CircularProgress, Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import Paper from '@mui/material/Paper';
@@ -70,6 +70,7 @@ export default function SellDahs() {
 
     // Handle Delete Item
     const handleDelete = async (id) => {
+        setLoading(true);
         if (window.confirm('Are you sure you want to delete')) {
             try {
                 await deleteDoc(doc(firestore, 'listBlogsCartSell', id));
@@ -78,6 +79,10 @@ export default function SellDahs() {
                 toast.success('Document successfully deleted')
             } catch (error) {
                 console.error('Error deleting document: ', error);
+                toast.error('Error deleting document')
+                setLoading(false);
+            } finally {
+                setLoading(false);
             }
         }
     };
@@ -101,6 +106,15 @@ export default function SellDahs() {
         getCategories();
     }, []);
 
+
+    if (loading) {
+        return (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <CircularProgress />
+            </Box>
+        );
+    }
+
     return (
         <>
             <div className="rent" style={{
@@ -119,9 +133,9 @@ export default function SellDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/CreateRent')
+                    Navigate('/dashboard/CreateSell')
                 }}>
-                    Add Cart Rent
+                    Add Cart Sell
                 </button>
                 <button style={{
                     width: '100%',
@@ -133,9 +147,9 @@ export default function SellDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddCategoryRentPlan')
+                    Navigate('/dashboard/AddCategorySell')
                 }}>
-                    Add Category Rent
+                    Add Category Sell
                 </button>
                 <button style={{
                     width: '100%',
@@ -147,13 +161,13 @@ export default function SellDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddLocationRent')
+                    Navigate('/dashboard/AddLocationSell')
                 }}>
                     Add Category Location
                 </button>
             </div>
             <div className="table">
-                <TableContainer component={Paper} sx={{ mt: '30px' }}>
+                {data.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
                     <Table sx={{ minWidth: 900 }} aria-label="customized table">
                         <TableHead>
                             <TableRow>
@@ -186,7 +200,21 @@ export default function SellDahs() {
                             ))}
                         </TableBody>
                     </Table>
-                </TableContainer>
+                </TableContainer> : <p style={{
+                    marginTop: '60px',
+                    fontSize: '20px',
+                    textAlign: 'center',
+                    color: '#234232',
+                    fontWeight: 'bold'
+                }}>
+                    There is no data in the data base <button style={{
+                        color: '#1976d2',
+                        textDecoration: 'underline',
+                        display: 'inline-block'
+                    }} onClick={() => {
+                        Navigate('/dashboard/CreateSell')
+                    }}>Add New Data</button>
+                </p>}
             </div>
         </>
     );

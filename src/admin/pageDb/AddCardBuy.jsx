@@ -140,7 +140,7 @@ export default function AddCardBuy() {
                 listingImage: null,
                 imageCart: null
             });
-            Navigate('/dashboard')
+            Navigate('/dashboard/Buy')
         } catch (err) {
             toast.error('Error submitting data: ' + err.message);
             console.error('Error submitting data:', err);

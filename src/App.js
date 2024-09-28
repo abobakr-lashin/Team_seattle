@@ -72,6 +72,7 @@ import RentUpdate from './admin/pageDb/RentUpdate';
 import UpdateBuy from './admin/pageDb/UpdateBuy';
 import UpdateSell from './admin/pageDb/updateSell';
 import UpdateRent from './admin/pageDb/RentUpdate';
+import CommercialEdit from './admin/pageDb/CommercialEdit.';
 
 export default function App() {
     return (
@@ -142,11 +143,11 @@ export default function App() {
                         <Route path="AddCategoryRentPlan" element={<AddCategoryRentPlan />} />
                         <Route path="AddLocationRent" element={<AddLocationRent />} />
                         <Route path="Rent" element={<RentDahs />} />
-                        
                         <Route path="EditRent/:id" element={<UpdateRent />} />
                         <Route path="Buy" element={<BuyDahs />} />
                         <Route path="EditBuy/:id" element={<UpdateBuy />} />
                         <Route path="COMMERCIAL" element={<COMMERCIALDahs />} />
+                        <Route path="CommercialEdit/:id" element={<CommercialEdit />} />
                         <Route path="Sell" element={<SellDahs />} />
                         <Route path="EditSell/:id" element={<UpdateSell />} />
                         <Route path="CreateRent" element={<CreateRent />} />

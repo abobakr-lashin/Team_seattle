@@ -80,6 +80,7 @@ export default function BuyDahs() {
 
     // Get Data Cart Firebase
     const getCategories = async () => {
+        setLoading(true);
         try {
             const querySnapshot = await getDocs(collection(firestore, "listBlogsCartBuy"));
             const docs = querySnapshot.docs.map((doc) => ({
@@ -89,6 +90,10 @@ export default function BuyDahs() {
             setData(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
+            setError(error);
+            setLoading(false);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -157,7 +162,7 @@ export default function BuyDahs() {
                 </button>
             </div>
             <div className="table">
-                <TableContainer component={Paper} sx={{ mt: '30px' }}>
+                {data.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
                     <Table sx={{ minWidth: 900 }} aria-label="customized table">
                         <TableHead>
                             <TableRow>
@@ -190,7 +195,21 @@ export default function BuyDahs() {
                             ))}
                         </TableBody>
                     </Table>
-                </TableContainer>
+                </TableContainer> : <p style={{
+                    marginTop: '60px',
+                    fontSize: '20px',
+                    textAlign: 'center',
+                    color: '#234232',
+                    fontWeight: 'bold'
+                }}>
+                    There is no data in the data base <button style={{
+                        color: '#1976d2',
+                        textDecoration: 'underline',
+                        display: 'inline-block'
+                    }} onClick={() => {
+                        Navigate('/dashboard/AddCardBuy')
+                    }}>Add New Data</button>
+                </p>}
             </div>
         </>
     );
