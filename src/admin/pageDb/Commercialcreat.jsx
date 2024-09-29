@@ -6,6 +6,8 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن مسار الاستيراد صحيح
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default function CommercialCreate() {
     const Navigate = useNavigate()
@@ -26,7 +28,6 @@ export default function CommercialCreate() {
         baths: '',
         square: '',
         parking: '',
-        qualities: '',
         location: '',
         monthlyPayment: '',
         listingName: '',
@@ -37,7 +38,7 @@ export default function CommercialCreate() {
         listingImage: null,
     });
 
-    console.log(formDataImage);
+    console.log(formData);
 
 
 
@@ -66,12 +67,6 @@ export default function CommercialCreate() {
         }
     };
 
-    const handleQuillChange = (value) => {
-        setFormData({
-            ...formData,
-            text: value,
-        });
-    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -105,7 +100,6 @@ export default function CommercialCreate() {
                 beds: formData.beds,
                 baths: formData.baths,
                 square: formData.square,
-                Parking: formData.Parking,
                 parking: formData.parking,
                 location: formData.location,
                 monthlyPayment: formData.monthlyPayment,
@@ -141,7 +135,7 @@ export default function CommercialCreate() {
                 listingImage: null,
                 imageCart: null
             });
-            Navigate('/dashboard/listingBlogs')
+            Navigate('/dashboard/COMMERCIAL')
         } catch (err) {
             toast.error('Error submitting data: ' + err.message);
             console.error('Error submitting data:', err);
@@ -168,18 +162,7 @@ export default function CommercialCreate() {
         getCategories();
     }, []);
 
-    const modules = {
-        toolbar: [
-            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-            [{ 'size': [] }],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ 'color': [] }, { 'background': [] }],
-            [{ 'align': [] }],
-            ['link', 'image'],
-            ['clean']
-        ]
-    };
+
 
     return (
         <div>
@@ -356,9 +339,17 @@ export default function CommercialCreate() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <textarea value={formData.text} style={{ margin: '20px', width: '80%', height: '300px' }} onChange={handleInputChange} placeholder='Enter your Description' name="text" id="text">
-
-                        </textarea>
+                        <CKEditor
+                            editor={ClassicEditor}
+                            data={formData.text || ""}
+                            onChange={(event, editor) => {
+                                const data = editor.getData();
+                                setFormData({ ...formData, text: data });
+                            }}
+                            config={{
+                                height: '400px',
+                            }}
+                        />
                     </div>
                     <br /><br />
                     <button type="submit" disabled={loading}>

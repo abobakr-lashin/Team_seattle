@@ -148,21 +148,17 @@ export default function LandingPageBuy() {
                     </div>
                 </div>
                 <div className="contbg">
-                    {/* من هنا الصوره يا ابراهيم  */}
                     <div className="img-samy">
                         <img src="/uploads/landingpage/export/icon/samayas.png" alt="samayas" />
                     </div>
                     <div className="formheader">
-
                         <FormContainer color={"rgba(255, 255, 255, 0.466)"} />
                     </div>
                 </div>
-
                 <div className="slider-container">
                     <Slider {...settings}>{imgsetin}</Slider>
                 </div>
             </div>
-
             <div className="h-5vh"></div>
             <div className="grid-lan" spacing={2} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
                 <div className="grid-lan1" item lg={8} md={12} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
@@ -188,7 +184,7 @@ export default function LandingPageBuy() {
                         <div className="title">Contact Agent</div>
                         <div className="imgctext">
                             <div className="imgcontact">
-                                <img src="/uploads/landingpage/export/photo3.png" alt="" />
+                                <img src={filterCartId[0]?.bgImage} alt="" />
                             </div>
                             <div className="text">
                                 <div className=" Listing">Listing by</div>

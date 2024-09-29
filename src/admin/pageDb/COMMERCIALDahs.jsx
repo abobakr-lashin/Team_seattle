@@ -181,7 +181,7 @@ export default function COMMERCIALDahs() {
                                     <StyledTableCell align="center">{it.text.slice(0, 30)}...</StyledTableCell>
                                     <StyledTableCell align="center">{it.price}</StyledTableCell>
                                     <StyledTableCell align="center">{it.location}</StyledTableCell>
-                                    <StyledTableCell align="center"><button onClick={()=>{
+                                    <StyledTableCell align="center"><button onClick={() => {
                                         Navigate(`/dashboard/CommercialEdit/${it.id}`)
                                     }} style={{ backgroundColor: '#1976d2' }}>Update</button></StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {
