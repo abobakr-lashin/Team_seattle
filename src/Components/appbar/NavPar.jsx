@@ -325,6 +325,26 @@ const Navbar = () => {
                                             <FormN name={"Free consultation"} />
                                         </div>
                                     </div>
+                                    <div className="imgnp1">
+                                        <div className="disi">
+                                            <div>
+                                                <div className="h3">
+                                                    Schedule your free 
+                                                </div>
+                                                <div className="h3">
+                                                    consultation today
+                                                </div>
+                                                <div className="h4">
+                                                    And our team will help you find 
+                                                </div>
+                                                <div className="h4">
+                                                    find the ideal property for
+                                                    your needs
+                                                </div>
+                                            </div>
+                                            <FormN name={"Free consultation"} />
+                                        </div>
+                                    </div>
                                 </div>
                             </ul>
                         </div>
@@ -393,6 +413,26 @@ const Navbar = () => {
                                             <FormN name={"Free consultation"} />
                                         </div>
                                     </div>
+                                  <div className="imgnp1">
+                                        <div className="disi">
+                                            <div>
+                                                <div className="h3">
+                                                    Schedule your free 
+                                                </div>
+                                                <div className="h3">
+                                                    consultation today
+                                                </div>
+                                                <div className="h4">
+                                                    And our team will help you find 
+                                                </div>
+                                                <div className="h4">
+                                                    find the ideal property for
+                                                    your needs
+                                                </div>
+                                            </div>
+                                            <FormN name={"Free consultation"} />
+                                        </div>
+                                    </div>
                                 </div>
                             </ul>
                         </div>
@@ -452,6 +492,27 @@ const Navbar = () => {
                                                 </div>
                                                 <div className="h4">
                                                     And our team will help you find the ideal property for
+                                                    your needs
+                                                </div>
+                                            </div>
+                                            <FormN name={"Free consultation"} />
+                                        </div>
+                                    </div>
+
+                                  <div className="imgnp1">
+                                        <div className="disi">
+                                            <div>
+                                                <div className="h3">
+                                                    Schedule your free 
+                                                </div>
+                                                <div className="h3">
+                                                    consultation today
+                                                </div>
+                                                <div className="h4">
+                                                    And our team will help you find 
+                                                </div>
+                                                <div className="h4">
+                                                    find the ideal property for
                                                     your needs
                                                 </div>
                                             </div>
@@ -555,6 +616,26 @@ const Navbar = () => {
                                             <FormN name={"Free consultation"} />
                                         </div>
                                     </div>
+                                  <div className="imgnp1">
+                                        <div className="disi">
+                                            <div>
+                                                <div className="h3">
+                                                    Schedule your free 
+                                                </div>
+                                                <div className="h3">
+                                                    consultation today
+                                                </div>
+                                                <div className="h4">
+                                                    And our team will help you find 
+                                                </div>
+                                                <div className="h4">
+                                                    find the ideal property for
+                                                    your needs
+                                                </div>
+                                            </div>
+                                            <FormN name={"Free consultation"} />
+                                        </div>
+                                    </div>
                                 </div>
                             </ul>
                         </div>
@@ -631,6 +712,26 @@ const Navbar = () => {
                                                 </div>
                                                 <div className="h4">
                                                     And our team will help you find the ideal property for
+                                                    your needs
+                                                </div>
+                                            </div>
+                                            <FormN name={"Free consultation"} />
+                                        </div>
+                                    </div>
+                                  <div className="imgnp1">
+                                        <div className="disi">
+                                            <div>
+                                                <div className="h3">
+                                                    Schedule your free 
+                                                </div>
+                                                <div className="h3">
+                                                    consultation today
+                                                </div>
+                                                <div className="h4">
+                                                    And our team will help you find 
+                                                </div>
+                                                <div className="h4">
+                                                    find the ideal property for
                                                     your needs
                                                 </div>
                                             </div>
@@ -748,6 +849,26 @@ const Navbar = () => {
                                             <FormN name={"Free consultation"} />
                                         </div>
                                     </div>
+                                  <div className="imgnp1">
+                                        <div className="disi">
+                                            <div>
+                                                <div className="h3">
+                                                    Schedule your free 
+                                                </div>
+                                                <div className="h3">
+                                                    consultation today
+                                                </div>
+                                                <div className="h4">
+                                                    And our team will help you find 
+                                                </div>
+                                                <div className="h4">
+                                                    find the ideal property for
+                                                    your needs
+                                                </div>
+                                            </div>
+                                            <FormN name={"Free consultation"} />
+                                        </div>
+                                    </div>
                                 </div>
                             </ul>
                         </div>
@@ -838,6 +959,26 @@ const Navbar = () => {
                                             <FormN name={"Free consultation"} />
                                         </div>
                                     </div>
+                                  <div className="imgnp1">
+                                        <div className="disi">
+                                            <div>
+                                                <div className="h3">
+                                                    Schedule your free 
+                                                </div>
+                                                <div className="h3">
+                                                    consultation today
+                                                </div>
+                                                <div className="h4">
+                                                    And our team will help you find 
+                                                </div>
+                                                <div className="h4">
+                                                    find the ideal property for
+                                                    your needs
+                                                </div>
+                                            </div>
+                                            <FormN name={"Free consultation"} />
+                                        </div>
+                                    </div>
                                 </div>
                             </ul>
                         </div>
@@ -909,6 +1050,26 @@ const Navbar = () => {
                                                 </div>
                                                 <div className="h4">
                                                     And our team will help you find the ideal property for
+                                                    your needs
+                                                </div>
+                                            </div>
+                                            <FormN name={"Free consultation"} />
+                                        </div>
+                                    </div>
+                                  <div className="imgnp1">
+                                        <div className="disi">
+                                            <div>
+                                                <div className="h3">
+                                                    Schedule your free 
+                                                </div>
+                                                <div className="h3">
+                                                    consultation today
+                                                </div>
+                                                <div className="h4">
+                                                    And our team will help you find 
+                                                </div>
+                                                <div className="h4">
+                                                    find the ideal property for
                                                     your needs
                                                 </div>
                                             </div>

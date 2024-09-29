@@ -201,6 +201,20 @@
 .imgnp .h4 {
   font-weight: lighter;
 }
+.imgnp1 .h3,
+.imgnp1 .h4 {
+  width: 100%;
+  overflow: hidden; /* Ensures the text is clipped */
+  border-right: 2px solid rgba(0, 0, 0, 0.75); /* Creates a cursor effect */
+  white-space: nowrap; /* Ensures the text stays on one line */
+  width: 0; /* Start with zero width */
+  margin-bottom: 10px;
+  animation: typewriter 4s steps(30, end) infinite,
+    blinkCursor 0.75s step-end infinite;
+}
+.imgnp1 .h4 {
+  font-weight: lighter;
+}
 /* BUY */
 /* RENT */
 
@@ -505,6 +519,17 @@
 /* Blogs */
 
 .Blogs .imgnp {
+  margin: 10px;
+  background-image: url("/public/uploads/nav/e3lan.png");
+  width: 99%;
+  height: auto;
+  border-radius: 30px;
+  padding: 20px;
+  padding-top: 10px;
+  background-size: cover;
+  text-align: unset;
+}
+.Blogs .imgnp1 {
   margin: 10px;
   background-image: url("/public/uploads/nav/e3lan.png");
   width: 99%;
