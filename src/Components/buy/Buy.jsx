@@ -4,7 +4,6 @@ import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Grid } from '@mui/material';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import SearchIcon from '@mui/icons-material/Search';
 import FormN from '../appbar/FormN';
 import Footer from '../footer/Footer';
 import OUREXPERT from '../../Pages/OUREXPERT';
@@ -12,12 +11,12 @@ import OUREXPERT from '../../Pages/OUREXPERT';
 import "./buy.css";
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
+
 export default function Buy() {
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
     const [price, setPrice] = useState('');
-    const [completionStatus, setCompletionStatus] = useState('');
     const [location, setLocation] = useState('');
     const [propertyType, setPropertyType] = useState('');
     const [minArea, setMinArea] = useState('');
@@ -27,7 +26,6 @@ export default function Buy() {
     const [minPrice, setMinPrice] = useState('');
 
     const itemsPerPage = 9;
-
 
     // Get Data from Firestore
     const GetDataFireStore = async () => {
@@ -46,7 +44,6 @@ export default function Buy() {
     useEffect(() => {
         GetDataFireStore();
     }, []);
-
 
     // Filter items by category
     const filteredProjects = data.filter((project) => {
@@ -84,9 +81,8 @@ export default function Buy() {
         setCurrentPage(1);
     };
 
-
     const imgsetin = currentItems.map((it) => (
-        <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
+        <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item lg={4} md={6} sm={6}>
             <Link to={`/buy/${it.id}`}>
                 <div className="CONTER">
                     <div className="bg-back">
@@ -229,24 +225,27 @@ export default function Buy() {
             </div>
 
             <div className='buy'>
-                <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
+                <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2} >
                     {imgsetin}
                 </Grid>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-                    <div onClick={handlePreviousPage} style={{ cursor: currentPage > 1 ? 'pointer' : 'default', opacity: currentPage > 1 ? 1 : 0.5 }}>
+                    <button 
+                        onClick={handlePreviousPage} 
+                        disabled={currentPage === 1} 
+                        style={{ cursor: currentPage > 1 ? 'pointer' : 'not-allowed', opacity: currentPage > 1 ? 1 : 0.5 }}>
                         <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
-                    </div>
+                    </button>
                     <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>
-                    <div onClick={handleNextPage} style={{ cursor: currentPage < totalPages ? 'pointer' : 'default', opacity: currentPage < totalPages ? 1 : 0.5 }}>
+                    <button 
+                        onClick={handleNextPage} 
+                        disabled={currentPage === totalPages} 
+                        style={{ cursor: currentPage < totalPages ? 'pointer' : 'not-allowed', opacity: currentPage < totalPages ? 1 : 0.5 }}>
                         <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
-                    </div>
+                    </button>
                 </div>
             </div>
 
-
-
             <OUREXPERT />
-
             <Footer />
         </div>
     );

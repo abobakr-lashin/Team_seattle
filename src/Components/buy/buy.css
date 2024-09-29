@@ -39,11 +39,11 @@
 }
 
 .buy .input-style-1 {
-  width: 150px ;
+  width: 150px;
 }
 
 .buy .input-style-3 {
-  width: 860px ; 
+  width: 860px;
   padding: 20px;
 }
 .input-style-submit {
@@ -73,7 +73,7 @@
 .buy .input-style-9 {
   width: 150px;
 }
- /*.buy .bg-back */
+/*.buy .bg-back */
 .buy .bg-back {
   width: 85%;
   position: relative;
@@ -125,7 +125,7 @@
 
 .buy .img-imgSaleIn h5 {
   width: 80%;
-margin: 20px;
+  margin: 20px;
   text-align: start;
   position: absolute;
   top: 62%;
@@ -160,45 +160,41 @@ margin: 20px;
   border-radius: 100% 100%;
 }
 @media screen and (max-width: 1564px) {
-.buy .input-style-3{
-width: 828px ;
+  .buy .input-style-3 {
+    width: 828px;
   }
 }
-
 
 @media screen and (max-width: 1440px) {
-.input-style-3{
-width: 741px !important ;
+  .input-style-3 {
+    width: 741px !important ;
   }
- .input-style-4 {
-  width: 302px !important;
+  .input-style-4 {
+    width: 302px !important;
   }
-
 }
 @media screen and (max-width: 1400px) {
-  .buy .input-style-3{
-    width: 716px ;
-      }
-      .buy .input-style-4 {
-        width: 301px;
-    }
-    .buy .input-style-9 {
-      width: 107px;
+  .buy .input-style-3 {
+    width: 716px;
+  }
+  .buy .input-style-4 {
+    width: 301px;
+  }
+  .buy .input-style-9 {
+    width: 107px;
   }
 }
 @media screen and (max-width: 1280px) {
- 
-      .buy .input-style-4 {
-        width: 188px;
-    }
-    .buy .input-style-3 {
-      width: 56%;
+  .buy .input-style-4 {
+    width: 188px;
+  }
+  .buy .input-style-3 {
+    width: 56%;
   }
 }
 @media screen and (max-width: 1024px) {
   .buy .bg-back {
     height: 555px;
-    width: 100%;
   }
 
   .buy .img-imgSaleIn h5 {
@@ -208,46 +204,51 @@ width: 741px !important ;
   }
   .buy .input-style-3 {
     width: 47% !important;
-}
-      .buy .input-style-4 {
-      width: 225px;
-      }
-      .buy .input-style-8{
-        width:350px;
-      }
-      .buy .input-style-9{
-        width: 374px;
-      }
-      .buy .input-style-7{
-        width: 250px;
-      }
+  }
+  .buy .input-style-4 {
+    width: 225px;
+  }
+  .buy .input-style-8 {
+    width: 350px;
+  }
+  .buy .input-style-9 {
+    width: 374px;
+  }
+  .buy .input-style-7 {
+    width: 250px;
+  }
 
- .img-lisby img{
-        width: 70px;
-        height: 70px;
-        border-radius:100% 100%;
-      }
-      .buy .img-imgSaleIn h5 {
-        top: 65%;
-        font-size: 15px;
-      }
-      .buy .title-lisby{
-font-size: 15px;
-      }
-      .buy .img-imgSaleIn h6 {
-   
-        top: 88%;
-        padding: 20px;
-       
-      
-      }
+  .img-lisby img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100% 100%;
+  }
+  .buy .img-imgSaleIn h5 {
+    top: 65%;
+    font-size: 15px;
+  }
+  .buy .title-lisby {
+    font-size: 15px;
+  }
+  .buy .img-imgSaleIn h6 {
+    top: 70%;
+    padding: 20px;
+  }
+  .buy .img-imgSaleIn h5 {
+    top: 65%;
+    font-size: 17px;
+    flex-wrap: wrap;
+    margin: 0px;
+    width: 100%;
+    justify-content: start;
+    padding: 0px;
+  }
 }
 
 @media screen and (max-width: 820px) {
   .buy .dis-play {
     font-size: 13px;
   }
-
 
   .buy .img-imgSaleIn h3 {
     font-size: 20px;
@@ -276,83 +277,115 @@ font-size: 15px;
     width: 95px;
   }
   .buy .input-style-1 {
-  width: 124px;
+    width: 124px;
   }
-  
-   
-      .buy .input-style-8{
-        width:120px;
-      }
-      .buy .input-style-9{
-        width: 120px;
-      }
-      .buy .input-style-7{
-        width: 140px;
-      }
-      .buy .img-imgSaleIn h5 {
-        width: 100% !important;
-        font-size: 13px;
-        top: 80%;
-      }
-      .buy .img-imgSaleIn h6 {
-   
-        top: 87%;
-        padding: 20px;
-       
-      
-      }
-      .input-style-submit {
-        width: 25% !important;
-      }
-      .buy .input-style-4 {
-        width: 48%;
-    }
-    .buy .input-style-9 {
-      width: 47%;
-      font-size: medium;
+
+  .buy .input-style-8 {
+    width: 120px;
   }
+  .buy .input-style-9 {
+    width: 120px;
+  }
+  .buy .input-style-7 {
+    width: 140px;
+  }
+  .buy .img-imgSaleIn h5 {
+    width: 100% !important;
+    font-size: 13px;
+    top: 80%;
+  }
+  .buy .img-imgSaleIn h6 {
+    top: 87%;
+    padding: 20px;
+  }
+  .input-style-submit {
+    width: 25% !important;
+  }
+  .buy .input-style-4 {
+    width: 48%;
+  }
+  .buy .input-style-9 {
+    width: 47%;
+    font-size: medium;
+  }
+
+  /*    .buy .bg-back 
+    } */
+  .buy .bg-back {
+    height: 500px;
+  }
+  .buy .img-imgSaleIn h6 {
+    top: 70%;
+    padding: 20px;
+}
+
+.buy .img-imgSaleIn h5 {
+  width: 100% !important;
+  font-size: 18px;
+  top: 64%;
+  display: block;
+  text-align: start;
+  left: 0;
+}
 }
 
 @media screen and (max-width: 425px) {
   .buy .input-style-1 {
     width: 100%;
-}
-.buy .input-style-3 {
-  width: 100% !important;
-}
-.input-style-submit{
-  width: 100% !important; 
-}
-.buy .input-style-4 ,.input-style-5 ,.input-style-6 ,.input-style-7 ,.input-style-8 {
-  width: 45% !important;
-  font-size: small;
-}
+  }
+  .buy .input-style-3 {
+    width: 100% !important;
+  }
+  .input-style-submit {
+    width: 100% !important;
+  }
+  .buy .input-style-4,
+  .input-style-5,
+  .input-style-6,
+  .input-style-7,
+  .input-style-8 {
+    width: 45% !important;
+    font-size: small;
+  }
 }
 @media screen and (max-width: 375px) {
-  .buy .input-style-4 ,.input-style-5 ,.input-style-6 ,.input-style-7 ,.input-style-8 {
+  .buy .input-style-4,
+  .input-style-5,
+  .input-style-6,
+  .input-style-7,
+  .input-style-8 {
     width: 43% !important;
     font-size: small;
   }
 
- 
-.img-imgSaleIn h5 {
-  width: 86% !important;
-  font-size: 17px;
-  top: 80%;
-  left: 0px;
-}
-.img-imgSaleIn h6 {
-  position: absolute;
-  width: 100%;
-  top: 87%;
-  padding: 20px;
-  color: white;
-  font-size: 20px;
-  flex-wrap: wrap;
+  .img-imgSaleIn h5 {
+    width: 86% !important;
+    font-size: 17px;
+    top: 80%;
+    left: 0px;
+  }
+  .img-imgSaleIn h6 {
+    position: absolute;
+    width: 100%;
+    top: 87%;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    flex-wrap: wrap;
+  }
+
+
+.buy .img-imgSaleIn h5 {
+  width: 100% !important;
+  font-size: 14px;
+  top: 64%;
+  display: block;
+  text-align: start;
+  left: -11px;
 }
 }
 
- /* .buy .bg-back */
+/* .buy .bg-back */
 
 /* Loader */
 /* From Uiverse.io by Donewenfu */
@@ -400,4 +433,3 @@ font-size: 15px;
   -webkit-animation-delay: 0.16s !important;
   animation-delay: 0.16s !important;
 }
-

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FormN from "./FormN";
 import Typography from "@mui/material/Typography";
-import { Grid, ImageListTileBar, IconButton } from "@mui/material";
+import { Grid, ImageListTileBar, IconButton, Dialog } from "@mui/material";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
 import "./Navbar.css";
@@ -345,6 +345,14 @@ const Navbar = () => {
                                             <FormN name={"Free consultation"} />
                                         </div>
                                     </div>
+                                    <div className="imgiconstw">
+                                        <div><Link target='_blank' to={"https://www.facebook.com/seattleme"}><img src="./uploads/nav/phone/icons/facebook_1384005.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"}><img src="./uploads/nav/phone/icons/instagram_1384015.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.linkedin.com/company/seattleme/"}><img src="./uploads/nav/phone/icons/linkedin_1384014.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"}><img src="./uploads/nav/phone/icons/snapchat_3669965.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.threads.net/@seattlemiddleeast"}><img src="./uploads/nav/phone/icons/threads.png" alt="face"/></Link></div>
+                                
+                                    </div>
                                 </div>
                             </ul>
                         </div>
@@ -433,6 +441,14 @@ const Navbar = () => {
                                             <FormN name={"Free consultation"} />
                                         </div>
                                     </div>
+                                    <div className="imgiconstw">
+                                        <div><Link target='_blank' to={"https://www.facebook.com/seattleme"}><img src="./uploads/nav/phone/icons/facebook_1384005.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"}><img src="./uploads/nav/phone/icons/instagram_1384015.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.linkedin.com/company/seattleme/"}><img src="./uploads/nav/phone/icons/linkedin_1384014.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"}><img src="./uploads/nav/phone/icons/snapchat_3669965.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.threads.net/@seattlemiddleeast"}><img src="./uploads/nav/phone/icons/threads.png" alt="face"/></Link></div>
+                                
+                                    </div>
                                 </div>
                             </ul>
                         </div>
@@ -518,6 +534,14 @@ const Navbar = () => {
                                             </div>
                                             <FormN name={"Free consultation"} />
                                         </div>
+                                    </div>
+                                    <div className="imgiconstw">
+                                        <div><Link target='_blank' to={"https://www.facebook.com/seattleme"}><img src="./uploads/nav/phone/icons/facebook_1384005.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"}><img src="./uploads/nav/phone/icons/instagram_1384015.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.linkedin.com/company/seattleme/"}><img src="./uploads/nav/phone/icons/linkedin_1384014.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"}><img src="./uploads/nav/phone/icons/snapchat_3669965.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.threads.net/@seattlemiddleeast"}><img src="./uploads/nav/phone/icons/threads.png" alt="face"/></Link></div>
+                                
                                     </div>
                                 </div>
                             </ul>
@@ -636,6 +660,14 @@ const Navbar = () => {
                                             <FormN name={"Free consultation"} />
                                         </div>
                                     </div>
+                                    <div className="imgiconstw">
+                                        <div><Link target='_blank' to={"https://www.facebook.com/seattleme"}><img src="./uploads/nav/phone/icons/facebook_1384005.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"}><img src="./uploads/nav/phone/icons/instagram_1384015.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.linkedin.com/company/seattleme/"}><img src="./uploads/nav/phone/icons/linkedin_1384014.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"}><img src="./uploads/nav/phone/icons/snapchat_3669965.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.threads.net/@seattlemiddleeast"}><img src="./uploads/nav/phone/icons/threads.png" alt="face"/></Link></div>
+                                
+                                    </div>
                                 </div>
                             </ul>
                         </div>
@@ -737,6 +769,14 @@ const Navbar = () => {
                                             </div>
                                             <FormN name={"Free consultation"} />
                                         </div>
+                                    </div>
+                                    <div className="imgiconstw">
+                                        <div><Link target='_blank' to={"https://www.facebook.com/seattleme"}><img src="./uploads/nav/phone/icons/facebook_1384005.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"}><img src="./uploads/nav/phone/icons/instagram_1384015.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.linkedin.com/company/seattleme/"}><img src="./uploads/nav/phone/icons/linkedin_1384014.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"}><img src="./uploads/nav/phone/icons/snapchat_3669965.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.threads.net/@seattlemiddleeast"}><img src="./uploads/nav/phone/icons/threads.png" alt="face"/></Link></div>
+                                
                                     </div>
                                 </div>
                             </ul>
@@ -869,6 +909,14 @@ const Navbar = () => {
                                             <FormN name={"Free consultation"} />
                                         </div>
                                     </div>
+                                    <div className="imgiconstw">
+                                        <div><Link target='_blank' to={"https://www.facebook.com/seattleme"}><img src="./uploads/nav/phone/icons/facebook_1384005.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"}><img src="./uploads/nav/phone/icons/instagram_1384015.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.linkedin.com/company/seattleme/"}><img src="./uploads/nav/phone/icons/linkedin_1384014.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"}><img src="./uploads/nav/phone/icons/snapchat_3669965.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.threads.net/@seattlemiddleeast"}><img src="./uploads/nav/phone/icons/threads.png" alt="face"/></Link></div>
+                                
+                                    </div>
                                 </div>
                             </ul>
                         </div>
@@ -979,6 +1027,14 @@ const Navbar = () => {
                                             <FormN name={"Free consultation"} />
                                         </div>
                                     </div>
+                                    <div className="imgiconstw">
+                                        <div><Link target='_blank' to={"https://www.facebook.com/seattleme"}><img src="./uploads/nav/phone/icons/facebook_1384005.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"}><img src="./uploads/nav/phone/icons/instagram_1384015.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.linkedin.com/company/seattleme/"}><img src="./uploads/nav/phone/icons/linkedin_1384014.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"}><img src="./uploads/nav/phone/icons/snapchat_3669965.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.threads.net/@seattlemiddleeast"}><img src="./uploads/nav/phone/icons/threads.png" alt="face"/></Link></div>
+                                
+                                    </div>
                                 </div>
                             </ul>
                         </div>
@@ -1075,6 +1131,14 @@ const Navbar = () => {
                                             </div>
                                             <FormN name={"Free consultation"} />
                                         </div>
+                                    </div>
+                                    <div className="imgiconstw">
+                                        <div><Link target='_blank' to={"https://www.facebook.com/seattleme"}><img src="./uploads/nav/phone/icons/facebook_1384005.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"}><img src="./uploads/nav/phone/icons/instagram_1384015.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.linkedin.com/company/seattleme/"}><img src="./uploads/nav/phone/icons/linkedin_1384014.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"}><img src="./uploads/nav/phone/icons/snapchat_3669965.png" alt="face"/></Link></div>
+                                        <div><Link target='_blank' to={"https://www.threads.net/@seattlemiddleeast"}><img src="./uploads/nav/phone/icons/threads.png" alt="face"/></Link></div>
+                                
                                     </div>
                                 </div>
                             </ul>
