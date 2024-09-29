@@ -7,7 +7,10 @@ import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import "./table.css";
 
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export default function AddCardBuy() {
     const Navigate = useNavigate()
     const [FileURLs, setFileURLs] = useState([])
@@ -421,8 +424,23 @@ export default function AddCardBuy() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <textarea value={formData.text} style={{ margin: '20px', width: '80%', height: '300px' }} onChange={handleInputChange} placeholder='Enter your Description' name="text" id="text">
-                        </textarea>
+                        {/* <textarea value={formData.text} style={{ margin: '20px', width: '80%', height: '300px' }} onChange={handleInputChange} placeholder='Enter your Description' name="text" id="text">
+                        </textarea> */}
+                       <div className="editor-container">
+      <CKEditor
+        editor={ClassicEditor}
+        data={formData.text || ""}
+        onChange={(event, editor) => {
+          const data = editor.getData();
+          setFormData({ ...formData, text: data });
+        }}
+        config={{
+          height: '400px',  // ضبط الطول
+        }}
+      />
+      <div>
+      </div>
+    </div>
                     </div>
                     <br /><br />
                     <button type="submit" disabled={loading}>

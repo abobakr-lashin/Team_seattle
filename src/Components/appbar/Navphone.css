@@ -82,7 +82,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 160px 0px 0px 0px;
+      padding: 0px 0px 0px 0px;
       background-image: url("/public/uploads/nav/back.png");
       background-repeat: no-repeat;
       width: 100%;
@@ -359,10 +359,16 @@
       list-style: none;
       padding: 0 1px;
       border-radius: 23px;
-      height: auto;
+      height: 125vh;
       overflow: hidden;
       transition: opacity 1s ease, transform 0.5s ease;
     }
+    .custom-dropdown-item {
+      padding: 12px 20px;
+      color: white;
+      text-align: start;
+      transition: display 10.5s;
+  }
     .developers .dis-paly2 {
       display: flex;
       font-size: 18px;
@@ -379,6 +385,13 @@
     .dis-paly2 .aldar img {
       width: 75px;
     }
+    .developers .dis-paly2 {
+      display: flex;
+      font-size: 25px;
+      margin: 10px;
+      align-items: center;
+      justify-content: space-between;
+  }
   
     /* developers */
     /* AREAS */
@@ -935,6 +948,20 @@ flex-direction: column;
   width: 92%;
 }
 /*  AREAS*/
+/*  developers*/
+.developers .dis-buy {
+  display: flex;
+  flex-direction: column;
+}
+.developers .custom-dropdown-menu{
+  overflow-y: scroll;
+}
+
+
+
+
+
+/*  developers*/
 
 
 
@@ -1002,6 +1029,12 @@ flex-direction: column;
         height: 23vh;
   
     }
+    .Buys .custom-dropdown-menu {
+      width: 100%;
+      left: -34px;
+      top: -63px;
+      width: 100%;
+  }
     .dis-paly li {
       padding: 10px;
       text-align: start;
@@ -1232,6 +1265,36 @@ flex-direction: column;
   TEXT-ALIGN: center;
 }
     /* .AREAS */
+
+
+    /*  developers*/
+
+    .developers h3 {
+      font-size: 1.6rem;
+      margin-left: 0;
+      font-weight: bold;
+  }
+  .developers .custom-dropdown-menu {
+    overflow-y: scroll;
+    top: -215px;
+}
+.developers .dis-buy h4 {
+  margin-left: 0px;
+  font-size: 1.6rem;
+  font-weight: 550;
+}
+.developers .dis-paly2 {
+  display: flex;
+  font-size: 20px;
+  margin: 9px;
+  align-items: center;
+  justify-content: space-between;
+}
+.developers .dis-paly2 .aldar img {
+  width: 82px;
+}
+    /*  developers*/
+
   }
   @media (max-width: 375px) {
     .Buys h3 {
@@ -1291,6 +1354,12 @@ flex-direction: column;
   .Buys h3 {
       font-size: 26px;
   }
+  .Buys .custom-dropdown-menu {
+    width: 100%;
+    left: -45px;
+    top: -69px;
+    width: 103%;
+}
     /* .RENT */
     .custom-dropdown-item {
       padding: 45px 0;
@@ -1319,6 +1388,37 @@ flex-direction: column;
   font-size: 16px;
 }
     /* .Blogs */
+        /*  developers*/
+
+        .developers h3 {
+          font-size: 1.5rem;
+          margin-left: 0;
+          font-weight: bold;
+      }
+      .developers .dis-buy h4 {
+        margin-left: -23px;
+        font-size: 1.5rem;
+        font-weight: 550;
+    }
+    .developers .dis-paly2 li {
+      list-style: none;
+      padding: 2px;
+      font-weight: 500;
+      margin-left: 10px;
+      margin: 9px auto;
+      margin-left: 4px;
+  }
+  .developers .dis-paly2 .aldar img {
+    width: 75px;
+}
+  .developers .imgNCommercial {
+    margin: auto;
+    width: 93%;
+    display: flex;
+    justify-content: end !important;
+}
+        /*  developers*/
+
   }
   @media (max-width: 325px) {
     .Buys .imgnp .h3, .imgnp .h4 {
@@ -1385,6 +1485,28 @@ flex-direction: column;
     text-align: center;
 }
     /* .RENT */
+
+            /*  developers*/
+
+            .developers h3 {
+              font-size: 21px;
+              margin-left: 0;
+              font-weight: bold;
+          }
+          .developers .dis-paly2 .aldar img {
+            width: 68px;
+            margin: 1px;
+        }
+
+            /*  developers*/
+
   }
   /* phone */
+  /* .custom-dropdown-menu {
+    display: block; /* القائمة مخفية بشكل افتراضي */
+  /* } */ 
+  
+  .custom-dropdown-menu.show {
+    display: flex; /* قم بتغيير العرض إلى flex أو block عند الحاجة */
+  }
   

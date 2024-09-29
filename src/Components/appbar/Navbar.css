@@ -21,9 +21,9 @@
 /* لbutton */
 
 /* عند المرور على العنصر، تفتح القائمة */
-.custom-navbar-item .custom-dropdown-menu:hover {
-  display: none;
-}
+/* .custom-navbar-item .custom-dropdown-menu:hover {
+  display: block;
+} */
 
 .custom-dropdown-menu {
   display: block;
@@ -839,7 +839,8 @@
 }
 
 .custom-dropdown-menu.show {
-  display: flex;
+  display: block;
+  
   opacity: 1; /* جعل القائمة مرئية */
   transform: translateY(0); /* إعادة القائمة لمكانها الطبيعي */
 }
@@ -1202,10 +1203,3 @@
 }
 }
 
-.custom-dropdown-menu {
-  display: block; /* القائمة مخفية بشكل افتراضي */
-}
-
-.custom-dropdown-menu.show {
-  display: flex; /* قم بتغيير العرض إلى flex أو block عند الحاجة */
-}

@@ -191,24 +191,50 @@ const Navbar = () => {
 
 
     };
-    // const handlback = (dropdown) => {
-       
+
+ 
+    //     setDropdownOpen(null);
     // };
-    
-    // const handltap = (event) => {
-    //     const tab = document.querySelector(`.custom-navbar-item .custom-dropdown-menu`);
-    
-    //     if (tab) {
-    //         // Get the current left position and convert it to a number
-    //         const currentLeft = parseInt(window.getComputedStyle(tab).left, 10) || 0;
-    //         tab.style.left= -31 +"px"; // Subtract 500px from the current left position
+
+    // // دالة للتحكم في عرض وإخفاء القائمة بناءً على حالة hover
+    // const handleBack = (show) => {
+    //     const back = document.querySelector(".custom-dropdown-menu.show");
+    //     const back2 = document.querySelector(".custom-navbar-item .custom-dropdown-menu:hover");
+
+    //         back.style.display = show ? "block" : "none"; // إخفاء أو إظهار القائمة بناءً على `show`
+    //         back2.style.display = show ? "block" : "none"; // إخفاء أو إظهار القائمة بناءً على `show`
+    // };
+
+    // // إضافة أحداث عند تحميل المكون
+    // useEffect(() => {
+    //     const dropdown = document.querySelector(".custom-navbar-item");
+
+    //     if (dropdown) {
+    //         // عرض القائمة عند دخول الماوس
+    //         dropdown.addEventListener("mouseenter", () => handleBack(false));
+
+    //         // إخفاء القائمة عند خروج الماوس
+    //         dropdown.addEventListener("mouseleave", () => handleBack(true));
     //     }
-    // };
+
+    //     // تنظيف الأحداث عند تفكيك المكون
+    //     return () => {
+    //         if (dropdown) {
+    //             dropdown.removeEventListener("mouseenter", () => handleBack(false));
+    //             dropdown.removeEventListener("mouseleave", () => handleBack(true));
+    //         }
+    //     };
+    // }, []); // يتم تشغيل هذا الـ useEffect مرة واحدة عند تحميل المكون
+
+// Example of attaching events to control display based on hover
+
     useEffect(() => {
         GetDataFireStore();
         getCategories();
     }, []);
 
+
+  
     return (
         <div className="custom-navbar-brand">
             <Link to="/">
@@ -229,7 +255,7 @@ const Navbar = () => {
                         
                         >
                         <span className="custom-navbar-link"          
-                                    //   onClick={handltap("BUY")} 
+                        onClick={() => handleDropdownToggle("BUY")}
                         >
 
                             <Link to="/Buy">BUY</Link>
@@ -952,23 +978,7 @@ const Navbar = () => {
                             </div>
                         </div>
                     </li>
-                    <div className="dis-n">
-
-                    <div className="imgnp">
-                                        <div className="disi">
-                                            <div>
-                                                <div className="h3">
-                                                    Schedule your free consultation today
-                                                </div>
-                                                <div className="h4">
-                                                    And our team will help you find the ideal property for
-                                                    your needs
-                                                </div>
-                                            </div>
-                                            <FormN name={"Free consultation"} />
-                                        </div>
-                                    </div>
-                    </div>
+                  
                 </ul>
             </nav>
         </div>
