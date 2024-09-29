@@ -7,8 +7,11 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
 
+<<<<<<< HEAD
+=======
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
+>>>>>>> e98096c2ea056eedc4496039a7daf6aaf5a752cb
 export default function AddCardBuy() {
     const Navigate = useNavigate()
     const [FileURLs, setFileURLs] = useState([])
