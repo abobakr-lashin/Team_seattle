@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
 import "./table.css";
 
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export default function AddCardBuy() {
     const Navigate = useNavigate()
     const [FileURLs, setFileURLs] = useState([])
