@@ -9,6 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { CloudDone } from '@mui/icons-material';
 
 export default function UpdateBuy() {
     const { id } = useParams();
@@ -192,6 +193,8 @@ export default function UpdateBuy() {
             </Box>
         );
     }
+
+    console.log(formData);
 
 
     return (
@@ -435,7 +438,10 @@ export default function UpdateBuy() {
                             data={formData.text || ""}
                             onChange={(event, editor) => {
                                 const data = editor.getData();
-                                setFormData({ ...formData, text: data });
+                                setFormData(prevFormData => ({
+                                    ...prevFormData,
+                                    text: data
+                                }));
                             }}
                             config={{
                                 height: '400px',
