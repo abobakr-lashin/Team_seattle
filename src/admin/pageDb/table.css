@@ -17,12 +17,21 @@
     background-color: #ffffff;
     color: #020000;
   }
+  .editor-container .ck-editor__editable_inline {
+    height: 300px;
+  }
   
+  .editor-container {
+    max-width: 100%;
+    margin: auto;
+  }
   th {
     background-color: #ffffff;
     color: #020000;
   }
-  
+  .custom-ckeditor{
+    height: 300px;
+  }
   .table-cell {
     white-space: pre-wrap; /* يسمح بتغليف النص */
     word-wrap: break-word; /* يسمح بفصل الكلمات الطويلة */

@@ -84,7 +84,7 @@ export default function Cardsell() {
 
 
 
-  const imgsetin = data.map((it) => (
+  const imgsetin = data.map((it) =>{
     <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
       <Link to={`/Sell/${it.id}`}>
         <div className="CONTER">
@@ -130,7 +130,7 @@ export default function Cardsell() {
         </div>
       </Link>
     </Grid>
-  ));
+});
 
   return (
     <div>

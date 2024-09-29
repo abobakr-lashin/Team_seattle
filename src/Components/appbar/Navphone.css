@@ -1,5 +1,54 @@
 /* phone */
+.custom-dropdown-menu.show {
+  display: flex;
+  flex-direction: column;
+}
+.imgnp1{
+display: none;
+}
 @media (max-width: 1024px) {
+.imgnp{
+  display: none;
+}
+.imgnp1{
+  display: block;
+  }
+  .imgnp1 {
+    margin: 10px;
+    background-image: url("/public/uploads/nav/e3lan.png");
+    width: 99%;
+    height: auto;
+    border-radius: 30px;
+    padding: 40px;
+    padding-top: 10px;
+    background-size: cover;
+    text-align: unset;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+#FormN{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+padding-left: 20px;
+}
+.disi {
+  display: flex;
+  align-items: start;
+  margin: 0px;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.imgnp1 .h3{
+font-size: 40px !important;
+}
+
+
+
+
 
     .custom-navbar-link {
       font-size: 20px;
@@ -82,7 +131,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 160px 0px 0px 0px;
+      padding: 0px 0px 0px 0px;
       background-image: url("/public/uploads/nav/back.png");
       background-repeat: no-repeat;
       width: 100%;
@@ -91,10 +140,7 @@
     .dis-n{
       display: block;
     }
-    .imgnp .h3 , .imgnp .h4 {
-      font-size: 20px;
-      color: white;
-  }
+ 
   
     .custom-navbar-item {
       width: 100%;
@@ -159,16 +205,7 @@
       align-items: center;
   }
 
-  .disi {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0px;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
+
     .Buys .custom-dropdown-menu {
       width: 60vw;
       left: -5%;
@@ -208,22 +245,7 @@
       font-size: 30px;
       width: 100%;
   }
-  .imgnp .h3, .imgnp .h4 {
-    font-size: 20px;
-    color: white;
-    text-align: start;
-  }
-  .dis-n .imgnp {
-    margin: 10px;
-    background-image: url("/public/uploads/nav/backe3lan.png");
-    width: 100%;
-    height: 38vh;
-    background-position: 100%;
-    background-size: cover;
-    border-radius: 30px;
-    background-repeat: no-repeat;
-    padding: 20px;
-}
+
     .dis-imgNbuy {
       display: flex;
       font-size: 26px;
@@ -235,22 +257,7 @@
   }
 
 
- .imgnp {
-    margin: 10px;
-    background-image: url("/public/uploads/nav/backe3lan.png");
-    width: 100%;
-    height: 38vh;
-    background-position: 100%;
-    background-size: cover;
-    border-radius: 30px;
-    background-repeat: no-repeat;
-    padding: 20px;
-}
- .imgnp .h3, .imgnp .h4 {
-    font-size: 29px;
-    color: white;
-    text-align: start;
-}
+
 
     /* BUY */
     /* RENT */
@@ -315,6 +322,7 @@
       top: -155px;
       left: -7% !important;
       margin: 10px;
+      overflow-y: scroll;
   }
   
 
@@ -359,10 +367,16 @@
       list-style: none;
       padding: 0 1px;
       border-radius: 23px;
-      height: auto;
+      height: 125vh;
       overflow: hidden;
       transition: opacity 1s ease, transform 0.5s ease;
     }
+    .custom-dropdown-item {
+      padding: 12px 20px;
+      color: white;
+      text-align: start;
+      transition: display 10.5s;
+  }
     .developers .dis-paly2 {
       display: flex;
       font-size: 18px;
@@ -379,6 +393,13 @@
     .dis-paly2 .aldar img {
       width: 75px;
     }
+    .developers .dis-paly2 {
+      display: flex;
+      font-size: 25px;
+      margin: 10px;
+      align-items: center;
+      justify-content: space-between;
+  }
   
     /* developers */
     /* AREAS */
@@ -588,15 +609,7 @@ overflow-y:scroll;
     /* ABOUT */
     /* Blogs */
   
-    .Blogs .imgnp {
-      margin: 10px;
-      background-image: url("/public/uploads/nav/e3lan.png");
-      width: 95%;
-      height: auto;
-      border-radius: 30px;
-      padding: 20px;
-      background-size: cover;
-    }
+  
     .Blogs .custom-dropdown-menu {
       width: 100vw;
       position: absolute;
@@ -607,8 +620,9 @@ overflow-y:scroll;
       padding: 0 1px;
       z-index: 9699999999999999 !important;
       border-radius: 23px;
-      height: 125vh;
+      height: auto;
       overflow: hidden;
+      overflow-y: scroll;
       transition: opacity 1s ease, transform 0.5s ease;
   }
   
@@ -773,18 +787,7 @@ overflow-y:scroll;
     text-align: center;
   }
 
-  .imgnp {
-    margin: 10px;
-    width: 98%;
-    height: 100%;
-    background-position: 100%;
-    background-size: 100%;
-    border-radius: 30px;
-    background-repeat: no-repeat;
-    padding: 20px;
-    position: relative;
-    left: 0;
-  }
+ 
   .Buys .dis-paly h4 {
     list-style: disc;
     padding: 5px;
@@ -807,21 +810,7 @@ overflow-y:scroll;
   }
 
   /* RENT */
-  .imgnp .h3, .imgnp .h4 {
-    font-size: 22px;
-    color: white;
-    text-align: start;
-}
-.dis-n .imgnp {
-    margin: 10px;
-    width: 100%;
-    height: 35vh;
-    background-position: 100%;
-    background-size: cover;
-    border-radius: 30px;
-    background-repeat: no-repeat;
-    padding: 20px;
-}
+
     .dis-paly li {
       width: 100%;
       padding: 5px;
@@ -935,22 +924,62 @@ flex-direction: column;
   width: 92%;
 }
 /*  AREAS*/
+/*  developers*/
+.developers .dis-buy {
+  display: flex;
+  flex-direction: column;
+}
+.developers .custom-dropdown-menu{
+  overflow-y: scroll;
+}
 
 
 
 
 
-
-
-
-
-
+/*  developers*/
 
 
 
 
   }
   @media (max-width: 425px) {
+
+    .imgnp1 {
+      margin: 10px;
+      background-image: url("/public/uploads/nav/e3lan.png");
+      width: 100%;
+      height: auto;
+      border-radius: 30px;
+      padding: 20px;
+      padding-top: 10px;
+      background-size: cover;
+      text-align: unset;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+  
+  #FormN{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+  padding-left: 20px;
+  }
+  .disi {
+    display: flex;
+    align-items: start;
+    margin: 0px;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .imgnp1 .h3 {
+    font-size: 15px !important;
+}
+  .imgnp1 .h4 {
+    font-size: 12px !important;
+}
     /* .Buys */
     .Buys h3 {
         /* width: 123%; */
@@ -993,15 +1022,13 @@ flex-direction: column;
       width: 100%;
       text-align: start;
     }
- .imgnp .h3, .imgnp .h4 {
-        font-size: 17px;
-        color: white;
-        text-align: start;
-    }    .Buys .imgnp {
-      
-        height: 23vh;
-  
-    }
+
+    .Buys .custom-dropdown-menu {
+      width: 100%;
+      left: -34px;
+      top: -63px;
+      width: 100%;
+  }
     .dis-paly li {
       padding: 10px;
       text-align: start;
@@ -1011,11 +1038,7 @@ flex-direction: column;
       display: flex;
       flex-direction: column;
     }
-    .imgnp .h3, .imgnp .h4 {
-        font-size: 11px;
-        color: white;
-        text-align: start;
-    }
+
     .dis-n .imgnp {
         margin: 10px;
         width: 100%;
@@ -1232,8 +1255,46 @@ flex-direction: column;
   TEXT-ALIGN: center;
 }
     /* .AREAS */
+
+
+    /*  developers*/
+
+    .developers h3 {
+      font-size: 1.6rem;
+      margin-left: 0;
+      font-weight: bold;
+  }
+  .developers .custom-dropdown-menu {
+    overflow-y: scroll;
+    top: -215px;
+}
+.developers .dis-buy h4 {
+  margin-left: 0px;
+  font-size: 1.6rem;
+  font-weight: 550;
+}
+.developers .dis-paly2 {
+  display: flex;
+  font-size: 20px;
+  margin: 9px;
+  align-items: center;
+  justify-content: space-between;
+}
+.developers .dis-paly2 .aldar img {
+  width: 82px;
+}
+    /*  developers*/
+
   }
   @media (max-width: 375px) {
+
+    #FormN{
+      justify-content: center;
+      align-items: center;
+    }
+    .disi{
+      align-items: center;
+    }
     .Buys h3 {
       font-size: 26px;
   }
@@ -1269,17 +1330,8 @@ flex-direction: column;
         background-repeat: no-repeat;
         padding: 20px;
     }
-    .imgnp .h3, .imgnp .h4 {
-        font-size: 10px;
-        color: white;
-        text-align: start;
-    }
-    .Buys .imgnp .h3, .imgnp .h4 {
-        font-size: 10px;
-
-        color: white;
-        text-align: start;
-    }
+   
+ 
     .Buys .imgnp {
         height: 23vh;
     }
@@ -1291,6 +1343,12 @@ flex-direction: column;
   .Buys h3 {
       font-size: 26px;
   }
+  .Buys .custom-dropdown-menu {
+    width: 100%;
+    left: -45px;
+    top: -69px;
+    width: 103%;
+}
     /* .RENT */
     .custom-dropdown-item {
       padding: 45px 0;
@@ -1319,6 +1377,37 @@ flex-direction: column;
   font-size: 16px;
 }
     /* .Blogs */
+        /*  developers*/
+
+        .developers h3 {
+          font-size: 1.5rem;
+          margin-left: 0;
+          font-weight: bold;
+      }
+      .developers .dis-buy h4 {
+        margin-left: -23px;
+        font-size: 1.5rem;
+        font-weight: 550;
+    }
+    .developers .dis-paly2 li {
+      list-style: none;
+      padding: 2px;
+      font-weight: 500;
+      margin-left: 10px;
+      margin: 9px auto;
+      margin-left: 4px;
+  }
+  .developers .dis-paly2 .aldar img {
+    width: 75px;
+}
+  .developers .imgNCommercial {
+    margin: auto;
+    width: 93%;
+    display: flex;
+    justify-content: end !important;
+}
+        /*  developers*/
+
   }
   @media (max-width: 325px) {
     .Buys .imgnp .h3, .imgnp .h4 {
@@ -1385,6 +1474,27 @@ flex-direction: column;
     text-align: center;
 }
     /* .RENT */
+
+            /*  developers*/
+
+            .developers h3 {
+              font-size: 21px;
+              margin-left: 0;
+              font-weight: bold;
+          }
+          .developers .dis-paly2 .aldar img {
+            width: 68px;
+            margin: 1px;
+        }
+
+            /*  developers*/
+
   }
   /* phone */
+  /* .custom-dropdown-menu {
+    display: block; /* القائمة مخفية بشكل افتراضي */
+  /* } */ 
   
+  .custom-dropdown-menu.show {
+    display: flex; /* قم بتغيير العرض إلى flex أو block عند الحاجة */
+  }
