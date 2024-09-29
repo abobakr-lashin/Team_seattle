@@ -7,6 +7,8 @@ import { firestore, storage } from '../../firebaseConfig';
 import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default function UpdateRent() {
     const { id } = useParams();
@@ -90,7 +92,7 @@ export default function UpdateRent() {
                 email: formData.email,
                 map: formData.map,
                 bgImage: updatedBlogClint,
-                // text: formData.text,
+                text: formData.text,
                 imageCart: updatedBlogImageCart,
                 imageSlider: updatedCartImageSlider || formData.imageSlider,
                 CategoryBuyLocation: formData.CategoryBuyLocation,
@@ -181,19 +183,6 @@ export default function UpdateRent() {
         fetchData();
     }, [id]);
 
-
-    const modules = {
-        toolbar: [
-            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-            [{ 'size': [] }],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ 'color': [] }, { 'background': [] }],
-            [{ 'align': [] }],
-            ['link', 'image'],
-            ['clean']
-        ]
-    };
 
     if (loading) {
         return (
@@ -440,9 +429,20 @@ export default function UpdateRent() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <textarea value={formData.text} style={{ margin: '20px', width: '80%', height: '300px' }} onChange={handleInputChange} placeholder='Enter your Description' name="text" id="text">
-                            
-                        </textarea>
+                    <CKEditor
+                            editor={ClassicEditor}
+                            data={formData.text || ""}
+                            onChange={(event, editor) => {
+                                const data = editor.getData();
+                                setFormData(prevFormData => ({
+                                    ...prevFormData,
+                                    text: data
+                                }));
+                            }}
+                            config={{
+                                height: '400px',
+                            }}
+                        />
                     </div>
                     <button type="submit" disabled={loading}>
                         {loading ? 'Updating...' : 'Update'}

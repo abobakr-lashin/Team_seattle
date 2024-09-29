@@ -7,6 +7,8 @@ import { firestore, storage } from '../../firebaseConfig';
 import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
 export default function UpdateSell() {
@@ -82,6 +84,7 @@ export default function UpdateSell() {
                 stars: formData.stars,
                 email: formData.email,
                 map: formData.map,
+                text: formData.text,
                 bgImage: updatedBlogClint,
                 imageCart: updatedBlogImageCart,
                 imageSlider: formData.imageSlider || updatedCartImageSlider,
@@ -426,9 +429,20 @@ export default function UpdateSell() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <textarea value={formData.text} style={{ margin: '20px', width: '80%', height: '300px' }} onChange={handleInputChange} placeholder='Enter your Description' name="text" id="text">
-
-                        </textarea>
+                        <CKEditor
+                            editor={ClassicEditor}
+                            data={formData.text || ""}
+                            onChange={(event, editor) => {
+                                const data = editor.getData();
+                                setFormData(prevFormData => ({
+                                    ...prevFormData,
+                                    text: data
+                                }));
+                            }}
+                            config={{
+                                height: '400px',
+                            }}
+                        />
                     </div>
                     <button type="submit" disabled={loading}>
                         {loading ? 'Updating...' : 'Update'}

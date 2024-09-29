@@ -105,7 +105,7 @@ export default function Landingpage() {
             </div>
             <div>
                 <span>
-                    <span>{it.Parkingn}</span>
+                    <span>{it.parking}</span>
                 </span>
                 <div>Parking </div>
             </div>
@@ -117,7 +117,7 @@ export default function Landingpage() {
             <div
                 className="bg-Landingpage"
                 style={{
-                    backgroundImage: `url(${filterCartId[0]?.bgImage})`,
+                    backgroundImage: `url(${filterCartId[0]?.imageCart})`,
                 }}
             >
                 <NavPar />
@@ -191,18 +191,18 @@ export default function Landingpage() {
                         <div className="title">Contact Agent</div>
                         <div className="imgctext">
                             <div className="imgcontact">
-                                <img src="/uploads/landingpage/export/photo3.png" alt="" />
+                                <img src={filterCartId[0]?.bgImage} alt="" />
                             </div>
                             <div className="text">
                                 <div className=" Listing">Listing by</div>
                                 <div className="name">{filterCartId[0]?.listingName}</div>
                                 <div className="contact ">
-                                    <Rating name="size-medium" defaultValue={filterCartId[0]?.stars} readOnly />
+                                    <Rating name="size-medium" value={filterCartId[0]?.stars || 0} readOnly />
                                 </div>
                             </div>
                         </div>
                         <div className="Email">
-                            <a href="mailto:someone@example.com?subject=Subject&body=Hello!">
+                            <a href={`mailto:${filterCartId[0]?.email}?subject=Subject&body=Hello!`}>
                                 Email
                             </a>
                         </div>          </div>
@@ -213,16 +213,18 @@ export default function Landingpage() {
             </div>
             <div className="map">
                 <div className="h-5vh"></div>
-
                 <div>
                     <h3>عرض الخريطة:</h3>
-
-                    {filterCartId.map}
-
+                    <iframe
+                        src={filterCartId[0]?.map}
+                        width="600"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                 </div>
-
-
-
                 <ContactusForm />
             </div>
             <div className="h-5vh"></div>
