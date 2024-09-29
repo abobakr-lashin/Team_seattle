@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .imgiconstw{
   display: flex;
   justify-content: center;
@@ -159,7 +160,7 @@ font-size: 40px !important;
     }
   
     .custom-dropdown-menu {
-      position: static;
+      position: relative;
       min-width: 100%;
       opacity: 0;
       transition: opacity 10s ease, background-color 5s; /* إضافة أنيميشن */
@@ -213,12 +214,26 @@ font-size: 40px !important;
       justify-content: start;
       align-items: center;
   }
-
+.Buys{
+  position: relative;
+}
 
     .Buys .custom-dropdown-menu {
-      width: 60vw;
+      width: 100%;
       left: -5%;
-      top: -31px;
+      top: 0;
+      height: auto;
+
+    }
+    .Buys .custom-dropdown-menu {
+      position: absolute !important;
+      width: 100%;
+      left: -5%;
+      top: 0;
+      height: auto;
+overflow-y: scroll !important;
+        width: 100%;
+        z-index: 1;
     }
     .Buys h3 {
       width: 100%;
@@ -271,12 +286,7 @@ font-size: 40px !important;
     /* BUY */
     /* RENT */
   
-    .RENT .custom-dropdown-menu {
-      width: 60vw;
-      left: -7% !important;
-      top: -61px;
-      height: 128vh;
-    }
+  
   
     .RENT .dis-paly2 {
       display: flex !important;
@@ -286,7 +296,21 @@ font-size: 40px !important;
       align-items: center;
       justify-content: start;
     }
-  
+    .RENT{
+      position: relative;
+    }
+    
+    
+        .RENT .custom-dropdown-menu {
+          position: absolute !important;
+          width: 100%;
+          left: -5% !important;
+          top: 0;
+          height: auto;
+    overflow-y: scroll !important;
+            width: 100%;
+            z-index: 1;
+        }
     .RENT .dis-paly3 {
       display: flex !important;
       width: 111%;
@@ -325,16 +349,23 @@ font-size: 40px !important;
     /* RENT */
     /* Commercial */
   
-    .Commercial .custom-dropdown-menu {
-      width: 100vw;
-      height: 130vh;
-      top: -155px;
-      left: -7% !important;
-      margin: 10px;
-      overflow-y: scroll;
+
+  
+  .Commercial{
+    position: relative;
   }
   
-
+  
+      .Commercial .custom-dropdown-menu {
+        position: absolute !important;
+        width: 100%;
+        left: -5% !important;
+        top: 0;
+        height: auto;
+  overflow-y: scroll !important;
+          width: 100%;
+          z-index: 1;
+      }
     .Commercial .imgNCommercial img {
       width: 250px;
       margin: 26px;
@@ -366,20 +397,22 @@ font-size: 40px !important;
       list-style: disc;
     }
   
-    .developers .custom-dropdown-menu {
-      width: 100vw;
-      margin: -1px;
-      position: absolute;
-      left: -5% !important;
-      top: -158px;
-      background-color: #bfb78f;
-      list-style: none;
-      padding: 0 1px;
-      border-radius: 23px;
-      height: 125vh;
-      overflow: hidden;
-      transition: opacity 1s ease, transform 0.5s ease;
+
+    .developers{
+      position: relative;
     }
+    
+    
+        .developers .custom-dropdown-menu {
+          position: absolute !important;
+          width: 100%;
+          left: -5% !important;
+          top: 0;
+          height: auto;
+    overflow-y: scroll !important;
+            width: 100%;
+            z-index: 1;
+        }
     .custom-dropdown-item {
       padding: 12px 20px;
       color: white;
@@ -421,21 +454,22 @@ font-size: 40px !important;
       align-items: start;
       list-style: disc;
     }
-    .AREAS .custom-dropdown-menu {
-      width: 100vw;
-      position: absolute;
-      left: -59px !important;
-      top: -210px;
-      background-color: #bfb78f;
-      list-style: none;
-      padding: 0 1px;
-      border-radius: 23px;
-      height: 125vh;
-      z-index: 99999999;
-      overflow: hidden;
-overflow-y: scroll;
-      transition: opacity 1s ease, transform 0.5s ease;
+  
+  .AREAS{
+    position: relative;
   }
+  
+  
+      .AREAS .custom-dropdown-menu {
+        position: absolute !important;
+        width: 100%;
+        left: -5% !important;
+        top: 0;
+        height: auto;
+  overflow-y: scroll !important;
+          width: 100%;
+          z-index: 1;
+      }
   .AREAS .dis-buy {
     display: flex;
     flex-direction: column;
@@ -471,20 +505,22 @@ overflow-y: scroll;
     .APPLY .css-mhc70k-MuiGrid-root {
       margin-top: 30px !important;
     }
-    .APPLY .custom-dropdown-menu {
-      width: 100vw;
-      position: absolute;
-      left: -57px !important;
-      top:  -364px;
-      background-color: #bfb78f;
-      list-style: none;
-      padding: 0 1px;
-      z-index: 9699999999999999 !important;
-      border-radius: 23px;
-      height: 125vh;
-      overflow: hidden;
-      transition: opacity 1s ease, transform 0.5s ease;
+
+    .APPLY{
+      position: relative;
     }
+    
+    
+        .APPLY .custom-dropdown-menu {
+          position: absolute !important;
+          width: 100%;
+          left: -5% !important;
+          top: 0;
+          height: auto;
+    overflow-y: scroll !important;
+            width: 100%;
+            z-index: 1;
+        }
     .APPLY .css-isbt42 {
       margin-top: 47px;
       margin-left: 27px;
@@ -531,22 +567,8 @@ overflow-y: scroll;
       align-items: start;
       list-style: disc;
     }
-    .ABOUT .custom-dropdown-menu {
-      width: 100vw;
-      position: absolute;
-      left: -57px !important;
-      top: -331px;
-      background-color: #bfb78f;
-      list-style: none;
-      padding: 0 1px;
-      z-index: 9699999999999999 !important;
-      height: 125vh;
-overflow-y:scroll;
-      border-radius: 23px;
-      overflow-x: hidden;
-      transition: opacity 1s ease, transform 0.5s ease;
-    }
-  
+ 
+
     .About .custom-dropdown-menu .imgcon img {
       width: 80%;
     }
@@ -614,27 +636,41 @@ overflow-y:scroll;
       align-items: center !important;
       justify-content: start;
     }
-  
+    .ABOUT{
+      position: relative;
+    }
+    
+    
+        .ABOUT .custom-dropdown-menu {
+          position: absolute !important;
+          width: 100%;
+          left: -5% !important;
+          top: 0;
+          height: auto;
+    overflow-y: scroll !important;
+            width: 100%;
+            z-index: 1;
+        }
     /* ABOUT */
     /* Blogs */
   
   
-    .Blogs .custom-dropdown-menu {
-      width: 100vw;
-      position: absolute;
-      left: -57px !important;
-      top: -258px;
-      background-color: #bfb78f;
-      list-style: none;
-      padding: 0 1px;
-      z-index: 9699999999999999 !important;
-      border-radius: 23px;
-      height: auto;
-      overflow: hidden;
-      overflow-y: scroll;
-      transition: opacity 1s ease, transform 0.5s ease;
+
+  .Blogs{
+    position: relative;
   }
   
+  
+      .Blogs .custom-dropdown-menu {
+        position: absolute !important;
+        width: 100%;
+        left: -5% !important;
+        top: 0;
+        height: auto;
+  overflow-y: scroll !important;
+          width: 100%;
+          z-index: 1;
+      }
     .dis-play3 .dis-paly1 div img {
       width: 100px;
       height: 100%;
@@ -1500,9 +1536,7 @@ flex-direction: column;
 
   }
   /* phone */
-  /* .custom-dropdown-menu {
-    display: block; /* القائمة مخفية بشكل افتراضي */
-  /* } */ 
+
   
   .custom-dropdown-menu.show {
     display: flex; /* قم بتغيير العرض إلى flex أو block عند الحاجة */

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import "./Commercial.css";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FormN from "../appbar/FormN";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Footer from "../footer/Footer";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
 import { Link } from "react-router-dom";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const CustomPrevArrow = (props) => {
     const { className, onClick } = props;
@@ -47,7 +47,6 @@ export default function SaleIn() {
         infinite: true,
         speed: 600,
         autoplay: true,
-
         autoplaySpeed: 4000,
         prevArrow: <CustomPrevArrow />,
         nextArrow: <CustomNextArrow />,
@@ -66,7 +65,7 @@ export default function SaleIn() {
             },
         ],
     };
-    const [Data, setData] = useState([])
+    const [data, setData] = useState([])
 
     // Get Data from Firestore
     const GetDataFireStore = async () => {
@@ -86,7 +85,8 @@ export default function SaleIn() {
         GetDataFireStore();
     }, []);
 
-    const imgsetin = Data.map((it) => (
+    const imgsetin = data.map((it) => {
+        return(
         <Link to={`/Commercial/${it.category}/${it.id}`} key={it.id} className="CONTER">
             <div className="bg-back">
                 <div className="img-imgSaleIn">
@@ -121,7 +121,7 @@ export default function SaleIn() {
                 </div>
             </div>
         </Link>
-    ));
+    )});
 
     return (
         <div>

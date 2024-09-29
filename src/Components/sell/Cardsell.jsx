@@ -5,11 +5,11 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
 import { Link } from 'react-router-dom';
+import { Grid } from '@mui/material';
 import "./Sell.css"
 import "./Cardsell.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Grid } from '@mui/material';
 const CustomPrevArrow = (props) => {
   const { className, onClick } = props;
   return (
@@ -38,7 +38,7 @@ const CustomNextArrow = (props) => {
 export default function Cardsell() {
   const [data, setData] = useState([])
   const settings = {
-    centerMode: true,
+    centerMode: false,
     centerPadding: "auto",
     slidesToShow: 3,
     focusOnSelect: true,
@@ -85,6 +85,7 @@ export default function Cardsell() {
 
 
   const imgsetin = data.map((it) =>{
+    return(
     <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
       <Link to={`/Sell/${it.id}`}>
         <div className="CONTER">
@@ -117,20 +118,14 @@ export default function Cardsell() {
               <h5>{it.title}</h5>
               <h6>
                 <LocationOnIcon /> {it.location}
-                <hr />
-                <div className="Listing-by">
-                  <div className="img-lisby">
-                    <img src={it.imageCart} alt="Property" />
-                  </div>
-                  <div className="title-lisby">Listing by {it.listingName} </div>
-                </div>
+      
               </h6>
             </div>
           </div>
         </div>
       </Link>
     </Grid>
-});
+)});
 
   return (
     <div>
