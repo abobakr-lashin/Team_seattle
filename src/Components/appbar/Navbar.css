@@ -6,6 +6,9 @@
   padding-top: 15px;
   margin-left: 10px;
 }
+.dis-areas{
+  display: flex;
+}
 .dis-n{
   display: none;
 }

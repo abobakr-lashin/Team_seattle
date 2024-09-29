@@ -394,55 +394,48 @@
     .AREAS .custom-dropdown-menu {
       width: 100vw;
       position: absolute;
-      left: -37px !important;
+      left: -59px !important;
       top: -210px;
       background-color: #bfb78f;
       list-style: none;
       padding: 0 1px;
       border-radius: 23px;
-      height: auto;
+      height: 125vh;
+      z-index: 99999999;
       overflow: hidden;
+overflow-y: scroll;
       transition: opacity 1s ease, transform 0.5s ease;
-    }
-    .AREAS h3 {
-      width: 100vw;
-      font-size: 39px;
-      font-weight: bold;
-      margin: auto;
-      text-align: center;
-    }
-    .AREAS h3 img {
-      font-weight: bold;
-      width: 35px;
-    }
-    .AREAS .dis-paly {
-      width: 100vw;
-      display: flex;
-      font-size: 18px;
-      padding: 10px;
-      margin: 5px;
-      align-items: start;
-      justify-content: start;
-    }
-    .AREAS .dis-paly ul {
-      width: 100%;
-    }
-    .AREAS .dis-paly li {
-      width: 100%;
-      padding: 5px;
-      font-size: 23px;
-    }
-    .toggle-checkbox {
-      display: none;
-    }
-  
-    .AREAS .dis-imgNbuy h3 {
-      width: 61vw;
-      font-size: 34px;
-      font-weight: bold;
-      margin: auto;
-      text-align: center;
-    }
+  }
+  .AREAS .dis-buy {
+    display: flex;
+    flex-direction: column;
+}
+.AREAS .dis-buy1 h3 {
+  font-size: 3.1rem;
+}
+.AREAS .dis-paly ul li {
+  font-size: 23px;
+}
+.AREAS .dis-areas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 78%;
+}
+.AREAS .dis-imgNbuy {
+  font-weight: 500;
+  display: flex;
+  font-size: 20px;
+  align-items: start;
+  justify-content: end;
+}
+.AREAS .dis-imgNbuy ul h3 {
+  font-size: 2.2rem;
+}
+.AREAS .dis-imgNbuy ul li {
+  font-size: 25px;
+}
     /* AREAS */
     /* APPLY */
     .APPLY .css-mhc70k-MuiGrid-root {
@@ -918,6 +911,30 @@ flex-direction: column;
 }
 
 /*  Blogs*/
+/*  AREAS*/
+.AREAS .custom-dropdown-menu {
+  width: 100vw;
+  position: absolute;
+  left: -46px !important;
+  top: -228px;
+  background-color: #bfb78f;
+  list-style: none;
+  padding: 0 1px;
+  border-radius: 23px;
+  height: 125vh;
+  z-index: 99999999;
+  overflow: hidden;
+  overflow-y: scroll;
+  transition: opacity 1s ease, transform 0.5s ease;
+}
+.AREAS .dis-areas {
+  display: flex;
+  justify-content: center;
+  align-items: CENTER;
+  flex-direction: row-reverse;
+  width: 92%;
+}
+/*  AREAS*/
 
 
 
@@ -1165,6 +1182,56 @@ flex-direction: column;
   font-size: 18px;
 }
     /* .Blogs */
+    /* .AREAS */
+    .AREAS .custom-dropdown-menu {
+      width: 100vw;
+      position: absolute;
+      left: -27px !important;
+      top: -265px;
+      background-color: #bfb78f;
+      list-style: none;
+      padding: 0 1px;
+      border-radius: 23px;
+      height: auto;
+      z-index: 99999999;
+      overflow: hidden;
+      overflow-y: scroll;
+      transition: opacity 1s ease, transform 0.5s ease;
+  }
+  .AREAS .dis-buy1 h3 {
+    font-size: 2.1rem;
+}
+.AREAS .dis-paly {
+  display: flex;
+  font-size: 20px;
+  margin: 0px;
+  align-items: center !important;
+  justify-content: center;
+  FLEX-DIRECTION: column;
+  TEXT-ALIGN: center;
+}
+.AREAS .dis-paly ul li {
+  font-size: 19px;
+  TEXT-ALIGN: center;
+}
+.AREAS .dis-areas {
+  display: flex;
+  justify-content: center;
+  align-items: CENTER;
+  flex-direction: row-reverse;
+  FLEX-DIRECTION: column;
+  width: 100%;
+}
+.AREAS .dis-imgNbuy {
+  font-weight: 500;
+  display: flex;
+  font-size: 20px;
+  align-items: CENTER;
+  justify-content: CENTER;
+  WIDTH: 100%;
+  TEXT-ALIGN: center;
+}
+    /* .AREAS */
   }
   @media (max-width: 375px) {
     .Buys h3 {

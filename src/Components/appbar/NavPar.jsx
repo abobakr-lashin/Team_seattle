@@ -579,6 +579,8 @@ const Navbar = () => {
                                                 </div>
                                             </div>
                                         </div>
+                                            <div className="dis-areas">
+
                                         <div className="imgNbuy">
                                             <img src="./uploads/nav/areas/1.png" alt="" />
                                         </div>
@@ -593,6 +595,7 @@ const Navbar = () => {
                                                 <li>Fujairah</li>
                                             </ul>
                                         </div>
+                                            </div>
                                     </div>
                                     <div className="imgnp">
                                         <div className="disi">
