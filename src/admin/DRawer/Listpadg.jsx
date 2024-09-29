@@ -31,19 +31,11 @@ export default function Listpadg() {
     { text: "MasssgeUs", ico: TextsmsIcon, path: "MasssgeUs" },
     { text: "CreatBolgs", ico: CreateIcon, path: "BlogsCreat" },
     { text: "BlogsUpdete", ico: CreateIcon, path: "BlogsUpdete" },
-    { text: "AddCategoryCommer", ico: CreateIcon, path: "AddCategoryCommercial" },
-    { text: "AddCommercial", ico: CreateIcon, path: "Commercialcreat" },
-    { text: "AddCateBuyLocation", ico: CreateIcon, path: "AddCategoryBuyLocation" },
-    { text: "AddCateBuyPlan", ico: CreateIcon, path: "AddCateBuyPlan" },
-    { text: "CreateCardBuy", ico: CreateIcon, path: "AddCardBuy" },
     { text: "AddDevelopers", ico: CreateIcon, path: "AddDevelopers" },
     { text: "Buy", ico: CreateIcon, path: "buy" },
     { text: "Rent", ico: CreateIcon, path: "Rent" },
     { text: "COMMERCIAL", ico: CreateIcon, path: "COMMERCIAL" },
     { text: "Sell", ico: CreateIcon, path: "Sell" },
-    { text: "AddCateSellPlan", ico: CreateIcon, path: "AddCategorySellPlan" },
-    { text: "AddLocationSell", ico: CreateIcon, path: "AddLocationSell" },
-    { text: "CreateSell", ico: CreateIcon, path: "CreateSell" },
   ]
   return (
     <>

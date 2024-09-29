@@ -6,6 +6,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن مسار الاستيراد صحيح
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { Box, CircularProgress } from '@mui/material';
 
 export default function AddCardBuy() {
     const Navigate = useNavigate()
@@ -42,9 +43,6 @@ export default function AddCardBuy() {
         CategoryPlan: '',
     });
 
-    console.log(formDataImage);
-
-
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -69,13 +67,6 @@ export default function AddCardBuy() {
                 [name]: files[0],
             });
         }
-    };
-
-    const handleQuillChange = (value) => {
-        setFormData({
-            ...formData,
-            text: value,
-        });
     };
 
     const handleSubmit = async (e) => {
@@ -213,20 +204,15 @@ export default function AddCardBuy() {
         getCategories();
     }, []);
 
-    const modules = {
-        toolbar: [
-            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-            [{ 'size': [] }],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ 'color': [] }, { 'background': [] }],
-            [{ 'align': [] }],
-            ['link', 'image'],
-            ['clean']
-        ]
-    };
+    if (loading) {
+        return (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <CircularProgress />
+            </Box>
+        );
+    }
 
-    console.log(CategoryBuyLocation, CategoryDevelopers, CategoryPlan);
+
 
     return (
         <div>
@@ -433,14 +419,9 @@ export default function AddCardBuy() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <ReactQuill
-                            theme="snow"
-                            value={formData.text}
-                            onChange={handleQuillChange}
-                            modules={modules}
-                            placeholder="Enter detailed description here..."
-                            style={{ height: '300px', width: '100%', padding: "10px", whiteSpace: "pre-wrap" }}
-                        />
+                        <textarea style={{ margin: '20px', width: '80%', height: '300px' }} onChange={handleInputChange} placeholder='Enter your Description' name="text" id="text">
+
+                        </textarea>
                     </div>
                     <br /><br />
                     <button type="submit" disabled={loading}>

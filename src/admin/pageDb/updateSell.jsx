@@ -1,51 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, updateDoc, doc, getDocs, getDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from '../../firebaseConfig';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
 
-export default function CreateSell() {
-    const Navigate = useNavigate()
-    const [FileURLs, setFileURLs] = useState([])
-    const [FileImage, setFileImages] = useState([])
-    const [urlImge, setUrlImge] = useState(null)
-    const [ImgeCart, setImgeCart] = useState(null)
-    const [Categories, setCategories] = useState([])
+
+export default function UpdateSell() {
+    const { id } = useParams();
+    const Navigate = useNavigate();
+    const [FileURLs, setFileURLs] = useState([]);
+    const [FileImage, setFileImages] = useState([]);
+    const [urlImge, seturlImge] = useState(null);
+    const [ImgeCart, setImgeCart] = useState(null);
+    const [Categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [formDataImage, setformDataImage] = useState('')
-    const [CategoryBuyLocation, setCategoryBuyLocation] = useState([])
-    const [CategoryDevelopers, setCategoryDevelopers] = useState([])
-    const [CategoryPlan, setCategoryPlan] = useState([])
-    const [formData, setFormData] = useState({
-        title: '',
-        text: '',
-        price: '',
-        currency: '',
-        beds: '',
-        baths: '',
-        square: '',
-        parking: '',
-        location: '',
-        monthlyPayment: '',
-        listingName: '',
-        stars: '',
-        email: '',
-        map: '',
-        category: '',
-        listingImage: null,
-        CategoryBuyLocation: '',
-        CategoryDevelopers: '',
-        CategoryPlan: '',
-    });
-
-    console.log(formDataImage);
-
-
+    const [formDataImage, setformDataImage] = useState('');
+    const [formClintImage, setformClintImage] = useState('');
+    const [CategoryBuyLocation, setCategoryBuyLocation] = useState([]);
+    const [CategoryDevelopers, setCategoryDevelopers] = useState([]);
+    const [CategoryPlan, setCategoryPlan] = useState([]);
+    const [formData, setFormData] = useState({});
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -55,56 +34,40 @@ export default function CreateSell() {
         });
     };
 
-    const handleFileChange = (e) => {
-        const { name, files } = e.target;
-        setUrlImge(URL.createObjectURL(e.target.files[0]))
-
-        if (name === 'sliderImages') {
-            setFormData({
-                ...formData,
-                [name]: Array.from(files),
-            });
-        } else {
-            setFormData({
-                ...formData,
-                [name]: files[0],
-            });
-        }
-    };
-
-    const handleQuillChange = (value) => {
-        setFormData({
-            ...formData,
-            text: value,
-        });
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setError(null);
 
         try {
-            const uploadedFileURLs = await Promise.all(FileURLs.map(async (file) => {
-                const fileRef = ref(storage, `files/${file.name}`);
-                await uploadBytes(fileRef, file);
-                return await getDownloadURL(fileRef);
-            }));
-
-            const fileRefBlog = ref(storage, `filesBlog/${formData.listingImage.name}`);
-            const fileRefImageCart = ref(storage, `filesBlog/${formDataImage.name}`);
-
-            const [snapshotBlog, snapshotCart] = await Promise.all([
-                uploadBytes(fileRefBlog, formData.listingImage),
-                uploadBytes(fileRefImageCart, formDataImage),
-            ]);
-
-            const BgImage = await getDownloadURL(fileRefBlog);
-            const BgImageCard = await getDownloadURL(fileRefImageCart);
+            let updatedBlogImageCart = formData.imageCart;
+            let updatedBlogClint = formData.bgImage;
+            let updatedCartImageSlider = formData.imageSlider;
 
 
-            // Send Data TO fierStore
-            await addDoc(collection(firestore, 'listBlogsCartSell'), {
+            if (FileURLs.length > 0) {
+                const uploadedFileURLs = await Promise.all(FileURLs.map(async (file) => {
+                    const fileRef = ref(storage, `files/${file.name}`);
+                    await uploadBytes(fileRef, file);
+                    return await getDownloadURL(fileRef);
+                }));
+                updatedCartImageSlider = uploadedFileURLs
+            }
+
+            if (formDataImage) {
+                const fileRefImage = ref(storage, `filesBlog/${formDataImage.name}`);
+                await uploadBytes(fileRefImage, formDataImage);
+                updatedBlogImageCart = await getDownloadURL(fileRefImage);
+            }
+
+            if (formClintImage) {
+                const fileRefCart = ref(storage, `filesBlog/${formClintImage.name}`);
+                await uploadBytes(fileRefCart, formClintImage);
+                updatedBlogClint = await getDownloadURL(fileRefCart);
+            }
+
+            const docRef = doc(firestore, 'listBlogsCartSell', id);
+            await updateDoc(docRef, {
                 title: formData.title,
                 category: formData.category,
                 price: formData.price,
@@ -119,10 +82,9 @@ export default function CreateSell() {
                 stars: formData.stars,
                 email: formData.email,
                 map: formData.map,
-                bgImage: BgImage,
-                text: formData.text,
-                imageCart: BgImageCard,
-                imageSlider: uploadedFileURLs,
+                bgImage: updatedBlogClint,
+                imageCart: updatedBlogImageCart,
+                imageSlider: formData.imageSlider || updatedCartImageSlider,
                 CategoryBuyLocation: formData.CategoryBuyLocation,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
@@ -130,37 +92,21 @@ export default function CreateSell() {
                 time: new Date().toLocaleTimeString()
             });
 
-            toast.success('Data submitted successfully!');
-            setFormData({
-                title: '',
-                text: '',
-                price: '',
-                beds: '',
-                baths: '',
-                square: '',
-                parking: '',
-                location: '',
-                monthlyPayment: '',
-                listingName: '',
-                stars: '',
-                email: '',
-                map: '',
-                category: '',
-                listingImage: null,
-                imageCart: null
-            });
-            Navigate('/dashboard/Sell')
+            toast.success('Data updated successfully!');
+            console.log('Data updated successfully!');
+            Navigate('/dashboard/Sell');
         } catch (err) {
-            toast.error('Error submitting data: ' + err.message);
-            console.error('Error submitting data:', err);
+            toast.error('Error updating data: ' + err.message);
+            console.error('Error updating data:', err);
         } finally {
             setLoading(false);
         }
     };
 
+
+
     // Get Data Category
     const getCategories = async () => {
-
         // Get Data Category
         try {
             const querySnapshot = await getDocs(collection(firestore, "category"));
@@ -175,7 +121,7 @@ export default function CreateSell() {
 
         // get Category Locations  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
+            const querySnapshot = await getDocs(collection(firestore, "CategorySellLocation"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -197,9 +143,10 @@ export default function CreateSell() {
             console.error("Error fetching documents: ", error);
         }
 
+
         // get category buy Plans  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "categoryBuyPlan"));
+            const querySnapshot = await getDocs(collection(firestore, "categorySellPlan"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -210,11 +157,28 @@ export default function CreateSell() {
         }
     };
 
+
+    const fetchData = async () => {
+        try {
+            const docRef = doc(firestore, 'listBlogsCartSell', id);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                setFormData(docSnap.data());
+            } else {
+                console.log("No such document!");
+            }
+        } catch (error) {
+            console.error("Error fetching document: ", error);
+        }
+    };
+
     useEffect(() => {
         getCategories();
+        fetchData();
     }, []);
 
-    
+
+
     if (loading) {
         return (
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -223,23 +187,28 @@ export default function CreateSell() {
         );
     }
 
+
     return (
         <div>
             <div>
                 <form className="cardcreat" onSubmit={handleSubmit}>
-                    <h1>Create Cards</h1>
+                    <h1>Update Cards</h1>
                     <div className="form-group">
                         <label htmlFor="me" style={{ fontSize: '30px' }}>
                             Image Cart
                         </label>
                         <input id="me" type="file" name="listingImage" onChange={(e) => {
-                            const file = URL.createObjectURL(e.target.files[0])
-                            setImgeCart(file)
-                            setformDataImage(e.target.files[0])
+                            const file = URL.createObjectURL(e.target.files[0]);
+                            setImgeCart(file);
+                            setformDataImage(e.target.files[0]);
                         }} />
                         <div className="img">
-                            {ImgeCart && <img
+                            {ImgeCart ? <img
                                 src={ImgeCart}
+                                alt="ImageCart"
+                                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                            /> : formData.imageCart && <img
+                                src={formData.imageCart}
                                 alt="ImageCart"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
                             />}
@@ -257,15 +226,6 @@ export default function CreateSell() {
                     <div className="form-group">
                         <input
                             type="text"
-                            name="currency"
-                            placeholder="Name of the currency"
-                            value={formData.currency}
-                            onChange={handleInputChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="text"
                             name="price"
                             placeholder="Price"
                             value={formData.price}
@@ -274,23 +234,36 @@ export default function CreateSell() {
                     </div>
                     <div className="form-group">
                         <input
-                            type="number"
+                            type="text"
+                            name="currency"
+                            placeholder="Currency"
+                            value={formData.currency}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
                             name="beds"
-                            placeholder="BEDS"
+                            placeholder="Beds"
                             value={formData.beds}
                             onChange={handleInputChange}
                         />
+                    </div>
+                    <div className="form-group">
                         <input
-                            type="number"
+                            type="text"
                             name="baths"
-                            placeholder="BATHS"
+                            placeholder="Baths"
                             value={formData.baths}
                             onChange={handleInputChange}
                         />
+                    </div>
+                    <div className="form-group">
                         <input
-                            type="number"
+                            type="text"
                             name="square"
-                            placeholder="SQUARE"
+                            placeholder="Square"
                             value={formData.square}
                             onChange={handleInputChange}
                         />
@@ -299,16 +272,16 @@ export default function CreateSell() {
                         <input
                             type="text"
                             name="parking"
-                            placeholder="parking"
-                            maxLength="50"
+                            placeholder="Parking"
                             value={formData.parking}
                             onChange={handleInputChange}
                         />
+                    </div>
+                    <div className="form-group">
                         <input
                             type="text"
                             name="location"
                             placeholder="Location"
-                            maxLength="50"
                             value={formData.location}
                             onChange={handleInputChange}
                         />
@@ -325,7 +298,7 @@ export default function CreateSell() {
                         }} />
 
                         <div className="image">
-                            {FileImage.map((it, index) => (
+                            {FileImage && FileImage.map((it, index) => (
                                 <img
                                     key={index}
                                     src={URL.createObjectURL(it)}
@@ -333,6 +306,16 @@ export default function CreateSell() {
                                     style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '5px' }}
                                 />
                             ))}
+                            {
+                                formData.imageSlider && formData.imageSlider.map((it, index) => (
+                                    <img
+                                        key={index}
+                                        src={it}
+                                        alt={`preview-${index}`}
+                                        style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '5px' }}
+                                    />
+                                ))
+                            }
                         </div>
                     </div>
                     <div className="form-group">
@@ -340,10 +323,11 @@ export default function CreateSell() {
                             type="text"
                             name="monthlyPayment"
                             placeholder="Monthly Payment"
-                            min="1"
                             value={formData.monthlyPayment}
                             onChange={handleInputChange}
                         />
+                    </div>
+                    <div className="form-group">
                         <input
                             type="text"
                             name="listingName"
@@ -351,20 +335,26 @@ export default function CreateSell() {
                             value={formData.listingName}
                             onChange={handleInputChange}
                         />
+                    </div>
+                    <div className="form-group">
                         <input
                             type="text"
                             name="stars"
-                            placeholder="Stars (⭐⭐)"
+                            placeholder="Stars"
                             value={formData.stars}
                             onChange={handleInputChange}
                         />
+                    </div>
+                    <div className="form-group">
                         <input
-                            type="email"
+                            type="text"
                             name="email"
                             placeholder="Email"
                             value={formData.email}
                             onChange={handleInputChange}
                         />
+                    </div>
+                    <div className="form-group">
                         <input
                             type="text"
                             name="map"
@@ -377,10 +367,18 @@ export default function CreateSell() {
                         <label htmlFor="me" style={{ fontSize: '30px' }}>
                             Image Listing By
                         </label>
-                        <input id="me" type="file" name="listingImage" onChange={handleFileChange} />
+                        <input id="me" type="file" name="listingImage" onChange={(e) => {
+                            const file = URL.createObjectURL(e.target.files[0]);
+                            seturlImge(file);
+                            setformClintImage(e.target.files[0]);
+                        }} />
                         <div className="img">
-                            {urlImge && <img
+                            {urlImge ? <img
                                 src={urlImge}
+                                alt="listingImage"
+                                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                            /> : <img
+                                src={formData.bgImage}
                                 alt="listingImage"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
                             />}
@@ -432,11 +430,9 @@ export default function CreateSell() {
 
                         </textarea>
                     </div>
-                    <br /><br />
                     <button type="submit" disabled={loading}>
-                        {loading ? 'Submitting...' : 'Submit'}
+                        {loading ? 'Updating...' : 'Update'}
                     </button>
-                    {error && <p style={{ color: 'red' }}>{error}</p>}
                 </form>
             </div>
         </div>

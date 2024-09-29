@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // استيراد الأنماط الافتراضية لـ Quill.js
-import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+import 'react-quill/dist/quill.snow.css';
+import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن مسار الاستيراد صحيح
+import { firestore, storage } from '../../firebaseConfig'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Box, CircularProgress, Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import Paper from '@mui/material/Paper';
@@ -30,10 +30,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
         border: 0,
     },
 }));
-
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-}
 
 export default function SellDahs() {
     const Navigate = useNavigate()
@@ -71,119 +67,26 @@ export default function SellDahs() {
         CategoryPlan: '',
     });
 
-    console.log(formDataImage);
 
-
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
-
-    const handleFileChange = (e) => {
-        const { name, files } = e.target;
-        setUrlImge(URL.createObjectURL(e.target.files[0]))
-
-        if (name === 'sliderImages') {
-            setFormData({
-                ...formData,
-                [name]: Array.from(files),
-            });
-        } else {
-            setFormData({
-                ...formData,
-                [name]: files[0],
-            });
-        }
-    };
-
-    const handleQuillChange = (value) => {
-        setFormData({
-            ...formData,
-            text: value,
-        });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    // Handle Delete Item
+    const handleDelete = async (id) => {
         setLoading(true);
-        setError(null);
-
-        try {
-            const uploadedFileURLs = await Promise.all(FileURLs.map(async (file) => {
-                const fileRef = ref(storage, `files/${file.name}`);
-                await uploadBytes(fileRef, file);
-                return await getDownloadURL(fileRef);
-            }));
-            const fileRefBlog = ref(storage, `filesBlog/${formData.listingImage.name}`);
-            const fileRefImageCart = ref(storage, `filesBlog/${formDataImage.name}`);
-
-            const [snapshotBlog, snapshotCart] = await Promise.all([
-                uploadBytes(fileRefBlog, formData.listingImage),
-                uploadBytes(fileRefImageCart, formDataImage),
-            ]);
-
-            const BgImage = await getDownloadURL(fileRefBlog);
-            const BgImageCard = await getDownloadURL(fileRefImageCart);
-
-
-            // Send Data TO fierStore
-            await addDoc(collection(firestore, 'listBlogsCartRent'), {
-                title: formData.title,
-                category: formData.category,
-                price: formData.price,
-                currency: formData.currency,
-                beds: formData.beds,
-                baths: formData.baths,
-                square: formData.square,
-                qualities: formData.qualities,
-                location: formData.location,
-                monthlyPayment: formData.monthlyPayment,
-                listingName: formData.listingName,
-                stars: formData.stars,
-                email: formData.email,
-                map: formData.map,
-                bgImage: BgImage,
-                text: formData.text,
-                imageCart: BgImageCard,
-                imageSlider: uploadedFileURLs,
-                CategoryBuyLocation: formData.CategoryBuyLocation,
-                CategoryDevelopers: formData.CategoryDevelopers,
-                CategoryPlan: formData.CategoryPlan,
-                date: new Date().toDateString(),
-                time: new Date().toLocaleTimeString()
-            });
-
-            toast.success('Data submitted successfully!');
-            setFormData({
-                title: '',
-                text: '',
-                price: '',
-                beds: '',
-                baths: '',
-                square: '',
-                qualities: '',
-                location: '',
-                monthlyPayment: '',
-                listingName: '',
-                stars: '',
-                email: '',
-                map: '',
-                category: '',
-                listingImage: null,
-                imageCart: null
-            });
-            Navigate('/dashboard')
-        } catch (err) {
-            toast.error('Error submitting data: ' + err.message);
-            console.error('Error submitting data:', err);
-        } finally {
-            setLoading(false);
+        if (window.confirm('Are you sure you want to delete')) {
+            try {
+                await deleteDoc(doc(firestore, 'listBlogsCartSell', id));
+                console.log('Document successfully deleted!');
+                getCategories();
+                toast.success('Document successfully deleted')
+            } catch (error) {
+                console.error('Error deleting document: ', error);
+                toast.error('Error deleting document')
+                setLoading(false);
+            } finally {
+                setLoading(false);
+            }
         }
     };
+
 
     // Get Data Cart Firebase
     const getCategories = async () => {
@@ -203,20 +106,14 @@ export default function SellDahs() {
         getCategories();
     }, []);
 
-    const modules = {
-        toolbar: [
-            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-            [{ 'size': [] }],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ 'color': [] }, { 'background': [] }],
-            [{ 'align': [] }],
-            ['link', 'image'],
-            ['clean']
-        ]
-    };
 
-    console.log(CategoryBuyLocation, CategoryDevelopers, CategoryPlan);
+    if (loading) {
+        return (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <CircularProgress />
+            </Box>
+        );
+    }
 
     return (
         <>
@@ -236,9 +133,9 @@ export default function SellDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/CreateRent')
+                    Navigate('/dashboard/CreateSell')
                 }}>
-                    Add Cart Rent
+                    Add Cart Sell
                 </button>
                 <button style={{
                     width: '100%',
@@ -250,9 +147,9 @@ export default function SellDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddCategoryRentPlan')
+                    Navigate('/dashboard/AddCategorySell')
                 }}>
-                    Add Category Rent
+                    Add Category Sell
                 </button>
                 <button style={{
                     width: '100%',
@@ -264,13 +161,13 @@ export default function SellDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddLocationRent')
+                    Navigate('/dashboard/AddLocationSell')
                 }}>
                     Add Category Location
                 </button>
             </div>
             <div className="table">
-                <TableContainer component={Paper} sx={{ mt: '30px' }}>
+                {data.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
                     <Table sx={{ minWidth: 900 }} aria-label="customized table">
                         <TableHead>
                             <TableRow>
@@ -293,13 +190,31 @@ export default function SellDahs() {
                                     <StyledTableCell align="center">{it.text.slice(0, 30)}...</StyledTableCell>
                                     <StyledTableCell align="center">{it.price}</StyledTableCell>
                                     <StyledTableCell align="center">{it.location}</StyledTableCell>
-                                    <StyledTableCell align="center"><button style={{ backgroundColor: '#1976d2' }}>Update</button></StyledTableCell>
-                                    <StyledTableCell align="center"><button style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
+                                    <StyledTableCell align="center"><button onClick={() => {
+                                        Navigate(`/dashboard/EditSell/${it.id}`)
+                                    }} style={{ backgroundColor: '#1976d2' }}>Update</button></StyledTableCell>
+                                    <StyledTableCell align="center"><button onClick={() => {
+                                        handleDelete(it.id)
+                                    }} style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
                                 </StyledTableRow>
                             ))}
                         </TableBody>
                     </Table>
-                </TableContainer>
+                </TableContainer> : <p style={{
+                    marginTop: '60px',
+                    fontSize: '20px',
+                    textAlign: 'center',
+                    color: '#234232',
+                    fontWeight: 'bold'
+                }}>
+                    There is no data in the data base <button style={{
+                        color: '#1976d2',
+                        textDecoration: 'underline',
+                        display: 'inline-block'
+                    }} onClick={() => {
+                        Navigate('/dashboard/CreateSell')
+                    }}>Add New Data</button>
+                </p>}
             </div>
         </>
     );

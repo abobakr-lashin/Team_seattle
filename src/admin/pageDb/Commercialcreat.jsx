@@ -16,7 +16,7 @@ export default function CommercialCreate() {
     const [Categories, setCategories] = useState([])
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [formDataImage , setformDataImage] = useState('')
+    const [formDataImage, setformDataImage] = useState('')
     const [formData, setFormData] = useState({
         title: '',
         text: '',
@@ -25,7 +25,7 @@ export default function CommercialCreate() {
         beds: '',
         baths: '',
         square: '',
-        Parking: '',
+        parking: '',
         qualities: '',
         location: '',
         monthlyPayment: '',
@@ -95,7 +95,7 @@ export default function CommercialCreate() {
             const BgImage = await getDownloadURL(fileRefBlog);
             const BgImageCard = await getDownloadURL(fileRefImageCart);
 
-            
+
             // Send Data TO fierStore
             await addDoc(collection(firestore, 'listingsBlogs'), {
                 title: formData.title,
@@ -106,7 +106,7 @@ export default function CommercialCreate() {
                 baths: formData.baths,
                 square: formData.square,
                 Parking: formData.Parking,
-                qualities: formData.qualities,
+                parking: formData.parking,
                 location: formData.location,
                 monthlyPayment: formData.monthlyPayment,
                 listingName: formData.listingName,
@@ -129,7 +129,7 @@ export default function CommercialCreate() {
                 beds: '',
                 baths: '',
                 square: '',
-                Parking: '',
+                parking: '',
                 qualities: '',
                 location: '',
                 monthlyPayment: '',
@@ -223,7 +223,7 @@ export default function CommercialCreate() {
                     </div>
                     <div className="form-group">
                         <input
-                            type="number"
+                            type="text"
                             name="price"
                             placeholder="Price"
                             value={formData.price}
@@ -247,13 +247,6 @@ export default function CommercialCreate() {
                         />
                         <input
                             type="number"
-                            name="Parking "
-                            placeholder="Parking "
-                            value={formData.Parking }
-                            onChange={handleInputChange}
-                        />
-                        <input
-                            type="number"
                             name="square"
                             placeholder="SQUARE"
                             value={formData.square}
@@ -263,10 +256,10 @@ export default function CommercialCreate() {
                     <div className="form-group">
                         <input
                             type="text"
-                            name="qualities"
-                            placeholder="Qualities"
+                            name="parking"
+                            placeholder="parking"
                             maxLength="50"
-                            value={formData.qualities}
+                            value={formData.parking}
                             onChange={handleInputChange}
                         />
                         <input
@@ -302,7 +295,7 @@ export default function CommercialCreate() {
                     </div>
                     <div className="form-group">
                         <input
-                            type="number"
+                            type="text"
                             name="monthlyPayment"
                             placeholder="Monthly Payment"
                             min="1"
@@ -330,14 +323,14 @@ export default function CommercialCreate() {
                             value={formData.email}
                             onChange={handleInputChange}
                         />
-                         <input
-                type="text"
-                name="map"
-                placeholder="أدخل رابط الخريطة هنا"
-                value={formData.map}
-                onChange={handleInputChange}
-                style={{ width: "100%", padding: "10px", margin: "10px 0" }}
-            />
+                        <input
+                            type="text"
+                            name="map"
+                            placeholder="أدخل رابط الخريطة هنا"
+                            value={formData.map}
+                            onChange={handleInputChange}
+                            style={{ width: "100%", padding: "10px", margin: "10px 0" }}
+                        />
                     </div>
                     <div className="form-group">
                         <label htmlFor="me" style={{ fontSize: '30px' }}>
@@ -363,15 +356,9 @@ export default function CommercialCreate() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <ReactQuill
-                            theme="snow"
-                            value={formData.text}
-                            onChange={handleQuillChange}
-                            modules={modules}
-                            placeholder="Enter detailed description here..."
-                            style={{ height: '300px', width: '100%', padding: "10px", whiteSpace: "pre-wrap" }}
-                        />
+                        <textarea value={formData.text} style={{ margin: '20px', width: '80%', height: '300px' }} onChange={handleInputChange} placeholder='Enter your Description' name="text" id="text">
 
+                        </textarea>
                     </div>
                     <br /><br />
                     <button type="submit" disabled={loading}>

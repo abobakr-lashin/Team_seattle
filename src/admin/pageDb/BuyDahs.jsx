@@ -6,7 +6,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن مسار الاستيراد صحيح
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Box, CircularProgress, Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import Paper from '@mui/material/Paper';
@@ -31,17 +31,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-}
-
 export default function BuyDahs() {
     const Navigate = useNavigate()
-    const [FileURLs, setFileURLs] = useState([])
-    const [FileImage, setFileImages] = useState([])
-    const [urlImge, setUrlImge] = useState(null)
-    const [ImgeCart, setImgeCart] = useState(null)
-    const [Categories, setCategories] = useState([])
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [formDataImage, setformDataImage] = useState('')
@@ -71,34 +62,6 @@ export default function BuyDahs() {
         CategoryPlan: '',
     });
 
-    console.log(formDataImage);
-
-
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
-
-    const handleFileChange = (e) => {
-        const { name, files } = e.target;
-        setUrlImge(URL.createObjectURL(e.target.files[0]))
-
-        if (name === 'sliderImages') {
-            setFormData({
-                ...formData,
-                [name]: Array.from(files),
-            });
-        } else {
-            setFormData({
-                ...formData,
-                [name]: files[0],
-            });
-        }
-    };
 
     // Handle Delete Item
     const handleDelete = async (id) => {
@@ -117,6 +80,7 @@ export default function BuyDahs() {
 
     // Get Data Cart Firebase
     const getCategories = async () => {
+        setLoading(true);
         try {
             const querySnapshot = await getDocs(collection(firestore, "listBlogsCartBuy"));
             const docs = querySnapshot.docs.map((doc) => ({
@@ -126,12 +90,25 @@ export default function BuyDahs() {
             setData(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
+            setError(error);
+            setLoading(false);
+        } finally {
+            setLoading(false);
         }
     };
 
     useEffect(() => {
         getCategories();
     }, []);
+
+    if (loading) {
+        return (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <CircularProgress />
+            </Box>
+        );
+    }
+
 
     return (
         <>
@@ -151,9 +128,9 @@ export default function BuyDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/CreateRent')
+                    Navigate('/dashboard/AddCardBuy')
                 }}>
-                    Add Cart Rent
+                    Add Cart Buy
                 </button>
                 <button style={{
                     width: '100%',
@@ -165,9 +142,9 @@ export default function BuyDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddCategoryRentPlan')
+                    Navigate('/dashboard/AddCateBuyPlan')
                 }}>
-                    Add Category Rent
+                    Add Category Buy
                 </button>
                 <button style={{
                     width: '100%',
@@ -179,13 +156,13 @@ export default function BuyDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddLocationRent')
+                    Navigate('/dashboard/AddCategoryBuyLocation')
                 }}>
                     Add Category Location
                 </button>
             </div>
             <div className="table">
-                <TableContainer component={Paper} sx={{ mt: '30px' }}>
+                {data.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
                     <Table sx={{ minWidth: 900 }} aria-label="customized table">
                         <TableHead>
                             <TableRow>
@@ -218,7 +195,21 @@ export default function BuyDahs() {
                             ))}
                         </TableBody>
                     </Table>
-                </TableContainer>
+                </TableContainer> : <p style={{
+                    marginTop: '60px',
+                    fontSize: '20px',
+                    textAlign: 'center',
+                    color: '#234232',
+                    fontWeight: 'bold'
+                }}>
+                    There is no data in the data base <button style={{
+                        color: '#1976d2',
+                        textDecoration: 'underline',
+                        display: 'inline-block'
+                    }} onClick={() => {
+                        Navigate('/dashboard/AddCardBuy')
+                    }}>Add New Data</button>
+                </p>}
             </div>
         </>
     );
