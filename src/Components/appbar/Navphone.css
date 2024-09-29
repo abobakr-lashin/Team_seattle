@@ -36,7 +36,7 @@ display: none;
     background-position: right;
   }
 
-#FormN{
+.imgnp1 #FormN{
   display: flex;
   justify-content: start;
   align-items: center;
@@ -968,7 +968,7 @@ flex-direction: column;
       background-position: right;
     }
   
-  #FormN{
+.imgnp1 #FormN{
     display: flex;
     justify-content: start;
     align-items: center;
@@ -1297,7 +1297,7 @@ flex-direction: column;
   }
   @media (max-width: 375px) {
 
-    #FormN{
+    .imgnp1 #FormN{
       justify-content: center;
       align-items: center;
     }

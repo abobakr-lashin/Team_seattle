@@ -25,7 +25,7 @@ export default function Buy() {
     const [maxBedrooms, setMaxBedrooms] = useState('');
     const [minPrice, setMinPrice] = useState('');
 
-    const itemsPerPage = 9;
+    const itemsPerPage =6;
 
     // Get Data from Firestore
     const GetDataFireStore = async () => {
@@ -68,12 +68,18 @@ export default function Buy() {
     const handleNextPage = () => {
         if (currentPage < totalPages) {
             setCurrentPage(currentPage + 1);
+        } else {
+            // Loop back to the first page
+            setCurrentPage(1);
         }
     };
-
+    
     const handlePreviousPage = () => {
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);
+        } else {
+            // Loop to the last page
+            setCurrentPage(totalPages);
         }
     };
 
@@ -228,21 +234,21 @@ export default function Buy() {
                 <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2} >
                     {imgsetin}
                 </Grid>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-                    <button 
-                        onClick={handlePreviousPage} 
-                        disabled={currentPage === 1} 
-                        style={{ cursor: currentPage > 1 ? 'pointer' : 'not-allowed', opacity: currentPage > 1 ? 1 : 0.5 }}>
-                        <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
-                    </button>
-                    <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>
-                    <button 
-                        onClick={handleNextPage} 
-                        disabled={currentPage === totalPages} 
-                        style={{ cursor: currentPage < totalPages ? 'pointer' : 'not-allowed', opacity: currentPage < totalPages ? 1 : 0.5 }}>
-                        <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
-                    </button>
-                </div>
+                {filteredProjects.length >= 6 && (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+        <div 
+            onClick={handlePreviousPage} 
+        >
+            <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
+        </div>
+        <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>
+        <div 
+            onClick={handleNextPage} 
+        >
+            <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
+        </div>
+    </div>
+)}
             </div>
 
             <OUREXPERT />
