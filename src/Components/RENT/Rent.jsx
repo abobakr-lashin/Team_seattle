@@ -4,13 +4,13 @@ import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Grid } from '@mui/material';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import SearchIcon from '@mui/icons-material/Search';
 import FormN from '../appbar/FormN';
 import Footer from '../footer/Footer';
 import OUREXPERT from '../../Pages/OUREXPERT';
 import "./Rent.css"
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
+
 export default function Rent() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +25,7 @@ export default function Rent() {
   const [minPrice, setMinPrice] = useState('');
   const [data, setData] = useState([]);
 
-  const itemsPerPage = 9;
+  const itemsPerPage = 6;
 
   // Get Data from Firestore
   const GetDataFireStore = async () => {
@@ -40,9 +40,6 @@ export default function Rent() {
       console.error("Error fetching documents: ", error);
     }
   };
-
-
-
 
   // تصفية المشاريع بناءً على مصطلحات البحث
   const filteredProjects = data.filter((project) => {
@@ -67,12 +64,16 @@ export default function Rent() {
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
+    } else {
+      setCurrentPage(1); // Loop back to the first page
     }
   };
 
   const handlePreviousPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
+    } else {
+      setCurrentPage(totalPages); // Loop to the last page
     }
   };
 
@@ -85,7 +86,7 @@ export default function Rent() {
   }, []);
 
   const imgsetin = currentItems.map((it) => (
-    <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
+    <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item lg={4} md={6} sm={6}>
       <Link to={`/Rent/${it.id}`}>
         <div className="CONTER">
           <div className="bg-back">
@@ -131,6 +132,7 @@ export default function Rent() {
       </Link>
     </Grid>
   ));
+
   return (
     <div className="rent">
       <div className="img-rent">
@@ -221,7 +223,6 @@ export default function Rent() {
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
             />
-
           </div>
         </div>
       </div>
@@ -230,23 +231,22 @@ export default function Rent() {
         <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
           {imgsetin}
         </Grid>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-          <div onClick={handlePreviousPage} style={{ cursor: currentPage > 1 ? 'pointer' : 'default', opacity: currentPage > 1 ? 1 : 0.5 }}>
-            <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
+
+        {filteredProjects.length >= 6 && (
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+            <div onClick={handlePreviousPage} style={{ cursor: 'pointer' }}>
+              <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
+            </div>
+            <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>
+            <div onClick={handleNextPage} style={{ cursor: 'pointer' }}>
+              <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
+            </div>
           </div>
-          <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>
-          <div onClick={handleNextPage} style={{ cursor: currentPage < totalPages ? 'pointer' : 'default', opacity: currentPage < totalPages ? 1 : 0.5 }}>
-            <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
-          </div>
-        </div>
+        )}
       </div>
 
-
-
       <OUREXPERT />
-
       <Footer />
     </div>
-
   );
 }

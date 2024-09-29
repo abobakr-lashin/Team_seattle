@@ -361,8 +361,10 @@ export default function Buycards() {
       </div>
 
       <div className='buy'>
-        <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
+        <Grid sx={{ margin: "auto", width: "100%" }}  container spacing={2}>
+          <Grid sm={12} md={6} lg={4}>
           {imgsetin}
+          </Grid>
         </Grid>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
           <div onClick={handlePreviousPage} style={{ cursor: currentPage > 1 ? 'pointer' : 'default', opacity: currentPage > 1 ? 1 : 0.5 }}>
