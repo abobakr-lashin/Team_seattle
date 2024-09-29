@@ -148,7 +148,6 @@ export default function LandingPageSell() {
                     </div>
                 </div>
                 <div className="contbg">
-                    {/* من هنا الصوره يا ابراهيم  */}
                     <div className="img-samy">
                         <img src="/uploads/landingpage/export/icon/samayas.png" alt="samayas" />
                     </div>
@@ -184,6 +183,9 @@ export default function LandingPageSell() {
                         </h4>
                     </div>
                 </div>
+                {/* <div>
+                    {filterCartId[0]?.text}
+                </div> */}
                 <div item lg={4} md={12} alignItems={"center"} justifyContent={"center"}>
                     <div className="ContactAgent">
                         <div className="title">Contact Agent</div>
@@ -195,7 +197,7 @@ export default function LandingPageSell() {
                                 <div className=" Listing">Listing by</div>
                                 <div className="name">{filterCartId[0]?.listingName}</div>
                                 <div className="contact ">
-                                    <Rating name="size-medium" defaultValue={filterCartId[0]?.stars || 0} readOnly />
+                                    <Rating name="size-medium" value={filterCartId[0]?.stars || 0} readOnly />
                                 </div>
                             </div>
                         </div>
