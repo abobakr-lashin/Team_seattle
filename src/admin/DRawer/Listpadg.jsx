@@ -29,13 +29,14 @@ export default function Listpadg() {
     { text: "Request_Quote", ico: CoPresentIcon, path: "RequestQuote" },
     { text: "TheTeam", ico: BookIcon, path: "TEameform" },
     { text: "MasssgeUs", ico: TextsmsIcon, path: "MasssgeUs" },
-    { text: "CreatBolgs", ico: CreateIcon, path: "BlogsCreat" },
-    { text: "BlogsUpdete", ico: CreateIcon, path: "BlogsUpdete" },
-    { text: "AddDevelopers", ico: CreateIcon, path: "AddDevelopers" },
+    { text: "Blogs", ico: CreateIcon, path: "/dashboard/Blogs" },
     { text: "Buy", ico: CreateIcon, path: "buy" },
     { text: "Rent", ico: CreateIcon, path: "Rent" },
     { text: "COMMERCIAL", ico: CreateIcon, path: "COMMERCIAL" },
     { text: "Sell", ico: CreateIcon, path: "Sell" },
+    { text: "Developers", ico: CreateIcon, path: "/dashboard/Developers" },
+    { text: "Areas", ico: CreateIcon, path: "AreasDahs" },
+
   ]
   return (
     <>

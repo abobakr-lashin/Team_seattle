@@ -11,35 +11,31 @@ import OUREXPERT from "../../Pages/OUREXPERT";
 
 export default function Abudhabi() {
 
-  return (
-    <div className="OurProjects">
-      <NavPar />
-      <div className="grop-title1 ">
-        <div className="img-dis">
-          <img src="./uploads/img/marpa.png" alt="" />
+    return (
+        <div className="OurProjects">
+            <NavPar />
+            <div className="grop-title1 ">
+                <div className="img-dis">
+                    <img src="./uploads/img/marpa.png" alt="" />
+                </div>
+                <div className="title-dis6">
+                    <h2>
+                        Home
+                        <Link to={"/"}>
+                            {" "}
+                            <KeyboardDoubleArrowRightIcon
+                                sx={{ color: "#d3b76d", fontSize: "65px" }}
+                            />
+                        </Link>
+                    </h2>
+                    <h3>AREAS</h3>
+                </div>
+            </div>
+            <div className="h-5vh"></div>
+            <AbudhabiDetails />
+            <OUREXPERT />
+            <div className="h-5vh"></div>
+            <Footer />
         </div>
-        <div className="title-dis6">
-          <h2>
-            Home
-            <Link to={"/"}>
-              {" "}
-              <KeyboardDoubleArrowRightIcon
-                sx={{ color: "#d3b76d", fontSize: "65px" }}
-              />
-            </Link>
-          </h2>
-          <h3>AREAS</h3>
-        </div>
-      </div>
-
-
-      <div className="h-5vh"></div>
-   <AbudhabiDetails/>
-   <OUREXPERT/>
-
-
-      <div className="h-5vh"></div>
-      <Footer />
-    </div>
-  );
+    );
 }

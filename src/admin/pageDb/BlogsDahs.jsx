@@ -4,7 +4,7 @@ import { firestore } from '../../firebaseConfig';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-export default function BlogsUpdete() {
+export default function BlogsDahs() {
     const [Database, setDataBase] = useState([]);
     const navigate = useNavigate()
 
@@ -63,7 +63,7 @@ export default function BlogsUpdete() {
                 }} onClick={() => {
                     navigate('/dashboard/BlogsCreat')
                 }}>
-                    Add Cart Rent
+                    Add Cart Blog
                 </button>
                 <button style={{
                     width: '100%',
@@ -75,23 +75,9 @@ export default function BlogsUpdete() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    navigate('/dashboard/AddCategoryRentPlan')
+                    navigate('/dashboard/Blogs/AddBanner')
                 }}>
-                    Add Category Rent
-                </button>
-                <button style={{
-                    width: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    outline: 'none',
-                    border: '1px solid #ccc',
-                    padding: '8px',
-                    color: '#234232',
-                }} onClick={() => {
-                    navigate('/dashboard/AddLocationRent')
-                }}>
-                    Add Category Location
+                    Add AddBanner Blog
                 </button>
             </div>
 
@@ -100,7 +86,6 @@ export default function BlogsUpdete() {
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Img</th>
                             <th>Name</th>
                             <th>Long text</th>
@@ -114,7 +99,6 @@ export default function BlogsUpdete() {
                         {Database.map((item) => {
                             return (
                                 <tr key={item.id}>
-                                    <td>{item.id.slice(0, 5)}</td>
                                     <td>
                                         {item.fileBlog ? (
                                             <img src={item.fileBlog} alt={item.servies || 'Service Image'} style={{ maxWidth: "100px", height: "auto" }} />

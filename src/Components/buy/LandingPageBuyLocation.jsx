@@ -99,7 +99,7 @@ export default function LandingPageBuyLocation() {
             </div>
             <div>
                 <span>
-                    <span>{it.Parkingn}</span>
+                    <span>{it.parking}</span>
                 </span>
                 <div>Parking </div>
             </div>
@@ -111,7 +111,7 @@ export default function LandingPageBuyLocation() {
             <div
                 className="bg-Landingpage"
                 style={{
-                    backgroundImage: `url(${filterCartId[0]?.bgImage})`,
+                    backgroundImage: `url(${filterCartId[0]?.imageCart})`,
                 }}
             >
                 <NavPar />
@@ -183,13 +183,13 @@ export default function LandingPageBuyLocation() {
 
                         <div className="imgctext">
                             <div className="imgcontact">
-                                <img src="/uploads/landingpage/export/photo3.png" alt="" />
+                                <img src={filterCartId[0]?.bgImage} alt="" />
                             </div>
                             <div className="text">
                                 <div className=" Listing">Listing by</div>
                                 <div className="name">{filterCartId[0]?.listingName}</div>
                                 <div className="contact ">
-                                    <Rating name="size-medium" defaultValue={''} readOnly />
+                                <Rating name="size-medium" value={filterCartId[0]?.stars || 0} readOnly />
                                 </div>
                             </div>
                         </div>
