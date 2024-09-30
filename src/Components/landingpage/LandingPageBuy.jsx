@@ -243,7 +243,16 @@ const MyMap = () => {
             </div>
             <div className="map">
                 <div className="h-5vh"></div>
-                <MyMap />
+                <h3>عرض الخريطة:</h3>
+                    <iframe
+                        src={filterCartId[0]?.map}
+                        width="600"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                                 <ContactusForm />
             </div>
             <div className="h-5vh"></div>
