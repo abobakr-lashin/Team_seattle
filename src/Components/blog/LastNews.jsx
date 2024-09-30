@@ -66,12 +66,30 @@ export default function LastNews({ newsPerPage }) {
             <div className="news-container">
                 {currentNews.length > 0 ? (
                     <div className="news-grid">
-                        {currentNews.map((item) => (
+                        {/* {currentNews.map((item) => (
+                            console.log(item.fileCart)
                             <div
                                 className="img-LatestNews1"
                                 key={item.id}
-                                style={{ backgroundImage: `url(${item.fileCart})` }}
+                                style={{ backgroundImage: item?.fileCart ? `url(${item.fileCart})` : 'none' }}
+                                
                             >
+                                <div className="news-title">{item.title}</div>
+                                <div className="news-text">{item.text}</div>
+                                <button onClick={() => handleReadMore(item.id)} className="read-More">
+                                    Read More...
+                                </button>
+                                <div className="avatar">
+                                    <PersonIcon /> {item.name}
+                                </div>
+                                <div className="date">
+                                    <CalendarMonthIcon /> {item?.DateS?.day} / {item?.DateS?.month} / {item?.DateS?.year}
+                                </div>
+                            </div>
+                        ))} */}
+                        {currentNews.map((item) => (
+                            <div className="img-LatestNews1" key={item.id}>
+                                <img src={item?.fileCart} alt={item?.title} style={{ width: '100%', height: 'auto' }} />
                                 <div className="news-title">{item.title}</div>
                                 <div className="news-text">{item.text}</div>
                                 <button onClick={() => handleReadMore(item.id)} className="read-More">

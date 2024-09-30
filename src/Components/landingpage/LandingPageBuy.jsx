@@ -76,40 +76,40 @@ export default function LandingPageBuy() {
     });
 
 
-// خريطه
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-});
-const MyMap = () => {
-    // إحداثيات افتراضية للموقع (دبي، الإمارات)
-    const position = [24.455818, 54.395480];
-  
-    return (
-      <div>
-        <h2>خريطة الموقع</h2>
-        {/* حاوية الخريطة */}
-        <MapContainer center={position} zoom={13} style={{ height: "500px", width: "80vw" }}>
-          {/* طبقة الخريطة من OpenStreetMap */}
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          />
-          {/* علامة الموقع */}
-          <Marker position={position}>
-            <Popup>
-              موقع افتراضي في دبي.
-            </Popup>
-          </Marker>
-        </MapContainer>
-      </div>
-    );
-  };
-  const position = [25.276987, 55.296249];
+    // خريطه
+    delete L.Icon.Default.prototype._getIconUrl;
+    L.Icon.Default.mergeOptions({
+        iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+        iconUrl: require('leaflet/dist/images/marker-icon.png'),
+        shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+    });
+    const MyMap = () => {
+        // إحداثيات افتراضية للموقع (دبي، الإمارات)
+        const position = [24.455818, 54.395480];
 
-// خريطه
+        return (
+            <div>
+                <h2>خريطة الموقع</h2>
+                {/* حاوية الخريطة */}
+                <MapContainer center={position} zoom={13} style={{ height: "500px", width: "80vw" }}>
+                    {/* طبقة الخريطة من OpenStreetMap */}
+                    <TileLayer
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    />
+                    {/* علامة الموقع */}
+                    <Marker position={position}>
+                        <Popup>
+                            موقع افتراضي في دبي.
+                        </Popup>
+                    </Marker>
+                </MapContainer>
+            </div>
+        );
+    };
+    const position = [25.276987, 55.296249];
+
+    // خريطه
 
 
     useEffect(() => {
@@ -244,7 +244,7 @@ const MyMap = () => {
             <div className="map">
                 <div className="h-5vh"></div>
                 <MyMap />
-                                <ContactusForm />
+                <ContactusForm />
             </div>
             <div className="h-5vh"></div>
             <Footer />

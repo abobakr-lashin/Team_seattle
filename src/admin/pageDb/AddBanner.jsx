@@ -21,70 +21,91 @@ const VisuallyHiddenInput = styled('input')({
     width: 1,
 });
 
-const AddDevelopers = () => {
+const AddBanner = () => {
     const Navigste = useNavigate()
-    const [category, setCategory] = useState('');
-    const [FileImage, setFileImage] = useState(null);
+    const [text, setText] = useState('');
+    const [FileImage, setFileImage] = useState({
+        image1: null,
+        image2: null
+    });
     const [categories, setCategories] = useState([]);
     const [fileUrl, setfileUrl] = useState('');
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [fileUr2, setfileUr2] = useState('');
 
+    console.log(FileImage);
 
     const handleAddCategory = async (e) => {
         e.preventDefault();
-        if (!category.trim()) {
-            toast.error('Category already exists!');
-            return;
-        }
 
         setLoading(true);
         setError(null);
 
         try {
-            // Cheake Category 
-            const image = ref(storage, `fileImage/${FileImage.name}`)
-            await uploadBytes(image, FileImage);
-            const downloadUrl = await getDownloadURL(image);
+            const imageUrl1 = ref(storage, `filebBanner/${FileImage.image1.name}`)
+            const taskBanner1 = uploadBytes(imageUrl1, FileImage.image1);
 
-            const categoriesRef = collection(firestore, 'CategoryDevelopers');
-            const q = query(categoriesRef, where('name', '==', category));
-            const querySnapshot = await getDocs(q);
+            const imageUrl2 = ref(storage, `filebBanner/${FileImage.image2.name}`)
+            const taskBanner2 = uploadBytes(imageUrl2, FileImage.image2);
 
-            if (querySnapshot.empty) {
-                await addDoc(categoriesRef, {
-                    name: category,
-                    image: downloadUrl,
-                    createdAt: new Date(),
-                });
-                toast.success('Category added successfully!.')
-                setCategory('');
-                Navigste('/dashboard/Developers')
-                return
-            } else {
-                toast.error('Category already exists!');
-            }
+
+            const [snapshotBlog, snapshotCart] = await Promise.all([
+                uploadBytes(imageUrl1, FileImage.image1),
+                uploadBytes(imageUrl2, FileImage.image2)
+            ]);
+
+            const urlBlog1 = await getDownloadURL(imageUrl1);
+            const urlBlog2 = await getDownloadURL(imageUrl2);
+
+            const categoriesRef = collection(firestore, 'bannerBlogs');
+            await addDoc(categoriesRef, {
+                text,
+                image1: urlBlog1,
+                image2: urlBlog2,
+                createdAt: new Date(),
+            });
+            toast.success('Banner added successfully!.')
+            setText('');
+            Navigste('/dashboard/blogs')
+            return
+
         } catch (err) {
             setError('Error adding category: ' + err.message);
+            console.log('Error adding category: ', err.message);
         } finally {
             setLoading(false);
         }
     };
 
 
+
+    if (loading) {
+        return (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <CircularProgress />
+            </Box>
+        );
+    }
+
+
     return (
         <Box sx={{ maxWidth: 400, mx: 'auto', mt: 4, p: 2, border: '1px solid #ccc', borderRadius: 2 }}>
-            <Typography variant="h5" sx={{ mb: 2 }}>Add Developers</Typography>
+            <Typography variant="h5" sx={{ mb: 2 }}>Add Category Buy Plan</Typography>
+
             <TextField
-                label="Category"
+                label="text Banner"
                 variant="outlined"
                 fullWidth
-                onChange={(e) => setCategory(e.target.value)}
+                onChange={(e) => setText(e.target.value)}
                 sx={{ mb: 2 }}
             />
+
+
             <List>
                 <img style={{ width: '200px' }} src={fileUrl} alt="" />
             </List>
+
             <Button
                 sx={{ mt: 2, mb: 2 }}
                 component="label"
@@ -98,8 +119,32 @@ const AddDevelopers = () => {
                     type="file"
                     onChange={(e) => {
                         const file = e.target.files[0]
-                        setFileImage(file)
+                        setFileImage({ ...FileImage, image1: e.target.files[0] })
                         setfileUrl(URL.createObjectURL(file))
+                    }}
+                    multiple
+                />
+            </Button>
+
+            <List>
+                <img style={{ width: '200px' }} src={fileUr2} alt="" />
+            </List>
+
+            <Button
+                sx={{ mt: 2, mb: 2 }}
+                component="label"
+                role={undefined}
+                variant="contained"
+                tabIndex={-1}
+                startIcon={<CloudUploadIcon />}
+            >
+                Upload files
+                <VisuallyHiddenInput
+                    type="file"
+                    onChange={(e) => {
+                        const file = e.target.files[0]
+                        setFileImage({ ...FileImage, image2: e.target.files[0] })
+                        setfileUr2(URL.createObjectURL(file))
                     }}
                     multiple
                 />
@@ -119,7 +164,7 @@ const AddDevelopers = () => {
                         onClick={handleAddCategory}
                         sx={{ mb: 2 }}
                     >
-                        Add Category
+                        Add Banner
                     </Button>
                 )}
             </Box>
@@ -128,4 +173,4 @@ const AddDevelopers = () => {
     );
 };
 
-export default AddDevelopers;
+export default AddBanner;

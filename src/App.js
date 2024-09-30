@@ -31,9 +31,7 @@ import UpdateBlog from './admin/pageDb/UpdateBlog';
 import LastNews from './Components/blog/LastNews';
 import Commercial from './Components/commercial/Commercial';
 import SaleIn from './Components/commercial/SaleIn';
-
 import Sell from './Components/sell/Sell';
-
 import Cardsell from './Components/sell/Cardsell';
 import Buy from './Components/buy/Buy';
 import Buycards from './Components/buy/Buycards';
@@ -73,6 +71,10 @@ import UpdateBuy from './admin/pageDb/UpdateBuy';
 import UpdateSell from './admin/pageDb/updateSell';
 import UpdateRent from './admin/pageDb/RentUpdate';
 import CommercialEdit from './admin/pageDb/CommercialEdit.';
+import AreasDahs from './admin/pageDb/AreasDahs';
+import BlogsDahs from './admin/pageDb/BlogsDahs';
+import AddBanner from './admin/pageDb/AddBanner';
+import DevelopersDahs from './admin/pageDb/DevelopersDahs';
 
 export default function App() {
     return (
@@ -113,7 +115,7 @@ export default function App() {
                     <Route path="Rent/Filter/:id" element={<RentFilter />} />
 
                     <Route path="BuyHome" element={<BuyHome />} />
-                    <Route path="Developers" element={<Developers />} />
+                    <Route path="Developers/:id" element={<Developers />} />
                     <Route path="Landingpage" element={<Landingpage />} />
                     <Route path="CareersForm" element={<CareersForm />} />
                     <Route path="ContactusForm" element={<ContactusForm />} />
@@ -139,7 +141,7 @@ export default function App() {
                         <Route path="AddCategoryBuyLocation" element={<AddCateBuyLocation />} />
                         <Route path="AddCateBuyPlan" element={<AddCategoryBuyPlan />} />
                         <Route path="AddCardBuy" element={<AddCardBuy />} />
-                        <Route path="AddDevelopers" element={<AddDevelopers />} />
+                        <Route path="/dashboard/Developers/AddDevelopers" element={<AddDevelopers />} />
                         <Route path="AddCategoryRentPlan" element={<AddCategoryRentPlan />} />
                         <Route path="AddLocationRent" element={<AddLocationRent />} />
                         <Route path="Rent" element={<RentDahs />} />
@@ -154,6 +156,10 @@ export default function App() {
                         <Route path="CreateSell" element={<CreateSell />} />
                         <Route path="AddLocationSell" element={<AddLocationSell />} />
                         <Route path="AddCategorySellPlan" element={<AddCategorySellPlan />} />
+                        <Route path="AreasDahs" element={<AreasDahs />} />
+                        <Route path="/dashboard/Blogs" element={<BlogsDahs />} />
+                        <Route path="/dashboard/Blogs/AddBanner" element={<AddBanner />} />
+                        <Route path="/dashboard/Developers" element={<DevelopersDahs />} />
                     </Route>
                 </Routes>
             </HashRouter>

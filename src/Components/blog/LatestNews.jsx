@@ -27,7 +27,7 @@ export default function LatestNews() {
                 <div className="title-dis7">
                     <div>
                         Home{" "}
-                        <Link to={"/"}>   <KeyboardDoubleArrowRightIcon  sx={{ color: "#d3b76d", fontSize: "65px" }} /></Link> 
+                        <Link to={"/"}>   <KeyboardDoubleArrowRightIcon sx={{ color: "#d3b76d", fontSize: "65px" }} /></Link>
 
                     </div>
                     <div>BLOGS</div>
@@ -35,10 +35,10 @@ export default function LatestNews() {
             </div>
             <div className="h-5vh"></div>
 
-  
-  <LastNews newsPerPage={9}/>
+
+            <LastNews newsPerPage={9} />
             <div className="h-5vh"></div>
-            <OUREXPERT/>
+            <OUREXPERT />
 
             <Footer />
         </div>
