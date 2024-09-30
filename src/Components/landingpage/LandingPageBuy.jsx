@@ -243,8 +243,15 @@ export default function LandingPageBuy() {
             </div>
             <div className="map">
                 <div className="h-5vh"></div>
-                <MyMap />
-                                <ContactusForm />
+                <iframe
+                    src={filterCartId[0]?.map}
+                    width="600"
+                    height="450"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>                                <ContactusForm />
             </div>
             <div className="h-5vh"></div>
             <Footer />
