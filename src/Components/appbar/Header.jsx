@@ -17,28 +17,28 @@ export default function Header() {
         { icon: <PhoneIcon />, name: 'Phone', link: "tel:+971502135701" },
     ];
 
-    const [videoSrc, setVideoSrc] = useState(bannerFinish); // تعيين فيديو افتراضي للشاشات الكبيرة
+    // const [videoSrc, setVideoSrc] = useState(bannerFinish); // تعيين فيديو افتراضي للشاشات الكبيرة
 
-    const updateVideoSrc = () => {
-        console.log(`Window width: ${window.innerWidth}`); // إخراج عرض الشاشة للتتبع
-        if (window.innerWidth > 1024) {
-            console.log('Setting large screen video');
-            setVideoSrc(bannerFinish);  // فيديو للشاشات الكبيرة
-        } else {
-            console.log('Setting small screen video');
-            setVideoSrc(video2);  // فيديو للشاشات الصغيرة
-        }
-    };
+    // const updateVideoSrc = () => {
+    //     console.log(`Window width: ${window.innerWidth}`); // إخراج عرض الشاشة للتتبع
+    //     if (window.innerWidth > 1024) {
+    //         console.log('Setting large screen video');
+    //         setVideoSrc(bannerFinish);  // فيديو للشاشات الكبيرة
+    //     } else {
+    //         console.log('Setting small screen video');
+    //         setVideoSrc(video2);  // فيديو للشاشات الصغيرة
+    //     }
+    // };
 
-    useEffect(() => {
-        updateVideoSrc();  // تعيين الفيديو عند التحميل لأول مرة
-        window.addEventListener('resize', updateVideoSrc);  // تحديث الفيديو عند تغيير حجم الشاشة
+    // useEffect(() => {
+    //     updateVideoSrc();  // تعيين الفيديو عند التحميل لأول مرة
+    //     window.addEventListener('resize', updateVideoSrc);  // تحديث الفيديو عند تغيير حجم الشاشة
 
-        // تنظيف مستمع الحدث عند إلغاء المكون
-        return () => {
-            window.removeEventListener('resize', updateVideoSrc);
-        };
-    }, []);
+    //     // تنظيف مستمع الحدث عند إلغاء المكون
+    //     return () => {
+    //         window.removeEventListener('resize', updateVideoSrc);
+    //     };
+    // }, []);
 
     const handleActionClick = (link, name) => {
         if (name === 'Phone') {
@@ -58,7 +58,7 @@ export default function Header() {
         <>
             <div className="header-container">
                 <video className="video-background" autoPlay loop muted preload="auto">
-                    <source src={videoSrc} type="video/mp4" />
+                    <source src={bannerFinish} type="video/mp4" />
                     متصفحك لا يدعم عرض الفيديو.
                 </video>
                 <NavPar />
