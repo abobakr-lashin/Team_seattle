@@ -244,7 +244,7 @@ width: auto;
     font-weight: 600;
   }
   .body-img{
-    height: 115vh;
+    height: 95vh;
   }
   .btn-RE {
     width: 270px;
@@ -303,7 +303,7 @@ width: auto;
 
 
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 395px) {
  
   .prgraf p{
     font-size:14px;
@@ -312,8 +312,7 @@ width: auto;
     text-align: center !important;
   }
   .body-img {
-    height: 94vh;
-}
+    height: 77vh;}
   .prgraf p {
     font-size: 11px;
     color: white;
