@@ -7,15 +7,39 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Footer from './../Components/footer/Footer.jsx'
 import "./Developers.css"
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import OUREXPERT from './OUREXPERT';
+import { collection, getDocs } from 'firebase/firestore';
+import { firestore } from '../firebaseConfig.js';
 
 export default function Developers() {
-  const {id} = useParams()
-  
+  const { id } = useParams()
+  const [dataCart, setDataCart] = useState([]);
+  const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState(''); // لتتبع مصطلح البحث
   const itemsPerPage = 9;
+
+  const GetDataFireBase = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(firestore, "listCartDevelopers"));
+      const docs = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      const fiterData = docs.filter((it)=> it.company === id)
+      setDataCart(fiterData);
+    } catch (error) {
+      console.error("Error fetching documents: ", error);
+    }
+  }
+
+  useEffect(() => {
+    GetDataFireBase();
+  }, []);
+
+  console.log(dataCart);
+
   const ourProject = [
     { id: 1, src: "/uploads/developerprojects/export/photo2.png", name: `Greenway`, Location: " Emaar South" },
     { id: 2, src: "/uploads/developerprojects/export/photo2.png", name: `Greenway`, Location: " Emaar South" },
@@ -39,8 +63,8 @@ export default function Developers() {
     { id: 20, src: "/uploads/developerprojects/export/photo2.png", name: "Greenway", Location: " Emaar South" },
 
   ];
-  const filteredProjects = ourProject.filter((project) =>
-    project.name.toUpperCase().includes(searchTerm.toUpperCase())
+  const filteredProjects = dataCart?.filter((project) =>
+    project.title.toUpperCase().includes(searchTerm.toUpperCase())
   );
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -62,18 +86,18 @@ export default function Developers() {
 
 
 
-  const our = currentItems.map((img) => {
+  const our = currentItems?.map((img) => {
     return (
       <Grid key={img.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
         <div className="all-Abudhabi">
           <div className="img-Abudhabi">
             <div
               className="bg-imga"
-              style={{ backgroundImage: `url(${img.src})` }}
+              style={{ backgroundImage: `url(${img?.imageCart})` }}
             ></div>
-            <h2>{img.name}</h2>
+            <h2>{img.title}</h2>
             <h3>
-              <LocationOnIcon /> {img.Location}
+              <LocationOnIcon /> {img.location}
             </h3>
             <div className="dis">
               <div>

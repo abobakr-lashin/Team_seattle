@@ -31,10 +31,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-}
-
 export default function DevelopersDahs() {
     const Navigate = useNavigate()
     const [FileURLs, setFileURLs] = useState([])
@@ -46,30 +42,8 @@ export default function DevelopersDahs() {
     const [error, setError] = useState(null);
     const [formDataImage, setformDataImage] = useState('')
     const [data, setData] = useState([])
-    const [CategoryBuyLocation, setCategoryBuyLocation] = useState([])
-    const [CategoryDevelopers, setCategoryDevelopers] = useState([])
-    const [CategoryPlan, setCategoryPlan] = useState([])
-    const [formData, setFormData] = useState({
-        title: '',
-        text: '',
-        price: '',
-        currency: '',
-        beds: '',
-        baths: '',
-        square: '',
-        qualities: '',
-        location: '',
-        monthlyPayment: '',
-        listingName: '',
-        stars: '',
-        email: '',
-        map: '',
-        category: '',
-        listingImage: null,
-        CategoryBuyLocation: '',
-        CategoryDevelopers: '',
-        CategoryPlan: '',
-    });
+    const [dataCart, setDataCart] = useState([])
+
 
     // Handle Delete Item
     const handleDelete = async (id) => {
@@ -99,6 +73,17 @@ export default function DevelopersDahs() {
                 ...doc.data(),
             }));
             setData(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "listCartDevelopers"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setDataCart(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -151,9 +136,9 @@ export default function DevelopersDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddCategoryRentPlan')
+                    Navigate('/dashboard/Developers/AddCartDevelopers')
                 }}>
-                    Add Category Rent
+                    Add Cart Developer
                 </button>
                 <button style={{
                     width: '100%',
@@ -170,6 +155,13 @@ export default function DevelopersDahs() {
                     Add Category Location
                 </button>
             </div>
+
+            <div style={{
+                marginTop:'20px'
+            }} className="title">
+                <h4>Show Category Developers</h4>
+            </div>
+
             <div className="table">
                 {data.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
                     <Table sx={{ minWidth: 900 }} aria-label="customized table">
@@ -183,13 +175,62 @@ export default function DevelopersDahs() {
                         <TableBody>
                             {data.map((it) => (
                                 <StyledTableRow key={it.id}>
-                                    
+
                                     <StyledTableCell align="center">
                                         <img style={{ width: '200px' }} src={it.image} alt="" />
                                     </StyledTableCell>
                                     <StyledTableCell align="center">{it.name}</StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {
                                         handleDelete(it.id)
+                                    }} style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer> : <p style={{
+                    marginTop: '60px',
+                    fontSize: '20px',
+                    textAlign: 'center',
+                    color: '#234232',
+                    fontWeight: 'bold'
+                }}>
+                    There is no data in the data base <button style={{
+                        color: '#1976d2',
+                        textDecoration: 'underline',
+                        display: 'inline-block'
+                    }} onClick={() => {
+                        Navigate('/dashboard/AddDevelopers')
+                    }}>Add New Data</button>
+                </p>}
+            </div>
+
+            <div className="title">
+                <h4>Show Cart Developers</h4>
+            </div>
+            <div className="table">
+                {dataCart.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
+                    <Table sx={{ minWidth: 900 }} aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <StyledTableCell width={200} align='center'>image</StyledTableCell>
+                                <StyledTableCell width={200} align="center">Title</StyledTableCell>
+                                <StyledTableCell width={200} align="center">company</StyledTableCell>
+                                <StyledTableCell width={200} align="center">Location</StyledTableCell>
+                                <StyledTableCell width={150} align="center">Delete</StyledTableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {dataCart.map((it) => (
+                                <StyledTableRow key={it.id}>
+
+                                    <StyledTableCell align="center">
+                                        <img style={{ width: '200px' }} src={it.imageCart} alt="" />
+                                    </StyledTableCell>
+                                    <StyledTableCell align="center">{it.title}</StyledTableCell>
+                                    <StyledTableCell align="center">{it.company}</StyledTableCell>
+                                    <StyledTableCell align="center">{it.location}</StyledTableCell>
+                                    <StyledTableCell align="center"><button onClick={() => {
+                                        // handleDeletCart(it.id)
                                     }} style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
                                 </StyledTableRow>
                             ))}

@@ -75,6 +75,7 @@ import AreasDahs from './admin/pageDb/AreasDahs';
 import BlogsDahs from './admin/pageDb/BlogsDahs';
 import AddBanner from './admin/pageDb/AddBanner';
 import DevelopersDahs from './admin/pageDb/DevelopersDahs';
+import AddCartDevelopers from './admin/pageDb/AddCartDevelopers';
 
 export default function App() {
     return (
@@ -160,6 +161,7 @@ export default function App() {
                         <Route path="/dashboard/Blogs" element={<BlogsDahs />} />
                         <Route path="/dashboard/Blogs/AddBanner" element={<AddBanner />} />
                         <Route path="/dashboard/Developers" element={<DevelopersDahs />} />
+                        <Route path="/dashboard/Developers/AddCartDevelopers" element={<AddCartDevelopers />} />
                     </Route>
                 </Routes>
             </HashRouter>
