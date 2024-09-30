@@ -86,22 +86,24 @@ export default function Developers() {
 
 
 
-  const our = currentItems?.map((img) => {
+  const our = currentItems?.map((it) => {
     return (
-      <Grid key={img.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
+      <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
         <div className="all-Abudhabi">
           <div className="img-Abudhabi">
             <div
               className="bg-imga"
-              style={{ backgroundImage: `url(${img?.imageCart})` }}
+              style={{ backgroundImage: `url(${it?.imageCart})` }}
             ></div>
-            <h2>{img.title}</h2>
+            <h2>{it.title}</h2>
             <h3>
-              <LocationOnIcon /> {img.location}
+              <LocationOnIcon /> {it.location}
             </h3>
             <div className="dis">
               <div>
-                <div className="btn-t">buy Property</div>
+                <div className="btn-t">
+                  <Link to={`/Buy/Location/${it.location}`}>buy Property</Link>
+                </div>
               </div>
             </div>
           </div>

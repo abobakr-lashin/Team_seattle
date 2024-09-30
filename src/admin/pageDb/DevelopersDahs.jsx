@@ -248,7 +248,7 @@ export default function DevelopersDahs() {
                         textDecoration: 'underline',
                         display: 'inline-block'
                     }} onClick={() => {
-                        Navigate('/dashboard/AddDevelopers')
+                        Navigate('/dashboard/Developers/AddCartDevelopers')
                     }}>Add New Data</button>
                 </p>}
             </div>
