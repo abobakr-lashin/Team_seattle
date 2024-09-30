@@ -184,6 +184,18 @@ export default function Commercial() {
                 </div>
             </div>
             <div className="h-5vh"></div>
+            <div className="grop-title">
+                <div className="img-dis">
+                    <img src="/uploads/img/marpa.png" alt="" />
+                </div>
+                <div className="title-dis7" style={{ display: "flex" }}>
+                    <h2>
+                        <div style={{ textTransform: "uppercase", fontSize: "50px" }}>
+                            offices for sale in uae
+                        </div>
+                    </h2>
+                </div>
+            </div>
             <SaleIn />
             <OUREXPERT />
             <Footer />

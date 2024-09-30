@@ -28,49 +28,7 @@ const Company = () => {
     const [minPrice, setMinPrice] = useState('');
     const [Products, setProducts] = useState([])
     const [loading, setLoading] = useState(false);
-    const itemsPerPage = 9;
-
-
-
-    // const filteredProjects = imgSaleIn.filter((project) => {
-    //     return (
-    //         (!searchTerm || project.title.toUpperCase().includes(searchTerm.toUpperCase())) &&
-    //         (!price || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(price)) &&
-    //         (!location || project.LocationOn.toUpperCase().includes(location.toUpperCase())) &&
-    //         (!minBedrooms || project.bed >= parseInt(minBedrooms)) &&
-    //         (!maxBedrooms || project.bed <= parseInt(maxBedrooms)) &&
-    //         (!minPrice || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(minPrice)) &&
-    //         (!minArea || project.square >= parseFloat(minArea)) &&
-    //         (!maxArea || project.square <= parseFloat(maxArea))
-    //     );
-    // });
-
-
-
-    // const indexOfLastItem = currentPage * itemsPerPage;
-    // const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    // const currentItems = filteredProjects.slice(indexOfFirstItem, indexOfLastItem);
-
-    // const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
-
-    // const handleNextPage = () => {
-    //     if (currentPage < totalPages) {
-    //         setCurrentPage(currentPage + 1);
-    //     }
-    // };
-
-    // const handlePreviousPage = () => {
-    //     if (currentPage > 1) {
-    //         setCurrentPage(currentPage - 1);
-    //     }
-    // };
-
-    // const handleSearch = () => {
-    //     setCurrentPage(1);
-    // };
-
-
-    // Get Data Category
+    const itemsPerPage = 6;
     const getCategories = async () => {
         try {
             setLoading(true);
@@ -96,8 +54,50 @@ const Company = () => {
     const FilterProducts = Products.filter((it) => it.category === id)
 
 
+    const filteredProjects = Products.filter((project) => {
+        return (
+            (!searchTerm || project.title.toUpperCase().includes(searchTerm.toUpperCase())) &&
+            (!price || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(price)) &&
+            (!location || project.LocationOn.toUpperCase().includes(location.toUpperCase())) &&
+            (!minBedrooms || project.bed >= parseInt(minBedrooms)) &&
+            (!maxBedrooms || project.bed <= parseInt(maxBedrooms)) &&
+            (!minPrice || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(minPrice)) &&
+            (!minArea || project.square >= parseFloat(minArea)) &&
+            (!maxArea || project.square <= parseFloat(maxArea))
+        );
+    });
+
+
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = filteredProjects.slice(indexOfFirstItem, indexOfLastItem);
+
+    const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+
+    const handleNextPage = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const handlePreviousPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const handleSearch = () => {
+        setCurrentPage(1);
+    };
+
+
+    // Get Data Category
+
+
+
     const imgsetin = FilterProducts.map((it) => (
-        <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
+        <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item lg={4} md={6} sm={6}>
             <Link to={`/Commercial/${id}/${it.id}`}>
                 <div className="CONTER">
                     <div className="bg-back">
@@ -165,6 +165,7 @@ const Company = () => {
                         </div>
                         <div className="title-dis7" style={{ display: "flex" }}>
                             <h2>
+                                
                                 Home{" "}
                                 <Link to={"/"}>
                                     {" "}
@@ -252,16 +253,21 @@ const Company = () => {
                     <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
                         {imgsetin}
                     </Grid>
-
-                    {/* <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-                        <div onClick={'handlePreviousPage'} style={{ cursor: currentPage > 1 ? 'pointer' : 'default', opacity: currentPage > 1 ? 1 : 0.5 }}>
-                            <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
-                        </div>
-                        <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>
-                        <div onClick={'handleNextPage'} style={{ cursor: currentPage < 'totalPages' ? 'pointer' : 'default', opacity: currentPage < 'totalPages' ? 1 : 0.5 }}>
-                            <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
-                        </div>
-                    </div> */}
+                    {filteredProjects.length >= 6 && (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+        <div 
+            onClick={handlePreviousPage} 
+        >
+            <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
+        </div>
+        <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>
+        <div 
+            onClick={handleNextPage} 
+        >
+            <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
+        </div>
+    </div>
+)}
                 </div>
 
 

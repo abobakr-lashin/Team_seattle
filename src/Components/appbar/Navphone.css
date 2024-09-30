@@ -822,8 +822,8 @@ overflow-y: scroll !important;
     .Buys .custom-dropdown-menu {
         width: 100%;
         left: -45px;
-        top: -22px;
-        width: 103%;
+        top: -0;
+        width: 100%;
     }
   .Buys h3 {
     width: 100%;
@@ -864,7 +864,7 @@ overflow-y: scroll !important;
     .RENT .custom-dropdown-menu {
       width: 60vw;
       left: -7% !important;
-      top: -61px;
+      top: 0px;
       height: auto;
     }
   
@@ -950,7 +950,7 @@ flex-direction: column;
   width: 100vw;
   position: absolute;
   left: -46px !important;
-  top: -228px;
+  top: 0;
   background-color: #bfb78f;
   list-style: none;
   padding: 0 1px;
@@ -1071,7 +1071,7 @@ flex-direction: column;
     .Buys .custom-dropdown-menu {
       width: 100%;
       left: -34px;
-      top: -63px;
+      top: 0px;
       width: 100%;
   }
     .dis-paly li {
@@ -1099,7 +1099,7 @@ flex-direction: column;
     .RENT .custom-dropdown-menu {
       width: 60vw;
       left: -7% !important;
-      top: -111px;
+      top: 0px;
       height: auto;
   }
     .RENT .dis-paly2 {
@@ -1175,7 +1175,7 @@ flex-direction: column;
       width: 100vw;
       position: absolute;
       left: -31px !important;
-      top: -428px;
+      top: 0;
       background-color: #bfb78f;
       list-style: none;
       padding: 0 1px;
@@ -1205,7 +1205,7 @@ flex-direction: column;
       width: 100vw;
       position: absolute;
       left: -26px !important;
-      top: -381px;
+      top: 0;
       background-color: #bfb78f;
       list-style: none;
       padding: 0 1px;
@@ -1232,7 +1232,7 @@ flex-direction: column;
       width: 100vw;
       position: absolute;
       left: -30px !important;
-      top: -312px;
+      top: 0;
       background-color: #bfb78f;
       list-style: none;
       padding: 0 1px;
@@ -1255,7 +1255,7 @@ flex-direction: column;
       width: 100vw;
       position: absolute;
       left: -27px !important;
-      top: -265px;
+      top: 0;
       background-color: #bfb78f;
       list-style: none;
       padding: 0 1px;
@@ -1311,7 +1311,7 @@ flex-direction: column;
   }
   .developers .custom-dropdown-menu {
     overflow-y: scroll;
-    top: -215px;
+    top: 0;
 }
 .developers .dis-buy h4 {
   margin-left: 0px;
@@ -1391,7 +1391,7 @@ flex-direction: column;
   .Buys .custom-dropdown-menu {
     width: 100%;
     left: -45px;
-    top: -69px;
+    top: -0;
     width: 103%;
 }
     /* .RENT */
@@ -1466,7 +1466,7 @@ flex-direction: column;
     .Buys .custom-dropdown-menu {
         width: 100%;
         left: -45px;
-        top: -22px;
+        top: 0;
         width: 107%;
     }
     .imgNbuy img {

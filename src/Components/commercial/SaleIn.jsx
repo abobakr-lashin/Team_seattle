@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Commercial.css";
 import FormN from "../appbar/FormN";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Footer from "../footer/Footer";
@@ -9,36 +8,37 @@ import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { Grid } from "@mui/material";
+import "./Commercial.css";
 
 const CustomPrevArrow = (props) => {
     const { className, onClick } = props;
-
-
     return (
-        <div
-            className={`${className} custom-prev-arrow`}
-            onClick={onClick}
-        >
-            {/* يمكنك استخدام أي محتوى تريده هنا مثل نص أو عنصر SVG */}
-            <span></span> {/* استخدام رمز "أقل من" كرمز سهم */}
-        </div>
+      <div
+        className={`${className} custom-prev-arrow`}
+        onClick={onClick}
+      >
+        <span></span>
+      </div>
     );
-};
-
-const CustomNextArrow = (props) => {
+  };
+  
+  const CustomNextArrow = (props) => {
     const { className, onClick } = props;
     return (
-        <div
-            className={`${className} custom-next-arrow`}
-            onClick={onClick}
-        >
-            {/* يمكنك استخدام أي محتوى تريده هنا مثل نص أو عنصر SVG */}
-            <span></span> {/* استخدام رمز "أكبر من" كرمز سهم */}
-        </div>
+      <div
+        className={`${className} custom-next-arrow`}
+        onClick={onClick}
+      >
+        {/* يمكنك استخدام أي محتوى تريده هنا مثل نص أو عنصر SVG */}
+        <span></span> {/* استخدام رمز "أكبر من" كرمز سهم */}
+      </div>
     );
-};
-
+  };
+  
 export default function SaleIn() {
+    const [data, setData] = useState([])
+
     const settings = {
         centerMode: false,
         centerPadding: "auto",
@@ -51,22 +51,20 @@ export default function SaleIn() {
         prevArrow: <CustomPrevArrow />,
         nextArrow: <CustomNextArrow />,
         responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                },
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
             },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
             },
+          },
         ],
-    };
-    const [data, setData] = useState([])
-
+      };
     // Get Data from Firestore
     const GetDataFireStore = async () => {
         try {
@@ -87,7 +85,11 @@ export default function SaleIn() {
 
     const imgsetin = data.map((it) => {
         return(
-        <Link to={`/Commercial/${it.category}/${it.id}`} key={it.id} className="CONTER">
+            <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
+
+        <Link to={`/Commercial/${it.category}/${it.id}`}  >
+        <div className="CONTER">
+
             <div className="bg-back">
                 <div className="img-imgSaleIn">
                     <img className="imgSaleIn" src={it.imageCart} alt="Property" />
@@ -120,23 +122,16 @@ export default function SaleIn() {
                     </h6>
                 </div>
             </div>
+            </div>
+
         </Link>
+        </Grid>
+
     )});
 
     return (
-        <div>
-            <div className="grop-title">
-                <div className="img-dis">
-                    <img src="/uploads/img/marpa.png" alt="" />
-                </div>
-                <div className="title-dis7" style={{ display: "flex" }}>
-                    <h2>
-                        <div style={{ textTransform: "uppercase", fontSize: "50px" }}>
-                            offices for sale in uae
-                        </div>
-                    </h2>
-                </div>
-            </div>
+        <div className="Commercial2">
+     
             <div className="h-5vh"></div>
 
             <Slider {...settings}>{imgsetin}</Slider>

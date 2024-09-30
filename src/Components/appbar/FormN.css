@@ -108,6 +108,9 @@
   font-size: 20px !important;
   margin: 2.5px;
 }
+.css-15byy4f-MuiFormControl-root-MuiTextField-root{
+  background-color: rgba(0, 0, 0, 0) !important;
+}
 
 .submit {
   margin: 30px !important;

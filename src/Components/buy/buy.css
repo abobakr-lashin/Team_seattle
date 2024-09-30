@@ -273,9 +273,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .buy .img-imgSaleIn h5 {
-    width: 95px;
-  }
+
   .buy .input-style-1 {
     width: 124px;
   }
@@ -289,11 +287,7 @@
   .buy .input-style-7 {
     width: 140px;
   }
-  .buy .img-imgSaleIn h5 {
-    width: 100% !important;
-    font-size: 13px;
-    top: 80%;
-  }
+
   .buy .img-imgSaleIn h6 {
     top: 87%;
     padding: 20px;

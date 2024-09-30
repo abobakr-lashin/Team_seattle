@@ -43,7 +43,6 @@ export default function LandingPageSell() {
         focusOnSelect: true,
         infinite: true,
         speed: 600,
-        // autoplay: true,
         autoplaySpeed: 4000,
         responsive: [
             {
