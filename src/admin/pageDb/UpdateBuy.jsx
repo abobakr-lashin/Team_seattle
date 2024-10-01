@@ -27,6 +27,7 @@ export default function UpdateBuy() {
     const [CategoryDevelopers, setCategoryDevelopers] = useState([]);
     const [CategoryPlan, setCategoryPlan] = useState([]);
     const [formData, setFormData] = useState({});
+    const [CateBuyLocation, setCateBuyLocation] = useState({});
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -98,7 +99,7 @@ export default function UpdateBuy() {
                 text: formData.text,
                 imageCart: updatedBlogImageCart,
                 imageSlider: updatedCartImageSlider,
-                CategoryBuyLocation: formData.CategoryBuyLocation,
+                CateBuyLocation,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
                 date: new Date().toDateString(),
@@ -403,11 +404,20 @@ export default function UpdateBuy() {
                     </div>
                     <div className="form-group">
                         <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({ ...formData, CategoryBuyLocation: e.target.value });
+                            setCateBuyLocation({ ...CateBuyLocation, location: e.target.value });
                         }}>
                             <option hidden >Select Category Location</option>
                             {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
+                                return <option key={it.id} value={it?.category?.location}>{it?.category?.location}</option>
+                            })}
+                        </select>
+
+                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
+                            setCateBuyLocation({ ...CateBuyLocation, center: e.target.value });
+                        }}>
+                            <option hidden >Select Category Center Location</option>
+                            {CategoryBuyLocation.map((it) => {
+                                return <option key={it.id} value={it?.category?.center}>{it?.category?.center}</option>
                             })}
                         </select>
                     </div>

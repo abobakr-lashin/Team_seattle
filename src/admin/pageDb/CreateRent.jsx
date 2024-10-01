@@ -167,7 +167,7 @@ export default function AddCardBuy() {
 
         // get Category Locations  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
+            const querySnapshot = await getDocs(collection(firestore, "CategoryRentLocation"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()

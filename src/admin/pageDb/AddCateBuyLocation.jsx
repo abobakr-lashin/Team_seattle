@@ -23,21 +23,20 @@ const VisuallyHiddenInput = styled('input')({
 
 const AddCateBuyLocation = () => {
     const Navigste = useNavigate()
-    const [category, setCategory] = useState('');
     const [FileImage, setFileImage] = useState(null);
     const [categories, setCategories] = useState([]);
     const [fileUrl, setfileUrl] = useState('');
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [locationCenter, setLocationCenter] = useState('');
+    const [category, setCategory] = useState({
+        location: '',
+        center: '',
+    });
+
+
 
     const handleAddCategory = async (e) => {
         e.preventDefault();
-        if (!category.trim()) {
-            toast.error('Category already exists!');
-            return;
-        }
-
         setLoading(true);
         setError(null);
 
@@ -49,15 +48,12 @@ const AddCateBuyLocation = () => {
 
             if (querySnapshot.empty) {
                 await addDoc(categoriesRef, {
-                    name: {
-                        location: category,
-                        Center: locationCenter,
-                    },
                     createdAt: new Date(),
+                    category
                 });
                 toast.success('Category added successfully!.')
                 setCategory('');
-                Navigste('/dashboard')
+                Navigste('/dashboard/Developers')
                 return
             } else {
                 toast.error('Category already exists!');
@@ -78,17 +74,23 @@ const AddCateBuyLocation = () => {
                 label="Category"
                 variant="outlined"
                 fullWidth
-                onChange={(e) => setCategory(e.target.value)}
+                onChange={(e) => {
+                    setCategory({ ...category, location: e.target.value });
+                }}
                 sx={{ mb: 2 }}
             />
 
             <TextField
-                label="Location Center"
+                label="center Location"
                 variant="outlined"
                 fullWidth
-                onChange={(e) => setLocationCenter(e.target.value)}
+                onChange={(e) => {
+                    setCategory({ ...category, center: e.target.value });
+                }}
                 sx={{ mb: 2 }}
             />
+
+
 
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
                 {loading ? (

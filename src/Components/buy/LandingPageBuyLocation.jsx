@@ -32,7 +32,9 @@ export default function LandingPageBuyLocation() {
             console.error("Error fetching documents: ", error);
         }
     };
-    const filterCartId = cartId.filter((it) => it.CategoryBuyLocation === id);
+
+    console.log(cartId);
+    const filterCartId = cartId.filter((it) => it?.CateBuyLocation?.location === id);
 
     const settings = {
         centerMode: true,
@@ -75,7 +77,6 @@ export default function LandingPageBuyLocation() {
         GetDataFireStore();
     }, [id]);
 
-    console.log(filterCartId[0]?.stars);
 
     const imgsetsin = filterCartId?.map((it) => (
         <div className="dis-play1">
@@ -189,7 +190,7 @@ export default function LandingPageBuyLocation() {
                                 <div className=" Listing">Listing by</div>
                                 <div className="name">{filterCartId[0]?.listingName}</div>
                                 <div className="contact ">
-                                <Rating name="size-medium" value={filterCartId[0]?.stars || 0} readOnly />
+                                    <Rating name="size-medium" defaultValue={''} readOnly />
                                 </div>
                             </div>
                         </div>
@@ -204,8 +205,15 @@ export default function LandingPageBuyLocation() {
             </Grid>
             <div className="map">
                 <div className="h-5vh"></div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109180.12447447746!2d30.03728652547649!3d31.22408458346241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c49126710fd3%3A0xb4e0cda629ee6bb9!2z2KfZhNil2LPZg9mG2K_YsdmK2KnYjCDZhdit2KfZgdi42Kkg2KfZhNil2LPZg9mG2K_YsdmK2Kk!5e0!3m2!1sar!2seg!4v1726576245870!5m2!1sar!2seg"></iframe>
-                <ContactusForm />
+                <iframe
+                    src={filterCartId[0]?.map}
+                    width="600"
+                    height="450"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>                <ContactusForm />
             </div>
             <div className="h-5vh"></div>
             <Footer />

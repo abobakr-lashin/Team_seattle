@@ -24,6 +24,10 @@ export default function AddCardBuy() {
     const [CategoryBuyLocation, setCategoryBuyLocation] = useState([])
     const [CategoryDevelopers, setCategoryDevelopers] = useState([])
     const [CategoryPlan, setCategoryPlan] = useState([])
+    const [CateBuyLocation, setCateBuyLocation] = useState({
+        location:'',
+        center:'',
+    });
     const [formData, setFormData] = useState({
         title: '',
         text: '',
@@ -41,10 +45,6 @@ export default function AddCardBuy() {
         map: '',
         category: '',
         listingImage: null,
-        CategoryBuyLocation: {
-            location:'',
-            center: '',
-        },
         CategoryDevelopers: '',
         CategoryPlan: '',
     });
@@ -110,10 +110,8 @@ export default function AddCardBuy() {
                 baths: formData.baths,
                 square: formData.square,
                 parking: formData.parking,
-                Categorylocation: {
-                    location: formData.Categorylocation.location,
-                    center: formData.Categorylocation.center,
-                },
+                location: formData.location,
+                monthlyPayment: formData.monthlyPayment,
                 listingName: formData.listingName,
                 stars: formData.stars,
                 email: formData.email,
@@ -122,7 +120,7 @@ export default function AddCardBuy() {
                 text: formData.text,
                 imageCart: BgImageCard,
                 imageSlider: uploadedFileURLs,
-                location: formData.location,
+                CateBuyLocation,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
                 date: new Date().toDateString(),
@@ -156,9 +154,6 @@ export default function AddCardBuy() {
             setLoading(false);
         }
     };
-
-
-    console.log(formData);
 
     // Get Data Category
     const getCategories = async () => {
@@ -308,21 +303,13 @@ export default function AddCardBuy() {
                             value={formData.parking}
                             onChange={handleInputChange}
                         />
-
                         <input
                             type="text"
                             name="location"
                             placeholder="Location"
                             maxLength="50"
-                            value={formData.location.location}
-                            onChange={(e) => {
-                                setFormData({
-                                    ...formData,
-                                    location: {
-                                        location: e.target.value
-                                    }
-                                });
-                            }}
+                            value={formData?.name?.location}
+                            onChange={handleInputChange}
                         />
                     </div>
                     <h1>Landing Page</h1>
@@ -410,31 +397,20 @@ export default function AddCardBuy() {
                     </div>
                     <div className="form-group">
                         <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({
-                                ...formData,
-                                Categorylocation: {
-                                    ...formData.Categorylocation,
-                                    location: e.target.value
-                                }
-                            });
+                            setCateBuyLocation({...CateBuyLocation , location: e.target.value});
                         }}>
                             <option hidden >Select Category Location</option>
                             {CategoryBuyLocation.map((it) => {
-                                return <option key={it?.id} value={it?.name.location}>{it?.name?.location}</option>
+                                return <option key={it.id} value={it?.category?.location}>{it?.category?.location}</option>
                             })}
                         </select>
+
                         <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({
-                                ...formData,
-                                Categorylocation: {
-                                    ...formData.Categorylocation,
-                                    center: e.target.value
-                                }
-                            });
+                            setCateBuyLocation({...CateBuyLocation , center: e.target.value});
                         }}>
-                            <option hidden >Select Category Location</option>
+                            <option hidden >Select Category Center Location</option>
                             {CategoryBuyLocation.map((it) => {
-                                return <option key={it?.id} value={it?.name?.Center}>{it?.name?.Center}</option>
+                                return <option key={it.id} value={it?.category?.center}>{it?.category?.center}</option>
                             })}
                         </select>
                     </div>
@@ -460,7 +436,7 @@ export default function AddCardBuy() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <CKEditor
+                    <CKEditor
                             editor={ClassicEditor}
                             data={formData.text || ""}
                             onChange={(event, editor) => {
@@ -468,7 +444,7 @@ export default function AddCardBuy() {
                                 setFormData({ ...formData, text: data });
                             }}
                             config={{
-                                height: '400px',
+                                height: '400px', 
                             }}
                         />
                     </div>

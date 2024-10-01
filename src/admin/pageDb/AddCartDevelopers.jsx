@@ -67,7 +67,7 @@ export default function AddCartDevelopers() {
                 imageCart: null,
                 company:''
             });
-            Navigate('/dashboard/Developers')
+            Navigate('dashboard/Developers')
         } catch (err) {
             toast.error('Error submitting data: ' + err.message);
             console.error('Error submitting data:', err);
@@ -154,8 +154,8 @@ export default function AddCartDevelopers() {
                     }} name="location" id="location">
                         <option hidden>Select Location</option>
                         {CategoryBuyLocation.map((item) => (
-                            <option key={item.id} value={item.name}>
-                                {item.name}
+                            <option key={item.id} value={item?.category?.location}>
+                                {item?.category?.location}
                             </option>
                         ))}
                     </select>

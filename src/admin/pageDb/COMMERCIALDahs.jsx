@@ -46,31 +46,6 @@ export default function COMMERCIALDahs() {
     const [error, setError] = useState(null);
     const [formDataImage, setformDataImage] = useState('')
     const [data, setData] = useState([])
-    const [CategoryBuyLocation, setCategoryBuyLocation] = useState([])
-    const [CategoryDevelopers, setCategoryDevelopers] = useState([])
-    const [CategoryPlan, setCategoryPlan] = useState([])
-    const [formData, setFormData] = useState({
-        title: '',
-        text: '',
-        price: '',
-        currency: '',
-        beds: '',
-        baths: '',
-        square: '',
-        qualities: '',
-        location: '',
-        monthlyPayment: '',
-        listingName: '',
-        stars: '',
-        email: '',
-        map: '',
-        category: '',
-        listingImage: null,
-        CategoryBuyLocation: '',
-        CategoryDevelopers: '',
-        CategoryPlan: '',
-    });
-
 
     // Handle Delete Item
     const handleDelete = async (id) => {

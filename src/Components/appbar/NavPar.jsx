@@ -302,8 +302,8 @@ const Navbar = () => {
                                                     {language?.map((it) => {
                                                         return (
                                                             <li>
-                                                                <Link to={`/Buy/Location/${it.name}`}>
-                                                                    {it.name}
+                                                                <Link to={`/Buy/Location/${it?.category?.location}`}>
+                                                                    {it?.category?.location}
                                                                 </Link>
                                                             </li>
                                                         );
@@ -1094,7 +1094,7 @@ const Navbar = () => {
                                                         <img src={dataBanner[0]?.image1} alt="" />
                                                     </div>
                                                     <div style={{
-                                                        height:'250px'
+                                                        height: '250px'
                                                     }} className="imgNbuy2">
                                                         <img src={dataBanner[0]?.image2} alt="" />
                                                     </div>
