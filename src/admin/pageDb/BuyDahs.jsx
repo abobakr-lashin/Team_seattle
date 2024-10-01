@@ -184,7 +184,7 @@ export default function BuyDahs() {
                                     <StyledTableCell align="center">{it.title}</StyledTableCell>
                                     <StyledTableCell align="center">{it.text.slice(0, 30)}...</StyledTableCell>
                                     <StyledTableCell align="center">{it.price}</StyledTableCell>
-                                    <StyledTableCell align="center">{it.location}</StyledTableCell>
+                                    <StyledTableCell align="center">{it?.location?.location}</StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {
                                         Navigate(`/dashboard/EditBuy/${it.id}`)
                                     }} style={{ backgroundColor: '#1976d2' }}>Update</button></StyledTableCell>

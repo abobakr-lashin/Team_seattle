@@ -230,7 +230,7 @@ export default function RentDahs() {
                                     <StyledTableCell align="center">{it.title}</StyledTableCell>
                                     <StyledTableCell align="center">{it?.text?.slice(0, 30)}...</StyledTableCell>
                                     <StyledTableCell align="center">{it.price}</StyledTableCell>
-                                    <StyledTableCell align="center">{it.location}</StyledTableCell>
+                                    <StyledTableCell align="center">{it?.location}</StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {
                                         Navigate(`/dashboard/EditRent/${it.id}`)
                                     }} style={{ backgroundColor: '#1976d2' }}>Update</button></StyledTableCell>

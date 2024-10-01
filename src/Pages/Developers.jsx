@@ -27,7 +27,7 @@ export default function Developers() {
         id: doc.id,
         ...doc.data(),
       }));
-      const fiterData = docs.filter((it)=> it.company === id)
+      const fiterData = docs.filter((it) => it.company === id)
       setDataCart(fiterData);
     } catch (error) {
       console.error("Error fetching documents: ", error);
@@ -102,7 +102,7 @@ export default function Developers() {
             <div className="dis">
               <div>
                 <div className="btn-t">
-                  <Link to={`/Buy/Location/${it.location}`}>buy Property</Link>
+                  <Link to={`/Buy/Category/Location/${it.location}`}>buy Property</Link>
                 </div>
               </div>
             </div>

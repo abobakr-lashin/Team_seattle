@@ -41,7 +41,10 @@ export default function AddCardBuy() {
         map: '',
         category: '',
         listingImage: null,
-        CategoryBuyLocation: '',
+        CategoryBuyLocation: {
+            location:'',
+            center: '',
+        },
         CategoryDevelopers: '',
         CategoryPlan: '',
     });
@@ -107,8 +110,10 @@ export default function AddCardBuy() {
                 baths: formData.baths,
                 square: formData.square,
                 parking: formData.parking,
-                location: formData.location,
-                monthlyPayment: formData.monthlyPayment,
+                Categorylocation: {
+                    location: formData.Categorylocation.location,
+                    center: formData.Categorylocation.center,
+                },
                 listingName: formData.listingName,
                 stars: formData.stars,
                 email: formData.email,
@@ -117,7 +122,7 @@ export default function AddCardBuy() {
                 text: formData.text,
                 imageCart: BgImageCard,
                 imageSlider: uploadedFileURLs,
-                CategoryBuyLocation: formData.CategoryBuyLocation,
+                location: formData.location,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
                 date: new Date().toDateString(),
@@ -151,6 +156,9 @@ export default function AddCardBuy() {
             setLoading(false);
         }
     };
+
+
+    console.log(formData);
 
     // Get Data Category
     const getCategories = async () => {
@@ -300,13 +308,21 @@ export default function AddCardBuy() {
                             value={formData.parking}
                             onChange={handleInputChange}
                         />
+
                         <input
                             type="text"
                             name="location"
                             placeholder="Location"
                             maxLength="50"
-                            value={formData.location}
-                            onChange={handleInputChange}
+                            value={formData.location.location}
+                            onChange={(e) => {
+                                setFormData({
+                                    ...formData,
+                                    location: {
+                                        location: e.target.value
+                                    }
+                                });
+                            }}
                         />
                     </div>
                     <h1>Landing Page</h1>
@@ -394,11 +410,31 @@ export default function AddCardBuy() {
                     </div>
                     <div className="form-group">
                         <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({ ...formData, CategoryBuyLocation: e.target.value });
+                            setFormData({
+                                ...formData,
+                                Categorylocation: {
+                                    ...formData.Categorylocation,
+                                    location: e.target.value
+                                }
+                            });
                         }}>
                             <option hidden >Select Category Location</option>
                             {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
+                                return <option key={it?.id} value={it?.name.location}>{it?.name?.location}</option>
+                            })}
+                        </select>
+                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
+                            setFormData({
+                                ...formData,
+                                Categorylocation: {
+                                    ...formData.Categorylocation,
+                                    center: e.target.value
+                                }
+                            });
+                        }}>
+                            <option hidden >Select Category Location</option>
+                            {CategoryBuyLocation.map((it) => {
+                                return <option key={it?.id} value={it?.name?.Center}>{it?.name?.Center}</option>
                             })}
                         </select>
                     </div>

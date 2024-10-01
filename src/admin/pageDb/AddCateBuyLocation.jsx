@@ -29,7 +29,7 @@ const AddCateBuyLocation = () => {
     const [fileUrl, setfileUrl] = useState('');
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
-
+    const [locationCenter, setLocationCenter] = useState('');
 
     const handleAddCategory = async (e) => {
         e.preventDefault();
@@ -43,13 +43,16 @@ const AddCateBuyLocation = () => {
 
         try {
             // Cheake Category 
-            const categoriesRef = collection(firestore,  'CategoryBuyLocation');
-            const q = query(categoriesRef, where('category', '==', category));
+            const categoriesRef = collection(firestore, 'CategoryBuyLocation');
+            const q = query(categoriesRef, where('name', '==', category));
             const querySnapshot = await getDocs(q);
 
             if (querySnapshot.empty) {
                 await addDoc(categoriesRef, {
-                    name: category,
+                    name: {
+                        location: category,
+                        Center: locationCenter,
+                    },
                     createdAt: new Date(),
                 });
                 toast.success('Category added successfully!.')
@@ -79,29 +82,13 @@ const AddCateBuyLocation = () => {
                 sx={{ mb: 2 }}
             />
 
-            <List>
-                <img style={{ width: '200px' }} src={fileUrl} alt="" />
-            </List>
-
-            <Button
-                sx={{ mt: 2, mb: 2 }}
-                component="label"
-                role={undefined}
-                variant="contained"
-                tabIndex={-1}
-                startIcon={<CloudUploadIcon />}
-            >
-                Upload files
-                <VisuallyHiddenInput
-                    type="file"
-                    onChange={(e) => {
-                        const file = e.target.files[0]
-                        setFileImage(file)
-                        setfileUrl(URL.createObjectURL(file))
-                    }}
-                    multiple
-                />
-            </Button>
+            <TextField
+                label="Location Center"
+                variant="outlined"
+                fullWidth
+                onChange={(e) => setLocationCenter(e.target.value)}
+                sx={{ mb: 2 }}
+            />
 
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
                 {loading ? (

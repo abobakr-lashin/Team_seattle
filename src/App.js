@@ -76,6 +76,7 @@ import BlogsDahs from './admin/pageDb/BlogsDahs';
 import AddBanner from './admin/pageDb/AddBanner';
 import DevelopersDahs from './admin/pageDb/DevelopersDahs';
 import AddCartDevelopers from './admin/pageDb/AddCartDevelopers';
+import CategoryDeveloper from './Pages/CategoryDeveloper';
 
 export default function App() {
     return (
@@ -117,6 +118,7 @@ export default function App() {
 
                     <Route path="BuyHome" element={<BuyHome />} />
                     <Route path="Developers/:id" element={<Developers />} />
+                    <Route path="/Buy/Category/Location/:id" element={<CategoryDeveloper />} />
                     <Route path="Landingpage" element={<Landingpage />} />
                     <Route path="CareersForm" element={<CareersForm />} />
                     <Route path="ContactusForm" element={<ContactusForm />} />
