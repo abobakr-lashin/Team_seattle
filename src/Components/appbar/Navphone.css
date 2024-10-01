@@ -1060,7 +1060,7 @@ flex-direction: column;
         list-style: disc;
         padding: 11px;
         font-weight: 500;
-        font-size: 27px;
+        font-size: 26px;
         width: 100%;
     }
     .Buys .dis-paly ul {
@@ -1143,9 +1143,15 @@ flex-direction: column;
     /* .Commercial */
     .Commercial h3 {
       width: 100%;
-      font-size: 29px;
+      font-size: 28px;
       font-weight: bold;
   }
+  .Commercial .custom-navbar-item {
+    width: 100%;
+    color: white !important;
+    margin-left: 5%;
+    font-size: 20px;
+}
   .Commercial ul h4 {
     font-size: 28px;
     width: 100%;
@@ -1305,7 +1311,7 @@ flex-direction: column;
     /*  developers*/
 
     .developers h3 {
-      font-size: 1.6rem;
+      font-size: 22px;
       margin-left: 0;
       font-weight: bold;
   }
@@ -1327,6 +1333,29 @@ flex-direction: column;
 }
 .developers .dis-paly2 .aldar img {
   width: 82px;
+}    
+.developers .dis-buy h4 {
+  margin-left: 0px;
+  font-size: 1.9rem;
+  font-weight: 550;
+}
+.developers .dis-paly2 {
+  display: flex;
+  font-size: 20px;
+  margin: 9px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.developers .dis-paly2 {
+  display: flex;
+  font-size: 20px;
+  margin: 9px auto;
+  align-items: center;
+  width: 100%;
+  gap: 0px;
+  justify-content: space-between;
 }
     /*  developers*/
 
@@ -1451,6 +1480,15 @@ flex-direction: column;
     display: flex;
     justify-content: end !important;
 }
+.developers h3 {
+  font-size: 1.3rem;
+  margin-left: 0;
+  font-weight: bold;
+}
+.developers .dis-paly2 .aldar img {
+  width: 75px;
+}
+
         /*  developers*/
 
   }
@@ -1531,9 +1569,22 @@ flex-direction: column;
             width: 68px;
             margin: 1px;
         }
-
+    .developers h3 {
+            font-size: 33px;
+            margin-left: 0;
+            font-weight: bold;
+        }
             /*  developers*/
-
+            .Commercial ul h4 {
+              font-size: 25px;
+              width: 127%;
+              font-weight: 550 !important;
+              margin-left: -40px;
+          }
+          .developers .dis-paly2 .aldar img {
+            width: 54px;
+            margin: 1px;
+        }
   }
   /* phone */
 
