@@ -41,7 +41,7 @@ export default function AreasDahs() {
         setLoading(true);
         if (window.confirm('Are you sure you want to delete')) {
             try {
-                await deleteDoc(doc(firestore, 'listBlogsCartRent', id));
+                await deleteDoc(doc(firestore, 'listBlogsCartAreas', id));
                 console.log('Document successfully deleted!');
                 getCategories();
                 toast.success('Document successfully deleted')
@@ -58,7 +58,7 @@ export default function AreasDahs() {
     // Get Data Cart Firebase
     const getCategories = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartRent"));
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartAreas"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
@@ -104,7 +104,7 @@ export default function AreasDahs() {
                 }} onClick={() => {
                     Navigate('/dashboard/CreateAreas')
                 }}>
-                    Add Cart Rent
+                    Add Cart Areas
                 </button>
                 <button style={{
                     width: '100%',
@@ -116,21 +116,7 @@ export default function AreasDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddCategoryRentPlan')
-                }}>
-                    Add Category Rent
-                </button>
-                <button style={{
-                    width: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    outline: 'none',
-                    border: '1px solid #ccc',
-                    padding: '8px',
-                    color: '#234232',
-                }} onClick={() => {
-                    Navigate('/dashboard/AddLocationRent')
+                    Navigate('/dashboard/AddCategoryBuyLocation')
                 }}>
                     Add Category Location
                 </button>
@@ -141,10 +127,8 @@ export default function AreasDahs() {
                         <TableHead>
                             <TableRow>
                                 <StyledTableCell width={200} align='center'>image</StyledTableCell>
-                                <StyledTableCell width={200} align="center">Title</StyledTableCell>
-                                <StyledTableCell width={200} align="center">Description</StyledTableCell>
-                                <StyledTableCell align="center">Price</StyledTableCell>
-                                <StyledTableCell align="center">Location</StyledTableCell>
+                                <StyledTableCell width={200} align="center">Location</StyledTableCell>
+                                <StyledTableCell width={200} align="center">Center</StyledTableCell>
                                 <StyledTableCell width={150} align="center">Update</StyledTableCell>
                                 <StyledTableCell width={150} align="center">Delete</StyledTableCell>
                             </TableRow>
@@ -156,12 +140,10 @@ export default function AreasDahs() {
                                     <StyledTableCell>
                                         <img style={{ width: '200px' }} src={it.imageCart} alt="" />
                                     </StyledTableCell>
-                                    <StyledTableCell align="center">{it.title}</StyledTableCell>
-                                    <StyledTableCell align="center">{it?.text?.slice(0, 30)}...</StyledTableCell>
-                                    <StyledTableCell align="center">{it.price}</StyledTableCell>
-                                    <StyledTableCell align="center">{it.location}</StyledTableCell>
+                                    <StyledTableCell align="center">{it.CateBuyLocation.location}</StyledTableCell>
+                                    <StyledTableCell align="center">{it.CateBuyLocation.center}</StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {
-                                        Navigate(`/dashboard/EditRent/${it.id}`)
+                                        Navigate(`/dashboard/EditAreas/${it.id}`)
                                     }} style={{ backgroundColor: '#1976d2' }}>Update</button></StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {
                                         handleDelete(it.id)
@@ -182,7 +164,7 @@ export default function AreasDahs() {
                         textDecoration: 'underline',
                         display: 'inline-block'
                     }} onClick={() => {
-                        Navigate('/dashboard/CreateRent')
+                        Navigate('/dashboard/CreateAreas')
                     }}>Add New Data</button>
                 </p>}
             </div>

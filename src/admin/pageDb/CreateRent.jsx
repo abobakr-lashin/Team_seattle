@@ -20,7 +20,8 @@ export default function AddCardBuy() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [formDataImage, setformDataImage] = useState('')
-    const [CategoryBuyLocation, setCategoryBuyLocation] = useState([])
+    const [CategoryBuyLocation, setCategoryBuyLocation] = useState([]);
+    const [CategoryLocation, setCategoryLocation] = useState({})
     const [CategoryDevelopers, setCategoryDevelopers] = useState([])
     const [CategoryPlan, setCategoryPlan] = useState([])
     const [formData, setFormData] = useState({
@@ -115,7 +116,7 @@ export default function AddCardBuy() {
                 text: formData.text,
                 imageCart: BgImageCard,
                 imageSlider: uploadedFileURLs,
-                CategoryBuyLocation: formData.CategoryBuyLocation,
+                CategoryLocation,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
                 date: new Date().toDateString(),
@@ -167,7 +168,7 @@ export default function AddCardBuy() {
 
         // get Category Locations  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "CategoryRentLocation"));
+            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -391,11 +392,19 @@ export default function AddCardBuy() {
                     </div>
                     <div className="form-group">
                         <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({ ...formData, CategoryBuyLocation: e.target.value });
+                            setCategoryLocation({...CategoryLocation , location: e.target.value});
                         }}>
                             <option hidden >Select Category Location</option>
                             {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
+                                return <option key={it.id} value={it.category.location}>{it.category.location}</option>
+                            })}
+                        </select>
+                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
+                            setCategoryLocation({...CategoryLocation , center: e.target.value});
+                        }}>
+                            <option hidden >Select Category Center Location</option>
+                            {CategoryBuyLocation.map((it) => {
+                                return <option key={it.id} value={it.category.center}>{it.category.center}</option>
                             })}
                         </select>
                     </div>

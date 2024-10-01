@@ -35,7 +35,7 @@ export default function Listpadg() {
     { text: "COMMERCIAL", ico: CreateIcon, path: "COMMERCIAL" },
     { text: "Sell", ico: CreateIcon, path: "Sell" },
     { text: "Developers", ico: CreateIcon, path: "/dashboard/Developers" },
-    { text: "Areas", ico: CreateIcon, path: "AreasDahs" },
+    { text: "Areas", ico: CreateIcon, path: "Areas" },
 
   ]
   return (

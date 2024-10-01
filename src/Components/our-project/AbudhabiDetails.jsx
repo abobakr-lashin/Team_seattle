@@ -1,41 +1,41 @@
-import { Grid } from '@mui/material';
-import React, { useState } from 'react';
+import { Box, CircularProgress, Grid } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import SearchIcon from '@mui/icons-material/Search';
 import "./project.css";
+import { collection, getDocs } from 'firebase/firestore';
+import { firestore } from '../../firebaseConfig';
+import { Link } from 'react-router-dom';
 
 export default function AbudhabiDetails() {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState(''); // لتتبع مصطلح البحث
+    const [data, setData] = useState([]); // لتخزين البيانات من الفيستور
+    const [loading, setLoading] = useState(true); // لتحميل البيانات
     const itemsPerPage = 9;
 
-    const ourProject = [
-        { id: 1, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLAN `, Price: " Price from 410,300 AED" },
-        { id: 2, src: "/uploads/developerprojects/export/photo2.png", name: "SAADIYAT ISLAND", Price: " Emaar south" },
-        { id: 3, src: "/uploads/developerprojects/export/photo2.png", name: " YAS ISLAND", Price: " Emaar south" },
-        { id: 4, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Price: " Emaar south" },
-        { id: 5, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`, Price: " Price from 410,300 AED" },
-        { id: 6, src: "/uploads/developerprojects/export/photo2.png", name: "SAADIYAT ISLAND", Price: " Emaar south" },
-        { id: 7, src: "/uploads/developerprojects/export/photo2.png", name: " YAS ISLAND", Price: " Emaar south" },
-        { id: 8, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Price: " Emaar south" },
-        { id: 9, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`, Price: " Price from 410,300 AED" },
-        { id: 10, src: "/uploads/developerprojects/export/photo2.png", name: "SAADIYAT ISLAND", Price: " Emaar south" },
-        { id: 11, src: "/uploads/developerprojects/export/photo2.png", name: " YAS ISLAND", Price: " Emaar south" },
-        { id: 12, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Price: " Emaar south" },
-        { id: 13, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`, Price: " Price from 410,300 AED" },
-        { id: 14, src: "/uploads/developerprojects/export/photo2.png", name: "SAADIYAT ISLAND", Price: " Emaar south" },
-        { id: 15, src: "/uploads/developerprojects/export/photo2.png", name: " YAS ISLAND", Price: " Emaar south" },
-        { id: 16, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Price: " Emaar south" },
-        { id: 17, src: "/uploads/developerprojects/export/photo2.png", name: `AL REEM ISLANّ`, Price: " Price from 410,300 AED" },
-        { id: 18, src: "/uploads/developerprojects/export/photo2.png", name: "SAADIYAT ISLAND", Price: " Emaar south" },
-        { id: 19, src: "/uploads/developerprojects/export/photo2.png", name: " YAS ISLAND", Price: " Emaar south" },
-        { id: 20, src: "/uploads/developerprojects/export/photo2.png", name: "OUR EXPERT WILL HELP YOU", Price: " Emaar south" },
 
-    ];
+    // Get Data Cart Firebase
+    const getCategories = async () => {
+        try {
+            setLoading(true);
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartAreas"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setData(docs);
+        } catch (error) {
+            setLoading(false);
+            console.error("Error fetching documents: ", error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     // تصفية المشاريع بناءً على مصطلح البحث
-    const filteredProjects = ourProject.filter((project) =>
-        project.name.toUpperCase().includes(searchTerm.toUpperCase())
+    const filteredProjects = data.filter((project) =>
+        project.CateBuyLocation.location.toUpperCase().includes(searchTerm.toUpperCase())
     );
 
     const indexOfLastItem = currentPage * itemsPerPage;
@@ -58,26 +58,30 @@ export default function AbudhabiDetails() {
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
-        setCurrentPage(1); // إعادة الصفحة إلى الأولى عند البحث
+        setCurrentPage(1);
     };
 
-    const our = currentItems.map((img) => {
+    const our = currentItems.map((it) => {
         return (
-            <Grid key={img.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
+            <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
                 <div className="all-Abudhabi">
                     <div className="img-Abudhabi">
                         <div
                             className="bg-imga"
-                            style={{ backgroundImage: `url(${img.src})` }}
+                            style={{ backgroundImage: `url(${it.imageCart})` }}
                         ></div>
-                        <h2>{img.name}</h2>
+                        <h2>{it.CateBuyLocation.location}</h2>
                         <h3>
-                            {img.Price}
+                            {it.CateBuyLocation.center}
                         </h3>
                         <div className="dis">
                             <div>
-                                <div className="btn-t">Buy Property </div>
-                                <div className="btn-t">Rent Property</div>
+                                <div className="btn-t">
+                                    <Link to={`/Areas/Buy/category/Location/${it.CateBuyLocation.center}`}>Buy Property</Link>
+                                </div>
+                                <div className="btn-t">
+                                    <Link to={`/Areas/Rent/category/Location/${it.CateBuyLocation.center}`}>Rent Property</Link>
+                                </div>                  
                             </div>
                         </div>
                     </div>
@@ -86,10 +90,21 @@ export default function AbudhabiDetails() {
         );
     });
 
+    useEffect(() => {
+        getCategories();
+    }, []);
+
+
+    if (loading) {
+        return (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <CircularProgress />
+            </Box>
+        );
+    }
+
     return (
         <div>
-
-
             <div className="img-Commercial">
                 <h2 style={{ textTransform: "uppercase" }}>
                     COMMERCIAL PROPERTIES SEND A REQUEST

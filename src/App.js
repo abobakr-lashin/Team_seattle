@@ -77,6 +77,10 @@ import AddBanner from './admin/pageDb/AddBanner';
 import DevelopersDahs from './admin/pageDb/DevelopersDahs';
 import AddCartDevelopers from './admin/pageDb/AddCartDevelopers';
 import CategoryDeveloper from './Pages/CategoryDeveloper';
+import AddCartAreas from './admin/pageDb/AddCartAreas';
+import PageAreas from './Pages/PageAreasbuy';
+import PageAreasbuy from './Pages/PageAreasbuy';
+import PageAreasRent from './Pages/PageAreasRent';
 
 export default function App() {
     return (
@@ -97,7 +101,7 @@ export default function App() {
                     <Route path="Sell" element={<Sell />} />
                     <Route path="Sell/:id" element={<LandingPageSell />} />
 
-                    
+
                     <Route path="LatestNews" element={<LatestNews />} />
                     <Route path="Blog/:id" element={<Blog />} />
                     <Route path="FormMS" element={<FormMS />} />
@@ -115,7 +119,8 @@ export default function App() {
                     <Route path="Rent" element={<Rent />} />
                     <Route path="Rent/:id" element={<LandingPage />} />
                     <Route path="Rent/Filter/:id" element={<RentFilter />} />
-
+                    <Route path="Areas/Buy/category/Location/:id" element={<PageAreasbuy />} />
+                    <Route path="Areas/Rent/category/Location/:id" element={<PageAreasRent />} />
                     <Route path="BuyHome" element={<BuyHome />} />
                     <Route path="Developers/:id" element={<Developers />} />
                     <Route path="/Buy/Category/Location/:id" element={<CategoryDeveloper />} />
@@ -159,7 +164,8 @@ export default function App() {
                         <Route path="CreateSell" element={<CreateSell />} />
                         <Route path="AddLocationSell" element={<AddLocationSell />} />
                         <Route path="AddCategorySellPlan" element={<AddCategorySellPlan />} />
-                        <Route path="AreasDahs" element={<AreasDahs />} />
+                        <Route path="Areas" element={<AreasDahs />} />
+                        <Route path="/dashboard/CreateAreas" element={<AddCartAreas />} />
                         <Route path="/dashboard/Blogs" element={<BlogsDahs />} />
                         <Route path="/dashboard/Blogs/AddBanner" element={<AddBanner />} />
                         <Route path="/dashboard/Developers" element={<DevelopersDahs />} />

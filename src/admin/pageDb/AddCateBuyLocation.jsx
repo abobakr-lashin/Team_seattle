@@ -43,21 +43,21 @@ const AddCateBuyLocation = () => {
         try {
             // Cheake Category 
             const categoriesRef = collection(firestore, 'CategoryBuyLocation');
-            const q = query(categoriesRef, where('name', '==', category));
-            const querySnapshot = await getDocs(q);
+            // const q = query(categoriesRef, where('name', '==', category));
+            // const querySnapshot = await getDocs(q);
 
-            if (querySnapshot.empty) {
-                await addDoc(categoriesRef, {
-                    createdAt: new Date(),
-                    category
-                });
-                toast.success('Category added successfully!.')
-                setCategory('');
-                Navigste('/dashboard/Developers')
-                return
-            } else {
-                toast.error('Category already exists!');
-            }
+            // if (querySnapshot.empty) {
+            await addDoc(categoriesRef, {
+                createdAt: new Date(),
+                category
+            });
+            toast.success('Category added successfully!.')
+            setCategory('');
+            Navigste('/dashboard/Developers')
+            return
+            // } else {
+            //     toast.error('Category already exists!');
+            // }
         } catch (err) {
             setError('Error adding category: ' + err.message);
         } finally {
