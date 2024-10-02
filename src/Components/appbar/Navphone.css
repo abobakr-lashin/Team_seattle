@@ -384,6 +384,10 @@ overflow-y: scroll !important;
   font-weight: 500;
   font-size: 25px !important;
 }
+.Commercial .imgNCommercial img {
+  width: 90%;
+  margin: 26px AUTO;
+}
     /* Commercial */
     /* developers */
   
@@ -771,6 +775,7 @@ overflow-y: scroll !important;
 }
 .Blogs .dis-buy .p2 {
   font-size: 14px;
+  text-align: left;
 }
     /* Blogs */
   
@@ -1082,6 +1087,7 @@ flex-direction: column;
     .dis-imgNbuy {
       display: flex;
       flex-direction: column;
+      align-items: start;
     }
 
     .dis-n .imgnp {
@@ -1122,18 +1128,30 @@ flex-direction: column;
       flex-direction: column;
       display: flex !important;
       width: 100%;
-      align-items: center;
+      align-items: start;
       position: relative;
       border: none;
       outline: none;
       justify-content: space-around;
   }
+  .RENT .dis-paly2 {
+    display: flex !important;
+    font-size: 15px;
+    padding: 0;
+    align-items: start;
+    text-align: left;
+    justify-content: space-around;
+}
   .RENT .dis-paly3 h4 {
     margin: 14px;
     align-items: start;
     width: 100%;
     font-size: 25px;
     font-weight: 500;
+}
+.RENT .dis-paly2 h3 {
+  font-size: 37px;
+  text-align: unset;
 }
 .RENT .imgNbuy img {
   width: 100%;
@@ -1173,6 +1191,24 @@ flex-direction: column;
   flex-direction: column;
 
 
+}
+.Commercial .dis-buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  text-align: left;
+}
+.Commercial .custom-dropdown-item {
+  padding: 12px 20px;
+  color: white;
+  text-align: start;
+  transition: display 10.5s;
+  text-align: start;
+}
+.Commercial .imgNCommercial img {
+  width: 91%;
+  margin: 26px AUTO;
 }
 
     /* .Commercial */
@@ -1251,9 +1287,11 @@ flex-direction: column;
   .Blogs .dis-paly3 .p9 {
     font-size: 22px !important;
     font-weight: 557;
+    text-align: left;
 }
 .Blogs .dis-buy .p2 {
   font-size: 18px;
+  text-align: left;
 }
     /* .Blogs */
     /* .AREAS */
@@ -1358,7 +1396,13 @@ flex-direction: column;
   justify-content: space-between;
 }
     /*  developers*/
-
+    .imgnp1 .h3{
+      font-size: 27px !important;
+    }
+    .Blogs .titledis h3 {
+      font-size: 2.2rem;
+      font-weight: bolder;
+  }
   }
   @media (max-width: 375px) {
 
@@ -1409,6 +1453,10 @@ flex-direction: column;
     .Buys .imgnp {
         height: 23vh;
     }
+    .ullest {
+      margin-left: 0px !important;
+      text-align: left;
+  }
     .dis-imgNbuy {
       display: flex;
       flex-direction: column;
@@ -1430,6 +1478,24 @@ flex-direction: column;
       color: white;
       transition: display 10.5s;
   }
+  .RENT .dis-paly3 {
+    flex-direction: column;
+    display: flex !important;
+    width: 100%;
+    align-items: unset;
+    position: relative;
+    border: none;
+    outline: none;
+    align-items: center;
+    justify-content: space-around;
+}
+.RENT .dis-paly3 h4 {
+  margin: 14px;
+  align-items: start;
+  width: 100%;
+  font-size: 27px;
+  font-weight: 500;
+}
     /* .RENT */
     /* .APPLY */
     .APPLY .custom-dropdown-menu .imgcon h2 {
@@ -1445,10 +1511,15 @@ flex-direction: column;
   .Blogs .dis-paly3 .p9 {
     font-size: 19px !important;
     font-weight: 557;
+    text-align: left;
 }
 
 .Blogs .dis-buy .p2 {
   font-size: 16px;
+}
+.Blogs .dis-buy .titledis{
+  width: 90%;
+  margin: 10px auto;
 }
     /* .Blogs */
         /*  developers*/
@@ -1535,18 +1606,7 @@ flex-direction: column;
     }
     /* buy */
     /* .RENT */
-    .RENT .dis-paly3 {
-      flex-direction: column;
-      display: flex !important;
-      width: 100%;
-      align-items: center;
-      position: relative;
-      border: none;
-      outline: none;
-      margin-left: 39px;
-      justify-content: center;
-      text-align: center;
-  }  
+ 
    .RENT .dis-paly3 li {
     text-align: start;
     list-style: none;
@@ -1555,6 +1615,41 @@ flex-direction: column;
     width: 100%;
     font-weight: lighter;
     text-align: center;
+}
+.RENT .dis-paly2 h3 {
+  font-size: 27px;
+  text-align: unset;
+}
+.RENT .dis-paly3 {
+  flex-direction: column;
+  display: flex !important;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  border: none;
+  outline: none;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.RENT .dis-paly3 h4 {
+  margin: 14px;
+  align-items: start;
+  width: 100%;
+  font-size: 26px;
+  text-align: center !important;
+  font-weight: 500;
+  margin-left: 37px;
+}
+.RENT .dis-paly3 li {
+  text-align: start;
+  list-style: none;
+  padding: 8px;
+  font-size: 21px;
+  width: 100%;
+  font-weight: lighter;
+  text-align: center;
+  margin-left: 44px;
 }
     /* .RENT */
 
@@ -1585,7 +1680,11 @@ flex-direction: column;
             width: 54px;
             margin: 1px;
         }
+        .Blogs .titledis h3{
+          font-size: 30px;
+        }
   }
+
   /* phone */
 
   
