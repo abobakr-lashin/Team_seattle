@@ -7,7 +7,6 @@ import FormContainer from "../appbar/FormContainer";
 import Slider from "react-slick";
 import { Grid, Rating } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import "../landingpage/landingpage.css";
 import CareersForm from "../contactus/CareersForm";
 import ContactusForm from "../contactus/ContactusForm";
 import Footer from "../footer/Footer";
@@ -15,6 +14,7 @@ import { useEffect, useState } from "react";
 import { firestore } from "../../firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 
+import "../landingpage/landingpage.css";
 export default function LandingPage() {
     const [filterCartId, setfilterCartId] = useState([]);
     const { id } = useParams()
@@ -147,8 +147,8 @@ export default function LandingPage() {
                     </div>
                 </div>
                 <div className="contbg">
-
-                    <div>
+                    {/* من هنا الصوره يا ابراهيم  */}
+                    <div className="img-samy">
                         <img src="/uploads/landingpage/export/icon/samayas.png" alt="samayas" />
                     </div>
                     <div className="formheader">
