@@ -562,6 +562,13 @@ flex-direction: column;
 
 /* contact us */
 
+@media screen and (max-width: 1024Px) {
+    .css-16f0b9y-MuiFormControl-root-MuiTextField-root {
+    background-color: #ffffff00 !important;
+    margin: auto !important;
+    
+    }
+}
 @media screen and (max-width: 800px) {
    
 
