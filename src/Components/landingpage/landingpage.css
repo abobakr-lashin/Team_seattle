@@ -317,7 +317,7 @@ ContactAgent */
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 435px) {
 
   .ContactAgent {
     margin-left: 0;
@@ -363,6 +363,23 @@ ContactAgent */
     width: 90%;
     margin: 10px auto;
   }
+  .Landingpage .form {
+    width: 90%;
+    height: 19rem;
+    border-radius: 20px;
+}
+.Landingpage .ContactAgent{
+width: 90%;
+}
+.Landingpage .css-16f0b9y-MuiFormControl-root-MuiTextField-root .MuiOutlinedInput-root {
+  background-color: white;
+  border-radius: 30px;
+  width: 97%;
+}
+.Landingpage .contbg {
+  flex-direction: column;
+  width: 100%;
+}
 }
 
 @media (max-width: 325px) {
@@ -408,4 +425,9 @@ ContactAgent */
     background-size: cover;
     overflow: hidden;
   }
+  .Landingpage .form {
+    width: 84%;
+    height: auto;
+    border-radius: 20px;
+}
 }
