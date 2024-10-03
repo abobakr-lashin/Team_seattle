@@ -155,7 +155,7 @@ export default function SaleIn() {
                                                 </div>
                                                 <h5>{it.title}</h5>
                                                 <h6>
-                                                    <ationOnIcon /> {it.locationOn}
+                                                    <LocationOnIcon /> {it.location}
                                                 </h6>
                                             </div>
                                         </div>
