@@ -128,17 +128,43 @@ const Navbar = () => {
             console.error("Error fetching documents: ", error);
         }
         // Get Data from Firestore
+        // try {
+        //     const querySnapshot = await getDocs(collection(firestore, "Blogs"));
+        //     const docs = querySnapshot.docs.map((doc) => ({
+        //         id: doc.id,
+        //         ...doc.data(),
+        //     }));
+        //     docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
+        //     setDataBloge(docs);
+        // } catch (error) {
+        //     console.error("Error fetching documents: ", error);
+        // }
         try {
             const querySnapshot = await getDocs(collection(firestore, "Blogs"));
-            const docs = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
+            const docs = querySnapshot.docs.map((doc) => {
+                const data = doc.data();
+                return {
+                    id: doc.id,
+                    ...data,
+                    // Ensure createdAt exists and is a Timestamp, or use a fallback value (like null or a default date)
+                    createdAt: data.createdAt ? data.createdAt.toDate() : null,
+                };
+            });
+
+            // Sort only if createdAt is valid (i.e., not null)
+            docs.sort((a, b) => {
+                if (a.createdAt && b.createdAt) {
+                    return b.createdAt - a.createdAt;
+                } else {
+                    return 0;
+                }
+            });
+
             setDataBloge(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
+
 
         try {
             const querySnapshot = await getDocs(collection(firestore, "bannerBlogs"));
@@ -152,6 +178,8 @@ const Navbar = () => {
             console.error("Error fetching documents: ", error);
         }
     };
+
+    console.log(dataBloge);
 
     // Get Data Category
     const getCategories = async () => {
@@ -1064,7 +1092,8 @@ const Navbar = () => {
                                                 </div>
                                             </div>
                                             <div>
-                                                {dataBloge?.slice(0, 2)?.map((it) => {
+                                                {/* Nav Bar Blogs */}
+                                                {dataBloge?.slice(0 , 2).map((it) => {
                                                     return (
                                                         <div style={{
                                                             display: 'flex',

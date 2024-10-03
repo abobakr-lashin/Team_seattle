@@ -38,8 +38,13 @@ export default function CategoryDeveloper() {
                 id: doc.id,
                 ...doc.data(),
             }));
-            const filterData = docs.filter((it) => it.CategoryBuyLocation === id)
+
+            const filterData = docs.filter((it) => {
+                return it.CateBuyLocation.location === id;
+            })
+
             setData(filterData);
+            console.log(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -47,7 +52,10 @@ export default function CategoryDeveloper() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, []);
+    }, [id]);
+
+    console.log(data , id );
+
 
     // Filter items by category
     const filteredProjects = data.filter((project) => {

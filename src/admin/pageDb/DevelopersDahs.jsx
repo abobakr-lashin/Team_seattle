@@ -64,6 +64,25 @@ export default function DevelopersDahs() {
         }
     };
 
+    // Handle Delete Item
+    const handleDeletCart = async (id) => {
+        setLoading(true);
+        if (window.confirm('Are you sure you want to delete')) {
+            try {
+                await deleteDoc(doc(firestore, 'listCartDevelopers', id));
+                console.log('Document successfully deleted!');
+                getCategories();
+                toast.success('Document successfully deleted')
+            } catch (error) {
+                console.error('Error deleting document: ', error);
+                toast.error('Error deleting document')
+                setLoading(false);
+            } finally {
+                setLoading(false);
+            }
+        }
+    };
+
     // Get Data Cart Firebase
     const getCategories = async () => {
         try {
@@ -92,6 +111,7 @@ export default function DevelopersDahs() {
     useEffect(() => {
         getCategories();
     }, []);
+
 
 
     if (loading) {
@@ -157,7 +177,7 @@ export default function DevelopersDahs() {
             </div>
 
             <div style={{
-                marginTop:'20px'
+                marginTop: '20px'
             }} className="title">
                 <h4>Show Category Developers</h4>
             </div>
@@ -230,7 +250,7 @@ export default function DevelopersDahs() {
                                     <StyledTableCell align="center">{it.company}</StyledTableCell>
                                     <StyledTableCell align="center">{it.location}</StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {
-                                        // handleDeletCart(it.id)
+                                        handleDeletCart(it.id)
                                     }} style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
                                 </StyledTableRow>
                             ))}
