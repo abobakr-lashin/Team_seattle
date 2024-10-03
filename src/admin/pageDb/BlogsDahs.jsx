@@ -81,7 +81,7 @@ export default function BlogsDahs() {
                 </button>
             </div>
 
-            <h3>Formservice</h3>
+            <h3>BOLGS</h3>
             <div className="table-container">
                 <table>
                     <thead>

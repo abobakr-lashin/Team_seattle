@@ -18,19 +18,29 @@
     color: #020000;
   }
   .editor-container .ck-editor__editable_inline {
-    height: 300px;
+    height: 300px !important;
   }
-  
+  .editor-container {
+    height: 400px !important; /* or any height you prefer */
+}
+
+.ckeditor {
+    min-height: 400px !important; /* Force CKEditor content area to have a specific height */
+}
   .editor-container {
     max-width: 100%;
     margin: auto;
   }
+  .ck.ck-editor__editable_inline>:last-child {
+    margin-bottom: var(--ck-spacing-large);
+    height: 404px;
+}
   th {
     background-color: #ffffff;
     color: #020000;
   }
   .custom-ckeditor{
-    height: 300px;
+    height: 300px !important;
   }
   .table-cell {
     white-space: pre-wrap; /* يسمح بتغليف النص */
