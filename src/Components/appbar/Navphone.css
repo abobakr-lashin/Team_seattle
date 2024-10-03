@@ -16,6 +16,7 @@ width: 40px;
 .imgnp1{
 display: none;
 }
+
 @media (max-width: 1024px) {
 .imgnp{
   display: none;
@@ -823,7 +824,70 @@ overflow-y: scroll !important;
       overflow-y: auto;
     }
   }
-  @media (max-width: 770px) {
+
+  @media (max-width: 820px) and (max-height: 1180px) {
+    .custom-navbar-link {
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+      color: white;
+      font-size: larger;
+  }
+  .custom-navbar-link::after {
+    content: ">";
+    margin-left: 241px;
+    color: white;
+    font-size: 54px;
+    position: absolute;
+    top: -30px;
+    padding: 0;
+    display: inline-block;
+}
+.custom-navbar-item {
+  width: 100%;
+  color: white !important;
+  margin-left: 10%;
+  font-size: 31px;
+  padding: 8px;
+}
+
+  }
+  @media (max-width: 770px) and (max-height: 1024px) {
+
+    .custom-navbar-link {
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+      color: white;
+      font-size: large;
+  }
+  .custom-navbar-link::after {
+    content: ">";
+    margin-left: 151px;
+    color: white;
+    font-size: 34px;
+    position: absolute;
+    top: -10px;
+    padding: 0;
+    display: inline-block;
+}
+    .custom-navbar-item {
+      width: 100%;
+      color: white !important;
+      margin-left: 10%;
+      font-size: 31px;
+      padding: 8px;
+  }
+  }
+  @media (max-width: 770px) and (max-height: 570px) {
+
+    .custom-navbar-item {
+      width: 100%;
+      color: white !important;
+      margin-left: 10%;
+      font-size: 22px;
+      padding: 0px;
+  }
     .Buys .custom-dropdown-menu {
         width: 100%;
         left: -45px;
@@ -1157,6 +1221,12 @@ flex-direction: column;
   width: 100%;
   margin: 34px auto;
 }
+.custom-navbar .css-1e6y48t-MuiButtonBase-root-MuiButton-root{
+  cursor: pointer;
+  width: 150px;
+  height: 34px;
+  font-size: medium;
+}
     /* .RENT */
     /* .Commercial */
     .Commercial h3 {
@@ -1169,6 +1239,13 @@ flex-direction: column;
     color: white !important;
     margin-left: 5%;
     font-size: 20px;
+}
+.custom-navbar-item {
+  width: 100%;
+  color: white !important;
+  margin-left: 10%;
+  font-size: 26px;
+  padding: 8px;
 }
 
 .Commercial ul li {
@@ -1195,9 +1272,7 @@ flex-direction: column;
 margin-left: -30px;
 
 }
-.custom-navbar-menu.active{
-  max-height: max-content;
-}
+
 .Commercial .dis-buy {
   display: flex;
   justify-content: space-between;
@@ -1447,9 +1522,39 @@ margin-left: -30px;
       font-size: 2.2rem;
       font-weight: bolder;
   }
+  .custom-navbar-menu.active {
+    max-height: 100vh;
+}
   }
-  @media (max-width: 395px) {
+  @media (max-width: 425px) {
+    .custom-navbar-item {
+      width: 100%;
+      color: white !important;
+      margin-left: 10%;
+      font-size: 20px;
+      padding: 0px;
+    }
+  }
+  @media (max-width: 415px) {
+    .custom-navbar-item {
+      width: 100%;
+      color: white !important;
+      margin-left: 10%;
+      font-size: 26px;
+      padding: 8px;
+    }
+  
+  
+  }
 
+  @media (max-width: 395px) {
+    .custom-navbar-item {
+      width: 100%;
+      color: white !important;
+      margin-left: 10%;
+      font-size: 19px;
+      padding: 8px;
+    }
     .imgnp1 #FormN{
       justify-content: center;
       align-items: center;
@@ -1617,8 +1722,26 @@ margin-left: -30px;
           background-repeat: no-repeat;
           background-position: right;
       }
+      .custom-navbar-menu.active {
+        max-height: 100vh;
+        gap: 1%;
+    }
   }
+  @media (max-width: 375px) {
+    .custom-navbar-item {
+      width: 100%;
+      color: white !important;
+      margin-left: 10%;
+      font-size: 19px;
+      padding: 0px;
+  }
+
+
+
+  }
+
   @media (max-width: 325px) {
+
     .Buys .imgnp .h3, .imgnp .h4 {
         font-size: 8px;
         color: white;
