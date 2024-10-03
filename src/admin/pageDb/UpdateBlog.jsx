@@ -4,6 +4,8 @@ import { Button, TextField, Typography, Box, CircularProgress } from '@mui/mater
 import { firestore, storage } from '../../firebaseConfig';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default function UpdateBlog() {
     const { id } = useParams(); // Get blog ID from URL
@@ -68,7 +70,7 @@ export default function UpdateBlog() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true); 
+        setLoading(true);
 
         try {
             let updatedBlogImageURL = blogImageURL;
@@ -128,10 +130,11 @@ export default function UpdateBlog() {
                     />
                     {blogImageURL && (
                         <Box
+
                             component="img"
                             src={blogImageURL}
                             alt="Blog"
-                            sx={{ maxWidth: '100%', height: 'auto', marginBottom: 2 }}
+                            sx={{ width: '250px', maxWidth: '100%', height: 'auto', marginBottom: 2 }}
                         />
                     )}
                 </Box>
@@ -148,7 +151,7 @@ export default function UpdateBlog() {
                             component="img"
                             src={cartImageURL}
                             alt="Cart"
-                            sx={{ maxWidth: '100%', height: 'auto', marginBottom: 2 }}
+                            sx={{ width: '250px', maxWidth: '100%', height: 'auto', marginBottom: 2 }}
                         />
                     )}
                 </Box>
@@ -176,6 +179,28 @@ export default function UpdateBlog() {
                     margin="normal"
                 />
                 <Typography variant="caption">{60 - (formData.text?.length || 0)} characters remaining</Typography>
+                <TextField
+                    type="text"
+                    name="name"
+                    label="Enter Name"
+                    placeholder='Enter your Name'
+                    value={formData.name || ''}
+                    onChange={handleChange}
+                    inputProps={{ maxLength: 70 }}
+                    fullWidth
+                    margin="normal"
+                />
+                <TextField
+                    type="text"
+                    name="blogTitle"
+                    label="Enter blog Title"
+                    placeholder='Enter blog Title'
+                    value={formData.blogTitle || ''}
+                    onChange={handleChange}
+                    inputProps={{ maxLength: 70 }}
+                    fullWidth
+                    margin="normal"
+                />
                 <TextField
                     type="number"
                     name="day"
@@ -212,15 +237,20 @@ export default function UpdateBlog() {
                     fullWidth
                     margin="normal"
                 />
-                <TextField
-                    type="text"
-                    name="name"
-                    label="Name"
-                    placeholder='Name'
-                    value={formData.name || ''}
-                    onChange={handleChange}
-                    fullWidth
-                    margin="normal"
+
+                <CKEditor
+                    editor={ClassicEditor}
+                    data={formData.textInput || ""}
+                    onChange={(event, editor) => {
+                        const data = editor.getData();
+                        setFormData(prevFormData => ({
+                            ...prevFormData,
+                            text: data
+                        }));
+                    }}
+                    config={{
+                        height: '400px',
+                    }}
                 />
                 <Box sx={{ marginTop: 3 }}>
                     <Button type="submit" variant="contained" color="primary">

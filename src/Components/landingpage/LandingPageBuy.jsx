@@ -152,10 +152,7 @@ export default function LandingPageBuy() {
                 </div>
                 <div className="contbg">
                     <div className="img-samy">
-                        <img
-                            src="/uploads/landingpage/export/icon/samayas.png"
-                            alt="samayas"
-                        />
+                        <img src={filterCartId[0]?.imageText} alt="" />
                     </div>
                     <div className="formheader">
                         <FormContainer color={"rgba(255, 255, 255, 0.466)"} />
@@ -218,7 +215,7 @@ export default function LandingPageBuy() {
                                 <div className=" Listing">Listing by</div>
                                 <div className="name">{filterCartId[0]?.listingName}</div>
                                 <div className="contact ">
-                                <Rating name="size-medium" value={filterCartId[0]?.stars || 0} readOnly />
+                                    <Rating name="size-medium" value={filterCartId[0]?.stars || 0} readOnly />
                                 </div>
                             </div>
                         </div>

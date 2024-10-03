@@ -148,7 +148,7 @@ export default function LandingPageSell() {
                 </div>
                 <div className="contbg">
                     <div className="img-samy">
-                        <img src="/uploads/landingpage/export/icon/samayas.png" alt="samayas" />
+                        <img src={filterCartId[0]?.imageText} alt="samayas" />
                     </div>
                     <div className="formheader">
 

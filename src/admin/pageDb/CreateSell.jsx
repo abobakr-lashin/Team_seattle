@@ -23,6 +23,8 @@ export default function CreateSell() {
     const [CategoryBuyLocation, setCategoryBuyLocation] = useState([])
     const [CategoryDevelopers, setCategoryDevelopers] = useState([])
     const [CategoryPlan, setCategoryPlan] = useState([])
+    const  [ formDataImageText , setformDataImageText] = useState('');
+    const [ImgeCartText, setImgeCartText] = useState('');
     const [formData, setFormData] = useState({
         title: '',
         text: '',
@@ -95,14 +97,19 @@ export default function CreateSell() {
 
             const fileRefBlog = ref(storage, `filesBlog/${formData.listingImage.name}`);
             const fileRefImageCart = ref(storage, `filesBlog/${formDataImage.name}`);
+            const fileRefImage = ref(storage, `files/${formDataImageText.name}`);
+
+            
 
             const [snapshotBlog, snapshotCart] = await Promise.all([
                 uploadBytes(fileRefBlog, formData.listingImage),
                 uploadBytes(fileRefImageCart, formDataImage),
+                uploadBytes(fileRefImage, formDataImageText),
             ]);
 
             const BgImage = await getDownloadURL(fileRefBlog);
             const BgImageCard = await getDownloadURL(fileRefImageCart);
+            const BgImageText = await getDownloadURL(fileRefImage);
 
 
             // Send Data TO fierStore
@@ -122,6 +129,7 @@ export default function CreateSell() {
                 email: formData.email,
                 map: formData.map,
                 bgImage: BgImage,
+                imageText: BgImageText,
                 text: formData.text,
                 imageCart: BgImageCard,
                 imageSlider: uploadedFileURLs,
@@ -243,6 +251,23 @@ export default function CreateSell() {
                             {ImgeCart && <img
                                 src={ImgeCart}
                                 alt="ImageCart"
+                                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                            />}
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="me" style={{ fontSize: '30px' }}>
+                            Image Cart text
+                        </label>
+                        <input id="me" type="file" name="imageText" onChange={(e) => {
+                            const file = URL.createObjectURL(e.target.files[0])
+                            setImgeCartText(file)
+                            setformDataImageText(e.target.files[0])
+                        }} />
+                        <div className="img">
+                            {ImgeCartText && <img
+                                src={ImgeCartText}
+                                alt="ImgeCartText"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
                             />}
                         </div>

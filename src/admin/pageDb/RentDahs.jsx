@@ -201,7 +201,7 @@ export default function RentDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddLocationRent')
+                    Navigate('/dashboard/AddCategoryBuyLocation')
                 }}>
                     Add Category Location
                 </button>

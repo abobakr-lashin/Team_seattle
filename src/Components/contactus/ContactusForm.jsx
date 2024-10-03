@@ -32,7 +32,6 @@ export default function ContactusForm() {
     );
 
     const db = getDatabase(app);
-    const newDatabase = push(ref(db, 'user/message'))
 
     useEffect(() => {
         setContactLanguage(navigator.language.startsWith("ar") ? "ar" : "en");
@@ -115,9 +114,6 @@ export default function ContactusForm() {
             return updatedArr;
         });
 
-        // Perform any action with formData, e.g., sending to a server
-        console.log("Saved Data:", submittedFormMessages);
-
         // Clear form after submission
         setContactFormData({ id: uuidv4(), fullName: "", contactPhone: "+971", contactEmail: "", contactMessage: "" });
 
@@ -138,141 +134,141 @@ export default function ContactusForm() {
 
     };
 
-  return (
-    <div>
-                 <div className="form5">
-                            <form>
-                                <div className="center">
-                                    <h2>SEND US A MESSAGE </h2>
-                                </div>
-                                <div className="hr1"></div>
-                                {/* name */}
-                                <input
-                                    name="fullName"
-                                    placeholder={contactLanguage === "ar" ? "الاسم الكامل" : "Full Name"}
-                                    value={contactFormData.fullName}
-                                    onChange={handleContactChange}
-                                    className={contactNameError ? "error" : ""}
-                                    style={{
-                                        padding: "8px",
-                                        marginBottom: "8px",
-                                        boxSizing: "border-box",
-                                    }}
-                                />
-                                {contactNameError && (
-                                    <div
-                                        style={{
-                                            color: "red",
-                                            top: "100%",
-                                            left: "0",
-                                            fontSize: "15px",
-                                        }}
-                                    >
-                                        {contactNameError}
-                                    </div>
-                                )}
-                                {/* name */}
-                                <div className="br"></div>
-                                {/* email */}
-                                <input
-                                    type="email"
-                                    placeholder={contactLanguage === "ar" ? "البريد الإلكتروني" : "Email"}
-                                    name="contactEmail"
-                                    value={contactFormData.contactEmail}
-                                    onChange={handleContactChange}
-                                    style={{
-                                        padding: "8px",
-                                        marginBottom: "8px",
-                                        boxSizing: "border-box",
-                                    }}
-                                    className={contactEmailError ? "error" : ""}
-                                />
-                                {contactEmailError && (
-                                    <div
-                                        style={{
-                                            color: "red",
-                                            top: "100%",
-                                            left: "5px",
-                                            margin: "2px",
-                                            fontSize: "15px",
-                                        }}
-                                    >
-                                        {contactEmailError}
-                                    </div>
-                                )}
-                                {/* email */}
-                                {/* phone */}
-                                <MuiTelInput
-                                    sx={{
-                                        mt: "10px",
-                                        backgroundColor: "white",
-                                        borderRadius: "21px",
-                                        border: "none",
-                                        maxWidth:"510px",
-                                        display: "flex",
-                                        justifyContent: "center",
-                                        alignItems: "center",
-                                        outline: "none",
-                                        boxShadow: "none",
-                                        '& .MuiOutlinedInput-root': {
-                                            '& fieldset': {
-                                                border: 'none',
-                                            },
-                                            '&:hover fieldset': {
-                                                border: 'none',
-                                            },
-                                            '&.Mui-focused fieldset': {
-                                                border: 'none',
-                                            },
-                                        },
-
-                                    }}
-                                    value={contactFormData.contactPhone}
-                                    onChange={handleContactPhoneChange}
-                                    error={Boolean(contactPhoneError)}
-                                    helperText={contactPhoneError}
-                                />
-                                {/* phone */}
-                                {/* Textarea */}
-                                <textarea
-                                    placeholder={contactLanguage === "ar" ? "الرسالة" : "Message"}
-                                    name="contactMessage"
-                                    label={contactLanguage === "ar" ? "الرسالة" : "Message"}
-                                    variant="outlined"
-                                    margin="normal"
-                                    multiline
-                                    rows={4}
-                                    value={contactFormData.contactMessage}
-                                    onChange={handleContactChange}
-                                    required
-                                    style={{
-                                        padding: "8px",
-                                        marginBottom: "8px",
-                                        boxSizing: "border-box",
-                                    }}
-                                />
-                                {/* Textarea */}
-                                {/* button */}
-                                <Button
-                                    sx={{
-                                        textAlign: "center",
-                                        width: "100%",
-                                        display: "flex",
-                                        justifyContent: "center",
-                                        alignItems: "center",
-                                        margin: "auto"
-                                    }}
-                                    className='submit'
-                                    onClick={handleContactButtonClick}
-                                    variant="contained"
-                                    color="primary"
-                                >
-                                    {contactLanguage === "ar" ? "إرسال" : "SUBMIT"}
-                                </Button>
-                                {/* button */}
-                            </form>
+    return (
+        <div>
+            <div className="form5">
+                <form>
+                    <div className="center">
+                        <h2>SEND US A MESSAGE </h2>
+                    </div>
+                    <div className="hr1"></div>
+                    {/* name */}
+                    <input
+                        name="fullName"
+                        placeholder={contactLanguage === "ar" ? "الاسم الكامل" : "Full Name"}
+                        value={contactFormData.fullName}
+                        onChange={handleContactChange}
+                        className={contactNameError ? "error" : ""}
+                        style={{
+                            padding: "8px",
+                            marginBottom: "8px",
+                            boxSizing: "border-box",
+                        }}
+                    />
+                    {contactNameError && (
+                        <div
+                            style={{
+                                color: "red",
+                                top: "100%",
+                                left: "0",
+                                fontSize: "15px",
+                            }}
+                        >
+                            {contactNameError}
                         </div>
-                        <Snackbar
+                    )}
+                    {/* name */}
+                    <div className="br"></div>
+                    {/* email */}
+                    <input
+                        type="email"
+                        placeholder={contactLanguage === "ar" ? "البريد الإلكتروني" : "Email"}
+                        name="contactEmail"
+                        value={contactFormData.contactEmail}
+                        onChange={handleContactChange}
+                        style={{
+                            padding: "8px",
+                            marginBottom: "8px",
+                            boxSizing: "border-box",
+                        }}
+                        className={contactEmailError ? "error" : ""}
+                    />
+                    {contactEmailError && (
+                        <div
+                            style={{
+                                color: "red",
+                                top: "100%",
+                                left: "5px",
+                                margin: "2px",
+                                fontSize: "15px",
+                            }}
+                        >
+                            {contactEmailError}
+                        </div>
+                    )}
+                    {/* email */}
+                    {/* phone */}
+                    <MuiTelInput
+                        sx={{
+                            mt: "10px",
+                            backgroundColor: "white",
+                            borderRadius: "21px",
+                            border: "none",
+                            maxWidth: "510px",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            outline: "none",
+                            boxShadow: "none",
+                            '& .MuiOutlinedInput-root': {
+                                '& fieldset': {
+                                    border: 'none',
+                                },
+                                '&:hover fieldset': {
+                                    border: 'none',
+                                },
+                                '&.Mui-focused fieldset': {
+                                    border: 'none',
+                                },
+                            },
+
+                        }}
+                        value={contactFormData.contactPhone}
+                        onChange={handleContactPhoneChange}
+                        error={Boolean(contactPhoneError)}
+                        helperText={contactPhoneError}
+                    />
+                    {/* phone */}
+                    {/* Textarea */}
+                    <textarea
+                        placeholder={contactLanguage === "ar" ? "الرسالة" : "Message"}
+                        name="contactMessage"
+                        label={contactLanguage === "ar" ? "الرسالة" : "Message"}
+                        variant="outlined"
+                        margin="normal"
+                        multiline
+                        rows={4}
+                        value={contactFormData.contactMessage}
+                        onChange={handleContactChange}
+                        required
+                        style={{
+                            padding: "8px",
+                            marginBottom: "8px",
+                            boxSizing: "border-box",
+                        }}
+                    />
+                    {/* Textarea */}
+                    {/* button */}
+                    <Button
+                        sx={{
+                            textAlign: "center",
+                            width: "100%",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            margin: "auto"
+                        }}
+                        className='submit'
+                        onClick={handleContactButtonClick}
+                        variant="contained"
+                        color="primary"
+                    >
+                        {contactLanguage === "ar" ? "إرسال" : "SUBMIT"}
+                    </Button>
+                    {/* button */}
+                </form>
+            </div>
+            <Snackbar
                 open={contactOpenSnackbar}
                 autoHideDuration={6000}
                 onClose={() => setContactOpenSnackbar(false)}
@@ -281,6 +277,6 @@ export default function ContactusForm() {
                     {contactSnackbarMessage}
                 </Alert>
             </Snackbar>
-    </div>
-  )
+        </div>
+    )
 }

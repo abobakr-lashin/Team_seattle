@@ -16,6 +16,7 @@ export default function Formdb() {
             const db = getDatabase(app);
             const newDataRef = ref(db, 'nature/fruits');
             const newDataOffers = ref(db, 'specials/offers');
+
             const snapshot = await get(newDataRef);
             const snapshotOffers = await get(newDataOffers);
 
@@ -37,6 +38,9 @@ export default function Formdb() {
             setLoading(false);
         }
     };
+
+    console.log(DatabaseRef);
+
 
     useEffect(() => {
         Dataase();
@@ -78,7 +82,7 @@ export default function Formdb() {
     return (
         <div>
             <ToastContainer />
-            <h3>Category</h3>
+            {/* <h3>Form Landing Page</h3>
             <div className="table-container">
                 <table>
                     <thead>
@@ -106,7 +110,7 @@ export default function Formdb() {
                         ))}
                     </tbody>
                 </table>
-            </div>
+            </div> */}
             <h3>FormNav</h3>
             <div className="table-container">
                 <table>

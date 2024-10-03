@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import Appar from './DRawer/Appar';
 import DRawer from './DRawer/DRawer';
 import { Outlet } from "react-router-dom";
-import LogoutIcon from "@mui/icons-material/Logout";
 
 import {
     CssBaseline,

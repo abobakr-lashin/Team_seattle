@@ -35,6 +35,7 @@ export default function AreasDahs() {
     const Navigate = useNavigate()
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([])
+    const [DataCategory, setDataCategory] = useState([])
 
     // Handle Delete Item
     const handleDelete = async (id) => {
@@ -42,6 +43,24 @@ export default function AreasDahs() {
         if (window.confirm('Are you sure you want to delete')) {
             try {
                 await deleteDoc(doc(firestore, 'listBlogsCartAreas', id));
+                console.log('Document successfully deleted!');
+                getCategories();
+                toast.success('Document successfully deleted')
+            } catch (error) {
+                console.error('Error deleting document: ', error);
+                toast.error('Error deleting document')
+                setLoading(false);
+            } finally {
+                setLoading(false);
+            }
+        }
+    };
+
+    const handleDeleteCategory = async (id) => {
+        setLoading(true);
+        if (window.confirm('Are you sure you want to delete')) {
+            try {
+                await deleteDoc(doc(firestore, 'CategoryBuyLocation', id));
                 console.log('Document successfully deleted!');
                 getCategories();
                 toast.success('Document successfully deleted')
@@ -64,6 +83,17 @@ export default function AreasDahs() {
                 ...doc.data(),
             }));
             setData(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setDataCategory(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -122,6 +152,7 @@ export default function AreasDahs() {
                 </button>
             </div>
             <div className="table">
+            <h3>Data Buy Cart Areas</h3>
                 {data.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
                     <Table sx={{ minWidth: 900 }} aria-label="customized table">
                         <TableHead>
@@ -136,7 +167,7 @@ export default function AreasDahs() {
                         <TableBody>
                             {data.map((it) => (
                                 <StyledTableRow key={it.id}>
-                                    
+
                                     <StyledTableCell>
                                         <img style={{ width: '200px' }} src={it.imageCart} alt="" />
                                     </StyledTableCell>
@@ -165,6 +196,46 @@ export default function AreasDahs() {
                         display: 'inline-block'
                     }} onClick={() => {
                         Navigate('/dashboard/CreateAreas')
+                    }}>Add New Data</button>
+                </p>}
+            </div>
+            <div className="table">
+                    <h3>Data Buy Location</h3>
+                {DataCategory.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
+                    <Table sx={{ minWidth: 900 }} aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <StyledTableCell width={200} align="center">Location</StyledTableCell>
+                                <StyledTableCell width={200} align="center">Center</StyledTableCell>
+                                <StyledTableCell width={150} align="center">Delete</StyledTableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {DataCategory.map((it) => (
+                                <StyledTableRow key={it.id}>
+                                    <StyledTableCell align="center">{it.category.location}</StyledTableCell>
+                                    <StyledTableCell align="center">{it.category.center}</StyledTableCell>
+                                    
+                                    <StyledTableCell align="center"><button onClick={() => {
+                                        handleDeleteCategory(it.id)
+                                    }} style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer> : <p style={{
+                    marginTop: '60px',
+                    fontSize: '20px',
+                    textAlign: 'center',
+                    color: '#234232',
+                    fontWeight: 'bold'
+                }}>
+                    There is no data in the data base <button style={{
+                        color: '#1976d2',
+                        textDecoration: 'underline',
+                        display: 'inline-block'
+                    }} onClick={() => {
+                        Navigate('/dashboard/AddCategoryBuyLocation')
                     }}>Add New Data</button>
                 </p>}
             </div>

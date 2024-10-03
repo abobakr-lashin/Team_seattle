@@ -41,9 +41,6 @@ export default function Blog() {
                 if (docSnap.exists()) {
                     const data = docSnap.data();
                     setFormData(data);
-                    // Set image URLs if they exist
-                    // setBlogImageURL(data.fileBlog || "");
-                    // setCartImageURL(data.fileCart || "");
                 } else {
                     console.log("No such document!");
                 }
@@ -109,7 +106,7 @@ export default function Blog() {
             <div
                 className="bg-img"
                 style={{
-                    backgroundImage: `url(/uploads/Finish/Finish/blog/background.png)`,
+                    backgroundImage: `url(${formData.fileCart})`,
                 }}
             >
                 <NavPar />

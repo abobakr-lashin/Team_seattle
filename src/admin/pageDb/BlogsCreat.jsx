@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { firestore, storage } from '../../firebaseConfig';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { addDoc, collection } from 'firebase/firestore';
-import './BlogsCreat.css'; 
+import './BlogsCreat.css';
 import { useNavigate } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -25,7 +25,7 @@ export default function BlogsCreat() {
         blogText: '',
         textInput: '',
     });
-    const [Loading, setLoading] = useState(false); 
+    const [Loading, setLoading] = useState(false);
     const [cardImagePreview, setCardImagePreview] = useState(null);
     const [blogImagePreview, setBlogImagePreview] = useState(null);
     const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -34,7 +34,7 @@ export default function BlogsCreat() {
         fileBlog: null
     });
     const navigate = useNavigate();
-    
+
     // تحديث التاريخ باستخدام useEffect
     useEffect(() => {
         const formatDate = () => {
@@ -43,7 +43,7 @@ export default function BlogsCreat() {
                 const formattedMonth = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date); // اسم الشهر
                 const formattedDay = new Intl.DateTimeFormat('en-US', { day: 'numeric' }).format(date); // رقم اليوم
                 const formattedYear = new Intl.DateTimeFormat('en-US', { year: 'numeric' }).format(date); // رقم السنة
-                
+
                 // تحديث حالة التاريخ
                 setDateS({
                     day: formattedDay,
@@ -240,20 +240,20 @@ export default function BlogsCreat() {
                 <div className="form-group">
                     <input type="text" name="blogTitle" placeholder='Title' value={formData.blogTitle} onChange={handleChange} />
                 </div>
-              <div className="form-group">
-              <CKEditor
-                editor={ClassicEditor}
-                data={formData.text || ""}
-                onChange={(event, editor) => {
-                    const data = editor.getData(); // Get data from CKEditor
-                    setFormData({ ...formData, textInput: data }); // Update state
-                }}
-                config={{
-                    // Optional CKEditor configuration
-                }}
-            />
-                   
-                </div> 
+                <div className="form-group">
+                    <CKEditor
+                        editor={ClassicEditor}
+                        data={formData.text || ""}
+                        onChange={(event, editor) => {
+                            const data = editor.getData(); // Get data from CKEditor
+                            setFormData({ ...formData, textInput: data }); // Update state
+                        }}
+                        config={{
+                            // Optional CKEditor configuration
+                        }}
+                    />
+
+                </div>
                 <button type="submit">Submit</button>
             </form>
         </div>

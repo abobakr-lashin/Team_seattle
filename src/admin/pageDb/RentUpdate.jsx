@@ -26,6 +26,13 @@ export default function UpdateRent() {
     const [CategoryDevelopers, setCategoryDevelopers] = useState([]);
     const [CategoryPlan, setCategoryPlan] = useState([]);
     const [formData, setFormData] = useState({});
+    const [formDataImageText, setformDataImageText] = useState('');
+    const [ImgeCartText, setImgeCartText] = useState('');
+    const [CategoryLocation, setCategoryLocation] = useState({
+        location: '',
+        center: ''
+    });
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -52,6 +59,7 @@ export default function UpdateRent() {
             let updatedBlogImageCart = formData.imageCart;
             let updatedBlogClint = formData.bgImage;
             let updatedCartImageSlider = formData.imageSlider;
+            let updatedBlogImageText = formData.imageText;
 
 
             if (FileURLs.length > 0) {
@@ -75,6 +83,12 @@ export default function UpdateRent() {
                 updatedBlogClint = await getDownloadURL(fileRefCart);
             }
 
+            if (formDataImageText) {
+                const fileRefCart = ref(storage, `filesBlog/${formDataImageText.name}`);
+                await uploadBytes(fileRefCart, formDataImageText);
+                updatedBlogImageText = await getDownloadURL(fileRefCart);
+            }
+
             const docRef = doc(firestore, 'listBlogsCartRent', id);
             await updateDoc(docRef, {
                 title: formData.title,
@@ -91,11 +105,16 @@ export default function UpdateRent() {
                 stars: formData.stars,
                 email: formData.email,
                 map: formData.map,
+                imageText: updatedBlogImageText,
                 bgImage: updatedBlogClint,
                 text: formData.text,
+                CategoryLocation: {
+                    location: formData?.CategoryLocation?.location || CategoryLocation.location,
+                    center: formData?.CategoryLocation?.center || CategoryLocation.center
+                },
                 imageCart: updatedBlogImageCart,
                 imageSlider: updatedCartImageSlider || formData.imageSlider,
-                CategoryBuyLocation: formData.CategoryBuyLocation,
+                // CategoryBuyLocation: formData.CategoryBuyLocation,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
                 date: new Date().toDateString(),
@@ -113,6 +132,8 @@ export default function UpdateRent() {
         }
     };
 
+    console.log(CategoryLocation);
+
     // Get Data Category
     const getCategories = async () => {
         // Get Data Category
@@ -129,7 +150,7 @@ export default function UpdateRent() {
 
         // get Category Locations  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "CategoryRentLocation"));
+            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -214,6 +235,27 @@ export default function UpdateRent() {
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
                             /> : formData.imageCart && <img
                                 src={formData.imageCart}
+                                alt="ImageCart"
+                                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                            />}
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="me" style={{ fontSize: '30px' }}>
+                            Image Cart text
+                        </label>
+                        <input id="me" type="file" name="imageText" onChange={(e) => {
+                            const file = URL.createObjectURL(e.target.files[0])
+                            setImgeCartText(file)
+                            setformDataImageText(e.target.files[0])
+                        }} />
+                        <div className="img">
+                            {ImgeCartText ? <img
+                                src={ImgeCartText}
+                                alt="ImageCart"
+                                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                            /> : formData.imageText && <img
+                                src={formData.imageText}
                                 alt="ImageCart"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
                             />}
@@ -398,14 +440,32 @@ export default function UpdateRent() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({ ...formData, CategoryBuyLocation: e.target.value });
-                        }}>
-                            <option hidden >Select Category Location</option>
+                        <select
+                            style={{ margin: '20px', width: '80%' }}
+                            name="category"
+                            value={CategoryLocation.location} // controlled value
+                            onChange={(e) => {
+                                setCategoryLocation({ ...CategoryLocation, location: e.target.value });
+                            }}>
+                            <option hidden>Select Category Location</option>
                             {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
+                                return <option key={it.id} value={it.category.location}>{it.category.location}</option>;
                             })}
                         </select>
+
+                        <select
+                            style={{ margin: '20px', width: '80%' }}
+                            name="category"
+                            value={CategoryLocation.center} // controlled value
+                            onChange={(e) => {
+                                setCategoryLocation({ ...CategoryLocation, center: e.target.value });
+                            }}>
+                            <option hidden>Select Category Center Location</option>
+                            {CategoryBuyLocation.map((it) => {
+                                return <option key={it.id} value={it.category.center}>{it.category.center}</option>;
+                            })}
+                        </select>
+
                     </div>
                     <div className="form-group">
                         <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
@@ -429,7 +489,7 @@ export default function UpdateRent() {
                         </select>
                     </div>
                     <div className="form-group">
-                    <CKEditor
+                        <CKEditor
                             editor={ClassicEditor}
                             data={formData.text || ""}
                             onChange={(event, editor) => {

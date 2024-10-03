@@ -147,9 +147,9 @@ export default function LandingPage() {
                     </div>
                 </div>
                 <div className="contbg">
-                    {/* من هنا الصوره يا ابراهيم  */}
+                    
                     <div className="img-samy">
-                        <img src="/uploads/landingpage/export/icon/samayas.png" alt="samayas" />
+                    <img src={filterCartId[0]?.imageText} alt="" />
                     </div>
                     <div className="formheader">
 

@@ -26,6 +26,8 @@ export default function CommercialEdit() {
     const [CategoryDevelopers, setCategoryDevelopers] = useState([]);
     const [CategoryPlan, setCategoryPlan] = useState([]);
     const [formData, setFormData] = useState({});
+    const [formDataImageText, setformDataImageText] = useState('');
+    const [ImgeCartText, setImgeCartText] = useState('');
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -45,6 +47,7 @@ export default function CommercialEdit() {
             let updatedBlogImageCart = formData.imageCart;
             let updatedBlogClint = formData.bgImage;
             let updatedCartImageSlider = formData.imageSlider;
+            let updatedBlogImageText = formData.imageText;
 
 
             if (FileURLs.length > 0) {
@@ -68,6 +71,13 @@ export default function CommercialEdit() {
                 updatedBlogClint = await getDownloadURL(fileRefCart);
             }
 
+            
+            if (formDataImageText) {
+                const fileRefCart = ref(storage, `filesBlog/${formDataImageText.name}`);
+                await uploadBytes(fileRefCart, formDataImageText);
+                updatedBlogImageText = await getDownloadURL(fileRefCart);
+            }
+
             const docRef = doc(firestore, 'listingsBlogs', id);
             await updateDoc(docRef, {
                 title: formData.title,
@@ -85,6 +95,7 @@ export default function CommercialEdit() {
                 email: formData.email,
                 map: formData.map,
                 bgImage: updatedBlogClint,
+                imageText: updatedBlogImageText,
                 // text: formData.text,
                 imageCart: updatedBlogImageCart,
                 imageSlider: updatedCartImageSlider || formData.imageSlider,
@@ -168,6 +179,27 @@ export default function CommercialEdit() {
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
                             /> : formData.imageCart && <img
                                 src={formData.imageCart}
+                                alt="ImageCart"
+                                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                            />}
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="me" style={{ fontSize: '30px' }}>
+                            Image Cart text
+                        </label>
+                        <input id="me" type="file" name="imageText" onChange={(e) => {
+                            const file = URL.createObjectURL(e.target.files[0])
+                            setImgeCartText(file)
+                            setformDataImageText(e.target.files[0])
+                        }} />
+                        <div className="img">
+                            {ImgeCartText ? <img
+                                src={ImgeCartText}
+                                alt="ImageCart"
+                                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                            /> : formData.imageText && <img
+                                src={formData.imageText}
                                 alt="ImageCart"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
                             />}
