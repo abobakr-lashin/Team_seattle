@@ -5,9 +5,9 @@ import Typography from "@mui/material/Typography";
 import { Grid, ImageListTileBar, IconButton, Dialog } from "@mui/material";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
-import "./Navbar.css";
-import "./Navphone.css";
 import { Block } from "@mui/icons-material";
+import "./Navphone.css";
+import "./Navbar.css";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -1036,12 +1036,12 @@ const Navbar = () => {
                             >
 
                                 <div container spacing={2} className="custom-dropdown-item">
-                                    <div className="dis-buy">
-                                        <div className="titledis">
                                             <h3>
                                                 EXPLORE THE UAE{" "}
                                                 <img src="./uploads/nav/icon/arrow.png" alt="" />
                                             </h3>
+                                    <div className="dis-buy">
+                                        <div className="titledis">
                                             <div className="dis-paly3">
                                                 <div>
                                                     <div className="p9">
@@ -1090,13 +1090,13 @@ const Navbar = () => {
                                         <div item xs={7}>
                                             <div className="dis-imgNbuy">
                                                 <div className="imgNbuy">
-                                                    <div className="imgNbuy1">
-                                                        <img src={dataBanner[0]?.image1} alt="" />
-                                                    </div>
                                                     <div style={{
-                                                        height: '250px'
+                                                        // height: '250px'
                                                     }} className="imgNbuy2">
                                                         <img src={dataBanner[0]?.image2} alt="" />
+                                                    </div>
+                                                    <div className="imgNbuy1">
+                                                        <img src={dataBanner[0]?.image1} alt="" />
                                                     </div>
                                                 </div>
                                             </div>

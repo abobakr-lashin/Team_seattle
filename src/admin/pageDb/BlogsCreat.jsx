@@ -5,7 +5,8 @@ import { addDoc, collection } from 'firebase/firestore';
 import './BlogsCreat.css'; 
 import { useNavigate } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
-
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export default function BlogsCreat() {
     const [day, setDay] = useState('');
     const [month, setMonth] = useState('');
@@ -239,18 +240,20 @@ export default function BlogsCreat() {
                 <div className="form-group">
                     <input type="text" name="blogTitle" placeholder='Title' value={formData.blogTitle} onChange={handleChange} />
                 </div>
-                <div className="form-group">
-                    <textarea
-                        className='blog-content25'
-                        rows="20"
-                        cols="60"
-                        style={{ padding: "10px", whiteSpace: "pre-wrap" }}  
-                        placeholder='Text'
-                        name="blogText"
-                        value={formData.textInput}
-                        onChange={(e) => setFormData({ ...formData, textInput: e.target.value })}
-                    />
-                </div>
+              <div className="form-group">
+              <CKEditor
+                editor={ClassicEditor}
+                data={formData.text || ""}
+                onChange={(event, editor) => {
+                    const data = editor.getData(); // Get data from CKEditor
+                    setFormData({ ...formData, textInput: data }); // Update state
+                }}
+                config={{
+                    // Optional CKEditor configuration
+                }}
+            />
+                   
+                </div> 
                 <button type="submit">Submit</button>
             </form>
         </div>

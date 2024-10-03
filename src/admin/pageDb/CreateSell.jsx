@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
+import "./table.css"
 export default function CreateSell() {
     const Navigate = useNavigate()
     const [FileURLs, setFileURLs] = useState([])
@@ -431,6 +431,7 @@ export default function CreateSell() {
                     </div>
                     <div className="form-group">
                         <CKEditor
+                       className='editor-container'
                             editor={ClassicEditor}
                             data={formData.text || ""}
                             onChange={(event, editor) => {
