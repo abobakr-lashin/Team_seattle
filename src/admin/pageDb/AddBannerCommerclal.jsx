@@ -43,10 +43,10 @@ const AddBannerCommercial = () => {
         setError(null);
 
         try {
-            const imageUrl1 = ref(storage, `filebBanner/${FileImage.image1.name}`)
+            const imageUrl1 = ref(storage, `fileBanner/Commercial/${FileImage.image1.name}`)
             const taskBanner1 = uploadBytes(imageUrl1, FileImage.image1);
 
-            const imageUrl2 = ref(storage, `filebBanner/${FileImage.image2.name}`)
+            const imageUrl2 = ref(storage, `fileBanner/Commercial/${FileImage.image2.name}`)
             const taskBanner2 = uploadBytes(imageUrl2, FileImage.image2);
 
 
@@ -58,11 +58,11 @@ const AddBannerCommercial = () => {
             const urlBlog1 = await getDownloadURL(imageUrl1);
             const urlBlog2 = await getDownloadURL(imageUrl2);
 
-            const categoriesRef = collection(firestore, 'bannerBlogsCommercial');
+            const categoriesRef = collection(firestore, 'bannerCommercial');
             await addDoc(categoriesRef, {
                 text,
-                image1: urlBlog1,
-                image2: urlBlog2,
+                imageCommercial1: urlBlog1,
+                imageCommercial2: urlBlog2,
                 createdAt: new Date(),
             });
             toast.success('Banner added successfully!.')

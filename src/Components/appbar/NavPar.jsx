@@ -34,8 +34,9 @@ const Navbar = () => {
     });
     const [languageOpen, setLanguageOpen] = useState(false);
     // Add State Banner
-    const [ BannerBuy , setBannerBuy] = useState([]);
-    const [ BannerRent , setBannerRent] = useState([]);
+    const [BannerBuy, setBannerBuy] = useState([]);
+    const [BannerRent, setBannerRent] = useState([]);
+    const [BannerCommercial, setBannerCommercial] = useState([]);
 
 
     const toggleMenu = () => {
@@ -251,6 +252,20 @@ const Navbar = () => {
                 ...doc.data(),
             }));
             setBannerRent(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        // Banner Commercial 
+        try {
+            const querySnapshot = await getDocs(
+                collection(firestore, "bannerCommercial")
+            );
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setBannerCommercial(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -639,18 +654,18 @@ const Navbar = () => {
                                             </ul>
                                         </div>
                                         <div item xs={7} className={"dis-buy2"}>
-                                            {/* {bannerBlogsCommercial?.slice(0, 1).map((it) => {
+                                            {BannerCommercial?.slice(0, 1).map((it) => {
                                                 return (
                                                     <>
                                                         <div className="imgNCommercial">
-                                                            <img src={it.image1} alt="" />
+                                                            <img src={it.imageCommercial1} alt="" />
                                                         </div>
                                                         <div className="imgNCommercial">
-                                                            <img src={it.image2} alt="" />
+                                                            <img src={it.imageCommercial2} alt="" />
                                                         </div>
                                                     </>
                                                 )
-                                            })} */}
+                                            })}
                                         </div>
                                     </div>
 
