@@ -400,7 +400,7 @@ const Navbar = () => {
                                                 <div className="imgNbuy">
                                                     {BannerBuy?.slice(0, 1).map((it) => {
                                                         return (
-                                                            <img style={{ width: '500px' }} src={it.imageBuy} alt="" />
+                                                            <img src={it.imageBuy} alt="" />
                                                         )
                                                     })}
                                                 </div>
@@ -565,7 +565,7 @@ const Navbar = () => {
                                             <div className="imgNbuy">
                                                 {BannerRent?.slice(0, 1).map((it) => {
                                                     return (
-                                                        <img style={{ width: '400px' }} src={it.imageRent} alt="" />
+                                                        <img  src={it.imageRent} alt="" />
                                                     )
                                                 })}
                                             </div>
@@ -886,7 +886,7 @@ const Navbar = () => {
                                             <div className="imgNCommercial">
                                                 {/* Develop */}
                                                 {BannerDeveloper?.slice(0, 1).map((it) => {
-                                                    return <img style={{ width: '500px' }} src={it.imageDeveloper} alt="" />
+                                                    return <img  src={it.imageDeveloper} alt="" />
                                                 })}
                                             </div>
                                         </div>
@@ -1215,10 +1215,10 @@ const Navbar = () => {
                                                     return (
                                                         <>
                                                             <div className="imgNbuy">
-                                                                <img style={{ width: '400px' }} src={it.imageBlogs1} alt="" />
+                                                                <img  src={it.imageBlogs1} alt="" />
                                                             </div>
                                                             <div className="imgNbuy">
-                                                                <img style={{ width: '400px' }} src={it.imageBlogs2} alt="" />
+                                                                <img  src={it.imageBlogs2} alt="" />
                                                             </div>
                                                         </>
                                                     )
