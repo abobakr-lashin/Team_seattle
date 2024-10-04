@@ -242,6 +242,7 @@ const Navbar = () => {
                 id: doc.id,
                 ...doc.data(),
             }));
+            docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
             setBannerBuy(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
@@ -256,6 +257,7 @@ const Navbar = () => {
                 id: doc.id,
                 ...doc.data(),
             }));
+            docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
             setBannerRent(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
@@ -270,6 +272,7 @@ const Navbar = () => {
                 id: doc.id,
                 ...doc.data(),
             }));
+            docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
             setBannerCommercial(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
@@ -284,6 +287,7 @@ const Navbar = () => {
                 id: doc.id,
                 ...doc.data(),
             }));
+            docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
             setBannerDeveloper(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
@@ -298,6 +302,7 @@ const Navbar = () => {
                 id: doc.id,
                 ...doc.data(),
             }));
+            docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
             setBannerAreas(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
@@ -313,16 +318,12 @@ const Navbar = () => {
                 id: doc.id,
                 ...doc.data(),
             }));
+            docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
             setBannerBlogs(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
-
-
-
     }
-
-    console.log();
 
 
     useEffect(() => {
