@@ -401,6 +401,7 @@ const Navbar = () => {
                                                     {BannerBuy?.slice(0, 1).map((it) => {
                                                         return (
                                                             <img src={it.imageBuy} alt="" />
+
                                                         )
                                                     })}
                                                 </div>
