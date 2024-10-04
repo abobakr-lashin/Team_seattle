@@ -52,10 +52,10 @@ const AddBannerBuy = () => {
 
             const urlBlog2 = await getDownloadURL(imageUrl2);
 
-            const categoriesRef = collection(firestore, 'bannerBlogsBuy');
+            const categoriesRef = collection(firestore, 'bannerBuy');
             await addDoc(categoriesRef, {
                 text,
-                image2: urlBlog2,
+                imageBuy: urlBlog2,
                 createdAt: new Date(),
             });
             toast.success('Banner added successfully!.')
@@ -93,30 +93,6 @@ const AddBannerBuy = () => {
                 onChange={(e) => setText(e.target.value)}
                 sx={{ mb: 2 }}
             />
-
-            {/* <List>
-                <img style={{ width: '200px' }} src={fileUrl} alt="" />
-            </List>
-
-            <Button
-                sx={{ mt: 2, mb: 2 }}
-                component="label"
-                role={undefined}
-                variant="contained"
-                tabIndex={-1}
-                startIcon={<CloudUploadIcon />}
-            >
-                Upload files
-                <VisuallyHiddenInput
-                    type="file"
-                    onChange={(e) => {
-                        const file = e.target.files[0]
-                        setFileImage({ ...FileImage, image1: e.target.files[0] })
-                        setfileUrl(URL.createObjectURL(file))
-                    }}
-                    multiple
-                />
-            </Button> */}
 
             <List>
                 <img style={{ width: '200px' }} src={fileUr2} alt="" />

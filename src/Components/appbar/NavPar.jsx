@@ -18,11 +18,7 @@ const Navbar = () => {
     const [RentalProperties, setRentalProperties] = useState([]);
     const [LandlordsTools, setLandlordsTools] = useState([]);
     const [dataBloge, setDataBloge] = useState([]);
-    const [DataBuyBanner, setDataBuyBanner] = useState([]);
-    const [BannerRent, setBannerRent] = useState([]);
-    const [bannerBlogsCommercial, setbannerBlogsCommercial] = useState([]);
-    const [BannerDeveloper, setBannerDeveloper] = useState([]);
-    const [BannerAreas, setBannerAreas] = useState([]);
+
     const [dropdownOpen, setDropdownOpen] = useState({
         ABOUT_US: false,
         OUR_PROJECTS: false,
@@ -36,8 +32,9 @@ const Navbar = () => {
         DEVELOPERS: false,
         AREAS: false,
     });
-    const [dataBanner, setDataBanner] = useState([]);
     const [languageOpen, setLanguageOpen] = useState(false);
+    // Add State Banner
+    const [ BannerBuy , setBannerBuy] = useState([]);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -134,24 +131,12 @@ const Navbar = () => {
         }
         // Get Data from Firestore
         try {
-            const querySnapshot = await getDocs(collection(firestore, "bannerBlogsBuy"));
-            const docs = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
-            setDataBuyBanner(docs);
-        } catch (error) {
-            console.error("Error fetching documents: ", error);
-        }
-        try {
             const querySnapshot = await getDocs(collection(firestore, "Blogs"));
             const docs = querySnapshot.docs.map((doc) => {
                 const data = doc.data();
                 return {
                     id: doc.id,
                     ...data,
-                    // Ensure createdAt exists and is a Timestamp, or use a fallback value (like null or a default date)
                     createdAt: data.createdAt ? data.createdAt.toDate() : null,
                 };
             });
@@ -169,22 +154,8 @@ const Navbar = () => {
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
-
-
-        try {
-            const querySnapshot = await getDocs(collection(firestore, "bannerBlogs"));
-            const docs = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
-            setDataBanner(docs);
-        } catch (error) {
-            console.error("Error fetching documents: ", error);
-        }
     };
 
-    console.log(dataBloge);
 
     // Get Data Category
     const getCategories = async () => {
@@ -225,58 +196,6 @@ const Navbar = () => {
 
         try {
             const querySnapshot = await getDocs(
-                collection(firestore, "bannerBlogsCommercial")
-            );
-            const docs = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            setbannerBlogsCommercial(docs);
-        } catch (error) {
-            console.error("Error fetching documents: ", error);
-        }
-
-        try {
-            const querySnapshot = await getDocs(
-                collection(firestore, "bannerBlogsRent")
-            );
-            const docs = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            setBannerRent(docs);
-        } catch (error) {
-            console.error("Error fetching documents: ", error);
-        }
-
-        try {
-            const querySnapshot = await getDocs(
-                collection(firestore, "bannerBlogsAreas")
-            );
-            const docs = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            setBannerAreas(docs);
-        } catch (error) {
-            console.error("Error fetching documents: ", error);
-        }
-
-        try {
-            const querySnapshot = await getDocs(
-                collection(firestore, "bannerBlogsDeveloper")
-            );
-            const docs = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            setBannerDeveloper(docs);
-        } catch (error) {
-            console.error("Error fetching documents: ", error);
-        }
-
-        try {
-            const querySnapshot = await getDocs(
                 collection(firestore, "categoryRentPlan")
             );
             const docs = querySnapshot.docs.map((doc) => ({
@@ -298,7 +217,6 @@ const Navbar = () => {
     };
 
     // handle Filter
-
     const handleToggleDropdown = (dropdown) => {
         setDropdownOpen({
             ...dropdownOpen,
@@ -307,9 +225,31 @@ const Navbar = () => {
     };
 
 
+    const GetDataBanner = async () => {
+        try {
+            const querySnapshot = await getDocs(
+                collection(firestore, "bannerBuy")
+            );
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setBannerBuy(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+
+
+    }
+
+    console.log();
+
+
     useEffect(() => {
         GetDataFireStore();
         getCategories();
+        GetDataBanner();
     }, []);
 
     return (
@@ -350,7 +290,6 @@ const Navbar = () => {
                                             </h3>
                                             <div className="dis-paly">
                                                 <ul>
-                                                    {/*  */}
                                                     <h4> Secondary properties</h4>
                                                     {Secondaryproperties?.map((it) => {
                                                         return (
@@ -380,9 +319,9 @@ const Navbar = () => {
                                         <div item lg={7} xs={12}>
                                             <div className="dis-imgNbuy">
                                                 <div className="imgNbuy">
-                                                    {DataBuyBanner?.slice(0, 1).map((it) => {
+                                                    {BannerBuy?.slice(0, 1).map((it) => {
                                                         return (
-                                                            <img style={{ width: '500px' }} src={it.image2} alt="" />
+                                                            <img style={{ width: '500px' }} src={it.imageBuy} alt="" />
                                                         )
                                                     })}
                                                 </div>
@@ -545,11 +484,11 @@ const Navbar = () => {
                                         </div>
                                         <div item lg={5} xs={12}>
                                             <div className="imgNbuy">
-                                                {BannerRent?.slice(0, 1).map((it) => {
+                                                {/* {BannerRent?.slice(0, 1).map((it) => {
                                                     return (
                                                         <img style={{ width: '400px' }} src={it.image} alt="" />
                                                     )
-                                                })}
+                                                })} */}
                                             </div>
                                         </div>
                                     </div>
@@ -685,7 +624,7 @@ const Navbar = () => {
                                             </ul>
                                         </div>
                                         <div item xs={7} className={"dis-buy2"}>
-                                            {bannerBlogsCommercial?.slice(0, 1).map((it) => {
+                                            {/* {bannerBlogsCommercial?.slice(0, 1).map((it) => {
                                                 return (
                                                     <>
                                                         <div className="imgNCommercial">
@@ -696,8 +635,7 @@ const Navbar = () => {
                                                         </div>
                                                     </>
                                                 )
-
-                                            })}
+                                            })} */}
                                         </div>
                                     </div>
 
@@ -868,9 +806,10 @@ const Navbar = () => {
                                         </div>
                                         <div item xs={7}>
                                             <div className="imgNCommercial">
-                                                {BannerDeveloper?.slice(0, 1).map((it) => {
+                                                {/* Develop */}
+                                                {/* {BannerDeveloper?.slice(0, 1).map((it) => {
                                                     return <img style={{ width: '500px' }} src={it.image} alt="" />
-                                                })}
+                                                })} */}
                                             </div>
                                         </div>
                                     </div>
@@ -1013,9 +952,9 @@ const Navbar = () => {
                                         </div>
                                         <div className="dis-areas">
                                             <div className="imgNbuy">
-                                                {BannerAreas?.slice(0, 1).map((it) => {
+                                                {/* {BannerAreas?.slice(0, 1).map((it) => {
                                                     return <img src={it.image} alt="" />
-                                                })}
+                                                })} */}
                                             </div>
                                             <div className="dis-imgNbuy">
                                                 <ul>
@@ -1194,7 +1133,7 @@ const Navbar = () => {
                                         </div>
                                         <div item xs={7}>
                                             <div className="dis-imgNbuy">
-                                                <div className="imgNbuy">
+                                                {/* <div className="imgNbuy">
                                                     <div style={{
                                                         // height: '250px'
                                                     }} className="imgNbuy2">
@@ -1203,7 +1142,7 @@ const Navbar = () => {
                                                     <div className="imgNbuy1">
                                                         <img src={dataBanner[0]?.image1} alt="" />
                                                     </div>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>
