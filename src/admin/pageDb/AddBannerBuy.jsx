@@ -43,7 +43,7 @@ const AddBannerBuy = () => {
         setError(null);
 
         try {
-            const imageUrl2 = ref(storage, `filebBanner/${FileImage.image2.name}`)
+            const imageUrl2 = ref(storage, `fileBannerBuy/${FileImage.image2.name}`)
 
 
             const [snapshotBlog, snapshotCart] = await Promise.all([

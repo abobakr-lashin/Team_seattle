@@ -35,6 +35,8 @@ const Navbar = () => {
     const [languageOpen, setLanguageOpen] = useState(false);
     // Add State Banner
     const [ BannerBuy , setBannerBuy] = useState([]);
+    const [ BannerRent , setBannerRent] = useState([]);
+
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -235,6 +237,20 @@ const Navbar = () => {
                 ...doc.data(),
             }));
             setBannerBuy(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        // Banner Rent 
+        try {
+            const querySnapshot = await getDocs(
+                collection(firestore, "bannerRent")
+            );
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setBannerRent(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -484,15 +500,14 @@ const Navbar = () => {
                                         </div>
                                         <div item lg={5} xs={12}>
                                             <div className="imgNbuy">
-                                                {/* {BannerRent?.slice(0, 1).map((it) => {
+                                                {BannerRent?.slice(0, 1).map((it) => {
                                                     return (
-                                                        <img style={{ width: '400px' }} src={it.image} alt="" />
+                                                        <img style={{ width: '400px' }} src={it.imageRent} alt="" />
                                                     )
-                                                })} */}
+                                                })}
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="imgnp">
                                         <div className="disi">
                                             <div>
