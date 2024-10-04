@@ -17,8 +17,8 @@ const Navbar = () => {
     const [language, setLocation] = useState([]);
     const [RentalProperties, setRentalProperties] = useState([]);
     const [LandlordsTools, setLandlordsTools] = useState([]);
-    const [dataBloge, setDataBloge] = useState([]);
     const [DataBuyBanner, setDataBuyBanner] = useState([]);
+    const [dataBloge, setDataBloge] = useState([]);
     const [BannerRent, setBannerRent] = useState([]);
     const [bannerBlogsCommercial, setbannerBlogsCommercial] = useState([]);
     const [BannerDeveloper, setBannerDeveloper] = useState([]);
@@ -382,7 +382,7 @@ const Navbar = () => {
                                                 <div className="imgNbuy">
                                                     {DataBuyBanner?.slice(0, 1).map((it) => {
                                                         return (
-                                                            <img style={{ width: '500px' }} src={it.image2} alt="" />
+                                                            <img  src={it.image2} alt="" />
                                                         )
                                                     })}
                                                 </div>
@@ -547,7 +547,7 @@ const Navbar = () => {
                                             <div className="imgNbuy">
                                                 {BannerRent?.slice(0, 1).map((it) => {
                                                     return (
-                                                        <img style={{ width: '400px' }} src={it.image} alt="" />
+                                                        <img src={it.image} alt="" />
                                                     )
                                                 })}
                                             </div>
@@ -869,7 +869,7 @@ const Navbar = () => {
                                         <div item xs={7}>
                                             <div className="imgNCommercial">
                                                 {BannerDeveloper?.slice(0, 1).map((it) => {
-                                                    return <img style={{ width: '500px' }} src={it.image} alt="" />
+                                                    return <img  src={it.image} alt="" />
                                                 })}
                                             </div>
                                         </div>
