@@ -218,7 +218,18 @@ a {
     padding-top: 25px;
 }
 }
+
+@media (max-width: 1536px) and (max-height: 864px) {
+  .css-1oqqzyl-MuiContainer-root {
+    max-width: 1200px;
+    margin: 26px;
+}
+}
 @media screen and (max-width: 1441px) {
+  .css-1oqqzyl-MuiContainer-root {
+    max-width: 1200px;
+    margin: 0px;
+}
   .footer {
     color: white !important;
     font-family: Arial, sans-serif;
