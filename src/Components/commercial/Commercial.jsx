@@ -190,13 +190,16 @@ export default function Commercial() {
                 </div>
                 <div className="title-dis7" style={{ display: "flex" }}>
                     <h2>
-                        <div style={{ textTransform: "uppercase", fontSize: "50px" }}>
+                        <div style={{ textTransform: "uppercase"}}>
                             offices for sale in uae
                         </div>
                     </h2>
                 </div>
             </div>
             <SaleIn />
+            <div className="h-5vh"></div>
+            <div className="h-5vh"></div>
+
             <OUREXPERT />
             <Footer />
         </div>
