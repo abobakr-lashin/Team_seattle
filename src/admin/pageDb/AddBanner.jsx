@@ -43,10 +43,10 @@ const AddBanner = () => {
         setError(null);
 
         try {
-            const imageUrl1 = ref(storage, `filebBanner/${FileImage.image1.name}`)
+            const imageUrl1 = ref(storage, `fileBanner/Blogs/${FileImage.image1.name}`)
             const taskBanner1 = uploadBytes(imageUrl1, FileImage.image1);
 
-            const imageUrl2 = ref(storage, `filebBanner/${FileImage.image2.name}`)
+            const imageUrl2 = ref(storage, `fileBanner/Blogs/${FileImage.image2.name}`)
             const taskBanner2 = uploadBytes(imageUrl2, FileImage.image2);
 
 
@@ -61,8 +61,8 @@ const AddBanner = () => {
             const categoriesRef = collection(firestore, 'bannerBlogs');
             await addDoc(categoriesRef, {
                 text,
-                image1: urlBlog1,
-                image2: urlBlog2,
+                imageBlogs1: urlBlog1,
+                imageBlogs2: urlBlog2,
                 createdAt: new Date(),
             });
             toast.success('Banner added successfully!.')

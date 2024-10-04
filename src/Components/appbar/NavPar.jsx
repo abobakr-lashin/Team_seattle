@@ -37,6 +37,11 @@ const Navbar = () => {
     const [BannerBuy, setBannerBuy] = useState([]);
     const [BannerRent, setBannerRent] = useState([]);
     const [BannerCommercial, setBannerCommercial] = useState([]);
+    const [BannerDeveloper, setBannerDeveloper] = useState([]);
+    const [BannerAreas, setBannerAreas] = useState([]);
+    const [BannerBlogs, setBannerBlogs] = useState([]);
+
+
 
 
     const toggleMenu = () => {
@@ -266,6 +271,49 @@ const Navbar = () => {
                 ...doc.data(),
             }));
             setBannerCommercial(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        // Banner Developer 
+        try {
+            const querySnapshot = await getDocs(
+                collection(firestore, "bannerDeveloper")
+            );
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setBannerDeveloper(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        // Banner Areas 
+        try {
+            const querySnapshot = await getDocs(
+                collection(firestore, "bannerAreas")
+            );
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setBannerAreas(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+
+        // Banner Blogs 
+        try {
+            const querySnapshot = await getDocs(
+                collection(firestore, "bannerBlogs")
+            );
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setBannerBlogs(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -837,9 +885,9 @@ const Navbar = () => {
                                         <div item xs={7}>
                                             <div className="imgNCommercial">
                                                 {/* Develop */}
-                                                {/* {BannerDeveloper?.slice(0, 1).map((it) => {
-                                                    return <img style={{ width: '500px' }} src={it.image} alt="" />
-                                                })} */}
+                                                {BannerDeveloper?.slice(0, 1).map((it) => {
+                                                    return <img style={{ width: '500px' }} src={it.imageDeveloper} alt="" />
+                                                })}
                                             </div>
                                         </div>
                                     </div>
@@ -982,9 +1030,9 @@ const Navbar = () => {
                                         </div>
                                         <div className="dis-areas">
                                             <div className="imgNbuy">
-                                                {/* {BannerAreas?.slice(0, 1).map((it) => {
-                                                    return <img src={it.image} alt="" />
-                                                })} */}
+                                                {BannerAreas?.slice(0, 1).map((it) => {
+                                                    return <img src={it.imageAreas} alt="" />
+                                                })}
                                             </div>
                                             <div className="dis-imgNbuy">
                                                 <ul>
@@ -1146,7 +1194,7 @@ const Navbar = () => {
                                                             justifyContent: 'center',
                                                         }} className="dis-paly1">
                                                             <div className="img">
-                                                                <img src={it.fileCart} alt="" />
+                                                                <img src={it?.imageLanding} alt="" />
                                                             </div>
                                                             <div className="titel">
                                                                 <h5>{it.title}</h5>
@@ -1163,16 +1211,18 @@ const Navbar = () => {
                                         </div>
                                         <div item xs={7}>
                                             <div className="dis-imgNbuy">
-                                                {/* <div className="imgNbuy">
-                                                    <div style={{
-                                                        // height: '250px'
-                                                    }} className="imgNbuy2">
-                                                        <img src={dataBanner[0]?.image2} alt="" />
-                                                    </div>
-                                                    <div className="imgNbuy1">
-                                                        <img src={dataBanner[0]?.image1} alt="" />
-                                                    </div>
-                                                </div> */}
+                                                {BannerBlogs?.slice(0, 1).map((it) => {
+                                                    return (
+                                                        <>
+                                                            <div className="imgNbuy">
+                                                                <img style={{ width: '400px' }} src={it.imageBlogs1} alt="" />
+                                                            </div>
+                                                            <div className="imgNbuy">
+                                                                <img style={{ width: '400px' }} src={it.imageBlogs2} alt="" />
+                                                            </div>
+                                                        </>
+                                                    )
+                                                })}
                                             </div>
                                         </div>
                                     </div>

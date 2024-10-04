@@ -43,7 +43,7 @@ const AddBannerDevelopers = () => {
         setError(null);
 
         try {
-            const imageUrl1 = ref(storage, `filebBanner/${FileImage.image1.name}`)
+            const imageUrl1 = ref(storage, `fileBanner/Developer/${FileImage.image1.name}`)
 
             const [snapshotBlog, snapshotCart] = await Promise.all([
                 uploadBytes(imageUrl1, FileImage.image1),
@@ -51,10 +51,10 @@ const AddBannerDevelopers = () => {
 
             const urlBlog1 = await getDownloadURL(imageUrl1);
 
-            const categoriesRef = collection(firestore, 'bannerBlogsDeveloper');
+            const categoriesRef = collection(firestore, 'bannerDeveloper');
             await addDoc(categoriesRef, {
                 text,
-                image: urlBlog1,
+                imageDeveloper: urlBlog1,
                 createdAt: new Date(),
             });
             toast.success('Banner added successfully!.')
