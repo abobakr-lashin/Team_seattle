@@ -150,6 +150,21 @@ export default function AreasDahs() {
                 }}>
                     Add Category Location
                 </button>
+
+                <button style={{
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    outline: 'none',
+                    border: '1px solid #ccc',
+                    padding: '8px',
+                    color: '#234232',
+                }} onClick={() => {
+                    Navigate('/dashboard/Areas/AddBannerAreas')
+                }}>
+                    Add Banner Areas
+                </button>
             </div>
             <div className="table">
             <h3>Data Buy Cart Areas</h3>

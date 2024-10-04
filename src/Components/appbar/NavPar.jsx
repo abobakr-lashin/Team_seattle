@@ -18,6 +18,11 @@ const Navbar = () => {
     const [RentalProperties, setRentalProperties] = useState([]);
     const [LandlordsTools, setLandlordsTools] = useState([]);
     const [dataBloge, setDataBloge] = useState([]);
+    const [DataBuyBanner, setDataBuyBanner] = useState([]);
+    const [BannerRent, setBannerRent] = useState([]);
+    const [bannerBlogsCommercial, setbannerBlogsCommercial] = useState([]);
+    const [BannerDeveloper, setBannerDeveloper] = useState([]);
+    const [BannerAreas, setBannerAreas] = useState([]);
     const [dropdownOpen, setDropdownOpen] = useState({
         ABOUT_US: false,
         OUR_PROJECTS: false,
@@ -128,17 +133,17 @@ const Navbar = () => {
             console.error("Error fetching documents: ", error);
         }
         // Get Data from Firestore
-        // try {
-        //     const querySnapshot = await getDocs(collection(firestore, "Blogs"));
-        //     const docs = querySnapshot.docs.map((doc) => ({
-        //         id: doc.id,
-        //         ...doc.data(),
-        //     }));
-        //     docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
-        //     setDataBloge(docs);
-        // } catch (error) {
-        //     console.error("Error fetching documents: ", error);
-        // }
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "bannerBlogsBuy"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
+            setDataBuyBanner(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
         try {
             const querySnapshot = await getDocs(collection(firestore, "Blogs"));
             const docs = querySnapshot.docs.map((doc) => {
@@ -214,6 +219,58 @@ const Navbar = () => {
                 ...doc.data(),
             }));
             setLocation(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        try {
+            const querySnapshot = await getDocs(
+                collection(firestore, "bannerBlogsCommercial")
+            );
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setbannerBlogsCommercial(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        try {
+            const querySnapshot = await getDocs(
+                collection(firestore, "bannerBlogsRent")
+            );
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setBannerRent(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        try {
+            const querySnapshot = await getDocs(
+                collection(firestore, "bannerBlogsAreas")
+            );
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setBannerAreas(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        try {
+            const querySnapshot = await getDocs(
+                collection(firestore, "bannerBlogsDeveloper")
+            );
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setBannerDeveloper(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -323,14 +380,18 @@ const Navbar = () => {
                                         <div item lg={7} xs={12}>
                                             <div className="dis-imgNbuy">
                                                 <div className="imgNbuy">
-                                                    <img src="./uploads/nav/buy/1.png" alt="" />
+                                                    {DataBuyBanner?.slice(0, 1).map((it) => {
+                                                        return (
+                                                            <img style={{ width: '500px' }} src={it.image2} alt="" />
+                                                        )
+                                                    })}
                                                 </div>
                                                 <ul className="ullest">
                                                     <h3>INVEST BY EMIRATE</h3>
                                                     {language?.map((it) => {
                                                         return (
                                                             <li>
-                                                                <Link to={`/Buy/Location/${it?.category?.location}`}>
+                                                                <Link to={`/Buy/Category/Location/${it?.category?.location}`}>
                                                                     {it?.category?.location}
                                                                 </Link>
                                                             </li>
@@ -484,7 +545,11 @@ const Navbar = () => {
                                         </div>
                                         <div item lg={5} xs={12}>
                                             <div className="imgNbuy">
-                                                <img src="./uploads/nav/rent/2.png" alt="" />
+                                                {BannerRent?.slice(0, 1).map((it) => {
+                                                    return (
+                                                        <img style={{ width: '400px' }} src={it.image} alt="" />
+                                                    )
+                                                })}
                                             </div>
                                         </div>
                                     </div>
@@ -620,12 +685,19 @@ const Navbar = () => {
                                             </ul>
                                         </div>
                                         <div item xs={7} className={"dis-buy2"}>
-                                            <div className="imgNCommercial">
-                                                <img src="./uploads/nav/commercial/2.png" alt="" />
-                                            </div>
-                                            <div className="imgNCommercial">
-                                                <img src="./uploads/nav/commercial/4.png" alt="" />
-                                            </div>
+                                            {bannerBlogsCommercial?.slice(0, 1).map((it) => {
+                                                return (
+                                                    <>
+                                                        <div className="imgNCommercial">
+                                                            <img src={it.image1} alt="" />
+                                                        </div>
+                                                        <div className="imgNCommercial">
+                                                            <img src={it.image2} alt="" />
+                                                        </div>
+                                                    </>
+                                                )
+
+                                            })}
                                         </div>
                                     </div>
 
@@ -796,7 +868,9 @@ const Navbar = () => {
                                         </div>
                                         <div item xs={7}>
                                             <div className="imgNCommercial">
-                                                <img src="./uploads/nav/developers/1.png" alt="" />
+                                                {BannerDeveloper?.slice(0, 1).map((it) => {
+                                                    return <img style={{ width: '500px' }} src={it.image} alt="" />
+                                                })}
                                             </div>
                                         </div>
                                     </div>
@@ -939,7 +1013,9 @@ const Navbar = () => {
                                         </div>
                                         <div className="dis-areas">
                                             <div className="imgNbuy">
-                                                <img src="./uploads/nav/areas/1.png" alt="" />
+                                                {BannerAreas?.slice(0, 1).map((it) => {
+                                                    return <img src={it.image} alt="" />
+                                                })}
                                             </div>
                                             <div className="dis-imgNbuy">
                                                 <ul>
@@ -1064,10 +1140,10 @@ const Navbar = () => {
                             >
 
                                 <div container spacing={2} className="custom-dropdown-item">
-                                            <h3>
-                                                EXPLORE THE UAE{" "}
-                                                <img src="./uploads/nav/icon/arrow.png" alt="" />
-                                            </h3>
+                                    <h3>
+                                        EXPLORE THE UAE{" "}
+                                        <img src="./uploads/nav/icon/arrow.png" alt="" />
+                                    </h3>
                                     <div className="dis-buy">
                                         <div className="titledis">
                                             <div className="dis-paly3">
@@ -1093,7 +1169,7 @@ const Navbar = () => {
                                             </div>
                                             <div>
                                                 {/* Nav Bar Blogs */}
-                                                {dataBloge?.slice(0 , 2).map((it) => {
+                                                {dataBloge?.slice(0, 2).map((it) => {
                                                     return (
                                                         <div style={{
                                                             display: 'flex',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, HashRouter } from "react-router-dom";
-import ScrollToTop from './ScrollToTop'; // تأكد من استيراد المكون
+import ScrollToTop from './ScrollToTop';
 import Home from './Pages/Home';
 import Ourpartners from './Pages/Ourpartners';
 import TeamS from './Components/abuotus/TeamS';
@@ -81,6 +81,12 @@ import AddCartAreas from './admin/pageDb/AddCartAreas';
 import PageAreas from './Pages/PageAreasbuy';
 import PageAreasbuy from './Pages/PageAreasbuy';
 import PageAreasRent from './Pages/PageAreasRent';
+import AddBannerBuy from './admin/pageDb/AddBannerBuy';
+import AddBannerRent from './admin/pageDb/AddBannerRent';
+import AddBannerCommercial from './admin/pageDb/AddBannerCommerclal';
+import AddBannerDevelopers from './admin/pageDb/AddBannerDevelopers';
+import AddBannerAreas from './admin/pageDb/AddBannerAreas';
+import FilterLocation from './Components/buy/FIlterLocation';
 
 export default function App() {
     return (
@@ -114,6 +120,8 @@ export default function App() {
                     <Route path="buy/category/:id" element={<CategoryCards />} />
                     <Route path="Buy/:id" element={<LandingPageBuy />} />
                     <Route path="Buy/Location/:id" element={<LandingPageBuyLocation />} />
+                    <Route path="Buy/Category/Location/:id" element={<FilterLocation />} />
+
                     <Route path="BuBuycardsy" element={<Buycards />} />
 
                     <Route path="Rent" element={<Rent />} />
@@ -153,11 +161,14 @@ export default function App() {
                         <Route path="AddCategoryRentPlan" element={<AddCategoryRentPlan />} />
                         <Route path="AddLocationRent" element={<AddLocationRent />} />
                         <Route path="Rent" element={<RentDahs />} />
+                        <Route path="Rent/AddBannerRent" element={<AddBannerRent />} />
                         <Route path="EditRent/:id" element={<UpdateRent />} />
                         <Route path="Buy" element={<BuyDahs />} />
+                        <Route path="buy/AddBannerBuy" element={<AddBannerBuy />} />
                         <Route path="EditBuy/:id" element={<UpdateBuy />} />
                         <Route path="COMMERCIAL" element={<COMMERCIALDahs />} />
                         <Route path="CommercialEdit/:id" element={<CommercialEdit />} />
+                        <Route path="Commercial/AddBannerCommercial" element={<AddBannerCommercial />} />
                         <Route path="Sell" element={<SellDahs />} />
                         <Route path="EditSell/:id" element={<UpdateSell />} />
                         <Route path="CreateRent" element={<CreateRent />} />
@@ -165,10 +176,12 @@ export default function App() {
                         <Route path="AddLocationSell" element={<AddLocationSell />} />
                         <Route path="AddCategorySellPlan" element={<AddCategorySellPlan />} />
                         <Route path="Areas" element={<AreasDahs />} />
+                        <Route path="Areas/AddBannerAreas" element={<AddBannerAreas />} />
                         <Route path="/dashboard/CreateAreas" element={<AddCartAreas />} />
                         <Route path="/dashboard/Blogs" element={<BlogsDahs />} />
                         <Route path="/dashboard/Blogs/AddBanner" element={<AddBanner />} />
                         <Route path="/dashboard/Developers" element={<DevelopersDahs />} />
+                        <Route path="Developers/AddBannerDevelopers" element={<AddBannerDevelopers />} />
                         <Route path="/dashboard/Developers/AddCartDevelopers" element={<AddCartDevelopers />} />
                     </Route>
                 </Routes>
