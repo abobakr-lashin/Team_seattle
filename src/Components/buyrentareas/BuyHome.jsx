@@ -156,7 +156,7 @@ export default function BuyHome() {
       </div>
       <div className="h-5vh"></div>
 
-      <Slider {...settings}>{imgsetin}</Slider>
+      {/* <Slider {...settings}>{imgsetin}</Slider> */}
       <div className="h-5vh"></div>
       <div className="h-5vh"></div>
     </div>

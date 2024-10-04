@@ -87,6 +87,9 @@ import AddBannerCommercial from './admin/pageDb/AddBannerCommerclal';
 import AddBannerDevelopers from './admin/pageDb/AddBannerDevelopers';
 import AddBannerAreas from './admin/pageDb/AddBannerAreas';
 import FilterLocation from './Components/buy/FIlterLocation';
+import SeattleProject from './admin/pageDb/SeattleDahs';
+import SeattleDahs from './admin/pageDb/SeattleDahs';
+import CreateSheattle from './admin/pageDb/CreateSheattle';
 
 export default function App() {
     return (
@@ -181,6 +184,10 @@ export default function App() {
                         <Route path="/dashboard/Blogs" element={<BlogsDahs />} />
                         <Route path="/dashboard/Blogs/AddBanner" element={<AddBanner />} />
                         <Route path="/dashboard/Developers" element={<DevelopersDahs />} />
+
+                        <Route path="/dashboard/SeattleProject" element={<SeattleDahs />} />
+                        <Route path="/dashboard/CreateSeattle" element={<CreateSheattle />} />
+                        
                         <Route path="Developers/AddBannerDevelopers" element={<AddBannerDevelopers />} />
                         <Route path="/dashboard/Developers/AddCartDevelopers" element={<AddCartDevelopers />} />
                     </Route>
