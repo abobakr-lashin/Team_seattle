@@ -7,7 +7,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
 import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
-import './Commercial.css'; 
+import './Commercial.css';
 
 export default function SaleIn() {
     const [data, setData] = useState([]);
@@ -31,42 +31,41 @@ export default function SaleIn() {
 
     const imgsetin = (
         <div className="swiper-container">
-            {/* أزرار الأسهم المخصصة */}
             <div className="swiper-button-prev custom-arrow"></div>
             <div className="swiper-button-next custom-arrow"></div>
 
             <Swiper
-  slidesPerView={3}
-  spaceBetween={0}
-  pagination={{
-    clickable: true,
-  }}
-  navigation={{
-    nextEl: '.swiper-button-next', // الربط مع السهم الأيمن
-    prevEl: '.swiper-button-prev', // الربط مع السهم الأيسر
-  }}
-  loop={true}
-  breakpoints={{
-    320: {
-      slidesPerView: 1, // لشاشات الهواتف الصغيرة
-      spaceBetween: 10,
-    },
-    640: {
-      slidesPerView: 1, // لشاشات الهواتف الأكبر قليلًا
-      spaceBetween: 50,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    1025: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-  }}
-  modules={[Pagination, Navigation]} // التأكد من تضمين موديول Navigation
-  className="mySwiper"
->
+                slidesPerView={3}
+                spaceBetween={0}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={{
+                    nextEl: '.swiper-button-next', // الربط مع السهم الأيمن
+                    prevEl: '.swiper-button-prev', // الربط مع السهم الأيسر
+                }}
+                loop={true}
+                breakpoints={{
+                    320: {
+                        slidesPerView: 1, // لشاشات الهواتف الصغيرة
+                        spaceBetween: 10,
+                    },
+                    640: {
+                        slidesPerView: 1, // لشاشات الهواتف الأكبر قليلًا
+                        spaceBetween: 50,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1025: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                }}
+                modules={[Pagination, Navigation]} // التأكد من تضمين موديول Navigation
+                className="mySwiper"
+            >
                 {data.map((it) => (
                     <SwiperSlide key={it.id}>
                         <Grid sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
