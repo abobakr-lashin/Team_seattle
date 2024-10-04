@@ -11,7 +11,8 @@ export default function UpdateBlog() {
     const { id } = useParams(); // Get blog ID from URL
     const [formData, setFormData] = useState({});
     const [fileBlog, setFileBlog] = useState(null); // For file upload
-    const [fileCart, setFileCart] = useState(null); // For file upload
+    const [fileCart, setFileCart] = useState(null);
+    const [FileCartLanding, setFileCartLanding] = useState(null); // For file upload
     const [blogImageURL, setBlogImageURL] = useState(""); // For displaying blog image
     const [cartImageURL, setCartImageURL] = useState(""); // For displaying cart image
     const [Loading, setLoading] = useState(false); // For loading state
@@ -54,6 +55,8 @@ export default function UpdateBlog() {
             setFileBlog(e.target.files[0]);
         } else if (e.target.name === 'fileCart') {
             setFileCart(e.target.files[0]);
+        } else if (e.target.name === 'imageLanding') {
+            setFileCartLanding(e.target.files[0]);
         }
     };
 
@@ -75,6 +78,7 @@ export default function UpdateBlog() {
         try {
             let updatedBlogImageURL = blogImageURL;
             let updatedCartImageURL = cartImageURL;
+            let updatedCartImageLandingURL = formData.imageLanding;
 
             if (fileBlog) {
                 const fileRefBlog = ref(storage, `blogImages/${fileBlog.name}`);
@@ -88,10 +92,17 @@ export default function UpdateBlog() {
                 updatedCartImageURL = await getDownloadURL(fileRefCart);
             }
 
+            if (FileCartLanding) {
+                const fileRefCart = ref(storage, `cartImages/${FileCartLanding.name}`);
+                await uploadBytes(fileRefCart, FileCartLanding);
+                updatedCartImageLandingURL = await getDownloadURL(fileRefCart);
+            }
+
             const updatedData = {
                 ...formData,
                 fileBlog: updatedBlogImageURL,
-                fileCart: updatedCartImageURL
+                fileCart: updatedCartImageURL,
+                imageLanding: updatedCartImageLandingURL,
             };
 
             const docRef = doc(firestore, 'Blogs', id);
@@ -150,6 +161,23 @@ export default function UpdateBlog() {
                         <Box
                             component="img"
                             src={cartImageURL}
+                            alt="Cart"
+                            sx={{ width: '250px', maxWidth: '100%', height: 'auto', marginBottom: 2 }}
+                        />
+                    )}
+                </Box>
+                <Box sx={{ marginBottom: 2 }}>
+                    <Typography variant="h6">Upload Cart Image Landing</Typography>
+                    <input
+                        type="file"
+                        name="imageLanding"
+                        onChange={handleFileChange}
+                        style={{ marginBottom: '10px' }}
+                    />
+                    {formData.imageLanding && (
+                        <Box
+                            component="img"
+                            src={formData.imageLanding}
                             alt="Cart"
                             sx={{ width: '250px', maxWidth: '100%', height: 'auto', marginBottom: 2 }}
                         />

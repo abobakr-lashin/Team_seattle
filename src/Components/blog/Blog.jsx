@@ -106,7 +106,7 @@ export default function Blog() {
             <div
                 className="bg-img"
                 style={{
-                    backgroundImage: `url(${formData.fileCart})`,
+                    backgroundImage: `url(${formData.imageLanding})`,
                 }}
             >
                 <NavPar />
