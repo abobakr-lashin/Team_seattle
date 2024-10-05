@@ -6,8 +6,8 @@ import { Grid, ImageListTileBar, IconButton, Dialog } from "@mui/material";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebaseConfig";
 import { Block } from "@mui/icons-material";
-import "./Navphone.css";
 import "./Navbar.css";
+import "./Navphone.css";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);

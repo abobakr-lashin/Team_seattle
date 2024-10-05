@@ -224,6 +224,12 @@ a {
     max-width: 1200px;
     margin: 26px;
 }
+.css-1tz8m30 > .MuiGrid-item{
+  padding-top: 62px !important;
+}
+.css-1tz8m30 > .MuiGrid-item{
+  padding-left: 0px;
+}
 }
 @media screen and (max-width: 1441px) {
   .css-1oqqzyl-MuiContainer-root {
