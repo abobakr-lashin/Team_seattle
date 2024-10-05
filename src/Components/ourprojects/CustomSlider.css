@@ -218,6 +218,14 @@
     font-size: 15px;
     font-weight: 400;
   }
+  .slider-container .slick-center {
+    transform: scale(1) !important;
+    opacity: 10 !important;
+  
+  }
+  .slider-container {
+    padding: 0%;
+  }
 }
 
 @media (max-width: 853px) {
@@ -267,4 +275,13 @@
   .type {
     font-size: 14px;
   }
+}
+
+.slider-container .slick-center {
+  transform: scale(1.1) !important;
+  opacity: 10 !important;
+
+}
+.slider-container {
+  padding: 1%;
 }
