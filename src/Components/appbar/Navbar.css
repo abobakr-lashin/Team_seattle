@@ -652,9 +652,15 @@ width: 100%;
   justify-content: center;
   flex-direction: column;
   margin-left: 5px;
+  margin-top: 15px;
 }
 .Blogs .dis-paly1 .img img {
-  width: 70px;
+  width: 140px;
+}
+.Blogs .dis-paly1{
+  display: flex;
+  align-items: start !important;
+  justify-content: start !important;
 }
 .Blogs .dis-paly1 .titel h5 {
   font-size: 18px;
@@ -1013,6 +1019,15 @@ width: 100%;
   }
 
   /* BUY */
+  .Blogs .dis-paly1 .titel {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 5px;
+    margin-top: 0px;
+
+  }
 }
 @media (max-width: 1440px) {
   .logo-nav {

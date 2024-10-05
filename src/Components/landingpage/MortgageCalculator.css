@@ -1,0 +1,71 @@
+/* 
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .calculator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .input-section {
+    width: 45%;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  span {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .output-section {
+    width: 45%;
+    background-color: #0055a4;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  #monthlyPayment {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #00aaff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #0088cc;
+  }
+   */

@@ -90,6 +90,7 @@ import FilterLocation from './Components/buy/FIlterLocation';
 import SeattleProject from './admin/pageDb/SeattleDahs';
 import SeattleDahs from './admin/pageDb/SeattleDahs';
 import CreateSheattle from './admin/pageDb/CreateSheattle';
+import MortgageCalculator from './Components/landingpage/MortgageCalculator';
 
 export default function App() {
     return (
@@ -110,6 +111,7 @@ export default function App() {
                     <Route path="Sell" element={<Sell />} />
                     <Route path="Sell/:id" element={<LandingPageSell />} />
 
+                    <Route path="MortgageCalculator" element={<MortgageCalculator />} />
 
                     <Route path="LatestNews" element={<LatestNews />} />
                     <Route path="Blog/:id" element={<Blog />} />

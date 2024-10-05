@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { firestore } from "../../firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import "./landingpage.css";
+import MortgageCalculator from "./MortgageCalculator";
 
 export default function LandingPageBuy() {
     const [cartId, setCartId] = useState([]);
@@ -232,6 +233,7 @@ export default function LandingPageBuy() {
             </div>
             <div className="map">
                 <div className="h-5vh"></div>
+                {/* <MortgageCalculator/> */}
                 <iframe
                     src={filterCartId[0]?.map}
                     width="600"
