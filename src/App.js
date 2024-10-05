@@ -90,6 +90,7 @@ import FilterLocation from './Components/buy/FIlterLocation';
 import SeattleProject from './admin/pageDb/SeattleDahs';
 import SeattleDahs from './admin/pageDb/SeattleDahs';
 import CreateSheattle from './admin/pageDb/CreateSheattle';
+import AddCategoryShettlePlan from './admin/pageDb/AddCategoryShettlePlan';
 
 export default function App() {
     return (
@@ -158,7 +159,10 @@ export default function App() {
                         <Route path="Commercialcreat" element={<Commercialcreat />} />
                         <Route path="AddCategoryCommercial" element={<AddCategory />} />
                         <Route path="AddCategoryBuyLocation" element={<AddCateBuyLocation />} />
+
                         <Route path="AddCateBuyPlan" element={<AddCategoryBuyPlan />} />
+                        <Route path="AddCategory" element={<AddCategoryShettlePlan />} />
+
                         <Route path="AddCardBuy" element={<AddCardBuy />} />
                         <Route path="/dashboard/Developers/AddDevelopers" element={<AddDevelopers />} />
                         <Route path="AddCategoryRentPlan" element={<AddCategoryRentPlan />} />
