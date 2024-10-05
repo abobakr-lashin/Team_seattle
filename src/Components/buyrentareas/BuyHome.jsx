@@ -108,13 +108,7 @@ export default function BuyHome() {
                                             <h5>{it.title}</h5>
                                             <h6>
                                                 <LocationOnIcon /> {it.location}
-                                                <hr />
-                                                <div className="Listing-by">
-                                                    <div className="img-lisby">
-                                                        <img src={it.bgImage} alt="Property" />
-                                                    </div>
-                                                    <div className="title-lisby">Listing by {it.listingName} </div>
-                                                </div>
+                                        
                                             </h6>
                                         </div>
                                     </div>
@@ -151,6 +145,8 @@ export default function BuyHome() {
             {imgsetin}
             <div className="h-5vh"></div>
             <div className="h-5vh"></div>
+            <div className="h-5vh"></div>
+
         </div>
     );
 }
