@@ -67,7 +67,7 @@ export default function AddCartDevelopers() {
                 imageCart: null,
                 company:''
             });
-            Navigate('dashboard/Developers')
+            Navigate('/dashboard/Developers')
         } catch (err) {
             toast.error('Error submitting data: ' + err.message);
             console.error('Error submitting data:', err);
