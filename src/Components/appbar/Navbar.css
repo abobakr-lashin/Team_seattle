@@ -83,7 +83,7 @@
 .custom-navbar-link {
   color: #fff1f1;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 21px;
   padding: 6px;
   cursor: pointer;
 }
@@ -890,7 +890,7 @@ width: 100%;
   right: 0px;
 }
 .custom-navbar-link {
-  font-size: 19px;
+  font-size: 21px;
 }
 .language-selector-list {
   list-style-type: none;
@@ -974,9 +974,28 @@ width: 100%;
 }
 
 /* التنسيق المتجاوب لشاشات أصغر */
+@media (max-width: 1920px) {
+  .custom-navbar-link {
+    font-size: 29px;
+}
+}
+@media (max-width: 1740px) {
+  .custom-navbar-link {
+    font-size: 21px;
+}
+}
+
+
+
+@media (max-width: 1600px) {
+  .custom-navbar-link {
+    font-size: 20px;
+  }
+
+}
 @media (max-width: 1560px) {
   .custom-navbar-link {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .Buys h3 {

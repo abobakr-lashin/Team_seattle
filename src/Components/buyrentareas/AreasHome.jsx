@@ -123,7 +123,7 @@ export default function AreasHome() {
         <div className="title-dis7" style={{ display: "flex" }}>
           <h2>
             <div style={{ textTransform: "uppercase", }}>
-              Renting a Property in UAE
+            POPULAR AREAS IN UAE
             </div>
           </h2>
         </div>
