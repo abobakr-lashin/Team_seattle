@@ -37,7 +37,7 @@ export default function PageAreasRent() {
                 id: doc.id,
                 ...doc.data(),
             }));
-            const FilterData = docs?.filter((it)=> it.CategoryLocation.center === id)
+            const FilterData = docs?.filter((it)=> it.CateBuyLocation.center === id)
             setData(FilterData);
         } catch (error) {
             console.error("Error fetching documents: ", error);
@@ -128,7 +128,7 @@ export default function PageAreasRent() {
                                 <hr />
                                 <div className="Listing-by">
                                     <div className="img-lisby">
-                                        <img src={it.bgImage} alt="Property" />
+                                        <img src={it.listingImage} alt="Property" />
                                     </div>
                                     <div className="title-lisby">Listing by {it.listingName} </div>
                                 </div>

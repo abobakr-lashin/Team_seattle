@@ -9,6 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { CloudDone } from '@mui/icons-material';
 
 export default function UpdateRent() {
     const { id } = useParams();
@@ -26,13 +27,10 @@ export default function UpdateRent() {
     const [CategoryDevelopers, setCategoryDevelopers] = useState([]);
     const [CategoryPlan, setCategoryPlan] = useState([]);
     const [formData, setFormData] = useState({});
+    const [CateBuyLocation, setCateBuyLocation] = useState({});
     const [formDataImageText, setformDataImageText] = useState('');
     const [ImgeCartText, setImgeCartText] = useState('');
-    const [CategoryLocation, setCategoryLocation] = useState({
-        location: '',
-        center: ''
-    });
-
+    const [Centers, setCenters] = useState([]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -42,13 +40,16 @@ export default function UpdateRent() {
         });
     };
 
+    // Update 
+    useEffect(() => {
+        const selectedLocation = CategoryBuyLocation.find(loc => loc.location === CateBuyLocation.location);
+        if (selectedLocation) {
+            setCenters(selectedLocation.centers || []);
+        } else {
+            setCenters([]);
+        }
+    }, [CateBuyLocation.location, CategoryBuyLocation]);
 
-    const handleQuillChange = (value) => {
-        setFormData({
-            ...formData,
-            text: value,
-        });
-    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -108,13 +109,9 @@ export default function UpdateRent() {
                 imageText: updatedBlogImageText,
                 bgImage: updatedBlogClint,
                 text: formData.text,
-                CategoryLocation: {
-                    location: formData?.CategoryLocation?.location || CategoryLocation.location,
-                    center: formData?.CategoryLocation?.center || CategoryLocation.center
-                },
                 imageCart: updatedBlogImageCart,
-                imageSlider: updatedCartImageSlider || formData.imageSlider,
-                // CategoryBuyLocation: formData.CategoryBuyLocation,
+                imageSlider: updatedCartImageSlider,
+                CateBuyLocation,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
                 date: new Date().toDateString(),
@@ -125,14 +122,12 @@ export default function UpdateRent() {
 
             Navigate('/dashboard/Rent');
         } catch (err) {
-            // toast.error('Error updating data: ' + err.message);
+            toast.error('Error updating data: ' + err.message);
             console.error('Error updating data:', err.message);
         } finally {
             setLoading(false);
         }
     };
-
-    console.log(CategoryLocation);
 
     // Get Data Category
     const getCategories = async () => {
@@ -204,7 +199,6 @@ export default function UpdateRent() {
         fetchData();
     }, [id]);
 
-
     if (loading) {
         return (
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -212,7 +206,6 @@ export default function UpdateRent() {
             </Box>
         );
     }
-
 
     return (
         <div>
@@ -440,31 +433,39 @@ export default function UpdateRent() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <select
-                            style={{ margin: '20px', width: '80%' }}
-                            name="category"
-                            value={CategoryLocation.location} // controlled value
-                            onChange={(e) => {
-                                setCategoryLocation({ ...CategoryLocation, location: e.target.value });
-                            }}>
-                            <option hidden>Select Category Location</option>
-                            {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it.category.location}>{it.category.location}</option>;
-                            })}
-                        </select>
 
                         <select
                             style={{ margin: '20px', width: '80%' }}
-                            name="category"
-                            value={CategoryLocation.center} // controlled value
+                            name="location"
+                            value={CateBuyLocation.location}
                             onChange={(e) => {
-                                setCategoryLocation({ ...CategoryLocation, center: e.target.value });
-                            }}>
-                            <option hidden>Select Category Center Location</option>
-                            {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it.category.center}>{it.category.center}</option>;
-                            })}
+                                setCateBuyLocation({ ...CateBuyLocation, location: e.target.value, center: '' });
+                            }}
+                        >
+                            <option hidden>Select Category Location</option>
+                            {CategoryBuyLocation.map((it) => (
+                                <option key={it.id} value={it.location}>{it.location}</option>
+                            ))}
                         </select>
+                        {CateBuyLocation.location ? <p>{CateBuyLocation.location}</p> : <p>{formData?.CateBuyLocation?.location}</p>}
+
+
+                        {Centers.length > 0 && (
+                            <select
+                                style={{ margin: '20px', width: '80%' }}
+                                name="center"
+                                value={CateBuyLocation.center}
+                                onChange={(e) => {
+                                    setCateBuyLocation({ ...CateBuyLocation, center: e.target.value });
+                                }}
+                            >
+                                <option hidden>Select Center</option>
+                                {Centers.map((center, index) => (
+                                    <option key={index} value={center.name}>{center.name}</option>
+                                ))}
+                            </select>
+                        )}
+                        {CateBuyLocation.center ? <p>{CateBuyLocation.center}</p> : <p>{formData?.CateBuyLocation?.center}</p>}
 
                     </div>
                     <div className="form-group">

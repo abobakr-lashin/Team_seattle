@@ -65,7 +65,7 @@ export default function AddCartDevelopers() {
                 title: '',
                 location: '',
                 imageCart: null,
-                company:''
+                company: ''
             });
             Navigate('/dashboard/Developers')
         } catch (err) {
@@ -155,7 +155,7 @@ export default function AddCartDevelopers() {
                         <option hidden>Select Location</option>
                         {CategoryBuyLocation.map((item) => (
                             <option key={item.id} value={item?.category?.location}>
-                                {item?.category?.location}
+                                {item?.location}
                             </option>
                         ))}
                     </select>

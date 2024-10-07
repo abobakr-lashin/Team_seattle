@@ -17,7 +17,8 @@ export default function Developers() {
     const [dataCart, setDataCart] = useState([]);
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [searchTerm, setSearchTerm] = useState(''); // لتتبع مصطلح البحث
+    const [searchTerm, setSearchTerm] = useState('');
+    const [categoryDevelopers, setCategoryDevelopers] = useState([]);
     const itemsPerPage = 9;
 
     const GetDataFireBase = async () => {
@@ -33,13 +34,25 @@ export default function Developers() {
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
+
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "CategoryDevelopers"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            console.log(docs);
+            const fiterData = docs.filter((it) => it.name === id)
+            setCategoryDevelopers(fiterData);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
     }
 
     useEffect(() => {
         GetDataFireBase();
     }, []);
 
-    console.log(dataCart);
 
     const filteredProjects = dataCart?.filter((project) =>
         project.title.toUpperCase().includes(searchTerm.toUpperCase())
@@ -61,6 +74,9 @@ export default function Developers() {
             setCurrentPage(currentPage - 1);
         }
     };
+
+
+    console.log(categoryDevelopers[0]?.bannerCart);
 
 
 
@@ -105,17 +121,17 @@ export default function Developers() {
                     </div>
                     <div className="title-dis7">
                         <h1>Home <Link to={"/"}><KeyboardDoubleArrowRightIcon sx={{ color: "#d3b76d", fontSize: "65px" }} /> </Link>     <div style={{ textTransform: "uppercase" }}>Developers <Link to={"/Ourpartners"}><KeyboardDoubleArrowRightIcon sx={{ color: "#d3b76d", fontSize: "65px" }} /> </Link> </div>   </h1>
-                        <div>EMAAR</div>
+                        <div>{categoryDevelopers[0]?.name}</div>
                     </div>
                 </div>
 
                 <Box sx={{
                     width: "80%", margin: "20px auto"
                 }}>
-                    <div className="img-Developerss" style={{ backgroundImage: `url(/uploads/developerprojects/export/photo1.png)` }}>
-
-
+                    <div className="img-Developerss" style={{ backgroundImage: `url(${categoryDevelopers[0]?.bannerCart})` }}>
+                        
                     </div>
+
                     <h2>Our Partners</h2>
                     <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
                         {our}
@@ -138,9 +154,9 @@ export default function Developers() {
 
                     <Grid sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
 
-                        <img width={"35%"} style={{ margin: "15px" }} src="/uploads/developerprojects/export/photo2.png" alt="" />
-                        <img width={"20%"} style={{ margin: "15px" }} src="/uploads/developerprojects/export/photo3.png" alt="" />
-                        <img width={"20%"} style={{ margin: "15px" }} src="/uploads/developerprojects/export/photo5.png" alt="" />
+                        <img width={"35%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner1} alt="" />
+                        <img width={"20%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner2} alt="" />
+                        <img width={"20%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner3} alt="" />
 
 
                     </Grid>
@@ -150,33 +166,14 @@ export default function Developers() {
 
                     <Grid sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
 
-                        <img width={"35%"} style={{ margin: "15px" }} src="/uploads/developerprojects/export/photo4.png" alt="" />
-                        <img width={"20%"} style={{ margin: "15px" }} src="/uploads/developerprojects/export/photo6.png" alt="" />
-                        <img width={"20%"} style={{ margin: "15px" }} src="/uploads/developerprojects/export/photo7.png" alt="" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        <img width={"35%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner4} alt="" />
+                        <img width={"20%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner5} alt="" />
+                        <img width={"20%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner6} alt="" />
                     </Grid>
-
                 </Grid>
-
                 <div className="h-5vh"></div>
                 <Footer />
             </div>
         </div>
     )
 }
-// #085364
-// 107D96
-// 1AAACB

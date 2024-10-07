@@ -91,6 +91,10 @@ import SeattleProject from './admin/pageDb/SeattleDahs';
 import SeattleDahs from './admin/pageDb/SeattleDahs';
 import CreateSheattle from './admin/pageDb/CreateSheattle';
 import AddCategoryShettlePlan from './admin/pageDb/AddCategoryShettlePlan';
+import UpdateLocation from './admin/pageDb/UpdateLocation';
+import CategoryAreas from './Components/our-project/CategoryAreas';
+import LandingpageSeattle from './Components/ourprojects/LandingpageSeattle';
+import CategoryOffPlanSeattle from './Components/ourprojects/CategoryOffPlanSeattle';
 
 export default function App() {
     return (
@@ -133,6 +137,7 @@ export default function App() {
                     <Route path="Rent/Filter/:id" element={<RentFilter />} />
                     <Route path="Areas/Buy/category/Location/:id" element={<PageAreasbuy />} />
                     <Route path="Areas/Rent/category/Location/:id" element={<PageAreasRent />} />
+                    <Route path="/Areas/Category/Location/Center/:id" element={<CategoryAreas />} />
                     <Route path="BuyHome" element={<BuyHome />} />
                     <Route path="Developers/:id" element={<Developers />} />
                     <Route path="/Buy/Category/Location/:id" element={<CategoryDeveloper />} />
@@ -146,6 +151,8 @@ export default function App() {
                     <Route path="Commercial" element={<Commercial />} />
                     <Route path="/Commercial/:id" element={<Company />} />
                     <Route path="/Commercial/:id/:id" element={<Landingpage />} />
+                    <Route path="/Seattle/:id" element={<LandingpageSeattle />} />
+                    <Route path="/Seattle/category/:id" element={<CategoryOffPlanSeattle />} />
                     {/* End Path Commercial */}
                     <Route path="dashboard" element={<Dashboard />} >
                         <Route index element={<Formdb />} />
@@ -159,6 +166,8 @@ export default function App() {
                         <Route path="Commercialcreat" element={<Commercialcreat />} />
                         <Route path="AddCategoryCommercial" element={<AddCategory />} />
                         <Route path="AddCategoryBuyLocation" element={<AddCateBuyLocation />} />
+
+                        <Route path="update/Location/:id" element={<UpdateLocation />} />
 
                         <Route path="AddCateBuyPlan" element={<AddCategoryBuyPlan />} />
                         <Route path="AddCategory" element={<AddCategoryShettlePlan />} />
@@ -191,7 +200,7 @@ export default function App() {
 
                         <Route path="/dashboard/SeattleProject" element={<SeattleDahs />} />
                         <Route path="/dashboard/CreateSeattle" element={<CreateSheattle />} />
-                        
+
                         <Route path="Developers/AddBannerDevelopers" element={<AddBannerDevelopers />} />
                         <Route path="/dashboard/Developers/AddCartDevelopers" element={<AddCartDevelopers />} />
                     </Route>

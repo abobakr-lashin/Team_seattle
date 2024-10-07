@@ -24,6 +24,7 @@ export default function AddCartAreas() {
     const [CategoryBuyLocation, setCategoryBuyLocation] = useState([])
     const [CategoryDevelopers, setCategoryDevelopers] = useState([])
     const [CategoryPlan, setCategoryPlan] = useState([])
+    const [Centers, setCenters] = useState([]);
     const [CateBuyLocation, setCateBuyLocation] = useState({
         location: '',
         center: '',
@@ -49,31 +50,17 @@ export default function AddCartAreas() {
         CategoryPlan: '',
     });
 
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
-
-    const handleFileChange = (e) => {
-        const { name, files } = e.target;
-        setUrlImge(URL.createObjectURL(e.target.files[0]))
-
-        if (name === 'sliderImages') {
-            setFormData({
-                ...formData,
-                [name]: Array.from(files),
-            });
-        } else {
-            setFormData({
-                ...formData,
-                [name]: files[0],
-            });
-        }
-    };
+        // Update 
+        useEffect(() => {
+            const selectedLocation = CategoryBuyLocation.find(loc => loc.location === CateBuyLocation.location);
+            if (selectedLocation) {
+                setCenters(selectedLocation.centers || []);
+            } else {
+                setCenters([]);
+            }
+        }, [CateBuyLocation.location, CategoryBuyLocation]);
+    
+    
 
 
     const handleSubmit = async (e) => {
@@ -179,18 +166,24 @@ export default function AddCartAreas() {
                         }}>
                             <option hidden >Select Category Location</option>
                             {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it?.category?.location}>{it?.category?.location}</option>
+                                return <option key={it.id} value={it?.location}>{it?.location}</option>
                             })}
                         </select>
 
-                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setCateBuyLocation({ ...CateBuyLocation, center: e.target.value });
-                        }}>
-                            <option hidden >Select Category Center Location</option>
-                            {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it?.category?.center}>{it?.category?.center}</option>
-                            })}
-                        </select>
+                        {Centers.length > 0 && (
+                        <select
+                            style={{ margin: '20px', width: '80%' }}
+                            name="center"
+                            value={CateBuyLocation.center}
+                            onChange={(e) => {
+                                setCateBuyLocation({ ...CateBuyLocation, center: e.target.value });
+                            }}
+                        >
+                            <option hidden>Select Center</option>
+                            {Centers.map((center, index) => (
+                                <option key={index} value={center.name}>{center.name}</option>
+                            ))}
+                        </select>)}
                     </div>
 
                     <br /><br />

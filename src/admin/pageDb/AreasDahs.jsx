@@ -112,6 +112,8 @@ export default function AreasDahs() {
         );
     }
 
+    console.log(data);
+
 
 
     return (
@@ -167,7 +169,7 @@ export default function AreasDahs() {
                 </button>
             </div>
             <div className="table">
-            <h3>Data Buy Cart Areas</h3>
+                <h3>Data Buy Cart Areas</h3>
                 {data.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
                     <Table sx={{ minWidth: 900 }} aria-label="customized table">
                         <TableHead>
@@ -175,7 +177,6 @@ export default function AreasDahs() {
                                 <StyledTableCell width={200} align='center'>image</StyledTableCell>
                                 <StyledTableCell width={200} align="center">Location</StyledTableCell>
                                 <StyledTableCell width={200} align="center">Center</StyledTableCell>
-                                <StyledTableCell width={150} align="center">Update</StyledTableCell>
                                 <StyledTableCell width={150} align="center">Delete</StyledTableCell>
                             </TableRow>
                         </TableHead>
@@ -183,14 +184,11 @@ export default function AreasDahs() {
                             {data.map((it) => (
                                 <StyledTableRow key={it.id}>
 
-                                    <StyledTableCell>
+                                    <StyledTableCell align='center'>
                                         <img style={{ width: '200px' }} src={it.imageCart} alt="" />
                                     </StyledTableCell>
                                     <StyledTableCell align="center">{it.CateBuyLocation.location}</StyledTableCell>
                                     <StyledTableCell align="center">{it.CateBuyLocation.center}</StyledTableCell>
-                                    <StyledTableCell align="center"><button onClick={() => {
-                                        Navigate(`/dashboard/EditAreas/${it.id}`)
-                                    }} style={{ backgroundColor: '#1976d2' }}>Update</button></StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {
                                         handleDelete(it.id)
                                     }} style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
@@ -215,22 +213,33 @@ export default function AreasDahs() {
                 </p>}
             </div>
             <div className="table">
-                    <h3>Data Buy Location</h3>
+                <h3>Data Buy Location</h3>
                 {DataCategory.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
                     <Table sx={{ minWidth: 900 }} aria-label="customized table">
                         <TableHead>
                             <TableRow>
                                 <StyledTableCell width={200} align="center">Location</StyledTableCell>
                                 <StyledTableCell width={200} align="center">Center</StyledTableCell>
+                                <StyledTableCell width={200} align="center">Update</StyledTableCell>
                                 <StyledTableCell width={150} align="center">Delete</StyledTableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {DataCategory.map((it) => (
                                 <StyledTableRow key={it.id}>
-                                    <StyledTableCell align="center">{it.category.location}</StyledTableCell>
-                                    <StyledTableCell align="center">{it.category.center}</StyledTableCell>
-                                    
+                                    <StyledTableCell align="center">{it.location}</StyledTableCell>
+                                    <StyledTableCell align="center">{it.centers.map((en, index) => {
+                                        return (
+                                            <React.Fragment key={index}>
+                                                {en.name}
+                                                <br />
+                                                <br />
+                                            </React.Fragment>
+                                        )
+                                    })}</StyledTableCell>
+                                    <StyledTableCell align="center"><button onClick={() => {
+                                        Navigate(`/dashboard/Update/Location/${it.id}`)
+                                    }} style={{ backgroundColor: 'green' }}>Update</button></StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {
                                         handleDeleteCategory(it.id)
                                     }} style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>

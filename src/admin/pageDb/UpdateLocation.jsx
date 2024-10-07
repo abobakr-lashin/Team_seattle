@@ -1,19 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Button, Box, Typography, Stack, CircularProgress } from '@mui/material';
 import { firestore } from '../../firebaseConfig';
-import { addDoc, collection, getDocs, where } from 'firebase/firestore';
+import { addDoc, collection, getDocs, where, updateDoc, doc, query, getDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
-import { query } from 'firebase/database';
+import { useNavigate, useParams } from 'react-router-dom'; // استخدام useParams لجلب معرّف الفئة
 
-const AddCateBuyLocation = () => {
+const UpdateLocation = () => {
     const navigate = useNavigate();
+    const { id } = useParams(); // الحصول على معرف الفئة من الـ URL إذا كان موجوداً
     const [loading, setLoading] = useState(false);
     const [category, setCategory] = useState({
         location: '',
         centers: [{ name: '', address: '' }],
     });
     const [error, setError] = useState(null);
+
+    // Check id
+    useEffect(() => {
+        const fetchCategory = async () => {
+            if (id) {
+                setLoading(true);
+                const docRef = doc(firestore, 'CategoryBuyLocation', id);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    setCategory(docSnap.data()); // Get Data
+                } else {
+                    toast.error('Category not found');
+                }
+                setLoading(false);
+            }
+        };
+        fetchCategory();
+    }, [id]);
 
     // Add Center
     const handleAddCenter = () => {
@@ -31,32 +49,51 @@ const AddCateBuyLocation = () => {
         setCategory({ ...category, centers: newCenters });
     };
 
-    const handleAddCategory = async (e) => {
+    // Delete Center
+    const handleDeleteCenter = (index) => {
+        const newCenters = category.centers.filter((_, i) => i !== index);
+        setCategory({ ...category, centers: newCenters });
+    };
+
+    const handleAddOrUpdateCategory = async (e) => {
         e.preventDefault();
         setLoading(true);
         setError(null);
 
         try {
             const categoriesRef = collection(firestore, 'CategoryBuyLocation');
-            const q = query(categoriesRef, where('location', '==', category.location));
-            const querySnapshot = await getDocs(q);
-            
-            if (!querySnapshot.empty) {
-                toast.error('Category already exists!');
-                return;
+
+            if (id) {
+                // If we are updating, update the document
+                const docRef = doc(firestore, 'CategoryBuyLocation', id);
+                await updateDoc(docRef, {
+                    location: category.location,
+                    centers: category.centers,
+                    updatedAt: new Date(),
+                });
+                toast.success('Category updated successfully!');
+            } else {
+                // If we are adding a new category
+                const q = query(categoriesRef, where('location', '==', category.location));
+                const querySnapshot = await getDocs(q);
+
+                if (!querySnapshot.empty) {
+                    toast.error('Category already exists!');
+                    return;
+                }
+
+                await addDoc(categoriesRef, {
+                    createdAt: new Date(),
+                    location: category.location,
+                    centers: category.centers,
+                });
+                toast.success('Category added successfully!');
             }
 
-            await addDoc(categoriesRef, {
-                createdAt: new Date(),
-                location: category.location,
-                centers: category.centers,
-            });
-
-            toast.success('Category added successfully!');
             setCategory({ location: '', centers: [{ name: '', address: '' }] });
             navigate('/dashboard/Areas');
         } catch (err) {
-            setError('Error adding category: ' + err.message);
+            setError('Error adding or updating category: ' + err.message);
         } finally {
             setLoading(false);
         }
@@ -64,7 +101,9 @@ const AddCateBuyLocation = () => {
 
     return (
         <Box sx={{ maxWidth: 400, mx: 'auto', mt: 4, p: 2, border: '1px solid #ccc', borderRadius: 2 }}>
-            <Typography variant="h5" sx={{ mb: 2 }}>Add Category by Location</Typography>
+            <Typography variant="h5" sx={{ mb: 2 }}>
+                {id ? 'Update' : 'Add'} Category by Location
+            </Typography>
 
             <TextField
                 label="Location"
@@ -95,6 +134,15 @@ const AddCateBuyLocation = () => {
                         value={center.address}
                         onChange={(e) => handleCenterChange(index, 'address', e.target.value)}
                     />
+
+                    <Button
+                        variant="outlined"
+                        color="secondary"
+                        onClick={() => handleDeleteCenter(index)}
+                        sx={{ mt: 1 }}
+                    >
+                        Delete Center
+                    </Button>
                 </Box>
             ))}
 
@@ -106,17 +154,17 @@ const AddCateBuyLocation = () => {
                 {loading ? (
                     <Stack sx={{ color: 'grey.500' }} spacing={2} direction="row">
                         <CircularProgress size={20} />
-                        <Typography variant="body2">Adding Category...</Typography>
+                        <Typography variant="body2">{id ? 'Updating' : 'Adding'} Category...</Typography>
                     </Stack>
                 ) : (
                     <Button
                         variant="contained"
                         color="primary"
                         fullWidth
-                        onClick={handleAddCategory}
+                        onClick={handleAddOrUpdateCategory}
                         sx={{ mb: 2 }}
                     >
-                        Add Category
+                        {id ? 'Update' : 'Add'} Category
                     </Button>
                 )}
             </Box>
@@ -126,4 +174,4 @@ const AddCateBuyLocation = () => {
     );
 };
 
-export default AddCateBuyLocation;
+export default UpdateLocation;

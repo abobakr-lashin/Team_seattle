@@ -1,82 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './CustomSlider.css';
 import './OurProjects.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { collection, getDocs } from 'firebase/firestore';
+import { firestore } from '../../firebaseConfig';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';
+import 'swiper/css';
+
+
 
 export default function OurProjects() {
-  const settings = {
-    centerMode: true,
-    centerPadding: '1',
-    slidesToShow: 3,
-    focusOnSelect: true,
-    infinite: true,
-    speed: 600,
-    // autoplay: true,
-    autoplaySpeed: 4000,
-    responsive: [
-      {
-        breakpoint: 1023,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+  const [data, setData] = useState([])
+  const Navigate = useNavigate()
+
+  // Get Data Cart Firebase
+  const getCategories = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(firestore, "listBlogsCartSEATTLE"));
+      const docs = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setData(docs);
+    } catch (error) {
+      console.error("Error fetching documents: ", error);
+    }
   };
 
-  const imgOurProjects = [
-    { id: 1, src:"/uploads/rent/export/photo1.png"},
-    { id: 2, src:"/uploads/rent/export/photo1.png"},
-    { id: 3, src:"/uploads/rent/export/photo1.png"},
-    { id: 4, src:"/uploads/rent/export/photo1.png"},
-    { id: 5, src:"/uploads/rent/export/photo1.png"},
-    { id: 6, src:"/uploads/rent/export/photo1.png"},
-    { id: 7, src:"/uploads/rent/export/photo1.png"},
-    { id: 8, src:"/uploads/rent/export/photo1.png"},
-    { id: 9, src:"/uploads/rent/export/photo1.png"},
-  ];
-  const imgsetin = imgOurProjects.map((img) => {
-    return(
-    <div key={img.id} className="slide-item">
-      <div className="bg-back">
+  useEffect(() => {
+    getCategories();
+  }, []);
 
-      <div className="project-img" style={{ backgroundImage: `url(${img.src})` }}> </div>
-  
-      <div className="City">ANSAM</div>
-      <div className="type" >
 
-      TYPE: Studio - 3 Bed Apartments <br />
-SIZES: 51 - 193 SQM <br />
-PAYMENT PLAN: 3 Years <br />
-HANDOVER: Ready to move in <br />
-STARTING PRICES: Sold out <br />
-      </div>
-      <div className="btn-re">
-    <Link  to={`/Abudhabi`}  >
-        <button className="btn-register1">More Projects</button> 
-        </Link>
-      </div>
-       
-        <div className="display-f">
-          <Link to="https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" target="_blank"  className="btn-whatsapp"> </Link>
-          <Link  to="tel:+971502135701" className="btn-call"></Link>
-        </div>
-     
-      </div>
-    </div>)
-});
+
 
   return (
     <div  >
-      <div className="btn-whats"></div> 
+      <div className="btn-whats"></div>
       <div className="grop-title1">
         <div className="img-dis">
           <img src="/uploads/img/marpa.png" alt="مريع" />
@@ -88,8 +53,65 @@ STARTING PRICES: Sold out <br />
       </div>
       <div className="h-5vh"></div>
       <div className="slider-container">
-        <Slider {...settings}>{imgsetin}</Slider>
-        
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={0}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={{
+            nextEl: '.swiper-button-next1',
+            prevEl: '.swiper-button-prev1',
+          }}
+          loop={true}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 50,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1025: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+        >
+          {data.map((it) => (
+            <SwiperSlide key={it.id}>
+              <div key={it.id} className="slide-item">
+                <div className="bg-back">
+                  <div className="project-img" style={{ backgroundImage: `url(${it.imageCart})` }}> </div>
+                  <div className="City">{it.title}</div>
+                  <div className="type" >
+                    TYPE: {it.type} <br />
+                    SIZES: {it.size}<br />
+                    PAYMENT PLAN: {it.payment} <br />
+                    HANDOVER: {it.handover} <br />
+                    STARTING PRICES: {it.starting} <br />
+                  </div>
+                  <div className="btn-re">
+                    <button onClick={() => {
+                      Navigate(`/Seattle/${it.id}`)
+                    }} className="btn-register1">More Projects</button>
+                  </div>
+                  <div className="display-f">
+                    <Link to="https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" target="_blank" className="btn-whatsapp"> </Link>
+                    <Link to="tel:+971502135701" className="btn-call"></Link>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
       <div
         style={{

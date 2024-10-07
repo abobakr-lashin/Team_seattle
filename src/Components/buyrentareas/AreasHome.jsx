@@ -8,29 +8,13 @@ import { firestore } from "../../firebaseConfig";
 import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 
-// استيراد Swiper و SwiperSlide بشكل صحيح من 'swiper/react'
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import "./BuyHome.css";
 
-const CustomPrevArrow = (props) => {
-  const { className, onClick } = props;
-  return (
-    <div className={`${className} custom-prev-arrow`} onClick={onClick}>
-      <span></span>
-    </div>
-  );
-};
 
-const CustomNextArrow = (props) => {
-  const { className, onClick } = props;
-  return (
-    <div className={`${className} custom-next-arrow`} onClick={onClick}>
-      <span></span>
-    </div>
-  );
-};
 
 export default function AreasHome() {
   const [Data, setData] = React.useState([]);
@@ -41,32 +25,6 @@ export default function AreasHome() {
     });
   }, []);
 
-  const settings = {
-    centerMode: false,
-    centerPadding: "auto",
-    slidesToShow: 3,
-    focusOnSelect: false,
-    infinite: true,
-    speed: 1000,
-    autoplay: false,
-    autoplaySpeed: 4000,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
 
   // Get Data from Firestore
   const GetDataFireStore = async () => {

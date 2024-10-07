@@ -156,20 +156,6 @@ export default function BuyDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/AddCategoryBuyLocation')
-                }}>
-                    Add Category Location
-                </button>
-                <button style={{
-                    width: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    outline: 'none',
-                    border: '1px solid #ccc',
-                    padding: '8px',
-                    color: '#234232',
-                }} onClick={() => {
                     Navigate('/dashboard/buy/AddBannerBuy')
                 }}>
                     Add Banner Buy

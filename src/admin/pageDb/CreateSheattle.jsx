@@ -25,10 +25,10 @@ export default function CreateSheattle() {
     const [CategoryDevelopers, setCategoryDevelopers] = useState([])
     const [CategoryPlan, setCategoryPlan] = useState([])
     const [CateBuyLocation, setCateBuyLocation] = useState({
-        location:'',
-        center:'',
+        location: '',
+        center: '',
     });
-    const  [ formDataImageText , setformDataImageText] = useState('');
+    const [formDataImageText, setformDataImageText] = useState('');
     const [ImgeCartText, setImgeCartText] = useState('');
     const [formData, setFormData] = useState({
         title: '',
@@ -106,7 +106,7 @@ export default function CreateSheattle() {
 
 
             // Send Data TO fierStore
-            await addDoc(collection(firestore, 'listBlogsCartSheattle'), {
+            await addDoc(collection(firestore, 'listBlogsCartSEATTLE'), {
                 title: formData.title,
                 category: formData.category,
                 price: formData.price,
@@ -126,8 +126,11 @@ export default function CreateSheattle() {
                 imageCart: BgImageCard,
                 imageText: BgImageText,
                 imageSlider: uploadedFileURLs,
-                CateBuyLocation,
-                CategoryDevelopers: formData.CategoryDevelopers,
+                type: formData.type,
+                size: formData.size,
+                payment: formData.payment,
+                handover: formData.handover,
+                starting: formData.starting,
                 CategoryPlan: formData.CategoryPlan,
                 date: new Date().toDateString(),
                 time: new Date().toLocaleTimeString()
@@ -152,7 +155,7 @@ export default function CreateSheattle() {
                 listingImage: null,
                 imageCart: null
             });
-            Navigate('/dashboard/Buy')
+            Navigate('/dashboard/SeattleProject')
         } catch (err) {
             toast.error('Error submitting data: ' + err.message);
             console.error('Error submitting data:', err);
@@ -273,6 +276,43 @@ export default function CreateSheattle() {
                             name="title"
                             placeholder="title"
                             value={formData.title}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="type"
+                            placeholder="type"
+                            value={formData.type}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="size"
+                            placeholder="size"
+                            value={formData.size}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="payment"
+                            placeholder="payment"
+                            value={formData.payment}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="handover"
+                            placeholder="handover"
+                            value={formData.handover}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="starting"
+                            placeholder="starting"
+                            value={formData.starting}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -418,35 +458,6 @@ export default function CreateSheattle() {
                             })}
                         </select>
                     </div>
-                    <div className="form-group">
-                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setCateBuyLocation({...CateBuyLocation , location: e.target.value});
-                        }}>
-                            <option hidden >Select Category Location</option>
-                            {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it?.category?.location}>{it?.category?.location}</option>
-                            })}
-                        </select>
-
-                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setCateBuyLocation({...CateBuyLocation , center: e.target.value});
-                        }}>
-                            <option hidden >Select Category Center Location</option>
-                            {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it?.category?.center}>{it?.category?.center}</option>
-                            })}
-                        </select>
-                    </div>
-                    <div className="form-group">
-                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({ ...formData, CategoryDevelopers: e.target.value });
-                        }}>
-                            <option hidden >Select Category Developers</option>
-                            {CategoryDevelopers.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
-                            })}
-                        </select>
-                    </div>
 
                     <div className="form-group">
                         <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
@@ -459,7 +470,7 @@ export default function CreateSheattle() {
                         </select>
                     </div>
                     <div className="form-group">
-                    <CKEditor
+                        <CKEditor
                             editor={ClassicEditor}
                             data={formData.text || ""}
                             onChange={(event, editor) => {
@@ -467,7 +478,7 @@ export default function CreateSheattle() {
                                 setFormData({ ...formData, text: data });
                             }}
                             config={{
-                                height: '400px', 
+                                height: '400px',
                             }}
                         />
                     </div>

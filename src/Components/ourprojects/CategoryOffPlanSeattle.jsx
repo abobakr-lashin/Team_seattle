@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Grid } from '@mui/material';
@@ -8,10 +8,13 @@ import SearchIcon from '@mui/icons-material/Search';
 import FormN from '../appbar/FormN';
 import Footer from '../footer/Footer';
 import OUREXPERT from '../../Pages/OUREXPERT';
-import "./Rent.css"
+
+import "../buy/buy.css";
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
-export default function RentFilter() {
+export default function CategoryOffPlanSeattle() {
+    const { id } = useParams()
+    const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
     const [price, setPrice] = useState('');
@@ -23,37 +26,40 @@ export default function RentFilter() {
     const [minBedrooms, setMinBedrooms] = useState('');
     const [maxBedrooms, setMaxBedrooms] = useState('');
     const [minPrice, setMinPrice] = useState('');
-    const [data, setData] = useState([]);
-    const {id} = useParams()
 
     const itemsPerPage = 9;
+    const Navigate = useNavigate()
+
 
     // Get Data from Firestore
     const GetDataFireStore = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartRent"));
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartSEATTLE"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
             }));
-            const FilterCart = docs?.filter((it)=>it.CategoryPlan === id)
-            setData(FilterCart);
+            const filterdata = docs.filter((it) => {
+                return it.CategoryPlan === id
+            })
+            setData(filterdata);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
     };
 
+    useEffect(() => {
+        GetDataFireStore();
+    }, [id]);
 
-
-
-    // تصفية المشاريع بناءً على مصطلحات البحث
+    // Filter items by category
     const filteredProjects = data.filter((project) => {
         return (
             (!searchTerm || project.title.toUpperCase().includes(searchTerm.toUpperCase())) &&
-            (!price || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(price)) &&
-            (!location || project.LocationOn.toUpperCase().includes(location.toUpperCase())) &&
-            (!minBedrooms || project.bed >= parseInt(minBedrooms)) &&
-            (!maxBedrooms || project.bed <= parseInt(maxBedrooms)) &&
+            (!price || parseFloat(project.price.replace(/,/g, '')) >= parseFloat(price)) &&
+            (!location || project.location.toUpperCase().includes(location.toUpperCase())) &&
+            (!minBedrooms || project.bede >= parseInt(minBedrooms)) &&
+            (!maxBedrooms || project.bede <= parseInt(maxBedrooms)) &&
             (!minPrice || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(minPrice)) &&
             (!minArea || project.square >= parseFloat(minArea)) &&
             (!maxArea || project.square <= parseFloat(maxArea))
@@ -79,63 +85,40 @@ export default function RentFilter() {
     };
 
     const handleSearch = () => {
-        setCurrentPage(1); // إعادة ضبط الصفحة الحالية عند البحث
+        setCurrentPage(1);
     };
 
-    useEffect(() => {
-        GetDataFireStore();
-    }, [id]);
 
     const imgsetin = currentItems.map((it) => (
         <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
-            <Link to={`/Rent/${it.id}`}>
-                <div className="CONTER">
-                    <div className="bg-back">
-                        <div className="img-imgSaleIn">
-                            <img className="imgSaleIn" src={it.imageCart} alt="Property" />
-                            <h3>
-                                {it.price} <span>{it.currency}</span>
-                            </h3>
-                            <div className="dis-play">
-                                <div>
-                                    <span>
-                                        <span>{it.beds}</span> <img src={'/uploads/commercial/export/icon/bed.png'} alt="Bed" />
-                                    </span>
-                                    <div>BEDS</div>
-                                </div>
-                                <div>
-                                    <span>
-                                        <span>{it.baths}</span> <img src={'/uploads/commercial/export/icon/bath.png'} alt="Bath" />
-                                    </span>
-                                    <div>Baths</div>
-                                </div>
-                                <div>
-                                    <span>
-                                        <span>{it.square}</span> <img src={'/uploads/commercial/export/icon/square.png'} alt="Square" />
-                                    </span>
-                                    <div>Square ft</div>
-                                </div>
-                            </div>
-                            <h5>{it.title}</h5>
-                            <h6>
-                                <LocationOnIcon /> {it.location}
-                                <hr />
-                                <div className="Listing-by">
-                                    <div className="img-lisby">
-                                        <img src={it.listingImage} alt="Property" />
-                                    </div>
-                                    <div className="title-lisby">Listing by Ramin Sadeghi </div>
-                                </div>
-                            </h6>
-                        </div>
+            <div key={it.id} className="slide-item">
+                <div className="bg-back">
+                    <div className="project-img" style={{ backgroundImage: `url(${it.imageCart})` }}> </div>
+                    <div className="City">{it.title}</div>
+                    <div className="type" >
+                        TYPE: {it.type} <br />
+                        SIZES: {it.size}<br />
+                        PAYMENT PLAN: {it.payment} <br />
+                        HANDOVER: {it.handover} <br />
+                        STARTING PRICES: {it.starting} <br />
+                    </div>
+                    <div className="btn-re">
+                        <button onClick={() => {
+                            Navigate(`/Seattle/${it.id}`)
+                        }} className="btn-register1">More Projects</button>
+                    </div>
+                    <div className="display-f">
+                        <Link to="https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" target="_blank" className="btn-whatsapp"> </Link>
+                        <Link to="tel:+971502135701" className="btn-call"></Link>
                     </div>
                 </div>
-            </Link>
+            </div>
         </Grid>
     ));
+
     return (
-        <div className="rent">
-            <div className="img-rent">
+        <div className="buy">
+            <div className="img-buy">
                 <NavPar />
                 <div className="h-5vh"></div>
 
@@ -152,17 +135,17 @@ export default function RentFilter() {
                                     sx={{ color: "#d3b76d", fontSize: "65px" }}
                                 />
                             </Link>
-                            <div style={{ textTransform: "uppercase" }}>Filter/rent</div>
+                            <div style={{ textTransform: "uppercase" }}>buy</div>
                         </h2>
                     </div>
                 </div>
                 <h1>LUXURY PROPERTIES FOR SALE IN UAE</h1>
                 <div className="hr">
-                    <div className="form-rent">
+                    <div className="form-buy">
                         <input
                             type="number"
                             className="input-style-1"
-                            placeholder="rent"
+                            placeholder="Buy"
                             min={10000}
                             value={price}
                             onChange={(e) => setPrice(e.target.value)}
@@ -223,12 +206,10 @@ export default function RentFilter() {
                             value={minPrice}
                             onChange={(e) => setMinPrice(e.target.value)}
                         />
-
                     </div>
                 </div>
             </div>
-
-            <div className='rent'>
+            <div className='buy'>
                 <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
                     {imgsetin}
                 </Grid>
@@ -242,13 +223,8 @@ export default function RentFilter() {
                     </div>
                 </div>
             </div>
-
-
-
             <OUREXPERT />
-
             <Footer />
         </div>
-
     );
 }

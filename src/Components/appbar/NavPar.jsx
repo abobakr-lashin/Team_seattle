@@ -387,7 +387,7 @@ const Navbar = () => {
                                                     {offPlan?.map((it) => {
                                                         return (
                                                             <li>
-                                                                <Link to={`/buy/category/${it.name}`}>
+                                                                <Link to={`/Seattle/category/${it.name}`}>
                                                                     {it.name}
                                                                 </Link>
                                                             </li>
@@ -411,8 +411,8 @@ const Navbar = () => {
                                                     {language?.map((it) => {
                                                         return (
                                                             <li>
-                                                                <Link to={`Buy/Category/Location/${it?.category?.location}`}>
-                                                                    {it?.category?.location}
+                                                                <Link to={`/Buy/Category/Location/${it?.location}`}>
+                                                                    {it?.location}
                                                                 </Link>
                                                             </li>
                                                         );
@@ -567,7 +567,7 @@ const Navbar = () => {
                                             <div className="imgNbuy">
                                                 {BannerRent?.slice(0, 1).map((it) => {
                                                     return (
-                                                        <img  src={it.imageRent} alt="" />
+                                                        <img src={it.imageRent} alt="" />
                                                     )
                                                 })}
                                             </div>
@@ -888,7 +888,7 @@ const Navbar = () => {
                                             <div className="imgNCommercial">
                                                 {/* Develop */}
                                                 {BannerDeveloper?.slice(0, 1).map((it) => {
-                                                    return <img  src={it.imageDeveloper} alt="" />
+                                                    return <img src={it.imageDeveloper} alt="" />
                                                 })}
                                             </div>
                                         </div>
@@ -1039,12 +1039,15 @@ const Navbar = () => {
                                             <div className="dis-imgNbuy">
                                                 <ul>
                                                     <h3>BY EMIRATES</h3>
-                                                    <li>Abu Dhabi</li>
-                                                    <li>Dubai</li>
-                                                    <li>Sharjah</li>
-                                                    <li>Ajman</li>
-                                                    <li>Ras Al Khaimah</li>
-                                                    <li>Fujairah</li>
+                                                    {language?.map((it) => {
+                                                        return (
+                                                            <li>
+                                                                <Link to={`/Areas/Category/Location/Center/${it?.location}`}>
+                                                                    {it?.location}
+                                                                </Link>
+                                                            </li>
+                                                        );
+                                                    })}
                                                 </ul>
                                             </div>
                                         </div>
@@ -1217,10 +1220,10 @@ const Navbar = () => {
                                                     return (
                                                         <>
                                                             <div className="imgNbuy">
-                                                                <img  src={it.imageBlogs1} alt="" />
+                                                                <img src={it.imageBlogs1} alt="" />
                                                             </div>
                                                             <div className="imgNbuy">
-                                                                <img  src={it.imageBlogs2} alt="" />
+                                                                <img src={it.imageBlogs2} alt="" />
                                                             </div>
                                                         </>
                                                     )

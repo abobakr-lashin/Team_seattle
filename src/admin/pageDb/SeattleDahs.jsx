@@ -73,7 +73,7 @@ export default function SeattleDahs() {
         setLoading(true);
         if (window.confirm('Are you sure you want to delete')) {
             try {
-                await deleteDoc(doc(firestore, 'listBlogsCartSell', id));
+                await deleteDoc(doc(firestore, 'listBlogsCartSEATTLE', id));
                 console.log('Document successfully deleted!');
                 getCategories();
                 toast.success('Document successfully deleted')
@@ -91,7 +91,7 @@ export default function SeattleDahs() {
     // Get Data Cart Firebase
     const getCategories = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartSeattle"));
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartSEATTLE"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
@@ -178,7 +178,7 @@ export default function SeattleDahs() {
                                     <StyledTableCell align="center">{it.price}</StyledTableCell>
                                     <StyledTableCell align="center">{it.location}</StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {
-                                        Navigate(`/dashboard/EditSell/${it.id}`)
+                                        Navigate(`/dashboard/SeattleProject/EditSeattle/${it.id}`)
                                     }} style={{ backgroundColor: '#1976d2' }}>Update</button></StyledTableCell>
                                     <StyledTableCell align="center"><button onClick={() => {
                                         handleDelete(it.id)
