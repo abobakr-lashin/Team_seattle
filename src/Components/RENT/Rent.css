@@ -20,8 +20,7 @@ padding: 5%;
 }
 
 .form-rent{
-    
-    width: 78%;
+    width: 65%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -165,8 +164,20 @@ font-weight: 600;
   }
 
 
+  @media screen and (max-width: 1536px) {
+    .rent .input-style-3 {
+      width: 778px;
+    }
+    .rent.input-style-4 {
+      width: 368px;
+  }
+  }
 
-
+  @media screen and (max-width: 1764px) {
+    .form-rent{
+    width: 78%;
+    }
+    }
   @media screen and (max-width: 1564px) {
     .rent .input-style-3{
     width: 828px !important;

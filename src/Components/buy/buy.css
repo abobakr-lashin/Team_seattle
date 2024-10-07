@@ -159,10 +159,28 @@
   height: 80px;
   border-radius: 100% 100%;
 }
+@media screen and (max-width: 1924px) {
+  .form-buy{
+    width: 65%;
+  }
+}
+@media screen and (max-width: 1824px) {
+  .form-buy{
+    width: 76%;
+  }
+}
 @media screen and (max-width: 1564px) {
   .buy .input-style-3 {
     width: 828px;
   }
+}
+@media screen and (max-width: 1536px) {
+  .buy .input-style-3 {
+    width: 778px;
+  }
+  .buy .input-style-4 {
+    width: 368px;
+}
 }
 
 @media screen and (max-width: 1440px) {
