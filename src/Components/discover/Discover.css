@@ -187,7 +187,7 @@ font-size: xx-large;
 
   .prgraf{
     text-align: center;
-    width: 100%;
+    width: 100% !important;
     margin: auto;
   }
   .counter-box {

@@ -1052,20 +1052,33 @@ overflow-y: scroll !important;
 }
   }
   @media (max-width: 770px) and (max-height: 570px) {
-
-    .custom-navbar-item {
-      width: 100%;
-      color: white !important;
-      margin-left: 10%;
-      font-size: 22px;
-      padding: 0px;
+    .custom-navbar-brand a {
+      font-size: 12px;
+      margin: 0px;
   }
+  .custom-navbar-item {
+    width: 100%;
+    color: white !important;
+    margin-left: 10%;
+    font-size: 18px;
+    padding: 0px;
+}
     .Buys .custom-dropdown-menu {
         width: 100%;
         left: -45px;
         top: -0;
         width: 100%;
     }
+    .custom-navbar-link::after {
+      content: ">";
+      margin-left: 40%;
+      color: white;
+      font-size: 32px;
+      position: absolute;
+      top: -9px;
+      padding: 0;
+      display: block;
+  }
   .Buys h3 {
     width: 100%;
     font-size: 31px;
@@ -1229,6 +1242,9 @@ flex-direction: column;
 
 
   }
+
+
+
   @media (max-width: 540px) and (max-height: 720px) {
     .custom-navbar-item {
       width: 100%;
