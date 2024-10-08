@@ -179,10 +179,7 @@ export default function LandingpageSeattle() {
                         <div className="hr3"></div>
                         <div className="text" dangerouslySetInnerHTML={{ __html: cartId?.text }}></div>
                         <h1> Explore the Area: </h1>
-                        <h4>
-                            {" "}
-                            <LocationOnIcon /> Location: Mohammed Bin Rashid City{" "}
-                        </h4>
+                  
                     </div>
                 </div>
                 <div item lg={4} md={12} alignItems={"center"} justifyContent={"center"}>

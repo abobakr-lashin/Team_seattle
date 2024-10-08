@@ -168,10 +168,5 @@ width: 71%;
     max-width: 100%;
     text-align: center;
 }
-.prgraf p {
-  font-size: 9px;
-  color: white;
-  max-width: 100%;
-  text-align: center !important;
-}
+
 }

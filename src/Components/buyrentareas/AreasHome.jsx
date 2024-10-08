@@ -133,6 +133,7 @@ export default function AreasHome() {
       <div className="h-5vh"></div>
       <div className="h-5vh"></div>
       <div className="h-5vh"></div>
+      <div className="h-5vh"></div>
     </div>
   );
 }

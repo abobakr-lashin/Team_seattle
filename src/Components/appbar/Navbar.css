@@ -87,7 +87,7 @@
   padding: 6px;
   cursor: pointer;
 }
-.custom-navbar-link::after {
+.custom-navbar-link::before {
   content: ""; /* Insert an empty content */
   position: absolute; /* Ensure the parent has a relative position */
   bottom: 0px;
@@ -99,7 +99,7 @@
   transition: 0.5s;
 }
 
-.custom-navbar-link:hover::after {
+.custom-navbar-link:hover::before {
   width: 100%;
   color: #e2bc10;
 }
@@ -976,7 +976,7 @@ width: 100%;
 /* التنسيق المتجاوب لشاشات أصغر */
 @media (max-width: 1920px) {
   .custom-navbar-link {
-    font-size: 29px;
+    font-size: 27px;
 }
 }
 @media (max-width: 1740px) {
@@ -995,7 +995,7 @@ width: 100%;
 }
 @media (max-width: 1560px) {
   .custom-navbar-link {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .Buys h3 {
@@ -1234,7 +1234,7 @@ width: 100%;
   width: 100%;
 }
 .custom-navbar-link {
-  font-size: 14px;
+  font-size: 13px;
 }
 .dis-paly h4 {
   list-style: disc;

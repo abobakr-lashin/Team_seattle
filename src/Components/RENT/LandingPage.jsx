@@ -180,10 +180,7 @@ export default function LandingPage() {
                         <div className="text" dangerouslySetInnerHTML={{ __html: filterCartId[0]?.text }}></div>
 
                         <h1> Explore the Area: </h1>
-                        <h4>
-                            {" "}
-                            <LocationOnIcon /> Location: Mohammed Bin Rashid City{" "}
-                        </h4>
+                    
                     </div>
                 </div>
 

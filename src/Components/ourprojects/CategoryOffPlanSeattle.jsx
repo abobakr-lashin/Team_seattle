@@ -106,7 +106,7 @@ export default function CategoryOffPlanSeattle() {
                     <div className="btn-re">
                         <button onClick={() => {
                             Navigate(`/Seattle/${it.id}`)
-                        }} className="btn-register1">More Projects</button>
+                        }} className="btn-register1">show Projects</button>
                     </div>
                     <div className="display-f">
                         <Link to="https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" target="_blank" className="btn-whatsapp"> </Link>
