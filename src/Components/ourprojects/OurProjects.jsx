@@ -88,7 +88,7 @@ export default function OurProjects() {
           {data.map((it) => (
             <SwiperSlide key={it.id}>
               <div key={it.id} className="slide-item">
-                <div className="bg-back">
+                <div className="bg-back1">
                   <div className="project-img" style={{ backgroundImage: `url(${it.imageCart})` }}> </div>
                   <div className="City">{it.title}</div>
                   <div className="type" >

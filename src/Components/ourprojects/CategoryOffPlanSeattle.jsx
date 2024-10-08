@@ -9,7 +9,8 @@ import FormN from '../appbar/FormN';
 import Footer from '../footer/Footer';
 import OUREXPERT from '../../Pages/OUREXPERT';
 
-import "../buy/buy.css";
+// import "../buy/buy.css";
+import "./CustomSlider.css";
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
 export default function CategoryOffPlanSeattle() {
@@ -92,7 +93,7 @@ export default function CategoryOffPlanSeattle() {
     const imgsetin = currentItems.map((it) => (
         <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
             <div key={it.id} className="slide-item">
-                <div className="bg-back">
+                <div className="bg-back1">
                     <div className="project-img" style={{ backgroundImage: `url(${it.imageCart})` }}> </div>
                     <div className="City">{it.title}</div>
                     <div className="type" >

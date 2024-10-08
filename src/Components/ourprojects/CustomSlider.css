@@ -11,7 +11,7 @@
   width: 100%;
 }
 
-.slide-item .bg-back {
+.slide-item .bg-back1 {
   width: 85%;
   position: relative;
   background-color: #085364;
@@ -232,9 +232,17 @@
   .slider-container {
     padding: 0%;
   }
+  .slide-item .bg-back1 {
+width: 100%;
+
+  }
 }
 
 @media (max-width: 853px) {
+  .slide-item .bg-back1 {
+    width: 85%;
+
+  }
   .slick-prev,
   .slick-next {
     width: 50px;
