@@ -111,7 +111,11 @@ export default function UpdateRent() {
                 text: formData.text,
                 imageCart: updatedBlogImageCart,
                 imageSlider: updatedCartImageSlider,
-                CateBuyLocation,
+                CateBuyLocation: {
+                    location: CateBuyLocation.location || formData.CateBuyLocation.location,
+                    center: CateBuyLocation.center || formData.CateBuyLocation.center,
+                },
+                mainTitle: formData.mainTitle,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
                 date: new Date().toDateString(),
@@ -260,6 +264,15 @@ export default function UpdateRent() {
                             name="title"
                             placeholder="title"
                             value={formData.title}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="mainTitle"
+                            placeholder="Enter Your main Title"
+                            value={formData.mainTitle}
                             onChange={handleInputChange}
                         />
                     </div>

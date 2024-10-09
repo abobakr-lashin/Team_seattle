@@ -193,7 +193,6 @@ export default function LandingPageBuy() {
                             dangerouslySetInnerHTML={{ __html: filterCartId[0]?.text }}
                         ></div>
                         <h1> Explore the Area: </h1>
-                   
                     </div>
                 </div>
                 <div
