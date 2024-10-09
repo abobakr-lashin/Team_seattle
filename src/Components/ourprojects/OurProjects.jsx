@@ -88,7 +88,7 @@ export default function OurProjects() {
           {data.map((it) => (
             <SwiperSlide key={it.id}>
               <div key={it.id} className="slide-item">
-                <div className="bg-back">
+                <div className="bg-back1">
                   <div className="project-img" style={{ backgroundImage: `url(${it.imageCart})` }}> </div>
                   <div className="City">{it.title}</div>
                   <div className="type" >
@@ -101,7 +101,7 @@ export default function OurProjects() {
                   <div className="btn-re">
                     <button onClick={() => {
                       Navigate(`/Seattle/${it.id}`)
-                    }} className="btn-register1">More Projects</button>
+                    }} className="btn-register1">Show Projects</button>
                   </div>
                   <div className="display-f">
                     <Link to="https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" target="_blank" className="btn-whatsapp"> </Link>

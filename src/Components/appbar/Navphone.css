@@ -190,12 +190,12 @@ font-size: 40px !important;
     }
     .custom-navbar-link::after {
       content: ">";
-      margin-left: 120px;
+      margin-left: 10%;
       color: white;
       font-size: 30px;
       position: absolute;
       top: -7px;
-      display: inline-block; /* تغيير display لتمكين التحكم في المسافات */
+      display: block; /* تغيير display لتمكين التحكم في المسافات */
     }
   
     .bt-back {
@@ -826,7 +826,177 @@ overflow-y: scroll !important;
       overflow-y: auto;
     }
   }
+  @media (max-width: 1024px) and (max-height: 1366px) {
+    .custom-navbar-menu.active{
+      height: 100vh;
+    }
+    .custom-navbar-link{
+      font-size: 60px;
+      margin: 10px 0;
+        }
+    .custom-navbar-brand a {
+    font-size: 40px;
+    margin: 10px 0;
+    }
+    .custom-navbar-link::after {
+      content: ">";
+      margin-left: 44%;
+      color: white;
+      font-size: 60px;
+      position: absolute;
+      top: -11px;
+      display: block;
+  }
 
+   
+ 
+.developers .dis-buy {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+ 
+
+  }
+  @media (max-width: 1024px) and (max-height: 600px) {
+    .custom-navbar-menu.active{
+      height: 100vh;
+    }
+    .custom-navbar-link{
+      font-size: 20px;
+      margin: 10px 0;
+        }
+    .custom-navbar-brand a {
+    font-size: 20px;
+    margin: 10px 0;
+    }
+    .custom-navbar-link::after {
+      content: ">";
+      margin-left: 24%;
+      color: white;
+      font-size: 30px;
+      position: absolute;
+      top: -11px;
+      display: block;
+  }
+
+   
+ 
+.developers .dis-buy {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+ 
+
+  }
+
+  @media (max-width: 912px) and (max-height: 1368px) {
+    .custom-navbar-menu.active{
+      height: 100vh;
+    }
+    .custom-navbar-link{
+      font-size: 60px;
+      margin: 10px 0;
+        }
+    .custom-navbar-brand a {
+    font-size: 40px;
+    margin: 10px 0;
+    }
+    .custom-navbar-link::after {
+      content: ">";
+      margin-left: 44%;
+      color: white;
+      font-size: 60px;
+      position: absolute;
+      top: -11px;
+      display: block;
+  }
+
+   
+ 
+.developers .dis-buy {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+ 
+
+  }
+
+
+
+  @media (max-width: 853px) and (max-height: 1280px) {
+    .custom-navbar-item .custom-dropdown-menu:hover {
+      display: block;
+      height: auto;
+  }
+    .custom-navbar-menu.active{
+      height: 100vh;
+    }
+    .custom-navbar-link{
+      font-size: 55px;
+      margin: 10px 0;
+        }
+    .custom-navbar-brand a {
+    font-size: 40px;
+    margin: 10px 0;
+    }
+    .custom-navbar-link::after {
+      content: ">";
+      margin-left: 44%;
+      color: white;
+      font-size: 60px;
+      position: absolute;
+      top: -11px;
+      display: block;
+  }
+
+    .AREAS .dis-areas {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+    }
+  .AREAS .dis-imgNbuy {
+    display:flex;
+  justify-content: center  !important;
+  }
+  .Commercial .dis-imgNbuy{
+    flex-direction: column;
+  }
+  .Commercial .dis-buy2 {
+    display: flex;
+    flex-direction: column;
+}   
+.developers .dis-buy2 {
+    display: flex;
+    flex-direction: column !;
+}   
+.AREAS .dis-buy2 {
+    display: flex;
+    flex-direction: column;
+}   
+.Blogs .dis-buy2 {
+    display: flex;
+    flex-direction: column;
+}   
+ 
+.developers .dis-buy {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+
+.Commercial .imgNCommercial img {
+  width: 100%;
+}
+
+  }
   @media (max-width: 820px) and (max-height: 1180px) {
     .custom-navbar-link {
       width: 100%;
@@ -837,13 +1007,13 @@ overflow-y: scroll !important;
   }
   .custom-navbar-link::after {
     content: ">";
-    margin-left: 241px;
+    margin-left: 40%;
     color: white;
     font-size: 54px;
     position: absolute;
-    top: -30px;
+    top: -9px;
     padding: 0;
-    display: inline-block;
+    display: block;
 }
 .custom-navbar-item {
   width: 100%;
@@ -856,22 +1026,15 @@ overflow-y: scroll !important;
   }
   @media (max-width: 770px) and (max-height: 1024px) {
 
-    .custom-navbar-link {
-      width: 100%;
-      padding: 10px 0;
-      text-align: center;
-      color: white;
-      font-size: large;
-  }
   .custom-navbar-link::after {
     content: ">";
-    margin-left: 151px;
+    margin-left: 40%;
     color: white;
-    font-size: 34px;
+    font-size: 44px;
     position: absolute;
-    top: -10px;
+    top: -1px;
     padding: 0;
-    display: inline-block;
+    display: block;
 }
     .custom-navbar-item {
       width: 100%;
@@ -880,22 +1043,42 @@ overflow-y: scroll !important;
       font-size: 31px;
       padding: 8px;
   }
+  .dis-buy{
+    flex-direction: column;
+  }
+  .custom-navbar-brand a {
+    font-size: 35px;
+    margin: 10px 0;
+}
   }
   @media (max-width: 770px) and (max-height: 570px) {
-
-    .custom-navbar-item {
-      width: 100%;
-      color: white !important;
-      margin-left: 10%;
-      font-size: 22px;
-      padding: 0px;
+    .custom-navbar-brand a {
+      font-size: 12px;
+      margin: 0px;
   }
+  .custom-navbar-item {
+    width: 100%;
+    color: white !important;
+    margin-left: 10%;
+    font-size: 18px;
+    padding: 0px;
+}
     .Buys .custom-dropdown-menu {
         width: 100%;
         left: -45px;
         top: -0;
         width: 100%;
     }
+    .custom-navbar-link::after {
+      content: ">";
+      margin-left: 40%;
+      color: white;
+      font-size: 32px;
+      position: absolute;
+      top: -9px;
+      padding: 0;
+      display: block;
+  }
   .Buys h3 {
     width: 100%;
     font-size: 31px;
@@ -1058,6 +1241,57 @@ flex-direction: column;
 
 
 
+  }
+
+
+
+  @media (max-width: 540px) and (max-height: 720px) {
+    .custom-navbar-item {
+      width: 100%;
+      color: white !important;
+      margin-left: 10%;
+      font-size: 20px;
+      padding: 0px;
+  }
+  .custom-navbar-brand a {
+    font-size: 29px;
+    margin: 10px 0;
+} 
+.custom-navbar-link::after {
+  content: ">";
+  margin-left: 40%;
+  color: white;
+  font-size: 34px;
+  position: absolute;
+  top: -10px;
+  padding: 0;
+  display: block;
+}
+.custom-navbar-link {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+.developers .dis-paly2 .aldar img {
+  width: 101px;
+}
+.custom-dropdown-item {
+  padding: 3px;
+  color: white;
+  text-align: center;
+  transition: display 10.5s;
+}
+.Buys h3 {
+  width: 100%;
+  font-size: 27px;
+  font-weight: bold;
+  text-align: center;
+}
+ .dis-buy{
+  flex-direction: column !important;
+}
   }
   @media (max-width: 435px) {
 
@@ -1440,7 +1674,18 @@ margin-left: -30px;
   font-size: 25px;
   TEXT-ALIGN: start;
 }
-
+.developers .dis-buy {
+display: block;
+}
+.Blogs .dis-buy {
+display: block;
+}
+.ABOUT .dis-buy {
+display: block;
+}
+.APPLY .dis-buy {
+display: block;
+}
 .AREAS .dis-paly {
   display: flex;
   font-size: 20px;
@@ -1527,15 +1772,38 @@ margin-left: -30px;
   .custom-navbar-menu.active {
     max-height: 100vh;
 }
+.custom-navbar-brand a {
+  font-size: 22px;
+  margin: 10px 0;
+}
   }
   @media (max-width: 425px) {
-    .custom-navbar-item {
+
+    .custom-navbar-link {
       width: 100%;
-      color: white !important;
-      margin-left: 10%;
-      font-size: 20px;
-      padding: 0px;
-    }
+      padding: 10px 0;
+      text-align: center;
+      color: white;
+      font-size: 36px;
+  }
+  .custom-navbar-link::after {
+    content: ">";
+    margin-left: 40%;
+    color: white;
+    font-size: 28px;
+    position: absolute;
+    top: -9px;
+    padding: 0;
+    display: block;
+}
+.custom-navbar-item {
+  width: 100%;
+  color: white !important;
+  margin-left: 10%;
+  font-size: 51px;
+  padding: 0px;
+}
+
   }
   @media (max-width: 415px) {
     .custom-navbar-item {
@@ -1545,7 +1813,26 @@ margin-left: -30px;
       font-size: 26px;
       padding: 8px;
     }
-  
+    .custom-navbar-link::after {
+      content: ">";
+      margin-left: 36%;
+      color: white;
+      font-size: 34px;
+      position: absolute;
+      top: 2px;
+      padding: 0;
+      display: block;
+  }
+  .custom-navbar-link {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+.custom-navbar-brand a {
+  font-size: 20px;
+}
   
   }
 
@@ -1742,8 +2029,11 @@ margin-left: -30px;
 
   }
 
-  @media (max-width: 325px) {
-
+  @media (max-width: 345px) {
+    .custom-navbar-link::after{
+      margin-left: 44%;
+      top: -10px;
+    }
     .Buys .imgnp .h3, .imgnp .h4 {
         font-size: 8px;
         color: white;
