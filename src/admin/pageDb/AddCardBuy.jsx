@@ -49,6 +49,7 @@ export default function AddCardBuy() {
         listingImage: null,
         CategoryDevelopers: '',
         CategoryPlan: '',
+        mainTitle: '',
     });
 
     // Update 
@@ -114,15 +115,6 @@ export default function AddCardBuy() {
             await uploadBytes(fileRefImage, formDataImageText);
             const BgImageText = await getDownloadURL(fileRefImage);
 
-
-            console.log(
-                formData,
-                BgImage,
-                BgImageCard,
-                BgImageText,
-                uploadedFileURLs,
-                CateBuyLocation
-            )
 
             // Send Data to Firestore
             await addDoc(collection(firestore, 'listBlogsCartBuy'), {
@@ -300,6 +292,16 @@ export default function AddCardBuy() {
                         name="title"
                         placeholder="Title"
                         value={formData.title}
+                        onChange={handleInputChange}
+                    />
+                </div>
+
+                <div className="form-group">
+                    <input
+                        type="text"
+                        name="mainTitle"
+                        placeholder="Enter Your main Title"
+                        value={formData.mainTitle}
                         onChange={handleInputChange}
                     />
                 </div>
