@@ -658,7 +658,7 @@ width: 100%;
   width: 140px;
 }
 .Blogs .dis-paly1{
-  display: flex;
+  display: flex !important;
   align-items: start !important;
   justify-content: start !important;
 }
@@ -1048,7 +1048,10 @@ width: 100%;
     flex-direction: column;
     margin-left: 5px;
     margin-top: 0px;
-
+width: 70% !important;
+  }
+  .Blogs .dis-paly1 .img img {
+  width: 102px;
   }
 }
 @media (max-width: 1440px) {

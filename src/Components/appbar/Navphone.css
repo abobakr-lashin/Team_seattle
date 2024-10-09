@@ -756,8 +756,7 @@ overflow-y: scroll !important;
 
     }
     .Blogs .dis-paly1 .img img {
-      width: 90px;
-      height: 100%;
+ width: 80px;
     }
     .Blogs .dis-paly1 .titel h5 {
       font-size: 18px;
@@ -779,6 +778,15 @@ overflow-y: scroll !important;
 .Blogs .dis-buy .p2 {
   font-size: 14px;
   text-align: left;
+}
+.Blogs .dis-paly1 .titel h5 {
+font-size: 14px;
+}
+.Blogs.dis-paly1{
+display: flex;
+}
+.Blogs .dis-paly1 .titel {
+width: 69% !important;
 }
     /* Blogs */
   

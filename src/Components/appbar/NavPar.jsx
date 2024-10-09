@@ -1202,15 +1202,15 @@ const Navbar = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div>
                                                 {/* Nav Bar Blogs */}
                                                 {dataBloge?.slice(0, 2).map((it) => {
                                                     return (
-                                                        <Link to={`/blog/${it.id}`} style={{
-                                                            display: 'flex',
-                                                            alignItems: 'center',
-                                                            justifyContent: 'center',
-                                                        }} className="dis-paly1">
+
+                                                       
+                                                        <Link    to={`/blog/${it.id}`} style={{
+                                                        }} 
+                                                        className="dis-paly1"
+                                                     >
                                                             <div className="img">
                                                                 <img src={it?.imageLanding} alt="" />
                                                             </div>
@@ -1222,10 +1222,9 @@ const Navbar = () => {
                                                                     <p>{it.DateS.day}/{it.DateS.month}/{it.DateS.year}</p>
                                                                 </p>
                                                             </div>
-                                                        </Link>
+                                                        </Link> 
                                                     )
                                                 })}
-                                            </div>
                                         </div>
                                         <div item xs={7}>
                                             <div className="dis-imgNbuy">
