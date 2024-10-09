@@ -22,7 +22,7 @@ export default function LandingpageSeattle() {
     // Get Data from Firestore
     const GetDataFireStore = async () => {
         try {
-            const docRef = doc(firestore, "listBlogsCartSEATTLE", "OAs2jEeRUyFht1xhEdnh");
+            const docRef = doc(firestore, "listBlogsCartSEATTLE", id);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
                 console.log("Document data:", docSnap.data());
@@ -60,9 +60,6 @@ export default function LandingpageSeattle() {
             },
         ],
     };
-
-
-    console.log(cartId);
 
 
     const imgsetin = cartId?.imageSlider?.map((img) => {
@@ -170,7 +167,7 @@ export default function LandingpageSeattle() {
                 <div className="grid-lan1" item lg={8} md={12} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
                     <div className="Sitedetails">
                         <div className="address">
-                            {cartId?.location}
+                            {cartId?.mainTitle}
                         </div>
                         <div className="theprice">{cartId?.price} ${cartId?.currency}</div>
                         <div className="theprices">${cartId?.monthlyPayment} {cartId?.currency} (per month)</div>

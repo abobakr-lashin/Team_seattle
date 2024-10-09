@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import 'react-quill/dist/quill.snow.css'; // استيراد الأنماط الافتراضية لـ Quill.js
-import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, getDocs, getDoc, doc, updateDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن مسار الاستيراد صحيح
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Box, CircularProgress } from '@mui/material';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 
 
 
-export default function CreateSheattle() {
+export default function SeattleUpdate() {
     const Navigate = useNavigate()
+    const { id } = useParams()
     const [FileURLs, setFileURLs] = useState([])
     const [FileImage, setFileImages] = useState([])
     const [urlImge, setUrlImge] = useState(null)
@@ -30,6 +31,7 @@ export default function CreateSheattle() {
     });
     const [formDataImageText, setformDataImageText] = useState('');
     const [ImgeCartText, setImgeCartText] = useState('');
+    const [formClintImage, setformClintImage] = useState([]);
     const [formData, setFormData] = useState({
         title: '',
         text: '',
@@ -84,31 +86,43 @@ export default function CreateSheattle() {
         setError(null);
 
         try {
-            const uploadedFileURLs = await Promise.all(FileURLs.map(async (file) => {
-                const fileRef = ref(storage, `files/${file.name}`);
-                await uploadBytes(fileRef, file);
-                return await getDownloadURL(fileRef);
-            }));
 
-            const fileRefBlog = ref(storage, `filesBlog/${formData.listingImage.name}`);
-            const fileRefImageCart = ref(storage, `filesBlog/${formDataImage.name}`);
-            const fileRefImage = ref(storage, `files/${formDataImageText.name}`);
+            let updatedBlogImageCart = formData.imageCart;
+            let updatedBlogClint = formData.bgImage;
+            let updatedCartImageSlider = formData.imageSlider;
+            let updatedBlogImageText = formData.imageText;
 
-            const [snapshotBlog, snapshotCart] = await Promise.all([
-                uploadBytes(fileRefBlog, formData.listingImage),
-                uploadBytes(fileRefImageCart, formDataImage),
-                uploadBytes(fileRefImage, formDataImageText),
-            ]);
+            if (FileURLs.length > 0) {
+                const uploadedFileURLs = await Promise.all(FileURLs.map(async (file) => {
+                    const fileRef = ref(storage, `files/${file.name}`);
+                    await uploadBytes(fileRef, file);
+                    return await getDownloadURL(fileRef);
+                }));
+                updatedCartImageSlider = uploadedFileURLs;
+            }
 
-            const BgImage = await getDownloadURL(fileRefBlog);
-            const BgImageCard = await getDownloadURL(fileRefImageCart);
-            const BgImageText = await getDownloadURL(fileRefImage);
+            if (formDataImage) {
+                const fileRefImage = ref(storage, `filesBlog/${formDataImage.name}`);
+                await uploadBytes(fileRefImage, formDataImage);
+                updatedBlogImageCart = await getDownloadURL(fileRefImage);
+            }
 
+            if (formClintImage) {
+                const fileRefCart = ref(storage, `filesBlog/${formClintImage.name}`);
+                await uploadBytes(fileRefCart, formClintImage);
+                updatedBlogClint = await getDownloadURL(fileRefCart);
+            }
 
+            if (formDataImageText) {
+                const fileRefCart = ref(storage, `filesBlog/${formDataImageText.name}`);
+                await uploadBytes(fileRefCart, formDataImageText);
+                updatedBlogImageText = await getDownloadURL(fileRefCart);
+            }
             // Send Data TO fierStore
-            await addDoc(collection(firestore, 'listBlogsCartSEATTLE'), {
+            const docRef = doc(firestore, 'listBlogsCartSEATTLE', id);
+            await updateDoc(docRef, {
                 title: formData.title,
-                category: formData.category,
+                category: formData.category || formData.category,
                 price: formData.price,
                 currency: formData.currency,
                 beds: formData.beds,
@@ -121,15 +135,18 @@ export default function CreateSheattle() {
                 stars: formData.stars,
                 email: formData.email,
                 map: formData.map,
-                bgImage: BgImage,
                 text: formData.text,
-                imageCart: BgImageCard,
-                imageText: BgImageText,
-                imageSlider: uploadedFileURLs,
+
+                bgImage: updatedBlogClint || formData.bgImage,
+                imageCart: updatedBlogImageCart || formData.imageCart,
+                imageText: updatedBlogImageText || formData.imageText,
+                imageSlider: updatedCartImageSlider || formData.imageSlider,
+
+
                 type: formData.type,
                 size: formData.size,
-                payment: formData.payment,
                 mainTitle: formData.mainTitle,
+                payment: formData.payment,
                 handover: formData.handover,
                 starting: formData.starting,
                 CategoryPlan: formData.CategoryPlan,
@@ -215,6 +232,19 @@ export default function CreateSheattle() {
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
+
+        try {
+            const docRef = doc(firestore, 'listBlogsCartSEATTLE', id);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                setFormData(docSnap.data());
+            } else {
+                console.log("No such document!");
+            }
+        } catch (error) {
+            console.error("Error fetching document: ", error);
+        }
+
     };
 
     useEffect(() => {
@@ -247,8 +277,12 @@ export default function CreateSheattle() {
                             setformDataImage(e.target.files[0])
                         }} />
                         <div className="img">
-                            {ImgeCart && <img
+                            {ImgeCart ? <img
                                 src={ImgeCart}
+                                alt="ImageCart"
+                                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                            /> : formData.imageCart && <img
+                                src={formData.imageCart}
                                 alt="ImageCart"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
                             />}
@@ -264,9 +298,13 @@ export default function CreateSheattle() {
                             setformDataImageText(e.target.files[0])
                         }} />
                         <div className="img">
-                            {ImgeCartText && <img
+                            {ImgeCartText ? <img
                                 src={ImgeCartText}
-                                alt="ImgeCartText"
+                                alt="ImageCart"
+                                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                            /> : formData.imageText && <img
+                                src={formData.imageText}
+                                alt="ImageCart"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
                             />}
                         </div>
@@ -397,10 +435,18 @@ export default function CreateSheattle() {
                         }} />
 
                         <div className="image">
-                            {FileImage.map((it, index) => (
+                            {FileImage && FileImage.map((it, index) => (
                                 <img
                                     key={index}
                                     src={URL.createObjectURL(it)}
+                                    alt={`preview-${index}`}
+                                    style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '5px' }}
+                                />
+                            ))}
+                            {formData?.imageSlider?.map((it, index) => (
+                                <img
+                                    key={index}
+                                    src={it}
                                     alt={`preview-${index}`}
                                     style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '5px' }}
                                 />
@@ -449,10 +495,18 @@ export default function CreateSheattle() {
                         <label htmlFor="me" style={{ fontSize: '30px' }}>
                             Image Listing By
                         </label>
-                        <input id="me" type="file" name="listingImage" onChange={handleFileChange} />
+                        <input id="me" type="file" name="listingImage" onChange={(e) => {
+                            const file = URL.createObjectURL(e.target.files[0]);
+                            setUrlImge(file);
+                            setformClintImage(e.target.files[0]);
+                        }} />
                         <div className="img">
-                            {urlImge && <img
+                            {urlImge ? <img
                                 src={urlImge}
+                                alt="listingImage"
+                                style={{ width: '200px', height: '200px', objectFit: 'cover' }}
+                            /> : formData.bgImage && <img
+                                src={formData.bgImage}
                                 alt="listingImage"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
                             />}
@@ -485,7 +539,10 @@ export default function CreateSheattle() {
                             data={formData.text || ""}
                             onChange={(event, editor) => {
                                 const data = editor.getData();
-                                setFormData({ ...formData, text: data });
+                                setFormData(prevFormData => ({
+                                    ...prevFormData,
+                                    text: data
+                                }));
                             }}
                             config={{
                                 height: '400px',

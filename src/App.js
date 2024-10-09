@@ -1,7 +1,4 @@
 import React from 'react';
-// عمل فرع يا ابراهيم 
-
-
 import { Routes, Route, HashRouter } from "react-router-dom";
 import ScrollToTop from './ScrollToTop';
 import Home from './Pages/Home';
@@ -98,6 +95,7 @@ import UpdateLocation from './admin/pageDb/UpdateLocation';
 import CategoryAreas from './Components/our-project/CategoryAreas';
 import LandingpageSeattle from './Components/ourprojects/LandingpageSeattle';
 import CategoryOffPlanSeattle from './Components/ourprojects/CategoryOffPlanSeattle';
+import SeattleUpdate from './admin/pageDb/SeattleUpdate';
 
 export default function App() {
     return (
@@ -203,6 +201,7 @@ export default function App() {
 
                         <Route path="/dashboard/SeattleProject" element={<SeattleDahs />} />
                         <Route path="/dashboard/CreateSeattle" element={<CreateSheattle />} />
+                        <Route path="/dashboard/SeattleProject/EditSeattle/:id" element={<SeattleUpdate />} />
 
                         <Route path="Developers/AddBannerDevelopers" element={<AddBannerDevelopers />} />
                         <Route path="/dashboard/Developers/AddCartDevelopers" element={<AddCartDevelopers />} />
