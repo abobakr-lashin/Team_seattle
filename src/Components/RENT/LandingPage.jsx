@@ -168,7 +168,7 @@ export default function LandingPage() {
                 <div className="grid-lan1" item lg={8} md={12} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
                     <div className="Sitedetails">
                         <div className="address">
-                            {filterCartId[0]?.location}
+                            {filterCartId[0]?.mainTitle}
                         </div>
                         <div className="theprice">{filterCartId[0]?.price} ${filterCartId[0]?.currency}</div>
                         <div className="theprices">${filterCartId[0]?.monthlyPayment} {filterCartId[0]?.currency} (per month)</div>

@@ -45,11 +45,11 @@ export default function Rent() {
   const filteredProjects = data.filter((project) => {
     return (
       (!searchTerm || project.title.toUpperCase().includes(searchTerm.toUpperCase())) &&
-      (!price || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(price)) &&
-      (!location || project.LocationOn.toUpperCase().includes(location.toUpperCase())) &&
-      (!minBedrooms || project.bed >= parseInt(minBedrooms)) &&
-      (!maxBedrooms || project.bed <= parseInt(maxBedrooms)) &&
-      (!minPrice || parseFloat(project.money.replace(/,/g, '')) >= parseFloat(minPrice)) &&
+      (!price || parseFloat(project.price.replace(/,/g, '')) >= parseFloat(price)) &&
+      (!location || project.location.toUpperCase().includes(location.toUpperCase())) &&
+      (!minBedrooms || project.bede >= parseInt(minBedrooms)) &&
+      (!maxBedrooms || project.bede <= parseInt(maxBedrooms)) &&
+      (!minPrice || parseFloat(project.price.replace(/,/g, '')) >= parseFloat(minPrice)) &&
       (!minArea || project.square >= parseFloat(minArea)) &&
       (!maxArea || project.square <= parseFloat(maxArea))
     );

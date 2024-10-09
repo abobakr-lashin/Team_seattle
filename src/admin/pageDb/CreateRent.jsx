@@ -113,16 +113,7 @@ export default function CreateRent() {
             const fileRefImage = ref(storage, `files/${formDataImageText.name}`);
             await uploadBytes(fileRefImage, formDataImageText);
             const BgImageText = await getDownloadURL(fileRefImage);
-
-
-            console.log(
-                formData,
-                BgImage,
-                BgImageCard,
-                BgImageText,
-                uploadedFileURLs,
-                CateBuyLocation
-            )
+            
 
             // Send Data to Firestore
             await addDoc(collection(firestore, 'listBlogsCartRent'), {
@@ -302,7 +293,15 @@ export default function CreateRent() {
                         onChange={handleInputChange}
                     />
                 </div>
-
+                <div className="form-group">
+                    <input
+                        type="text"
+                        name="mainTitle"
+                        placeholder="Enter Your main Title"
+                        value={formData.mainTitle}
+                        onChange={handleInputChange}
+                    />
+                </div>
                 <div className="form-group">
                     <input
                         type="text"
@@ -396,7 +395,7 @@ export default function CreateRent() {
                     </div>
                 </div>
 
-            
+
                 <div className="form-group">
                     <input
                         type="text"
@@ -478,7 +477,7 @@ export default function CreateRent() {
                 </div>
 
                 <div className="form-group">
-                    
+
                     <select
                         style={{ margin: '20px', width: '80%' }}
                         name="location"

@@ -31,6 +31,7 @@ export default function UpdateBuy() {
     const [formDataImageText, setformDataImageText] = useState('');
     const [ImgeCartText, setImgeCartText] = useState('');
     const [Centers, setCenters] = useState([]);
+    const [CategoryLocation, setCategoryLocation] = useState({});
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -111,7 +112,11 @@ export default function UpdateBuy() {
                 text: formData.text,
                 imageCart: updatedBlogImageCart,
                 imageSlider: updatedCartImageSlider,
-                CateBuyLocation,
+                CateBuyLocation: {
+                    location: CategoryLocation.location || formData.CateBuyLocation.location,
+                    center: CategoryLocation.center || formData.CateBuyLocation.location,
+                },
+                mainTitle: formData.mainTitle,
                 CategoryDevelopers: formData.CategoryDevelopers,
                 CategoryPlan: formData.CategoryPlan,
                 date: new Date().toDateString(),
@@ -260,6 +265,15 @@ export default function UpdateBuy() {
                             name="title"
                             placeholder="title"
                             value={formData.title}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="mainTitle"
+                            placeholder="Enter Your main Title"
+                            value={formData.mainTitle}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -440,6 +454,7 @@ export default function UpdateBuy() {
                             value={CateBuyLocation.location}
                             onChange={(e) => {
                                 setCateBuyLocation({ ...CateBuyLocation, location: e.target.value, center: '' });
+                                setCategoryLocation({ ...CategoryLocation, location: e.target.value });
                             }}
                         >
                             <option hidden>Select Category Location</option>
@@ -457,6 +472,7 @@ export default function UpdateBuy() {
                                 value={CateBuyLocation.center}
                                 onChange={(e) => {
                                     setCateBuyLocation({ ...CateBuyLocation, center: e.target.value });
+                                    setCategoryLocation({ ...CategoryLocation, center: e.target.value });
                                 }}
                             >
                                 <option hidden>Select Center</option>

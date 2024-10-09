@@ -177,7 +177,7 @@ export default function LandingPageBuy() {
                     sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}
                 >
                     <div className="Sitedetails">
-                        <div className="address">{filterCartId[0]?.location}</div>
+                        <div className="address">{filterCartId[0]?.mainTitle}</div>
                         <div className="theprice">
                             {filterCartId[0]?.price} ${filterCartId[0]?.currency}
                         </div>
@@ -193,7 +193,6 @@ export default function LandingPageBuy() {
                             dangerouslySetInnerHTML={{ __html: filterCartId[0]?.text }}
                         ></div>
                         <h1> Explore the Area: </h1>
-                   
                     </div>
                 </div>
                 <div
