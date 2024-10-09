@@ -159,7 +159,7 @@ export default function PageAreasRent() {
                                     sx={{ color: "#d3b76d", fontSize: "65px" }}
                                 />
                             </Link>
-                            <div style={{ textTransform: "uppercase" }}>buy</div>
+                            <div style={{ textTransform: "uppercase" }}>Rent</div>
                         </h2>
                     </div>
                 </div>
