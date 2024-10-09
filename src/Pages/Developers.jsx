@@ -167,9 +167,9 @@ export default function Developers() {
 
                     <Grid sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
 
-                        <img width={"35%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner4} alt="" />
+                        <img width={"20%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner4} alt="" />
                         <img width={"20%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner5} alt="" />
-                        <img width={"20%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner6} alt="" />
+                        <img width={"35%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner6} alt="" />
                     </Grid>
                 </Grid>
                 <div className="h-5vh"></div>
