@@ -91,3 +91,10 @@
     height: 40px;
   }
 }
+@media screen and (max-width:330px) {
+  .imgcate img{
+    width: 90%;
+    margin: auto;
+  }
+
+}

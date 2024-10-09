@@ -153,7 +153,7 @@ export default function Developers() {
                 </Box>
                 <Grid sx={{ width: "100%" }} spacing={5}>
 
-                    <Grid sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
+                    <Grid className='imgcate' sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
 
                         <img width={"35%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner1} alt="" />
                         <img width={"20%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner2} alt="" />
@@ -165,7 +165,7 @@ export default function Developers() {
                 </Grid>
                 <Grid sx={{ width: "100%" }} spacing={5}>
 
-                    <Grid sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
+                    <Grid className='imgcate' sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
 
                         <img width={"20%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner4} alt="" />
                         <img width={"20%"} style={{ margin: "15px" }} src={categoryDevelopers[0]?.banner5} alt="" />
