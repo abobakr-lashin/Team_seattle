@@ -96,7 +96,8 @@ export default function CommercialEdit() {
                 map: formData.map,
                 bgImage: updatedBlogClint,
                 imageText: updatedBlogImageText,
-                // text: formData.text,
+                text: formData.text,
+                mainTitle: formData.mainTitle,
                 imageCart: updatedBlogImageCart,
                 imageSlider: updatedCartImageSlider || formData.imageSlider,
                 date: new Date().toDateString(),
@@ -211,6 +212,15 @@ export default function CommercialEdit() {
                             name="title"
                             placeholder="title"
                             value={formData.title}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="mainTitle"
+                            placeholder="Enter Your Main Title"
+                            value={formData.mainTitle}
                             onChange={handleInputChange}
                         />
                     </div>

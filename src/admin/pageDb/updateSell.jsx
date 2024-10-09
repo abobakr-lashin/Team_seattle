@@ -97,6 +97,7 @@ export default function UpdateSell() {
                 imageText: updatedBlogImageText,
                 text: formData.text,
                 bgImage: updatedBlogClint,
+                mainTitle: formData.mainTitle,
                 imageCart: updatedBlogImageCart,
                 imageSlider: formData.imageSlider || updatedCartImageSlider,
                 CategoryBuyLocation: formData.CategoryBuyLocation,
@@ -135,7 +136,7 @@ export default function UpdateSell() {
 
         // get Category Locations  
         try {
-            const querySnapshot = await getDocs(collection(firestore, "CategorySellLocation"));
+            const querySnapshot = await getDocs(collection(firestore, "CategoryBuyLocation"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -153,19 +154,6 @@ export default function UpdateSell() {
                 ...doc.data()
             }));
             setCategoryDevelopers(docs);
-        } catch (error) {
-            console.error("Error fetching documents: ", error);
-        }
-
-
-        // get category buy Plans  
-        try {
-            const querySnapshot = await getDocs(collection(firestore, "categorySellPlan"));
-            const docs = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-            setCategoryPlan(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -251,6 +239,15 @@ export default function UpdateSell() {
                             name="title"
                             placeholder="title"
                             value={formData.title}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="mainTitle"
+                            placeholder="Enter Your main Title"
+                            value={formData.mainTitle}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -431,7 +428,7 @@ export default function UpdateSell() {
                         }}>
                             <option hidden >Select Category Location</option>
                             {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
+                                return <option key={it.id} value={it.location}>{it.location}</option>
                             })}
                         </select>
                     </div>
@@ -446,16 +443,6 @@ export default function UpdateSell() {
                         </select>
                     </div>
 
-                    <div className="form-group">
-                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({ ...formData, CategoryPlan: e.target.value });
-                        }}>
-                            <option hidden >Select Category Buy Plan</option>
-                            {CategoryPlan.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
-                            })}
-                        </select>
-                    </div>
                     <div className="form-group">
                         <CKEditor
                             editor={ClassicEditor}

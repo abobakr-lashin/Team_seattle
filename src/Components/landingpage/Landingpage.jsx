@@ -170,7 +170,7 @@ export default function Landingpage() {
                 <div className="grid-lan1" item lg={8} md={12} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
                     <div className="Sitedetails">
                         <div className="address">
-                            {filterCartId[0]?.location}
+                            {filterCartId[0]?.mainTitle}
                         </div>
                         <div className="theprice">{filterCartId[0]?.price} ${filterCartId[0]?.currency}</div>
                         <div className="theprices">${filterCartId[0]?.monthlyPayment} {filterCartId[0]?.currency} (per month)</div>
@@ -179,7 +179,7 @@ export default function Landingpage() {
                         <div className="hr3"></div>
                         <div className="text" dangerouslySetInnerHTML={{ __html: filterCartId[0]?.text }}></div>
                         <h1> Explore the Area: </h1>
-                 
+
                     </div>
                 </div>
                 <div item lg={4} md={12} alignItems={"center"} justifyContent={"center"}>
@@ -211,7 +211,7 @@ export default function Landingpage() {
                 <div className="h-5vh"></div>
                 <div>
                     <h3>عرض الخريطة:</h3>
-                    
+
                     <iframe
                         src={filterCartId[0]?.map}
                         width="600"

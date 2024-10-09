@@ -1,24 +1,30 @@
 import { Alert, Button, CircularProgress, Stack } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import "./table.css";
-import app from '../../firebaseConfig';
+import app, { firestore } from '../../firebaseConfig';
 import { getDatabase, ref, get, remove } from "firebase/database";
 import { ToastContainer, toast } from 'react-toastify';
+import { collection, getDocs } from 'firebase/firestore';
 
 export default function Formdb() {
     const [DatabaseRef, setDatabaseRef] = useState([]);
     const [DatabaseOffers, setDatabaseOffers] = useState([]);
     const [Loading, setLoading] = useState(true);
     const [Error, setError] = useState(null);
+    const [dataFormBlog, setDataFormBlog] = useState([]);
 
     const Dataase = async () => {
         try {
             const db = getDatabase(app);
             const newDataRef = ref(db, 'nature/fruits');
             const newDataOffers = ref(db, 'specials/offers');
+            const newDatablogs = ref(db, 'special/offers');
+
 
             const snapshot = await get(newDataRef);
             const snapshotOffers = await get(newDataOffers);
+            const snapshotBlogs= await get(newDatablogs);
+
 
             if (snapshot.exists()) {
                 setDatabaseRef(Object.entries(snapshot.val()).map(([id, value]) => ({ id, ...value })));
@@ -31,16 +37,19 @@ export default function Formdb() {
             } else {
                 setDatabaseOffers([]);
             }
+            if (snapshotBlogs.exists()) {
+                setDataFormBlog(Object.entries(snapshotBlogs.val()).map(([id, value]) => ({ id, ...value })));
+            } else {
+                setDataFormBlog([]);
+            }
         } catch (error) {
             setError("Error fetching data");
             console.error('Error fetching data:', error);
         } finally {
             setLoading(false);
         }
+
     };
-
-    console.log(DatabaseRef);
-
 
     useEffect(() => {
         Dataase();
@@ -76,33 +85,46 @@ export default function Formdb() {
         }
     };
 
+    const handleDeleteitemBlog = async (id) => {
+        try {
+            const db = getDatabase(app);
+            const fruitRef = ref(db, `special/offers/${id}`);
+            await remove(fruitRef);
+
+            setDataFormBlog((prevData) => prevData.filter((item) => item.id !== id));
+            toast.success("Fruit deleted successfully");
+        } catch (error) {
+            setError("Error deleting fruit");
+            toast.error("Error deleting fruit");
+            console.error("Error deleting fruit:", error);
+        }
+    };
+
     if (Loading) return <CircularProgress />;
     if (Error) return <Alert severity="error">{Error}</Alert>;
 
     return (
         <div>
             <ToastContainer />
-            {/* <h3>Form Landing Page</h3>
+            <h3>Form Landing Page</h3>
             <div className="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Time</th>
                             <th>name</th>
-                            <th>img</th>
+                            <th>phone</th>
+                            <th>email</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {DatabaseOffers.map((item) => (
-                            <tr key={""} style={{ background: 'white' }}>
-                                <td>{""}</td>
-                                <td>{""}</td>
-                                <td>{""}</td>
-                                <td>{""}</td>
+                        {dataFormBlog.map((item) => (
+                            <tr key={item.id} style={{ background: 'white' }}>
+                                <td>{item.name}</td>
+                                <td>{item.phone}</td>
+                                <td>{item.email}</td>
                                 <td>
-                                    <Button variant="contained" color="secondary" onClick={() => handleDeleteOffers("")}>
+                                    <Button variant="contained" color="secondary" onClick={() => handleDeleteitemBlog(item.id)}>
                                         Delete
                                     </Button>
                                 </td>
@@ -110,7 +132,7 @@ export default function Formdb() {
                         ))}
                     </tbody>
                 </table>
-            </div> */}
+            </div>
             <h3>FormNav</h3>
             <div className="table-container">
                 <table>
@@ -172,6 +194,7 @@ export default function Formdb() {
                     </tbody>
                 </table>
             </div>
+            <br /><br /><br />
             <br /><br /><br />
         </div>
     );

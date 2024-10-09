@@ -23,17 +23,19 @@ export default function Developers() {
 
     const GetDataFireBase = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firestore, "listCartDevelopers"));
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartBuy"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
             }));
-            const fiterData = docs.filter((it) => it.company === id)
+            const fiterData = docs.filter((it) => it.CategoryDevelopers === id)
 
             setDataCart(fiterData);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
+
+
 
         try {
             const querySnapshot = await getDocs(collection(firestore, "CategoryDevelopers"));
@@ -88,14 +90,14 @@ export default function Developers() {
                         <div
                             className="bg-imga"
                         > <img src={`${it.imageCart}`} alt="" /> </div>
-                        <h2>{it.title}</h2>
+                        <h2>{it.mainTitle}</h2>
                         <h3>
-                            <LocationOnIcon /> {it.location}
+                            <LocationOnIcon /> {it.CateBuyLocation.location}
                         </h3>
                         <div className="dis">
                             <div>
                                 <div className="btn-t">
-                                    <Link to={`/Buy/Category/Location/${it.location}`}>buy Property</Link>
+                                    <Link to={`/Buy/Category/Location/${it.CateBuyLocation.location}`}>buy Property</Link>
                                 </div>
                             </div>
                         </div>

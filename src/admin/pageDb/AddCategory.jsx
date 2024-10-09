@@ -84,7 +84,7 @@ const AddCategory = () => {
                 <img style={{ width: '200px' }} src={fileUrl} alt="" />
             </List>
 
-            <Button
+            {/* <Button
                 sx={{ mt: 2, mb: 2 }}
                 component="label"
                 role={undefined}
@@ -102,7 +102,7 @@ const AddCategory = () => {
                     }}
                     multiple
                 />
-            </Button>
+            </Button> */}
 
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
                 {loading ? (

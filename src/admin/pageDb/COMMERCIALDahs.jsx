@@ -44,8 +44,9 @@ export default function COMMERCIALDahs() {
     const [Categories, setCategories] = useState([])
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [formDataImage, setformDataImage] = useState('')
+    const [dataCategory, setDataCategory] = useState([])
     const [data, setData] = useState([])
+
 
     // Handle Delete Item
     const handleDelete = async (id) => {
@@ -53,6 +54,25 @@ export default function COMMERCIALDahs() {
         if (window.confirm('Are you sure you want to delete')) {
             try {
                 await deleteDoc(doc(firestore, 'listingsBlogs', id));
+                console.log('Document successfully deleted!');
+                getCategories();
+                toast.success('Document successfully deleted')
+            } catch (error) {
+                console.error('Error deleting document: ', error);
+                toast.error('Error deleting document')
+                setLoading(false);
+            } finally {
+                setLoading(false);
+            }
+        }
+    };
+
+    // Handle Delete Item
+    const handleDeleteCAtegory = async (id) => {
+        setLoading(true);
+        if (window.confirm('Are you sure you want to delete')) {
+            try {
+                await deleteDoc(doc(firestore, 'category', id));
                 console.log('Document successfully deleted!');
                 getCategories();
                 toast.success('Document successfully deleted')
@@ -76,6 +96,17 @@ export default function COMMERCIALDahs() {
                 ...doc.data(),
             }));
             setData(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "category"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setDataCategory(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -193,6 +224,42 @@ export default function COMMERCIALDahs() {
                         display: 'inline-block'
                     }} onClick={() => {
                         Navigate('/dashboard/Commercialcreat')
+                    }}>Add New Data</button>
+                </p>}
+            </div>
+            <div className="table">
+                {dataCategory.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
+                    <Table sx={{ minWidth: 900 }} aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <StyledTableCell width={200} align='center'>name</StyledTableCell>
+                                <StyledTableCell width={150} align="center">Delete</StyledTableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {dataCategory.map((it) => (
+                                <StyledTableRow key={it.id}>
+                                    <StyledTableCell align="center">{it.name}</StyledTableCell>
+                                    <StyledTableCell align="center"><button onClick={() => {
+                                        handleDeleteCAtegory(it.id)
+                                    }} style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer> : <p style={{
+                    marginTop: '60px',
+                    fontSize: '20px',
+                    textAlign: 'center',
+                    color: '#234232',
+                    fontWeight: 'bold'
+                }}>
+                    There is no data in the data base <button style={{
+                        color: '#1976d2',
+                        textDecoration: 'underline',
+                        display: 'inline-block'
+                    }} onClick={() => {
+                        Navigate('/dashboard/AddCategoryCommercial')
                     }}>Add New Data</button>
                 </p>}
             </div>

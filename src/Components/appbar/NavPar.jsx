@@ -40,6 +40,7 @@ const Navbar = () => {
     const [BannerDeveloper, setBannerDeveloper] = useState([]);
     const [BannerAreas, setBannerAreas] = useState([]);
     const [BannerBlogs, setBannerBlogs] = useState([]);
+    const [DataDeveloper, setDataDeveloper] = useState([]);
 
 
 
@@ -320,6 +321,19 @@ const Navbar = () => {
             }));
             docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
             setBannerBlogs(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+        }
+        try {
+            const querySnapshot = await getDocs(
+                collection(firestore, "CategoryDevelopers")
+            );
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            docs.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
+            setDataDeveloper(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -846,14 +860,13 @@ const Navbar = () => {
                                             <h4>Top developers</h4>
                                             <div className="dis-paly2">
                                                 <ul>
-                                                    <li>Emaar</li>
-                                                    <li>ALDAR</li>
-                                                    <li>Bloom</li>
-                                                </ul>
-                                                <ul>
-                                                    <li>Select Group</li>
-                                                    <li>DAMAC</li>
-                                                    <li>Meraas</li>
+                                                    {DataDeveloper.slice(0, 5).map((it) => {
+                                                        return (
+                                                            <li key={it.id}>
+                                                                <Link to={`/developers/${it.name}`}>{it.name}</Link>
+                                                            </li>
+                                                        )
+                                                    })}
                                                 </ul>
                                             </div>
                                             <div className="dis-paly2">
@@ -1193,7 +1206,7 @@ const Navbar = () => {
                                                 {/* Nav Bar Blogs */}
                                                 {dataBloge?.slice(0, 2).map((it) => {
                                                     return (
-                                                        <div style={{
+                                                        <Link to={`/blog/${it.id}`} style={{
                                                             display: 'flex',
                                                             alignItems: 'center',
                                                             justifyContent: 'center',
@@ -1209,7 +1222,7 @@ const Navbar = () => {
                                                                     <p>{it.DateS.day}/{it.DateS.month}/{it.DateS.year}</p>
                                                                 </p>
                                                             </div>
-                                                        </div>
+                                                        </Link>
                                                     )
                                                 })}
                                             </div>

@@ -113,6 +113,7 @@ export default function CommercialCreate() {
                 email: formData.email,
                 map: formData.map,
                 imageText: BgImageText,
+                mainTitle: formData.mainTitle,
                 bgImage: BgImage,
                 text: formData.text,
                 imageCart: BgImageCard,
@@ -215,6 +216,15 @@ export default function CommercialCreate() {
                             name="title"
                             placeholder="title"
                             value={formData.title}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="mainTitle"
+                            placeholder="Enter Your Main Title"
+                            value={formData.mainTitle}
                             onChange={handleInputChange}
                         />
                     </div>

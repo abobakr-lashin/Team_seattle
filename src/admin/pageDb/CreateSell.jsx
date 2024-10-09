@@ -23,7 +23,7 @@ export default function CreateSell() {
     const [CategoryBuyLocation, setCategoryBuyLocation] = useState([])
     const [CategoryDevelopers, setCategoryDevelopers] = useState([])
     const [CategoryPlan, setCategoryPlan] = useState([])
-    const  [ formDataImageText , setformDataImageText] = useState('');
+    const [formDataImageText, setformDataImageText] = useState('');
     const [ImgeCartText, setImgeCartText] = useState('');
     const [formData, setFormData] = useState({
         title: '',
@@ -99,7 +99,7 @@ export default function CreateSell() {
             const fileRefImageCart = ref(storage, `filesBlog/${formDataImage.name}`);
             const fileRefImage = ref(storage, `files/${formDataImageText.name}`);
 
-            
+
 
             const [snapshotBlog, snapshotCart] = await Promise.all([
                 uploadBytes(fileRefBlog, formData.listingImage),
@@ -130,6 +130,7 @@ export default function CreateSell() {
                 map: formData.map,
                 bgImage: BgImage,
                 imageText: BgImageText,
+                mainTitle: formData.mainTitle,
                 text: formData.text,
                 imageCart: BgImageCard,
                 imageSlider: uploadedFileURLs,
@@ -206,18 +207,6 @@ export default function CreateSell() {
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
-
-        // get category buy Plans  
-        try {
-            const querySnapshot = await getDocs(collection(firestore, "categoryBuyPlan"));
-            const docs = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-            setCategoryPlan(docs);
-        } catch (error) {
-            console.error("Error fetching documents: ", error);
-        }
     };
 
     useEffect(() => {
@@ -278,6 +267,15 @@ export default function CreateSell() {
                             name="title"
                             placeholder="title"
                             value={formData.title}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="mainTitle"
+                            placeholder="Enter Your main Title"
+                            value={formData.mainTitle}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -429,7 +427,7 @@ export default function CreateSell() {
                         }}>
                             <option hidden >Select Category Location</option>
                             {CategoryBuyLocation.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
+                                return <option key={it.id} value={it.location}>{it.location}</option>
                             })}
                         </select>
                     </div>
@@ -445,18 +443,8 @@ export default function CreateSell() {
                     </div>
 
                     <div className="form-group">
-                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({ ...formData, CategoryPlan: e.target.value });
-                        }}>
-                            <option hidden >Select Category Buy Plan</option>
-                            {CategoryPlan.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
-                            })}
-                        </select>
-                    </div>
-                    <div className="form-group">
                         <CKEditor
-                       className='editor-container'
+                            className='editor-container'
                             editor={ClassicEditor}
                             data={formData.text || ""}
                             onChange={(event, editor) => {
