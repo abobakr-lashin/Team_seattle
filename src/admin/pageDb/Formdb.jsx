@@ -23,7 +23,7 @@ export default function Formdb() {
 
             const snapshot = await get(newDataRef);
             const snapshotOffers = await get(newDataOffers);
-            const snapshotBlogs= await get(newDatablogs);
+            const snapshotBlogs = await get(newDatablogs);
 
 
             if (snapshot.exists()) {
@@ -111,6 +111,7 @@ export default function Formdb() {
                 <table>
                     <thead>
                         <tr>
+                            <th>date</th>
                             <th>name</th>
                             <th>phone</th>
                             <th>email</th>
@@ -120,6 +121,7 @@ export default function Formdb() {
                     <tbody>
                         {dataFormBlog.map((item) => (
                             <tr key={item.id} style={{ background: 'white' }}>
+                                <td>{item.date}<br/>{item.time}</td>
                                 <td>{item.name}</td>
                                 <td>{item.phone}</td>
                                 <td>{item.email}</td>

@@ -198,6 +198,9 @@ const Navbar = () => {
                 id: doc.id,
                 ...doc.data(),
             }));
+
+            docs.sort((a, b) => b.createdAt.toDate() + a.createdAt.toDate());
+
             setLocation(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
@@ -1026,19 +1029,18 @@ const Navbar = () => {
                                             <div item lg={4} md={12} className="dis-buy">
                                                 <div className="dis-paly">
                                                     <ul>
-                                                        <li>Palm Jumeirah</li>
-                                                        <li>Yas Island</li>
-                                                        <li>Downtown Dubai</li>
-                                                        <li>Saadiyat Island</li>
-                                                        <li>Maryah Island</li>
-                                                        <li>Al Reem Island</li>
+                                                        <li><Link to={'/Areas/location/center/Palm Jumeirah'}>Palm Jumeirah</Link></li>
+                                                        <li><Link to={'/Areas/location/center/Yas Island'}>Yas Island</Link></li>
+                                                        <li><Link to={'/Areas/location/center/Downtown Dubai'}>Downtown Dubai</Link></li>
+                                                        <li><Link to={'/Areas/location/center/Maryah Island'}>Maryah Island</Link></li>
+                                                        <li><Link to={'/Areas/location/center/Al Reem Island'}>Al Reem Island</Link></li>
                                                     </ul>
                                                     <ul>
-                                                        <li>Rabdan</li>
-                                                        <li>Khalifa City</li>
-                                                        <li>Al Raha City</li>
-                                                        <li>Masdar City</li>
-                                                        <li>Zayed City</li>
+                                                        <li><Link to={'/Areas/location/center/Rabdan'}>Rabdan</Link></li>
+                                                        <li><Link to={'/Areas/location/center/Khalifa City'}>Khalifa City</Link></li>
+                                                        <li><Link to={'/Areas/location/center/Al Raha City'}>Al Raha City</Link></li>
+                                                        <li><Link to={'/Areas/location/center/Masdar City'}>Masdar City</Link></li>
+                                                        <li><Link to={'/Areas/location/center/Zayed City'}>Zayed City</Link></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1202,29 +1204,29 @@ const Navbar = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                                {/* Nav Bar Blogs */}
-                                                {dataBloge?.slice(0, 2).map((it) => {
-                                                    return (
+                                            {/* Nav Bar Blogs */}
+                                            {dataBloge?.slice(0, 2).map((it) => {
+                                                return (
 
-                                                       
-                                                        <Link    to={`/blog/${it.id}`} style={{
-                                                        }} 
+
+                                                    <Link to={`/blog/${it.id}`} style={{
+                                                    }}
                                                         className="dis-paly1"
-                                                     >
-                                                            <div className="img">
-                                                                <img src={it?.imageLanding} alt="" />
-                                                            </div>
-                                                            <div className="titel">
-                                                                <h5>{it.title}</h5>
-                                                                <p>
-                                                                    {it.textInput.slice(0, 100)}...
-                                                                    <br /><br />
-                                                                    <p>{it.DateS.day}/{it.DateS.month}/{it.DateS.year}</p>
-                                                                </p>
-                                                            </div>
-                                                        </Link> 
-                                                    )
-                                                })}
+                                                    >
+                                                        <div className="img">
+                                                            <img src={it?.imageLanding} alt="" />
+                                                        </div>
+                                                        <div className="titel">
+                                                            <h5>{it.title}</h5>
+                                                            <p>
+                                                                {it.textInput.slice(0, 100)}...
+                                                                <br /><br />
+                                                                <p>{it.DateS.day}/{it.DateS.month}/{it.DateS.year}</p>
+                                                            </p>
+                                                        </div>
+                                                    </Link>
+                                                )
+                                            })}
                                         </div>
                                         <div item xs={7}>
                                             <div className="dis-imgNbuy">

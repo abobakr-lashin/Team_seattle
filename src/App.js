@@ -96,6 +96,7 @@ import CategoryAreas from './Components/our-project/CategoryAreas';
 import LandingpageSeattle from './Components/ourprojects/LandingpageSeattle';
 import CategoryOffPlanSeattle from './Components/ourprojects/CategoryOffPlanSeattle';
 import SeattleUpdate from './admin/pageDb/SeattleUpdate';
+import AreasCategory from './Pages/AreasCategory';
 
 export default function App() {
     return (
@@ -138,6 +139,8 @@ export default function App() {
                     <Route path="Rent/Filter/:id" element={<RentFilter />} />
                     <Route path="Areas/Buy/category/Location/:id" element={<PageAreasbuy />} />
                     <Route path="Areas/Rent/category/Location/:id" element={<PageAreasRent />} />
+                    <Route path="Areas/location/center/:id" element={<AreasCategory />} />
+
                     <Route path="/Areas/Category/Location/Center/:id" element={<CategoryAreas />} />
                     <Route path="BuyHome" element={<BuyHome />} />
                     <Route path="Developers/:id" element={<Developers />} />

@@ -40,6 +40,7 @@ export default function BuyDahs() {
     const [CategoryBuyLocation, setCategoryBuyLocation] = useState([])
     const [CategoryDevelopers, setCategoryDevelopers] = useState([])
     const [CategoryPlan, setCategoryPlan] = useState([])
+    const [dataBuyPlan , setDataBuyPlan] = useState([])
     const [formData, setFormData] = useState({
         title: '',
         text: '',
@@ -77,6 +78,20 @@ export default function BuyDahs() {
         }
     };
 
+        // Handle Delete Item Category
+        const handleDeleteCategory = async (id) => {
+            if (window.confirm('Are you sure you want to delete')) {
+                try {
+                    await deleteDoc(doc(firestore, 'categoryBuyPlan', id));
+                    console.log('Document successfully deleted!');
+                    getCategories();
+                    toast.success('Document successfully deleted')
+                } catch (error) {
+                    console.error('Error deleting document: ', error);
+                }
+            }
+        };
+
 
     // Get Data Cart Firebase
     const getCategories = async () => {
@@ -95,6 +110,22 @@ export default function BuyDahs() {
         } finally {
             setLoading(false);
         }
+
+        try {
+            const querySnapshot = await getDocs(collection(firestore, "categoryBuyPlan"));
+            const docs = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setDataBuyPlan(docs);
+        } catch (error) {
+            console.error("Error fetching documents: ", error);
+            setError(error);
+            setLoading(false);
+        } finally {
+            setLoading(false);
+        }
+
     };
 
     useEffect(() => {
@@ -208,6 +239,45 @@ export default function BuyDahs() {
                         display: 'inline-block'
                     }} onClick={() => {
                         Navigate('/dashboard/AddCardBuy')
+                    }}>Add New Data</button>
+                </p>}
+            </div>
+            <div className="table">
+                <h3>Category Buy Plan</h3>
+                {dataBuyPlan.length > 0 ? <TableContainer component={Paper} sx={{ mt: '30px' }}>
+                    <Table sx={{ minWidth: 900 }} aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <StyledTableCell width={200} align='center'>name</StyledTableCell>
+                                <StyledTableCell width={200} align="center">Category Plan</StyledTableCell>
+                                <StyledTableCell width={150} align="center">Delete</StyledTableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {dataBuyPlan.map((it) => (
+                                <StyledTableRow key={it.id}>
+                                    <StyledTableCell align="center">{it.name}</StyledTableCell>
+                                    <StyledTableCell align="center">{it.CategoryPlan}</StyledTableCell>
+                                    <StyledTableCell align="center"><button onClick={() => {
+                                        handleDeleteCategory(it.id)
+                                    }} style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer> : <p style={{
+                    marginTop: '60px',
+                    fontSize: '20px',
+                    textAlign: 'center',
+                    color: '#234232',
+                    fontWeight: 'bold'
+                }}>
+                    There is no data in the data base <button style={{
+                        color: '#1976d2',
+                        textDecoration: 'underline',
+                        display: 'inline-block'
+                    }} onClick={() => {
+                        Navigate('/dashboard/AddCateBuyPlan')
                     }}>Add New Data</button>
                 </p>}
             </div>

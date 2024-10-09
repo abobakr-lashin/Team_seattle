@@ -41,6 +41,8 @@ const FormBlog = () => {
                 name: formData.name,
                 email: formData.email,
                 phone: formData.phone,
+                date: new Date().toDateString(),
+                time: new Date().toLocaleTimeString()
             });
             setSubmitSuccess(true);
             setFormData({ name: "", email: "", phone: "+971"}); // Reset form

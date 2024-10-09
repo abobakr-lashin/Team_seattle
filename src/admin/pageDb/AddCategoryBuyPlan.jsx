@@ -46,7 +46,7 @@ const AddCategoryBuyPlan = () => {
         try {
             // Cheake Category 
             const categoriesRef = collection(firestore, 'categoryBuyPlan');
-            const q = query(categoriesRef, where('category', '==', category));
+            const q = query(categoriesRef, where('name', '==', category));
             const querySnapshot = await getDocs(q);
 
             if (querySnapshot.empty) {
