@@ -1036,7 +1036,10 @@ width: 100%;
     font-weight: lighter !important;
     list-style: none;
   }
+  .dis-paly1 {
+    display: flex !important;
 
+  }
   /* BUY */
   .Blogs .dis-paly1 .titel {
     display: flex;
