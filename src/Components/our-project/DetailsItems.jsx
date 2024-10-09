@@ -70,8 +70,7 @@ export default function DetailsItems() {
                     <div className="img-Abudhabi">
                         <div
                             className="bg-imga"
-                            style={{ backgroundImage: `url(${it.imageCart})` }}
-                        ></div>
+                        > <img src={`${it.imageCart}`} alt="" /> </div>
                         <h2>{it.CateBuyLocation.location}</h2>
                         <h3>
                             {it.CateBuyLocation.center}

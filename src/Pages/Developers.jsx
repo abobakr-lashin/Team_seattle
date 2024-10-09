@@ -87,8 +87,7 @@ export default function Developers() {
                     <div className="img-Abudhabi">
                         <div
                             className="bg-imga"
-                            style={{ backgroundImage: `url(${it?.imageCart})` }}
-                        ></div>
+                        > <img src={`${it.imageCart}`} alt="" /> </div>
                         <h2>{it.title}</h2>
                         <h3>
                             <LocationOnIcon /> {it.location}
