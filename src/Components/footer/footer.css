@@ -131,6 +131,7 @@ a {
 }
 .css-1tz8m30 > .MuiGrid-item {
   padding-top: 8% !important;
+  padding-left: 0px !important;
 }
 @media screen and (max-width: 1920px) {
   .css-1oqqzyl-MuiContainer-root{

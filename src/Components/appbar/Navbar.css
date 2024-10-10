@@ -424,7 +424,7 @@
   font-size: 20px;
   width: 75%;
   margin: 10px;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
 }
 .developers .dis-paly2 li {

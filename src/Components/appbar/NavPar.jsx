@@ -862,27 +862,29 @@ const Navbar = () => {
                                                 <ul>
                                        
                                                     <li>
-                                                        <Link to={`/developers/BLOOM`}>BLOOM</Link>
-                                                    </li>
-                                                    <li>
                                                         <Link to={`/developers/EMAAR`}>EMAAR</Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link to={`/developers/SELECT GROUP`}>SELECT GROUP</Link>
                                                     </li>
                                                     <li>
                                                         <Link to={`/developers/ALDAR`}>ALDAR</Link>
                                                     </li>
+                                                    <li>
+                                                        <Link to={`/developers/DAMAC`}>DAMAC</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/developers/BLOOM`}>BLOOM</Link>
+                                                    </li>
+                                                   
                                                     </ul>
 
                                                     <ul>
+                                                    <li>
+                                                        <Link to={`/developers/SELECT GROUP`}>SELECT GROUP</Link>
+                                                    </li>
 
                                                     <li>
                                                         <Link to={`/developers/AZIZI`}>AZIZI</Link>
                                                     </li>
-                                                    <li>
-                                                        <Link to={`/developers/DAMAC`}>DAMAC</Link>
-                                                    </li>
+                                                   
                                                     </ul>
                                             </div>
                                             <div className="dis-paly2">
