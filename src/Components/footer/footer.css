@@ -134,6 +134,12 @@ a {
   .css-1oqqzyl-MuiContainer-root{
     padding-top: 45PX;
   }
+  .css-480o17-MuiGrid-root>.MuiGrid-item{
+    padding-top:40px ;
+  }
+  .css-1tz8m30 > .MuiGrid-item {
+    padding-top: 8%;
+}
 }
 @media screen and (max-width: 1800px) {
   .css-1oqqzyl-MuiContainer-root{
