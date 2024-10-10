@@ -1564,12 +1564,12 @@ const Navbar = () => {
                                                             <img src="./uploads/nav/icon/arrow.png" alt="" />
                                                         </Link>
                                                     </li>
-                                                    <li>
+                                                    {/* <li>
                                                         <Link to="/Login">
                                                             login{" "}
                                                             <img src="./uploads/nav/icon/arrow.png" alt="" />
                                                         </Link>
-                                                    </li>
+                                                    </li> */}
                                                 </ul>
                                             </div>
                                         </div>
