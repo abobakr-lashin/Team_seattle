@@ -121,7 +121,7 @@ margin: 2.5px;
 }
 .wh-form  textarea{
   margin: 20px  0px !important; 
-  width: 100% !important;
+  width: 90% !important;
   border-radius:20px;
 }
 .submit{
@@ -297,7 +297,7 @@ height: 95vh;
 }
 @media screen and (max-width:920px) {
   .wh-form {
-    border-radius: 50px important;
+    border-radius: 50px !important;
     height: auto;
     overflow-x: hidden;
 }
@@ -390,7 +390,7 @@ height: 95vh;
   }
   .wh-form   textarea{
       margin: 10px  0px !important; 
-      width:150px;
+      width: 90% ;
   }
   .PrivateSwitchBase-input {
     flex-direction: column;

@@ -350,6 +350,7 @@ export default function FormMS() {
                 padding: "8px",
                 marginBottom: "8px",
                 boxSizing: "border-box",
+                margin:"auto",
               }}
             />
             {/* Textarea */}
