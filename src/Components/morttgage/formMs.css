@@ -467,7 +467,12 @@ height: auto ;
         margin: auto !important;
   
     }
-
+    .wh-form{
+      height: 95vh !important;
+    }
+    .css-9l3uo3 {
+    font-size: 12px;
+    }
   .br{
       height: 3px !important;
   }
@@ -537,7 +542,7 @@ height: auto ;
       color: white;
       width: 300px !important;
       border-radius: 70px !important;
-      height: 900px !important;
+      height: 95vh !important;
     }
     .wh-form h3{
   
@@ -555,7 +560,9 @@ height: auto ;
         margin: auto !important;
   
     }
-
+    .css-ohyacs{
+      padding: 16px 35px;
+    }
   .br{
       height: 3px !important;
   }
