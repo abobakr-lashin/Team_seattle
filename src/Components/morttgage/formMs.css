@@ -163,7 +163,7 @@ align-items: center;
   color: rgba(0, 0, 0, 0.6);
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: larger;
   line-height: 1.4375em;
   letter-spacing: 0.00938em;
   padding: 5px;
@@ -191,10 +191,14 @@ align-items: center;
     }
     .wh-form h3{
   
-      margin: 8px 29px;    }
+      margin: 8px 29px;  
+    
+    
+    }
    
     .wh-form form input{
-      width: 400px;
+      width: 90% !important; 
+  
   border-radius: 50px;
   
     }
@@ -248,10 +252,18 @@ align-items: center;
       margin: auto !important;
   
     }
+    .css-1s3v6u5 {
+    width: 90% !important;
+    }
 
-
-
+    .css-1ufn0jl{
+      width: 90% !important;
+      padding-left: 0px ;
+    }
 }
+
+
+
 
 @media screen and (max-width:1281px) {
 
