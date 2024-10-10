@@ -369,7 +369,14 @@
     width: 43% !important;
     font-size: small;
   }
-
+  .buy .img-imgSaleIn h5 {
+    display: block;
+    font-size: 18px;
+    left: 0;
+    text-align: start;
+    top: 64%;
+    width: 95% !important;
+}
   .img-imgSaleIn h5 {
     width: 86% !important;
     font-size: 17px;

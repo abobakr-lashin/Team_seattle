@@ -377,6 +377,14 @@ font-weight: 600;
   .input-style-submit{
     width: 100% !important; 
   }
+  .rent .img-imgSaleIn h5 {
+    display: block;
+    font-size: 17px;
+    left: 0;
+    text-align: start;
+    top: 64%;
+    width: 95% !important;
+}
   .rent .input-style-4 ,.input-style-5 ,.input-style-6 ,.input-style-7 ,.input-style-8 {
     width: 45% !important;
     font-size: small;
