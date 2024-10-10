@@ -300,6 +300,7 @@ height: 95vh;
     border-radius: 50px !important;
     height: auto;
     overflow-x: hidden;
+    overflow-y: auto;
 }
   .img-MORTGAGE{
     margin: auto;
