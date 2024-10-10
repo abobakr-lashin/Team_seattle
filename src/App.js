@@ -207,7 +207,7 @@ export default function App() {
                         <Route path="/dashboard/SeattleProject/EditSeattle/:id" element={<SeattleUpdate />} />
 
                         <Route path="Developers/AddBannerDevelopers" element={<AddBannerDevelopers />} />
-                        <Route path="/dashboard/Developers/AddCartDevelopers" element={<AddCartDevelopers />} />
+                        <Route path="/dashboard/Developers/UpdateDevelopers/:id" element={<AddCartDevelopers />} />
                     </Route>
                 </Routes>
             </HashRouter>
