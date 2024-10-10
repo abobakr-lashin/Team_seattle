@@ -215,6 +215,9 @@
 .imgnp1 .h4 {
   font-weight: lighter;
 }
+.imgnp .h3, .imgnp .h4 {
+  margin-bottom: 1px;
+}
 /* BUY */
 /* RENT */
 
@@ -1127,7 +1130,7 @@ width: 70% !important;
   padding: 5px;
 }
 .custom-navbar-link {
-  font-size: 17px;
+  font-size: 16px;
 }
 }
 @media (max-width: 1400px) {
@@ -1151,6 +1154,9 @@ width: 70% !important;
   .RENT .dis-paly2 h3 {
     font-size: 20px;
   }
+  .custom-navbar-link {
+    font-size: 13px;
+}
   .Commercial ul li {
     list-style: none;
     font-weight: 500;

@@ -139,6 +139,9 @@ a {
   .css-1oqqzyl-MuiContainer-root{
     padding-top: 5PX;
   }
+  .css-1tz8m30 > .MuiGrid-item {
+    padding-top: 8%;
+}
 }
 @media screen and (max-width: 1600px) {
   .footer {
