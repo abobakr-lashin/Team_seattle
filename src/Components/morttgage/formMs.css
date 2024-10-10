@@ -275,25 +275,26 @@ align-items: center;
     margin: auto;
     width: 250px;
       }
-      .wh-form form input{
-        margin: 0px auto;
-      }
-      .wh-form{
-        border-radius: 50px 50px 0px 0px !important;
-        overflow-y: scroll;
-        overflow-x: hidden;
-height: 95vh;
-      }
-      .wh-form::-webkit-scrollbar-button{
-        color: #7700ff !important;
-        background-color: #000000;
-      }
-      .wh-form::-webkit-scrollbar-thumb{
-        background-color: #7700ff !important;
-      }
+  
 }
-
-
+@media screen and (max-width:1024px) {
+  .wh-form form input{
+    margin: 0px auto;
+  }
+  .wh-form{
+    border-radius: 50px 50px 0px 0px !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+height: 95vh;
+  }
+  .wh-form::-webkit-scrollbar-button{
+    color: #7700ff !important;
+    background-color: #000000;
+  }
+  .wh-form::-webkit-scrollbar-thumb{
+    background-color: #7700ff !important;
+  }
+}
 @media screen and (max-width:920px) {
 
   .img-MORTGAGE{
