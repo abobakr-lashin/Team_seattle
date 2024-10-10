@@ -95,12 +95,17 @@ font-size: 20px !important;
   display: flex;
   flex-direction: row;
   margin-left: 20px;
-  justify-content: space-between;
+  justify-content: start;
+  width: 100%;
+}
+.css-13sljp9{
   width: 100%;
 }
 .css-1a5icme{
   color: white !important;
 }
+
+
 .wh-form  .css-ahj2mt-MuiTypography-root{
 width: 300px !important;
 margin: 5px 10px !important;
@@ -152,6 +157,7 @@ align-items: center;
 .dis-rad{
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
