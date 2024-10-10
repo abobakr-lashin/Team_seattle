@@ -1197,8 +1197,10 @@ const Navbar = () => {
 
                                 <div container spacing={2} className="custom-dropdown-item">
                                     <h3>
+                                    <Link to="/LatestNews">
                                         EXPLORE THE UAE{" "}
                                         <img src="./uploads/nav/icon/arrow.png" alt="" />
+                                        </Link>
                                     </h3>
                                     <div className="dis-buy">
                                         <div className="titledis">
