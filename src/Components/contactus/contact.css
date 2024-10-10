@@ -181,6 +181,10 @@ border-radius: 20px;
     width: 90% !important;
 }.css-m9votp{
     max-width: 90% !important;
+    width: 100%;
+}
+.form10 .css-m9votp{
+    width: 90% !important;
 }
 
   @media screen and (max-width:1225px) {
