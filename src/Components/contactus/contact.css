@@ -58,11 +58,13 @@ align-items: center;
 justify-content: center;
 }
 .btn-files{
-    width: 600px;
+    width: 90%;
     height: 100px;
-    background-color: #ffffff !important;
+    background-color: #ffffff00 !important;
     border-radius: 20px;
-
+border: none !important;
+box-shadow: none !important;
+outline: none !important;
 }
 .img-file{
     width: 650px;
