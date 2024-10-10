@@ -178,7 +178,7 @@ border-radius: 20px;
     padding: 18px;
     width: 90% !important;
 }.css-m9votp{
-    width: 90% !important;
+    max-width: 90% !important;
 }
 
   @media screen and (max-width:1225px) {
