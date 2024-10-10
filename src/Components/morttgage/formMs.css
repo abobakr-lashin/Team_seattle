@@ -95,6 +95,8 @@ font-size: 20px !important;
   display: flex;
   flex-direction: row;
   margin-left: 20px;
+  justify-content: space-between;
+  width: 100%;
 }
 .wh-form  .css-ahj2mt-MuiTypography-root{
 width: 300px !important;
@@ -143,6 +145,10 @@ text-align: center;
 display: flex;
 justify-content: center;
 align-items: center;
+}
+.dis-rad{
+  display: flex;
+  flex-direction: column;
 }
 
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */

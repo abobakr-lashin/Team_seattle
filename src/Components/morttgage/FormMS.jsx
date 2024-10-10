@@ -306,13 +306,13 @@ export default function FormMS() {
                 row
               >
                 <div className="dispaly5">
-                  <div>
+                  <div className='dis-rad'>
                     <FormControlLabel value="Ticketing Services" control={<Radio />} label={language === "ar" ? "خدمات التذاكر" : "Ticketing Services"} />
                     <FormControlLabel value="UAE Visas" control={<Radio />} label={language === "ar" ? "تأشيرات الإمارات" : "UAE Visas"} />
                     <FormControlLabel value="Hotel Bookings" control={<Radio />} label={language === "ar" ? "حجوزات الفنادق" : "Hotel Bookings"} />
                     <FormControlLabel value="Travel Insurance" control={<Radio />} label={language === "ar" ? "تأمين السفر" : "Travel Insurance"} />
                   </div>
-                  <div>
+                  <div className='dis-rad'>
                     <FormControlLabel value="International Visa Assistance" control={<Radio />} label={language === "ar" ? "مساعدة فيزا دولية" : "International Visa Assistance"} />
                     <FormControlLabel value="Corporate Travel Assistance" control={<Radio />} label={language === "ar" ? "مساعدة السفر للشركات" : "Corporate Travel Assistance"} />
                     <FormControlLabel value="Transportation" control={<Radio />} label={language === "ar" ? "النقل" : "Transportation"} />

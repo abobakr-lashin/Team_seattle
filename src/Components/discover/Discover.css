@@ -47,7 +47,7 @@ width: auto;
 }
 .body-img {
   width: 100% !important;
-  height: 100vh ;
+  height: auto ;
   background-repeat: no-repeat;
   background-image: url("./../../../public/uploads/img/back-photo.png");
   background-position: center;
