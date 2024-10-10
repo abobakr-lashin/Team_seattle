@@ -425,15 +425,12 @@ const Navbar = () => {
                                                 </div>
                                                 <ul className="ullest">
                                                     <h3>INVEST BY EMIRATE</h3>
-                                                    {language?.map((it) => {
-                                                        return (
-                                                            <li>
-                                                                <Link to={`/Buy/Category/Location/${it?.location}`}>
-                                                                    {it?.location}
-                                                                </Link>
-                                                            </li>
-                                                        );
-                                                    })}
+                                                    <li><Link to={'/Buy/Category/Location/Abu Dhabi'}>Abu Dhabi</Link></li>
+                                                    <li><Link to={'/Buy/Category/Location/Dubai'}>Dubai</Link></li>
+                                                    <li><Link to={'/Buy/Category/Location/Sharjah'}>Sharjah</Link></li>
+                                                    <li><Link to={'/Buy/Category/Location/Ajman'}>Ajman</Link></li>
+                                                    <li><Link to={'/Buy/Category/Location/Ras Al Khaimah'}>Ras Al Khaimah</Link></li>
+                                                    <li><Link to={'/Buy/Category/Location/Fujairah'}>Fujairah</Link></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -863,39 +860,64 @@ const Navbar = () => {
                                             <h4>Top developers</h4>
                                             <div className="dis-paly2">
                                                 <ul>
-                                                    {DataDeveloper.slice(0, 5).map((it) => {
+                                                    {/* {DataDeveloper.slice(0, 5).map((it) => {
                                                         return (
                                                             <li key={it.id}>
                                                                 <Link to={`/developers/${it.name}`}>{it.name}</Link>
                                                             </li>
                                                         )
-                                                    })}
+                                                    })} */}
+                                                    <li>
+                                                        <Link to={`/developers/BLOOM`}>BLOOM</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/developers/EMAAR`}>EMAAR</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/developers/SELECT GROUP`}>SELECT GROUP</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/developers/ALDAR`}>ALDAR</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/developers/AZIZI`}>AZIZI</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/developers/DAMAC`}>DAMAC</Link>
+                                                    </li>
                                                 </ul>
                                             </div>
                                             <div className="dis-paly2">
                                                 <li className="aldar">
-                                                    <img
-                                                        src="./uploads/nav/developers/aldar.png"
-                                                        alt=""
-                                                    />
+                                                    <Link to={`/developers/ALDAR`}>
+                                                        <img
+                                                            src="./uploads/nav/developers/aldar.png"
+                                                            alt=""
+                                                        />
+                                                    </Link>
                                                 </li>
                                                 <li className="aldar">
-                                                    <img
-                                                        src="./uploads/nav/developers/bloom.png"
-                                                        alt=""
-                                                    />
+                                                    <Link to={`/developers/BLOOM`}>
+                                                        <img
+                                                            src="./uploads/nav/developers/bloom.png"
+                                                            alt=""
+                                                        />
+                                                    </Link>
                                                 </li>
                                                 <li className="aldar">
-                                                    <img
-                                                        src="./uploads/nav/developers/damac.png"
-                                                        alt=""
-                                                    />
+                                                    <Link to={`/developers/DAMAC`}>
+                                                        <img
+                                                            src="./uploads/nav/developers/damac.png"
+                                                            alt=""
+                                                        />
+                                                    </Link>
                                                 </li>
                                                 <li className="aldar">
-                                                    <img
-                                                        src="./uploads/nav/developers/emaar.png"
-                                                        alt=""
-                                                    />
+                                                    <Link to={`/developers/EMAAR`}>
+                                                        <img
+                                                            src="./uploads/nav/developers/emaar.png"
+                                                            alt=""
+                                                        /></Link>
                                                 </li>
                                             </div>
                                             <ul></ul>
@@ -1054,15 +1076,12 @@ const Navbar = () => {
                                             <div className="dis-imgNbuy">
                                                 <ul>
                                                     <h3>BY EMIRATES</h3>
-                                                    {language?.map((it) => {
-                                                        return (
-                                                            <li>
-                                                                <Link to={`/Areas/Category/Location/Center/${it?.location}`}>
-                                                                    {it?.location}
-                                                                </Link>
-                                                            </li>
-                                                        );
-                                                    })}
+                                                    <li><Link to={'/Areas/Category/Location/Center/Abu Dhabi'}>Abu Dhabi</Link></li>
+                                                    <li><Link to={'/Areas/Category/Location/Center/Dubai'}>Dubai</Link></li>
+                                                    <li><Link to={'/Areas/Category/Location/Center/Sharjah'}>Sharjah</Link></li>
+                                                    <li><Link to={'/Areas/Category/Location/Center/Ajman'}>Ajman</Link></li>
+                                                    <li><Link to={'/Areas/Category/Location/Center/Ras Al Khaimah'}>Ras Al Khaimah</Link></li>
+                                                    <li><Link to={'/Areas/Category/Location/Center/Fujairah'}>Fujairah</Link></li>
                                                 </ul>
                                             </div>
                                         </div>
