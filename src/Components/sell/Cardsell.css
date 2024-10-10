@@ -184,9 +184,10 @@
 @media screen and (max-width: 475px) {
   .img-imgSaleIn h5 {
     width: 86% !important;
-    font-size: 16px;
+    font-size: 14px;
     top: 80%;
 }
+
 }
 @media screen and (max-width: 375px) {
 

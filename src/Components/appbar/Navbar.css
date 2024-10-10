@@ -215,6 +215,9 @@
 .imgnp1 .h4 {
   font-weight: lighter;
 }
+.imgnp .h3, .imgnp .h4 {
+  margin-bottom: 1px;
+}
 /* BUY */
 /* RENT */
 
@@ -995,7 +998,7 @@ width: 100%;
 }
 @media (max-width: 1560px) {
   .custom-navbar-link {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .Buys h3 {
@@ -1051,7 +1054,7 @@ width: 100%;
 width: 70% !important;
   }
   .Blogs .dis-paly1 .img img {
-  width: 102px;
+  width: 139px;
   }
 }
 @media (max-width: 1440px) {
@@ -1126,6 +1129,9 @@ width: 70% !important;
   list-style: none !important;
   padding: 5px;
 }
+.custom-navbar-link {
+  font-size: 16px;
+}
 }
 @media (max-width: 1400px) {
   .AREAS .dis-buy1 h3 {
@@ -1140,11 +1146,17 @@ width: 70% !important;
   .AREAS .dis-imgNbuy ul li {
     font-size: 1rem;
   }
+  .custom-navbar-link {
+    font-size: 16px;
+  }
 }
 @media (max-width: 1280px) {
   .RENT .dis-paly2 h3 {
     font-size: 20px;
   }
+  .custom-navbar-link {
+    font-size: 13px;
+}
   .Commercial ul li {
     list-style: none;
     font-weight: 500;
@@ -1271,6 +1283,21 @@ width: 70% !important;
 }
 .ABOUT .dis-paly2 .aldar img {
   width: 143px;
+}
+.Blogs .dis-paly1 .titel {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-top: 0px;
+  width: 66% !important;
+}
+.Blogs .dis-paly1 .img img {
+  width: 131px;
+}
+.custom-navbar-link {
+  font-size: 14px;
 }
 }
 

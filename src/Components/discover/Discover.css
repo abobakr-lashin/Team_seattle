@@ -45,10 +45,9 @@ width: auto;
 .h-6vh{
   height: 16vh;
 }
-/* تأكد من ضبط الحاويات والمكونات الأخرى بشكل مناسب */
 .body-img {
   width: 100% !important;
-  height: 100vh ;
+  height: auto ;
   background-repeat: no-repeat;
   background-image: url("./../../../public/uploads/img/back-photo.png");
   background-position: center;
@@ -125,13 +124,15 @@ font-size: xx-large;
 }
 @media screen and (max-width: 1560px) and (max-height: 570px) {
   .body-img{
-    height: 179vh !important;
-  }
+    height: auto !important;  }
 
 }
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 1560px) {
   .prgraf p{
     font-size:x-large;
+  }
+  .body-img{
+    height: auto !important;
   }
 }
 @media screen and (max-width: 1500px) {
@@ -194,7 +195,6 @@ font-size: xx-large;
   .prgraf{
     text-align: center;
     width: 100% !important;
-    margin: auto;
   }
   .counter-box {
     width: 15rem;
@@ -230,6 +230,11 @@ font-size: xx-large;
     margin: 50px auto;
     display: block;
   }
+  .prgraf p {
+    font-size: 31px;
+    text-align: start;
+    width: 900px;
+}
 
 }
 
@@ -247,6 +252,7 @@ font-size: xx-large;
     .body-img{
       height: auto !important;
     }
+  
 }   
 
 @media screen and (max-width: 960px) {
@@ -302,8 +308,10 @@ font-size: xx-large;
   font-size: 3vw !important;
   width: 100% !important  ;
 }
+
 .prgraf p {
-  font-size: 28px;
+  font-size: 37px;
+  text-align: start;
 }
 }
 @media screen and (max-width: 860px) {
@@ -359,14 +367,27 @@ font-size: xx-large;
   font-size: 3vw !important;
   width: 100% !important  ;
 }
+
 .prgraf p {
   font-size: 25px;
+  text-align: start;
+  width: 100%;
 }
 }
+@media screen and (max-width: 853px) {
 
-@media screen and (max-width: 545px) {
   .prgraf p {
-    font-size: 17px;
+    font-size: 36px;
+    text-align: start;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 545px) {
+
+.prgraf p {
+  font-size: 17px;
+  text-align: start;
+  width: 100%;
 }
 }
 
@@ -436,7 +457,11 @@ font-size: xx-large;
   max-width: 50% !important;
   height: auto;
 }
-
+.prgraf p {
+  font-size: 20px;
+  text-align: start;
+  width: 100%;
+}
 
 }
 
@@ -449,10 +474,10 @@ font-size: xx-large;
   .body-img {
     height: 77vh;}
   .prgraf p {
-    font-size: 13px;
+    font-size: 21px;
     color: white;
     max-width: 100%;
-    text-align: center !important;
+    text-align: start !important;
 }
   .title-dis3 h2{
     font-size:320px !important;
@@ -468,15 +493,20 @@ font-size: xx-large;
 }
 
 }
+@media screen and (max-width: 412px) {
+  .prgraf p{
+    font-size: 19px;
+  }
 
+}
 
 @media screen and (max-width: 385px) {
  
   .prgraf p {
-    font-size: 11px;
+    font-size: 19px;
     color: white;
     max-width: 100%;
-    text-align: center !important;
+    text-align: start !important;
 }
 
 }

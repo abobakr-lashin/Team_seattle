@@ -171,8 +171,7 @@ export default function CareersForm() {
                             {nameError}
                         </div>
                     )}
-                    <div className="br"></div>
-                    <div className="br"></div>
+                   
                     {/* Phone number */}
                     <MuiTelInput
                         sx={{

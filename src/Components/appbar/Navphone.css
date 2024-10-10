@@ -1804,14 +1804,21 @@ display: block;
     padding: 0;
     display: block;
 }
-.custom-navbar-item {
-  width: 100%;
-  color: white !important;
-  margin-left: 10%;
-  font-size: 51px;
-  padding: 0px;
-}
 
+.custom-navbar-item {
+  color: #FFE !important;
+  font-size: 0px;
+  margin-left: 10%;
+  padding: 0;
+  width: 100%;
+}
+.custom-navbar-link {
+  color: #fff;
+  font-size: 20px;
+  padding: 4px 0px;
+  text-align: center;
+  width: 100%;
+}
   }
   @media (max-width: 415px) {
     .custom-navbar-item {
@@ -1838,10 +1845,20 @@ display: block;
     color: white;
     font-size: 20px;
 }
+
 .custom-navbar-brand a {
-  font-size: 20px;
+  font-size: 14px;
 }
-  
+.custom-navbar-link:after {
+  color: #fff;
+  content: ">";
+  display: block;
+  font-size: 34px;
+  margin-left: 36%;
+  padding: 0;
+  position: absolute;
+  top: -11px;
+}
   }
 
   @media (max-width: 395px) {

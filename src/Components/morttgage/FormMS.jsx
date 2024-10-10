@@ -245,8 +245,26 @@ export default function FormMS() {
               </div>
             )}
             {/* name */}
-            <div className="br"></div>
-            {/* email */}
+   {/* phone */}
+   <MuiTelInput
+              sx={{
+                backgroundColor: "transparent",
+                border: "none",
+                outline: "none",
+                borderRadius: "100px", // تخصيص الزوايا المستديرة بـ 20 بكسل
+                margin: "auto",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                maxWidth: '800px', // تحديد العرض الثابت بـ 800 بكسل
+                // maxWidth: '100%', // التأكد من عدم تجاوز عرض الحاوية إذا كان 100% أو أقل
+              }}
+              value={formData.phone}
+              onChange={handlePhoneChange}
+              error={Boolean(phoneError)}
+              helperText={phoneError}
+            />
+            {/* phone */}            {/* email */}
             <input
               type="email"
               placeholder={language === "ar" ? "البريد الإلكتروني" : "Email"}
@@ -274,26 +292,7 @@ export default function FormMS() {
               </div>
             )}
             {/* email */}
-            {/* phone */}
-            <MuiTelInput
-              sx={{
-                backgroundColor: "transparent",
-                border: "none",
-                outline: "none",
-                borderRadius: "100px", // تخصيص الزوايا المستديرة بـ 20 بكسل
-                margin: "auto",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                maxWidth: '800px', // تحديد العرض الثابت بـ 800 بكسل
-                // maxWidth: '100%', // التأكد من عدم تجاوز عرض الحاوية إذا كان 100% أو أقل
-              }}
-              value={formData.phone}
-              onChange={handlePhoneChange}
-              error={Boolean(phoneError)}
-              helperText={phoneError}
-            />
-            {/* phone */}
+         
             {/* Radio */}
             <FormControl>
               <FormLabel id="required-service-label">
@@ -307,13 +306,13 @@ export default function FormMS() {
                 row
               >
                 <div className="dispaly5">
-                  <div>
+                  <div className='dis-rad'>
                     <FormControlLabel value="Ticketing Services" control={<Radio />} label={language === "ar" ? "خدمات التذاكر" : "Ticketing Services"} />
                     <FormControlLabel value="UAE Visas" control={<Radio />} label={language === "ar" ? "تأشيرات الإمارات" : "UAE Visas"} />
                     <FormControlLabel value="Hotel Bookings" control={<Radio />} label={language === "ar" ? "حجوزات الفنادق" : "Hotel Bookings"} />
                     <FormControlLabel value="Travel Insurance" control={<Radio />} label={language === "ar" ? "تأمين السفر" : "Travel Insurance"} />
                   </div>
-                  <div>
+                  <div className='dis-rad'>
                     <FormControlLabel value="International Visa Assistance" control={<Radio />} label={language === "ar" ? "مساعدة فيزا دولية" : "International Visa Assistance"} />
                     <FormControlLabel value="Corporate Travel Assistance" control={<Radio />} label={language === "ar" ? "مساعدة السفر للشركات" : "Corporate Travel Assistance"} />
                     <FormControlLabel value="Transportation" control={<Radio />} label={language === "ar" ? "النقل" : "Transportation"} />
@@ -351,6 +350,7 @@ export default function FormMS() {
                 padding: "8px",
                 marginBottom: "8px",
                 boxSizing: "border-box",
+                margin:"auto",
               }}
             />
             {/* Textarea */}
