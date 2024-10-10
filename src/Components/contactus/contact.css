@@ -177,16 +177,10 @@ border-radius: 20px;
     border-radius: 20px !important;
     padding: 18px;
     width: 90% !important;
-}
-.css-m9votp{
+}.css-m9votp{
     width: 90% !important;
+}
 
-}
-.form10 [role=button] {
-    cursor: pointer;
-    width: 90%;
-    margin: auto;
-}
   @media screen and (max-width:1225px) {
     .center h2 {
         width:100%;
