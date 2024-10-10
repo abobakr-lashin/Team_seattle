@@ -45,7 +45,6 @@ width: auto;
 .h-6vh{
   height: 16vh;
 }
-/* تأكد من ضبط الحاويات والمكونات الأخرى بشكل مناسب */
 .body-img {
   width: 100% !important;
   height: 100vh ;
@@ -125,13 +124,15 @@ font-size: xx-large;
 }
 @media screen and (max-width: 1560px) and (max-height: 570px) {
   .body-img{
-    height: 179vh !important;
-  }
+    height: auto !important;  }
 
 }
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 1560px) {
   .prgraf p{
     font-size:x-large;
+  }
+  .body-img{
+    height: auto !important;
   }
 }
 @media screen and (max-width: 1500px) {
