@@ -161,8 +161,7 @@
   position: relative;
   background-color: #085364;
   padding-top: 100%;
-  border-radius: 50px;
-}
+  border-radius: 50px 50px 20px 20px;}
 
 .bg-imga {
   position: absolute;
@@ -372,13 +371,7 @@
     color: #888;
   }
 
-  .img-Abudhabi {
-    width: 75%;
-    position: relative;
-    background-color: #085364;
-    padding-top: 100%;
-    border-radius: 50px;
-  }
+
 
 }
 
@@ -453,16 +446,16 @@
 
 
   .dis div .btn-t {
-    width: 130px;
-    height: 36px;
+    width: 122px;
+    height: 29px;
     background-color: #107d96;
-    padding: 8px;
+    padding: 12px;
     margin-right: 10px;
     border-radius: 50px;
     border: 3px solid #1aaacb;
     cursor: pointer;
-    font-size: 15px;
-  }
+    font-size: 13px;
+}
 
   .img-Abudhabi h2 {
     font-size: medium;
@@ -490,4 +483,11 @@
     width: 124px;
     font-size: 14px;
   }
+  .img-Abudhabi {
+    width: 96%;
+    position: relative;
+    background-color: #085364;
+    padding-top: 127%;
+    border-radius: 50px 50px 20px 20px;
 }
+} 
