@@ -172,6 +172,21 @@ border-radius: 20px;
     text-align: center;
     margin: auto !important;
 }
+.form10 input {
+    background-color: #fff;
+    border-radius: 20px !important;
+    padding: 18px;
+    width: 90% !important;
+}
+.css-m9votp{
+    width: 90% !important;
+
+}
+.form10 [role=button] {
+    cursor: pointer;
+    width: 90%;
+    margin: auto;
+}
   @media screen and (max-width:1225px) {
     .center h2 {
         width:100%;
@@ -562,7 +577,7 @@ flex-direction: column;
 
 /* contact us */
 
-@media screen and (max-width: 1024Px) {
+@media screen and (max-width: 1024px) {
     .css-16f0b9y-MuiFormControl-root-MuiTextField-root {
     background-color: #ffffff00 !important;
     margin: auto !important;
