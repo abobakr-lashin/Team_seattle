@@ -137,6 +137,7 @@ a {
   .css-480o17-MuiGrid-root>.MuiGrid-item{
     padding-top:40px ;
   }
+
   .css-1tz8m30 > .MuiGrid-item {
     padding-top: 8%;
 }
@@ -146,7 +147,7 @@ a {
     padding-top: 5PX;
   }
   .css-1tz8m30 > .MuiGrid-item {
-    padding-top: 8%;
+    padding-top: 9%;
 }
 }
 @media screen and (max-width: 1600px) {
