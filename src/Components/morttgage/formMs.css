@@ -296,7 +296,11 @@ height: 95vh;
   }
 }
 @media screen and (max-width:920px) {
-
+  .wh-form {
+    border-radius: 50px important;
+    height: auto;
+    overflow-x: hidden;
+}
   .img-MORTGAGE{
     margin: auto;
     width: 180px;
