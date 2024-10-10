@@ -277,7 +277,7 @@ align-items: center;
       }
   
 }
-@media (max-width: 1024px) and (max-height: 600px) {
+@media screen and  (max-width: 1024px) and (max-height: 600px) {
   .wh-form form input{
     margin: 0px auto;
   }
@@ -295,12 +295,12 @@ height: 95vh !important;
     background-color: #7700ff !important;
   }
 }
-@media (max-width: 1024px) and (max-height: 1366px) {
+@media screen and  (max-width: 1024px) and (max-height: 1366px) {
   .wh-form{
     border-radius: 50px!important;
     overflow-y: auto;
     overflow-x: hidden;
-height: auto !important;
+height: auto ;
   }
 }
 @media screen and (max-width:920px) {
