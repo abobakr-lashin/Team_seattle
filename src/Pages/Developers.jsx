@@ -28,7 +28,8 @@ export default function Developers() {
                 id: doc.id,
                 ...doc.data(),
             }));
-            const fiterData = docs.filter((it) => it.CategoryDevelopers === id)
+            console.log(docs);
+            const fiterData = docs.filter((it) => it.CategoryDevelopers.toUpperCase() === id.toUpperCase())
 
             setDataCart(fiterData);
         } catch (error) {
@@ -43,8 +44,7 @@ export default function Developers() {
                 id: doc.id,
                 ...doc.data(),
             }));
-            console.log(docs);
-            const fiterData = docs.filter((it) => it.name === id)
+            const fiterData = docs.filter((it) => it.name == id)
             setCategoryDevelopers(fiterData);
         } catch (error) {
             console.error("Error fetching documents: ", error);
@@ -53,7 +53,7 @@ export default function Developers() {
 
     useEffect(() => {
         GetDataFireBase();
-    }, []);
+    }, [id]);
 
 
     const filteredProjects = dataCart?.filter((project) =>
@@ -77,8 +77,6 @@ export default function Developers() {
         }
     };
 
-
-    console.log(categoryDevelopers[0]?.bannerCart);
 
 
 
