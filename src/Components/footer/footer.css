@@ -147,10 +147,10 @@ a {
     padding-top: 5PX;
   }
   .css-1tz8m30 > .MuiGrid-item {
-    padding-top: 9%;
+    padding-top: 9% !important;
 }
 .css-1tz8m30 > .MuiGrid-item {
-  padding-top: 8%;
+  padding-top: 8% !important;
 }
 .overlay{
   height: auto;
