@@ -245,8 +245,26 @@ export default function FormMS() {
               </div>
             )}
             {/* name */}
-            <div className="br"></div>
-            {/* email */}
+   {/* phone */}
+   <MuiTelInput
+              sx={{
+                backgroundColor: "transparent",
+                border: "none",
+                outline: "none",
+                borderRadius: "100px", // تخصيص الزوايا المستديرة بـ 20 بكسل
+                margin: "auto",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                maxWidth: '800px', // تحديد العرض الثابت بـ 800 بكسل
+                // maxWidth: '100%', // التأكد من عدم تجاوز عرض الحاوية إذا كان 100% أو أقل
+              }}
+              value={formData.phone}
+              onChange={handlePhoneChange}
+              error={Boolean(phoneError)}
+              helperText={phoneError}
+            />
+            {/* phone */}            {/* email */}
             <input
               type="email"
               placeholder={language === "ar" ? "البريد الإلكتروني" : "Email"}
@@ -274,26 +292,7 @@ export default function FormMS() {
               </div>
             )}
             {/* email */}
-            {/* phone */}
-            <MuiTelInput
-              sx={{
-                backgroundColor: "transparent",
-                border: "none",
-                outline: "none",
-                borderRadius: "100px", // تخصيص الزوايا المستديرة بـ 20 بكسل
-                margin: "auto",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                maxWidth: '800px', // تحديد العرض الثابت بـ 800 بكسل
-                // maxWidth: '100%', // التأكد من عدم تجاوز عرض الحاوية إذا كان 100% أو أقل
-              }}
-              value={formData.phone}
-              onChange={handlePhoneChange}
-              error={Boolean(phoneError)}
-              helperText={phoneError}
-            />
-            {/* phone */}
+         
             {/* Radio */}
             <FormControl>
               <FormLabel id="required-service-label">

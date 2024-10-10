@@ -243,37 +243,8 @@ export default function FormN({name}) {
                 </div>
               )}
               {/* name */}
-              <div className="br"></div>
-              {/* email */}
-              <input
-                type="email"
-                placeholder={language === "ar" ? "البريد الإلكتروني" : "Email"}
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                style={{
-                  padding: "8px",
-                  marginBottom: "8px",
-                  boxSizing: "border-box",
-                }}
-                className={emailError ? "error" : ""}
-              />
-              {emailError && (
-                <div
-                  style={{
-                    color: "red",
-                    top: "100%",
-                    left: "5px",
-                    margin: "2px",
-                    fontSize: "15px",
-                  }}
-                >
-                  {emailError}
-                </div>
-              )}
-              {/* email */}
-              {/* phone */}
-              <MuiTelInput
+         {/* phone */}
+         <MuiTelInput
                 sx={{
                   backgroundColor: "white  !important",
                   border: "none !important", // إزالة الحدود الافتراضية
@@ -315,7 +286,37 @@ export default function FormN({name}) {
                 helperText={phoneError}
               />
 
-              {/* phone */}
+              {/* phone */}              
+              <div className="br"></div>
+              {/* email */}
+              <input
+                type="email"
+                placeholder={language === "ar" ? "البريد الإلكتروني" : "Email"}
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                style={{
+                  padding: "8px",
+                  marginBottom: "8px",
+                  boxSizing: "border-box",
+                }}
+                className={emailError ? "error" : ""}
+              />
+              {emailError && (
+                <div
+                  style={{
+                    color: "red",
+                    top: "100%",
+                    left: "5px",
+                    margin: "2px",
+                    fontSize: "15px",
+                  }}
+                >
+                  {emailError}
+                </div>
+              )}
+              {/* email */}
+     
               <div className="contact-icons">
                 <Link to="tel:+971502135701" className="">
                   <img src="/uploads/img/mobile.png" alt="mobile" />
