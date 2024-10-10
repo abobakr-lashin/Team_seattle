@@ -49,9 +49,7 @@ const AddDevelopers = () => {
         banner6: null,
     });
 
-
     console.log(FileImageBanners);
-
 
 
     const handleAddCategory = async (e) => {

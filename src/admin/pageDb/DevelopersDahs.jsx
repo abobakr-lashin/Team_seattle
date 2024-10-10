@@ -156,20 +156,6 @@ export default function DevelopersDahs() {
                     padding: '8px',
                     color: '#234232',
                 }} onClick={() => {
-                    Navigate('/dashboard/Developers/AddCartDevelopers')
-                }}>
-                    Add Cart Developer
-                </button>
-                <button style={{
-                    width: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    outline: 'none',
-                    border: '1px solid #ccc',
-                    padding: '8px',
-                    color: '#234232',
-                }} onClick={() => {
                     Navigate('/dashboard/Developers/AddBannerDevelopers')
                 }}>
                     Add Banner Developers
@@ -189,6 +175,7 @@ export default function DevelopersDahs() {
                             <TableRow>
                                 <StyledTableCell width={200} align='center'>image</StyledTableCell>
                                 <StyledTableCell width={200} align="center">Title</StyledTableCell>
+                                <StyledTableCell width={200} align="center">Update</StyledTableCell>
                                 <StyledTableCell width={150} align="center">Delete</StyledTableCell>
                             </TableRow>
                         </TableHead>
@@ -200,9 +187,16 @@ export default function DevelopersDahs() {
                                         <img style={{ width: '200px' }} src={it.image} alt="" />
                                     </StyledTableCell>
                                     <StyledTableCell align="center">{it.name}</StyledTableCell>
-                                    <StyledTableCell align="center"><button onClick={() => {
-                                        handleDelete(it.id)
-                                    }} style={{ backgroundColor: 'red' }}>Delete</button></StyledTableCell>
+                                    <StyledTableCell align="center">
+                                        <button onClick={() => {
+                                            Navigate(`/dashboard/Developers/UpdateDevelopers/${it.id}`)
+                                        }} style={{ backgroundColor: 'green' }}>Update</button>
+                                    </StyledTableCell>
+                                    <StyledTableCell align="center">
+                                        <button onClick={() => {
+                                            handleDelete(it.id)
+                                        }} style={{ backgroundColor: 'red' }}>Delete</button>
+                                    </StyledTableCell>
                                 </StyledTableRow>
                             ))}
                         </TableBody>
