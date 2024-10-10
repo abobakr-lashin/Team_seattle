@@ -277,7 +277,7 @@ align-items: center;
       }
   
 }
-@media screen and (max-width:1024px) {
+@media (max-width: 1024px) and (max-height: 600px) {
   .wh-form form input{
     margin: 0px auto;
   }
