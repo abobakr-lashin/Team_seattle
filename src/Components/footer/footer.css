@@ -149,6 +149,12 @@ a {
   .css-1tz8m30 > .MuiGrid-item {
     padding-top: 9%;
 }
+.css-1tz8m30 > .MuiGrid-item {
+  padding-top: 8%;
+}
+.overlay{
+  height: auto;
+}
 }
 @media screen and (max-width: 1600px) {
   .footer {
