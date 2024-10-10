@@ -487,8 +487,7 @@ height: auto ;
   .dispaly5{
       display: flex;
       flex-direction: column-reverse !important;
-      margin: 0px !important;
-  }
+      margin: auto 15px !important;  }
   .wh-form  .css-ahj2mt-MuiTypography-root{
   width: 160px !important;
   margin: 0px 0px !important;
