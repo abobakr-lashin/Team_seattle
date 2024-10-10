@@ -127,7 +127,7 @@ margin: 2.5px;
 .submit{
   margin: 20px !important;
   width: 260px !important;
-  height: 60px !important;
+  height: 50px !important;
   border-radius: 20px !important;
   background-color: #d3b76d !important;
   color: white !important;
@@ -159,7 +159,19 @@ align-items: center;
   flex-direction: column;
   width: 50%;
 }
-
+.css-1vovazs {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+  letter-spacing: 0.00938em;
+  padding: 5px;
+  margin: 7px 17px;
+  position: relative;
+  font-size: larger;
+  font-weight: bold;
+}
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 @media screen and (max-width:1441px) {
 
@@ -179,8 +191,7 @@ align-items: center;
     }
     .wh-form h3{
   
-      margin: 5px;
-    }
+      margin: 8px 29px;    }
    
     .wh-form form input{
       width: 400px;
