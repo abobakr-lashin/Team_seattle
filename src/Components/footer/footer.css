@@ -125,7 +125,7 @@ a {
   color: rgba(255, 255, 255, 0.7);
 }
 .css-1tz8m30 {
-  margin-left: -78px;
+  margin-left: -78px !important;
 }
 .social-media .icon {
   width: 100%;
