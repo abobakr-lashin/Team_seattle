@@ -860,13 +860,7 @@ const Navbar = () => {
                                             <h4>Top developers</h4>
                                             <div className="dis-paly2">
                                                 <ul>
-                                                    {/* {DataDeveloper.slice(0, 5).map((it) => {
-                                                        return (
-                                                            <li key={it.id}>
-                                                                <Link to={`/developers/${it.name}`}>{it.name}</Link>
-                                                            </li>
-                                                        )
-                                                    })} */}
+                                       
                                                     <li>
                                                         <Link to={`/developers/BLOOM`}>BLOOM</Link>
                                                     </li>
@@ -879,13 +873,17 @@ const Navbar = () => {
                                                     <li>
                                                         <Link to={`/developers/ALDAR`}>ALDAR</Link>
                                                     </li>
+                                                    </ul>
+
+                                                    <ul>
+
                                                     <li>
                                                         <Link to={`/developers/AZIZI`}>AZIZI</Link>
                                                     </li>
                                                     <li>
                                                         <Link to={`/developers/DAMAC`}>DAMAC</Link>
                                                     </li>
-                                                </ul>
+                                                    </ul>
                                             </div>
                                             <div className="dis-paly2">
                                                 <li className="aldar">
