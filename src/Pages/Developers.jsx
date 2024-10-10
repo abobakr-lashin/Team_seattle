@@ -133,7 +133,7 @@ export default function Developers() {
                         
                     </div>
 
-                    <h2>Our Partners</h2>
+                    <h2>Our projects</h2>
                     <Grid sx={{ margin: "auto", width: "100%" }} container spacing={2}>
                         {our}
                     </Grid>

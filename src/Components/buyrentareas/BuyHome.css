@@ -203,6 +203,15 @@
     height: 60px !important;
   }
   /* ازرار */
+  .swiper-container .swiper-button-prev1.custom-arrow1 {
+    
+    left: 25%;
+
+}
+.swiper-container .swiper-button-next1.custom-arrow1 {
+
+    right: 25%;
+}
 } 
 @media screen and (max-width: 435px) {
 
@@ -224,16 +233,7 @@
         right: 25%;
 
     }
-    .swiper-container .swiper-button-prev1.custom-arrow1 {
-    
-        left: 25%;
 
-    }
-    .swiper-container .swiper-button-next1.custom-arrow1 {
-    
-        right: 25%;
-
-    }
 
 
 }

@@ -1051,7 +1051,7 @@ width: 100%;
 width: 70% !important;
   }
   .Blogs .dis-paly1 .img img {
-  width: 102px;
+  width: 139px;
   }
 }
 @media (max-width: 1440px) {
@@ -1271,6 +1271,18 @@ width: 70% !important;
 }
 .ABOUT .dis-paly2 .aldar img {
   width: 143px;
+}
+.Blogs .dis-paly1 .titel {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-top: 0px;
+  width: 66% !important;
+}
+.Blogs .dis-paly1 .img img {
+  width: 131px;
 }
 }
 

@@ -129,10 +129,9 @@ export default function AreasHome() {
       </div>
       <div className="h-5vh"></div>
       {imgsetin}
+      <div className="h-6vh"></div>
       <div className="h-5vh"></div>
-      <div className="h-5vh"></div>
-      <div className="h-5vh"></div>
-      <div className="h-5vh"></div>
+   
     </div>
   );
 }
