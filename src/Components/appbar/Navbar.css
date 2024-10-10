@@ -995,7 +995,7 @@ width: 100%;
 }
 @media (max-width: 1560px) {
   .custom-navbar-link {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .Buys h3 {
@@ -1126,6 +1126,9 @@ width: 70% !important;
   list-style: none !important;
   padding: 5px;
 }
+.custom-navbar-link {
+  font-size: 17px;
+}
 }
 @media (max-width: 1400px) {
   .AREAS .dis-buy1 h3 {
@@ -1139,6 +1142,9 @@ width: 70% !important;
   }
   .AREAS .dis-imgNbuy ul li {
     font-size: 1rem;
+  }
+  .custom-navbar-link {
+    font-size: 16px;
   }
 }
 @media (max-width: 1280px) {
@@ -1283,6 +1289,9 @@ width: 70% !important;
 }
 .Blogs .dis-paly1 .img img {
   width: 131px;
+}
+.custom-navbar-link {
+  font-size: 14px;
 }
 }
 
