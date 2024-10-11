@@ -85,7 +85,7 @@
 }
 .img-Commercial h3 {
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: aliceblue;
@@ -417,7 +417,10 @@ Commercial1 .swiper-button-next.custom-arrow {
   height: 60px !important;
   margin: -40px;
 }
+.img-Commercial h3 {
+top: 75%;
 
+}
 
 
 }

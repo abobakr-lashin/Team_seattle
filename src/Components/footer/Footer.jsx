@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './footer.css';
 import { Container, Grid, Typography,Box, SpeedDial, CardMedia } from '@mui/material';
 import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
 import RoomIcon from '@mui/icons-material/Room';
@@ -9,6 +8,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { Link, NavLink } from 'react-router-dom';
 
+import './footer.css';
+import './footerphon.css';
 
 export default function Footer() {
   const [showScroll, setShowScroll] = useState(false);
