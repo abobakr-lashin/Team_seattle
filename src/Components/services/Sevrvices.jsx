@@ -2,12 +2,13 @@ import React from 'react';
 import { Box, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './Sevrvices.css';
-import img1 from './uploads/img/content/Sevrvice1.png'
-import img2 from './uploads/img/content/Sevrvice3.png'
-import img3 from './uploads/img/content/Sevrvice4.png'
-import img4 from './uploads/img/content/Sevrvice5.png'
-import img5 from './uploads/img/content/Sevrvice6.png'
-import img6 from './uploads/img/content/Sevrvice2.png'
+
+import img1 from '../../Uploads/content/Sevrvice1.png'
+import img2 from '../../Uploads/content/Sevrvice3.png'
+import img3 from '../../Uploads/content/Sevrvice4.png'
+import img4 from '../../Uploads/content/Sevrvice5.png'
+import img5 from '../../Uploads/content/Sevrvice6.png'
+import img6 from '../../Uploads/content/Sevrvice2.png'
 
 
 
