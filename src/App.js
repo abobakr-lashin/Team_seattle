@@ -113,11 +113,8 @@ export default function App() {
                     <Route path="Abudhabi" element={<Abudhabi />} />
                     <Route path="Mortgage" element={<Mortgage />} />
                     <Route path="Spartan" element={<Spartan />} />
-
                     <Route path="Sell" element={<Sell />} />
                     <Route path="Sell/:id" element={<LandingPageSell />} />
-
-
                     <Route path="LatestNews" element={<LatestNews />} />
                     <Route path="Blog/:id" element={<Blog />} />
                     <Route path="FormMS" element={<FormMS />} />
@@ -200,12 +197,10 @@ export default function App() {
                         <Route path="/dashboard/CreateAreas" element={<AddCartAreas />} />
                         <Route path="/dashboard/Blogs" element={<BlogsDahs />} />
                         <Route path="/dashboard/Blogs/AddBanner" element={<AddBanner />} />
-                        <Route path="/dashboard/Developers" element={<DevelopersDahs />} />
-
+                        <Route path="/dashboard/Developers" element={<DevelopersDahs />} />                                                                             
                         <Route path="/dashboard/SeattleProject" element={<SeattleDahs />} />
                         <Route path="/dashboard/CreateSeattle" element={<CreateSheattle />} />
                         <Route path="/dashboard/SeattleProject/EditSeattle/:id" element={<SeattleUpdate />} />
-
                         <Route path="Developers/AddBannerDevelopers" element={<AddBannerDevelopers />} />
                         <Route path="/dashboard/Developers/UpdateDevelopers/:id" element={<AddCartDevelopers />} />
                     </Route>

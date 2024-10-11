@@ -2,15 +2,26 @@ import React from 'react';
 import { Box, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './Sevrvices.css';
+import img1 from './uploads/img/content/1.png'
+import img2 from './uploads/img/content/3.png'
+import img3 from './uploads/img/content/4.png'
+import img4 from './uploads/img/content/5.png'
+import img5 from './uploads/img/content/6.png'
+import img6 from './uploads/img/content/2.png'
+
+
+
+
+
 
 export default function Sevrvices() {
     const imgSevrvices = [
-        { id: 1, src: './uploads/img/content/1.png' },
-        { id: 2, src: './uploads/img/content/3.png' },
-        { id: 3, src: './uploads/img/content/4.png' },
-        { id: 4, src: './uploads/img/content/5.png' },
-        { id: 5, src: './uploads/img/content/6.png' },
-        { id: 6, src: './uploads/img/content/2.png' },
+        { id: 1, src: img1 },
+        { id: 2, src: img2 },
+        { id: 3, src: img3 },
+        { id: 4, src: img4 },
+        { id: 5, src: img5 },
+        { id: 6, src: img6 },
     ];
 
     const ser = imgSevrvices.map((img) => (
