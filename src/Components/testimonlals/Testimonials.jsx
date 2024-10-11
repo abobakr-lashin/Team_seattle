@@ -28,10 +28,10 @@ function CustomNextArrow(props) {
 
 export default function Testimonials() {
   const imgTestimonials = [
-    { id: 1, src: './uploads/img/testimonials/1.png' },
-    { id: 2, src: './uploads/img/testimonials/2.png' },
-    { id: 3, src: './uploads/img/testimonials/3.png' },
-    { id: 4, src: './uploads/img/testimonials/4.png' },
+    { id: 1, src: './uploads/img/testimonials/two.png'},
+    { id: 2, src: './uploads/img/testimonials/three.png'},
+    { id: 3, src: './uploads/img/testimonials/one.png'},
+    { id: 4, src: './uploads/img/testimonials/four.png'},
   ];
 
   const settings = {
@@ -88,9 +88,9 @@ export default function Testimonials() {
         <div className="bg-body1">
           <div className="photo-phone">
             <Slider {...settings}>
-              {imgTestimonials.map((imgt) => (
-                <div key={imgt.id}>
-                  <img className='img-Esteemed1' src={imgt.src} alt="سي" />
+              {imgTestimonials.map((img) => (
+                <div key={img.id}>
+                  <img className='img-Esteemed1' src={img.src} alt="img" />
                 </div>
               ))}
             </Slider>
