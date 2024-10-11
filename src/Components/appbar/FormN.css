@@ -208,8 +208,9 @@
 
   .wh-form1 form {
     margin: auto;
+    width: 100%;
   }
-
+ 
   .wh-form1 form input {
     width: 200px;
     margin: 5px auto;
@@ -285,6 +286,9 @@
     border: none !important;
     box-shadow: 0px 0px 10px 2px #12151a96 !important;
     margin: 15px auto !important;
+  }
+  .css-15byy4f-MuiFormControl-root-MuiTextField-root{
+    background-color: rgba(255, 255, 255, 0) !important;
   }
 }
 .css-igs3ac {
