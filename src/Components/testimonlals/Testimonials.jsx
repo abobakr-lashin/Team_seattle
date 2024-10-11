@@ -2,6 +2,11 @@ import React from 'react';
 import './Testimonials.css';
 import Slider from 'react-slick';
 
+import testimonialOne from '../../Uploads/testimonials/one.png';
+import testimonialTwo from '../../Uploads/testimonials/two.png';
+import testimonialThree from '../../Uploads/testimonials/three.png';
+import testimonialFour from '../../Uploads/testimonials/four.png';
+
 function CustomPrevArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -28,16 +33,16 @@ function CustomNextArrow(props) {
 
 export default function Testimonials() {
   const imgTestimonials = [
-    { id: 1, src: './uploads/img/testimonials/two.png'},
-    { id: 2, src: './uploads/img/testimonials/three.png'},
-    { id: 3, src: './uploads/img/testimonials/one.png'},
-    { id: 4, src: './uploads/img/testimonials/four.png'},
+    { id: 1, src: testimonialTwo },
+    { id: 2, src: testimonialThree },
+    { id: 3, src: testimonialOne },
+    { id: 4, src: testimonialFour },
   ];
 
   const settings = {
     centerMode: true,
     centerPadding: '0',
-    slidesToShow: 3, // الافتراضي هو عرض 3 شرائح على الشاشات الأكبر
+    slidesToShow: 3,
     focusOnSelect: true,
     infinite: true,
     speed: 600,
@@ -57,7 +62,7 @@ export default function Testimonials() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3, // عرض شريحتين فقط على الشاشات التي يقل عرضها عن 1024 بكسل
+          slidesToShow: 3,
         },
       },
       {
@@ -69,7 +74,6 @@ export default function Testimonials() {
       },
     ],
   };
-  
 
   return (
     <>
@@ -90,7 +94,7 @@ export default function Testimonials() {
             <Slider {...settings}>
               {imgTestimonials.map((img) => (
                 <div key={img.id}>
-                  <img className='img-Esteemed1' src={img.src} alt="img" />
+                  <img className='img-Esteemed1' src={img.src} alt="testimonial" />
                 </div>
               ))}
             </Slider>
