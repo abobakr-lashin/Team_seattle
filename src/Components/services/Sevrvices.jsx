@@ -2,15 +2,12 @@ import React from 'react';
 import { Box, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './Sevrvices.css';
-import img1 from './uploads/img/content/1.png'
-import img2 from './uploads/img/content/3.png'
-import img3 from './uploads/img/content/4.png'
-import img4 from './uploads/img/content/5.png'
-import img5 from './uploads/img/content/6.png'
-import img6 from './uploads/img/content/2.png'
-
-
-
+import img1 from './uploads/img/content/Sevrvice1.png'
+import img2 from './uploads/img/content/Sevrvice3.png'
+import img3 from './uploads/img/content/Sevrvice4.png'
+import img4 from './uploads/img/content/Sevrvice5.png'
+import img5 from './uploads/img/content/Sevrvice6.png'
+import img6 from './uploads/img/content/Sevrvice2.png'
 
 
 
@@ -27,7 +24,7 @@ export default function Sevrvices() {
     const ser = imgSevrvices.map((img) => (
 
         <Link sx={{ margin: "auto" }} to={`/servieDetails/${img.id}`}>
-            <img style={{margin: '20px 17px'}} className="img-Sevrvices" src={img.src} alt="" />
+            <img style={{ margin: '20px 17px' }} className="img-Sevrvices" src={img.src} alt="" />
         </Link>
     ));
 
@@ -50,8 +47,7 @@ export default function Sevrvices() {
                 }}
                     container margin={"auto"} >
                     {ser}
-                    <Link to={"/Mortgage"}> <img className="img-Sevrvices"  src="./uploads/img/content/mortgage.png" alt="" /></Link> 
-
+                    <Link to={"/Mortgage"}> <img className="img-Sevrvices" src="./uploads/img/content/mortgage.png" alt="" /></Link>
                 </Box>
                 <div className="h-5vh"></div>
             </div>
