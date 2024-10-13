@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import "./../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import "./../node_modules/bootstrap/dist/js/bootstrap.bundle"
-import 'leaflet/dist/leaflet.css';
+import 'bootstrap/dist/css/bootstrap.min.css';  // فقط CSS
+import { Modal, Button } from 'bootstrap';      // استيراد مكونات محددة فقط
+
 
 import './index.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));

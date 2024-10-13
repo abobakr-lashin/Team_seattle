@@ -5,48 +5,43 @@
   margin: auto;
   height: auto !important;
 }
-.footer .css-480o17-MuiGrid-root{
+.footer .css-480o17-MuiGrid-root {
   width: calc(78% + 32px);
 }
 
-.dis-appbar{
+.dis-appbar {
   display: flex;
   align-items: center;
   gap: 0px;
 }
 
-.color-g {
+.color-g, 
+.color-g2 {
   color: #d3b76d;
   margin: 0px 15px;
 }
 
 .color-g2 {
-  color: #d3b76d;
-  margin: 0px 15px;
   font-size: 12px !important;
 }
 
 .bg-footer {
   position: relative;
   width: 100%;
-  background-image: url("../../../public/uploads/end/back.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url("../../../public/uploads/end/back.png") center/cover no-repeat;
   border-radius: 100px 100px 0px 0px;
 }
+
 a {
-  text-decoration-line: none !important ;
+  text-decoration-line: none !important;
   color: white !important;
   cursor: pointer !important;
 }
+
 .overlay {
   position: relative;
   width: 95%;
-  background-image: url("../../../public/uploads/end/LINE.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background: url("../../../public/uploads/end/LINE.png") center/100% no-repeat;
   height: 50vh;
   margin: auto;
   padding: 40px 0;
@@ -70,52 +65,46 @@ a {
 
 .icon {
   margin-right: 0px;
+  width: 100%;
+  margin: 20px 0 !important;
 }
-a {
-  cursor: pointer !important;
-}
+
 .up {
-  background-image: url("./../../../public/uploads/BOX/UP.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background: url("./../../../public/uploads/BOX/UP.png") center/100% no-repeat;
   width: 50px;
   height: 50px;
   position: fixed !important;
   right: 10px;
   bottom: 10px;
-  cursor: pointer;
-  display: none; /* إخفاء الزر افتراضيًا */
   background-color: #000;
   border-radius: 5px;
-  cursor: pointer;
-  z-index: 1000; /* لجعله أعلى من العناصر الأخرى */
+  z-index: 1000;
+  display: none; /* إخفاء الزر افتراضيًا */
 }
+
 .up.show {
-  display: block; /* إظهار الزر عندما يتم إضافة فئة 'show' */
+  display: block; /* إظهار الزر عند وجود فئة 'show' */
 }
 
 .link {
-  text-decoration: none;
+  text-decoration: none !important;
   color: white;
   display: block;
   margin: 19px 0 !important;
-  text-decoration-line: none !important;
 }
 
 .link:hover {
   text-decoration: underline;
 }
 
-.social-media .icon {
-  font-size: 20px;
-  margin: 0 5px;
-  padding-top: 18px
-}
-
 .social-media {
   margin-top: 20px;
   text-align: center;
+}
+
+.social-media .icon {
+  font-size: 20px;
+  padding-top: 18px;
 }
 
 .copyright {
@@ -124,13 +113,11 @@ a {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
 }
+
 .css-1tz8m30 {
   margin-left: -78px !important;
 }
-.social-media .icon {
-  width: 100%;
-  margin: 20px 0px !important;
-}
+
 .css-1tz8m30 > .MuiGrid-item {
   padding-top: 8% !important;
   padding-left: 0px !important;

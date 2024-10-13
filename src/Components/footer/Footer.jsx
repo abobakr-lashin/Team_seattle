@@ -30,7 +30,7 @@ export default function Footer() {
     };
   }, []);
 
-  const scrollToTop = () => {
+  const scrollTooTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -42,7 +42,7 @@ export default function Footer() {
           <Container>
 
 <div   className={`up ${showScroll ? 'show' : ''}`} 
-        onClick={scrollToTop}></div>
+        onClick={scrollTooTop}></div>
 
 
             <Grid container spacing={4}>

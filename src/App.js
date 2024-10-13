@@ -98,7 +98,7 @@ import CategoryOffPlanSeattle from './Components/ourprojects/CategoryOffPlanSeat
 import SeattleUpdate from './admin/pageDb/SeattleUpdate';
 import AreasCategory from './Pages/AreasCategory';
 
-export default function App() {
+ function App() {
     return (
         <div>
             <HashRouter>
@@ -210,3 +210,4 @@ export default function App() {
         </div >
     );
 }
+export default App;

@@ -6,7 +6,6 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import FormContainer from "./FormContainer";
 import React, { useEffect, useState } from 'react';
 import bannerFinish from './BannerFinish.mp4';
-import video2 from './video2.mp4';
 
 export default function Header() {
     const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -16,30 +15,6 @@ export default function Header() {
         { icon: <WhatsAppIcon />, name: 'WhatsApp', link: "https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" },
         { icon: <PhoneIcon />, name: 'Phone', link: "tel:+971502135701" },
     ];
-
-    // const [videoSrc, setVideoSrc] = useState(bannerFinish); // تعيين فيديو افتراضي للشاشات الكبيرة
-
-    // const updateVideoSrc = () => {
-    //     console.log(`Window width: ${window.innerWidth}`); // إخراج عرض الشاشة للتتبع
-    //     if (window.innerWidth > 1024) {
-    //         console.log('Setting large screen video');
-    //         setVideoSrc(bannerFinish);  // فيديو للشاشات الكبيرة
-    //     } else {
-    //         console.log('Setting small screen video');
-    //         setVideoSrc(video2);  // فيديو للشاشات الصغيرة
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     updateVideoSrc();  // تعيين الفيديو عند التحميل لأول مرة
-    //     window.addEventListener('resize', updateVideoSrc);  // تحديث الفيديو عند تغيير حجم الشاشة
-
-    //     // تنظيف مستمع الحدث عند إلغاء المكون
-    //     return () => {
-    //         window.removeEventListener('resize', updateVideoSrc);
-    //     };
-    // }, []);
-
     const handleActionClick = (link, name) => {
         if (name === 'Phone') {
             window.location.href = link;  // يبدأ المكالمة الهاتفية
