@@ -25,6 +25,22 @@ export default function AddCardBuy() {
         location: '',
         center: '',
     });
+
+    const [CategoryBuyPlan, setCategoryBuyPlan] = useState([
+        { BuyPlan: '' },
+        { BuyPlan: '' },
+        { BuyPlan: '' },
+    ]);
+
+
+    // console.log(CategoryBuyPlan);
+
+    const handleCategoryChange = (index, value) => {
+        const updatedPlans = [...CategoryBuyPlan];
+        updatedPlans[index].BuyPlan = value;
+        setCategoryBuyPlan(updatedPlans);
+    };
+
     const [Centers, setCenters] = useState([]);
     const [formDataImageText, setFormDataImageText] = useState('');
     const [ImgeCartText, setImgeCartText] = useState('');
@@ -47,7 +63,6 @@ export default function AddCardBuy() {
         category: '',
         listingImage: null,
         CategoryDevelopers: '',
-        CategoryPlan: '',
         mainTitle: '',
     });
 
@@ -60,6 +75,7 @@ export default function AddCardBuy() {
             setCenters([]);
         }
     }, [CateBuyLocation.location, CategoryBuyLocation]);
+
 
 
 
@@ -79,7 +95,7 @@ export default function AddCardBuy() {
         try {
             // Upload slider Images)
             const uploadedFileURLs = await Promise.all(FileURLs.map(async (file) => {
-                const fileRef = ref(storage, `files/${file.name}`);
+                const fileRef = ref(storage, `files/Slider/${file.name}/${new Date()}`);
                 await uploadBytes(fileRef, file);
                 return await getDownloadURL(fileRef);
             }));
@@ -90,7 +106,7 @@ export default function AddCardBuy() {
             }
 
             // Upload listingImage
-            const fileRefBlog = ref(storage, `filesBlog/${formClintImage.name}`);
+            const fileRefBlog = ref(storage, `filesBlog/Clint/${formClintImage.name}/${new Date()}`);
             await uploadBytes(fileRefBlog, formClintImage);
             const BgImage = await getDownloadURL(fileRefBlog);
 
@@ -100,7 +116,7 @@ export default function AddCardBuy() {
             }
 
             // Upload imageCart
-            const fileRefImageCart = ref(storage, `filesBlog/${formDataImage.name}`);
+            const fileRefImageCart = ref(storage, `filesBlog/Cart/${formDataImage.name}/${new Date()}`);
             await uploadBytes(fileRefImageCart, formDataImage);
             const BgImageCard = await getDownloadURL(fileRefImageCart);
 
@@ -110,7 +126,7 @@ export default function AddCardBuy() {
             }
 
             //Upload imageText
-            const fileRefImage = ref(storage, `files/${formDataImageText.name}`);
+            const fileRefImage = ref(storage, `files/Text/${formDataImageText.name}/${new Date()}`);
             await uploadBytes(fileRefImage, formDataImageText);
             const BgImageText = await getDownloadURL(fileRefImage);
 
@@ -118,15 +134,12 @@ export default function AddCardBuy() {
             // Send Data to Firestore
             await addDoc(collection(firestore, 'listBlogsCartBuy'), {
                 ...formData,
-
                 listingImage: BgImage,
-
                 imageCart: BgImageCard,
-
                 imageText: BgImageText,
-
                 imageSlider: uploadedFileURLs,
                 CateBuyLocation,
+                CategoryBuyPlan,
                 date: new Date().toDateString(),
                 time: new Date().toLocaleTimeString(),
             });
@@ -301,6 +314,44 @@ export default function AddCardBuy() {
                         name="mainTitle"
                         placeholder="Enter Your main Title"
                         value={formData.mainTitle}
+                        onChange={handleInputChange}
+                    />
+                </div>
+
+                <div className="form-group">
+                    <input
+                        type="text"
+                        name="type"
+                        placeholder="type"
+                        value={formData.type}
+                        onChange={handleInputChange}
+                    />
+                    <input
+                        type="text"
+                        name="size"
+                        placeholder="size"
+                        value={formData.size}
+                        onChange={handleInputChange}
+                    />
+                    <input
+                        type="text"
+                        name="payment"
+                        placeholder="payment"
+                        value={formData.payment}
+                        onChange={handleInputChange}
+                    />
+                    <input
+                        type="text"
+                        name="handover"
+                        placeholder="handover"
+                        value={formData.handover}
+                        onChange={handleInputChange}
+                    />
+                    <input
+                        type="text"
+                        name="starting"
+                        placeholder="starting"
+                        value={formData.starting}
                         onChange={handleInputChange}
                     />
                 </div>
@@ -532,22 +583,34 @@ export default function AddCardBuy() {
                     </select>
                 </div>
 
-
                 <div className="form-group">
-                    <select
-                        style={{ margin: '20px', width: '80%' }}
-                        name="CategoryPlan"
-                        value={formData.CategoryPlan}
-                        onChange={(e) => {
-                            setFormData({ ...formData, CategoryPlan: e.target.value });
-                        }}
-                    >
-                        <option hidden>Select Category Buy Plan</option>
-                        {CategoryPlan.map((it) => (
-                            <option key={it.id} value={it.name}>{it.name}</option>
-                        ))}
+                    <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
+                        setFormData({ ...formData, plan: e.target.value });
+                    }}>
+                        <option hidden >Select the Plan type</option>
+                        <option value={'Secondary properties'}>Secondary properties</option>
+                        <option value={'Off-plan'}>Off-plan</option>
                     </select>
                 </div>
+
+                {CategoryBuyPlan.map((plan, index) => (
+                    <div className="form-group" key={index}>
+                        <select
+                            style={{ margin: '20px', width: '80%' }}
+                            name={`BuyPlan${index + 1}`}
+                            value={plan.BuyPlan}
+                            onChange={(e) => handleCategoryChange(index, e.target.value)}
+                        >
+                            <option hidden>Select Buy Plan {index + 1}</option>
+                            {CategoryPlan.map((it) => (
+                                <option key={it.id} value={it.name}>
+                                    {it.name}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                ))}
+
 
                 {/* محرر النصوص */}
                 <div className="form-group">

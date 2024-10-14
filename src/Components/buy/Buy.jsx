@@ -35,7 +35,8 @@ export default function Buy() {
                 id: doc.id,
                 ...doc.data(),
             }));
-            setData(docs);
+            const FilterData = docs.filter((it) => it.plan === 'Secondary properties')
+            setData(FilterData);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -123,7 +124,7 @@ export default function Buy() {
                                 <hr />
                                 <div className="Listing-by">
                                     <div className="img-lisby">
-                                        <img src={it.bgImage} alt="Property" />
+                                        <img src={it.listingImage} alt="Property" />
                                     </div>
                                     <div className="title-lisby">Listing by {it.listingName} </div>
                                 </div>

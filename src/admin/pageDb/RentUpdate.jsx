@@ -169,17 +169,6 @@ export default function UpdateRent() {
             console.error("Error fetching documents: ", error);
         }
 
-        // get category buy Plans  
-        try {
-            const querySnapshot = await getDocs(collection(firestore, "categoryRentPlan"));
-            const docs = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-            setCategoryPlan(docs);
-        } catch (error) {
-            console.error("Error fetching documents: ", error);
-        }
     };
 
     const fetchData = async () => {
@@ -485,17 +474,6 @@ export default function UpdateRent() {
                         }}>
                             <option hidden >Select Category Developers</option>
                             {CategoryDevelopers.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
-                            })}
-                        </select>
-                    </div>
-
-                    <div className="form-group">
-                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({ ...formData, CategoryPlan: e.target.value });
-                        }}>
-                            <option hidden >Select Category Buy Plan</option>
-                            {CategoryPlan.map((it) => {
                                 return <option key={it.id} value={it.name}>{it.name}</option>
                             })}
                         </select>

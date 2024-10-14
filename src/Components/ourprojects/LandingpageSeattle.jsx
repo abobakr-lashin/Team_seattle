@@ -22,10 +22,9 @@ export default function LandingpageSeattle() {
     // Get Data from Firestore
     const GetDataFireStore = async () => {
         try {
-            const docRef = doc(firestore, "listBlogsCartSEATTLE", id);
+            const docRef = doc(firestore, 'listBlogsCartBuy', id);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
-                console.log("Document data:", docSnap.data());
                 setCartId(docSnap.data());
             } else {
                 console.log("No such document!");
@@ -33,8 +32,10 @@ export default function LandingpageSeattle() {
         } catch (error) {
             console.error("Error fetching document: ", error);
         }
+
     };
 
+    console.log(cartId.imageCart);
 
     const settings = {
         centerMode: true,
@@ -176,7 +177,7 @@ export default function LandingpageSeattle() {
                         <div className="hr3"></div>
                         <div className="text" dangerouslySetInnerHTML={{ __html: cartId?.text }}></div>
                         <h1> Explore the Area: </h1>
-                  
+
                     </div>
                 </div>
                 <div item lg={4} md={12} alignItems={"center"} justifyContent={"center"}>

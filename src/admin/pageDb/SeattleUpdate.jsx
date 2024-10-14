@@ -93,7 +93,7 @@ export default function SeattleUpdate() {
 
             if (FileURLs.length > 0) {
                 const uploadedFileURLs = await Promise.all(FileURLs.map(async (file) => {
-                    const fileRef = ref(storage, `files/${file.name}`);
+                    const fileRef = ref(storage, `files/Slider/${file.name}/${id}/${new Date()}`);
                     await uploadBytes(fileRef, file);
                     return await getDownloadURL(fileRef);
                 }));
@@ -101,19 +101,19 @@ export default function SeattleUpdate() {
             }
 
             if (formDataImage) {
-                const fileRefImage = ref(storage, `filesBlog/${formDataImage.name}`);
+                const fileRefImage = ref(storage, `filesBlog/Cart/${formDataImage.name}/${id}/${new Date()}`);
                 await uploadBytes(fileRefImage, formDataImage);
                 updatedBlogImageCart = await getDownloadURL(fileRefImage);
             }
 
             if (formClintImage) {
-                const fileRefCart = ref(storage, `filesBlog/${formClintImage.name}`);
+                const fileRefCart = ref(storage, `filesBlog/Clint/${formClintImage.name}/${id}/${new Date()}`);
                 await uploadBytes(fileRefCart, formClintImage);
                 updatedBlogClint = await getDownloadURL(fileRefCart);
             }
 
             if (formDataImageText) {
-                const fileRefCart = ref(storage, `filesBlog/${formDataImageText.name}`);
+                const fileRefCart = ref(storage, `filesBlog/Text/${formDataImageText.name}/${id}/${new Date()}`);
                 await uploadBytes(fileRefCart, formDataImageText);
                 updatedBlogImageText = await getDownloadURL(fileRefCart);
             }

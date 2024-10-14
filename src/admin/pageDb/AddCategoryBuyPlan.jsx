@@ -91,29 +91,6 @@ const AddCategoryBuyPlan = () => {
                 </select>
             </div>
 
-            <List>
-                <img style={{ width: '200px' }} src={fileUrl} alt="" />
-            </List>
-
-            <Button
-                sx={{ mt: 2, mb: 2 }}
-                component="label"
-                role={undefined}
-                variant="contained"
-                tabIndex={-1}
-                startIcon={<CloudUploadIcon />}
-            >
-                Upload files
-                <VisuallyHiddenInput
-                    type="file"
-                    onChange={(e) => {
-                        const file = e.target.files[0]
-                        setFileImage(file)
-                        setfileUrl(URL.createObjectURL(file))
-                    }}
-                    multiple
-                />
-            </Button>
 
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
                 {loading ? (

@@ -30,6 +30,20 @@ export default function UpdateBuy() {
     const [ImgeCartText, setImgeCartText] = useState('');
     const [Centers, setCenters] = useState([]);
     const [CategoryLocation, setCategoryLocation] = useState({});
+    const [plan, setPlan] = useState('')
+
+    const [CategoryBuyPlan, setCategoryBuyPlan] = useState([
+        { BuyPlan: '' },
+        { BuyPlan: '' },
+        { BuyPlan: '' },
+    ]);
+
+    const handleCategoryChange = (index, value) => {
+        const updatedPlans = [...CategoryBuyPlan];
+        updatedPlans[index].BuyPlan = value;
+        setCategoryBuyPlan(updatedPlans);
+    };
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -114,9 +128,16 @@ export default function UpdateBuy() {
                     location: CategoryLocation.location || formData.CateBuyLocation.location,
                     center: CategoryLocation.center || formData.CateBuyLocation.location,
                 },
+                plan: formData.Plan || plan,
+                type: formData.type,
+                starting: formData.starting,
+                size: formData.size,
+                handover: formData.handover,
+                payment: formData.payment,
+
                 mainTitle: formData.mainTitle,
                 CategoryDevelopers: formData.CategoryDevelopers,
-                CategoryPlan: formData.CategoryPlan,
+                CategoryBuyPlan,
                 date: new Date().toDateString(),
                 time: new Date().toLocaleTimeString()
             });
@@ -275,6 +296,45 @@ export default function UpdateBuy() {
                             onChange={handleInputChange}
                         />
                     </div>
+
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="type"
+                            placeholder="type"
+                            value={formData.type}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="size"
+                            placeholder="size"
+                            value={formData.size}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="payment"
+                            placeholder="payment"
+                            value={formData.payment}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="handover"
+                            placeholder="handover"
+                            value={formData.handover}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="starting"
+                            placeholder="starting"
+                            value={formData.starting}
+                            onChange={handleInputChange}
+                        />
+                    </div>
+
                     <div className="form-group">
                         <input
                             type="text"
@@ -495,14 +555,36 @@ export default function UpdateBuy() {
 
                     <div className="form-group">
                         <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({ ...formData, CategoryPlan: e.target.value });
+                            setPlan(e.target.value);
                         }}>
-                            <option hidden >Select Category Buy Plan</option>
-                            {CategoryPlan.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
-                            })}
+                            <option hidden >Select the Plan type</option>
+                            <option value={'Secondary properties'}>Secondary properties</option>
+                            <option value={'Off-plan'}>Off-plan</option>
                         </select>
                     </div>
+
+                    {CategoryBuyPlan.map((plan, index) => (
+                        <div className="form-group" key={index}>
+                            <select
+                                style={{ margin: '20px', width: '80%' }}
+                                name={`BuyPlan${index + 1}`}
+                                value={plan.BuyPlan}
+                                onChange={(e) => handleCategoryChange(index, e.target.value)}
+                            >
+                                <option hidden>Select Buy Plan {index + 1}</option>
+                                {CategoryPlan.map((it) => (
+                                    <option key={it.id} value={it.name}>
+                                        {it.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    ))}
+
+                    {formData?.CategoryBuyPlan?.map((item) => {
+                        return <p key={item.id}>{item.BuyPlan}</p>
+                    })}
+
                     <div className="form-group">
                         <CKEditor
                             editor={ClassicEditor}

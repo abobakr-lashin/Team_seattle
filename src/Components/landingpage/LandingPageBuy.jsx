@@ -12,31 +12,29 @@ import ContactusForm from "../contactus/ContactusForm";
 import Footer from "../footer/Footer";
 import { useEffect, useState } from "react";
 import { firestore } from "../../firebaseConfig";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import "./landingpage.css";
 import MortgageCalculator from "./MortgageCalculator";
 
 export default function LandingPageBuy() {
-    const [cartId, setCartId] = useState([]);
+    const [cartId, setCartId] = useState({});
     const { id } = useParams();
 
     // Get Data from Firestore
     const GetDataFireStore = async () => {
         try {
-            const querySnapshot = await getDocs(
-                collection(firestore, "listBlogsCartBuy")
-            );
-            const docs = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            setCartId(docs);
+            const docRef = doc(firestore, 'listBlogsCartBuy', id);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                setCartId(docSnap.data());
+            } else {
+                console.log("No such document!");
+            }
         } catch (error) {
-            console.error("Error fetching documents: ", error);
+            console.error("Error fetching document: ", error);
         }
     };
 
-    const filterCartId = cartId.filter((it) => it.id === id);
 
     const settings = {
         centerMode: true,
@@ -62,13 +60,17 @@ export default function LandingPageBuy() {
         ],
     };
 
-    const imgsetin = filterCartId[0]?.imageSlider?.map((img) => {
+    console.log(cartId?.imageSlider);
+
+    const imgsetin = cartId?.imageSlider?.map((img) => {
         return (
             <div key={img} className="slide-item">
                 <div
                     className="Landingpage-img"
-                    style={{ backgroundImage: `url(${img})` }}
-                ></div>
+                    // style={{ backgroundImage: `url(${img})` }}
+                >
+                    <img src={img} alt="" />
+                </div>
             </div>
         );
     });
@@ -77,27 +79,26 @@ export default function LandingPageBuy() {
         GetDataFireStore();
     }, [id]);
 
-    console.log(filterCartId[0]?.stars);
 
-    const imgsetsin = filterCartId?.map((it) => (
+    const imgsetsin = (
         <div className="dis-play1">
             <div>
                 <span>
-                    <span>{it.beds}</span>{" "}
+                    <span>{cartId.beds}</span>{" "}
                     <img src={"/uploads/commercial/export/icon/bed.png"} alt="Bed" />
                 </span>
                 <div>BEDS</div>
             </div>
             <div>
                 <span>
-                    <span>{it.baths}</span>{" "}
+                    <span>{cartId.baths}</span>{" "}
                     <img src={"/uploads/commercial/export/icon/bath.png"} alt="Bath" />
                 </span>
                 <div>Baths</div>
             </div>
             <div>
                 <span>
-                    <span>{it.square}</span>{" "}
+                    <span>{cartId.square}</span>{" "}
                     <img
                         src={"/uploads/commercial/export/icon/square.png"}
                         alt="Square"
@@ -107,21 +108,22 @@ export default function LandingPageBuy() {
             </div>
             <div>
                 <span>
-                    <span>{it.parking}</span>
+                    <span>{cartId.parking}</span>
                 </span>
                 <div>Parking </div>
             </div>
         </div>
-    ));
+    );
 
     return (
         <div className="Landingpage">
             <div
                 className="bg-Landingpage"
                 style={{
-                    backgroundImage: `url(${filterCartId[0]?.imageCart})`,
+                    backgroundImage: `url(${cartId?.imageCart})`,
                 }}
             >
+                {/* <img src={cartId?.imageCart} alt="" /> */}
                 <NavPar />
                 <div className="h-5vh"></div>
 
@@ -146,14 +148,14 @@ export default function LandingPageBuy() {
                                 />
                             </Link>
                             <div style={{ textTransform: "uppercase", width: "80%" }}>
-                                {filterCartId[0]?.title}
+                                {cartId?.title}
                             </div>
                         </h2>
                     </div>
                 </div>
                 <div className="contbg">
                     <div className="img-samy">
-                        <img src={filterCartId[0]?.imageText} alt="" />
+                        <img src={cartId?.imageText} alt="" />
                     </div>
                     <div className="formheader">
                         <FormContainer color={"rgba(255, 255, 255, 0.466)"} />
@@ -177,12 +179,12 @@ export default function LandingPageBuy() {
                     sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}
                 >
                     <div className="Sitedetails">
-                        <div className="address">{filterCartId[0]?.mainTitle}</div>
+                        <div className="address">{cartId?.mainTitle}</div>
                         <div className="theprice">
-                            {filterCartId[0]?.price} ${filterCartId[0]?.currency}
+                            {cartId?.price} ${cartId?.currency}
                         </div>
                         <div className="theprices">
-                            ${filterCartId[0]?.monthlyPayment} {filterCartId[0]?.currency}{" "}
+                            ${cartId?.monthlyPayment} {cartId?.currency}{" "}
                             (per month)
                         </div>
                         <div className="hr3"></div>
@@ -190,7 +192,7 @@ export default function LandingPageBuy() {
                         <div className="hr3"></div>
                         <div
                             className="text"
-                            dangerouslySetInnerHTML={{ __html: filterCartId[0]?.text }}
+                            dangerouslySetInnerHTML={{ __html: cartId?.text }}
                         ></div>
                         <h1> Explore the Area: </h1>
                     </div>
@@ -206,13 +208,13 @@ export default function LandingPageBuy() {
                         <div className="title">Contact Agent</div>
                         <div className="imgctext">
                             <div className="imgcontact">
-                                <img src={filterCartId[0]?.bgImage} alt="" />
+                                <img src={cartId?.listingImage} alt="" />
                             </div>
                             <div className="text">
                                 <div className=" Listing">Listing by</div>
-                                <div className="name">{filterCartId[0]?.listingName}</div>
+                                <div className="name">{cartId?.listingName}</div>
                                 <div className="contact ">
-                                    <Rating name="size-medium" value={filterCartId[0]?.stars || 0} readOnly />
+                                    <Rating name="size-medium" value={cartId?.stars || 0} readOnly />
                                 </div>
                             </div>
                         </div>
@@ -231,7 +233,7 @@ export default function LandingPageBuy() {
                 <div className="h-5vh"></div>
                 {/* <MortgageCalculator/> */}
                 <iframe
-                    src={filterCartId[0]?.map}
+                    src={cartId?.map}
                     width="600"
                     height="450"
                     style={{ border: 0 }}

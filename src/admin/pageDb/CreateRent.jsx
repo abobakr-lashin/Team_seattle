@@ -78,7 +78,7 @@ export default function CreateRent() {
         try {
             // Upload slider Images)
             const uploadedFileURLs = await Promise.all(FileURLs.map(async (file) => {
-                const fileRef = ref(storage, `files/${file.name}`);
+                const fileRef = ref(storage, `files/${file.name}/${new Date()}`);
                 await uploadBytes(fileRef, file);
                 return await getDownloadURL(fileRef);
             }));
@@ -89,7 +89,7 @@ export default function CreateRent() {
             }
 
             // Upload listingImage
-            const fileRefBlog = ref(storage, `filesBlog/${formClintImage.name}`);
+            const fileRefBlog = ref(storage, `filesBlog/${formClintImage.name}/${new Date()}`);
             await uploadBytes(fileRefBlog, formClintImage);
             const BgImage = await getDownloadURL(fileRefBlog);
 
@@ -99,7 +99,7 @@ export default function CreateRent() {
             }
 
             // Upload imageCart
-            const fileRefImageCart = ref(storage, `filesBlog/${formDataImage.name}`);
+            const fileRefImageCart = ref(storage, `filesBlog/${formDataImage.name}/${new Date()}`);
             await uploadBytes(fileRefImageCart, formDataImage);
             const BgImageCard = await getDownloadURL(fileRefImageCart);
 
@@ -109,7 +109,7 @@ export default function CreateRent() {
             }
 
             //Upload imageText
-            const fileRefImage = ref(storage, `files/${formDataImageText.name}`);
+            const fileRefImage = ref(storage, `files/${formDataImageText.name}//${new Date()}`);
             await uploadBytes(fileRefImage, formDataImageText);
             const BgImageText = await getDownloadURL(fileRefImage);
             
@@ -199,18 +199,6 @@ export default function CreateRent() {
             setCategoryDevelopers(developersDocs);
         } catch (error) {
             console.error("Error fetching CategoryDevelopers documents: ", error);
-        }
-
-        try {
-
-            const planSnapshot = await getDocs(collection(firestore, "categoryRentPlan"));
-            const planDocs = planSnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            setCategoryPlan(planDocs);
-        } catch (error) {
-            console.error("Error fetching categoryBuyPlan documents: ", error);
         }
     };
 
@@ -519,23 +507,6 @@ export default function CreateRent() {
                     >
                         <option hidden>Select Category Developers</option>
                         {CategoryDevelopers.map((it) => (
-                            <option key={it.id} value={it.name}>{it.name}</option>
-                        ))}
-                    </select>
-                </div>
-
-
-                <div className="form-group">
-                    <select
-                        style={{ margin: '20px', width: '80%' }}
-                        name="CategoryPlan"
-                        value={formData.CategoryPlan}
-                        onChange={(e) => {
-                            setFormData({ ...formData, CategoryPlan: e.target.value });
-                        }}
-                    >
-                        <option hidden>Select Category Buy Plan</option>
-                        {CategoryPlan.map((it) => (
                             <option key={it.id} value={it.name}>{it.name}</option>
                         ))}
                     </select>
