@@ -526,22 +526,6 @@ export default function AddCardBuy() {
                     </div>
                 </div>
 
-                {/* قائمة الفئات */}
-                <div className="form-group">
-                    <select
-                        style={{ margin: '20px', width: '80%' }}
-                        name="category"
-                        value={formData.category}
-                        onChange={(e) => {
-                            setFormData({ ...formData, category: e.target.value });
-                        }}
-                    >
-                        <option hidden>Select Category</option>
-                        {Categories.map((it) => (
-                            <option key={it.id} value={it.name}>{it.name}</option>
-                        ))}
-                    </select>
-                </div>
 
                 {/* قائمة الموقع والمراكز */}
                 <div className="form-group">

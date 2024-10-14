@@ -106,7 +106,6 @@ export default function UpdateBuy() {
             const docRef = doc(firestore, 'listBlogsCartBuy', id);
             await updateDoc(docRef, {
                 title: formData.title,
-                category: formData.category,
                 price: formData.price,
                 currency: formData.currency,
                 beds: formData.beds,
@@ -120,7 +119,7 @@ export default function UpdateBuy() {
                 email: formData.email,
                 map: formData.map,
                 imageText: updatedBlogImageText,
-                bgImage: updatedBlogClint,
+                listingImage: updatedBlogClint,
                 text: formData.text,
                 imageCart: updatedBlogImageCart,
                 imageSlider: updatedCartImageSlider,
@@ -494,16 +493,7 @@ export default function UpdateBuy() {
                             />}
                         </div>
                     </div>
-                    <div className="form-group">
-                        <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                            setFormData({ ...formData, category: e.target.value });
-                        }}>
-                            <option hidden >Select Category</option>
-                            {Categories.map((it) => {
-                                return <option key={it.id} value={it.name}>{it.name}</option>
-                            })}
-                        </select>
-                    </div>
+                   
                     <div className="form-group">
 
                         <select

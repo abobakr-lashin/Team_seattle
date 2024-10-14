@@ -185,7 +185,7 @@ export default function LandingpageSeattle() {
                         <div className="title">Contact Agent</div>
                         <div className="imgctext">
                             <div className="imgcontact">
-                                <img src={cartId?.bgImage} alt="" />
+                                <img src={cartId?.listingImage} alt="" />
                             </div>
                             <div className="text">
                                 <div className=" Listing">Listing by</div>

@@ -125,7 +125,7 @@ export default function FilterLocation() {
                                 <hr />
                                 <div className="Listing-by">
                                     <div className="img-lisby">
-                                        <img src={it.bgImage} alt="Property" />
+                                        <img src={it.listingImage} alt="Property" />
                                     </div>
                                     <div className="title-lisby">Listing by {it.listingName} </div>
                                 </div>

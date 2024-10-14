@@ -171,7 +171,7 @@ export default function LandingPageBuyLocation() {
                         <div className="hr3"></div>
                         <div className="text" dangerouslySetInnerHTML={{ __html: filterCartId[0]?.text }}></div>
                         <h1> Explore the Area: </h1>
-                      
+
                     </div>
                 </Grid>
 
@@ -181,7 +181,7 @@ export default function LandingPageBuyLocation() {
 
                         <div className="imgctext">
                             <div className="imgcontact">
-                                <img src={filterCartId[0]?.bgImage} alt="" />
+                                <img src={filterCartId[0]?.listingImage} alt="" />
                             </div>
                             <div className="text">
                                 <div className=" Listing">Listing by</div>
