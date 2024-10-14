@@ -113,7 +113,6 @@ export default function LandingpageSeattle() {
     return (
         <div className="Landingpage">
             <div
-                className="bg-Landingpage"
                 style={{
                           position:"relative"
                 }}
