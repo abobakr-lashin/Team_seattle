@@ -297,43 +297,43 @@ export default function UpdateBuy() {
                         />
                     </div>
 
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            name="type"
-                            placeholder="type"
-                            value={formData.type}
-                            onChange={handleInputChange}
-                        />
-                        <input
-                            type="text"
-                            name="size"
-                            placeholder="size"
-                            value={formData.size}
-                            onChange={handleInputChange}
-                        />
-                        <input
-                            type="text"
-                            name="payment"
-                            placeholder="payment"
-                            value={formData.payment}
-                            onChange={handleInputChange}
-                        />
-                        <input
-                            type="text"
-                            name="handover"
-                            placeholder="handover"
-                            value={formData.handover}
-                            onChange={handleInputChange}
-                        />
-                        <input
-                            type="text"
-                            name="starting"
-                            placeholder="starting"
-                            value={formData.starting}
-                            onChange={handleInputChange}
-                        />
-                    </div>
+                    {formData.plan === 'Off-plan' && <div className="form-group">
+                    <input
+                        type="text"
+                        name="type"
+                        placeholder="type"
+                        value={formData.type}
+                        onChange={handleInputChange}
+                    />
+                    <input
+                        type="text"
+                        name="size"
+                        placeholder="size"
+                        value={formData.size}
+                        onChange={handleInputChange}
+                    />
+                    <input
+                        type="text"
+                        name="payment"
+                        placeholder="payment"
+                        value={formData.payment}
+                        onChange={handleInputChange}
+                    />
+                    <input
+                        type="text"
+                        name="handover"
+                        placeholder="handover"
+                        value={formData.handover}
+                        onChange={handleInputChange}
+                    />
+                    <input
+                        type="text"
+                        name="starting"
+                        placeholder="starting"
+                        value={formData.starting}
+                        onChange={handleInputChange}
+                    />
+                </div>}
 
                     <div className="form-group">
                         <input

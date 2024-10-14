@@ -319,6 +319,17 @@ export default function AddCardBuy() {
                 </div>
 
                 <div className="form-group">
+                    <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
+                        setFormData({ ...formData, plan: e.target.value });
+                    }}>
+                        <option hidden >Select the Plan type</option>
+                        <option value={'Secondary properties'}>Secondary properties</option>
+                        <option value={'Off-plan'}>Off-plan</option>
+                    </select>
+                </div>
+
+
+                {formData.plan === 'Off-plan' && <div className="form-group">
                     <input
                         type="text"
                         name="type"
@@ -354,7 +365,7 @@ export default function AddCardBuy() {
                         value={formData.starting}
                         onChange={handleInputChange}
                     />
-                </div>
+                </div>}
 
                 <div className="form-group">
                     <input
@@ -580,16 +591,6 @@ export default function AddCardBuy() {
                         {CategoryDevelopers.map((it) => (
                             <option key={it.id} value={it.name}>{it.name}</option>
                         ))}
-                    </select>
-                </div>
-
-                <div className="form-group">
-                    <select style={{ margin: '20px', width: '80%' }} name="category" onChange={(e) => {
-                        setFormData({ ...formData, plan: e.target.value });
-                    }}>
-                        <option hidden >Select the Plan type</option>
-                        <option value={'Secondary properties'}>Secondary properties</option>
-                        <option value={'Off-plan'}>Off-plan</option>
                     </select>
                 </div>
 
