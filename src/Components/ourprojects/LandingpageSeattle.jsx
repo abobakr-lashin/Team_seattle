@@ -115,9 +115,11 @@ export default function LandingpageSeattle() {
             <div
                 className="bg-Landingpage"
                 style={{
-                    backgroundImage: `url(${cartId?.imageCart})`,
+                          position:"relative"
                 }}
             >
+                                <img className="bg-Landingpage" src={cartId?.imageCart} alt="" />
+
                 <NavPar />
                 <div className="h-5vh"></div>
 
@@ -127,6 +129,7 @@ export default function LandingpageSeattle() {
                     </div>
                     <div className="title-dis7" style={{ display: "flex" }}>
                         <h2>
+               
                             Home{" "}
                             <Link to={"/"}>
                                 {" "}
@@ -142,7 +145,7 @@ export default function LandingpageSeattle() {
                                 />
                             </Link>
                             <div style={{ textTransform: "uppercase" }}>
-                                {cartId?.title}
+                                {cartId?.title} 
                             </div>
                         </h2>
                     </div>
@@ -161,7 +164,6 @@ export default function LandingpageSeattle() {
                     <Slider {...settings}>{imgsetin}</Slider>
                 </div>
             </div>
-
             <div className="h-5vh"></div>
             <div className="h-5vh"></div>
             <div className="grid-lan" spacing={2} sx={{ margin: "auto", width: "90%", whiteSpace: "pre-wrap" }}>
@@ -224,6 +226,7 @@ export default function LandingpageSeattle() {
             </div>
             <div className="h-5vh"></div>
             <Footer />
+            
         </div>
     );
 }

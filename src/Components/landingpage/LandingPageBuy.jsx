@@ -67,8 +67,9 @@ export default function LandingPageBuy() {
             <div key={img} className="slide-item">
                 <div
                     className="Landingpage-img"
-                    // style={{ backgroundImage: `url(${img})` }}
+                    style={{ backgroundImage: `url(${img})` }}
                 >
+                    
                     <img src={img} alt="" />
                 </div>
             </div>
@@ -118,12 +119,13 @@ export default function LandingPageBuy() {
     return (
         <div className="Landingpage">
             <div
-                className="bg-Landingpage"
+                
                 style={{
-                    backgroundImage: `url(${cartId?.imageCart})`,
+                    position:"relative"
                 }}
             >
-                {/* <img src={cartId?.imageCart} alt="" /> */}
+                                <img className="bg-Landingpage" src={cartId?.imageCart} alt="" />
+
                 <NavPar />
                 <div className="h-5vh"></div>
 
@@ -244,6 +246,7 @@ export default function LandingPageBuy() {
                 <ContactusForm />
             </div>
             <div className="h-5vh"></div>
+            
             <Footer />
         </div>
     );

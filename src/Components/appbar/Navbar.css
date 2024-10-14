@@ -659,6 +659,7 @@ width: 100%;
 }
 .Blogs .dis-paly1 .img img {
   width: 140px;
+  border-radius: 20px;
 }
 .Blogs .dis-paly1{
   display: flex !important;
