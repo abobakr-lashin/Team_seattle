@@ -10,10 +10,12 @@
   background-size: cover; 
   position: absolute;
   overflow: hidden;
-  z-index: -9999999;
+  z-index: -1;
   height: fit-content;
 }
-
+.pos{
+  position:  relative !important;
+}
 .contbg {
   align-items: center;
   display: flex;

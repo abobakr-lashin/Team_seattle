@@ -115,12 +115,13 @@ export default function Landingpage() {
     return (
         <div className="Landingpage">
             <div
+            className="pos"
                 style={{
 position:"relative"
 
                 }}
             >  
-    <img   className="Landingpage-img" src={filterCartId[0]?.imageCart} alt="" />
+    <img className="bg-Landingpage" src={filterCartId[0]?.imageCart} alt="" />
 
                 <NavPar />
                 <div className="h-5vh"></div>
