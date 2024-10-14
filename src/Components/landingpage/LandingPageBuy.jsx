@@ -66,11 +66,13 @@ export default function LandingPageBuy() {
         return (
             <div key={img} className="slide-item">
                 <div
-                    className="Landingpage-img"
-                    style={{ backgroundImage: `url(${img})` }}
+                  
+                    style={{ position:"relative"}
+            }
                 >
                     
-                    <img src={img} alt="" />
+                    <img   className="Landingpage-img" src={img} alt="" />
+
                 </div>
             </div>
         );

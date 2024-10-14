@@ -117,7 +117,7 @@ export default function LandingpageSeattle() {
                           position:"relative"
                 }}
             >
-                                <img className="bg-Landingpage" src={cartId?.imageCart} alt="" />
+  <img className="bg-Landingpage" src={cartId?.imageCart} alt="" />
 
                 <NavPar />
                 <div className="h-5vh"></div>
