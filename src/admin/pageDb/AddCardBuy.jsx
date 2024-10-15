@@ -25,6 +25,7 @@ export default function AddCardBuy() {
         location: '',
         center: '',
     });
+    const [Condition , setCondition] = useState(null)
 
     const [CategoryBuyPlan, setCategoryBuyPlan] = useState([
         { BuyPlan: '' },
@@ -33,7 +34,6 @@ export default function AddCardBuy() {
     ]);
 
 
-    // console.log(CategoryBuyPlan);
 
     const handleCategoryChange = (index, value) => {
         const updatedPlans = [...CategoryBuyPlan];
@@ -75,8 +75,6 @@ export default function AddCardBuy() {
             setCenters([]);
         }
     }, [CateBuyLocation.location, CategoryBuyLocation]);
-
-
 
 
     const handleInputChange = (e) => {
@@ -216,7 +214,6 @@ export default function AddCardBuy() {
         }
 
         try {
-
             const planSnapshot = await getDocs(collection(firestore, "categoryBuyPlan"));
             const planDocs = planSnapshot.docs.map((doc) => ({
                 id: doc.id,
@@ -230,7 +227,7 @@ export default function AddCardBuy() {
 
     useEffect(() => {
         getCategories();
-    }, []);
+    }, [formData.plan]);
 
     if (loading) {
         return (

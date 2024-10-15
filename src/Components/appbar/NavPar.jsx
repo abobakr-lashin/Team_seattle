@@ -388,7 +388,7 @@ const Navbar = () => {
                                             <div className="dis-paly">
                                                 <ul>
                                                     <h4> Secondary properties</h4>
-                                                    {Secondaryproperties?.map((it) => {
+                                                    {/* {Secondaryproperties?.map((it) => {
                                                         return (
                                                             <li>
                                                                 <Link to={`/buy/category/${it.name}`}>
@@ -396,12 +396,32 @@ const Navbar = () => {
                                                                 </Link>
                                                             </li>
                                                         );
-                                                    })}
+                                                    })} */}
+                                                    <li>
+                                                        <Link to={`/buy/category/Hot properties`}>
+                                                            Hot properties
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/buy/category/Exclusive Properties`}>
+                                                            Exclusive Properties
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/buy/category/Apartments`}>
+                                                            Apartments
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/buy/category/Penthouses`}>
+                                                            Penthouses
+                                                        </Link>
+                                                    </li>
                                                 </ul>
                                                 <ul>
                                                     {/*  */}
                                                     <h4>Off-plan</h4>
-                                                    {offPlan?.map((it) => {
+                                                    {/* {offPlan?.map((it) => {
                                                         return (
                                                             <li>
                                                                 <Link to={`/Seattle/category/${it.name}`}>
@@ -409,7 +429,27 @@ const Navbar = () => {
                                                                 </Link>
                                                             </li>
                                                         );
-                                                    })}
+                                                    })} */}
+                                                    <li>
+                                                        <Link to={`/Seattle/category/Apartments`}>
+                                                            Apartments
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/Seattle/category/Penthouses`}>
+                                                            Penthouses
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/Seattle/category/Townhouses`}>
+                                                            Townhouses
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to={`/Seattle/category/Villas`}>
+                                                            Villas
+                                                        </Link>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -860,7 +900,7 @@ const Navbar = () => {
                                             <h4>Top developers</h4>
                                             <div className="dis-paly2">
                                                 <ul>
-                                       
+
                                                     <li>
                                                         <Link to={`/developers/EMAAR`}>EMAAR</Link>
                                                     </li>
@@ -873,10 +913,10 @@ const Navbar = () => {
                                                     <li>
                                                         <Link to={`/developers/BLOOM`}>BLOOM</Link>
                                                     </li>
-                                                   
-                                                    </ul>
 
-                                                    <ul>
+                                                </ul>
+
+                                                <ul>
                                                     <li>
                                                         <Link to={`/developers/SELECT GROUP`}>SELECT GROUP</Link>
                                                     </li>
@@ -884,8 +924,8 @@ const Navbar = () => {
                                                     <li>
                                                         <Link to={`/developers/AZIZI`}>AZIZI</Link>
                                                     </li>
-                                                   
-                                                    </ul>
+
+                                                </ul>
                                             </div>
                                             <div className="dis-paly2">
                                                 <li className="aldar">
@@ -1197,9 +1237,9 @@ const Navbar = () => {
 
                                 <div container spacing={2} className="custom-dropdown-item">
                                     <h3>
-                                    <Link to="/LatestNews">
-                                        EXPLORE THE UAE{" "}
-                                        <img src="./uploads/nav/icon/arrow.png" alt="" />
+                                        <Link to="/LatestNews">
+                                            EXPLORE THE UAE{" "}
+                                            <img src="./uploads/nav/icon/arrow.png" alt="" />
                                         </Link>
                                     </h3>
                                     <div className="dis-buy">
