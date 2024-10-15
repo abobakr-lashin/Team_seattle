@@ -22,9 +22,7 @@ export default function Home() {
             <BuyHome/>
             <RentHome/>
             <AreasHome/>
-              
-              
-              <Discover />
+            <Discover />
             <OurProjects />
             <Esteemed /> 
             <Sevrvices />
