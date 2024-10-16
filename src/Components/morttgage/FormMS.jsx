@@ -1,34 +1,49 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, FormControlLabel, FormLabel, IconButton, Radio, RadioGroup, Snackbar, styled, Typography } from '@mui/material';
-import React, { useState, useEffect } from 'react';
-import CloseIcon from '@mui/icons-material/Close';
-import { useParams, useNavigate } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  IconButton,
+  Radio,
+  RadioGroup,
+  Snackbar,
+  styled,
+  Typography,
+} from "@mui/material";
+import React, { useState, useEffect, useRef } from "react";
+import CloseIcon from "@mui/icons-material/Close";
+import { useParams, useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./formMs.css";
-import { MuiTelInput } from 'mui-tel-input';
-import { getDatabase, push, ref, set } from 'firebase/database';
-import app from '../../firebaseConfig';
-import "../our-project/project.css"
+import { MuiTelInput } from "mui-tel-input";
+import { getDatabase, push, ref, set } from "firebase/database";
+import app from "../../firebaseConfig";
+import "../our-project/project.css";
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  '& .MuiDialogContent-root': {
+  "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
-    maxHeight: 'auto', // الحد الأقصى للطول مع تفعيل التمرير العمودي
-    overflowY: 'auto', // تفعيل التمرير العمودي
-    overflowX: 'hidden', // منع التمرير الأفقي
+    maxHeight: "auto", // الحد الأقصى للطول مع تفعيل التمرير العمودي
+    overflowY: "auto", // تفعيل التمرير العمودي
+    overflowX: "hidden", // منع التمرير الأفقي
   },
-  '& .MuiDialogActions-root': {
+  "& .MuiDialogActions-root": {
     padding: theme.spacing(1),
   },
-  '& .MuiPaper-root': {
-    width: '90%', // تعيين العرض
-    maxWidth: '100%', // الحد الأقصى للعرض
-    height: 'auto', // تعيين الطول
-    maxHeight: '90vh', // الحد الأقصى للطول كنسبة من ارتفاع النافذة
-    backgroundColor: 'transparent', // جعل الخلفية شفافة
-    border: 'none', // إزالة الحدود
-    boxShadow: 'none', // إزالة الظل إذا كان هناك أي ظل
-  }
+  "& .MuiPaper-root": {
+    width: "90%", // تعيين العرض
+    maxWidth: "100%", // الحد الأقصى للعرض
+    height: "auto", // تعيين الطول
+    maxHeight: "90vh", // الحد الأقصى للطول كنسبة من ارتفاع النافذة
+    backgroundColor: "transparent", // جعل الخلفية شفافة
+    border: "none", // إزالة الحدود
+    boxShadow: "none", // إزالة الظل إذا كان هناك أي ظل
+  },
 }));
 
 export default function FormMS() {
@@ -38,8 +53,10 @@ export default function FormMS() {
     phone: "+971",
     email: "",
     message: "",
-    requiredService:'',
+    requiredService: "",
   });
+  const inputref= useRef(null);
+
   const [phoneError, setPhoneError] = useState("");
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -51,11 +68,9 @@ export default function FormMS() {
     navigator.language.startsWith("ar") ? "ar" : "en"
   );
 
-
-  // Add Data Server FireBase 
+  // Add Data Server FireBase
   const db = getDatabase(app);
-  const newData = push(ref(db, 'Quote/massages'))
-
+  const newData = push(ref(db, "Quote/massages"));
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -76,7 +91,6 @@ export default function FormMS() {
       setPhoneError("");
     }
   };
-
   const handleButtonClick = (event) => {
     event.preventDefault();
 
@@ -151,9 +165,16 @@ export default function FormMS() {
     // console.log("Saved Data:", formData);
 
     // Clear form after submission
-    setFormData({ id: uuidv4(), name: "", phone: "+971", email: "", message: "", requiredService: "" });
+    setFormData({
+      id: uuidv4(),
+      name: "",
+      phone: "+971",
+      email: "",
+      message: "",
+      requiredService: "",
+    });
 
-    // Send Data to server fire Base 
+    // Send Data to server fire Base
     set(newData, {
       id: formData.id,
       name: formData.name,
@@ -162,12 +183,14 @@ export default function FormMS() {
       message: formData.message,
       requiredService: formData.requiredService,
       date: new Date().toDateString(),
-      time: new Date().toLocaleTimeString()
-    }).then(() => {
-      // console.log("Data saved successfully!");
-    }).catch(err => {
-      // console.error("Error saving data: ", err);
+      time: new Date().toLocaleTimeString(),
     })
+      .then(() => {
+        // console.log("Data saved successfully!");
+      })
+      .catch((err) => {
+        // console.error("Error saving data: ", err);
+      });
   };
 
   const handleCloseSnackbar = () => {
@@ -188,13 +211,12 @@ export default function FormMS() {
     setOpen(false);
   };
 
-
   useEffect(() => {
     setLanguage(navigator.language.startsWith("ar") ? "ar" : "en");
   }, []);
 
   return (
-    <div id='FormMS'>
+    <div id="FormMS">
       <Button className="btn-RE1" onClick={handleClickOpen}>
         Register your interest
       </Button>
@@ -203,7 +225,7 @@ export default function FormMS() {
         aria-labelledby="customized-dialog-title"
         open={open}
       >
-        <DialogTitle className='wh-form'>
+        <DialogTitle className="wh-form">
           <h3>Request Quote</h3>
           <IconButton
             aria-label="close"
@@ -222,6 +244,7 @@ export default function FormMS() {
             {/* name */}
             <input
               name="name"
+              ref={inputref}
               placeholder={language === "ar" ? "الاسم الكامل" : " Name"}
               value={formData.name}
               onChange={handleChange}
@@ -245,8 +268,8 @@ export default function FormMS() {
               </div>
             )}
             {/* name */}
-   {/* phone */}
-   <MuiTelInput
+            {/* phone */}
+            <MuiTelInput
               sx={{
                 backgroundColor: "transparent",
                 border: "none",
@@ -256,7 +279,7 @@ export default function FormMS() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                maxWidth: '800px', // تحديد العرض الثابت بـ 800 بكسل
+                maxWidth: "800px", // تحديد العرض الثابت بـ 800 بكسل
                 // maxWidth: '100%', // التأكد من عدم تجاوز عرض الحاوية إذا كان 100% أو أقل
               }}
               value={formData.phone}
@@ -264,7 +287,7 @@ export default function FormMS() {
               error={Boolean(phoneError)}
               helperText={phoneError}
             />
-            {/* phone */}            {/* email */}
+            {/* phone */} {/* email */}
             <input
               type="email"
               placeholder={language === "ar" ? "البريد الإلكتروني" : "Email"}
@@ -292,7 +315,6 @@ export default function FormMS() {
               </div>
             )}
             {/* email */}
-         
             {/* Radio */}
             <FormControl>
               <FormLabel id="required-service-label">
@@ -306,16 +328,64 @@ export default function FormMS() {
                 row
               >
                 <div className="dispaly5">
-                  <div className='dis-rad'>
-                    <FormControlLabel value="Ticketing Services" control={<Radio />} label={language === "ar" ? "خدمات التذاكر" : "Ticketing Services"} />
-                    <FormControlLabel value="UAE Visas" control={<Radio />} label={language === "ar" ? "تأشيرات الإمارات" : "UAE Visas"} />
-                    <FormControlLabel value="Hotel Bookings" control={<Radio />} label={language === "ar" ? "حجوزات الفنادق" : "Hotel Bookings"} />
-                    <FormControlLabel value="Travel Insurance" control={<Radio />} label={language === "ar" ? "تأمين السفر" : "Travel Insurance"} />
+                  <div className="dis-rad">
+                    <FormControlLabel
+                      value="Mortgage Consultation"
+                      control={<Radio />}
+                      label={
+                        language === "ar"
+                          ? "استشارة الرهن العقاري"
+                          : "Mortgage Consultation"
+                      }
+                    />
+                    <FormControlLabel
+                      value="Mortgage Loan Application"
+                      control={<Radio />}
+                      label={
+                        language === "ar" ? "طلب قرض الرهن العقاري" 
+                        : "Mortgage Loan Application"
+                      }
+                    />
+                    <FormControlLabel
+                      value="Interest Rate Analysis"
+                      control={<Radio />}
+                      label={
+                        language === "ar" ? "تحليل أسعار الفائدة" 
+                        : "Interest Rate Analysis"
+                      }
+                    />
+                    <FormControlLabel
+                      value="Mortgage Refinancing"
+                      control={<Radio />}
+                      label={
+                        language === "ar" ? "إعادة تمويل الرهن العقاري" : "Mortgage Refinancing"
+                      }
+                    />
                   </div>
-                  <div className='dis-rad'>
-                    <FormControlLabel value="International Visa Assistance" control={<Radio />} label={language === "ar" ? "مساعدة فيزا دولية" : "International Visa Assistance"} />
-                    <FormControlLabel value="Corporate Travel Assistance" control={<Radio />} label={language === "ar" ? "مساعدة السفر للشركات" : "Corporate Travel Assistance"} />
-                    <FormControlLabel value="Transportation" control={<Radio />} label={language === "ar" ? "النقل" : "Transportation"} />
+                  <div className="dis-rad">
+                    <FormControlLabel
+                      value="Mortgage Pre-Approval"
+                      control={<Radio />}
+                      label={
+                        language === "ar"
+                          ?"الموافقة المبدئية على الرهن العقاري"
+                          : "Mortgage Pre-Approval"
+                      }
+                    />
+                    <FormControlLabel
+                      value="Mortgage Loan Products"
+                      control={<Radio />}
+                      label={
+                        language === "ar"
+                          ? "منتجات قرض الرهن العقاري"
+                          : "Mortgage Loan Products"
+                      }
+                    />
+                    <FormControlLabel
+                      value="Loan Processing & Underwriting"
+                      control={<Radio />}
+                      label={language === "ar" ? "معالجة القروض والتأمين" : "Loan Processing & Underwriting"}
+                    />
                   </div>
                 </div>
               </RadioGroup>
@@ -350,7 +420,7 @@ export default function FormMS() {
                 padding: "8px",
                 marginBottom: "8px",
                 boxSizing: "border-box",
-                margin:"auto",
+                margin: "auto",
               }}
             />
             {/* Textarea */}
@@ -362,9 +432,9 @@ export default function FormMS() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                margin: "auto"
+                margin: "auto",
               }}
-              className='submit'
+              className="submit"
               onClick={handleButtonClick}
             >
               {language === "ar" ? "إرسال" : "SUBMIT"}
@@ -380,7 +450,12 @@ export default function FormMS() {
         onClose={handleCloseSnackbar}
         message={snackbarMessage}
         action={
-          <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackbar}>
+          <IconButton
+            size="small"
+            aria-label="close"
+            color="inherit"
+            onClick={handleCloseSnackbar}
+          >
             <CloseIcon fontSize="small" />
           </IconButton>
         }

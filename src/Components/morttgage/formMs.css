@@ -516,8 +516,13 @@ height: auto ;
       margin: auto !important;
   
     }
-
-
+    .dis-rad{
+      width: 100% !important;
+      font-size: small;
+    }
+    .wh-form .css-ahj2mt-MuiTypography-root{
+      width: 100% !important;
+    }
 
 }
 @media screen and (max-width:326px) {
