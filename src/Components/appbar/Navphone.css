@@ -424,13 +424,7 @@ overflow-y: scroll !important;
       text-align: start;
       transition: display 10.5s;
   }
-    .developers .dis-paly2 {
-      display: flex;
-      font-size: 18px;
-      margin: 10px;
-      align-items: center;
-      justify-content: start;
-    }
+
     .dis-paly2 li {
       list-style: none;
       padding: 5px;
@@ -444,7 +438,7 @@ overflow-y: scroll !important;
       display: flex;
       font-size: 25px;
       margin: 10px;
-      align-items: center;
+      align-items: start;
       justify-content: space-between;
   }
   
