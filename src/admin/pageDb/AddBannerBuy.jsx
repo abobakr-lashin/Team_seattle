@@ -45,7 +45,6 @@ const AddBannerBuy = () => {
         try {
             const imageUrl2 = ref(storage, `fileBannerBuy/${FileImage.image2.name}`)
 
-
             const [snapshotBlog, snapshotCart] = await Promise.all([
                 uploadBytes(imageUrl2, FileImage.image2)
             ]);

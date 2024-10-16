@@ -13,7 +13,7 @@ import "./buy.css";
 import { collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../firebaseConfig';
 export default function CategoryCards() {
-    const {id} = useParams()
+    const { id } = useParams()
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
@@ -38,9 +38,12 @@ export default function CategoryCards() {
                 id: doc.id,
                 ...doc.data(),
             }));
-            const filterdata = docs.filter((it)=>{
-                return it.CategoryPlan === id
-            })
+
+            const filterdata = docs.flatMap((it) => {
+                const matchedItems = it.CategoryBuyPlan.filter((e) => e.BuyPlan.toUpperCase() === id.toUpperCase());
+                return matchedItems.length > 0 ? it : [];
+            });
+
             setData(filterdata);
         } catch (error) {
             console.error("Error fetching documents: ", error);
@@ -124,7 +127,7 @@ export default function CategoryCards() {
                                 <hr />
                                 <div className="Listing-by">
                                     <div className="img-lisby">
-                                        <img src={it.imageCart} alt="Property" />
+                                        <img src={it.listingImage} alt="Property" />
                                     </div>
                                     <div className="title-lisby">Listing by Ramin Sadeghi </div>
                                 </div>

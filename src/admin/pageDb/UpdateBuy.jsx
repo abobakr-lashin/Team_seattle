@@ -71,7 +71,7 @@ export default function UpdateBuy() {
 
         try {
             let updatedBlogImageCart = formData.imageCart;
-            let updatedBlogClint = formData.bgImage;
+            let updatedBlogClint = formData.listingImage;
             let updatedCartImageSlider = formData.imageSlider;
             let updatedBlogImageText = formData.imageText;
 
@@ -119,7 +119,7 @@ export default function UpdateBuy() {
                 email: formData.email,
                 map: formData.map,
                 imageText: updatedBlogImageText,
-                listingImage: updatedBlogClint,
+                listingImage: updatedBlogClint || formData.listingImage,
                 text: formData.text,
                 imageCart: updatedBlogImageCart,
                 imageSlider: updatedCartImageSlider,
@@ -127,16 +127,19 @@ export default function UpdateBuy() {
                     location: CategoryLocation.location || formData.CateBuyLocation.location,
                     center: CategoryLocation.center || formData.CateBuyLocation.location,
                 },
-                plan: formData.Plan || plan,
+                plan: formData.plan || plan,
                 type: formData.type,
                 starting: formData.starting,
                 size: formData.size,
                 handover: formData.handover,
                 payment: formData.payment,
-
                 mainTitle: formData.mainTitle,
                 CategoryDevelopers: formData.CategoryDevelopers,
-                CategoryBuyPlan,
+                CategoryBuyPlan:[
+                    { BuyPlan: CategoryBuyPlan[0].BuyPlan || formData.CategoryBuyPlan[0].BuyPlan},
+                    { BuyPlan: CategoryBuyPlan[1].BuyPlan || formData.CategoryBuyPlan[1].BuyPlan},
+                    { BuyPlan: CategoryBuyPlan[2].BuyPlan || formData.CategoryBuyPlan[2].BuyPlan},
+                ],
                 date: new Date().toDateString(),
                 time: new Date().toLocaleTimeString()
             });
@@ -197,7 +200,8 @@ export default function UpdateBuy() {
                 id: doc.id,
                 ...doc.data()
             }));
-            setCategoryPlan(docs);
+            const filterData = docs.filter((it)=> it.CategoryPlan === plan)
+            setCategoryPlan(filterData);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -220,7 +224,7 @@ export default function UpdateBuy() {
     useEffect(() => {
         getCategories();
         fetchData();
-    }, [id]);
+    }, [id , plan]);
 
     if (loading) {
         return (

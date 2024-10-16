@@ -35,15 +35,22 @@ export default function CategoryOffPlanSeattle() {
     // Get Data from Firestore
     const GetDataFireStore = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartSEATTLE"));
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartBuy"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
             }));
-            const filterdata = docs.filter((it) => {
-                return it.CategoryPlan === id
-            })
+
+
+
+            const filterdata = docs.flatMap((it) => {
+                const matchedItems = it.CategoryBuyPlan.filter((e) => e.BuyPlan.toUpperCase() === id.toUpperCase());
+                return matchedItems.length > 0 ? it : [];
+            });
+            // const data = filterdata.filter((e) => e.BuyPlan.toUpperCase() === id.toUpperCase())
+            console.log('=============', filterdata);
             setData(filterdata);
+
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -94,7 +101,9 @@ export default function CategoryOffPlanSeattle() {
         <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
             <div key={it.id} className="slide-item">
                 <div className="bg-back1">
-                    <div className="project-img" style={{ backgroundImage: `url(${it.imageCart})` }}> </div>
+                    <div className="project-img"> 
+                        <img src={it.imageCart} alt="" />
+                    </div>
                     <div className="City">{it.title}</div>
                     <div className="type" >
                         TYPE: {it.type} <br />

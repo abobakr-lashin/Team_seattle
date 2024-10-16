@@ -219,7 +219,8 @@ export default function AddCardBuy() {
                 id: doc.id,
                 ...doc.data(),
             }));
-            setCategoryPlan(planDocs);
+            const filterData = planDocs.filter((it)=> it.CategoryPlan === formData.plan)
+            setCategoryPlan(filterData);
         } catch (error) {
             console.error("Error fetching categoryBuyPlan documents: ", error);
         }
@@ -523,10 +524,7 @@ export default function AddCardBuy() {
                     </div>
                 </div>
 
-
-                {/* قائمة الموقع والمراكز */}
                 <div className="form-group">
-                    {/* قائمة اختيار الموقع */}
                     <select
                         style={{ margin: '20px', width: '80%' }}
                         name="location"
