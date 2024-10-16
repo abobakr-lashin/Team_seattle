@@ -65,18 +65,14 @@ export default function Landingpage() {
     };
 
 
-    const imgsetin = cartId?.imageSlider?.map((img) => {
+    const imgsetin = filterCartId[0]?.imageSlider?.map((img) => {
         return (
             <div key={img} className="slide-item">
                 <div
-                  
-                    style={{ position:"relative"}
-            }
-                >
-                    
-                    <img   className="Landingpage-img" src={img} alt="" />
-                    
-                </div>
+                    className="Landingpage-img"
+                 
+                >   <img src={img}/></div>
+                
             </div>
         );
     });
@@ -137,7 +133,7 @@ position:"relative"
                     </div>
                     <div className="title-dis7" style={{ display: "flex" }}>
                         <h2>
-                            Home {" "}
+                            Home{" "}
                             <Link to={"/"}>
                                 {" "}
                                 <KeyboardDoubleArrowRightIcon
