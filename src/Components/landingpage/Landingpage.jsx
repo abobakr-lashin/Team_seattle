@@ -75,6 +75,7 @@ export default function Landingpage() {
                 >
                     
                     <img   className="Landingpage-img" src={img} alt="" />
+                    
                 </div>
             </div>
         );
@@ -136,7 +137,7 @@ position:"relative"
                     </div>
                     <div className="title-dis7" style={{ display: "flex" }}>
                         <h2>
-                            Home{" "}
+                            Home {" "}
                             <Link to={"/"}>
                                 {" "}
                                 <KeyboardDoubleArrowRightIcon
