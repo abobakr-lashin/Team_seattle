@@ -35,19 +35,30 @@ export default function CategoryOffPlanSeattle() {
     // Get Data from Firestore
     const GetDataFireStore = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartSEATTLE"));
+            const querySnapshot = await getDocs(collection(firestore, "listBlogsCartBuy"));
             const docs = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
             }));
-            const filterdata = docs.filter((it) => {
-                return it.CategoryPlan === id
-            })
+
+            console.log("All Docs:", docs); // عرض كل البيانات قبل الفلترة
+
+            const items = docs.filter((it) => it.plan === "Off-plan");
+
+            console.log("Filtered by plan:", items); // عرض البيانات المفلترة بخطة "Off-plan"
+
+            const filterdata = items.filter((it) => {
+                return it.CategoryBuyPlan.some((e) => e.BuyPlan.includes(id));
+            });
+            
+            console.log("Filtered by BuyPlan ID:", filterdata); // عرض البيانات المفلترة بـ BuyPlan
+
             setData(filterdata);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
     };
+
 
     useEffect(() => {
         GetDataFireStore();
@@ -94,7 +105,9 @@ export default function CategoryOffPlanSeattle() {
         <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
             <div key={it.id} className="slide-item">
                 <div className="bg-back1">
-                    <div className="project-img" style={{ backgroundImage: `url(${it.imageCart})` }}> </div>
+                    <div className="project-img">
+                        <img src={it.imageCart} alt="" />
+                    </div>
                     <div className="City">{it.title}</div>
                     <div className="type" >
                         TYPE: {it.type} <br />

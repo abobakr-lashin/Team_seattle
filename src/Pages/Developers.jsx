@@ -88,7 +88,7 @@ export default function Developers() {
                         <div
                             className="bg-imga"
                         > <img src={`${it.imageCart}`} alt="" /> </div>
-                        <h2>{it.mainTitle}</h2>
+                        <h2>{it.title}</h2>
                         <h3>
                             <LocationOnIcon /> {it.CateBuyLocation.location}
                         </h3>

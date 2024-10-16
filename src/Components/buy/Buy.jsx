@@ -25,7 +25,7 @@ export default function Buy() {
     const [maxBedrooms, setMaxBedrooms] = useState('');
     const [minPrice, setMinPrice] = useState('');
 
-    const itemsPerPage =6;
+    const itemsPerPage = 6;
 
     // Get Data from Firestore
     const GetDataFireStore = async () => {
@@ -35,8 +35,8 @@ export default function Buy() {
                 id: doc.id,
                 ...doc.data(),
             }));
-            const FilterData = docs.filter((it) => it.plan === 'Secondary properties')
-            setData(FilterData);
+            // const FilterData = docs.filter((it) => it.plan === 'Secondary properties')
+            setData(docs);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
@@ -74,7 +74,7 @@ export default function Buy() {
             setCurrentPage(1);
         }
     };
-    
+
     const handlePreviousPage = () => {
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);
@@ -236,20 +236,20 @@ export default function Buy() {
                     {imgsetin}
                 </Grid>
                 {filteredProjects.length >= 6 && (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-        <div 
-            onClick={handlePreviousPage} 
-        >
-            <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
-        </div>
-        <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>
-        <div 
-            onClick={handleNextPage} 
-        >
-            <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
-        </div>
-    </div>
-)}
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+                        <div
+                            onClick={handlePreviousPage}
+                        >
+                            <img src="/uploads/commercial/export/northarrow.png" alt="Previous" />
+                        </div>
+                        <h2 style={{ margin: '0 10px' }}>{currentPage}</h2>
+                        <div
+                            onClick={handleNextPage}
+                        >
+                            <img src="/uploads/commercial/export/rightarrow.png" alt="Next" />
+                        </div>
+                    </div>
+                )}
             </div>
 
             <OUREXPERT />
