@@ -6,8 +6,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import FormContainer from "./FormContainer";
 import React, { useEffect, useState } from 'react';
 import bannerFinish from './BannerFinish.mp4';
-
-export default function Header() {
+function Header() {
     const [openSnackbar, setOpenSnackbar] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
 
@@ -32,10 +31,17 @@ export default function Header() {
     return (
         <>
             <div className="header-container">
-                <video className="video-background" autoPlay loop muted preload="auto">
-                    <source src={bannerFinish} type="video/mp4" />
-                    متصفحك لا يدعم عرض الفيديو.
-                </video>
+            <video
+  className="video-background"
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+>
+  <source src={bannerFinish} type="video/mp4" />
+  متصفحك لا يدعم عرض الفيديو.
+</video>
                 <NavPar />
 
                 <div className="Formheader">
@@ -68,3 +74,5 @@ export default function Header() {
         </>
     );
 }
+
+export default React.memo(Header);
