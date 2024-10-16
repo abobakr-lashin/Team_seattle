@@ -41,20 +41,24 @@ export default function CategoryOffPlanSeattle() {
                 ...doc.data(),
             }));
 
+            console.log("All Docs:", docs); // عرض كل البيانات قبل الفلترة
 
+            const items = docs.filter((it) => it.plan === "Off-plan");
 
-            const filterdata = docs.flatMap((it) => {
-                const matchedItems = it.CategoryBuyPlan.filter((e) => e.BuyPlan.toUpperCase() === id.toUpperCase());
-                return matchedItems.length > 0 ? it : [];
+            console.log("Filtered by plan:", items); // عرض البيانات المفلترة بخطة "Off-plan"
+
+            const filterdata = items.filter((it) => {
+                return it.CategoryBuyPlan.some((e) => e.BuyPlan.includes(id));
             });
-            // const data = filterdata.filter((e) => e.BuyPlan.toUpperCase() === id.toUpperCase())
-            console.log('=============', filterdata);
-            setData(filterdata);
+            
+            console.log("Filtered by BuyPlan ID:", filterdata); // عرض البيانات المفلترة بـ BuyPlan
 
+            setData(filterdata);
         } catch (error) {
             console.error("Error fetching documents: ", error);
         }
     };
+
 
     useEffect(() => {
         GetDataFireStore();
@@ -101,7 +105,7 @@ export default function CategoryOffPlanSeattle() {
         <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item xs={12} md={4} sm={6}>
             <div key={it.id} className="slide-item">
                 <div className="bg-back1">
-                    <div className="project-img"> 
+                    <div className="project-img">
                         <img src={it.imageCart} alt="" />
                     </div>
                     <div className="City">{it.title}</div>

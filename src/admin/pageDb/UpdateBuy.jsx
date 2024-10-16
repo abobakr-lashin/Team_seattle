@@ -119,7 +119,7 @@ export default function UpdateBuy() {
                 email: formData.email,
                 map: formData.map,
                 imageText: updatedBlogImageText,
-                listingImage: updatedBlogClint || formData.listingImage,
+                listingImage : formData.listingImage || updatedBlogClint ,
                 text: formData.text,
                 imageCart: updatedBlogImageCart,
                 imageSlider: updatedCartImageSlider,
@@ -135,10 +135,10 @@ export default function UpdateBuy() {
                 payment: formData.payment,
                 mainTitle: formData.mainTitle,
                 CategoryDevelopers: formData.CategoryDevelopers,
-                CategoryBuyPlan:[
-                    { BuyPlan: CategoryBuyPlan[0].BuyPlan || formData.CategoryBuyPlan[0].BuyPlan},
-                    { BuyPlan: CategoryBuyPlan[1].BuyPlan || formData.CategoryBuyPlan[1].BuyPlan},
-                    { BuyPlan: CategoryBuyPlan[2].BuyPlan || formData.CategoryBuyPlan[2].BuyPlan},
+                CategoryBuyPlan: [
+                    { BuyPlan: CategoryBuyPlan[0].BuyPlan || formData.CategoryBuyPlan[0].BuyPlan },
+                    { BuyPlan: CategoryBuyPlan[1].BuyPlan || formData.CategoryBuyPlan[1].BuyPlan },
+                    { BuyPlan: CategoryBuyPlan[2].BuyPlan || formData.CategoryBuyPlan[2].BuyPlan },
                 ],
                 date: new Date().toDateString(),
                 time: new Date().toLocaleTimeString()
@@ -200,7 +200,7 @@ export default function UpdateBuy() {
                 id: doc.id,
                 ...doc.data()
             }));
-            const filterData = docs.filter((it)=> it.CategoryPlan === plan)
+            const filterData = docs.filter((it) => it.CategoryPlan === plan)
             setCategoryPlan(filterData);
         } catch (error) {
             console.error("Error fetching documents: ", error);
@@ -224,7 +224,7 @@ export default function UpdateBuy() {
     useEffect(() => {
         getCategories();
         fetchData();
-    }, [id , plan]);
+    }, [id, plan]);
 
     if (loading) {
         return (
@@ -301,42 +301,42 @@ export default function UpdateBuy() {
                     </div>
 
                     {formData.plan === 'Off-plan' && <div className="form-group">
-                    <input
-                        type="text"
-                        name="type"
-                        placeholder="type"
-                        value={formData.type}
-                        onChange={handleInputChange}
-                    />
-                    <input
-                        type="text"
-                        name="size"
-                        placeholder="size"
-                        value={formData.size}
-                        onChange={handleInputChange}
-                    />
-                    <input
-                        type="text"
-                        name="payment"
-                        placeholder="payment"
-                        value={formData.payment}
-                        onChange={handleInputChange}
-                    />
-                    <input
-                        type="text"
-                        name="handover"
-                        placeholder="handover"
-                        value={formData.handover}
-                        onChange={handleInputChange}
-                    />
-                    <input
-                        type="text"
-                        name="starting"
-                        placeholder="starting"
-                        value={formData.starting}
-                        onChange={handleInputChange}
-                    />
-                </div>}
+                        <input
+                            type="text"
+                            name="type"
+                            placeholder="type"
+                            value={formData.type}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="size"
+                            placeholder="size"
+                            value={formData.size}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="payment"
+                            placeholder="payment"
+                            value={formData.payment}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="handover"
+                            placeholder="handover"
+                            value={formData.handover}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            type="text"
+                            name="starting"
+                            placeholder="starting"
+                            value={formData.starting}
+                            onChange={handleInputChange}
+                        />
+                    </div>}
 
                     <div className="form-group">
                         <input
@@ -490,14 +490,14 @@ export default function UpdateBuy() {
                                 src={urlImge}
                                 alt="listingImage"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
-                            /> : formData.bgImage && <img
-                                src={formData.bgImage}
+                            /> : formData.listingImage && <img
+                                src={formData.listingImage}
                                 alt="listingImage"
                                 style={{ width: '200px', height: '200px', objectFit: 'cover' }}
                             />}
                         </div>
                     </div>
-                   
+
                     <div className="form-group">
 
                         <select
