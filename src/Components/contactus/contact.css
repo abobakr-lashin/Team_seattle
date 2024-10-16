@@ -44,6 +44,7 @@ h6{
     background-color: #ffffff;
     padding:18px;
     border: none;
+    outline: none;
     border-radius: 20px !important;
 }
 .form10 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
@@ -180,6 +181,8 @@ border-radius: 20px;
     border-radius: 20px !important;
     padding: 18px;
     width: 90% !important;
+    border: none;
+    outline: none;
 }.css-m9votp{
     max-width: 90% !important;
     width: 100%;
