@@ -67,13 +67,16 @@ export default function LandingpageSeattle() {
         return (
             <div key={img} className="slide-item">
                 <div
-                    className="Landingpage-img"
-                    style={{ backgroundImage: `url(${img})` }}
-                ></div>
+                  
+                    style={{ position:"relative"}
+            }
+                >
+                    
+                    <img   className="Landingpage-img" src={img} alt="" />
+                </div>
             </div>
         );
     });
-
 
 
 

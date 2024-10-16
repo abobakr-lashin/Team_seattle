@@ -72,7 +72,6 @@ export default function LandingPageBuy() {
                 >
                     
                     <img   className="Landingpage-img" src={img} alt="" />
-
                 </div>
             </div>
         );

@@ -65,13 +65,17 @@ export default function Landingpage() {
     };
 
 
-    const imgsetin = filterCartId[0]?.imageSlider?.map((img) => {
+    const imgsetin = cartId?.imageSlider?.map((img) => {
         return (
             <div key={img} className="slide-item">
                 <div
-                    className="Landingpage-img"
-                    style={{ backgroundImage: `url(${img})` }}
-                ></div>
+                  
+                    style={{ position:"relative"}
+            }
+                >
+                    
+                    <img   className="Landingpage-img" src={img} alt="" />
+                </div>
             </div>
         );
     });
