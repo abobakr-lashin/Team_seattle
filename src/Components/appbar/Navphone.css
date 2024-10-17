@@ -1587,7 +1587,7 @@ margin-left: -30px;
 }
 .APPLY .dis-paly2 li {
   font-size: 22px;
-  margin: 24px;
+  margin: 10px 0px;
   font-weight: lighter !important;
 }
     /* .APPLY */
@@ -1692,6 +1692,7 @@ margin-left: -30px;
   margin: 0px;
   justify-content: center;
  flex-direction: column;
+ text-align: start;
 }
 .AREAS .dis-paly ul li {
   font-size: 19px;
@@ -1715,11 +1716,13 @@ margin-left: -30px;
 .AREAS .dis-buy {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: start !important;
+}
+.AREAS .dis-paly{
+  align-items: start !important;
 }
 .AREAS .dis-paly ul li {
   font-size: 25px;
-  text-align: center;
 }
 .developers .dis-buy {
 display: block;
