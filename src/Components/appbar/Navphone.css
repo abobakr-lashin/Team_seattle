@@ -1679,8 +1679,7 @@ margin-left: -30px;
   display: flex;
   justify-content: center;
   align-items: CENTER;
-  flex-direction: row-reverse;
-  FLEX-DIRECTION: column;
+  flex-direction: column !important;
   width: 100%;
 }
 .AREAS .dis-imgNbuy {
