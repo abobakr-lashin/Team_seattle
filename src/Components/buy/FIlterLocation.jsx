@@ -44,7 +44,7 @@ export default function FilterLocation() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, [0]);
+    }, []);
 
     // Filter items by category
     const filteredProjects = data.filter((project) => {

@@ -345,7 +345,7 @@ const Navbar = () => {
         GetDataFireStore();
         getCategories();
         GetDataBanner();
-    }, [GetDataFireStore]);
+    }, []);
 
     return (
         <div className="custom-navbar-brand">

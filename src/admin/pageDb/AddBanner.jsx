@@ -109,7 +109,7 @@ const AddBanner = () => {
                 sx={{ mt: 2, mb: 2 }}
                 component="label"
                 role={undefined}
-                variant="contained"
+                variant="temporary"
                 tabIndex={-1}
                 startIcon={<CloudUploadIcon />}
             >

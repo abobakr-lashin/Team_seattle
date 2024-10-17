@@ -27,7 +27,7 @@ export default function SaleIn() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, [0]);
+    }, []);
 
     const imgsetin = (
         <div className="swiper-container">
