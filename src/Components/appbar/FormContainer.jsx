@@ -2,23 +2,18 @@ import React, { useState, useEffect } from "react";
 import video from "./BannerFinish.mp4";
 import NavPar from "./NavPar";
 import "./Header.css";
-import { TextField, Snackbar, Alert, Box, SpeedDial, SpeedDialIcon, SpeedDialAction } from "@mui/material";
+import { TextField, Snackbar, Alert, Box } from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
-import { v4 as uuidv4 } from 'uuid'; // For generating unique ids
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import PrintIcon from '@mui/icons-material/Print';
-import ShareIcon from '@mui/icons-material/Share';
+
 import app from "../../firebaseConfig";
-import { getDatabase, ref, onValue, set, push } from "firebase/database";
-import { toast, ToastContainer } from "react-toastify";
+import { getDatabase, ref, set, push } from "firebase/database";
+import { toast } from "react-toastify";
 export default function FormContainer({color,jast}) {
 
     const [formData, setFormData] = useState({ name: "", phone: "+971" });
     const [phoneError, setPhoneError] = useState("");
     const [nameError, setNameError] = useState("");
     const [snackbarMessage, setSnackbarMessage] = useState("");
-    const [arr, setArr] = useState([]);
     const [language, setLanguage] = useState(navigator.language.startsWith('ar') ? 'ar' : 'en');
 
     // Post Data To fireBase

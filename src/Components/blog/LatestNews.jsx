@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, {  useState } from "react";
+import { Link } from "react-router-dom";
 import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import PersonIcon from "@mui/icons-material/Person";
-import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import Footer from "../footer/Footer";
 import "./LatestNews.css";
-import { collection, getDocs } from "firebase/firestore";
-import { firestore } from "../../firebaseConfig";
 import LastNews from "./LastNews";
 import OUREXPERT from "../../Pages/OUREXPERT";
 

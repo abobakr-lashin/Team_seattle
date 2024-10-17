@@ -5,10 +5,8 @@ import { Link, useParams } from "react-router-dom";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import FormContainer from "../appbar/FormContainer";
 import Slider from "react-slick";
-import { Grid, Rating } from "@mui/material";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import {  Rating } from "@mui/material";
 import "./landingpage.css";
-import CareersForm from "../contactus/CareersForm";
 import ContactusForm from "../contactus/ContactusForm";
 import Footer from "../footer/Footer";
 import { useEffect, useState } from "react";
@@ -224,6 +222,8 @@ position:"relative"
                         allowFullScreen=""
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
+                        title="asdasd"
+
                     ></iframe>
                 </div>
                 <ContactusForm />

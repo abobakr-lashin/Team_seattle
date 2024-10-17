@@ -34,7 +34,6 @@ const AddBannerAreas = () => {
     const [loading, setLoading] = useState(false);
     const [fileUr2, setfileUr2] = useState('');
 
-    console.log(FileImage);
 
     const handleAddCategory = async (e) => {
         e.preventDefault();
@@ -95,7 +94,7 @@ const AddBannerAreas = () => {
 
 
             <List>
-                <img style={{ width: '200px' }} src={fileUrl} alt="" />
+                <img style={{ width: '200px' }} src={fileUrl} alt="a" />
             </List>
 
             <Button

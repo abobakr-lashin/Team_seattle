@@ -1,7 +1,5 @@
-import { Grid } from '@mui/material';
 import React from 'react'
 import './INSIGHTS.css'
-import { Link } from 'react-router-dom';
 import LastNews from '../blog/LastNews';
 export default function INSIGHTS() {
 

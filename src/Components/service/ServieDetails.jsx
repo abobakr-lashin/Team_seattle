@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 import Slider from "react-slick";
 import Footer from "../footer/Footer";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import { TextField, Snackbar, Alert } from "@mui/material";
+import {  Snackbar, Alert } from "@mui/material";
 import { MuiTelInput } from "mui-tel-input";
 import { v4 as uuidv4 } from "uuid"; // For generating unique ids
 import "slick-carousel/slick/slick.css";

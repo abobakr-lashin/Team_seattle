@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { collection, addDoc, getDocs, query, where, getDoc, doc } from 'firebase/firestore';
+import { collection, addDoc, getDocs} from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from '../../firebaseConfig'; // تأكد من أن مسار الاستيراد صحيح
 import { toast } from 'react-toastify';

@@ -155,7 +155,7 @@ const AddDevelopers = () => {
                 sx={{ mb: 2 }}
             />
             <List>
-                <img style={{ width: '200px' }} src={fileUrl} alt="" />
+                <img style={{ width: '200px' }} src={fileUrl} alt="a" />
             </List>
             <Button
                 sx={{ mt: 2, mb: 2 }}
@@ -208,7 +208,7 @@ const AddDevelopers = () => {
                 gap: 2,
             }}>
                 {UrlImageBanners.bannerCart &&
-                    <img style={{ width: '700px', height: '400px' }} src={UrlImageBanners.bannerCart} alt="" />
+                    <img style={{ width: '700px', height: '400px' }} src={UrlImageBanners.bannerCart} alt="a" />
                 }
             </List>
 
@@ -352,12 +352,12 @@ const AddDevelopers = () => {
                 borderRadius: 2,
                 overflow: 'auto'
             }} className="box">
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner1} alt="" />
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner2} alt="" />
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner3} alt="" />
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner4} alt="" />
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner5} alt="" />
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner6} alt="" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner1} alt="a" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner2} alt="a" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner3} alt="a" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner4} alt="a" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner5} alt="a" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner6} alt="a" />
             </div>
 
 

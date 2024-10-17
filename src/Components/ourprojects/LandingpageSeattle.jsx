@@ -5,15 +5,13 @@ import { Link, useParams } from "react-router-dom";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import FormContainer from "../appbar/FormContainer";
 import Slider from "react-slick";
-import { Grid, Rating } from "@mui/material";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { Rating } from "@mui/material";
 import "../landingpage/landingpage.css";
-import CareersForm from "../contactus/CareersForm";
 import ContactusForm from "../contactus/ContactusForm";
 import Footer from "../footer/Footer";
 import { useEffect, useState } from "react";
 import { firestore } from "../../firebaseConfig";
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 export default function LandingpageSeattle() {
     const [cartId, setCartId] = useState({});
@@ -222,6 +220,8 @@ export default function LandingpageSeattle() {
                         style={{ border: 0 }}
                         allowFullScreen=""
                         loading="lazy"
+                        title="asdasd"
+
                         referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                 </div>

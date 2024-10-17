@@ -1,6 +1,5 @@
 import React from 'react'
 import NavPar from "../appbar/NavPar"
-import Sevrvices from '../services/Sevrvices'
 import { Box, Grid } from '@mui/material';
 import Footer from '../footer/Footer';
 import { Link } from 'react-router-dom';

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { firestore } from '../../../firebaseConfig';
-import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import "./category.css";
 

@@ -91,7 +91,7 @@ const AddCategorySellPlan = () => {
                 </select>
             </div>
             <List>
-                <img style={{ width: '200px' }} src={fileUrl} alt="" />
+                <img style={{ width: '200px' }} src={fileUrl} alt="a" />
             </List>
             <Button
                 sx={{ mt: 2, mb: 2 }}

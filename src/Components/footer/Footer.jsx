@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Grid, Typography,Box, SpeedDial, CardMedia } from '@mui/material';
-import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
+import { Container, Grid, Typography,Box} from '@mui/material';
 import RoomIcon from '@mui/icons-material/Room';
 import CallIcon from '@mui/icons-material/Call';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import MailIcon from '@mui/icons-material/Mail';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './footer.css';
 import './footerphon.css';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebaseConfig';
 import { getAuth, signOut } from "firebase/auth";
@@ -25,7 +25,6 @@ function Dashboard() {
     const [permanentOrT, setpermanentOrT] = useState(true); // تعريف permanentOrT واستخدام useState لتغييره
     const [DisPlay, setDisPlay] = useState('block'); // تعريف DisPlay واستخدام useState لتغييره
 
-    // console.log(user);
 
     const darkTheme = createTheme({
         palette: {

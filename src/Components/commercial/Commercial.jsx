@@ -5,8 +5,6 @@ import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import FormN from "../appbar/FormN";
 import SaleIn from "./SaleIn";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
 import Footer from "../footer/Footer";
 import OUREXPERT from "../../Pages/OUREXPERT";
 

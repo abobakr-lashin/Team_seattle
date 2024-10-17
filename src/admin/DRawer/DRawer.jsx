@@ -19,7 +19,6 @@ export default function DRawer({
   const navigate = useNavigate();
   const handleSignOut = () => {
     signOut(auth).then(() => {
-        console.log('Sign-out successful.');
         navigate('/login');
     }).catch((error) => {
         console.error('An error happened:', error);

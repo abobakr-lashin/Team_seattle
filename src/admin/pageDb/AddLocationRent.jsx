@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Box, Typography, List, ListItem, ListItemText, Stack, Alert } from '@mui/material';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { styled } from '@mui/material/styles';
-import { firestore, storage } from '../../firebaseConfig';
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { firestore } from '../../firebaseConfig';
 import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 import CircularProgress from '@mui/material/CircularProgress';
 import { toast } from 'react-toastify';
@@ -79,29 +77,7 @@ const AddLocationRent = () => {
                 sx={{ mb: 2 }}
             />
 
-            {/* <List>
-                <img style={{ width: '200px' }} src={fileUrl} alt="" />
-            </List> */}
-
-            {/* <Button
-                sx={{ mt: 2, mb: 2 }}
-                component="label"
-                role={undefined}
-                variant="contained"
-                tabIndex={-1}
-                startIcon={<CloudUploadIcon />}
-            >
-                Upload files
-                <VisuallyHiddenInput
-                    type="file"
-                    onChange={(e) => {
-                        const file = e.target.files[0]
-                        setFileImage(file)
-                        setfileUrl(URL.createObjectURL(file))
-                    }}
-                    multiple
-                />
-            </Button> */}
+        
 
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4 }}>
                 {loading ? (

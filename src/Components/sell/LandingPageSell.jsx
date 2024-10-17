@@ -5,9 +5,8 @@ import { Link, useParams } from "react-router-dom";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import FormContainer from "../appbar/FormContainer";
 import Slider from "react-slick";
-import { Grid, Rating } from "@mui/material";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import CareersForm from "../contactus/CareersForm";
+import {  Rating } from "@mui/material";
+
 import ContactusForm from "../contactus/ContactusForm";
 import Footer from "../footer/Footer";
 import { useEffect, useState } from "react";
@@ -216,6 +215,8 @@ export default function LandingPageSell() {
                     style={{ border: 0 }}
                     allowFullScreen=""
                     loading="lazy"
+                    title="asdas"
+
                     referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
                 <ContactusForm />

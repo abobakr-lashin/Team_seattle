@@ -192,7 +192,7 @@ const UpdateDeveloper = () => {
             <List>
                 <img style={{ width: '200px' }} src={
                     fileUrl ? fileUrl : Data.image
-                } alt="" />
+                } alt="a" />
             </List>
             <Button
                 sx={{ mt: 2, mb: 2 }}
@@ -247,7 +247,7 @@ const UpdateDeveloper = () => {
                 {UrlImageBanners &&
                     <img style={{ width: '700px', height: '400px' }} src={
                         fileUrl ? UrlImageBanners.bannerCart : Data.bannerCart
-                    } alt="" />
+                    } alt="a" />
                 }
             </List>
 
@@ -391,12 +391,12 @@ const UpdateDeveloper = () => {
                 borderRadius: 2,
                 overflow: 'auto'
             }} className="box">
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner1 ? UrlImageBanners.banner1 : Data.banner1} alt="" />
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner2 ? UrlImageBanners.banner2 : Data.banner2} alt="" />
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner3 ? UrlImageBanners.banner3 : Data.banner3} alt="" />
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner4 ? UrlImageBanners.banner4 : Data.banner4} alt="" />
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner5 ? UrlImageBanners.banner5 : Data.banner5} alt="" />
-                <img style={{ width: '300px' }} src={UrlImageBanners.banner6 ? UrlImageBanners.banner6 : Data.banner6} alt="" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner1 ? UrlImageBanners.banner1 : Data.banner1} alt="a" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner2 ? UrlImageBanners.banner2 : Data.banner2} alt="a" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner3 ? UrlImageBanners.banner3 : Data.banner3} alt="a" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner4 ? UrlImageBanners.banner4 : Data.banner4} alt="a" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner5 ? UrlImageBanners.banner5 : Data.banner5} alt="a" />
+                <img style={{ width: '300px' }} src={UrlImageBanners.banner6 ? UrlImageBanners.banner6 : Data.banner6} alt="a" />
             </div>
 
 

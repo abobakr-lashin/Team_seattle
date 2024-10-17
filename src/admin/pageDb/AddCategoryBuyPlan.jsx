@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { TextField, Button, Box, Typography, List, ListItem, ListItemText, Stack, Alert } from '@mui/material';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { TextField, Button, Box, Typography,  Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { firestore, storage } from '../../firebaseConfig';
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { firestore } from '../../firebaseConfig';
 import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 import CircularProgress from '@mui/material/CircularProgress';
 import { toast } from 'react-toastify';

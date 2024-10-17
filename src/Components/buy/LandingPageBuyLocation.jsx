@@ -6,9 +6,7 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 import FormContainer from "../appbar/FormContainer";
 import Slider from "react-slick";
 import { Grid, Rating } from "@mui/material";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "../landingpage/landingpage.css";
-import CareersForm from "../contactus/CareersForm";
 import ContactusForm from "../contactus/ContactusForm";
 import Footer from "../footer/Footer";
 import { useEffect, useState } from "react";
@@ -213,6 +211,7 @@ export default function LandingPageBuyLocation() {
                     height="450"
                     style={{ border: 0 }}
                     allowFullScreen=""
+                    title="asd"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>                <ContactusForm />

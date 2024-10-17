@@ -92,7 +92,7 @@ const AddCategoryShettlePlan = () => {
             </div>
 
             <List>
-                <img style={{ width: '200px' }} src={fileUrl} alt="" />
+                <img style={{ width: '200px' }} src={fileUrl} alt="a" />
             </List>
 
             <Button

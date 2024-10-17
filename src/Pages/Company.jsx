@@ -18,7 +18,6 @@ const Company = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
     const [price, setPrice] = useState('');
-    const [completionStatus, setCompletionStatus] = useState('');
     const [location, setLocation] = useState('');
     const [propertyType, setPropertyType] = useState('');
     const [minArea, setMinArea] = useState('');

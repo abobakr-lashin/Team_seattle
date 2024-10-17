@@ -4,7 +4,7 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { styled } from '@mui/material/styles';
 import { firestore, storage } from '../../firebaseConfig';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
-import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
+import { addDoc, collection} from 'firebase/firestore';
 import CircularProgress from '@mui/material/CircularProgress';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -103,7 +103,7 @@ const AddBannerCommercial = () => {
 
 
             <List>
-                <img style={{ width: '200px' }} src={fileUrl} alt="" />
+                <img style={{ width: '200px' }} src={fileUrl} alt="a" />
             </List>
 
             <Button
@@ -127,7 +127,7 @@ const AddBannerCommercial = () => {
             </Button>
 
             <List>
-                <img style={{ width: '200px' }} src={fileUr2} alt="" />
+                <img style={{ width: '200px' }} src={fileUr2} alt="a" />
             </List>
 
             <Button

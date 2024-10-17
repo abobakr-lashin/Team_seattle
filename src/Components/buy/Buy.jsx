@@ -4,7 +4,6 @@ import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Grid } from '@mui/material';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import FormN from '../appbar/FormN';
 import Footer from '../footer/Footer';
 import OUREXPERT from '../../Pages/OUREXPERT';
 
@@ -15,7 +14,6 @@ import { firestore } from '../../firebaseConfig';
 export default function Buy() {
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [searchTerm, setSearchTerm] = useState('');
     const [price, setPrice] = useState('');
     const [location, setLocation] = useState('');
     const [propertyType, setPropertyType] = useState('');

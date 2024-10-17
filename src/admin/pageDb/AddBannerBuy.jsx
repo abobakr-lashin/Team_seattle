@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, Box, Typography, List, ListItem, ListItemText, Stack, Alert } from '@mui/material';
+import { TextField, Button, Box, Typography, List, Stack } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { styled } from '@mui/material/styles';
 import { firestore, storage } from '../../firebaseConfig';
@@ -94,7 +94,7 @@ const AddBannerBuy = () => {
             />
 
             <List>
-                <img style={{ width: '200px' }} src={fileUr2} alt="" />
+                <img style={{ width: '200px' }} src={fileUr2} alt="a" />
             </List>
 
             <Button

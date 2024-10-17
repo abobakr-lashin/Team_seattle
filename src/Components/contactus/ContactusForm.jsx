@@ -1,15 +1,11 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useEffect, useState } from 'react';
 import "./contact.css";
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import NavPar from "../appbar/NavPar";
 import { v4 as uuidv4 } from 'uuid';
-import { Link, useNavigate, useParams } from 'react-router-dom';
 import { MuiTelInput } from 'mui-tel-input';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
-import Footer from '../footer/Footer';
 import app from '../../firebaseConfig';
 import { getDatabase, push, ref, set } from 'firebase/database';
 import OUREXPERT from '../../Pages/OUREXPERT';
