@@ -39,9 +39,8 @@ function Header() {
   muted
   playsInline
   preload="auto"
-  width="100%"   // عرض الفيديو بنسبة 100% لضمان تناسبه مع الشاشة
   height="auto"  // الارتفاع يتكيف مع العرض للحفاظ على نسبة الأبعاد
-  style={{ maxWidth: "100%", maxHeight: "100%" }} // تقييد الحجم داخل حدود العرض
+  style={{  maxHeight: "100%" }} // تقييد الحجم داخل حدود العرض
 >
   <source src={bannerFinish} type="video/mp4" />
   متصفحك لا يدعم عرض الفيديو.
