@@ -1666,14 +1666,11 @@ margin-left: -30px;
   display: flex;
   font-size: 20px;
   margin: 0px;
-  align-items: center !important;
   justify-content: center;
-  FLEX-DIRECTION: column;
-  TEXT-ALIGN: center;
+ flex-direction: column;
 }
 .AREAS .dis-paly ul li {
   font-size: 19px;
-  TEXT-ALIGN: center;
 }
 .AREAS .dis-areas {
   display: flex;
@@ -1698,7 +1695,7 @@ margin-left: -30px;
 }
 .AREAS .dis-paly ul li {
   font-size: 25px;
-  TEXT-ALIGN: start;
+  text-align: center;
 }
 .developers .dis-buy {
 display: block;
@@ -1719,8 +1716,6 @@ display: block;
   align-items: start;
   justify-content: start;
   FLEX-DIRECTION: column;
-  align-items: start !important;
-  TEXT-ALIGN: start;
 }
 .AREAS .dis-imgNbuy {
   font-weight: 500;
