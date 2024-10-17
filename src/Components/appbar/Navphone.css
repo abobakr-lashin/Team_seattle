@@ -873,6 +873,9 @@ width: 69% !important;
     font-size: 20px;
     margin: 10px 0;
     }
+    .Blogs .dis-paly1 .img img {
+      width: 124px;
+  }
     .custom-navbar-link::after {
       content: ">";
       margin-left: 24%;
@@ -1183,6 +1186,9 @@ flex-direction: column;
 /*  Blogs*/
 .Blogs .custom-dropdown-menu{
   overflow-y: scroll;
+}
+.Blogs .dis-paly1 .img img {
+  width: 146px;
 }
 .Blogs .dis-imgNbuy {
   display: none;
@@ -1616,6 +1622,25 @@ margin-left: -30px;
 .Blogs .dis-buy .p2 {
   font-size: 18px;
   text-align: left;
+}
+.Blogs .dis-paly1 .img img{
+
+  width: 300px;
+}
+.Blogs .dis-paly1 .titel p {
+  font-size: 14px !important;
+  width: 100%;
+}
+.Blogs .dis-paly1 .titel h5 {
+  font-size: 26px;
+}
+.Blogs .dis-paly1 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.Blogs .dis-paly1 .titel {
+  width: 98% !important;
 }
     /* .Blogs */
     /* .AREAS */
