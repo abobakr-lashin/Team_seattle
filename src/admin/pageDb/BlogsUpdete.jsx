@@ -24,7 +24,7 @@ export default function BlogsUpdete() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, [GetDataFireStore]);
+    }, [0]);
 
     // Handle Delete Item
     const handleDelete = async (id) => {

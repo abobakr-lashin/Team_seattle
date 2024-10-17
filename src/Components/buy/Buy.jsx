@@ -43,7 +43,7 @@ export default function Buy() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, [GetDataFireStore]);
+    }, [0]);
 
     // Filter items by category
     const filteredProjects = data.filter((project) => {

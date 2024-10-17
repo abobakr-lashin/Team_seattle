@@ -26,7 +26,7 @@ const Category = ({ id }) => {
 
     useEffect(() => {
         GetDataFireStore();
-    }, [GetDataFireStore]);
+    }, [0]);
 
     const ateg = formData.filter((item) => {
         return item.id !== id;

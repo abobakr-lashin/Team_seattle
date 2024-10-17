@@ -143,7 +143,7 @@ export default function RentHome() {
 
   useEffect(() => {
     GetDataFireStore();
-  }, [GetDataFireStore]);
+  }, [0]);
 
   return (
     <div>

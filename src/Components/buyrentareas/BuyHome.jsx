@@ -124,7 +124,7 @@ export default function BuyHome() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, [GetDataFireStore]);
+    }, [0]);
 
     return (
         <div>

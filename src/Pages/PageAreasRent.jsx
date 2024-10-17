@@ -46,7 +46,7 @@ export default function PageAreasRent() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, [GetDataFireStore]);
+    }, [0]);
 
     console.log(id , data);
 
