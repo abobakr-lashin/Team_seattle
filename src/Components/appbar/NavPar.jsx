@@ -1575,7 +1575,11 @@ const Navbar = () => {
                         onMouseLeave={() => handleMouseLeave("APPLY")}
                         onClick={() => handleDropdownToggle("APPLY")}
                     >
-                        <span className="custom-navbar-link">APPLY</span>
+                        <span className="custom-navbar-link">
+                            
+                            <Link to="/Contactus">APPLY</Link>
+
+                            </span>
 
                         <div className="APPLY">
                             <ul
