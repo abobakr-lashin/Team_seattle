@@ -345,7 +345,7 @@ const Navbar = () => {
         GetDataFireStore();
         getCategories();
         GetDataBanner();
-    }, []);
+    }, [GetDataFireStore]);
 
     return (
         <div className="custom-navbar-brand">
@@ -506,6 +506,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.facebook.com/seattleme"}
                                             >
                                                 <img
@@ -517,6 +518,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"
                                                 }
@@ -531,6 +533,7 @@ const Navbar = () => {
                                             <Link
                                                 target="_blank"
                                                 to={"https://www.linkedin.com/company/seattleme/"}
+                                                rel="noopener noreferrer"
                                             >
                                                 <img
                                                     src="./uploads/nav/phone/icons/linkedin_1384014.png"
@@ -541,6 +544,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"
                                                 }
@@ -554,6 +558,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.threads.net/@seattlemiddleeast"}
                                             >
                                                 <img
@@ -658,6 +663,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.facebook.com/seattleme"}
                                             >
                                                 <img
@@ -669,6 +675,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"
                                                 }
@@ -682,6 +689,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.linkedin.com/company/seattleme/"}
                                             >
                                                 <img
@@ -693,6 +701,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"
                                                 }
@@ -706,6 +715,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.threads.net/@seattlemiddleeast"}
                                             >
                                                 <img
@@ -805,6 +815,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.facebook.com/seattleme"}
                                             >
                                                 <img
@@ -816,6 +827,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"
                                                 }
@@ -829,6 +841,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.linkedin.com/company/seattleme/"}
                                             >
                                                 <img
@@ -840,6 +853,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"
                                                 }
@@ -853,6 +867,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.threads.net/@seattlemiddleeast"}
                                             >
                                                 <img
@@ -1002,6 +1017,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.facebook.com/seattleme"}
                                             >
                                                 <img
@@ -1013,6 +1029,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"
                                                 }
@@ -1026,6 +1043,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.linkedin.com/company/seattleme/"}
                                             >
                                                 <img
@@ -1037,6 +1055,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"
                                                 }
@@ -1050,6 +1069,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.threads.net/@seattlemiddleeast"}
                                             >
                                                 <img
@@ -1157,6 +1177,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.facebook.com/seattleme"}
                                             >
                                                 <img
@@ -1168,6 +1189,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"
                                                 }
@@ -1181,6 +1203,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.linkedin.com/company/seattleme/"}
                                             >
                                                 <img
@@ -1192,6 +1215,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"
                                                 }
@@ -1205,6 +1229,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.threads.net/@seattlemiddleeast"}
                                             >
                                                 <img
@@ -1337,6 +1362,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.facebook.com/seattleme"}
                                             >
                                                 <img
@@ -1348,6 +1374,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"
                                                 }
@@ -1361,6 +1388,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.linkedin.com/company/seattleme/"}
                                             >
                                                 <img
@@ -1372,6 +1400,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"
                                                 }
@@ -1385,6 +1414,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.threads.net/@seattlemiddleeast"}
                                             >
                                                 <img
@@ -1506,6 +1536,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.facebook.com/seattleme"}
                                             >
                                                 <img
@@ -1517,6 +1548,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"
                                                 }
@@ -1530,6 +1562,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.linkedin.com/company/seattleme/"}
                                             >
                                                 <img
@@ -1541,6 +1574,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"
                                                 }
@@ -1554,6 +1588,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.threads.net/@seattlemiddleeast"}
                                             >
                                                 <img
@@ -1654,6 +1689,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.facebook.com/seattleme"}
                                             >
                                                 <img
@@ -1665,6 +1701,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.instagram.com/seattlemiddleeast/?fbclid=IwY2xjawFkoWNleHRuA2FlbQIxMAABHbgxiB-N5wvo0M_aVMOqOZWG7cJGQyl3CK-YFWuNxfRLlXngFN3m7vkvoA_aem_w5bkosDNLVblHr7i0u6AWA"
                                                 }
@@ -1678,6 +1715,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.linkedin.com/company/seattleme/"}
                                             >
                                                 <img
@@ -1689,6 +1727,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={
                                                     "https://www.snapchat.com/add/seattleme.ae?share_id=c1tqGvyKWo0&locale=en-US&sid=2d0fe2f3f204455983ab6558806fcd65"
                                                 }
@@ -1702,6 +1741,7 @@ const Navbar = () => {
                                         <div>
                                             <Link
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 to={"https://www.threads.net/@seattlemiddleeast"}
                                             >
                                                 <img

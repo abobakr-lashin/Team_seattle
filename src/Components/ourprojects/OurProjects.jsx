@@ -106,7 +106,7 @@ export default function OurProjects() {
                                         }} className="btn-register1">Show Projects</button>
                                     </div>
                                     <div className="display-f">
-                                        <Link to="https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" target="_blank" className="btn-whatsapp"> </Link>
+                                        <Link to="https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" target="_blank" className="btn-whatsapp"rel="noopener noreferrer"> </Link>
                                         <Link to="tel:+971502135701" className="btn-call"></Link>
                                     </div>
                                 </div>

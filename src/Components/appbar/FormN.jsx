@@ -50,12 +50,12 @@ export default function FormN({name}) {
 
   // console.log(newDocRef);
   // console.log(formData);
+  const [ServiceError, setServiceError] = useState(''); // قم بإزالة هذا إذا لم يتم استخدامه
 
 
   const [phoneError, setPhoneError] = useState("");
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
-  const [serviceError, setServiceError] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [language, setLanguage] = useState(

@@ -61,6 +61,8 @@ export default function FormMS() {
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [serviceError, setServiceError] = useState("");
+  const [searchTerm, setSearchTerm] = useState(''); // قم بإزالة هذا إذا لم يتم استخدامه
+
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [FormMSArr, setFormMSArr] = useState([]);

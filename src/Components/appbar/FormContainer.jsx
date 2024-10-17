@@ -157,7 +157,7 @@ export default function FormContainer({color,jast}) {
                             <a href="tel:+971502135701" className="contact-icon-link">
                                 <img src="./uploads/img/mobile.png" alt="mobile" />
                             </a>
-                            <a href="https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" target="_blank" className="contact-icon-link">
+                            <a href="https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" target="_blank" className="contact-icon-link" rel="noopener noreferrer">
                                 <img src="./uploads/img/whatsapp.png" alt="whatsapp" />
                             </a>
                         </div>

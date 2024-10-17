@@ -46,7 +46,7 @@ export default function PageAreasbuy() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, []);
+    }, [GetDataFireStore]);
 
     console.log(id , data);
 

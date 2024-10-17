@@ -24,7 +24,7 @@ export default function BlogsDahs() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, []);
+    }, [GetDataFireStore]);
 
     // Handle Delete Item
     const handleDelete = async (id) => {

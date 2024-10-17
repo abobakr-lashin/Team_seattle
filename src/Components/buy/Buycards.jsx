@@ -18,6 +18,7 @@ export default function Buycards() {
   const [minBedrooms, setMinBedrooms] = useState('');
   const [maxBedrooms, setMaxBedrooms] = useState('');
   const [minPrice, setMinPrice] = useState('');
+  const [searchTerm, setSearchTerm] = useState(''); // لتتبع مصطلح البحث
 
   const itemsPerPage = 9;
 

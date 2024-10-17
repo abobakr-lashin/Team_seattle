@@ -190,19 +190,19 @@ export default function Blog() {
             <div className="follow-us">
                 <h5>FOLLOW US</h5>
                 <div className="social-icons">
-                    <Link to="https://www.facebook.com/seattleme" target="_blank">
+                    <Link to="https://www.facebook.com/seattleme" target="_blank"rel="noopener noreferrer">
                         <img src="/uploads/Finish/Finish/blog/facebook_1384005.png" alt="Facebook" />
                     </Link>
-                    <Link to="https://www.instagram.com/seattlemiddleeast/" target="_blank">
+                    <Link to="https://www.instagram.com/seattlemiddleeast/" target="_blank"rel="noopener noreferrer">
                         <img src="/uploads/Finish/Finish/blog/instagram_1384015.png" alt="Instagram" />
                     </Link>
-                    <Link to="https://www.threads.net/@seattlemiddleeast" target="_blank">
+                    <Link to="https://www.threads.net/@seattlemiddleeast" target="_blank"rel="noopener noreferrer">
                         <img src="/uploads/Finish/Finish/blog/threads.png" alt="threads" />
                     </Link>
-                    <Link to="https://www.linkedin.com/company/seattleme/" target="_blank">
+                    <Link to="https://www.linkedin.com/company/seattleme/" target="_blank"rel="noopener noreferrer">
                         <img src="/uploads/Finish/Finish/blog/linkedin_1384014.png" alt="LinkedIn" />
                     </Link>
-                    <Link to="https://www.snapchat.com/add/semabudhabi?invite_id=9MOLq1lA&locale=en_AE&share_id=warI0iHcROaLw-YwHLVqzw&sid=73c8101497ec451ebc15376ae6742048" target="_blank">
+                    <Link to="https://www.snapchat.com/add/semabudhabi?invite_id=9MOLq1lA&locale=en_AE&share_id=warI0iHcROaLw-YwHLVqzw&sid=73c8101497ec451ebc15376ae6742048" target="_blank"rel="noopener noreferrer">
                         <img src="/uploads/Finish/Finish/blog/snapchat_3669965.png" alt="snapchat" />
                     </Link>
                 </div>

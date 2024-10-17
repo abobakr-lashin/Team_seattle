@@ -4,8 +4,6 @@ import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Grid } from '@mui/material';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import SearchIcon from '@mui/icons-material/Search';
-import FormN from '../appbar/FormN';
 import Footer from '../footer/Footer';
 import OUREXPERT from '../../Pages/OUREXPERT';
 import "./Rent.css"
@@ -15,7 +13,6 @@ export default function RentFilter() {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
     const [price, setPrice] = useState('');
-    const [completionStatus, setCompletionStatus] = useState('');
     const [location, setLocation] = useState('');
     const [propertyType, setPropertyType] = useState('');
     const [minArea, setMinArea] = useState('');

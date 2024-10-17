@@ -19,7 +19,7 @@ export default function TEameform() {
 
   useEffect(() => {
     GetDataFireStore();
-  }, []);
+  }, [GetDataFireStore]);
 
   const handleDelete = async (id) => {
     try {

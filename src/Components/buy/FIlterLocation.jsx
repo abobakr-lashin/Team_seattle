@@ -23,6 +23,7 @@ export default function FilterLocation() {
     const [maxBedrooms, setMaxBedrooms] = useState('');
     const [minPrice, setMinPrice] = useState('');
     const {id} = useParams()
+    const [searchTerm, setSearchTerm] = useState(''); // لتتبع مصطلح البحث
 
     const itemsPerPage =6;
 
@@ -43,7 +44,7 @@ export default function FilterLocation() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, []);
+    }, [GetDataFireStore]);
 
     // Filter items by category
     const filteredProjects = data.filter((project) => {

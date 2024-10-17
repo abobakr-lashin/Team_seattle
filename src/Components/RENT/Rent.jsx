@@ -81,7 +81,7 @@ export default function Rent() {
 
   useEffect(() => {
     GetDataFireStore();
-  }, []);
+  }, [GetDataFireStore]);
 
   const imgsetin = currentItems.map((it) => (
     <Grid key={it.id} sx={{ margin: "auto", width: "100%", textAlign: "center" }} item lg={4} md={6} sm={6}>

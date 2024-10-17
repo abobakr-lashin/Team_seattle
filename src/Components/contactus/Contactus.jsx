@@ -72,6 +72,7 @@ export default function Contactus() {
                 "https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0"
               }
               target="_blank"
+              rel="noopener noreferrer"
             >
               {" "}
               <img

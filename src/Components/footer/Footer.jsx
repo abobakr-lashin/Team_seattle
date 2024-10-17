@@ -62,7 +62,7 @@ export default function Footer() {
 
                 </Typography>
                 <Typography className="contact-item">
-                  <Link to={"https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0"} target="_blank">
+                  <Link to={"https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0"} target="_blank"rel="noopener noreferrer">
                   
                 <WhatsAppIcon className='color-g'/>  
                 +971502135701

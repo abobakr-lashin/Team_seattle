@@ -3,9 +3,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import NavPar from "../appbar/NavPar";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Grid } from '@mui/material';
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import SearchIcon from '@mui/icons-material/Search';
-import FormN from '../appbar/FormN';
 import Footer from '../footer/Footer';
 import OUREXPERT from '../../Pages/OUREXPERT';
 
@@ -122,7 +119,7 @@ export default function CategoryOffPlanSeattle() {
                         }} className="btn-register1">show Projects</button>
                     </div>
                     <div className="display-f">
-                        <Link to="https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" target="_blank" className="btn-whatsapp"> </Link>
+                        <Link to="https://api.whatsapp.com/send/?phone=971502135701&text&type=phone_number&app_absent=0" target="_blank" className="btn-whatsapp"rel="noopener noreferrer"> </Link>
                         <Link to="tel:+971502135701" className="btn-call"></Link>
                     </div>
                 </div>

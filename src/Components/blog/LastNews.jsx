@@ -33,7 +33,7 @@ export default function LastNews({ newsPerPage }) {
 
     useEffect(() => {
         GetDataFireStore();
-    }, []);
+    }, [GetDataFireStore]);
 
     // console.log(FormData);
 

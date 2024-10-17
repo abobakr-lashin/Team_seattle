@@ -110,7 +110,7 @@ export default function AreasHome() {
 
   useEffect(() => {
     GetDataFireStore();
-  }, []);
+  }, [GetDataFireStore]);
 
   return (
     <div>

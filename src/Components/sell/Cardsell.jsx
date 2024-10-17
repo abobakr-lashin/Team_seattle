@@ -80,7 +80,7 @@ export default function Cardsell() {
 
   useEffect(() => {
     GetDataFireStore();
-  }, []);
+  }, [GetDataFireStore]);
 
 
 

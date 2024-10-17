@@ -22,6 +22,7 @@ export default function Buy() {
     const [minBedrooms, setMinBedrooms] = useState('');
     const [maxBedrooms, setMaxBedrooms] = useState('');
     const [minPrice, setMinPrice] = useState('');
+    const [searchTerm, setSearchTerm] = useState(''); // لتتبع مصطلح البحث
 
     const itemsPerPage = 6;
 
@@ -42,7 +43,7 @@ export default function Buy() {
 
     useEffect(() => {
         GetDataFireStore();
-    }, []);
+    }, [GetDataFireStore]);
 
     // Filter items by category
     const filteredProjects = data.filter((project) => {
