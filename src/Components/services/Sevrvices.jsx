@@ -38,6 +38,7 @@ export default function Sevrvices() {
                         <img src="/uploads/img/marpa.png" alt="مريع" />
                     </div>
                     <div className="title-dis2">
+                        
                         <h2>Our SERVICES</h2>
                         <h3>SEATTLE & MIDDLE EAST GROUP OFFERS A VARIETY OF SERVICES IN THE REAL ESTATE INDUSTRY</h3>
                     </div>
