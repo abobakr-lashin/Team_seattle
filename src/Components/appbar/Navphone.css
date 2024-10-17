@@ -1408,6 +1408,10 @@ flex-direction: column;
         background-repeat: no-repeat;
         padding: 20px;
     }
+    .Buys .dis-buy {
+    width: 100%;
+
+    }
     /* .Buys */
     /* .RENT */
     .RENT .custom-dropdown-menu {
@@ -1749,7 +1753,7 @@ display: block;
   display: flex;
   font-size: 20px;
   margin: 9px;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
 }
 .developers .dis-paly2 .aldar img {
@@ -1774,10 +1778,10 @@ display: block;
   display: flex;
   font-size: 20px;
   margin: 9px auto;
-  align-items: center;
   width: 100%;
   gap: 0px;
   justify-content: start;
+  align-items: flex-start;
 }
 .developers .dis-paly2 .aldar img {
   width: 66px;
@@ -1863,7 +1867,7 @@ font-size: 20px;
 }
 
 .custom-navbar-brand a {
-  font-size: 14px;
+  font-size: 20px;
 }
 .custom-navbar-link:after {
   color: #fff;
@@ -1952,10 +1956,9 @@ font-size: 20px;
 }
     /* .RENT */
     .custom-dropdown-item {
-      padding: 45px 0;
-      text-align: center;
+      padding: 0 0;
+      text-align: left;
       color: white;
-      transition: display 10.5s;
   }
   .RENT .dis-paly3 {
     flex-direction: column;
