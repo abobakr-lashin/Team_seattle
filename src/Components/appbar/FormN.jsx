@@ -1,41 +1,46 @@
-import { Button, Dialog, DialogContent, DialogTitle,IconButton, Snackbar, styled } from '@mui/material';
-import React, { useState, useEffect } from 'react';
-import CloseIcon from '@mui/icons-material/Close';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  IconButton,
+  Snackbar,
+  styled,
+} from "@mui/material";
+import React, { useState, useEffect } from "react";
+import CloseIcon from "@mui/icons-material/Close";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MuiTelInput } from 'mui-tel-input';
-import "./FormN.css"
-import { getDatabase, push, ref, set } from 'firebase/database';
-import app from '../../firebaseConfig';
-import { ToastContainer } from 'react-toastify';
+import { MuiTelInput } from "mui-tel-input";
+import "./FormN.css";
+import { getDatabase, push, ref, set } from "firebase/database";
+import app from "../../firebaseConfig";
+import { ToastContainer } from "react-toastify";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-
-  '& .MuiDialogContent-root': {
+  "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
-    maxHeight: '50vh',
-    overflowY: 'auto',
-    overflowX: 'hidden',
+    maxHeight: "50vh",
+    overflowY: "auto",
+    overflowX: "hidden",
   },
-  '& .MuiDialogActions-root': {
+  "& .MuiDialogActions-root": {
     padding: theme.spacing(1),
   },
-  '& .MuiPaper-root': {
-    width: '90%',
-    maxWidth: '500px',
-    height: 'auto',
-    maxHeight: '60vh',
-    boxShadow: 'none',
-    border: 'none',
-    backgroundColor: 'transparent',
-  }
+  "& .MuiPaper-root": {
+    width: "90%",
+    maxWidth: "500px",
+    height: "auto",
+    maxHeight: "60vh",
+    boxShadow: "none",
+    border: "none",
+    backgroundColor: "transparent",
+  },
 }));
 
-
-export default function FormN({name}) {
-
+export default function FormN({ name }) {
   const [formData, setFormData] = useState({
     id: uuidv4(),
     name: "",
@@ -43,15 +48,11 @@ export default function FormN({name}) {
     email: "",
   });
 
-
   // Post Data To fireBase
-  const db = getDatabase(app)
-  const newDocRef = push(ref(db, 'specials/offers'))
+  const db = getDatabase(app);
+  const newDocRef = push(ref(db, "specials/offers"));
 
-  // console.log(newDocRef);
-  // console.log(formData);
-  const [ServiceError, setServiceError] = useState(''); // قم بإزالة هذا إذا لم يتم استخدامه
-
+  const [ServiceError, setServiceError] = useState(""); // قم بإزالة هذا إذا لم يتم استخدامه
 
   const [phoneError, setPhoneError] = useState("");
   const [nameError, setNameError] = useState("");
@@ -89,20 +90,28 @@ export default function FormN({name}) {
   const handleButtonClick = (event) => {
     event.preventDefault();
 
-
     // Add Data Post Firebase \
     set(newDocRef, {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
       date: new Date().toDateString(),
-      time: new Date().toLocaleTimeString()
-    }).then(() => {
-      console.log('Data sent successfully');
-      setFormData({ id: uuidv4(), name: "", phone: "+971", email: "", message: "", requiredService: "" });
-    }).catch((error) => {
-      console.error('Error sending data: ', error);
-    });
+      time: new Date().toLocaleTimeString(),
+    })
+      .then(() => {
+        console.log("Data sent successfully");
+        setFormData({
+          id: uuidv4(),
+          name: "",
+          phone: "+971",
+          email: "",
+          message: "",
+          requiredService: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Error sending data: ", error);
+      });
 
     // setFormData({ id: uuidv4(), name: "", phone: "+971", email: "", message: "", requiredService: "" });
 
@@ -165,11 +174,9 @@ export default function FormN({name}) {
     );
     setOpenSnackbar(true);
 
-
     console.log("Saved Data:", formData);
 
     // Clear form after submission
-
   };
 
   const handleCloseSnackbar = () => {
@@ -193,16 +200,16 @@ export default function FormN({name}) {
   return (
     <>
       <ToastContainer />
-      <div id='FormN'>
+      <div id="FormN">
         <Button className="btn-RE11" onClick={handleClickOpen}>
-         {name}    </Button>
+          {name}{" "}
+        </Button>
         <BootstrapDialog
           onClose={handleClose}
           aria-labelledby="customized-dialog-title"
           open={open}
         >
-          <DialogTitle className='wh-form1'>
-
+          <DialogTitle className="wh-form1">
             <IconButton
               aria-label="close"
               onClick={handleClose}
@@ -243,8 +250,8 @@ export default function FormN({name}) {
                 </div>
               )}
               {/* name */}
-         {/* phone */}
-         <MuiTelInput
+              {/* phone */}
+              <MuiTelInput
                 sx={{
                   backgroundColor: "white  !important",
                   border: "none !important", // إزالة الحدود الافتراضية
@@ -255,9 +262,9 @@ export default function FormN({name}) {
                   alignItems: "center",
                   padding: "20px",
                   justifyContent: "center",
-                  maxWidth: '305px !important', // الحد الأقصى للعرض
-                  height: '50px', // تحديد الطول
-                  boxShadow: 'none !important', // إزالة أي تأثيرات ظل
+                  maxWidth: "305px !important", // الحد الأقصى للعرض
+                  height: "50px", // تحديد الطول
+                  boxShadow: "none !important", // إزالة أي تأثيرات ظل
                   "& .MuiOutlinedInput-root": {
                     border: "none", // إزالة الحدود من مكون داخلي
                     outline: "none", // إزالة الـ outline من مكون داخلي
@@ -277,7 +284,7 @@ export default function FormN({name}) {
                   "& .MuiFormHelperText-root.Mui-error": {
                     color: "red", // تغيير لون نص المساعدة إلى الأحمر عند الخطأ
                     position: "fixed",
-                    top: "50%"
+                    top: "50%",
                   },
                 }}
                 value={formData.phone}
@@ -286,7 +293,7 @@ export default function FormN({name}) {
                 helperText={phoneError}
               />
 
-              {/* phone */}              
+              {/* phone */}
               <div className="br"></div>
               {/* email */}
               <input
@@ -316,7 +323,7 @@ export default function FormN({name}) {
                 </div>
               )}
               {/* email */}
-     
+
               <div className="contact-icons">
                 <Link to="tel:+971502135701" className="">
                   <img src="/uploads/img/mobile.png" alt="mobile" />
@@ -333,9 +340,9 @@ export default function FormN({name}) {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  margin: "auto"
+                  margin: "auto",
                 }}
-                className='submit'
+                className="submit"
                 onClick={handleButtonClick}
               >
                 {language === "ar" ? "إرسال" : "SUBMIT"}
@@ -351,7 +358,12 @@ export default function FormN({name}) {
           onClose={handleCloseSnackbar}
           message={snackbarMessage}
           action={
-            <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnackbar}>
+            <IconButton
+              size="small"
+              aria-label="close"
+              color="inherit"
+              onClick={handleCloseSnackbar}
+            >
               <CloseIcon fontSize="small" />
             </IconButton>
           }

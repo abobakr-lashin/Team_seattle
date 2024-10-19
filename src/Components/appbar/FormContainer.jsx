@@ -8,7 +8,7 @@ import { MuiTelInput } from "mui-tel-input";
 import app from "../../firebaseConfig";
 import { getDatabase, ref, set, push } from "firebase/database";
 import { toast } from "react-toastify";
-export default function FormContainer({color,jast}) {
+ function FormContainer({color,jast}) {
 
     const [formData, setFormData] = useState({ name: "", phone: "+971" });
     const [phoneError, setPhoneError] = useState("");
@@ -175,3 +175,4 @@ export default function FormContainer({color,jast}) {
     </div>
   )
 }
+export default React.memo(FormContainer);
