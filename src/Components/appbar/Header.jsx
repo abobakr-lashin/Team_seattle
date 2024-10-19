@@ -35,6 +35,7 @@
     <video
     className="video-background"
     autoPlay
+    loading="lazy" 
     loop
     muted
     playsInline
