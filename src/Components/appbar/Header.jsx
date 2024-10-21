@@ -47,18 +47,23 @@ function Header() {
   return (
     <>
       <div className="header-container">
-        <video
-          className="video-background"
-          autoPlay
-          loading="lazy"
-          loop
-          muted
-          playsInline
-          preload="auto"
-        >
-          <source src={bannerFinish} type="video/mp4" />
-          متصفحك لا يدعم عرض الفيديو.
-        </video>
+      <video
+  id="myVideo"
+  className="video-background"
+  autoPlay
+  loading="lazy"
+  muted
+  playsInline
+  preload="metadata"
+  onEnded={() => {
+    const video = document.getElementById('myVideo');
+    video.pause(); // إيقاف الفيديو
+    video.currentTime = video.duration; // الانتقال إلى نهاية الفيديو
+  }}
+>
+  <source src={bannerFinish} type="video/mp4" />
+  متصفحك لا يدعم عرض الفيديو.
+</video>
 
         <NavPar />
 

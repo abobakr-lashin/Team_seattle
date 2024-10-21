@@ -340,6 +340,8 @@ const Navbar = () => {
           src="./uploads/img/LOGO.png"
           height={"auto"}
           width={"auto"}
+          loading="lazy"
+
           alt="SEATTLE & MiDDLE East"
         />
       </Link>
