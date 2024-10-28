@@ -11,12 +11,15 @@ import {
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PhoneIcon from "@mui/icons-material/Phone";
 import FormContainer from "./FormContainer";
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import bannerFinish from "./BannerFinish.mp4";
+import bannerFinish2 from "./elmadgot.mp4";
 
 function Header() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [video, setVideo] = useState("");
+  const videoRef = useRef(null);
 
   const actions = useMemo(
     () => [
@@ -44,26 +47,48 @@ function Header() {
     setOpenSnackbar(false);
   }, []);
 
+  useEffect(() => {
+    if (window.screen.width > 425) {
+      setVideo(bannerFinish);
+      console.log("Video set for large screen");
+    } else {
+      setVideo(bannerFinish2);
+      console.log("No video for small screen");
+    }
+  }, []);
+
+  useEffect(() => {
+    // تشغيل الفيديو تلقائيًا عند تحميل الصفحة إذا كانت قيمة الفيديو موجودة
+    if (video && videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.log("التشغيل التلقائي غير مسموح:", error);
+      });
+    }
+  }, [video]); // إضافة video كشرط للتشغيل التلقائي
+
   return (
     <>
       <div className="header-container">
-      <video
-  id="myVideo"
-  className="video-background"
-  autoPlay
-  // loading="lazy"
-  muted
-  playsInline
-  preload="metadata"
-  onEnded={() => {
-    const video = document.getElementById('myVideo');
-    video.pause(); // إيقاف الفيديو
-    video.currentTime = video.duration; // الانتقال إلى نهاية الفيديو
-  }}
->
-  <source src={bannerFinish} type="video/mp4" />
-  متصفحك لا يدعم عرض الفيديو.
-</video>
+        {video && ( // عرض الفيديو فقط إذا كانت قيمته موجودة
+          <video
+            ref={videoRef}
+            id="myVideo"
+            className="video-background"
+            autoPlay
+            muted
+            playsInline
+            preload="auto"
+            onEnded={() => {
+              if (videoRef.current) {
+                videoRef.current.pause();
+                videoRef.current.currentTime = videoRef.current.duration;
+              }
+            }}
+          >
+            <source src={video} type="video/mp4" />
+            متصفحك لا يدعم عرض الفيديو.
+          </video>
+        )}
 
         <NavPar />
 

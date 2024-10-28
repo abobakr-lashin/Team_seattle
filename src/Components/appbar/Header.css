@@ -1,1 +1,194 @@
-.header-container {position: relative;width: 100% !important;height: 110vh;overflow: hidden !important;}.video-background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: fill !important;z-index: -10;}.Formheader{width: 100%;display: flex;justify-content: center ;align-items: end !important;}.form-container {display: flex;align-items: center;flex-direction: column;justify-content: end;height: 100vh;padding: 20px;text-align: center;position: relative;z-index: 1;}.form{width: 25rem;height:19rem;border-radius:20px;}.btn-register {width: 100%;max-width: 350px;height: 50px;border-radius: 20px;background-color: #D6C48B;color: white;font-weight: bold;font-size: 20px;border: none;cursor: pointer;display: flex;justify-content: center;align-items: center;text-align: center;transition: background-color 0.3s ease;min-Width:"100px";margin: 20px auto;}.btn-register:hover {background-color: #ad9a5a;}.contact-icons {display: flex;justify-content: center;align-items: center;margin-top: 25px;}.contact-icons img {margin: 0 10px;}.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {display: flex;flex-wrap: inherit;align-items: center;justify-content: space-around;}.css-7dv1rb-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab, .chat {border-radius: 30px;background-position: center !important;background-size: cover !important;background-repeat: no-repeat !important;background-size: 100% !important;width:50px !important;height: 50px !important;position: fixed !important;left: 40px !important;bottom: 20px !important;cursor: pointer;z-index: 22 !important;}.chat .css-i4bv87-MuiSvgIcon-root {-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;width: 1em;height: 1em;display: inline-block;fill: currentColor;-webkit-flex-shrink: 0;-ms-flex-negative: 0;flex-shrink: 0;-webkit-transition: fill 200ms cubic-bezier(1.4, 0, 0.2, 1) 0ms;transition: fill 400ms cubic-bezier(1.4, 0, 0.2, 1) 0ms;font-size: 1.5rem;color: #ad9a5a;}.css-ohncnb-MuiSpeedDialIcon-root .MuiSpeedDialIcon-icon {color: #ffffff !important;}.css-1tfnuay > .MuiGrid-item{padding-top: 0px !important;}@media screen and (max-width: 1600px) {.header-container {position: relative;width: 100% !important;height: 152vh;overflow: hidden !important;}.form-container {display: flex;align-items: center;flex-direction: column;justify-content: end;height: 118vh;padding: 20px;text-align: center;position: relative;z-index: 1;}}@media screen and (max-width: 790px) {.video-background{width: 137%;}}@media screen and (max-width: 600px) {.btn-register {font-size: 18px;}.form-container {width: 100% !important;margin-top: 0rem;}.form{width: 18rem;height:19rem;background-color:rgba(255, 255, 255, 0.466);border-radius:20px;}.input,.btn-register{width: 80% !important;}.header-container {position: relative;width: 100% !important;height: 140vh;overflow: hidden !important;}}@media screen and (max-width: 430px) {.video-background{width: 150%;}}
+.header-container {
+    position: relative;
+    width: 100% !important;
+    height: 110vh;
+    overflow: hidden !important;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill !important;
+    z-index: -10;
+}
+
+.Formheader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end !important;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: end;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.form {
+    width: 25rem;
+    height: 19rem;
+    border-radius: 20px;
+}
+
+.btn-register {
+    width: 100%;
+    max-width: 350px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #D6C48B;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    min-Width: "100px";
+    margin: 20px auto;
+}
+
+.btn-register:hover {
+    background-color: #ad9a5a;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.contact-icons img {
+    margin: 0 10px;
+}
+
+.navbar>.container,
+.navbar>.container-fluid,
+.navbar>.container-lg,
+.navbar>.container-md,
+.navbar>.container-sm,
+.navbar>.container-xl,
+.navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.css-7dv1rb-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab,
+.chat {
+    border-radius: 30px;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    width: 50px !important;
+    height: 50px !important;
+    position: fixed !important;
+    left: 40px !important;
+    bottom: 20px !important;
+    cursor: pointer;
+    z-index: 22 !important;
+}
+
+.chat .css-i4bv87-MuiSvgIcon-root {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentColor;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-transition: fill 200ms cubic-bezier(1.4, 0, 0.2, 1) 0ms;
+    transition: fill 400ms cubic-bezier(1.4, 0, 0.2, 1) 0ms;
+    font-size: 1.5rem;
+    color: #ad9a5a;
+}
+
+.css-ohncnb-MuiSpeedDialIcon-root .MuiSpeedDialIcon-icon {
+    color: #ffffff !important;
+}
+
+.css-1tfnuay>.MuiGrid-item {
+    padding-top: 0px !important;
+}
+
+@media screen and (max-width: 1600px) {
+    .header-container {
+        position: relative;
+        width: 100% !important;
+        height: 152vh;
+        overflow: hidden !important;
+    }
+
+    .form-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: end;
+        height: 118vh;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .video-background {
+        width: 137%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .btn-register {
+        font-size: 18px;
+    }
+
+    .form-container {
+        width: 100% !important;
+        margin-top: 0rem;
+    }
+
+    .form {
+        width: 18rem;
+        height: 19rem;
+        background-color: rgba(255, 255, 255, 0.466);
+        border-radius: 20px;
+    }
+
+    .input,
+    .btn-register {
+        width: 80% !important;
+    }
+
+    .header-container {
+        position: relative;
+        width: 100% !important;
+        height: 140vh;
+        overflow: hidden !important;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .video-background {
+        width: 100%;
+    }
+}
