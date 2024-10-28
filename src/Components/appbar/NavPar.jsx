@@ -338,9 +338,8 @@ const Navbar = () => {
         <img
           className="logo-nav"
           src="./uploads/img/LOGO.png"
-          height={"auto"}
-          width={"auto"}
-          loading="lazy"
+    height={"auto"}
+    width={"auto"}
 
           alt="SEATTLE & MiDDLE East"
         />
@@ -380,15 +379,7 @@ const Navbar = () => {
                       <div className="dis-paly">
                         <ul>
                           <h4> Secondary properties</h4>
-                          {/* {Secondaryproperties?.map((it) => {
-                                                        return (
-                                                            <li>
-                                                                <Link to={`/buy/category/${it.name}`}>
-                                                                    {it.name}
-                                                                </Link>
-                                                            </li>
-                                                        );
-                                                    })} */}
+                 
                           <li>
                             <Link to={`/buy/category/Hot properties`}>
                               Hot properties
@@ -413,15 +404,7 @@ const Navbar = () => {
                         <ul>
                           {/*  */}
                           <h4>Off-plan</h4>
-                          {/* {offPlan?.map((it) => {
-                                                        return (
-                                                            <li>
-                                                                <Link to={`/Seattle/category/${it.name}`}>
-                                                                    {it.name}
-                                                                </Link>
-                                                            </li>
-                                                        );
-                                                    })} */}
+          
                           <li>
                             <Link to={`/Seattle/category/Apartments`}>
                               Apartments
@@ -1733,12 +1716,7 @@ const Navbar = () => {
                               <img src="./uploads/nav/icon/arrow.png" alt="" />
                             </Link>
                           </li>
-                          {/* <li>
-                                                        <Link to="/Login">
-                                                            login{" "}
-                                                            <img src="./uploads/nav/icon/arrow.png" alt="" />
-                                                        </Link>
-                                                    </li> */}
+            
                         </ul>
                       </div>
                     </div>

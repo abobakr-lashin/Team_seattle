@@ -51,7 +51,7 @@ function Header() {
   id="myVideo"
   className="video-background"
   autoPlay
-  loading="lazy"
+  // loading="lazy"
   muted
   playsInline
   preload="metadata"
