@@ -130,7 +130,7 @@
     .textcon1 {
         margin-top: 20px;
         width: 95%;
-        text-align: center;
+        text-align: start;
     }
 
     .imgcon1 {
@@ -151,7 +151,7 @@
     .textcon2 {
         margin-top: 20px;
         width: 95%;
-        text-align: center;
+        text-align: start;
     }
 
     .imgcon2 {

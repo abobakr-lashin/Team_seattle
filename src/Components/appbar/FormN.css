@@ -105,10 +105,12 @@
      margin: 2.5px;
  }
 
- .css-15byy4f-MuiFormControl-root-MuiTextField-root {
-     background-color: rgba(0, 0, 0, 0) !important;
- }
-
+ 
+ .css-1o9s3wi-MuiInputBase-input-MuiOutlinedInput-input:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: 0px 0px 0px 0px #ffffff00 !important;
+}
  .submit {
      margin: 30px !important;
      width: 260px !important;
@@ -290,6 +292,9 @@
      .css-15byy4f-MuiFormControl-root-MuiTextField-root {
          background-color: rgba(255, 255, 255, 0) !important;
      }
+     .wh-form1 form input{
+        width: 100%;
+     }
  }
 
  .css-igs3ac {
@@ -313,4 +318,9 @@
 
  .css-1c9v1np {
      padding: 0 !important;
+ } .css-15byy4f-MuiFormControl-root-MuiTextField-root{
+    background-color: rgba(0, 0, 0, 0) !important;
+ }
+ .wh-form1 .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+    width: 100%;
  }
