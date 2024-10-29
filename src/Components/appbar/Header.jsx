@@ -48,7 +48,7 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    if (window.screen.width > 425) {
+    if (window.screen.width > 431) {
       setVideo(bannerFinish);
       console.log("Video set for large screen");
     } else {

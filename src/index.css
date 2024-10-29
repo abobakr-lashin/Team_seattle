@@ -1,1 +1,5 @@
 body{background-color: #011f26;font-family:"ssa" !important;padding: 0px ;margin: 0px ;color: white;}* {font-family:"ssa" !important;opacity: 1 !important;}@font-face {font-family:"ssa";src: url('./../public/uploads/font/alfont_com_AlFont_com_SST-Arabic-Medium.ttf');font-weight: 500;font-style: normal;}@font-face {font-family: "ssa";src: url('./../public/uploads/font/sst-arabic-medium.ttf');font-weight: 500;font-style: normal;}@font-face {font-family: "ssa";src: url('./../public/uploads/font/SSTArabic-Bold.ttf');font-weight: 700;font-style: normal;}@font-face {font-family:"ssa";src: url('./../public/uploads/font/SSTArabic-Light.ttf');font-weight: 300;font-style: normal;}@font-face {font-family: "ssa";src: url('./../public/uploads/font/SSTArabic-Medium.ttf');font-weight: 500;font-style: normal;}@font-face {font-family: "ssa";src: url('./../public/uploads/font/SSTArabic-Roman.ttf');font-weight: 400;font-style: normal;}
+.css-ln11qz {
+width: 90%;
+margin: auto;
+}
