@@ -20,32 +20,30 @@ export default function Discover() {
         </div>
 
         <div className="prgraf">
-          <p>
-            Seattle{` `} & {` ${' \  '}  `} Middle East Group is a leader in providing
-            <br />
-            exceptional professional services across real estate,
-            <br /> travel, contracting, mortgage, and digital marketing.
-            <br />
-            We are committed to delivering tailored solutions that
-            <br />
-            meet the unique needs of our clients. 
-            <br />
-            <br />
-            Our expert team in real estate
-            helps you find ideal <br /> residential, commercial, or investment
-            properties. <br />
-            Our travel services offer seamless and memorable <br /> journeys, while our
-            mortgage team provides
-            <br />
-            comprehensive financing guidance. Our digital<br /> marketing agency
-            boosts your brand's online <br /> 
-            presence with cutting-edge strategies.
-            <br />
-            <br />
-            Professionalism, integrity, and customer satisfaction are our core
-            values.
-            <br />
-          </p>
+        <p>
+    Seattle & Middle East Group is a leader in providing
+    <br class="small-screen-hide" />
+    exceptional professional services across real estate,
+    <br class="small-screen-hide" /> travel, contracting, mortgage, and digital marketing.
+    <br class="small-screen-hide" />
+    We are committed to delivering tailored solutions that
+    <br class="small-screen-hide" />
+    meet the unique needs of our clients.
+    <br />
+    <br/>
+    Our expert team in real estate helps you find ideal
+    <br class="small-screen-hide" /> residential, commercial, or investment properties.
+    <br class="small-screen-hide" />
+    Our travel services offer seamless and memorable journeys,
+    <br class="small-screen-hide" /> while our mortgage team provides comprehensive financing guidance.
+    <br class="small-screen-hide" />
+    Our digital marketing agency boosts your brand's online presence
+    <br class="small-screen-hide" /> with cutting-edge strategies.
+    <br />
+    <br  />
+    Professionalism, integrity, and customer satisfaction are our core values.
+    <br class="small-screen-hide" />
+</p>
         </div>
 
         <FormMs />
