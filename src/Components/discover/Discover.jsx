@@ -1,3 +1,4 @@
+
 import "./Discover.css";
 import FormMs from "../morttgage/FormMS";
 export default function Discover() {
@@ -17,13 +18,12 @@ export default function Discover() {
 
         <div className="prgraf">
         <p>
-        Seattle & Middle East Group is a leader in providing
-            <br class="small-screen-hide" />
-            exceptional professional services across real estate,
-                <br class="small-screen-hide" />
-     travel, contracting, mortgage, and digital marketing.
+    Seattle & Middle East Group is a leader in providing
     <br class="small-screen-hide" />
-    We are committed to delivering tailored solutions that
+      {`  `}exceptional professional services across real estate,
+    <br class="small-screen-hide" /> travel, contracting, mortgage, and digital marketing.
+    <br class="small-screen-hide" />
+    We are committed to delivering tailored solutions that {`  `}
     <br class="small-screen-hide" />
     meet the unique needs of our clients.
     <br />

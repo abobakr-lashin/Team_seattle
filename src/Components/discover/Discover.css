@@ -498,7 +498,7 @@
     }
 
     .prgraf p {
-        font-size: 18px;
+        font-size: 17px;
         text-align: start;
         width: 100%;
     }
@@ -534,7 +534,7 @@
 
 @media screen and (max-width: 412px) {
     .prgraf p {
-        font-size: 17px;
+        font-size: 16px;
     }
 }
 
