@@ -96,7 +96,7 @@
 }
 
 .prgraf p {
-    text-transform: uppercase;
+    text-transform: none;
     width: 100%;
     font-size: xx-large;
     overflow: hidden;
@@ -499,7 +499,7 @@
 
     .prgraf p {
         font-size: 18px;
-        text-align: center;
+        text-align: start;
         width: 100%;
     }
 }
@@ -513,7 +513,7 @@
         font-size: 17px;
         color: white;
         max-width: 100%;
-        text-align: center !important;
+        text-align: start !important;
     }
 
     .title-dis3 h2 {

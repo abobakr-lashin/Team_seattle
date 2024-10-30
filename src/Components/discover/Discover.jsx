@@ -1,9 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Grid } from "@mui/material";
-import CounterBox from "./CounterBox"; // تأكد من تحديث مسار الاستيراد وفقًا لموقع الملف
 import "./Discover.css";
 import FormMs from "../morttgage/FormMS";
-import Counternuber from "./Counternuber";
 export default function Discover() {
   return (
     <div className="Discover">
